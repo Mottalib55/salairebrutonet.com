@@ -1282,4 +1282,17 @@
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
+    <!-- Pages SMIC et barème 2026 -->
+    <url>
+        <loc>https://salairebrutonet.com/smic-brut-net-2026/</loc>
+        <lastmod>2026-02-16</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.9</priority>
+    </url>
+    <url>
+        <loc>https://salairebrutonet.com/salaire-brut-net-2026/</loc>
+        <lastmod>2026-02-16</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.9</priority>
+    </url>
 </urlset>
