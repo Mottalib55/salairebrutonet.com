@@ -723,22 +723,33 @@
             // Load from URL params
             const params = new URLSearchParams(window.location.search);
             if (params.has('brut')) {
-                inputSalaire.value = params.get('brut');
-                inputSalaireAnnuel.value = Math.round(parseFloat(params.get('brut')) * 12);
+                const brut = parseFloat(params.get('brut')) || 0;
+                inputSalaire.value = brut;
+                inputSalaireAnnuel.value = Math.round(brut * 12);
+                sliderSalaire.value = brut;
             }
             if (params.has('statut')) {
-                statut = params.get('statut');
-                document.querySelector(`input[name="statut"][value="${statut}"]`).checked = true;
+                const s = params.get('statut');
+                const radio = document.querySelector(`input[name="statut"][value="${s}"]`);
+                if (radio) { statut = s; radio.checked = true; }
             }
             if (params.has('temps')) {
-                sliderTemps.value = params.get('temps');
-                tempsTravail = parseInt(params.get('temps')) / 100;
+                const t = parseInt(params.get('temps'));
+                if (t >= 10 && t <= 100) {
+                    sliderTemps.value = t;
+                    tempsTravail = t / 100;
+                }
             }
 
             bindEvents();
             calculate();
             populateMontantsTable();
             populateLiensInternes();
+
+            // Si on arrive via un lien partagé, scroller vers les résultats
+            if (params.has('brut')) {
+                setTimeout(() => document.getElementById('resultats').scrollIntoView({ behavior: 'smooth' }), 300);
+            }
         }
 
         function syncFromMensuel() {
