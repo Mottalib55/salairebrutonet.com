@@ -256,25 +256,30 @@
                             <h2 class="text-lg font-semibold text-slate-900">Votre salaire brut</h2>
                         </div>
 
-                        <!-- Période toggle -->
-                        <div class="flex gap-2 mb-4">
-                            <button id="btn-mensuel" class="px-4 py-2 rounded-lg text-sm font-medium bg-brand-600 text-white transition-colors">Mensuel</button>
-                            <button id="btn-annuel" class="px-4 py-2 rounded-lg text-sm font-medium bg-slate-100 text-slate-600 hover:bg-slate-200 transition-colors">Annuel</button>
-                        </div>
-
-                        <!-- Input salaire -->
-                        <div class="mb-4">
-                            <div class="relative">
-                                <input type="number" id="input-salaire" value="2500" min="0" max="20000" step="50"
-                                    class="w-full rounded-xl border-2 border-slate-200 bg-slate-50 px-4 py-4 text-2xl font-bold text-slate-900 focus:border-brand-500 focus:bg-white focus:outline-none focus:ring-2 focus:ring-brand-100 transition-all">
-                                <span id="label-devise" class="absolute right-4 top-1/2 -translate-y-1/2 text-lg font-medium text-slate-400">€ brut/mois</span>
+                        <!-- Inputs mensuel + annuel -->
+                        <div class="grid grid-cols-2 gap-4 mb-4">
+                            <div>
+                                <label class="block text-sm font-medium text-slate-500 mb-1">Mensuel</label>
+                                <div class="relative">
+                                    <input type="number" id="input-salaire" value="2500" min="0" max="20000" step="50"
+                                        class="w-full rounded-xl border-2 border-slate-200 bg-slate-50 px-4 py-3 text-xl font-bold text-slate-900 focus:border-brand-500 focus:bg-white focus:outline-none focus:ring-2 focus:ring-brand-100 transition-all">
+                                    <span class="absolute right-3 top-1/2 -translate-y-1/2 text-sm font-medium text-slate-400">€</span>
+                                </div>
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-slate-500 mb-1">Annuel</label>
+                                <div class="relative">
+                                    <input type="number" id="input-salaire-annuel" value="30000" min="0" max="240000" step="600"
+                                        class="w-full rounded-xl border-2 border-slate-200 bg-slate-50 px-4 py-3 text-xl font-bold text-slate-900 focus:border-brand-500 focus:bg-white focus:outline-none focus:ring-2 focus:ring-brand-100 transition-all">
+                                    <span class="absolute right-3 top-1/2 -translate-y-1/2 text-sm font-medium text-slate-400">€</span>
+                                </div>
                             </div>
                         </div>
                         <input type="range" id="slider-salaire" min="0" max="20000" step="50" value="2500"
                             class="w-full mb-2">
                         <div class="flex justify-between text-xs text-slate-400">
                             <span>0 €</span>
-                            <span id="slider-max-label">20 000 €</span>
+                            <span>20 000 €/mois</span>
                         </div>
                     </div>
 
@@ -702,24 +707,25 @@
         'use strict';
 
         // State
-        let periode = 'mensuel'; // mensuel or annuel
         let statut = 'non-cadre';
         let tempsTravail = 1;
+        let updatingFrom = null; // prevent loops
 
         // DOM refs
         const inputSalaire = document.getElementById('input-salaire');
+        const inputSalaireAnnuel = document.getElementById('input-salaire-annuel');
         const sliderSalaire = document.getElementById('slider-salaire');
         const sliderTemps = document.getElementById('slider-temps');
         const displayTemps = document.getElementById('display-temps');
-        const btnMensuel = document.getElementById('btn-mensuel');
-        const btnAnnuel = document.getElementById('btn-annuel');
-        const labelDevise = document.getElementById('label-devise');
 
         // Initialize
         function init() {
             // Load from URL params
             const params = new URLSearchParams(window.location.search);
-            if (params.has('brut')) inputSalaire.value = params.get('brut');
+            if (params.has('brut')) {
+                inputSalaire.value = params.get('brut');
+                inputSalaireAnnuel.value = Math.round(parseFloat(params.get('brut')) * 12);
+            }
             if (params.has('statut')) {
                 statut = params.get('statut');
                 document.querySelector(`input[name="statut"][value="${statut}"]`).checked = true;
@@ -728,9 +734,6 @@
                 sliderTemps.value = params.get('temps');
                 tempsTravail = parseInt(params.get('temps')) / 100;
             }
-            if (params.has('periode') && params.get('periode') === 'annuel') {
-                togglePeriode('annuel');
-            }
 
             bindEvents();
             calculate();
@@ -738,15 +741,36 @@
             populateLiensInternes();
         }
 
+        function syncFromMensuel() {
+            if (updatingFrom === 'annuel') return;
+            updatingFrom = 'mensuel';
+            const m = parseFloat(inputSalaire.value) || 0;
+            inputSalaireAnnuel.value = Math.round(m * 12);
+            sliderSalaire.value = m;
+            updateSliderProgress(sliderSalaire);
+            calculate();
+            updatingFrom = null;
+        }
+
+        function syncFromAnnuel() {
+            if (updatingFrom === 'mensuel') return;
+            updatingFrom = 'annuel';
+            const a = parseFloat(inputSalaireAnnuel.value) || 0;
+            inputSalaire.value = Math.round(a / 12);
+            sliderSalaire.value = Math.round(a / 12);
+            updateSliderProgress(sliderSalaire);
+            calculate();
+            updatingFrom = null;
+        }
+
         function bindEvents() {
-            inputSalaire.addEventListener('input', () => {
-                sliderSalaire.value = inputSalaire.value;
-                updateSliderProgress(sliderSalaire);
-                calculate();
-            });
+            inputSalaire.addEventListener('input', syncFromMensuel);
+
+            inputSalaireAnnuel.addEventListener('input', syncFromAnnuel);
 
             sliderSalaire.addEventListener('input', () => {
                 inputSalaire.value = sliderSalaire.value;
+                inputSalaireAnnuel.value = Math.round(parseFloat(sliderSalaire.value) * 12);
                 calculate();
             });
 
@@ -763,9 +787,6 @@
                     calculate();
                 });
             });
-
-            btnMensuel.addEventListener('click', () => togglePeriode('mensuel'));
-            btnAnnuel.addEventListener('click', () => togglePeriode('annuel'));
 
             // FAQ toggles
             document.querySelectorAll('.faq-toggle').forEach(btn => {
@@ -791,7 +812,6 @@
                 url.searchParams.set('brut', inputSalaire.value);
                 url.searchParams.set('statut', statut);
                 url.searchParams.set('temps', sliderTemps.value);
-                url.searchParams.set('periode', periode);
                 document.getElementById('share-url').value = url.toString();
                 document.getElementById('share-modal').classList.remove('hidden');
             });
@@ -814,24 +834,6 @@
             updateSliderProgress(sliderTemps);
         }
 
-        function togglePeriode(p) {
-            periode = p;
-            if (p === 'mensuel') {
-                btnMensuel.className = 'px-4 py-2 rounded-lg text-sm font-medium bg-brand-600 text-white transition-colors';
-                btnAnnuel.className = 'px-4 py-2 rounded-lg text-sm font-medium bg-slate-100 text-slate-600 hover:bg-slate-200 transition-colors';
-                labelDevise.textContent = '€ brut/mois';
-                sliderSalaire.max = 20000;
-                document.getElementById('slider-max-label').textContent = '20 000 €';
-            } else {
-                btnAnnuel.className = 'px-4 py-2 rounded-lg text-sm font-medium bg-brand-600 text-white transition-colors';
-                btnMensuel.className = 'px-4 py-2 rounded-lg text-sm font-medium bg-slate-100 text-slate-600 hover:bg-slate-200 transition-colors';
-                labelDevise.textContent = '€ brut/an';
-                sliderSalaire.max = 240000;
-                document.getElementById('slider-max-label').textContent = '240 000 €';
-            }
-            updateSliderProgress(sliderSalaire);
-            calculate();
-        }
 
         function updateSliderProgress(slider) {
             const pct = ((slider.value - slider.min) / (slider.max - slider.min)) * 100;
@@ -839,8 +841,7 @@
         }
 
         function calculate() {
-            const salaireInput = parseFloat(inputSalaire.value) || 0;
-            const brutMensuel = periode === 'annuel' ? salaireInput / 12 : salaireInput;
+            const brutMensuel = parseFloat(inputSalaire.value) || 0;
 
             const result = calculerBrutVersNet(brutMensuel, statut, tempsTravail);
 
