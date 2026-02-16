@@ -23,6 +23,7 @@ def page_head(title, description, canonical, keywords=""):
     <meta name="description" content="{description}">
     <link rel="canonical" href="{canonical}">
     <link rel="icon" type="image/svg+xml" href="/img/logo.svg">
+    <link rel="apple-touch-icon" href="/img/logo.svg">
     <meta property="og:type" content="website">
     <meta property="og:url" content="{canonical}">
     <meta property="og:title" content="{title}">

@@ -6,5 +6,5 @@
     </linearGradient>
   </defs>
   <rect width="40" height="40" rx="10" fill="url(#g)"/>
-  <path d="M12 12h16v3H12zM12 18h7v3h-7zM21 18h7v3h-7zM12 24h7v3h-7zM21 24h7v3h-7zM12 30h7v3h-7zM21 30h7v3h-7z" fill="white" opacity="0.95"/>
+  <text x="20" y="27" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-weight="700" font-size="18" fill="white" letter-spacing="-0.5">BN</text>
 </svg>
