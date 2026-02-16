@@ -1,9 +1,9 @@
-// js/brut-net.js — Module de calcul Salaire Brut ↔ Net 2025
-// Barème cotisations sociales 2025
+// js/brut-net.js — Module de calcul Salaire Brut ↔ Net 2026
+// Barème cotisations sociales 2026
 
 const PSS_MENSUEL = 3864;
 const PSS_ANNUEL = 46368;
-const SMIC_MENSUEL_BRUT = 1801.80; // SMIC 2025
+const SMIC_MENSUEL_BRUT = 1801.80; // SMIC 2026
 
 // --- Cotisations salariales ---
 function calculerCotisationsSalariales(brutMensuel, statut, options) {
@@ -73,7 +73,7 @@ function calculerCotisationsPatronales(brutMensuel) {
     return { detail: cotisations, total };
 }
 
-// --- Estimation impôt sur le revenu (célibataire sans enfant, barème 2025) ---
+// --- Estimation impôt sur le revenu (célibataire sans enfant, barème 2026) ---
 function estimerImpotRevenu(netImposableAnnuel) {
     const tranches = [
         { min: 0,      max: 11497,  taux: 0 },

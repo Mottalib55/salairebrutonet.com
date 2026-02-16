@@ -376,7 +376,6 @@ def generate_sitemap():
     # Pages supplémentaires (Phase 2 + pages spéciales)
     extra_pages = [
         # SMIC et année
-        ("smic-brut-net-2025", "0.8"),
         ("smic-brut-net-2026", "0.8"),
         ("salaire-brut-net-2026", "0.8"),
         # Par statut

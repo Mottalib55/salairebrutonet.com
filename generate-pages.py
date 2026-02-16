@@ -94,7 +94,7 @@ FOOTER = '''
                 <img src="/img/logo.svg" alt="SalaireBrutNet" class="h-6 w-6">
                 <span class="text-sm font-semibold text-slate-900">SalaireBrutNet</span>
             </a>
-            <p class="text-xs text-slate-500">© 2025 SalaireBrutNet · Estimation indicative</p>
+            <p class="text-xs text-slate-500">© 2026 SalaireBrutNet · Estimation indicative</p>
             <div class="flex gap-4">
                 <a href="/" class="text-xs text-slate-500 hover:text-slate-900">Calculateur</a>
                 <a href="/mentions-legales.html" class="text-xs text-slate-500 hover:text-slate-900">Mentions légales</a>
@@ -216,7 +216,7 @@ RELATED_LINKS = [
     ("/difference-salaire-brut-net/", "Différence brut/net"),
     ("/cotisations-sociales-salariales/", "Cotisations sociales"),
     ("/cout-employeur/", "Coût employeur"),
-    ("/smic-brut-net-2025/", "SMIC 2025"),
+    ("/smic-brut-net-2026/", "SMIC 2026"),
     ("/salaire-brut-net-mensuel/", "Calcul mensuel"),
 ]
 
@@ -237,16 +237,16 @@ def gen_status_pages():
     pages = [
         {
             "slug": "salaire-brut-net-cadre",
-            "title": "Salaire Brut Net Cadre 2025 : Calcul et Cotisations",
-            "desc": "Calculez votre salaire brut en net en tant que cadre. Cotisations spécifiques cadre (CET, AGIRC-ARRCO), taux détaillés et simulateur gratuit 2025.",
+            "title": "Salaire Brut Net Cadre 2026 : Calcul et Cotisations",
+            "desc": "Calculez votre salaire brut en net en tant que cadre. Cotisations spécifiques cadre (CET, AGIRC-ARRCO), taux détaillés et simulateur gratuit 2026.",
             "kw": "salaire brut net cadre, brut en net cadre, cotisations cadre, calcul salaire cadre",
-            "h1": "Salaire Brut Net <span class=\"text-brand-600\">Cadre</span> 2025",
+            "h1": "Salaire Brut Net <span class=\"text-brand-600\">Cadre</span> 2026",
             "statut_default": "cadre",
             "content": """
                 <h2 class="text-xl font-semibold text-slate-900 mt-8">Spécificités du statut cadre</h2>
                 <p>En tant que <strong>cadre</strong>, vos cotisations salariales sont légèrement plus élevées qu'un non-cadre. La principale différence réside dans la <strong>CET (Contribution d'Équilibre Technique)</strong> de 0,14% prélevée sur la totalité de votre salaire brut.</p>
 
-                <h3 class="text-lg font-semibold text-slate-900 mt-6">Cotisations salariales cadre 2025</h3>
+                <h3 class="text-lg font-semibold text-slate-900 mt-6">Cotisations salariales cadre 2026</h3>
                 <p>Voici le détail des cotisations prélevées sur votre salaire brut :</p>
                 <ul class="space-y-1">
                     <li><strong>Vieillesse plafonnée</strong> : 6,90% (sur la tranche 1, jusqu'à 3 864 €/mois)</li>
@@ -278,16 +278,16 @@ def gen_status_pages():
         },
         {
             "slug": "salaire-brut-net-non-cadre",
-            "title": "Salaire Brut Net Non-Cadre 2025 : Calcul et Cotisations",
-            "desc": "Calculez votre salaire brut en net en tant que non-cadre. Taux de cotisations 2025, détail des charges et simulateur gratuit.",
+            "title": "Salaire Brut Net Non-Cadre 2026 : Calcul et Cotisations",
+            "desc": "Calculez votre salaire brut en net en tant que non-cadre. Taux de cotisations 2026, détail des charges et simulateur gratuit.",
             "kw": "salaire brut net non cadre, brut en net non cadre, cotisations non cadre, employé",
-            "h1": "Salaire Brut Net <span class=\"text-brand-600\">Non-Cadre</span> 2025",
+            "h1": "Salaire Brut Net <span class=\"text-brand-600\">Non-Cadre</span> 2026",
             "statut_default": "non-cadre",
             "content": """
                 <h2 class="text-xl font-semibold text-slate-900 mt-8">Le statut non-cadre (employé / ouvrier)</h2>
                 <p>Le statut <strong>non-cadre</strong> concerne la majorité des salariés en France. Les cotisations salariales représentent environ <strong>22% du salaire brut</strong>, ce qui signifie que pour 100 € brut, vous touchez environ 78 € net.</p>
 
-                <h3 class="text-lg font-semibold text-slate-900 mt-6">Cotisations salariales non-cadre 2025</h3>
+                <h3 class="text-lg font-semibold text-slate-900 mt-6">Cotisations salariales non-cadre 2026</h3>
                 <ul class="space-y-1">
                     <li><strong>Vieillesse plafonnée</strong> : 6,90% (tranche 1)</li>
                     <li><strong>Vieillesse déplafonnée</strong> : 0,40% (totalité)</li>
@@ -308,10 +308,10 @@ def gen_status_pages():
         },
         {
             "slug": "salaire-brut-net-fonction-publique",
-            "title": "Salaire Brut Net Fonction Publique 2025 : Calcul Fonctionnaire",
-            "desc": "Calculez votre salaire brut en net dans la fonction publique. Cotisations spécifiques fonctionnaire, taux réduits et simulateur gratuit 2025.",
+            "title": "Salaire Brut Net Fonction Publique 2026 : Calcul Fonctionnaire",
+            "desc": "Calculez votre salaire brut en net dans la fonction publique. Cotisations spécifiques fonctionnaire, taux réduits et simulateur gratuit 2026.",
             "kw": "salaire brut net fonction publique, brut net fonctionnaire, cotisations fonctionnaire, traitement brut net",
-            "h1": "Salaire Brut Net <span class=\"text-brand-600\">Fonction Publique</span> 2025",
+            "h1": "Salaire Brut Net <span class=\"text-brand-600\">Fonction Publique</span> 2026",
             "statut_default": "non-cadre",
             "content": """
                 <h2 class="text-xl font-semibold text-slate-900 mt-8">Particularités de la fonction publique</h2>
@@ -334,16 +334,16 @@ def gen_status_pages():
         },
         {
             "slug": "salaire-brut-net-auto-entrepreneur",
-            "title": "Salaire Brut Net Auto-Entrepreneur 2025 : Calcul Revenus",
-            "desc": "Calculez vos revenus nets en auto-entrepreneur. Cotisations sociales micro-entreprise, abattement fiscal et simulateur 2025.",
+            "title": "Salaire Brut Net Auto-Entrepreneur 2026 : Calcul Revenus",
+            "desc": "Calculez vos revenus nets en auto-entrepreneur. Cotisations sociales micro-entreprise, abattement fiscal et simulateur 2026.",
             "kw": "auto entrepreneur brut net, revenu net auto entrepreneur, charges micro entreprise, cotisations auto entrepreneur",
-            "h1": "Revenus <span class=\"text-brand-600\">Auto-Entrepreneur</span> 2025",
+            "h1": "Revenus <span class=\"text-brand-600\">Auto-Entrepreneur</span> 2026",
             "statut_default": "non-cadre",
             "content": """
                 <h2 class="text-xl font-semibold text-slate-900 mt-8">Le régime auto-entrepreneur (micro-entreprise)</h2>
                 <p>Le calcul brut/net pour un <strong>auto-entrepreneur</strong> est très différent du salariat. Il n'y a pas de "salaire brut" à proprement parler, mais un <strong>chiffre d'affaires</strong> sur lequel sont appliquées des cotisations forfaitaires.</p>
 
-                <h3 class="text-lg font-semibold text-slate-900 mt-6">Taux de cotisations micro-entreprise 2025</h3>
+                <h3 class="text-lg font-semibold text-slate-900 mt-6">Taux de cotisations micro-entreprise 2026</h3>
                 <ul class="space-y-1">
                     <li><strong>Prestations de services (BIC)</strong> : 21,2% du CA</li>
                     <li><strong>Prestations de services (BNC)</strong> : 21,1% du CA</li>
@@ -370,17 +370,17 @@ def gen_status_pages():
         },
         {
             "slug": "salaire-brut-net-alternance-apprentissage",
-            "title": "Salaire Brut Net Alternance et Apprentissage 2025",
-            "desc": "Calculez votre salaire brut en net en alternance ou apprentissage. Exonérations, grille de rémunération et simulateur 2025.",
+            "title": "Salaire Brut Net Alternance et Apprentissage 2026",
+            "desc": "Calculez votre salaire brut en net en alternance ou apprentissage. Exonérations, grille de rémunération et simulateur 2026.",
             "kw": "salaire alternance brut net, apprentissage brut net, rémunération alternant, salaire apprenti net",
-            "h1": "Salaire Brut Net <span class=\"text-brand-600\">Alternance</span> 2025",
+            "h1": "Salaire Brut Net <span class=\"text-brand-600\">Alternance</span> 2026",
             "statut_default": "non-cadre",
             "content": """
                 <h2 class="text-xl font-semibold text-slate-900 mt-8">Rémunération en alternance et apprentissage</h2>
                 <p>Les apprentis et alternants bénéficient d'un régime spécial : leur rémunération est calculée en <strong>pourcentage du SMIC</strong> et ils sont largement exonérés de cotisations sociales salariales.</p>
 
-                <h3 class="text-lg font-semibold text-slate-900 mt-6">Grille de rémunération apprentissage 2025</h3>
-                <p>La rémunération minimum dépend de l'âge et de l'année d'apprentissage (base SMIC 2025 : 1 801,80 € brut) :</p>
+                <h3 class="text-lg font-semibold text-slate-900 mt-6">Grille de rémunération apprentissage 2026</h3>
+                <p>La rémunération minimum dépend de l'âge et de l'année d'apprentissage (base SMIC 2026 : 1 801,80 € brut) :</p>
                 <ul class="space-y-1">
                     <li><strong>16-17 ans</strong> : 27% (1ère année) → 39% (2e) → 55% (3e) du SMIC</li>
                     <li><strong>18-20 ans</strong> : 43% → 51% → 67% du SMIC</li>
@@ -403,16 +403,16 @@ def gen_status_pages():
         },
         {
             "slug": "salaire-brut-net-stage",
-            "title": "Salaire Brut Net Stage 2025 : Gratification Stagiaire",
-            "desc": "Calculez la gratification de stage brut en net. Seuil d'exonération, cotisations stagiaire et montant minimum 2025.",
+            "title": "Salaire Brut Net Stage 2026 : Gratification Stagiaire",
+            "desc": "Calculez la gratification de stage brut en net. Seuil d'exonération, cotisations stagiaire et montant minimum 2026.",
             "kw": "gratification stage brut net, salaire stagiaire net, stage rémunération, indemnité stage cotisations",
-            "h1": "Gratification de <span class=\"text-brand-600\">Stage</span> Brut Net 2025",
+            "h1": "Gratification de <span class=\"text-brand-600\">Stage</span> Brut Net 2026",
             "statut_default": "non-cadre",
             "content": """
-                <h2 class="text-xl font-semibold text-slate-900 mt-8">La gratification de stage en 2025</h2>
+                <h2 class="text-xl font-semibold text-slate-900 mt-8">La gratification de stage en 2026</h2>
                 <p>Les stages de plus de 2 mois consécutifs doivent obligatoirement être rémunérés. On parle de <strong>gratification</strong> et non de salaire, car le stagiaire n'est pas un salarié.</p>
 
-                <h3 class="text-lg font-semibold text-slate-900 mt-6">Montant minimum 2025</h3>
+                <h3 class="text-lg font-semibold text-slate-900 mt-6">Montant minimum 2026</h3>
                 <p>La gratification minimum est de <strong>4,35 € par heure</strong>, soit environ <strong>669 € par mois</strong> pour un temps plein (154 heures). Ce montant correspond à 15% du plafond horaire de la Sécurité sociale.</p>
 
                 <h3 class="text-lg font-semibold text-slate-900 mt-6">Brut = Net pour les stagiaires</h3>
@@ -429,10 +429,10 @@ def gen_status_pages():
         },
         {
             "slug": "salaire-brut-net-interim",
-            "title": "Salaire Brut Net Intérim 2025 : Calcul Intérimaire",
-            "desc": "Calculez votre salaire brut en net en intérim. IFM, ICCP, cotisations intérimaire et simulateur gratuit 2025.",
+            "title": "Salaire Brut Net Intérim 2026 : Calcul Intérimaire",
+            "desc": "Calculez votre salaire brut en net en intérim. IFM, ICCP, cotisations intérimaire et simulateur gratuit 2026.",
             "kw": "salaire intérim brut net, brut net intérimaire, IFM, indemnité fin de mission, ICCP",
-            "h1": "Salaire Brut Net <span class=\"text-brand-600\">Intérim</span> 2025",
+            "h1": "Salaire Brut Net <span class=\"text-brand-600\">Intérim</span> 2026",
             "statut_default": "non-cadre",
             "content": """
                 <h2 class="text-xl font-semibold text-slate-900 mt-8">Rémunération en intérim</h2>
@@ -487,14 +487,14 @@ def gen_period_pages():
     pages = [
         {
             "slug": "salaire-brut-net-mensuel",
-            "title": "Salaire Brut Net Mensuel 2025 : Calcul Mois par Mois",
-            "desc": "Convertissez votre salaire brut mensuel en net. Cotisations détaillées mois par mois, cadre et non-cadre. Calculateur gratuit 2025.",
+            "title": "Salaire Brut Net Mensuel 2026 : Calcul Mois par Mois",
+            "desc": "Convertissez votre salaire brut mensuel en net. Cotisations détaillées mois par mois, cadre et non-cadre. Calculateur gratuit 2026.",
             "kw": "salaire brut net mensuel, brut en net par mois, calcul salaire mensuel",
-            "h1": "Salaire Brut Net <span class=\"text-brand-600\">Mensuel</span> 2025",
+            "h1": "Salaire Brut Net <span class=\"text-brand-600\">Mensuel</span> 2026",
             "content": """
                 <h2 class="text-xl font-semibold text-slate-900 mt-8">Calcul mensuel du salaire brut en net</h2>
                 <p>Le <strong>salaire brut mensuel</strong> est le montant le plus couramment utilisé dans les contrats de travail et les fiches de paie en France. C'est la base de référence pour calculer vos cotisations et votre salaire net.</p>
-                <p>Pour convertir votre brut mensuel en net, il faut déduire environ <strong>22% de cotisations salariales</strong> (non-cadre) ou <strong>25%</strong> (cadre). Le montant exact dépend de votre niveau de salaire par rapport au <strong>plafond de la Sécurité sociale</strong> (3 864 €/mois en 2025).</p>
+                <p>Pour convertir votre brut mensuel en net, il faut déduire environ <strong>22% de cotisations salariales</strong> (non-cadre) ou <strong>25%</strong> (cadre). Le montant exact dépend de votre niveau de salaire par rapport au <strong>plafond de la Sécurité sociale</strong> (3 864 €/mois en 2026).</p>
                 <h3 class="text-lg font-semibold text-slate-900 mt-6">Tableau rapide brut → net mensuel</h3>
                 <ul>
                     <li><a href="/1500-euros-brut-en-net/" class="text-brand-600">1 500 € brut/mois</a> → ~1 170 € net</li>
@@ -508,10 +508,10 @@ def gen_period_pages():
         },
         {
             "slug": "salaire-brut-net-annuel",
-            "title": "Salaire Brut Net Annuel 2025 : Conversion Année Complète",
+            "title": "Salaire Brut Net Annuel 2026 : Conversion Année Complète",
             "desc": "Convertissez votre salaire brut annuel en net annuel. Calculateur gratuit avec détail des cotisations sur 12 mois.",
             "kw": "salaire brut net annuel, brut en net par an, salaire annuel net, conversion annuelle",
-            "h1": "Salaire Brut Net <span class=\"text-brand-600\">Annuel</span> 2025",
+            "h1": "Salaire Brut Net <span class=\"text-brand-600\">Annuel</span> 2026",
             "content": """
                 <h2 class="text-xl font-semibold text-slate-900 mt-8">Du brut annuel au net annuel</h2>
                 <p>Le <strong>salaire brut annuel</strong> est souvent mentionné dans les offres d'emploi et les contrats de travail. Pour obtenir votre net annuel, divisez par 12 pour obtenir le brut mensuel, puis appliquez les cotisations.</p>
@@ -530,16 +530,16 @@ def gen_period_pages():
         },
         {
             "slug": "salaire-brut-net-horaire",
-            "title": "Salaire Brut Net Horaire 2025 : Taux Horaire Brut en Net",
-            "desc": "Convertissez votre taux horaire brut en net. Calcul sur base 35h/semaine, SMIC horaire et simulateur gratuit 2025.",
+            "title": "Salaire Brut Net Horaire 2026 : Taux Horaire Brut en Net",
+            "desc": "Convertissez votre taux horaire brut en net. Calcul sur base 35h/semaine, SMIC horaire et simulateur gratuit 2026.",
             "kw": "taux horaire brut net, salaire horaire brut en net, smic horaire net, brut en net heure",
-            "h1": "Taux Horaire <span class=\"text-brand-600\">Brut Net</span> 2025",
+            "h1": "Taux Horaire <span class=\"text-brand-600\">Brut Net</span> 2026",
             "content": """
                 <h2 class="text-xl font-semibold text-slate-900 mt-8">Convertir un taux horaire brut en net</h2>
                 <p>Pour convertir un <strong>taux horaire brut en net</strong>, la méthode est simple : appliquez le même coefficient que pour le salaire mensuel, soit environ <strong>×0,78</strong> (non-cadre) ou <strong>×0,75</strong> (cadre).</p>
                 <h3 class="text-lg font-semibold text-slate-900 mt-6">Base de calcul</h3>
                 <p>En France, la durée légale du travail est de <strong>35 heures par semaine</strong>, soit <strong>151,67 heures par mois</strong> (35h × 52 semaines / 12 mois). Pour passer du taux horaire au salaire mensuel : taux horaire × 151,67.</p>
-                <h3 class="text-lg font-semibold text-slate-900 mt-6">SMIC horaire 2025</h3>
+                <h3 class="text-lg font-semibold text-slate-900 mt-6">SMIC horaire 2026</h3>
                 <ul>
                     <li><strong>SMIC brut horaire</strong> : 11,88 €</li>
                     <li><strong>SMIC net horaire</strong> : ~9,27 € (non-cadre)</li>
@@ -558,10 +558,10 @@ def gen_period_pages():
         },
         {
             "slug": "salaire-brut-net-journalier",
-            "title": "Salaire Brut Net Journalier 2025 : Calcul par Jour",
-            "desc": "Convertissez votre salaire brut journalier en net. Calcul sur base 7h/jour, TJM freelance et simulateur 2025.",
+            "title": "Salaire Brut Net Journalier 2026 : Calcul par Jour",
+            "desc": "Convertissez votre salaire brut journalier en net. Calcul sur base 7h/jour, TJM freelance et simulateur 2026.",
             "kw": "salaire journalier brut net, TJM brut net, taux journalier net, salaire par jour",
-            "h1": "Salaire <span class=\"text-brand-600\">Journalier</span> Brut Net 2025",
+            "h1": "Salaire <span class=\"text-brand-600\">Journalier</span> Brut Net 2026",
             "content": """
                 <h2 class="text-xl font-semibold text-slate-900 mt-8">Calcul du salaire journalier brut en net</h2>
                 <p>Le <strong>salaire journalier</strong> se calcule sur une base de <strong>7 heures par jour</strong> (35h / 5 jours). Il y a en moyenne <strong>21,67 jours ouvrés par mois</strong> (260 jours / 12 mois).</p>
@@ -585,8 +585,8 @@ def gen_period_pages():
         },
         {
             "slug": "taux-horaire-brut-net",
-            "title": "Taux Horaire Brut Net 2025 : Convertisseur Horaire",
-            "desc": "Convertissez votre taux horaire brut en net et inversement. Base 35h, SMIC horaire et calculateur gratuit 2025.",
+            "title": "Taux Horaire Brut Net 2026 : Convertisseur Horaire",
+            "desc": "Convertissez votre taux horaire brut en net et inversement. Base 35h, SMIC horaire et calculateur gratuit 2026.",
             "kw": "taux horaire brut net, convertir taux horaire, brut net heure, salaire horaire calcul",
             "h1": "Convertisseur <span class=\"text-brand-600\">Taux Horaire</span> Brut Net",
             "content": """
@@ -640,8 +640,8 @@ def gen_content_pages():
     pages = [
         {
             "slug": "difference-salaire-brut-net",
-            "title": "Différence entre Salaire Brut et Net 2025 : Explications Complètes",
-            "desc": "Comprendre la différence entre salaire brut et salaire net. Cotisations sociales, calcul détaillé et exemples concrets pour 2025.",
+            "title": "Différence entre Salaire Brut et Net 2026 : Explications Complètes",
+            "desc": "Comprendre la différence entre salaire brut et salaire net. Cotisations sociales, calcul détaillé et exemples concrets pour 2026.",
             "kw": "différence brut net, c'est quoi le salaire brut, salaire brut vs net, explication brut net",
             "content": """
                 <h2 class="text-xl font-semibold text-slate-900">Qu'est-ce que le salaire brut ?</h2>
@@ -680,14 +680,14 @@ def gen_content_pages():
         },
         {
             "slug": "cotisations-sociales-salariales",
-            "title": "Cotisations Sociales Salariales 2025 : Détail et Taux Complets",
-            "desc": "Détail complet des cotisations sociales salariales 2025. Taux, assiettes, plafonds et explication de chaque cotisation prélevée sur votre salaire brut.",
-            "kw": "cotisations sociales salariales, charges salariales, taux cotisations 2025, détail cotisations",
+            "title": "Cotisations Sociales Salariales 2026 : Détail et Taux Complets",
+            "desc": "Détail complet des cotisations sociales salariales 2026. Taux, assiettes, plafonds et explication de chaque cotisation prélevée sur votre salaire brut.",
+            "kw": "cotisations sociales salariales, charges salariales, taux cotisations 2026, détail cotisations",
             "content": """
                 <h2 class="text-xl font-semibold text-slate-900">Les cotisations sociales en France</h2>
-                <p>Les <strong>cotisations sociales salariales</strong> sont des prélèvements obligatoires sur votre salaire brut qui financent la protection sociale : retraite, maladie, chômage, etc. Voici le détail complet pour 2025.</p>
+                <p>Les <strong>cotisations sociales salariales</strong> sont des prélèvements obligatoires sur votre salaire brut qui financent la protection sociale : retraite, maladie, chômage, etc. Voici le détail complet pour 2026.</p>
 
-                <h2 class="text-xl font-semibold text-slate-900 mt-8">Tableau des cotisations salariales 2025</h2>
+                <h2 class="text-xl font-semibold text-slate-900 mt-8">Tableau des cotisations salariales 2026</h2>
                 <table class="w-full text-sm border-collapse mt-4">
                     <thead><tr class="border-b-2 border-slate-300">
                         <th class="py-2 text-left">Cotisation</th><th class="py-2 text-right">Taux</th><th class="py-2 text-right">Assiette</th>
@@ -707,7 +707,7 @@ def gen_content_pages():
                 </table>
 
                 <h2 class="text-xl font-semibold text-slate-900 mt-8">Le Plafond de la Sécurité Sociale (PSS)</h2>
-                <p>En 2025, le PSS est de <strong>3 864 €/mois</strong> (46 368 €/an). Les cotisations en "Tranche 1" s'appliquent jusqu'à ce plafond. Au-delà, ce sont les cotisations "Tranche 2" qui prennent le relais.</p>
+                <p>En 2026, le PSS est de <strong>3 864 €/mois</strong> (46 368 €/an). Les cotisations en "Tranche 1" s'appliquent jusqu'à ce plafond. Au-delà, ce sont les cotisations "Tranche 2" qui prennent le relais.</p>
 
                 <h2 class="text-xl font-semibold text-slate-900 mt-8">À quoi servent ces cotisations ?</h2>
                 <ul class="space-y-2">
@@ -721,8 +721,8 @@ def gen_content_pages():
         },
         {
             "slug": "salaire-net-avant-apres-impot",
-            "title": "Salaire Net Avant et Après Impôt 2025 : Comprendre la Différence",
-            "desc": "Différence entre net avant impôt et net après impôt. Prélèvement à la source, net imposable et calcul détaillé 2025.",
+            "title": "Salaire Net Avant et Après Impôt 2026 : Comprendre la Différence",
+            "desc": "Différence entre net avant impôt et net après impôt. Prélèvement à la source, net imposable et calcul détaillé 2026.",
             "kw": "net avant impôt, net après impôt, prélèvement à la source, net imposable, salaire net impôt",
             "content": """
                 <h2 class="text-xl font-semibold text-slate-900">Net avant impôt vs net après impôt</h2>
@@ -751,14 +751,14 @@ def gen_content_pages():
         },
         {
             "slug": "cout-employeur",
-            "title": "Coût Employeur 2025 : Calcul du Super-Brut et Charges Patronales",
-            "desc": "Calculez le coût total employeur (super-brut). Détail des cotisations patronales, charges et simulateur gratuit 2025.",
+            "title": "Coût Employeur 2026 : Calcul du Super-Brut et Charges Patronales",
+            "desc": "Calculez le coût total employeur (super-brut). Détail des cotisations patronales, charges et simulateur gratuit 2026.",
             "kw": "coût employeur, super brut, charges patronales, cotisations patronales, coût salarié entreprise",
             "content": """
                 <h2 class="text-xl font-semibold text-slate-900">Qu'est-ce que le coût employeur ?</h2>
                 <p>Le <strong>coût employeur</strong> (ou "super-brut") est le montant total que l'entreprise dépense pour employer un salarié. Il comprend le salaire brut + les cotisations patronales. En moyenne, le coût employeur représente environ <strong>1,45 fois le salaire brut</strong>.</p>
 
-                <h2 class="text-xl font-semibold text-slate-900 mt-8">Cotisations patronales 2025</h2>
+                <h2 class="text-xl font-semibold text-slate-900 mt-8">Cotisations patronales 2026</h2>
                 <table class="w-full text-sm border-collapse mt-4">
                     <thead><tr class="border-b-2 border-slate-300">
                         <th class="py-2 text-left">Cotisation</th><th class="py-2 text-right">Taux</th><th class="py-2 text-right">Assiette</th>
@@ -788,9 +788,9 @@ def gen_content_pages():
         },
         {
             "slug": "lire-fiche-de-paie",
-            "title": "Comprendre sa Fiche de Paie 2025 : Guide Ligne par Ligne",
+            "title": "Comprendre sa Fiche de Paie 2026 : Guide Ligne par Ligne",
             "desc": "Guide complet pour lire et comprendre votre fiche de paie. Chaque ligne expliquée : brut, cotisations, net imposable, net à payer.",
-            "kw": "comprendre fiche de paie, lire bulletin de salaire, explication fiche de paie, bulletin de paie 2025",
+            "kw": "comprendre fiche de paie, lire bulletin de salaire, explication fiche de paie, bulletin de paie 2026",
             "content": """
                 <h2 class="text-xl font-semibold text-slate-900">Les zones de votre fiche de paie</h2>
                 <p>Votre <strong>bulletin de salaire</strong> se divise en plusieurs zones distinctes. Voici un guide pour comprendre chacune d'entre elles.</p>
@@ -823,15 +823,15 @@ def gen_content_pages():
             """
         },
         {
-            "slug": "smic-brut-net-2025",
-            "title": "SMIC 2025 Brut et Net : Montant Mensuel, Horaire et Annuel",
-            "desc": "SMIC 2025 brut et net : montant mensuel (1 801,80€ brut → 1 426€ net), horaire (11,88€) et annuel. Calcul détaillé et évolution.",
-            "kw": "smic 2025, smic brut net, smic mensuel 2025, smic horaire 2025, smic net",
+            "slug": "smic-brut-net-2026",
+            "title": "SMIC 2026 Brut et Net : Montant Mensuel, Horaire et Annuel",
+            "desc": "SMIC 2026 brut et net : montant mensuel (1 801,80€ brut → 1 426€ net), horaire (11,88€) et annuel. Calcul détaillé et évolution.",
+            "kw": "smic 2026, smic brut net, smic mensuel 2026, smic horaire 2026, smic net",
             "content": """
-                <h2 class="text-xl font-semibold text-slate-900">Le SMIC en 2025</h2>
+                <h2 class="text-xl font-semibold text-slate-900">Le SMIC en 2026</h2>
                 <p>Le <strong>SMIC</strong> (Salaire Minimum Interprofessionnel de Croissance) est le salaire minimum légal en France. Il est revalorisé chaque année au 1er janvier.</p>
 
-                <h2 class="text-xl font-semibold text-slate-900 mt-8">Montants du SMIC 2025</h2>
+                <h2 class="text-xl font-semibold text-slate-900 mt-8">Montants du SMIC 2026</h2>
                 <table class="w-full text-sm border-collapse mt-4">
                     <thead><tr class="border-b-2 border-slate-300">
                         <th class="py-2 text-left">Période</th><th class="py-2 text-right">Brut</th><th class="py-2 text-right">Net (≈)</th>
@@ -857,14 +857,14 @@ def gen_content_pages():
         },
         {
             "slug": "salaire-moyen-france",
-            "title": "Salaire Moyen en France 2025 : Statistiques Brut et Net",
-            "desc": "Salaire moyen et médian en France en 2025. Statistiques par âge, secteur, région. Brut et net comparés.",
-            "kw": "salaire moyen france, salaire médian france, salaire moyen 2025, statistiques salaire",
+            "title": "Salaire Moyen en France 2026 : Statistiques Brut et Net",
+            "desc": "Salaire moyen et médian en France en 2026. Statistiques par âge, secteur, région. Brut et net comparés.",
+            "kw": "salaire moyen france, salaire médian france, salaire moyen 2026, statistiques salaire",
             "content": """
                 <h2 class="text-xl font-semibold text-slate-900">Salaire moyen vs salaire médian</h2>
                 <p>Le <strong>salaire moyen</strong> est la moyenne de tous les salaires : il est tiré vers le haut par les très hauts revenus. Le <strong>salaire médian</strong> est plus représentatif : la moitié des salariés gagne plus, l'autre moitié gagne moins.</p>
 
-                <h2 class="text-xl font-semibold text-slate-900 mt-8">Chiffres clés 2025</h2>
+                <h2 class="text-xl font-semibold text-slate-900 mt-8">Chiffres clés 2026</h2>
                 <ul>
                     <li><strong>Salaire brut moyen</strong> : environ 2 630 €/mois (privé, temps plein)</li>
                     <li><strong>Salaire net moyen</strong> : environ 2 050 €/mois</li>
@@ -886,7 +886,7 @@ def gen_content_pages():
         },
         {
             "slug": "negocier-salaire",
-            "title": "Négocier son Salaire 2025 : Guide et Conseils Pratiques",
+            "title": "Négocier son Salaire 2026 : Guide et Conseils Pratiques",
             "desc": "Comment négocier son salaire à l'embauche ou lors d'un entretien annuel. Conseils pratiques, arguments et erreurs à éviter.",
             "kw": "négocier salaire, négociation salaire embauche, augmentation salaire, demander augmentation",
             "content": """
@@ -915,7 +915,7 @@ def gen_content_pages():
         },
         {
             "slug": "salaire-net-imposable",
-            "title": "Salaire Net Imposable 2025 : Définition et Calcul",
+            "title": "Salaire Net Imposable 2026 : Définition et Calcul",
             "desc": "Qu'est-ce que le salaire net imposable ? Différence avec le net à payer, calcul détaillé et impact sur le prélèvement à la source.",
             "kw": "salaire net imposable, net imposable calcul, différence net imposable net à payer",
             "content": """
@@ -942,8 +942,8 @@ def gen_content_pages():
         },
         {
             "slug": "avantages-en-nature",
-            "title": "Avantages en Nature 2025 : Impact sur le Salaire Brut et Net",
-            "desc": "Comment les avantages en nature (voiture, logement, repas) impactent votre salaire brut et net. Évaluation et cotisations 2025.",
+            "title": "Avantages en Nature 2026 : Impact sur le Salaire Brut et Net",
+            "desc": "Comment les avantages en nature (voiture, logement, repas) impactent votre salaire brut et net. Évaluation et cotisations 2026.",
             "kw": "avantages en nature, voiture de fonction brut net, logement de fonction, avantages salaire",
             "content": """
                 <h2 class="text-xl font-semibold text-slate-900">Qu'est-ce qu'un avantage en nature ?</h2>
@@ -953,7 +953,7 @@ def gen_content_pages():
                 <ul class="space-y-2">
                     <li><strong>Voiture de fonction</strong> : évaluation forfaitaire de 9% à 12% du prix d'achat TTC/an, ou au réel (usage personnel)</li>
                     <li><strong>Logement de fonction</strong> : évaluation forfaitaire selon barème ou valeur locative</li>
-                    <li><strong>Repas</strong> : 5,35 € par repas en 2025 (forfait URSSAF)</li>
+                    <li><strong>Repas</strong> : 5,35 € par repas en 2026 (forfait URSSAF)</li>
                     <li><strong>Téléphone/ordinateur</strong> : 10% du prix d'achat par an (usage mixte)</li>
                 </ul>
 
@@ -964,8 +964,8 @@ def gen_content_pages():
         },
         {
             "slug": "heures-supplementaires-brut-net",
-            "title": "Heures Supplémentaires Brut en Net 2025 : Calcul et Exonérations",
-            "desc": "Calculez vos heures supplémentaires brut en net. Majoration 25-50%, exonération fiscale et plafond 2025.",
+            "title": "Heures Supplémentaires Brut en Net 2026 : Calcul et Exonérations",
+            "desc": "Calculez vos heures supplémentaires brut en net. Majoration 25-50%, exonération fiscale et plafond 2026.",
             "kw": "heures supplémentaires brut net, calcul heures sup, majoration heures supplémentaires, exonération heures sup",
             "content": """
                 <h2 class="text-xl font-semibold text-slate-900">Majoration des heures supplémentaires</h2>
@@ -991,8 +991,8 @@ def gen_content_pages():
         },
         {
             "slug": "prime-brut-en-net",
-            "title": "Prime Brut en Net 2025 : Calcul des Primes et Cotisations",
-            "desc": "Convertissez une prime brute en net. Primes exceptionnelles, 13ème mois, intéressement : cotisations et fiscalité 2025.",
+            "title": "Prime Brut en Net 2026 : Calcul des Primes et Cotisations",
+            "desc": "Convertissez une prime brute en net. Primes exceptionnelles, 13ème mois, intéressement : cotisations et fiscalité 2026.",
             "kw": "prime brut en net, calcul prime nette, prime exceptionnelle cotisations, convertir prime",
             "content": """
                 <h2 class="text-xl font-semibold text-slate-900">Comment convertir une prime brute en net ?</h2>
@@ -1018,8 +1018,8 @@ def gen_content_pages():
         },
         {
             "slug": "13eme-mois-brut-net",
-            "title": "13ème Mois Brut Net 2025 : Calcul et Cotisations",
-            "desc": "Calculez votre 13ème mois brut en net. Cotisations sociales, impact fiscal et modalités de versement 2025.",
+            "title": "13ème Mois Brut Net 2026 : Calcul et Cotisations",
+            "desc": "Calculez votre 13ème mois brut en net. Cotisations sociales, impact fiscal et modalités de versement 2026.",
             "kw": "13ème mois brut net, treizième mois cotisations, prime 13eme mois net, calcul 13eme mois",
             "content": """
                 <h2 class="text-xl font-semibold text-slate-900">Qu'est-ce que le 13ème mois ?</h2>
@@ -1045,7 +1045,7 @@ def gen_content_pages():
     for p in pages:
         html = page_head(p["title"], p["desc"], f'{BASE_URL}/{p["slug"]}/', p["kw"])
         html += HEADER
-        html += breadcrumb(p["title"].split(" :")[0].split(" 2025")[0])
+        html += breadcrumb(p["title"].split(" :")[0].split(" 2026")[0])
         html += f'''
         <section class="px-4 pb-6">
             <div class="mx-auto max-w-4xl">
@@ -1070,8 +1070,8 @@ def gen_content_pages():
 def gen_tool_pages():
     # Calculateur coût employeur
     html = page_head(
-        "Calculateur Coût Employeur 2025 : Simulez le Super-Brut",
-        "Calculez le coût total employeur (super-brut) pour un salarié. Cotisations patronales détaillées et simulateur gratuit 2025.",
+        "Calculateur Coût Employeur 2026 : Simulez le Super-Brut",
+        "Calculez le coût total employeur (super-brut) pour un salarié. Cotisations patronales détaillées et simulateur gratuit 2026.",
         f"{BASE_URL}/calculateur-cout-employeur/",
         "calculateur coût employeur, super brut, charges patronales, coût salarié"
     )
@@ -1080,7 +1080,7 @@ def gen_tool_pages():
     html += '''
         <section class="px-4 pb-6">
             <div class="mx-auto max-w-4xl">
-                <h1 class="text-2xl sm:text-3xl font-bold text-slate-900 mb-6">Calculateur <span class="text-brand-600">Coût Employeur</span> 2025</h1>
+                <h1 class="text-2xl sm:text-3xl font-bold text-slate-900 mb-6">Calculateur <span class="text-brand-600">Coût Employeur</span> 2026</h1>
                 <p class="text-slate-500">Calculez le coût total pour l'entreprise (super-brut) en incluant les cotisations patronales.</p>
             </div>
         </section>
@@ -1152,7 +1152,7 @@ def gen_tool_pages():
 
     # Comparateur salaire par pays
     html = page_head(
-        "Comparateur Salaire Net par Pays 2025 : France, Belgique, Suisse",
+        "Comparateur Salaire Net par Pays 2026 : France, Belgique, Suisse",
         "Comparez le salaire net dans différents pays européens. France vs Belgique vs Suisse vs Luxembourg : cotisations et pouvoir d'achat.",
         f"{BASE_URL}/comparateur-salaire-net-par-pays/",
         "comparateur salaire pays, salaire net france belgique suisse, salaire europe comparaison"
