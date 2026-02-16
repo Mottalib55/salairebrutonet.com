@@ -1,6 +1,7 @@
 # robots.txt for salairebrutonet.com
 User-agent: *
 Allow: /
+Disallow: /admin/
 
 # Sitemap
 Sitemap: https://salairebrutonet.com/sitemap.xml

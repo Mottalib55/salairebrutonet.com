@@ -308,7 +308,7 @@ def gen_status_pages():
         {
             "slug": "salaire-brut-net-cadre",
             "title": "Salaire Brut Net Cadre 2026 : Calcul et Cotisations",
-            "desc": "Calculez votre salaire brut en net en tant que cadre. Cotisations spécifiques cadre (CET, AGIRC-ARRCO), taux détaillés et simulateur gratuit 2026.",
+            "desc": "Calculez votre salaire brut en net cadre. Cotisations spécifiques CET et AGIRC-ARRCO, taux détaillés avec simulateur gratuit. Résultat instantané 2026.",
             "kw": "salaire brut net cadre, brut en net cadre, cotisations cadre, calcul salaire cadre",
             "h1": "Salaire Brut Net <span class=\"text-brand-600\">Cadre</span> 2026",
             "statut_default": "cadre",
@@ -434,7 +434,7 @@ def gen_status_pages():
         {
             "slug": "salaire-brut-net-non-cadre",
             "title": "Salaire Brut Net Non-Cadre 2026 : Calcul et Cotisations",
-            "desc": "Calculez votre salaire brut en net en tant que non-cadre. Taux de cotisations 2026, détail des charges et simulateur gratuit.",
+            "desc": "Calculez votre salaire brut en net non-cadre en 2026. Taux de cotisations salariales détaillés, charges sociales et simulateur gratuit avec résultat instantané.",
             "kw": "salaire brut net non cadre, brut en net non cadre, cotisations non cadre, employé",
             "h1": "Salaire Brut Net <span class=\"text-brand-600\">Non-Cadre</span> 2026",
             "statut_default": "non-cadre",
@@ -597,8 +597,8 @@ def gen_status_pages():
         },
         {
             "slug": "salaire-brut-net-fonction-publique",
-            "title": "Salaire Brut Net Fonction Publique 2026 : Calcul Fonctionnaire",
-            "desc": "Calculez votre salaire brut en net dans la fonction publique. Cotisations spécifiques fonctionnaire, taux réduits et simulateur gratuit 2026.",
+            "title": "Brut Net Fonction Publique 2026 : Calcul Fonctionnaire",
+            "desc": "Calculez votre salaire brut en net fonction publique en 2026. Cotisations spécifiques fonctionnaire, taux réduits et simulateur gratuit. Résultat instantané.",
             "kw": "salaire brut net fonction publique, brut net fonctionnaire, cotisations fonctionnaire, traitement brut net",
             "h1": "Salaire Brut Net <span class=\"text-brand-600\">Fonction Publique</span> 2026",
             "statut_default": "non-cadre",
@@ -749,7 +749,7 @@ def gen_status_pages():
         {
             "slug": "salaire-brut-net-auto-entrepreneur",
             "title": "Salaire Brut Net Auto-Entrepreneur 2026 : Calcul Revenus",
-            "desc": "Calculez vos revenus nets en auto-entrepreneur. Cotisations sociales micro-entreprise, abattement fiscal et simulateur 2026.",
+            "desc": "Calculez vos revenus nets en auto-entrepreneur et micro-entreprise en 2026. Cotisations sociales, abattement fiscal et simulateur gratuit. Résultat instantané.",
             "kw": "auto entrepreneur brut net, revenu net auto entrepreneur, charges micro entreprise, cotisations auto entrepreneur",
             "h1": "Revenus <span class=\"text-brand-600\">Auto-Entrepreneur</span> 2026",
             "statut_default": "non-cadre",
@@ -946,8 +946,8 @@ def gen_status_pages():
         },
         {
             "slug": "salaire-brut-net-alternance-apprentissage",
-            "title": "Salaire Brut Net Alternance et Apprentissage 2026",
-            "desc": "Calculez votre salaire brut en net en alternance ou apprentissage. Exonérations, grille de rémunération et simulateur 2026.",
+            "title": "Brut Net Alternance et Apprentissage 2026 : Simulateur",
+            "desc": "Calculez votre salaire brut en net en alternance ou apprentissage en 2026. Exonérations spécifiques, grille de rémunération par âge et simulateur gratuit.",
             "kw": "salaire alternance brut net, apprentissage brut net, rémunération alternant, salaire apprenti net",
             "h1": "Salaire Brut Net <span class=\"text-brand-600\">Alternance</span> 2026",
             "statut_default": "non-cadre",
@@ -1104,7 +1104,7 @@ def gen_status_pages():
         {
             "slug": "salaire-brut-net-stage",
             "title": "Salaire Brut Net Stage 2026 : Gratification Stagiaire",
-            "desc": "Calculez la gratification de stage brut en net. Seuil d'exonération, cotisations stagiaire et montant minimum 2026.",
+            "desc": "Calculez la gratification de stage brut en net 2026. Seuil d'exonération à 4,35€/h, cotisations détaillées et montant minimum légal. Simulateur gratuit.",
             "kw": "gratification stage brut net, salaire stagiaire net, stage rémunération, indemnité stage cotisations",
             "h1": "Gratification de <span class=\"text-brand-600\">Stage</span> Brut Net 2026",
             "statut_default": "non-cadre",
@@ -1275,7 +1275,7 @@ def gen_status_pages():
         {
             "slug": "salaire-brut-net-interim",
             "title": "Salaire Brut Net Intérim 2026 : Calcul Intérimaire",
-            "desc": "Calculez votre salaire brut en net en intérim. IFM, ICCP, cotisations intérimaire et simulateur gratuit 2026.",
+            "desc": "Calculez votre salaire brut en net en intérim en 2026. IFM (10%), ICCP (10%), cotisations spécifiques intérimaire et simulateur gratuit. Résultat instantané.",
             "kw": "salaire intérim brut net, brut net intérimaire, IFM, indemnité fin de mission, ICCP",
             "h1": "Salaire Brut Net <span class=\"text-brand-600\">Intérim</span> 2026",
             "statut_default": "non-cadre",
@@ -1586,7 +1586,7 @@ def gen_period_pages():
         {
             "slug": "salaire-brut-net-mensuel",
             "title": "Salaire Brut Net Mensuel 2026 : Calcul Mois par Mois",
-            "desc": "Convertissez votre salaire brut mensuel en net. Cotisations détaillées mois par mois, cadre et non-cadre. Calculateur gratuit 2026.",
+            "desc": "Convertissez votre salaire brut mensuel en net en 2026. Cotisations salariales détaillées mois par mois, cadre et non-cadre. Calculateur gratuit instantané.",
             "kw": "salaire brut net mensuel, brut en net par mois, calcul salaire mensuel",
             "h1": "Salaire Brut Net <span class=\"text-brand-600\">Mensuel</span> 2026",
             "content": """
@@ -1724,7 +1724,7 @@ def gen_period_pages():
         {
             "slug": "salaire-brut-net-annuel",
             "title": "Salaire Brut Net Annuel 2026 : Conversion Année Complète",
-            "desc": "Convertissez votre salaire brut annuel en net annuel. Calculateur gratuit avec détail des cotisations sur 12 mois.",
+            "desc": "Convertissez votre salaire brut annuel en net annuel en 2026. Calculateur gratuit avec détail des cotisations salariales sur 12 mois, cadre et non-cadre.",
             "kw": "salaire brut net annuel, brut en net par an, salaire annuel net, conversion annuelle",
             "h1": "Salaire Brut Net <span class=\"text-brand-600\">Annuel</span> 2026",
             "content": """
@@ -1858,7 +1858,7 @@ def gen_period_pages():
         {
             "slug": "salaire-brut-net-horaire",
             "title": "Salaire Brut Net Horaire 2026 : Taux Horaire Brut en Net",
-            "desc": "Convertissez votre taux horaire brut en net. Calcul sur base 35h/semaine, SMIC horaire et simulateur gratuit 2026.",
+            "desc": "Convertissez votre taux horaire brut en net en 2026. Calcul sur base 35h/semaine, SMIC horaire à 11,88€ et simulateur gratuit avec résultat instantané.",
             "kw": "taux horaire brut net, salaire horaire brut en net, smic horaire net, brut en net heure",
             "h1": "Taux Horaire <span class=\"text-brand-600\">Brut Net</span> 2026",
             "content": """
@@ -2003,7 +2003,7 @@ def gen_period_pages():
         {
             "slug": "salaire-brut-net-journalier",
             "title": "Salaire Brut Net Journalier 2026 : Calcul par Jour",
-            "desc": "Convertissez votre salaire brut journalier en net. Calcul sur base 7h/jour, TJM freelance et simulateur 2026.",
+            "desc": "Convertissez votre salaire brut journalier en net en 2026. Calcul sur base 7h/jour ou 151,67h/mois, TJM freelance et simulateur gratuit. Résultat instantané.",
             "kw": "salaire journalier brut net, TJM brut net, taux journalier net, salaire par jour",
             "h1": "Salaire <span class=\"text-brand-600\">Journalier</span> Brut Net 2026",
             "content": """
@@ -2187,7 +2187,7 @@ def gen_period_pages():
         {
             "slug": "taux-horaire-brut-net",
             "title": "Taux Horaire Brut Net 2026 : Convertisseur Horaire",
-            "desc": "Convertissez votre taux horaire brut en net et inversement. Base 35h, SMIC horaire et calculateur gratuit 2026.",
+            "desc": "Convertissez votre taux horaire brut en net et inversement en 2026. Base 35h/semaine, SMIC horaire à 11,88€ et calculateur gratuit avec résultat instantané.",
             "kw": "taux horaire brut net, convertir taux horaire, brut net heure, salaire horaire calcul",
             "h1": "Convertisseur <span class=\"text-brand-600\">Taux Horaire</span> Brut Net",
             "content": """
@@ -2437,8 +2437,8 @@ def gen_content_pages():
     pages = [
         {
             "slug": "difference-salaire-brut-net",
-            "title": "Différence entre Salaire Brut et Net 2026 : Explications Complètes",
-            "desc": "Comprendre la différence entre salaire brut et salaire net. Cotisations sociales, calcul détaillé et exemples concrets pour 2026.",
+            "title": "Différence Salaire Brut et Net 2026 : Explications",
+            "desc": "Comprendre la différence entre salaire brut et net en 2026. Cotisations sociales détaillées, calcul étape par étape et exemples concrets pour chaque statut.",
             "kw": "différence brut net, c'est quoi le salaire brut, salaire brut vs net, explication brut net",
             "content": """
                 <h2 class="text-xl font-semibold text-slate-900">Qu'est-ce que le salaire brut ?</h2>
@@ -2535,7 +2535,7 @@ def gen_content_pages():
         },
         {
             "slug": "cotisations-sociales-salariales",
-            "title": "Cotisations Sociales Salariales 2026 : Détail et Taux Complets",
+            "title": "Cotisations Sociales Salariales 2026 : Taux Complets",
             "desc": "Détail complet des cotisations sociales salariales 2026. Taux, assiettes, plafonds et explication de chaque cotisation prélevée sur votre salaire brut.",
             "kw": "cotisations sociales salariales, charges salariales, taux cotisations 2026, détail cotisations",
             "content": """
@@ -2650,8 +2650,8 @@ def gen_content_pages():
         },
         {
             "slug": "salaire-net-avant-apres-impot",
-            "title": "Salaire Net Avant et Après Impôt 2026 : Comprendre la Différence",
-            "desc": "Différence entre net avant impôt et net après impôt. Prélèvement à la source, net imposable et calcul détaillé 2026.",
+            "title": "Net Avant et Après Impôt 2026 : Comprendre l'Écart",
+            "desc": "Différence entre net avant impôt et net après impôt en 2026. Prélèvement à la source, net imposable et calcul détaillé. Ce que vous touchez chaque mois.",
             "kw": "net avant impôt, net après impôt, prélèvement à la source, net imposable, salaire net impôt",
             "content": """
                 <h2 class="text-xl font-semibold text-slate-900">Net avant impôt vs net après impôt</h2>
@@ -2792,8 +2792,8 @@ def gen_content_pages():
         },
         {
             "slug": "cout-employeur",
-            "title": "Coût Employeur 2026 : Calcul du Super-Brut et Charges Patronales",
-            "desc": "Calculez le coût total employeur (super-brut). Détail des cotisations patronales, charges et simulateur gratuit 2026.",
+            "title": "Coût Employeur 2026 : Super-Brut et Charges Patronales",
+            "desc": "Calculez le coût total employeur (super-brut) en 2026. Détail de chaque cotisation patronale, charges sociales complètes et simulateur gratuit instantané.",
             "kw": "coût employeur, super brut, charges patronales, cotisations patronales, coût salarié entreprise",
             "content": """
                 <h2 class="text-xl font-semibold text-slate-900">Qu'est-ce que le coût employeur ?</h2>
@@ -2966,7 +2966,7 @@ def gen_content_pages():
         {
             "slug": "lire-fiche-de-paie",
             "title": "Comprendre sa Fiche de Paie 2026 : Guide Ligne par Ligne",
-            "desc": "Guide complet pour lire et comprendre votre fiche de paie. Chaque ligne expliquée : brut, cotisations, net imposable, net à payer.",
+            "desc": "Guide complet pour lire et comprendre votre fiche de paie en 2026. Chaque ligne expliquée : salaire brut, cotisations salariales, net imposable et net à payer.",
             "kw": "comprendre fiche de paie, lire bulletin de salaire, explication fiche de paie, bulletin de paie 2026",
             "content": """
                 <h2 class="text-xl font-semibold text-slate-900">Pourquoi comprendre sa fiche de paie ?</h2>
@@ -3168,7 +3168,7 @@ def gen_content_pages():
         {
             "slug": "smic-brut-net-2026",
             "title": "SMIC 2026 Brut et Net : Montant Mensuel, Horaire et Annuel",
-            "desc": "SMIC 2026 brut et net : montant mensuel (1 801,80€ brut → 1 426€ net), horaire (11,88€) et annuel. Calcul détaillé et évolution.",
+            "desc": "SMIC 2026 : 1 801,80€ brut soit 1 426€ net par mois, 11,88€ brut de l'heure. Montant annuel, calcul détaillé des cotisations et évolution depuis 2020.",
             "kw": "smic 2026, smic brut net, smic mensuel 2026, smic horaire 2026, smic net",
             "content": """
                 <h2 class="text-xl font-semibold text-slate-900">Le SMIC en 2026 : définition et montants</h2>
@@ -3323,7 +3323,7 @@ def gen_content_pages():
         {
             "slug": "salaire-moyen-france",
             "title": "Salaire Moyen en France 2026 : Statistiques Brut et Net",
-            "desc": "Salaire moyen et médian en France en 2026. Statistiques par âge, secteur, région. Brut et net comparés.",
+            "desc": "Salaire moyen et médian en France en 2026 : statistiques détaillées par âge, secteur d'activité et région. Brut et net comparés avec écarts cadre et non-cadre.",
             "kw": "salaire moyen france, salaire médian france, salaire moyen 2026, statistiques salaire",
             "content": """
                 <h2 class="text-xl font-semibold text-slate-900">Salaire moyen vs salaire médian : quelle différence ?</h2>
@@ -3496,7 +3496,7 @@ def gen_content_pages():
         {
             "slug": "negocier-salaire",
             "title": "Négocier son Salaire 2026 : Guide et Conseils Pratiques",
-            "desc": "Comment négocier son salaire à l'embauche ou lors d'un entretien annuel. Conseils pratiques, arguments et erreurs à éviter.",
+            "desc": "Comment négocier son salaire brut à l'embauche ou lors d'un entretien annuel en 2026. Conseils pratiques, arguments chiffrés et erreurs courantes à éviter.",
             "kw": "négocier salaire, négociation salaire embauche, augmentation salaire, demander augmentation",
             "content": """
                 <h2 class="text-xl font-semibold text-slate-900">Pourquoi il est essentiel de négocier son salaire</h2>
@@ -3671,8 +3671,8 @@ def gen_content_pages():
         },
         {
             "slug": "salaire-net-imposable",
-            "title": "Salaire Net Imposable 2026 : Définition et Calcul",
-            "desc": "Qu'est-ce que le salaire net imposable ? Différence avec le net à payer, calcul détaillé et impact sur le prélèvement à la source.",
+            "title": "Salaire Net Imposable 2026 : Définition et Calcul Détaillé",
+            "desc": "Qu'est-ce que le salaire net imposable en 2026 ? Différence avec le net à payer, calcul détaillé et impact direct sur votre prélèvement à la source chaque mois.",
             "kw": "salaire net imposable, net imposable calcul, différence net imposable net à payer",
             "content": """
                 <h2 class="text-xl font-semibold text-slate-900">Qu'est-ce que le salaire net imposable ?</h2>
@@ -3834,8 +3834,8 @@ def gen_content_pages():
         },
         {
             "slug": "avantages-en-nature",
-            "title": "Avantages en Nature 2026 : Impact sur le Salaire Brut et Net",
-            "desc": "Comment les avantages en nature (voiture, logement, repas) impactent votre salaire brut et net. Évaluation et cotisations 2026.",
+            "title": "Avantages en Nature 2026 : Impact sur le Salaire Brut Net",
+            "desc": "Comment les avantages en nature (voiture, logement, repas) impactent votre salaire brut et net en 2026. Barèmes d'évaluation forfaitaire et fiscalité détaillée.",
             "kw": "avantages en nature, voiture de fonction brut net, logement de fonction, avantages salaire",
             "content": """
                 <h2 class="text-xl font-semibold text-slate-900">Qu'est-ce qu'un avantage en nature ?</h2>
@@ -4001,8 +4001,8 @@ def gen_content_pages():
         },
         {
             "slug": "heures-supplementaires-brut-net",
-            "title": "Heures Supplémentaires Brut en Net 2026 : Calcul et Exonérations",
-            "desc": "Calculez vos heures supplémentaires brut en net. Majoration 25-50%, exonération fiscale et plafond 2026.",
+            "title": "Heures Sup Brut en Net 2026 : Calcul et Exonérations",
+            "desc": "Calculez vos heures supplémentaires brut en net en 2026. Majoration de 25% à 50%, exonération fiscale jusqu'à 7 500€/an et simulateur gratuit instantané.",
             "kw": "heures supplémentaires brut net, calcul heures sup, majoration heures supplémentaires, exonération heures sup",
             "content": """
                 <h2 class="text-xl font-semibold text-slate-900">Qu'est-ce qu'une heure supplémentaire ?</h2>
@@ -4146,7 +4146,7 @@ def gen_content_pages():
         {
             "slug": "prime-brut-en-net",
             "title": "Prime Brut en Net 2026 : Calcul des Primes et Cotisations",
-            "desc": "Convertissez une prime brute en net. Primes exceptionnelles, 13ème mois, intéressement : cotisations et fiscalité 2026.",
+            "desc": "Convertissez une prime brute en net en 2026. Primes exceptionnelles, 13ème mois, intéressement et participation : cotisations sociales et fiscalité détaillées.",
             "kw": "prime brut en net, calcul prime nette, prime exceptionnelle cotisations, convertir prime",
             "content": """
                 <h2 class="text-xl font-semibold text-slate-900">Comment convertir une prime brute en net ?</h2>
@@ -4268,8 +4268,8 @@ def gen_content_pages():
         },
         {
             "slug": "13eme-mois-brut-net",
-            "title": "13ème Mois Brut Net 2026 : Calcul et Cotisations",
-            "desc": "Calculez votre 13ème mois brut en net. Cotisations sociales, impact fiscal et modalités de versement 2026.",
+            "title": "13ème Mois Brut Net 2026 : Calcul Gratuit et Cotisations",
+            "desc": "Calculez votre 13ème mois brut en net en 2026. Cotisations sociales détaillées, impact sur votre impôt sur le revenu et modalités de versement. Calcul gratuit.",
             "kw": "13ème mois brut net, treizième mois cotisations, prime 13eme mois net, calcul 13eme mois",
             "content": """
                 <h2 class="text-xl font-semibold text-slate-900">Qu'est-ce que le 13ème mois ?</h2>
@@ -4490,7 +4490,7 @@ def gen_tool_pages():
     # Calculateur coût employeur
     html = page_head(
         "Calculateur Coût Employeur 2026 : Simulez le Super-Brut",
-        "Calculez le coût total employeur (super-brut) pour un salarié. Cotisations patronales détaillées et simulateur gratuit 2026.",
+        "Calculez le coût total employeur (super-brut) pour un salarié en 2026. Cotisations patronales détaillées, charges sociales et simulateur gratuit instantané.",
         f"{BASE_URL}/calculateur-cout-employeur/",
         "calculateur coût employeur, super brut, charges patronales, coût salarié"
     )
@@ -4571,8 +4571,8 @@ def gen_tool_pages():
 
     # Comparateur salaire par pays
     html = page_head(
-        "Comparateur Salaire Net par Pays 2026 : France, Belgique, Suisse",
-        "Comparez le salaire net dans différents pays européens. France vs Belgique vs Suisse vs Luxembourg : cotisations et pouvoir d'achat.",
+        "Comparateur Salaire Net par Pays 2026 : France vs Europe",
+        "Comparez le salaire net entre pays européens en 2026. France vs Belgique, Suisse, Luxembourg : cotisations sociales, fiscalité et pouvoir d'achat comparés.",
         f"{BASE_URL}/comparateur-salaire-net-par-pays/",
         "comparateur salaire pays, salaire net france belgique suisse, salaire europe comparaison"
     )
