@@ -679,7 +679,7 @@
     <div id="print-content"></div>
 
     <!-- Brut-Net JS Module -->
-    <script src="js/brut-net.js"></script>
+    <script src="js/brut-net.js" defer></script>
 
     <!-- Calculator Engine -->
     <script>
@@ -722,9 +722,11 @@
             }
 
             bindEvents();
-            calculate();
-            populateMontantsTable();
-            populateLiensInternes();
+            requestAnimationFrame(() => {
+                calculate();
+                populateMontantsTable();
+                populateLiensInternes();
+            });
 
             // Si on arrive via un lien partagé, scroller vers les résultats
             if (params.has('brut')) {
