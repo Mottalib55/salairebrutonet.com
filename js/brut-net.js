@@ -6,8 +6,10 @@ const PSS_ANNUEL = 46368;
 const SMIC_MENSUEL_BRUT = 1801.80; // SMIC 2025
 
 // --- Cotisations salariales ---
-function calculerCotisationsSalariales(brutMensuel, statut) {
+function calculerCotisationsSalariales(brutMensuel, statut, options) {
+    options = options || {};
     const isCadre = statut === 'cadre';
+    const isAlsaceMoselle = options.alsaceMoselle || false;
     const t1 = Math.min(brutMensuel, PSS_MENSUEL);
     const t2 = Math.max(0, brutMensuel - PSS_MENSUEL);
     const assietteCsgCrds = brutMensuel * 0.9825;
@@ -26,6 +28,10 @@ function calculerCotisationsSalariales(brutMensuel, statut) {
 
     if (isCadre) {
         cotisations.cet = { taux: 0.0014, montant: brutMensuel * 0.0014, label: 'CET (cadre)', assiette: 'Totalité' };
+    }
+
+    if (isAlsaceMoselle) {
+        cotisations.alsaceMoselle = { taux: 0.013, montant: brutMensuel * 0.013, label: 'Maladie Alsace-Moselle', assiette: 'Totalité' };
     }
 
     let total = 0;
@@ -88,12 +94,13 @@ function estimerImpotRevenu(netImposableAnnuel) {
 }
 
 // --- Calcul principal : Brut → Net ---
-function calculerBrutVersNet(brutMensuel, statut, tempsTravail) {
+function calculerBrutVersNet(brutMensuel, statut, tempsTravail, options) {
     statut = statut || 'non-cadre';
     tempsTravail = tempsTravail != null ? tempsTravail : 1;
+    options = options || {};
 
     const brutEffectif = brutMensuel * tempsTravail;
-    const salariales = calculerCotisationsSalariales(brutEffectif, statut);
+    const salariales = calculerCotisationsSalariales(brutEffectif, statut, options);
     const patronales = calculerCotisationsPatronales(brutEffectif);
 
     const netAvantImpot = brutEffectif - salariales.total;
@@ -132,20 +139,21 @@ function calculerBrutVersNet(brutMensuel, statut, tempsTravail) {
 }
 
 // --- Calcul inverse : Net → Brut ---
-function calculerNetVersBrut(netMensuelCible, statut, tempsTravail) {
+function calculerNetVersBrut(netMensuelCible, statut, tempsTravail, options) {
     statut = statut || 'non-cadre';
     tempsTravail = tempsTravail != null ? tempsTravail : 1;
+    options = options || {};
 
     // Approximation itérative : on cherche le brut qui donne ce net
     let brutEstime = netMensuelCible * 1.3; // estimation initiale
     for (let i = 0; i < 50; i++) {
-        const resultat = calculerBrutVersNet(brutEstime, statut, tempsTravail);
+        const resultat = calculerBrutVersNet(brutEstime, statut, tempsTravail, options);
         const diff = resultat.netAvantImpot - netMensuelCible;
         if (Math.abs(diff) < 0.01) break;
         brutEstime -= diff * 0.7;
     }
 
-    return calculerBrutVersNet(brutEstime, statut, tempsTravail);
+    return calculerBrutVersNet(brutEstime, statut, tempsTravail, options);
 }
 
 // --- Utilitaire de formatage ---

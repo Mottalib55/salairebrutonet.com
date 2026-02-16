@@ -18,6 +18,11 @@ MONTANT_MIN = 1000
 MONTANT_MAX = 10000
 MONTANT_STEP = 100
 
+# Paliers intermédiaires de 50€ entre 1000 et 5000
+MONTANT_50_MIN = 1000
+MONTANT_50_MAX = 5000
+MONTANT_50_STEP = 50
+
 PSS_MENSUEL = 3864
 SMIC_MENSUEL_BRUT = 1801.80
 
@@ -178,10 +183,13 @@ def build_cotisations_table_html(cotisations, total):
 def build_liens_proches(montant, direction="brut-en-net"):
     """Build HTML for nearby amount links."""
     liens = []
-    offsets = [-200, -100, 100, 200]
-    for offset in offsets:
-        m = montant + offset
-        if MONTANT_MIN <= m <= MONTANT_MAX and m != montant:
+    all_m = get_all_montants()
+    idx = all_m.index(montant) if montant in all_m else -1
+    offsets_idx = [-2, -1, 1, 2]
+    for oi in offsets_idx:
+        ni = idx + oi
+        if 0 <= ni < len(all_m):
+            m = all_m[ni]
             slug = f"/{m}-euros-{direction}/"
             label = f"{fmt(m)} €"
             sub_label = direction.replace("-", " ")
@@ -241,9 +249,16 @@ def build_description_net_brut(montant, nc, c):
 
 # ── Génération des pages ───────────────────────────────────────────────────────
 
+def get_all_montants():
+    """Get all montants: 100€ steps (1000-10000) + 50€ steps (1050-4950)."""
+    montants_100 = list(range(MONTANT_MIN, MONTANT_MAX + 1, MONTANT_STEP))
+    montants_50 = [m for m in range(MONTANT_50_MIN + MONTANT_50_STEP, MONTANT_50_MAX + 1, MONTANT_50_STEP) if m % 100 != 0]
+    return sorted(set(montants_100 + montants_50))
+
+
 def generate_brut_net_pages(template):
     """Generate all brut→net pages."""
-    montants = range(MONTANT_MIN, MONTANT_MAX + 1, MONTANT_STEP)
+    montants = get_all_montants()
     for montant in montants:
         nc = calculer_brut_vers_net(montant, "non-cadre")
         c = calculer_brut_vers_net(montant, "cadre")
@@ -279,6 +294,11 @@ def generate_brut_net_pages(template):
             "{{LIENS_POPULAIRES}}": build_liens_populaires("brut-en-net"),
             "{{BRUT_MENSUEL_ANNUEL_FORMATE}}": fmt(brut_mensuel_annuel),
             "{{NET_MENSUEL_ANNUEL_NC_FORMATE}}": fmt(result_mensuel_annuel["net_avant_impot"]),
+            "{{DONUT_NET_PCT}}": str(round(nc["net_avant_impot"] / montant * 100)),
+            "{{DONUT_COTIS_PCT}}": str(round(nc["total_salarial"] / montant * 100)),
+            "{{DONUT_COTIS_OFFSET}}": str(25 - round(nc["net_avant_impot"] / montant * 100)),
+            "{{DONUT_NET_PCT_INT}}": str(round(nc["net_avant_impot"] / montant * 100)),
+            "{{DONUT_COTIS_PCT_INT}}": str(round(nc["total_salarial"] / montant * 100)),
         }
 
         html = template
@@ -295,7 +315,7 @@ def generate_brut_net_pages(template):
 
 def generate_net_brut_pages(template):
     """Generate all net→brut pages."""
-    montants = range(MONTANT_MIN, MONTANT_MAX + 1, MONTANT_STEP)
+    montants = get_all_montants()
     for montant in montants:
         nc = calculer_net_vers_brut(montant, "non-cadre")
         c = calculer_net_vers_brut(montant, "cadre")
@@ -315,6 +335,11 @@ def generate_net_brut_pages(template):
             "{{DESCRIPTION_CONTEXTUELLE}}": build_description_net_brut(montant, nc, c),
             "{{LIENS_PROCHES}}": build_liens_proches(montant, "net-en-brut"),
             "{{LIENS_POPULAIRES}}": build_liens_populaires("net-en-brut"),
+            "{{DONUT_NET_PCT}}": str(round(montant / nc["brut_mensuel"] * 100)),
+            "{{DONUT_COTIS_PCT}}": str(round(nc["total_salarial"] / nc["brut_mensuel"] * 100)),
+            "{{DONUT_COTIS_OFFSET}}": str(25 - round(montant / nc["brut_mensuel"] * 100)),
+            "{{DONUT_NET_PCT_INT}}": str(round(montant / nc["brut_mensuel"] * 100)),
+            "{{DONUT_COTIS_PCT_INT}}": str(round(nc["total_salarial"] / nc["brut_mensuel"] * 100)),
         }
 
         html = template
@@ -334,7 +359,7 @@ def generate_net_brut_pages(template):
 def generate_sitemap():
     """Generate sitemap.xml with all URLs."""
     today = date.today().isoformat()
-    montants = range(MONTANT_MIN, MONTANT_MAX + 1, MONTANT_STEP)
+    montants = get_all_montants()
 
     urls = [
         {"loc": f"{BASE_URL}/", "priority": "1.0", "changefreq": "monthly"},
@@ -344,8 +369,54 @@ def generate_sitemap():
     ]
 
     for m in montants:
-        urls.append({"loc": f"{BASE_URL}/{m}-euros-brut-en-net/", "priority": "0.7", "changefreq": "monthly"})
-        urls.append({"loc": f"{BASE_URL}/{m}-euros-net-en-brut/", "priority": "0.7", "changefreq": "monthly"})
+        prio = "0.7" if m % 100 == 0 else "0.6"
+        urls.append({"loc": f"{BASE_URL}/{m}-euros-brut-en-net/", "priority": prio, "changefreq": "monthly"})
+        urls.append({"loc": f"{BASE_URL}/{m}-euros-net-en-brut/", "priority": prio, "changefreq": "monthly"})
+
+    # Pages supplémentaires (Phase 2 + pages spéciales)
+    extra_pages = [
+        # SMIC et année
+        ("smic-brut-net-2025", "0.8"),
+        ("smic-brut-net-2026", "0.8"),
+        ("salaire-brut-net-2026", "0.8"),
+        # Par statut
+        ("salaire-brut-net-cadre", "0.8"),
+        ("salaire-brut-net-non-cadre", "0.8"),
+        ("salaire-brut-net-fonction-publique", "0.7"),
+        ("salaire-brut-net-auto-entrepreneur", "0.7"),
+        ("salaire-brut-net-alternance-apprentissage", "0.7"),
+        ("salaire-brut-net-interim", "0.7"),
+        ("salaire-brut-net-stage", "0.7"),
+        # Par période
+        ("salaire-brut-net-mensuel", "0.7"),
+        ("salaire-brut-net-annuel", "0.7"),
+        ("salaire-brut-net-horaire", "0.7"),
+        ("salaire-brut-net-journalier", "0.7"),
+        ("taux-horaire-brut-net", "0.7"),
+        # Éducatif
+        ("difference-salaire-brut-net", "0.7"),
+        ("cotisations-sociales-salariales", "0.7"),
+        ("salaire-net-imposable", "0.7"),
+        ("salaire-net-avant-apres-impot", "0.7"),
+        ("lire-fiche-de-paie", "0.7"),
+        ("salaire-moyen-france", "0.7"),
+        ("negocier-salaire", "0.7"),
+        # Outils
+        ("cout-employeur", "0.7"),
+        ("calculateur-cout-employeur", "0.7"),
+        ("prime-brut-en-net", "0.7"),
+        ("13eme-mois-brut-net", "0.7"),
+        ("heures-supplementaires-brut-net", "0.7"),
+        ("avantages-en-nature", "0.7"),
+        ("comparateur-salaire-net-par-pays", "0.6"),
+        # Nouvelles pages
+        ("cadre-vs-non-cadre", "0.8"),
+        ("calculateur-temps-partiel", "0.7"),
+        ("simulateur-augmentation", "0.7"),
+        ("salaire-brut-net-alsace-moselle", "0.7"),
+    ]
+    for slug, prio in extra_pages:
+        urls.append({"loc": f"{BASE_URL}/{slug}/", "priority": prio, "changefreq": "monthly"})
 
     xml_parts = ['<?xml version="1.0" encoding="UTF-8"?>']
     xml_parts.append('<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">')
@@ -386,7 +457,7 @@ def main():
     generate_sitemap()
 
     print("\n=== Terminé ! ===")
-    total = ((MONTANT_MAX - MONTANT_MIN) // MONTANT_STEP + 1) * 2
+    total = len(get_all_montants()) * 2
     print(f"{total} pages générées + sitemap.xml")
 
 

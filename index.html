@@ -110,6 +110,125 @@
                 z-index: 40;
             }
         }
+
+        /* Print-specific styles for PDF export */
+        #print-content { display: none; }
+
+        @media print {
+            /* Hide everything by default */
+            body > * { display: none !important; }
+
+            /* Show only the print content */
+            #print-content {
+                display: block !important;
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                padding: 24px;
+                font-family: 'Inter', Arial, sans-serif;
+                color: #0f172a;
+                background: #fff;
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+
+            #print-content h1 {
+                font-size: 22px;
+                font-weight: 700;
+                margin-bottom: 4px;
+            }
+
+            #print-content .print-date {
+                font-size: 12px;
+                color: #64748b;
+                margin-bottom: 20px;
+            }
+
+            #print-content h2 {
+                font-size: 15px;
+                font-weight: 700;
+                margin-top: 20px;
+                margin-bottom: 8px;
+                padding-bottom: 4px;
+                border-bottom: 2px solid #0ea5e9;
+            }
+
+            #print-content table {
+                width: 100%;
+                border-collapse: collapse;
+                font-size: 13px;
+                margin-bottom: 12px;
+            }
+
+            #print-content th {
+                text-align: left;
+                font-weight: 600;
+                padding: 6px 8px;
+                border-bottom: 1px solid #cbd5e1;
+                color: #475569;
+            }
+
+            #print-content th:not(:first-child) {
+                text-align: right;
+            }
+
+            #print-content td {
+                padding: 5px 8px;
+                border-bottom: 1px solid #f1f5f9;
+            }
+
+            #print-content td:not(:first-child) {
+                text-align: right;
+            }
+
+            #print-content tr.total-row td {
+                border-top: 2px solid #334155;
+                font-weight: 700;
+                padding-top: 8px;
+            }
+
+            #print-content .print-params {
+                display: flex;
+                gap: 24px;
+                font-size: 13px;
+                margin-bottom: 16px;
+                padding: 10px 14px;
+                background: #f8fafc;
+                border: 1px solid #e2e8f0;
+                border-radius: 8px;
+            }
+
+            #print-content .print-params span {
+                color: #475569;
+            }
+
+            #print-content .print-params strong {
+                color: #0f172a;
+            }
+
+            #print-content .print-highlight {
+                font-size: 28px;
+                font-weight: 700;
+                color: #0284c7;
+                margin: 8px 0 4px;
+            }
+
+            #print-content .print-highlight-label {
+                font-size: 13px;
+                color: #64748b;
+                margin-bottom: 16px;
+            }
+
+            #print-content .print-footer {
+                margin-top: 24px;
+                padding-top: 12px;
+                border-top: 1px solid #e2e8f0;
+                font-size: 11px;
+                color: #94a3b8;
+                text-align: center;
+            }
+        }
     </style>
 
     <!-- JSON-LD Structured Data -->
@@ -477,6 +596,12 @@
                         </div>
                     </div>
 
+                    <!-- PDF Export Button -->
+                    <button id="btn-export-pdf" class="w-full flex items-center justify-center gap-2 rounded-2xl border border-slate-200 bg-white px-5 py-3.5 text-sm font-semibold text-brand-600 shadow-sm hover:bg-brand-50 hover:border-brand-300 transition-all">
+                        <i data-lucide="file-text" class="h-4 w-4"></i>
+                        Télécharger PDF
+                    </button>
+
                 </div>
             </div>
         </div>
@@ -698,6 +823,9 @@
         </div>
     </div>
 
+    <!-- Hidden print content for PDF export -->
+    <div id="print-content"></div>
+
     <!-- Brut-Net JS Module -->
     <script src="js/brut-net.js"></script>
 
@@ -840,6 +968,9 @@
                 document.getElementById('resultats').scrollIntoView({ behavior: 'smooth' });
             });
 
+            // PDF Export
+            document.getElementById('btn-export-pdf').addEventListener('click', exportPDF);
+
             // Update slider progress on load
             updateSliderProgress(sliderSalaire);
             updateSliderProgress(sliderTemps);
@@ -912,6 +1043,85 @@
                 <td class="py-2 text-right text-slate-900">${formatMoneyPrecis(total)}</td>
             </tr>`;
             tbody.innerHTML = html;
+        }
+
+        function exportPDF() {
+            const brutMensuel = parseFloat(inputSalaire.value) || 0;
+            const result = calculerBrutVersNet(brutMensuel, statut, tempsTravail);
+
+            const statutLabel = statut === 'cadre' ? 'Cadre' : 'Non-cadre';
+            const tempsLabel = Math.round(tempsTravail * 100) + '%';
+            const now = new Date();
+            const dateStr = now.toLocaleDateString('fr-FR', { day: 'numeric', month: 'long', year: 'numeric' });
+
+            // Build cotisations salariales rows
+            let cotSalRows = '';
+            for (const key in result.detailCotisationsSalariales) {
+                const c = result.detailCotisationsSalariales[key];
+                if (c.montant < 0.01) continue;
+                cotSalRows += '<tr><td>' + c.label + '</td><td>' + (c.taux * 100).toFixed(2) + '%</td><td>' + formatMoneyPrecis(c.montant) + '</td></tr>';
+            }
+            cotSalRows += '<tr class="total-row"><td>Total cotisations salariales</td><td></td><td>' + formatMoneyPrecis(result.totalSalarial) + '</td></tr>';
+
+            // Build cotisations patronales rows
+            let cotPatRows = '';
+            for (const key in result.detailCotisationsPatronales) {
+                const c = result.detailCotisationsPatronales[key];
+                if (c.montant < 0.01) continue;
+                cotPatRows += '<tr><td>' + c.label + '</td><td>' + (c.taux * 100).toFixed(2) + '%</td><td>' + formatMoneyPrecis(c.montant) + '</td></tr>';
+            }
+            cotPatRows += '<tr class="total-row"><td>Total cotisations patronales</td><td></td><td>' + formatMoneyPrecis(result.totalPatronal) + '</td></tr>';
+
+            const printEl = document.getElementById('print-content');
+            printEl.innerHTML =
+                '<h1>Simulation Salaire Brut Net</h1>' +
+                '<p class="print-date">Date de simulation : ' + dateStr + '</p>' +
+
+                '<div class="print-params">' +
+                    '<span>Salaire brut mensuel : <strong>' + formatMoney(result.brutMensuel) + '</strong></span>' +
+                    '<span>Statut : <strong>' + statutLabel + '</strong></span>' +
+                    '<span>Temps de travail : <strong>' + tempsLabel + '</strong></span>' +
+                '</div>' +
+
+                '<div class="print-highlight">' + formatMoney(result.netAvantImpot) + '</div>' +
+                '<p class="print-highlight-label">Salaire net mensuel avant impôt</p>' +
+
+                '<h2>Résultats principaux</h2>' +
+                '<table>' +
+                    '<tr><td>Salaire brut</td><td>' + formatMoney(result.brutMensuel) + '</td></tr>' +
+                    '<tr><td>Cotisations salariales</td><td>- ' + formatMoney(result.totalSalarial) + '</td></tr>' +
+                    '<tr><td>Net avant impôt</td><td>' + formatMoney(result.netAvantImpot) + '</td></tr>' +
+                    '<tr><td>Impôt estimé (célibataire)</td><td>- ' + formatMoney(result.impotMensuel) + '</td></tr>' +
+                    '<tr style="font-weight:700"><td>Net après impôt</td><td>' + formatMoney(result.netApresImpot) + '</td></tr>' +
+                    '<tr><td>Coût total employeur</td><td>' + formatMoney(result.coutEmployeur) + '</td></tr>' +
+                '</table>' +
+
+                '<h2>Récapitulatif mensuel et annuel</h2>' +
+                '<table>' +
+                    '<thead><tr><th></th><th>Mensuel</th><th>Annuel</th></tr></thead>' +
+                    '<tbody>' +
+                        '<tr><td>Salaire brut</td><td>' + formatMoney(result.brutMensuel) + '</td><td>' + formatMoney(result.brutAnnuel) + '</td></tr>' +
+                        '<tr><td>Net avant impôt</td><td>' + formatMoney(result.netAvantImpot) + '</td><td>' + formatMoney(result.netAvantImpot * 12) + '</td></tr>' +
+                        '<tr><td>Net après impôt</td><td>' + formatMoney(result.netApresImpot) + '</td><td>' + formatMoney(result.netApresImpot * 12) + '</td></tr>' +
+                        '<tr><td>Coût employeur</td><td>' + formatMoney(result.coutEmployeur) + '</td><td>' + formatMoney(result.coutEmployeur * 12) + '</td></tr>' +
+                    '</tbody>' +
+                '</table>' +
+
+                '<h2>Détail des cotisations salariales</h2>' +
+                '<table>' +
+                    '<thead><tr><th>Cotisation</th><th>Taux</th><th>Montant</th></tr></thead>' +
+                    '<tbody>' + cotSalRows + '</tbody>' +
+                '</table>' +
+
+                '<h2>Détail des cotisations patronales</h2>' +
+                '<table>' +
+                    '<thead><tr><th>Cotisation</th><th>Taux</th><th>Montant</th></tr></thead>' +
+                    '<tbody>' + cotPatRows + '</tbody>' +
+                '</table>' +
+
+                '<div class="print-footer">Généré sur salairebrutonet.com — Estimation indicative, ne remplace pas un bulletin de paie officiel</div>';
+
+            window.print();
         }
 
         function populateMontantsTable() {
