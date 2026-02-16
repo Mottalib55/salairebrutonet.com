@@ -910,6 +910,7 @@
             sliderSalaire.addEventListener('input', () => {
                 inputSalaire.value = sliderSalaire.value;
                 inputSalaireAnnuel.value = Math.round(parseFloat(sliderSalaire.value) * 12);
+                updateSliderProgress(sliderSalaire);
                 calculate();
             });
 
