@@ -21,31 +21,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://unpkg.com/lucide@latest"></script>
-
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    fontFamily: { sans: ['Inter', 'sans-serif'] },
-                    colors: {
-                        brand: { 50:'#f0f9ff',100:'#e0f2fe',200:'#bae6fd',400:'#38bdf8',500:'#0ea5e9',600:'#0284c7',700:'#0369a1',900:'#0c4a6e' },
-                        emerald: { 50:'#ecfdf5',100:'#d1fae5',500:'#10b981',600:'#059669',700:'#047857' }
-                    }
-                }
-            }
-        }
-    </script>
-
-    <style>
-        input[type=range] { -webkit-appearance: none; background: transparent; }
-        input[type=range]::-webkit-slider-thumb { -webkit-appearance: none; height: 20px; width: 20px; border-radius: 50%; background: #fff; border: 2px solid #0ea5e9; cursor: pointer; box-shadow: 0 2px 6px rgba(0,0,0,0.15); margin-top: -8px; }
-        input[type=range]::-webkit-slider-runnable-track { width: 100%; height: 4px; cursor: pointer; background: linear-gradient(to right, #0ea5e9 0%, #0ea5e9 var(--progress, 0%), #e2e8f0 var(--progress, 0%), #e2e8f0 100%); border-radius: 9999px; }
-        input[type=number]::-webkit-inner-spin-button, input[type=number]::-webkit-outer-spin-button { -webkit-appearance: none; margin: 0; }
-        input[type=number] { -moz-appearance: textfield; }
-        .faq-content { transition: all 0.2s ease; }
-    </style>
+    <link rel="stylesheet" href="/css/style.css">
 
     <script type="application/ld+json">
     {
@@ -88,7 +64,7 @@
             <nav class="hidden md:flex gap-8">
                 <a href="/" class="text-sm font-medium text-slate-500 hover:text-slate-900 transition-colors">Calculateur</a>
                 <a href="/simulateur-impot-sur-le-revenu/" class="text-sm font-medium text-slate-500 hover:text-slate-900 transition-colors">Simulateur Impôts</a>
-                <a href="/mission.html" class="text-sm font-medium text-slate-500 hover:text-slate-900 transition-colors">Notre Mission</a>
+                <a href="/mission/" class="text-sm font-medium text-slate-500 hover:text-slate-900 transition-colors">Notre Mission</a>
             </nav>
         </div>
     </header>
@@ -98,7 +74,7 @@
         <nav class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-4">
             <ol class="flex items-center gap-2 text-sm text-slate-500">
                 <li><a href="/" class="hover:text-brand-600 transition-colors">Accueil</a></li>
-                <li><i data-lucide="chevron-right" class="h-4 w-4"></i></li>
+                <li><svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg></li>
                 <li class="text-slate-900 font-medium">6 900€ net en brut</li>
             </ol>
         </nav>
@@ -140,7 +116,7 @@
                     </div>
                 </div>
                 <a href="/" class="inline-flex items-center gap-2 mt-6 rounded-xl bg-brand-600 px-6 py-3 text-sm font-semibold text-white shadow-md hover:bg-brand-700 transition-all hover:shadow-lg">
-                    <i data-lucide="sliders-horizontal" class="h-4 w-4"></i>
+                    <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="21" x2="14" y1="4" y2="4"/><line x1="10" x2="3" y1="4" y2="4"/><line x1="21" x2="12" y1="12" y2="12"/><line x1="8" x2="3" y1="12" y2="12"/><line x1="21" x2="16" y1="20" y2="20"/><line x1="12" x2="3" y1="20" y2="20"/><line x1="14" x2="14" y1="2" y2="6"/><line x1="8" x2="8" y1="10" y2="14"/><line x1="16" x2="16" y1="18" y2="22"/></svg>
                     Modifier la simulation
                 </a>
             </div>
@@ -248,7 +224,7 @@
                     <div class="rounded-xl border border-slate-200 bg-white">
                         <button class="faq-toggle w-full flex items-center justify-between p-5 text-left">
                             <span class="font-medium text-slate-900">6 900 euros net, c'est combien en brut ?</span>
-                            <i data-lucide="chevron-down" class="h-5 w-5 text-slate-400 transition-transform"></i>
+                            <svg class="h-5 w-5 text-slate-400 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
                         </button>
                         <div class="faq-content hidden px-5 pb-5">
                             <p class="text-sm text-slate-600">Un salaire de 6 900 € net mensuel correspond à environ <strong>8 645 € brut pour un non-cadre</strong> et <strong>8 660 € brut pour un cadre</strong>. La différence s'explique par les cotisations salariales plus élevées des cadres.</p>
@@ -257,7 +233,7 @@
                     <div class="rounded-xl border border-slate-200 bg-white">
                         <button class="faq-toggle w-full flex items-center justify-between p-5 text-left">
                             <span class="font-medium text-slate-900">Comment calculer le brut à partir du net ?</span>
-                            <i data-lucide="chevron-down" class="h-5 w-5 text-slate-400 transition-transform"></i>
+                            <svg class="h-5 w-5 text-slate-400 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
                         </button>
                         <div class="faq-content hidden px-5 pb-5">
                             <p class="text-sm text-slate-600">Pour passer du net au brut, il faut diviser par (1 - taux de cotisations). En pratique, le calcul est plus complexe car certaines cotisations sont plafonnées. Pour un non-cadre, multipliez le net par environ 1.28. Pour un cadre, multipliez par environ 1.33. Notre calculateur effectue le calcul exact.</p>
@@ -293,6 +269,27 @@
                 </div>
             </div>
         </section>
+
+        <!-- Guides et outils -->
+        <section class="bg-white border-t border-slate-200 py-12 px-4">
+            <div class="mx-auto max-w-5xl">
+                <h2 class="text-xl font-bold text-slate-900 mb-6 text-center">Guides et outils</h2>
+                <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3">
+                    <a href="/salaire-brut-net-cadre/" class="block rounded-xl border border-slate-200 bg-white p-3 text-center hover:border-brand-300 hover:shadow-sm transition-all"><span class="block text-sm font-medium text-slate-900">Brut net cadre</span></a>
+                    <a href="/salaire-brut-net-non-cadre/" class="block rounded-xl border border-slate-200 bg-white p-3 text-center hover:border-brand-300 hover:shadow-sm transition-all"><span class="block text-sm font-medium text-slate-900">Brut net non-cadre</span></a>
+                    <a href="/difference-salaire-brut-net/" class="block rounded-xl border border-slate-200 bg-white p-3 text-center hover:border-brand-300 hover:shadow-sm transition-all"><span class="block text-sm font-medium text-slate-900">Différence brut/net</span></a>
+                    <a href="/cotisations-sociales-salariales/" class="block rounded-xl border border-slate-200 bg-white p-3 text-center hover:border-brand-300 hover:shadow-sm transition-all"><span class="block text-sm font-medium text-slate-900">Cotisations sociales</span></a>
+                    <a href="/cout-employeur/" class="block rounded-xl border border-slate-200 bg-white p-3 text-center hover:border-brand-300 hover:shadow-sm transition-all"><span class="block text-sm font-medium text-slate-900">Coût employeur</span></a>
+                    <a href="/smic-brut-net-2026/" class="block rounded-xl border border-slate-200 bg-white p-3 text-center hover:border-brand-300 hover:shadow-sm transition-all"><span class="block text-sm font-medium text-slate-900">SMIC 2026</span></a>
+                    <a href="/salaire-brut-net-fonction-publique/" class="block rounded-xl border border-slate-200 bg-white p-3 text-center hover:border-brand-300 hover:shadow-sm transition-all"><span class="block text-sm font-medium text-slate-900">Fonction publique</span></a>
+                    <a href="/lire-fiche-de-paie/" class="block rounded-xl border border-slate-200 bg-white p-3 text-center hover:border-brand-300 hover:shadow-sm transition-all"><span class="block text-sm font-medium text-slate-900">Lire sa fiche de paie</span></a>
+                    <a href="/salaire-moyen-france/" class="block rounded-xl border border-slate-200 bg-white p-3 text-center hover:border-brand-300 hover:shadow-sm transition-all"><span class="block text-sm font-medium text-slate-900">Salaire moyen France</span></a>
+                    <a href="/negocier-salaire/" class="block rounded-xl border border-slate-200 bg-white p-3 text-center hover:border-brand-300 hover:shadow-sm transition-all"><span class="block text-sm font-medium text-slate-900">Négocier son salaire</span></a>
+                    <a href="/prime-brut-en-net/" class="block rounded-xl border border-slate-200 bg-white p-3 text-center hover:border-brand-300 hover:shadow-sm transition-all"><span class="block text-sm font-medium text-slate-900">Prime brut en net</span></a>
+                    <a href="/salaire-brut-net-auto-entrepreneur/" class="block rounded-xl border border-slate-200 bg-white p-3 text-center hover:border-brand-300 hover:shadow-sm transition-all"><span class="block text-sm font-medium text-slate-900">Auto-entrepreneur</span></a>
+                </div>
+            </div>
+        </section>
     </main>
 
     <!-- Footer -->
@@ -305,8 +302,8 @@
             <p class="text-xs text-slate-500">© 2026 SalaireBrutNet · Estimation indicative</p>
             <div class="flex gap-4">
                 <a href="/" class="text-xs text-slate-500 hover:text-slate-900">Calculateur</a>
-                <a href="/mentions-legales.html" class="text-xs text-slate-500 hover:text-slate-900">Mentions légales</a>
-                <a href="/mission.html" class="text-xs text-slate-500 hover:text-slate-900">Notre Mission</a>
+                <a href="/mentions-legales/" class="text-xs text-slate-500 hover:text-slate-900">Mentions légales</a>
+                <a href="/mission/" class="text-xs text-slate-500 hover:text-slate-900">Notre Mission</a>
                 <a href="/simulateur-impot-sur-le-revenu/" class="text-xs text-slate-500 hover:text-slate-900">Simulateur Impôts</a>
             </div>
         </div>
@@ -336,13 +333,11 @@
         document.querySelectorAll('.faq-toggle').forEach(btn => {
             btn.addEventListener('click', () => {
                 const content = btn.nextElementSibling;
-                const icon = btn.querySelector('[data-lucide]');
+                const icon = btn.querySelector('svg');
                 content.classList.toggle('hidden');
                 icon.style.transform = content.classList.contains('hidden') ? '' : 'rotate(180deg)';
             });
         });
-
-        lucide.createIcons();
     })();
     </script>
 </body>

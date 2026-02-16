@@ -1,0 +1,81 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Range slider custom styling */
+input[type=range] {
+  -webkit-appearance: none;
+  background: transparent;
+}
+input[type=range]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  height: 20px;
+  width: 20px;
+  border-radius: 50%;
+  background: #fff;
+  border: 2px solid #0ea5e9;
+  cursor: pointer;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+  margin-top: -8px;
+}
+input[type=range]::-webkit-slider-runnable-track {
+  width: 100%;
+  height: 4px;
+  cursor: pointer;
+  background: linear-gradient(to right, #0ea5e9 0%, #0ea5e9 var(--progress, 0%), #e2e8f0 var(--progress, 0%), #e2e8f0 100%);
+  border-radius: 9999px;
+}
+input[type=range]::-moz-range-thumb {
+  height: 20px;
+  width: 20px;
+  border-radius: 50%;
+  background: #fff;
+  border: 2px solid #0ea5e9;
+  cursor: pointer;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+}
+input[type=range]::-moz-range-track {
+  width: 100%;
+  height: 4px;
+  cursor: pointer;
+  background: #e2e8f0;
+  border-radius: 9999px;
+}
+
+/* Hide number input spinners */
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+/* FAQ animation */
+.faq-content {
+  transition: all 0.2s ease;
+}
+
+/* Print styles */
+@media print {
+  header, footer, nav, .no-print { display: none !important; }
+  body { background: white !important; }
+  #print-content { display: block !important; }
+}
+
+/* Mobile sticky button */
+.mobile-sticky-btn {
+  position: fixed;
+  bottom: 1rem;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 40;
+}
+
+/* Prose customizations for content pages */
+.prose h2 { margin-top: 2rem; }
+.prose h3 { margin-top: 1.5rem; }
+.prose ul { padding-left: 1.5rem; }
+.prose li { margin-top: 0.25rem; margin-bottom: 0.25rem; }
+.prose table { width: 100%; }

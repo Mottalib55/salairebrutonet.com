@@ -17,28 +17,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://unpkg.com/lucide@latest"></script>
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    fontFamily: { sans: ['Inter', 'sans-serif'] },
-                    colors: {
-                        brand: { 50:'#f0f9ff',100:'#e0f2fe',200:'#bae6fd',400:'#38bdf8',500:'#0ea5e9',600:'#0284c7',700:'#0369a1',900:'#0c4a6e' },
-                        emerald: { 50:'#ecfdf5',100:'#d1fae5',500:'#10b981',600:'#059669',700:'#047857' }
-                    }
-                }
-            }
-        }
-    </script>
-    <style>
-        input[type=range] { -webkit-appearance: none; background: transparent; }
-        input[type=range]::-webkit-slider-thumb { -webkit-appearance: none; height: 20px; width: 20px; border-radius: 50%; background: #fff; border: 2px solid #0ea5e9; cursor: pointer; box-shadow: 0 2px 6px rgba(0,0,0,0.15); margin-top: -8px; }
-        input[type=range]::-webkit-slider-runnable-track { width: 100%; height: 4px; cursor: pointer; background: linear-gradient(to right, #0ea5e9 0%, #0ea5e9 var(--progress, 0%), #e2e8f0 var(--progress, 0%), #e2e8f0 100%); border-radius: 9999px; }
-        input[type=number]::-webkit-inner-spin-button, input[type=number]::-webkit-outer-spin-button { -webkit-appearance: none; margin: 0; }
-        input[type=number] { -moz-appearance: textfield; }
-    </style>
+    <link rel="stylesheet" href="/css/style.css">
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
@@ -60,7 +39,7 @@
             <nav class="hidden md:flex gap-8">
                 <a href="/" class="text-sm font-medium text-slate-500 hover:text-slate-900 transition-colors">Calculateur</a>
                 <a href="/simulateur-impot-sur-le-revenu/" class="text-sm font-medium text-slate-500 hover:text-slate-900 transition-colors">Simulateur Impôts</a>
-                <a href="/mission.html" class="text-sm font-medium text-slate-500 hover:text-slate-900 transition-colors">Notre Mission</a>
+                <a href="/mission/" class="text-sm font-medium text-slate-500 hover:text-slate-900 transition-colors">Notre Mission</a>
             </nav>
         </div>
     </header>
@@ -69,7 +48,7 @@
         <nav class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-4">
             <ol class="flex items-center gap-2 text-sm text-slate-500">
                 <li><a href="/" class="hover:text-brand-600 transition-colors">Accueil</a></li>
-                <li><i data-lucide="chevron-right" class="h-4 w-4"></i></li>
+                <li><svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg></li>
                 <li class="text-slate-900 font-medium">Heures Supplémentaires Brut en Net</li>
             </ol>
         </nav>
@@ -132,28 +111,201 @@
         <section class="bg-white border-t border-slate-200 py-12 px-4">
             <div class="mx-auto max-w-4xl prose prose-slate">
                 
-                <h2 class="text-xl font-semibold text-slate-900">Majoration des heures supplémentaires</h2>
-                <p>Les heures travaillées au-delà de 35h/semaine sont majorées :</p>
-                <ul>
-                    <li><strong>De la 36e à la 43e heure</strong> : +25% du taux horaire</li>
-                    <li><strong>À partir de la 44e heure</strong> : +50% du taux horaire</li>
-                </ul>
-                <p>Une convention collective peut prévoir des taux différents (minimum 10%).</p>
+                <h2 class="text-xl font-semibold text-slate-900">Qu'est-ce qu'une heure supplémentaire ?</h2>
+                <p>Les <strong>heures supplémentaires</strong> sont les heures de travail effectuées au-delà de la durée légale de travail, fixée à <strong>35 heures par semaine</strong> (ou 1 607 heures par an). Elles donnent droit à une majoration de salaire et bénéficient d'avantages fiscaux et sociaux importants depuis 2019.</p>
+                <p>Les heures supplémentaires sont à distinguer des <strong>heures complémentaires</strong> (pour les temps partiels) et des <strong>heures au forfait</strong> (pour les cadres en forfait jours).</p>
 
-                <h2 class="text-xl font-semibold text-slate-900 mt-8">Exonération fiscale</h2>
-                <p>Les heures supplémentaires bénéficient d'une <strong>exonération d'impôt sur le revenu</strong> dans la limite de <strong>7 500 € net par an</strong>. Elles restent soumises aux cotisations sociales mais bénéficient d'une <strong>réduction de cotisations salariales</strong> de 11,31%.</p>
-
-                <h2 class="text-xl font-semibold text-slate-900 mt-8">Exemple de calcul</h2>
-                <p>Pour un salarié à 15 €/heure brut faisant 4 heures sup par semaine :</p>
-                <ul>
-                    <li>Taux majoré (25%) : 15 € × 1,25 = 18,75 €/h brut</li>
-                    <li>4h × 18,75 € × 4,33 semaines = 324,75 € brut/mois en heures sup</li>
-                    <li>Réduction cotisations salariales (-11,31%) : économie de ~37 €</li>
-                    <li>Net supplémentaire : environ <strong>290 €/mois</strong> (exonéré d'impôt)</li>
+                <h2 class="text-xl font-semibold text-slate-900 mt-8">Taux de majoration des heures supplémentaires</h2>
+                <p>Les heures travaillées au-delà de 35h par semaine sont obligatoirement majorées. Le taux légal de majoration est :</p>
+                <ul class="space-y-2">
+                    <li><strong>De la 36e à la 43e heure</strong> : +25% du taux horaire normal</li>
+                    <li><strong>À partir de la 44e heure</strong> : +50% du taux horaire normal</li>
                 </ul>
+                <p>Une convention collective ou un accord d'entreprise peut prévoir des taux différents, mais ils ne peuvent pas être inférieurs à <strong>10%</strong>.</p>
+                <p><strong>Exemples de taux conventionnels</strong> : Métallurgie (+25% puis +50%), Commerce (+25%), BTP (+25% puis +50%), Banque (+25%).</p>
+
+                <h2 class="text-xl font-semibold text-slate-900 mt-8">Contingent annuel d'heures supplémentaires</h2>
+                <p>Le <strong>contingent annuel</strong> est le nombre maximum d'heures supplémentaires que l'employeur peut demander sans autorisation de l'inspection du travail ni contrepartie obligatoire en repos. Il est fixé à <strong>220 heures par an</strong> par défaut, mais peut être modifié par accord collectif.</p>
+                <p>Au-delà du contingent, les heures supplémentaires donnent droit à une <strong>contrepartie obligatoire en repos</strong> de 100% (1 heure travaillée = 1 heure de repos en plus de la rémunération).</p>
+
+                <h2 class="text-xl font-semibold text-slate-900 mt-8">Exonération fiscale et sociale des heures supplémentaires</h2>
+                <p>Depuis janvier 2019, les heures supplémentaires bénéficient d'un régime fiscal et social très avantageux :</p>
+
+                <h3 class="text-lg font-semibold text-slate-900 mt-6">1. Réduction de cotisations salariales</h3>
+                <p>Les heures supplémentaires bénéficient d'une <strong>réduction de cotisations salariales de 11,31%</strong> (exonération de la part salariale de l'assurance vieillesse). Cette réduction s'applique sur la rémunération des heures sup (y compris la majoration).</p>
+
+                <h3 class="text-lg font-semibold text-slate-900 mt-6">2. Exonération d'impôt sur le revenu</h3>
+                <p>Les heures supplémentaires sont <strong>exonérées d'impôt sur le revenu</strong> dans la limite de <strong>7 500 € net par an et par salarié</strong> (montant 2026). Au-delà de ce plafond, elles sont imposées normalement.</p>
+                <p>Cette exonération s'applique automatiquement : les heures sup n'entrent pas dans votre net imposable (jusqu'au plafond), donc ne sont pas prises en compte pour le prélèvement à la source.</p>
+
+                <h3 class="text-lg font-semibold text-slate-900 mt-6">Cotisations patronales</h3>
+                <p>Les heures supplémentaires ouvrent aussi droit à une <strong>déduction forfaitaire de cotisations patronales</strong> de 1,50 € par heure (dans les entreprises de moins de 20 salariés). Pour les plus grandes entreprises, pas de déduction patronale spécifique.</p>
+
+                <h2 class="text-xl font-semibold text-slate-900 mt-8">Exemple de calcul détaillé</h2>
+                <p>Salarié non-cadre avec un taux horaire de <strong>15 € brut</strong>, faisant <strong>4 heures supplémentaires par semaine</strong> (majorées à +25%) :</p>
+
+                <h3 class="text-lg font-semibold text-slate-900 mt-6">Calcul du brut mensuel en heures sup</h3>
+                <ul class="space-y-1">
+                    <li>Taux horaire normal : 15 €</li>
+                    <li>Taux majoré (+25%) : 15 € × 1,25 = 18,75 €/heure</li>
+                    <li>Heures sup par mois : 4h × 4,33 semaines = 17,32 heures</li>
+                    <li><strong>Brut heures sup</strong> : 17,32 × 18,75 = 324,75 € brut</li>
+                </ul>
+
+                <h3 class="text-lg font-semibold text-slate-900 mt-6">Passage en net</h3>
+                <ul class="space-y-1">
+                    <li>Cotisations salariales normales : ~22% = 71,45 €</li>
+                    <li>Réduction de cotisations (-11,31%) : -36,73 €</li>
+                    <li>Cotisations réelles : 71,45 - 36,73 = 34,72 €</li>
+                    <li><strong>Net avant impôt</strong> : 324,75 - 34,72 = 290,03 €</li>
+                    <li>Exonération d'impôt : pas de prélèvement à la source</li>
+                    <li><strong>Net final</strong> : 290,03 €</li>
+                </ul>
+
+                <p class="mt-4"><strong>Taux de conversion effectif</strong> : 290,03 / 324,75 = <strong>89,3%</strong> (contre 78% pour un salaire normal). Les heures sup sont donc beaucoup plus rentables en net !</p>
+
+                <h2 class="text-xl font-semibold text-slate-900 mt-8">Tableaux de conversion à différents taux horaires</h2>
+                <p>Voici le gain net mensuel pour différentes configurations (majoration +25%, 4h sup/semaine) :</p>
+                <table class="w-full text-sm border-collapse mt-4">
+                    <thead><tr class="border-b-2 border-slate-300">
+                        <th class="py-2 text-left">Taux horaire brut</th>
+                        <th class="py-2 text-right">Brut heures sup/mois</th>
+                        <th class="py-2 text-right">Net heures sup/mois</th>
+                        <th class="py-2 text-right">Taux de conversion</th>
+                    </tr></thead>
+                    <tbody>
+                        <tr class="border-b border-slate-100"><td class="py-2">11,88 € (SMIC)</td><td class="py-2 text-right">257 €</td><td class="py-2 text-right">229 €</td><td class="py-2 text-right">89,1%</td></tr>
+                        <tr class="border-b border-slate-100"><td class="py-2">15,00 €</td><td class="py-2 text-right">325 €</td><td class="py-2 text-right">290 €</td><td class="py-2 text-right">89,3%</td></tr>
+                        <tr class="border-b border-slate-100"><td class="py-2">20,00 €</td><td class="py-2 text-right">433 €</td><td class="py-2 text-right">387 €</td><td class="py-2 text-right">89,4%</td></tr>
+                        <tr><td class="py-2">25,00 € (cadre)</td><td class="py-2 text-right">541 €</td><td class="py-2 text-right">476 €</td><td class="py-2 text-right">88,0%</td></tr>
+                    </tbody>
+                </table>
+                <p class="mt-4">Les cadres ont un taux légèrement inférieur en raison de la CET (0,14%) qui n'est pas exonérée.</p>
+
+                <h2 class="text-xl font-semibold text-slate-900 mt-8">Repos compensateur de remplacement</h2>
+                <p>Au lieu de payer les heures supplémentaires, l'employeur peut, sous conditions, les compenser par un <strong>repos compensateur équivalent</strong> (RCE). Le salarié prend alors des jours de repos au lieu de toucher une rémunération majorée.</p>
+                <p><strong>Calcul du repos</strong> : 1 heure sup majorée à 25% = 1h15 de repos (1h + 25%). Le salarié récupère donc plus de temps de repos que le temps travaillé.</p>
+                <p>Cette option doit être prévue par accord collectif ou, à défaut, acceptée par le salarié.</p>
+
+                <h2 class="text-xl font-semibold text-slate-900 mt-8">Heures supplémentaires et impact sur la retraite</h2>
+                <p>Les heures supplémentaires comptent pour le calcul de votre retraite. Même si elles bénéficient d'une réduction de cotisations salariales, elles sont soumises aux cotisations patronales de retraite complètes, ce qui vous donne des droits identiques à un salaire normal.</p>
+                <p>Concrètement : faire des heures sup n'impacte pas négativement votre future pension de retraite, au contraire, cela l'augmente (légèrement) grâce au revenu supplémentaire.</p>
+
+                <h2 class="text-xl font-semibold text-slate-900 mt-8">Plafonds et limites</h2>
+
+                <h3 class="text-lg font-semibold text-slate-900 mt-6">Durée maximale de travail</h3>
+                <p>Malgré les heures supplémentaires, vous ne pouvez pas dépasser :</p>
+                <ul class="space-y-1">
+                    <li><strong>10 heures par jour</strong> (12h exceptionnellement avec accord)</li>
+                    <li><strong>48 heures par semaine</strong> (ou 44h en moyenne sur 12 semaines)</li>
+                    <li><strong>Repos quotidien</strong> : minimum 11 heures entre 2 journées de travail</li>
+                    <li><strong>Repos hebdomadaire</strong> : minimum 35 heures consécutives (24h + 11h)</li>
+                </ul>
+
+                <h3 class="text-lg font-semibold text-slate-900 mt-6">Plafond d'exonération fiscale</h3>
+                <p>Rappel : l'exonération d'impôt est plafonnée à <strong>7 500 € net par an</strong>. Si vous dépassez ce montant, l'excédent est imposable.</p>
+                <p><strong>Exemple</strong> : Vous avez touché 8 200 € net en heures sup dans l'année → 7 500 € exonérés + 700 € imposables.</p>
+
+                <h2 class="text-xl font-semibold text-slate-900 mt-8">Différence avec les heures complémentaires</h2>
+                <p>À ne pas confondre avec les <strong>heures complémentaires</strong>, réservées aux salariés à temps partiel :</p>
+                <table class="w-full text-sm border-collapse mt-4">
+                    <thead><tr class="border-b-2 border-slate-300">
+                        <th class="py-2 text-left">Critère</th>
+                        <th class="py-2 text-right">Heures supplémentaires</th>
+                        <th class="py-2 text-right">Heures complémentaires</th>
+                    </tr></thead>
+                    <tbody>
+                        <tr class="border-b border-slate-100"><td class="py-2">Pour qui ?</td><td class="py-2 text-right">Temps plein (35h+)</td><td class="py-2 text-right">Temps partiel</td></tr>
+                        <tr class="border-b border-slate-100"><td class="py-2">Majoration</td><td class="py-2 text-right">+25% ou +50%</td><td class="py-2 text-right">+10% ou +25%</td></tr>
+                        <tr class="border-b border-slate-100"><td class="py-2">Exonération d'impôt</td><td class="py-2 text-right">Oui (7 500 €)</td><td class="py-2 text-right">Oui (7 500 €)</td></tr>
+                        <tr><td class="py-2">Limite</td><td class="py-2 text-right">Contingent 220h/an</td><td class="py-2 text-right">1/10 de la durée du contrat</td></tr>
+                    </tbody>
+                </table>
+
+                <h2 class="text-xl font-semibold text-slate-900 mt-8">Refus des heures supplémentaires : vos droits</h2>
+                <p>Pouvez-vous refuser de faire des heures supplémentaires ? Cela dépend :</p>
+                <ul class="space-y-2">
+                    <li><strong>Dans la limite du contingent (220h/an)</strong> : les heures sup sont en principe obligatoires si demandées par l'employeur avec un délai de prévenance raisonnable (3 jours ouvrés minimum)</li>
+                    <li><strong>Au-delà du contingent</strong> : vous pouvez refuser sans risque de sanction, sauf urgence ou circonstances exceptionnelles</li>
+                    <li><strong>Dépassement des durées maximales</strong> : vous pouvez toujours refuser si cela vous fait dépasser les 10h/jour ou 48h/semaine</li>
+                    <li><strong>Motifs légitimes</strong> : raisons familiales impérieuses, santé, impossibilité matérielle (transport, garde d'enfants)</li>
+                </ul>
+                <p>Un refus abusif (sans motif légitime) peut constituer une faute, mais un licenciement pour ce seul motif est généralement jugé sans cause réelle et sérieuse par les prud'hommes.</p>
+
+                <h2 class="text-xl font-semibold text-slate-900 mt-8">Conseils pratiques</h2>
+                <ul class="space-y-3">
+                    <li><strong>Vérifiez votre fiche de paie</strong> : les heures sup doivent être détaillées avec le taux de majoration appliqué. Vérifiez que la réduction de cotisations de 11,31% est bien appliquée.</li>
+                    <li><strong>Comptabilisez vos heures</strong> : tenez un registre personnel de vos heures sup pour éviter les litiges. L'employeur doit aussi tenir un décompte précis.</li>
+                    <li><strong>Anticipez le plafond fiscal</strong> : si vous approchez des 7 500 € net en heures sup, l'excédent sera imposable. Discutez avec votre employeur pour éventuellement basculer sur du repos compensateur.</li>
+                    <li><strong>Négociez le taux</strong> : si votre convention collective prévoit un taux supérieur à 25%, réclamez-le. Certains secteurs accordent +50% dès la première heure.</li>
+                </ul>
+
+                <h2 class="text-xl font-semibold text-slate-900 mt-8">Heures supplémentaires et cadres au forfait jours</h2>
+                <p>Les cadres en <strong>forfait jours</strong> (218 jours par an maximum) ne comptabilisent pas d'heures supplémentaires au sens strict. Leur temps de travail est décompté en jours, pas en heures. Cependant, ils peuvent bénéficier de <strong>jours de repos compensateurs</strong> (RTT) au-delà des congés payés.</p>
+                <p>Si un cadre en forfait jours travaille au-delà de 218 jours, il peut renoncer à certains jours de repos en échange d'une <strong>majoration de 10% minimum</strong> par jour travaillé en plus. Cette renonciation doit faire l'objet d'un accord écrit entre le salarié et l'employeur, et ne peut pas dépasser 235 jours par an.</p>
+                <p>Pour les cadres au <strong>forfait heures</strong> (plus rare), les heures au-delà du forfait sont bien des heures supplémentaires avec majoration et exonérations classiques.</p>
+
+                <h2 class="text-xl font-semibold text-slate-900 mt-8">Heures supplémentaires et chômage partiel</h2>
+                <p>En cas d'activité partielle (chômage partiel), les heures supplémentaires habituelles ne sont pas indemnisées par l'État. Seules les heures correspondant à la durée légale (35h) ou conventionnelle sont compensées. C'est un point important à considérer : un salarié qui dépend fortement des heures sup pour son budget peut voir son revenu chuter davantage que prévu en cas de chômage partiel.</p>
             
             </div>
         </section>
+        <section class="py-12 px-4">
+            <div class="mx-auto max-w-3xl">
+                <h2 class="text-xl font-bold text-slate-900 mb-6">Questions fréquentes</h2>
+                <div class="space-y-3">
+                    
+            <div class="rounded-xl border border-slate-200 bg-white">
+                <button class="faq-toggle w-full flex items-center justify-between p-5 text-left" onclick="this.nextElementSibling.classList.toggle('hidden');this.querySelector('svg').style.transform=this.nextElementSibling.classList.contains('hidden')?'':'rotate(180deg)'">
+                    <span class="font-medium text-slate-900">Cette information est-elle à jour pour 2026 ?</span>
+                    <svg class="h-5 w-5 text-slate-400 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+                </button>
+                <div class="faq-content hidden px-5 pb-5">
+                    <p class="text-sm text-slate-600">Oui, tous les taux et plafonds sont actualisés pour l'année 2026.</p>
+                </div>
+            </div>
+            <div class="rounded-xl border border-slate-200 bg-white">
+                <button class="faq-toggle w-full flex items-center justify-between p-5 text-left" onclick="this.nextElementSibling.classList.toggle('hidden');this.querySelector('svg').style.transform=this.nextElementSibling.classList.contains('hidden')?'':'rotate(180deg)'">
+                    <span class="font-medium text-slate-900">Puis-je utiliser ces informations pour ma déclaration d'impôts ?</span>
+                    <svg class="h-5 w-5 text-slate-400 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+                </button>
+                <div class="faq-content hidden px-5 pb-5">
+                    <p class="text-sm text-slate-600">Ces informations sont indicatives. Pour votre déclaration, référez-vous aux montants exacts de votre fiche de paie.</p>
+                </div>
+            </div>
+            <div class="rounded-xl border border-slate-200 bg-white">
+                <button class="faq-toggle w-full flex items-center justify-between p-5 text-left" onclick="this.nextElementSibling.classList.toggle('hidden');this.querySelector('svg').style.transform=this.nextElementSibling.classList.contains('hidden')?'':'rotate(180deg)'">
+                    <span class="font-medium text-slate-900">Ces calculs s'appliquent-ils à tous les secteurs ?</span>
+                    <svg class="h-5 w-5 text-slate-400 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+                </button>
+                <div class="faq-content hidden px-5 pb-5">
+                    <p class="text-sm text-slate-600">Les cotisations de base sont identiques. Certaines conventions collectives ajoutent des cotisations spécifiques.</p>
+                </div>
+            </div>
+            <div class="rounded-xl border border-slate-200 bg-white">
+                <button class="faq-toggle w-full flex items-center justify-between p-5 text-left" onclick="this.nextElementSibling.classList.toggle('hidden');this.querySelector('svg').style.transform=this.nextElementSibling.classList.contains('hidden')?'':'rotate(180deg)'">
+                    <span class="font-medium text-slate-900">Comment obtenir un calcul personnalisé ?</span>
+                    <svg class="h-5 w-5 text-slate-400 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+                </button>
+                <div class="faq-content hidden px-5 pb-5">
+                    <p class="text-sm text-slate-600">Utilisez notre calculateur en haut de page avec vos données réelles (brut, statut, temps de travail).</p>
+                </div>
+            </div>
+            <div class="rounded-xl border border-slate-200 bg-white">
+                <button class="faq-toggle w-full flex items-center justify-between p-5 text-left" onclick="this.nextElementSibling.classList.toggle('hidden');this.querySelector('svg').style.transform=this.nextElementSibling.classList.contains('hidden')?'':'rotate(180deg)'">
+                    <span class="font-medium text-slate-900">Ces règles s'appliquent-elles aux indépendants ?</span>
+                    <svg class="h-5 w-5 text-slate-400 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+                </button>
+                <div class="faq-content hidden px-5 pb-5">
+                    <p class="text-sm text-slate-600">Non, les indépendants et auto-entrepreneurs ont des régimes de cotisations différents, avec des taux forfaitaires.</p>
+                </div>
+            </div>
+                </div>
+            </div>
+        </section>
+        <script type="application/ld+json">
+        {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Cette information est-elle à jour pour 2026 ?","acceptedAnswer":{"@type":"Answer","text":"Oui, tous les taux et plafonds sont actualisés pour l'année 2026."}},{"@type":"Question","name":"Puis-je utiliser ces informations pour ma déclaration d'impôts ?","acceptedAnswer":{"@type":"Answer","text":"Ces informations sont indicatives. Pour votre déclaration, référez-vous aux montants exacts de votre fiche de paie."}},{"@type":"Question","name":"Ces calculs s'appliquent-ils à tous les secteurs ?","acceptedAnswer":{"@type":"Answer","text":"Les cotisations de base sont identiques. Certaines conventions collectives ajoutent des cotisations spécifiques."}},{"@type":"Question","name":"Comment obtenir un calcul personnalisé ?","acceptedAnswer":{"@type":"Answer","text":"Utilisez notre calculateur en haut de page avec vos données réelles (brut, statut, temps de travail)."}},{"@type":"Question","name":"Ces règles s'appliquent-elles aux indépendants ?","acceptedAnswer":{"@type":"Answer","text":"Non, les indépendants et auto-entrepreneurs ont des régimes de cotisations différents, avec des taux forfaitaires."}}]}
+        </script>
         <section class="bg-white border-t border-slate-200 py-12 px-4">
             <div class="mx-auto max-w-4xl">
                 <h2 class="text-lg font-bold text-slate-900 mb-4">Pages connexes</h2>
@@ -182,6 +334,30 @@
 <a href="/salaire-brut-net-mensuel/" class="block rounded-xl border border-slate-200 bg-white p-3 text-center hover:border-brand-300 hover:shadow-sm transition-all">
             <span class="block text-sm font-medium text-slate-900">Calcul mensuel</span>
         </a>
+<a href="/salaire-brut-net-annuel/" class="block rounded-xl border border-slate-200 bg-white p-3 text-center hover:border-brand-300 hover:shadow-sm transition-all">
+            <span class="block text-sm font-medium text-slate-900">Calcul annuel</span>
+        </a>
+<a href="/salaire-brut-net-horaire/" class="block rounded-xl border border-slate-200 bg-white p-3 text-center hover:border-brand-300 hover:shadow-sm transition-all">
+            <span class="block text-sm font-medium text-slate-900">Taux horaire</span>
+        </a>
+<a href="/salaire-brut-net-auto-entrepreneur/" class="block rounded-xl border border-slate-200 bg-white p-3 text-center hover:border-brand-300 hover:shadow-sm transition-all">
+            <span class="block text-sm font-medium text-slate-900">Auto-entrepreneur</span>
+        </a>
+<a href="/salaire-brut-net-alternance-apprentissage/" class="block rounded-xl border border-slate-200 bg-white p-3 text-center hover:border-brand-300 hover:shadow-sm transition-all">
+            <span class="block text-sm font-medium text-slate-900">Alternance</span>
+        </a>
+<a href="/lire-fiche-de-paie/" class="block rounded-xl border border-slate-200 bg-white p-3 text-center hover:border-brand-300 hover:shadow-sm transition-all">
+            <span class="block text-sm font-medium text-slate-900">Lire sa fiche de paie</span>
+        </a>
+<a href="/prime-brut-en-net/" class="block rounded-xl border border-slate-200 bg-white p-3 text-center hover:border-brand-300 hover:shadow-sm transition-all">
+            <span class="block text-sm font-medium text-slate-900">Prime brut en net</span>
+        </a>
+<a href="/salaire-moyen-france/" class="block rounded-xl border border-slate-200 bg-white p-3 text-center hover:border-brand-300 hover:shadow-sm transition-all">
+            <span class="block text-sm font-medium text-slate-900">Salaire moyen France</span>
+        </a>
+<a href="/negocier-salaire/" class="block rounded-xl border border-slate-200 bg-white p-3 text-center hover:border-brand-300 hover:shadow-sm transition-all">
+            <span class="block text-sm font-medium text-slate-900">Négocier son salaire</span>
+        </a>
 
                 </div>
             </div>
@@ -196,13 +372,12 @@
             <p class="text-xs text-slate-500">© 2026 SalaireBrutNet · Estimation indicative</p>
             <div class="flex gap-4">
                 <a href="/" class="text-xs text-slate-500 hover:text-slate-900">Calculateur</a>
-                <a href="/mentions-legales.html" class="text-xs text-slate-500 hover:text-slate-900">Mentions légales</a>
-                <a href="/mission.html" class="text-xs text-slate-500 hover:text-slate-900">Notre Mission</a>
+                <a href="/mentions-legales/" class="text-xs text-slate-500 hover:text-slate-900">Mentions légales</a>
+                <a href="/mission/" class="text-xs text-slate-500 hover:text-slate-900">Notre Mission</a>
                 <a href="/simulateur-impot-sur-le-revenu/" class="text-xs text-slate-500 hover:text-slate-900">Simulateur Impôts</a>
             </div>
         </div>
     </footer>
     <script src="/js/brut-net.js"></script>
-    <script>lucide.createIcons();</script>
 
 </body></html>

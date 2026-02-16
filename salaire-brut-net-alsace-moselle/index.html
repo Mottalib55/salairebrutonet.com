@@ -18,28 +18,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://unpkg.com/lucide@latest"></script>
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    fontFamily: { sans: ['Inter', 'sans-serif'] },
-                    colors: {
-                        brand: { 50:'#f0f9ff',100:'#e0f2fe',200:'#bae6fd',400:'#38bdf8',500:'#0ea5e9',600:'#0284c7',700:'#0369a1',900:'#0c4a6e' },
-                        emerald: { 50:'#ecfdf5',100:'#d1fae5',500:'#10b981',600:'#059669',700:'#047857' }
-                    }
-                }
-            }
-        }
-    </script>
-    <style>
-        input[type=range] { -webkit-appearance: none; background: transparent; }
-        input[type=range]::-webkit-slider-thumb { -webkit-appearance: none; height: 20px; width: 20px; border-radius: 50%; background: #fff; border: 2px solid #0ea5e9; cursor: pointer; box-shadow: 0 2px 6px rgba(0,0,0,0.15); margin-top: -8px; }
-        input[type=range]::-webkit-slider-runnable-track { width: 100%; height: 4px; cursor: pointer; background: linear-gradient(to right, #0ea5e9 0%, #0ea5e9 var(--progress, 0%), #e2e8f0 var(--progress, 0%), #e2e8f0 100%); border-radius: 9999px; }
-        input[type=number]::-webkit-inner-spin-button, input[type=number]::-webkit-outer-spin-button { -webkit-appearance: none; margin: 0; }
-        input[type=number] { -moz-appearance: textfield; }
-    </style>
+    <link rel="stylesheet" href="/css/style.css">
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
@@ -109,7 +88,7 @@
             <nav class="hidden md:flex gap-8">
                 <a href="/" class="text-sm font-medium text-slate-500 hover:text-slate-900 transition-colors">Calculateur</a>
                 <a href="/simulateur-impot-sur-le-revenu/" class="text-sm font-medium text-slate-500 hover:text-slate-900 transition-colors">Simulateur Impôts</a>
-                <a href="/mission.html" class="text-sm font-medium text-slate-500 hover:text-slate-900 transition-colors">Notre Mission</a>
+                <a href="/mission/" class="text-sm font-medium text-slate-500 hover:text-slate-900 transition-colors">Notre Mission</a>
             </nav>
         </div>
     </header>
@@ -118,7 +97,7 @@
         <nav class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-4">
             <ol class="flex items-center gap-2 text-sm text-slate-500">
                 <li><a href="/" class="hover:text-brand-600 transition-colors">Accueil</a></li>
-                <li><i data-lucide="chevron-right" class="h-4 w-4"></i></li>
+                <li><svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg></li>
                 <li class="text-slate-900 font-medium">Salaire Brut Net Alsace-Moselle 2026</li>
             </ol>
         </nav>
@@ -242,7 +221,7 @@
                     <details class="group rounded-xl border border-slate-200 bg-white">
                         <summary class="flex items-center justify-between cursor-pointer px-5 py-4 text-sm font-semibold text-slate-900">
                             Quelle est la cotisation supplémentaire en Alsace-Moselle ?
-                            <i data-lucide="chevron-down" class="h-4 w-4 text-slate-400 transition-transform group-open:rotate-180"></i>
+                            <svg class="h-4 w-4 text-slate-400 transition-transform group-open:rotate-180" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
                         </summary>
                         <div class="px-5 pb-4 text-sm text-slate-600">
                             <p>Les salariés en Alsace-Moselle paient une <strong>cotisation maladie complémentaire de 1,30%</strong> sur la totalité de leur salaire brut, en plus des cotisations du régime général. Cette cotisation finance le régime local d'assurance maladie qui offre de meilleurs remboursements.</p>
@@ -251,7 +230,7 @@
                     <details class="group rounded-xl border border-slate-200 bg-white">
                         <summary class="flex items-center justify-between cursor-pointer px-5 py-4 text-sm font-semibold text-slate-900">
                             Quels départements sont concernés par le régime local Alsace-Moselle ?
-                            <i data-lucide="chevron-down" class="h-4 w-4 text-slate-400 transition-transform group-open:rotate-180"></i>
+                            <svg class="h-4 w-4 text-slate-400 transition-transform group-open:rotate-180" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
                         </summary>
                         <div class="px-5 pb-4 text-sm text-slate-600">
                             <p>Le régime local d'assurance maladie s'applique aux salariés travaillant dans trois départements : le <strong>Bas-Rhin (67)</strong>, le <strong>Haut-Rhin (68)</strong> et la <strong>Moselle (57)</strong>. Il concerne aussi les travailleurs frontaliers résidant dans ces départements.</p>
@@ -260,7 +239,7 @@
                     <details class="group rounded-xl border border-slate-200 bg-white">
                         <summary class="flex items-center justify-between cursor-pointer px-5 py-4 text-sm font-semibold text-slate-900">
                             Pourquoi le régime local Alsace-Moselle existe-t-il ?
-                            <i data-lucide="chevron-down" class="h-4 w-4 text-slate-400 transition-transform group-open:rotate-180"></i>
+                            <svg class="h-4 w-4 text-slate-400 transition-transform group-open:rotate-180" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
                         </summary>
                         <div class="px-5 pb-4 text-sm text-slate-600">
                             <p>Ce régime est un héritage historique de l'<strong>annexion de l'Alsace-Moselle par l'Allemagne</strong> entre 1871 et 1918. Les lois sociales allemandes, plus avantageuses, ont été maintenues après le retour à la France en 1918, puis confirmées à la Libération en 1945. Le régime local perdure depuis par dérogation au régime général.</p>
@@ -269,7 +248,7 @@
                     <details class="group rounded-xl border border-slate-200 bg-white">
                         <summary class="flex items-center justify-between cursor-pointer px-5 py-4 text-sm font-semibold text-slate-900">
                             Quels sont les avantages du régime local pour les salariés ?
-                            <i data-lucide="chevron-down" class="h-4 w-4 text-slate-400 transition-transform group-open:rotate-180"></i>
+                            <svg class="h-4 w-4 text-slate-400 transition-transform group-open:rotate-180" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
                         </summary>
                         <div class="px-5 pb-4 text-sm text-slate-600">
                             <p>En contrepartie de la cotisation supplémentaire de 1,30%, les assurés bénéficient de remboursements plus élevés : <strong>90% pour les consultations et médicaments</strong> (contre 70% dans le régime général), <strong>remboursement intégral des frais d'hospitalisation</strong>, et <strong>prise en charge à 100% du forfait journalier hospitalier</strong>.</p>
@@ -278,7 +257,7 @@
                     <details class="group rounded-xl border border-slate-200 bg-white">
                         <summary class="flex items-center justify-between cursor-pointer px-5 py-4 text-sm font-semibold text-slate-900">
                             Combien perd-on en net avec le régime Alsace-Moselle ?
-                            <i data-lucide="chevron-down" class="h-4 w-4 text-slate-400 transition-transform group-open:rotate-180"></i>
+                            <svg class="h-4 w-4 text-slate-400 transition-transform group-open:rotate-180" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
                         </summary>
                         <div class="px-5 pb-4 text-sm text-slate-600">
                             <p>Pour un salaire brut de 2 500 euros mensuels, la cotisation supplémentaire de 1,30% représente <strong>32,50 euros par mois</strong>, soit environ <strong>390 euros par an</strong>. Le salaire net en Alsace-Moselle est donc inférieur d'environ 1,30% du brut par rapport au régime général. Cette différence peut être compensée par les économies réalisées sur la mutuelle complémentaire.</p>
@@ -330,8 +309,8 @@
             <p class="text-xs text-slate-500">&copy; 2026 SalaireBrutNet &middot; Estimation indicative</p>
             <div class="flex gap-4">
                 <a href="/" class="text-xs text-slate-500 hover:text-slate-900">Calculateur</a>
-                <a href="/mentions-legales.html" class="text-xs text-slate-500 hover:text-slate-900">Mentions légales</a>
-                <a href="/mission.html" class="text-xs text-slate-500 hover:text-slate-900">Notre Mission</a>
+                <a href="/mentions-legales/" class="text-xs text-slate-500 hover:text-slate-900">Mentions légales</a>
+                <a href="/mission/" class="text-xs text-slate-500 hover:text-slate-900">Notre Mission</a>
                 <a href="/simulateur-impot-sur-le-revenu/" class="text-xs text-slate-500 hover:text-slate-900">Simulateur Impôts</a>
             </div>
         </div>
@@ -393,5 +372,4 @@
         }
     })();
     </script>
-    <script>lucide.createIcons();</script>
 </body></html>

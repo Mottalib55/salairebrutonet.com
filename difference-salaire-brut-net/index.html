@@ -17,28 +17,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://unpkg.com/lucide@latest"></script>
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    fontFamily: { sans: ['Inter', 'sans-serif'] },
-                    colors: {
-                        brand: { 50:'#f0f9ff',100:'#e0f2fe',200:'#bae6fd',400:'#38bdf8',500:'#0ea5e9',600:'#0284c7',700:'#0369a1',900:'#0c4a6e' },
-                        emerald: { 50:'#ecfdf5',100:'#d1fae5',500:'#10b981',600:'#059669',700:'#047857' }
-                    }
-                }
-            }
-        }
-    </script>
-    <style>
-        input[type=range] { -webkit-appearance: none; background: transparent; }
-        input[type=range]::-webkit-slider-thumb { -webkit-appearance: none; height: 20px; width: 20px; border-radius: 50%; background: #fff; border: 2px solid #0ea5e9; cursor: pointer; box-shadow: 0 2px 6px rgba(0,0,0,0.15); margin-top: -8px; }
-        input[type=range]::-webkit-slider-runnable-track { width: 100%; height: 4px; cursor: pointer; background: linear-gradient(to right, #0ea5e9 0%, #0ea5e9 var(--progress, 0%), #e2e8f0 var(--progress, 0%), #e2e8f0 100%); border-radius: 9999px; }
-        input[type=number]::-webkit-inner-spin-button, input[type=number]::-webkit-outer-spin-button { -webkit-appearance: none; margin: 0; }
-        input[type=number] { -moz-appearance: textfield; }
-    </style>
+    <link rel="stylesheet" href="/css/style.css">
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
@@ -60,7 +39,7 @@
             <nav class="hidden md:flex gap-8">
                 <a href="/" class="text-sm font-medium text-slate-500 hover:text-slate-900 transition-colors">Calculateur</a>
                 <a href="/simulateur-impot-sur-le-revenu/" class="text-sm font-medium text-slate-500 hover:text-slate-900 transition-colors">Simulateur Impôts</a>
-                <a href="/mission.html" class="text-sm font-medium text-slate-500 hover:text-slate-900 transition-colors">Notre Mission</a>
+                <a href="/mission/" class="text-sm font-medium text-slate-500 hover:text-slate-900 transition-colors">Notre Mission</a>
             </nav>
         </div>
     </header>
@@ -69,7 +48,7 @@
         <nav class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-4">
             <ol class="flex items-center gap-2 text-sm text-slate-500">
                 <li><a href="/" class="hover:text-brand-600 transition-colors">Accueil</a></li>
-                <li><i data-lucide="chevron-right" class="h-4 w-4"></i></li>
+                <li><svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg></li>
                 <li class="text-slate-900 font-medium">Différence entre Salaire Brut et Net</li>
             </ol>
         </nav>
@@ -134,39 +113,199 @@
                 
                 <h2 class="text-xl font-semibold text-slate-900">Qu'est-ce que le salaire brut ?</h2>
                 <p>Le <strong>salaire brut</strong> est la rémunération totale inscrite sur votre contrat de travail, avant toute déduction. C'est le montant que votre employeur s'engage à vous verser. Il inclut votre salaire de base, les éventuelles primes, heures supplémentaires et avantages en nature.</p>
+                <p>Le brut constitue la référence légale de votre rémunération. C'est sur cette base que sont calculées toutes les cotisations sociales (salariales et patronales), les indemnités de licenciement, les primes conventionnelles et l'indemnité de départ à la retraite. Dans les négociations salariales, on parle toujours en brut annuel ou mensuel.</p>
+                <p>Le salaire brut comprend plusieurs éléments : le salaire de base (inscrit au contrat), les primes régulières ou exceptionnelles (prime d'ancienneté, prime de 13ème mois, primes de performance), les heures supplémentaires et complémentaires, ainsi que les avantages en nature valorisés (voiture de fonction, logement).</p>
 
                 <h2 class="text-xl font-semibold text-slate-900 mt-8">Qu'est-ce que le salaire net ?</h2>
                 <p>Le <strong>salaire net</strong> (ou "net à payer avant impôt") est ce que vous recevez effectivement sur votre compte bancaire, après déduction de toutes les cotisations sociales salariales. Depuis 2019, le <strong>net après impôt</strong> tient aussi compte du prélèvement à la source.</p>
+                <p>Le salaire net représente votre pouvoir d'achat réel avant impôt sur le revenu. C'est le montant que vous pouvez utiliser pour vos dépenses courantes, votre épargne ou vos investissements. Attention toutefois : ce n'est pas forcément ce qui arrive sur votre compte, car le prélèvement à la source vient ensuite se déduire pour donner le "net à payer" final.</p>
+                <p>Dans votre budget personnel, c'est le net mensuel qui compte vraiment. C'est pourquoi il est essentiel de bien le calculer avant d'accepter une offre d'emploi ou de négocier une augmentation. Une différence de 100 € brut représente environ 78 € net pour un non-cadre et 75 € net pour un cadre.</p>
 
                 <h2 class="text-xl font-semibold text-slate-900 mt-8">Que se passe-t-il entre le brut et le net ?</h2>
-                <p>Entre votre salaire brut et votre salaire net, plusieurs cotisations sont prélevées :</p>
+                <p>Entre votre salaire brut et votre salaire net, plusieurs cotisations sociales obligatoires sont prélevées. Ces prélèvements financent l'ensemble du système de protection sociale français : assurance maladie, retraite, chômage, allocations familiales.</p>
+
+                <h3 class="text-lg font-semibold text-slate-900 mt-6">Détail des cotisations salariales</h3>
                 <ul class="space-y-2">
-                    <li><strong>Assurance vieillesse</strong> (retraite de base) : 6,90% + 0,40%</li>
-                    <li><strong>Retraite complémentaire</strong> (AGIRC-ARRCO) : 3,15% à 8,64%</li>
-                    <li><strong>CSG</strong> (Contribution Sociale Généralisée) : 9,20% sur 98,25% du brut</li>
-                    <li><strong>CRDS</strong> : 0,50% sur 98,25% du brut</li>
-                    <li><strong>CEG</strong> : 0,86% à 1,08%</li>
+                    <li><strong>Assurance vieillesse</strong> (retraite de base) : 6,90% sur la tranche 1 (jusqu'à 3 864 €) + 0,40% sur la totalité du salaire. Cette cotisation finance votre retraite de base du régime général de la Sécurité sociale.</li>
+                    <li><strong>Retraite complémentaire AGIRC-ARRCO</strong> : 3,15% sur la tranche 1 et 8,64% sur la tranche 2 (au-delà de 3 864 €). Ces cotisations vous donnent des points de retraite complémentaire obligatoire.</li>
+                    <li><strong>CSG déductible</strong> (Contribution Sociale Généralisée) : 6,80% sur 98,25% du brut. Cette part est déductible de votre revenu imposable.</li>
+                    <li><strong>CSG non déductible</strong> : 2,40% sur 98,25% du brut. Cette part n'est pas déductible et vient augmenter votre net imposable.</li>
+                    <li><strong>CRDS</strong> (Contribution au Remboursement de la Dette Sociale) : 0,50% sur 98,25% du brut. Cette contribution sert à rembourser la dette de la Sécurité sociale.</li>
+                    <li><strong>CEG</strong> (Contribution d'Équilibre Générale) : 0,86% sur la tranche 1 et 1,08% sur la tranche 2. Cette contribution équilibre les comptes de l'AGIRC-ARRCO.</li>
+                    <li><strong>CET pour les cadres uniquement</strong> : 0,14% sur la totalité du salaire. Cette Contribution d'Équilibre Technique finance les droits spécifiques des cadres.</li>
                 </ul>
-                <p>Au total, ces cotisations représentent environ <strong>22% pour un non-cadre</strong> et <strong>25% pour un cadre</strong>.</p>
+
+                <p class="mt-4">Au total, ces cotisations représentent environ <strong>22% du brut pour un non-cadre</strong> et <strong>25% du brut pour un cadre</strong>. Le taux exact varie légèrement selon le niveau de salaire, notamment pour les salaires supérieurs au plafond de la Sécurité sociale (3 864 € en 2026).</p>
+
+                <h2 class="text-xl font-semibold text-slate-900 mt-8">Tableau de conversion brut → net 2026</h2>
+                <p>Voici un tableau de conversion pour les salaires les plus courants, statut non-cadre :</p>
+                
+    <div class="overflow-x-auto">
+        <table class="w-full text-sm">
+            <thead><tr class="border-b-2 border-slate-300">
+                <th class="py-2 text-left font-semibold">Brut mensuel</th>
+                <th class="py-2 text-right font-semibold">Net mensuel</th>
+                <th class="py-2 text-right font-semibold">Net annuel</th>
+                <th class="py-2 text-right font-semibold">Coût employeur</th>
+            </tr></thead>
+            <tbody><tr class="border-b border-slate-100">
+            <td class="py-2 font-medium">1 802 €</td>
+            <td class="py-2 text-right">1 426 €</td>
+            <td class="py-2 text-right">17 118 €</td>
+            <td class="py-2 text-right">2 384 €</td>
+        </tr><tr class="border-b border-slate-100">
+            <td class="py-2 font-medium">2 000 €</td>
+            <td class="py-2 text-right">1 583 €</td>
+            <td class="py-2 text-right">18 998 €</td>
+            <td class="py-2 text-right">2 646 €</td>
+        </tr><tr class="border-b border-slate-100">
+            <td class="py-2 font-medium">2 500 €</td>
+            <td class="py-2 text-right">1 979 €</td>
+            <td class="py-2 text-right">23 748 €</td>
+            <td class="py-2 text-right">3 307 €</td>
+        </tr><tr class="border-b border-slate-100">
+            <td class="py-2 font-medium">3 000 €</td>
+            <td class="py-2 text-right">2 375 €</td>
+            <td class="py-2 text-right">28 497 €</td>
+            <td class="py-2 text-right">3 969 €</td>
+        </tr><tr class="border-b border-slate-100">
+            <td class="py-2 font-medium">3 500 €</td>
+            <td class="py-2 text-right">2 771 €</td>
+            <td class="py-2 text-right">33 247 €</td>
+            <td class="py-2 text-right">4 630 €</td>
+        </tr><tr class="border-b border-slate-100">
+            <td class="py-2 font-medium">4 000 €</td>
+            <td class="py-2 text-right">3 168 €</td>
+            <td class="py-2 text-right">38 016 €</td>
+            <td class="py-2 text-right">5 286 €</td>
+        </tr><tr class="border-b border-slate-100">
+            <td class="py-2 font-medium">5 000 €</td>
+            <td class="py-2 text-right">3 972 €</td>
+            <td class="py-2 text-right">47 658 €</td>
+            <td class="py-2 text-right">6 569 €</td>
+        </tr></tbody>
+        </table>
+    </div>
 
                 <h2 class="text-xl font-semibold text-slate-900 mt-8">Les différents "nets" sur votre fiche de paie</h2>
+                <p>Votre bulletin de salaire affiche plusieurs montants "nets" qui ont chacun une fonction précise. Il est essentiel de bien les distinguer pour comprendre votre rémunération réelle et votre situation fiscale.</p>
                 <ul class="space-y-2">
-                    <li><strong>Net à payer avant impôt</strong> : brut - cotisations salariales. C'est le "salaire net" classique.</li>
-                    <li><strong>Net imposable</strong> : net + CSG non déductible + CRDS. Sert de base au calcul de l'impôt.</li>
-                    <li><strong>Net à payer</strong> : net avant impôt - prélèvement à la source. C'est ce qui arrive sur votre compte.</li>
+                    <li><strong>Net à payer avant impôt</strong> : brut - cotisations salariales. C'est le "salaire net" classique, celui que tout le monde appelait "net" avant 2019. C'est votre rémunération après déduction des cotisations sociales mais avant l'impôt.</li>
+                    <li><strong>Net imposable</strong> : net à payer + CSG non déductible + CRDS. Ce montant sert de base au calcul de votre impôt sur le revenu. Il est supérieur d'environ 2,9% au net à payer. C'est ce montant qui apparaît dans votre déclaration de revenus pré-remplie.</li>
+                    <li><strong>Net à payer (final)</strong> : net avant impôt - prélèvement à la source. C'est ce qui arrive effectivement sur votre compte bancaire chaque mois. Depuis janvier 2019, l'impôt sur le revenu est prélevé directement par l'employeur.</li>
+                </ul>
+                <p class="mt-4">Exemple concret pour un salaire brut de 3 000 € (non-cadre) : Net à payer avant impôt = 2 340 € → Net imposable = 2 408 € → Prélèvement à la source (7,5% par exemple) = 181 € → <strong>Net à payer final = 2 159 €</strong>.</p>
+
+                <h2 class="text-xl font-semibold text-slate-900 mt-8">Différences brut-net selon le statut</h2>
+                <p>Le taux de conversion du brut en net varie selon votre statut professionnel. Cette variation s'explique par des cotisations spécifiques à chaque catégorie de salariés.</p>
+
+                <h3 class="text-lg font-semibold text-slate-900 mt-6">Secteur privé</h3>
+                <ul class="space-y-2">
+                    <li><strong>Non-cadre</strong> : environ 78% du brut (22% de cotisations). Par exemple, 2 500 € brut → 1 950 € net.</li>
+                    <li><strong>Cadre</strong> : environ 75% du brut (25% de cotisations, incluant la CET). Par exemple, 4 000 € brut → 3 000 € net.</li>
                 </ul>
 
+                <h3 class="text-lg font-semibold text-slate-900 mt-6">Fonction publique</h3>
+                <p>Les fonctionnaires bénéficient d'un taux de conversion plus avantageux : environ <strong>83% du brut</strong> (17% de cotisations). Les cotisations sont moins élevées car certaines prestations sociales sont gérées différemment. Par exemple, 2 500 € brut → 2 075 € net.</p>
+
+                <h3 class="text-lg font-semibold text-slate-900 mt-6">Statuts particuliers</h3>
+                <ul class="space-y-2">
+                    <li><strong>Alternants (apprentis, contrats de professionnalisation)</strong> : exonération totale ou partielle de cotisations selon l'âge et le salaire. Un apprenti peut toucher près de 100% de son brut en net.</li>
+                    <li><strong>Stagiaires</strong> : si la gratification dépasse le seuil légal (4,35 €/h en 2026), elle est soumise aux cotisations sociales au-delà de ce seuil uniquement.</li>
+                </ul>
+
+                <h2 class="text-xl font-semibold text-slate-900 mt-8">Brut vs net dans différents secteurs</h2>
+                <p>Au-delà du statut cadre/non-cadre, certains secteurs professionnels ont des spécificités en matière de cotisations qui impactent le taux de conversion brut-net.</p>
+
+                <h3 class="text-lg font-semibold text-slate-900 mt-6">Secteur du bâtiment (BTP)</h3>
+                <p>Les salariés du BTP ont des cotisations supplémentaires spécifiques : cotisations patronales de congés payés (caisse de congés payés du BTP) et cotisations pour la médecine du travail BTP. Le taux de conversion reste proche de 78% pour un non-cadre, mais la structure de la fiche de paie est différente.</p>
+
+                <h3 class="text-lg font-semibold text-slate-900 mt-6">Secteur de l'intérim</h3>
+                <p>Les intérimaires ont une indemnité de fin de mission (IFM) de 10% et une indemnité compensatrice de congés payés (ICCP) de 10%, qui s'ajoutent au brut. Ces indemnités sont soumises aux cotisations sociales. Au final, le "net" d'un intérimaire intègre ces primes de précarité.</p>
+
+                <h3 class="text-lg font-semibold text-slate-900 mt-6">Professions libérales</h3>
+                <p>Les professionnels libéraux ne sont pas salariés et relèvent d'un régime social différent (URSSAF, CIPAV, CARCDSF selon la profession). Leurs cotisations sont calculées différemment (pourcentage du chiffre d'affaires ou du bénéfice) et ne suivent pas la logique brut/net des salariés.</p>
+
+                <h2 class="text-xl font-semibold text-slate-900 mt-8">Historique du système brut-net en France</h2>
+                <p>Le système français de séparation entre salaire brut et salaire net découle de l'histoire de notre protection sociale. Après la Seconde Guerre mondiale, les ordonnances de 1945 ont créé la Sécurité sociale pour garantir à tous une couverture santé, retraite et famille.</p>
+                <p>Le financement de ce système repose sur des cotisations obligatoires, prélevées sur les salaires. Le choix a été fait de rendre ces cotisations visibles sur la fiche de paie, pour que chaque salarié comprenne comment est financée sa protection sociale. C'est ce qui explique la différence importante entre brut et net en France (environ 22-25%) comparé à d'autres pays.</p>
+                <p>En 2018, une réforme a simplifié la lecture des fiches de paie en regroupant les cotisations par risque (santé, retraite, chômage, etc.) plutôt que par organisme collecteur. Cette simplification visuelle n'a pas modifié les montants prélevés, mais a rendu la fiche de paie plus compréhensible.</p>
+
                 <h2 class="text-xl font-semibold text-slate-900 mt-8">Formule rapide de conversion</h2>
-                <p>Pour une estimation rapide :</p>
-                <ul>
+                <p>Pour une estimation rapide lors d'une négociation salariale ou d'un entretien d'embauche, vous pouvez utiliser ces coefficients multiplicateurs :</p>
+                <ul class="space-y-2">
                     <li><strong>Non-cadre</strong> : Salaire net ≈ Salaire brut × 0,78</li>
                     <li><strong>Cadre</strong> : Salaire net ≈ Salaire brut × 0,75</li>
                     <li><strong>Fonction publique</strong> : Salaire net ≈ Salaire brut × 0,83</li>
                 </ul>
-                <p>Pour un calcul précis, utilisez notre <a href="/" class="text-brand-600 hover:text-brand-700">calculateur brut/net</a>.</p>
+                <p>Ces formules donnent une approximation rapide. Pour un calcul précis tenant compte des tranches de cotisations et de votre situation exacte, utilisez notre <a href="/" class="text-brand-600 hover:text-brand-700">calculateur brut/net</a>.</p>
+
+                <h2 class="text-xl font-semibold text-slate-900 mt-8">Impact pratique : exemples chiffrés</h2>
+                <p>Comprendre la différence brut-net est essentiel pour évaluer une offre d'emploi ou négocier une augmentation. Voici des exemples concrets :</p>
+                <ul class="space-y-3">
+                    <li><strong>Offre à 30 000 € brut annuel (non-cadre)</strong> : cela représente 2 500 € brut/mois, soit environ 1 950 € net/mois, soit 23 400 € net annuel. Après impôt (taux moyen de 5% par exemple), cela donne environ 1 852 € net par mois réellement disponible.</li>
+                    <li><strong>Augmentation de 200 € brut/mois</strong> : pour un non-cadre, cela représente environ 156 € net supplémentaires par mois, soit 1 872 € net de plus par an.</li>
+                    <li><strong>Prime de 1 500 € brut</strong> : après cotisations (~22%), vous toucherez environ 1 170 € net. Si votre taux de prélèvement à la source est de 7,5%, il reste environ 1 082 € après impôt.</li>
+                </ul>
             
             </div>
         </section>
+        <section class="py-12 px-4">
+            <div class="mx-auto max-w-3xl">
+                <h2 class="text-xl font-bold text-slate-900 mb-6">Questions fréquentes</h2>
+                <div class="space-y-3">
+                    
+            <div class="rounded-xl border border-slate-200 bg-white">
+                <button class="faq-toggle w-full flex items-center justify-between p-5 text-left" onclick="this.nextElementSibling.classList.toggle('hidden');this.querySelector('svg').style.transform=this.nextElementSibling.classList.contains('hidden')?'':'rotate(180deg)'">
+                    <span class="font-medium text-slate-900">Pourquoi y a-t-il une différence entre brut et net ?</span>
+                    <svg class="h-5 w-5 text-slate-400 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+                </button>
+                <div class="faq-content hidden px-5 pb-5">
+                    <p class="text-sm text-slate-600">La différence correspond aux cotisations sociales (retraite, santé, chômage, CSG/CRDS) qui financent notre protection sociale.</p>
+                </div>
+            </div>
+            <div class="rounded-xl border border-slate-200 bg-white">
+                <button class="faq-toggle w-full flex items-center justify-between p-5 text-left" onclick="this.nextElementSibling.classList.toggle('hidden');this.querySelector('svg').style.transform=this.nextElementSibling.classList.contains('hidden')?'':'rotate(180deg)'">
+                    <span class="font-medium text-slate-900">Le brut ou le net est-il mentionné sur le contrat de travail ?</span>
+                    <svg class="h-5 w-5 text-slate-400 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+                </button>
+                <div class="faq-content hidden px-5 pb-5">
+                    <p class="text-sm text-slate-600">Le contrat mentionne toujours le salaire brut. Le net varie selon les cotisations et ne peut être garanti à l'avance.</p>
+                </div>
+            </div>
+            <div class="rounded-xl border border-slate-200 bg-white">
+                <button class="faq-toggle w-full flex items-center justify-between p-5 text-left" onclick="this.nextElementSibling.classList.toggle('hidden');this.querySelector('svg').style.transform=this.nextElementSibling.classList.contains('hidden')?'':'rotate(180deg)'">
+                    <span class="font-medium text-slate-900">Peut-on négocier son salaire en net ?</span>
+                    <svg class="h-5 w-5 text-slate-400 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+                </button>
+                <div class="faq-content hidden px-5 pb-5">
+                    <p class="text-sm text-slate-600">Non, on négocie toujours en brut. Les cotisations étant obligatoires, l'employeur ne peut pas garantir un net fixe.</p>
+                </div>
+            </div>
+            <div class="rounded-xl border border-slate-200 bg-white">
+                <button class="faq-toggle w-full flex items-center justify-between p-5 text-left" onclick="this.nextElementSibling.classList.toggle('hidden');this.querySelector('svg').style.transform=this.nextElementSibling.classList.contains('hidden')?'':'rotate(180deg)'">
+                    <span class="font-medium text-slate-900">La différence brut-net est-elle la même pour tous ?</span>
+                    <svg class="h-5 w-5 text-slate-400 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+                </button>
+                <div class="faq-content hidden px-5 pb-5">
+                    <p class="text-sm text-slate-600">Non, elle varie selon le statut (cadre/non-cadre), le niveau de salaire et certaines cotisations conventionnelles.</p>
+                </div>
+            </div>
+            <div class="rounded-xl border border-slate-200 bg-white">
+                <button class="faq-toggle w-full flex items-center justify-between p-5 text-left" onclick="this.nextElementSibling.classList.toggle('hidden');this.querySelector('svg').style.transform=this.nextElementSibling.classList.contains('hidden')?'':'rotate(180deg)'">
+                    <span class="font-medium text-slate-900">Comment vérifier le calcul sur ma fiche de paie ?</span>
+                    <svg class="h-5 w-5 text-slate-400 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+                </button>
+                <div class="faq-content hidden px-5 pb-5">
+                    <p class="text-sm text-slate-600">Utilisez notre calculateur avec votre brut mensuel. Un écart de quelques euros est normal (mutuelle, tickets restaurant, prévoyance).</p>
+                </div>
+            </div>
+                </div>
+            </div>
+        </section>
+        <script type="application/ld+json">
+        {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Pourquoi y a-t-il une différence entre brut et net ?","acceptedAnswer":{"@type":"Answer","text":"La différence correspond aux cotisations sociales (retraite, santé, chômage, CSG/CRDS) qui financent notre protection sociale."}},{"@type":"Question","name":"Le brut ou le net est-il mentionné sur le contrat de travail ?","acceptedAnswer":{"@type":"Answer","text":"Le contrat mentionne toujours le salaire brut. Le net varie selon les cotisations et ne peut être garanti à l'avance."}},{"@type":"Question","name":"Peut-on négocier son salaire en net ?","acceptedAnswer":{"@type":"Answer","text":"Non, on négocie toujours en brut. Les cotisations étant obligatoires, l'employeur ne peut pas garantir un net fixe."}},{"@type":"Question","name":"La différence brut-net est-elle la même pour tous ?","acceptedAnswer":{"@type":"Answer","text":"Non, elle varie selon le statut (cadre/non-cadre), le niveau de salaire et certaines cotisations conventionnelles."}},{"@type":"Question","name":"Comment vérifier le calcul sur ma fiche de paie ?","acceptedAnswer":{"@type":"Answer","text":"Utilisez notre calculateur avec votre brut mensuel. Un écart de quelques euros est normal (mutuelle, tickets restaurant, prévoyance)."}}]}
+        </script>
         <section class="bg-white border-t border-slate-200 py-12 px-4">
             <div class="mx-auto max-w-4xl">
                 <h2 class="text-lg font-bold text-slate-900 mb-4">Pages connexes</h2>
@@ -195,6 +334,30 @@
 <a href="/salaire-brut-net-mensuel/" class="block rounded-xl border border-slate-200 bg-white p-3 text-center hover:border-brand-300 hover:shadow-sm transition-all">
             <span class="block text-sm font-medium text-slate-900">Calcul mensuel</span>
         </a>
+<a href="/salaire-brut-net-annuel/" class="block rounded-xl border border-slate-200 bg-white p-3 text-center hover:border-brand-300 hover:shadow-sm transition-all">
+            <span class="block text-sm font-medium text-slate-900">Calcul annuel</span>
+        </a>
+<a href="/salaire-brut-net-horaire/" class="block rounded-xl border border-slate-200 bg-white p-3 text-center hover:border-brand-300 hover:shadow-sm transition-all">
+            <span class="block text-sm font-medium text-slate-900">Taux horaire</span>
+        </a>
+<a href="/salaire-brut-net-auto-entrepreneur/" class="block rounded-xl border border-slate-200 bg-white p-3 text-center hover:border-brand-300 hover:shadow-sm transition-all">
+            <span class="block text-sm font-medium text-slate-900">Auto-entrepreneur</span>
+        </a>
+<a href="/salaire-brut-net-alternance-apprentissage/" class="block rounded-xl border border-slate-200 bg-white p-3 text-center hover:border-brand-300 hover:shadow-sm transition-all">
+            <span class="block text-sm font-medium text-slate-900">Alternance</span>
+        </a>
+<a href="/lire-fiche-de-paie/" class="block rounded-xl border border-slate-200 bg-white p-3 text-center hover:border-brand-300 hover:shadow-sm transition-all">
+            <span class="block text-sm font-medium text-slate-900">Lire sa fiche de paie</span>
+        </a>
+<a href="/prime-brut-en-net/" class="block rounded-xl border border-slate-200 bg-white p-3 text-center hover:border-brand-300 hover:shadow-sm transition-all">
+            <span class="block text-sm font-medium text-slate-900">Prime brut en net</span>
+        </a>
+<a href="/salaire-moyen-france/" class="block rounded-xl border border-slate-200 bg-white p-3 text-center hover:border-brand-300 hover:shadow-sm transition-all">
+            <span class="block text-sm font-medium text-slate-900">Salaire moyen France</span>
+        </a>
+<a href="/negocier-salaire/" class="block rounded-xl border border-slate-200 bg-white p-3 text-center hover:border-brand-300 hover:shadow-sm transition-all">
+            <span class="block text-sm font-medium text-slate-900">Négocier son salaire</span>
+        </a>
 
                 </div>
             </div>
@@ -209,13 +372,12 @@
             <p class="text-xs text-slate-500">© 2026 SalaireBrutNet · Estimation indicative</p>
             <div class="flex gap-4">
                 <a href="/" class="text-xs text-slate-500 hover:text-slate-900">Calculateur</a>
-                <a href="/mentions-legales.html" class="text-xs text-slate-500 hover:text-slate-900">Mentions légales</a>
-                <a href="/mission.html" class="text-xs text-slate-500 hover:text-slate-900">Notre Mission</a>
+                <a href="/mentions-legales/" class="text-xs text-slate-500 hover:text-slate-900">Mentions légales</a>
+                <a href="/mission/" class="text-xs text-slate-500 hover:text-slate-900">Notre Mission</a>
                 <a href="/simulateur-impot-sur-le-revenu/" class="text-xs text-slate-500 hover:text-slate-900">Simulateur Impôts</a>
             </div>
         </div>
     </footer>
     <script src="/js/brut-net.js"></script>
-    <script>lucide.createIcons();</script>
 
 </body></html>

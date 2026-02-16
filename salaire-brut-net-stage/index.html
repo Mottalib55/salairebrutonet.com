@@ -17,28 +17,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://unpkg.com/lucide@latest"></script>
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    fontFamily: { sans: ['Inter', 'sans-serif'] },
-                    colors: {
-                        brand: { 50:'#f0f9ff',100:'#e0f2fe',200:'#bae6fd',400:'#38bdf8',500:'#0ea5e9',600:'#0284c7',700:'#0369a1',900:'#0c4a6e' },
-                        emerald: { 50:'#ecfdf5',100:'#d1fae5',500:'#10b981',600:'#059669',700:'#047857' }
-                    }
-                }
-            }
-        }
-    </script>
-    <style>
-        input[type=range] { -webkit-appearance: none; background: transparent; }
-        input[type=range]::-webkit-slider-thumb { -webkit-appearance: none; height: 20px; width: 20px; border-radius: 50%; background: #fff; border: 2px solid #0ea5e9; cursor: pointer; box-shadow: 0 2px 6px rgba(0,0,0,0.15); margin-top: -8px; }
-        input[type=range]::-webkit-slider-runnable-track { width: 100%; height: 4px; cursor: pointer; background: linear-gradient(to right, #0ea5e9 0%, #0ea5e9 var(--progress, 0%), #e2e8f0 var(--progress, 0%), #e2e8f0 100%); border-radius: 9999px; }
-        input[type=number]::-webkit-inner-spin-button, input[type=number]::-webkit-outer-spin-button { -webkit-appearance: none; margin: 0; }
-        input[type=number] { -moz-appearance: textfield; }
-    </style>
+    <link rel="stylesheet" href="/css/style.css">
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
@@ -60,7 +39,7 @@
             <nav class="hidden md:flex gap-8">
                 <a href="/" class="text-sm font-medium text-slate-500 hover:text-slate-900 transition-colors">Calculateur</a>
                 <a href="/simulateur-impot-sur-le-revenu/" class="text-sm font-medium text-slate-500 hover:text-slate-900 transition-colors">Simulateur Impôts</a>
-                <a href="/mission.html" class="text-sm font-medium text-slate-500 hover:text-slate-900 transition-colors">Notre Mission</a>
+                <a href="/mission/" class="text-sm font-medium text-slate-500 hover:text-slate-900 transition-colors">Notre Mission</a>
             </nav>
         </div>
     </header>
@@ -69,7 +48,7 @@
         <nav class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-4">
             <ol class="flex items-center gap-2 text-sm text-slate-500">
                 <li><a href="/" class="hover:text-brand-600 transition-colors">Accueil</a></li>
-                <li><i data-lucide="chevron-right" class="h-4 w-4"></i></li>
+                <li><svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg></li>
                 <li class="text-slate-900 font-medium">Gratification de Stage Brut Net 2026</li>
             </ol>
         </nav>
@@ -148,9 +127,252 @@
                     <li><strong>Gratification de 1 000 €</strong> : les cotisations s'appliquent sur 331 € (1 000 - 669), net ≈ 927 €</li>
                     <li><strong>Gratification de 1 500 €</strong> : cotisations sur 831 €, net ≈ 1 317 €</li>
                 </ul>
+
+                <h2 class="text-xl font-semibold text-slate-900 mt-8">Conditions légales du stage en France</h2>
+                <p>Les stages en France sont strictement encadrés par la loi pour éviter les abus et garantir que le stage reste un <strong>dispositif pédagogique</strong> et non un contrat de travail déguisé.</p>
+
+                <h3 class="text-lg font-semibold text-slate-900 mt-6">Durée maximale du stage</h3>
+                <p>Un stage ne peut pas dépasser <strong>6 mois par année d'enseignement</strong> (soit 924 heures). Cette limite s'applique quel que soit le nombre de stages effectués dans l'année. Au-delà, l'entreprise doit embaucher l'étudiant en <a href="/salaire-brut-net-alternance-apprentissage/" class="text-brand-600 hover:text-brand-700">contrat d'apprentissage</a> ou en contrat de professionnalisation.</p>
+
+                <h3 class="text-lg font-semibold text-slate-900 mt-6">Convention de stage obligatoire</h3>
+                <p>Tout stage doit faire l'objet d'une <strong>convention tripartite</strong> signée entre :</p>
+                <ul>
+                    <li>L'établissement d'enseignement (université, école, lycée)</li>
+                    <li>L'entreprise d'accueil</li>
+                    <li>Le stagiaire</li>
+                </ul>
+                <p>La convention définit les missions, la durée, les horaires, la gratification et les conditions d'encadrement. Sans convention de stage, la relation peut être requalifiée en <strong>contrat de travail</strong>, avec obligation pour l'employeur de payer des cotisations rétroactives et d'éventuelles indemnités.</p>
+
+                <h3 class="text-lg font-semibold text-slate-900 mt-6">Délai de carence entre deux stages</h3>
+                <p>Pour éviter que les entreprises n'enchaînent les stagiaires sur un même poste, la loi impose un <strong>délai de carence</strong> entre deux stages sur le même poste :</p>
+                <ul>
+                    <li>Délai de carence = <strong>1/3 de la durée du stage précédent</strong></li>
+                    <li>Exemple : après un stage de 6 mois, l'entreprise doit attendre 2 mois avant d'accueillir un nouveau stagiaire sur le même poste</li>
+                </ul>
+
+                <h2 class="text-xl font-semibold text-slate-900 mt-8">Gratification de stage : calcul détaillé</h2>
+                <p>Le calcul de la gratification de stage repose sur le <strong>nombre d'heures effectuées</strong>. Le taux horaire minimum est fixé à <strong>15% du plafond horaire de la Sécurité sociale</strong>, soit 4,35 € en 2026.</p>
+
+                <h3 class="text-lg font-semibold text-slate-900 mt-6">Méthode de calcul</h3>
+                <p>Pour calculer la gratification mensuelle :<br>
+                <strong>Gratification = Nombre d'heures de présence × 4,35 €</strong></p>
+                <p>Exemples concrets :</p>
+                <ul>
+                    <li><strong>Temps plein (35h/semaine)</strong> : 151,67 heures par mois × 4,35 € = 659,76 € (arrondi à 669 € souvent)</li>
+                    <li><strong>Temps partiel (28h/semaine)</strong> : 121,33 heures par mois × 4,35 € = 527,79 €</li>
+                    <li><strong>Stage de 3 semaines</strong> : 105 heures × 4,35 € = 456,75 €</li>
+                </ul>
+
+                <h3 class="text-lg font-semibold text-slate-900 mt-6">Gratification supérieure au minimum légal</h3>
+                <p>L'employeur peut choisir de verser une gratification <strong>supérieure</strong> au minimum légal. Dans ce cas :</p>
+                <ul>
+                    <li>La fraction jusqu'à 4,35 €/h reste <strong>exonérée</strong> de cotisations sociales et d'impôt</li>
+                    <li>La fraction <strong>au-delà</strong> est soumise aux cotisations sociales classiques (environ 22%) et à l'impôt sur le revenu</li>
+                </ul>
+                <p>Exemple : un stagiaire gratifié à 1 200 € par mois (35h/semaine) :</p>
+                <ul>
+                    <li>Part exonérée : 151,67 h × 4,35 € = 659,76 €</li>
+                    <li>Part soumise à cotisations : 1 200 - 659,76 = 540,24 €</li>
+                    <li>Cotisations salariales (~22%) : 540,24 × 22% = 118,85 €</li>
+                    <li>Gratification nette : 1 200 - 118,85 = <strong>1 081,15 €</strong></li>
+                </ul>
+
+                <h2 class="text-xl font-semibold text-slate-900 mt-8">Droits et avantages des stagiaires</h2>
+                <p>Bien que les stagiaires ne soient pas des salariés, ils bénéficient de plusieurs droits et avantages :</p>
+
+                <h3 class="text-lg font-semibold text-slate-900 mt-6">1. Congés et absences</h3>
+                <p>Les stagiaires ont droit à des <strong>autorisations d'absence</strong> dans les mêmes conditions que les salariés :</p>
+                <ul>
+                    <li><strong>Grossesse</strong> : autorisation d'absence pour les examens médicaux obligatoires</li>
+                    <li><strong>Congé paternité</strong> : 25 jours (comme les salariés)</li>
+                    <li><strong>Mariage, PACS, décès</strong> : jours d'absence autorisés</li>
+                </ul>
+                <p>Important : les stagiaires n'ont <strong>pas droit aux congés payés</strong>. En cas d'absence (maladie, congés), la gratification peut être réduite au prorata du temps effectivement présent.</p>
+
+                <h3 class="text-lg font-semibold text-slate-900 mt-6">2. Tickets restaurant et accès à la cantine</h3>
+                <p>Les stagiaires doivent bénéficier des mêmes avantages que les salariés en matière de <strong>restauration</strong> :</p>
+                <ul>
+                    <li>Accès au restaurant d'entreprise ou aux titres-restaurant si l'entreprise en fournit aux salariés</li>
+                    <li>Si l'entreprise verse des titres-restaurant, le stagiaire peut participer à hauteur de 50% de la valeur (comme un salarié)</li>
+                </ul>
+
+                <h3 class="text-lg font-semibold text-slate-900 mt-6">3. Remboursement des frais de transport</h3>
+                <p>Les employeurs doivent rembourser <strong>50% du prix des titres d'abonnement</strong> aux transports publics, exactement comme pour les salariés. Ce remboursement n'est pas considéré comme une gratification et reste exonéré de cotisations.</p>
+
+                <h3 class="text-lg font-semibold text-slate-900 mt-6">4. Protection sociale</h3>
+                <p>Les stagiaires bénéficient d'une <strong>couverture sociale</strong> spécifique :</p>
+                <ul>
+                    <li><strong>Accident du travail</strong> : le stagiaire est couvert par l'assurance de l'établissement d'enseignement (pas par l'entreprise)</li>
+                    <li><strong>Responsabilité civile</strong> : généralement couverte par l'assurance de l'école</li>
+                    <li><strong>Maladie</strong> : le stagiaire reste rattaché à la Sécurité sociale étudiante ou parentale</li>
+                </ul>
+
+                <h3 class="text-lg font-semibold text-slate-900 mt-6">5. Jours de congés pour révisions et examens</h3>
+                <p>Si le stage se déroule durant la période de révisions ou d'examens, le stagiaire peut demander des <strong>jours d'absence autorisée</strong> pour se préparer et passer ses examens. Ces jours ne sont généralement pas rémunérés (sauf accord de l'entreprise).</p>
+
+                <h2 class="text-xl font-semibold text-slate-900 mt-8">Différences entre stage et emploi</h2>
+                <p>Il est essentiel de comprendre qu'un <strong>stage n'est pas un emploi</strong>. Voici les principales différences :</p>
+                <table class="w-full border-collapse border border-slate-300 mt-4">
+                    <thead>
+                        <tr class="bg-slate-100">
+                            <th class="border border-slate-300 px-4 py-2">Critère</th>
+                            <th class="border border-slate-300 px-4 py-2">Stage</th>
+                            <th class="border border-slate-300 px-4 py-2">Emploi (CDD/CDI)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td class="border border-slate-300 px-4 py-2"><strong>Objectif</strong></td><td class="border border-slate-300 px-4 py-2">Formation pédagogique</td><td class="border border-slate-300 px-4 py-2">Production / Travail</td></tr>
+                        <tr><td class="border border-slate-300 px-4 py-2"><strong>Durée maximale</strong></td><td class="border border-slate-300 px-4 py-2">6 mois</td><td class="border border-slate-300 px-4 py-2">Illimitée (CDD max 18 mois)</td></tr>
+                        <tr><td class="border border-slate-300 px-4 py-2"><strong>Rémunération</strong></td><td class="border border-slate-300 px-4 py-2">Gratification (min. 669 €)</td><td class="border border-slate-300 px-4 py-2">Salaire (min. SMIC 1 802 €)</td></tr>
+                        <tr><td class="border border-slate-300 px-4 py-2"><strong>Congés payés</strong></td><td class="border border-slate-300 px-4 py-2">Non</td><td class="border border-slate-300 px-4 py-2">Oui (2,5 jours/mois)</td></tr>
+                        <tr><td class="border border-slate-300 px-4 py-2"><strong>Assurance chômage</strong></td><td class="border border-slate-300 px-4 py-2">Non</td><td class="border border-slate-300 px-4 py-2">Oui</td></tr>
+                        <tr><td class="border border-slate-300 px-4 py-2"><strong>Cotisations retraite</strong></td><td class="border border-slate-300 px-4 py-2">Non (sauf si &gt; 669 €)</td><td class="border border-slate-300 px-4 py-2">Oui</td></tr>
+                        <tr><td class="border border-slate-300 px-4 py-2"><strong>Protection licenciement</strong></td><td class="border border-slate-300 px-4 py-2">Aucune</td><td class="border border-slate-300 px-4 py-2">Oui (procédure encadrée)</td></tr>
+                    </tbody>
+                </table>
+
+                <h2 class="text-xl font-semibold text-slate-900 mt-8">Risques de requalification en contrat de travail</h2>
+                <p>Si le stage ne respecte pas les conditions légales, il peut être <strong>requalifié en contrat de travail</strong> par le conseil de prud'hommes. Les principaux motifs de requalification sont :</p>
+                <ul>
+                    <li><strong>Absence de convention de stage</strong> ou convention non conforme</li>
+                    <li><strong>Missions ne correspondant pas à la formation</strong> : le stagiaire effectue des tâches purement productives sans lien avec son cursus</li>
+                    <li><strong>Autonomie excessive</strong> : le stagiaire travaille sans encadrement ni suivi pédagogique</li>
+                    <li><strong>Remplacement d'un salarié absent</strong> ou récemment licencié</li>
+                    <li><strong>Dépassement de la durée légale</strong> de 6 mois</li>
+                </ul>
+                <p>En cas de requalification, l'employeur doit verser :</p>
+                <ul>
+                    <li>Un <strong>rappel de salaire</strong> (différence entre la gratification et le SMIC)</li>
+                    <li>Les <strong>cotisations sociales</strong> rétroactives (part patronale et salariale)</li>
+                    <li>D'éventuelles <strong>indemnités de licenciement</strong> si la relation est rompue sans motif valable</li>
+                </ul>
+
+                <h2 class="text-xl font-semibold text-slate-900 mt-8">Embauche après un stage</h2>
+                <p>Si l'employeur souhaite <strong>embaucher le stagiaire</strong> à l'issue du stage, plusieurs options s'offrent à lui :</p>
+
+                <h3 class="text-lg font-semibold text-slate-900 mt-6">1. Embauche en CDI ou CDD classique</h3>
+                <p>L'entreprise peut proposer un <a href="/salaire-brut-net-non-cadre/" class="text-brand-600 hover:text-brand-700">contrat de travail classique</a> (CDD ou CDI). Dans ce cas :</p>
+                <ul>
+                    <li>La <strong>période d'essai</strong> s'applique normalement (2 à 4 mois selon le statut)</li>
+                    <li>La <strong>durée du stage</strong> peut être déduite de la période d'essai si cela est prévu dans le contrat de travail (maximum 50% de la durée du stage)</li>
+                    <li>Le salaire passe au minimum au <a href="/smic-brut-net-2026/" class="text-brand-600 hover:text-brand-700">SMIC</a> (1 801,80 € brut) ou plus selon le poste</li>
+                </ul>
+
+                <h3 class="text-lg font-semibold text-slate-900 mt-6">2. Contrat d'apprentissage ou de professionnalisation</h3>
+                <p>Si le stagiaire est encore en formation, l'entreprise peut proposer un <a href="/salaire-brut-net-alternance-apprentissage/" class="text-brand-600 hover:text-brand-700">contrat d'alternance</a>. Cette solution permet de continuer à former le jeune tout en bénéficiant d'aides financières et d'exonérations de charges.</p>
+
+                <h2 class="text-xl font-semibold text-slate-900 mt-8">Conseils pour les stagiaires</h2>
+                <p>Voici quelques conseils pratiques pour tirer le meilleur parti de votre stage :</p>
+
+                <h3 class="text-lg font-semibold text-slate-900 mt-6">Négociez votre gratification</h3>
+                <p>Le minimum légal est de 4,35 €/h (669 € par mois), mais de nombreuses entreprises versent davantage, surtout dans les grandes entreprises et les secteurs en tension (tech, finance, conseil). N'hésitez pas à <a href="/negocier-salaire/" class="text-brand-600 hover:text-brand-700">négocier</a> votre gratification, en particulier si vous avez déjà une expérience ou des compétences spécifiques.</p>
+
+                <h3 class="text-lg font-semibold text-slate-900 mt-6">Demandez une attestation de stage</h3>
+                <p>À la fin du stage, demandez une <strong>attestation de stage</strong> mentionnant vos missions, vos compétences développées et la durée du stage. Ce document sera précieux pour vos futures candidatures.</p>
+
+                <h3 class="text-lg font-semibold text-slate-900 mt-6">Gardez le contact</h3>
+                <p>Même si vous n'êtes pas embauché immédiatement, restez en contact avec votre maître de stage et les collègues que vous avez côtoyés. Ils pourront vous recommander ou vous informer d'opportunités futures.</p>
             
             </div>
         </section>
+        <section class="py-12 px-4 bg-slate-50">
+            <div class="mx-auto max-w-4xl">
+                <h2 class="text-xl font-bold text-slate-900 mb-6">Tableau de conversion brut → net</h2>
+                
+    <div class="overflow-x-auto">
+        <table class="w-full text-sm">
+            <thead><tr class="border-b-2 border-slate-300">
+                <th class="py-2 text-left font-semibold">Brut mensuel</th>
+                <th class="py-2 text-right font-semibold">Net mensuel</th>
+                <th class="py-2 text-right font-semibold">Net annuel</th>
+                <th class="py-2 text-right font-semibold">Coût employeur</th>
+            </tr></thead>
+            <tbody><tr class="border-b border-slate-100">
+            <td class="py-2 font-medium">1 500 €</td>
+            <td class="py-2 text-right">1 187 €</td>
+            <td class="py-2 text-right">14 249 €</td>
+            <td class="py-2 text-right">1 984 €</td>
+        </tr><tr class="border-b border-slate-100">
+            <td class="py-2 font-medium">2 000 €</td>
+            <td class="py-2 text-right">1 583 €</td>
+            <td class="py-2 text-right">18 998 €</td>
+            <td class="py-2 text-right">2 646 €</td>
+        </tr><tr class="border-b border-slate-100">
+            <td class="py-2 font-medium">2 500 €</td>
+            <td class="py-2 text-right">1 979 €</td>
+            <td class="py-2 text-right">23 748 €</td>
+            <td class="py-2 text-right">3 307 €</td>
+        </tr><tr class="border-b border-slate-100">
+            <td class="py-2 font-medium">3 000 €</td>
+            <td class="py-2 text-right">2 375 €</td>
+            <td class="py-2 text-right">28 497 €</td>
+            <td class="py-2 text-right">3 969 €</td>
+        </tr><tr class="border-b border-slate-100">
+            <td class="py-2 font-medium">3 500 €</td>
+            <td class="py-2 text-right">2 771 €</td>
+            <td class="py-2 text-right">33 247 €</td>
+            <td class="py-2 text-right">4 630 €</td>
+        </tr></tbody>
+        </table>
+    </div>
+            </div>
+        </section>
+        <section class="py-12 px-4">
+            <div class="mx-auto max-w-3xl">
+                <h2 class="text-xl font-bold text-slate-900 mb-6">Questions fréquentes</h2>
+                <div class="space-y-3">
+                    
+            <div class="rounded-xl border border-slate-200 bg-white">
+                <button class="faq-toggle w-full flex items-center justify-between p-5 text-left" onclick="this.nextElementSibling.classList.toggle('hidden');this.querySelector('svg').style.transform=this.nextElementSibling.classList.contains('hidden')?'':'rotate(180deg)'">
+                    <span class="font-medium text-slate-900">Comment calculer mon salaire net ?</span>
+                    <svg class="h-5 w-5 text-slate-400 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+                </button>
+                <div class="faq-content hidden px-5 pb-5">
+                    <p class="text-sm text-slate-600">Utilisez notre calculateur ci-dessus ou appliquez un coefficient de 0,78 à votre brut mensuel pour une estimation rapide.</p>
+                </div>
+            </div>
+            <div class="rounded-xl border border-slate-200 bg-white">
+                <button class="faq-toggle w-full flex items-center justify-between p-5 text-left" onclick="this.nextElementSibling.classList.toggle('hidden');this.querySelector('svg').style.transform=this.nextElementSibling.classList.contains('hidden')?'':'rotate(180deg)'">
+                    <span class="font-medium text-slate-900">Les cotisations sont-elles les mêmes partout en France ?</span>
+                    <svg class="h-5 w-5 text-slate-400 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+                </button>
+                <div class="faq-content hidden px-5 pb-5">
+                    <p class="text-sm text-slate-600">Oui, les cotisations de Sécurité sociale sont nationales. Seules certaines mutuelles d'entreprise peuvent varier.</p>
+                </div>
+            </div>
+            <div class="rounded-xl border border-slate-200 bg-white">
+                <button class="faq-toggle w-full flex items-center justify-between p-5 text-left" onclick="this.nextElementSibling.classList.toggle('hidden');this.querySelector('svg').style.transform=this.nextElementSibling.classList.contains('hidden')?'':'rotate(180deg)'">
+                    <span class="font-medium text-slate-900">Puis-je négocier mon salaire brut ?</span>
+                    <svg class="h-5 w-5 text-slate-400 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+                </button>
+                <div class="faq-content hidden px-5 pb-5">
+                    <p class="text-sm text-slate-600">Oui, le salaire brut est négociable lors de l'embauche ou lors des entretiens annuels. Préparez vos arguments et renseignez-vous sur les salaires du marché.</p>
+                </div>
+            </div>
+            <div class="rounded-xl border border-slate-200 bg-white">
+                <button class="faq-toggle w-full flex items-center justify-between p-5 text-left" onclick="this.nextElementSibling.classList.toggle('hidden');this.querySelector('svg').style.transform=this.nextElementSibling.classList.contains('hidden')?'':'rotate(180deg)'">
+                    <span class="font-medium text-slate-900">Que signifie le plafond de la Sécurité sociale ?</span>
+                    <svg class="h-5 w-5 text-slate-400 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+                </button>
+                <div class="faq-content hidden px-5 pb-5">
+                    <p class="text-sm text-slate-600">C'est un seuil (3 864 € par mois en 2026) au-delà duquel certaines cotisations changent de taux ou ne s'appliquent plus.</p>
+                </div>
+            </div>
+            <div class="rounded-xl border border-slate-200 bg-white">
+                <button class="faq-toggle w-full flex items-center justify-between p-5 text-left" onclick="this.nextElementSibling.classList.toggle('hidden');this.querySelector('svg').style.transform=this.nextElementSibling.classList.contains('hidden')?'':'rotate(180deg)'">
+                    <span class="font-medium text-slate-900">Le salaire net est-il le montant versé sur mon compte ?</span>
+                    <svg class="h-5 w-5 text-slate-400 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+                </button>
+                <div class="faq-content hidden px-5 pb-5">
+                    <p class="text-sm text-slate-600">Le net avant impôt est affiché sur votre fiche de paie. Le montant réel versé est le net après prélèvement à la source.</p>
+                </div>
+            </div>
+                </div>
+            </div>
+        </section>
+        <script type="application/ld+json">
+        {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Comment calculer mon salaire net ?","acceptedAnswer":{"@type":"Answer","text":"Utilisez notre calculateur ci-dessus ou appliquez un coefficient de 0,78 à votre brut mensuel pour une estimation rapide."}},{"@type":"Question","name":"Les cotisations sont-elles les mêmes partout en France ?","acceptedAnswer":{"@type":"Answer","text":"Oui, les cotisations de Sécurité sociale sont nationales. Seules certaines mutuelles d'entreprise peuvent varier."}},{"@type":"Question","name":"Puis-je négocier mon salaire brut ?","acceptedAnswer":{"@type":"Answer","text":"Oui, le salaire brut est négociable lors de l'embauche ou lors des entretiens annuels. Préparez vos arguments et renseignez-vous sur les salaires du marché."}},{"@type":"Question","name":"Que signifie le plafond de la Sécurité sociale ?","acceptedAnswer":{"@type":"Answer","text":"C'est un seuil (3 864 € par mois en 2026) au-delà duquel certaines cotisations changent de taux ou ne s'appliquent plus."}},{"@type":"Question","name":"Le salaire net est-il le montant versé sur mon compte ?","acceptedAnswer":{"@type":"Answer","text":"Le net avant impôt est affiché sur votre fiche de paie. Le montant réel versé est le net après prélèvement à la source."}}]}
+        </script>
         <section class="bg-white border-t border-slate-200 py-12 px-4">
             <div class="mx-auto max-w-4xl">
                 <h2 class="text-lg font-bold text-slate-900 mb-4">Pages connexes</h2>
@@ -179,6 +401,30 @@
 <a href="/salaire-brut-net-mensuel/" class="block rounded-xl border border-slate-200 bg-white p-3 text-center hover:border-brand-300 hover:shadow-sm transition-all">
             <span class="block text-sm font-medium text-slate-900">Calcul mensuel</span>
         </a>
+<a href="/salaire-brut-net-annuel/" class="block rounded-xl border border-slate-200 bg-white p-3 text-center hover:border-brand-300 hover:shadow-sm transition-all">
+            <span class="block text-sm font-medium text-slate-900">Calcul annuel</span>
+        </a>
+<a href="/salaire-brut-net-horaire/" class="block rounded-xl border border-slate-200 bg-white p-3 text-center hover:border-brand-300 hover:shadow-sm transition-all">
+            <span class="block text-sm font-medium text-slate-900">Taux horaire</span>
+        </a>
+<a href="/salaire-brut-net-auto-entrepreneur/" class="block rounded-xl border border-slate-200 bg-white p-3 text-center hover:border-brand-300 hover:shadow-sm transition-all">
+            <span class="block text-sm font-medium text-slate-900">Auto-entrepreneur</span>
+        </a>
+<a href="/salaire-brut-net-alternance-apprentissage/" class="block rounded-xl border border-slate-200 bg-white p-3 text-center hover:border-brand-300 hover:shadow-sm transition-all">
+            <span class="block text-sm font-medium text-slate-900">Alternance</span>
+        </a>
+<a href="/lire-fiche-de-paie/" class="block rounded-xl border border-slate-200 bg-white p-3 text-center hover:border-brand-300 hover:shadow-sm transition-all">
+            <span class="block text-sm font-medium text-slate-900">Lire sa fiche de paie</span>
+        </a>
+<a href="/prime-brut-en-net/" class="block rounded-xl border border-slate-200 bg-white p-3 text-center hover:border-brand-300 hover:shadow-sm transition-all">
+            <span class="block text-sm font-medium text-slate-900">Prime brut en net</span>
+        </a>
+<a href="/salaire-moyen-france/" class="block rounded-xl border border-slate-200 bg-white p-3 text-center hover:border-brand-300 hover:shadow-sm transition-all">
+            <span class="block text-sm font-medium text-slate-900">Salaire moyen France</span>
+        </a>
+<a href="/negocier-salaire/" class="block rounded-xl border border-slate-200 bg-white p-3 text-center hover:border-brand-300 hover:shadow-sm transition-all">
+            <span class="block text-sm font-medium text-slate-900">Négocier son salaire</span>
+        </a>
 
                 </div>
             </div>
@@ -193,13 +439,12 @@
             <p class="text-xs text-slate-500">© 2026 SalaireBrutNet · Estimation indicative</p>
             <div class="flex gap-4">
                 <a href="/" class="text-xs text-slate-500 hover:text-slate-900">Calculateur</a>
-                <a href="/mentions-legales.html" class="text-xs text-slate-500 hover:text-slate-900">Mentions légales</a>
-                <a href="/mission.html" class="text-xs text-slate-500 hover:text-slate-900">Notre Mission</a>
+                <a href="/mentions-legales/" class="text-xs text-slate-500 hover:text-slate-900">Mentions légales</a>
+                <a href="/mission/" class="text-xs text-slate-500 hover:text-slate-900">Notre Mission</a>
                 <a href="/simulateur-impot-sur-le-revenu/" class="text-xs text-slate-500 hover:text-slate-900">Simulateur Impôts</a>
             </div>
         </div>
     </footer>
     <script src="/js/brut-net.js"></script>
-    <script>lucide.createIcons();</script>
 
 </body></html>

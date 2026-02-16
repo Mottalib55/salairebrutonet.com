@@ -17,28 +17,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://unpkg.com/lucide@latest"></script>
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    fontFamily: { sans: ['Inter', 'sans-serif'] },
-                    colors: {
-                        brand: { 50:'#f0f9ff',100:'#e0f2fe',200:'#bae6fd',400:'#38bdf8',500:'#0ea5e9',600:'#0284c7',700:'#0369a1',900:'#0c4a6e' },
-                        emerald: { 50:'#ecfdf5',100:'#d1fae5',500:'#10b981',600:'#059669',700:'#047857' }
-                    }
-                }
-            }
-        }
-    </script>
-    <style>
-        input[type=range] { -webkit-appearance: none; background: transparent; }
-        input[type=range]::-webkit-slider-thumb { -webkit-appearance: none; height: 20px; width: 20px; border-radius: 50%; background: #fff; border: 2px solid #0ea5e9; cursor: pointer; box-shadow: 0 2px 6px rgba(0,0,0,0.15); margin-top: -8px; }
-        input[type=range]::-webkit-slider-runnable-track { width: 100%; height: 4px; cursor: pointer; background: linear-gradient(to right, #0ea5e9 0%, #0ea5e9 var(--progress, 0%), #e2e8f0 var(--progress, 0%), #e2e8f0 100%); border-radius: 9999px; }
-        input[type=number]::-webkit-inner-spin-button, input[type=number]::-webkit-outer-spin-button { -webkit-appearance: none; margin: 0; }
-        input[type=number] { -moz-appearance: textfield; }
-    </style>
+    <link rel="stylesheet" href="/css/style.css">
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
@@ -60,7 +39,7 @@
             <nav class="hidden md:flex gap-8">
                 <a href="/" class="text-sm font-medium text-slate-500 hover:text-slate-900 transition-colors">Calculateur</a>
                 <a href="/simulateur-impot-sur-le-revenu/" class="text-sm font-medium text-slate-500 hover:text-slate-900 transition-colors">Simulateur Impôts</a>
-                <a href="/mission.html" class="text-sm font-medium text-slate-500 hover:text-slate-900 transition-colors">Notre Mission</a>
+                <a href="/mission/" class="text-sm font-medium text-slate-500 hover:text-slate-900 transition-colors">Notre Mission</a>
             </nav>
         </div>
     </header>
@@ -69,7 +48,7 @@
         <nav class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-4">
             <ol class="flex items-center gap-2 text-sm text-slate-500">
                 <li><a href="/" class="hover:text-brand-600 transition-colors">Accueil</a></li>
-                <li><i data-lucide="chevron-right" class="h-4 w-4"></i></li>
+                <li><svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg></li>
                 <li class="text-slate-900 font-medium">Salaire Net Avant et Après Impôt</li>
             </ol>
         </nav>
@@ -133,30 +112,198 @@
             <div class="mx-auto max-w-4xl prose prose-slate">
                 
                 <h2 class="text-xl font-semibold text-slate-900">Net avant impôt vs net après impôt</h2>
-                <p>Depuis janvier 2019, l'<strong>impôt sur le revenu</strong> est prélevé directement sur votre salaire. Votre fiche de paie affiche donc deux montants nets distincts.</p>
+                <p>Depuis janvier 2019, l'<strong>impôt sur le revenu</strong> est prélevé directement à la source sur votre salaire chaque mois. Cette réforme a modifié la présentation de votre fiche de paie, qui affiche désormais trois montants distincts : le brut, le net avant impôt et le net après impôt (net à payer). Comprendre ces différences est essentiel pour gérer votre budget et anticiper vos revenus réels.</p>
+                <p>Le prélèvement à la source n'a pas créé de nouvel impôt : vous payez le même montant qu'avant, mais de façon échelonnée chaque mois plutôt qu'en une fois l'année suivante. Cette réforme vise à éviter les décalages de trésorerie et à adapter automatiquement l'impôt aux changements de revenus.</p>
 
                 <h2 class="text-xl font-semibold text-slate-900 mt-8">Le net avant impôt</h2>
-                <p>Le <strong>net avant impôt</strong> (ou "net à payer avant impôt sur le revenu") est votre salaire brut moins les cotisations sociales salariales. C'est le montant historiquement appelé "salaire net".</p>
+                <p>Le <strong>net avant impôt</strong> (ou "net à payer avant impôt sur le revenu") est votre salaire brut moins toutes les cotisations sociales salariales (retraite, CSG, CRDS, etc.). C'est le montant historiquement appelé "salaire net" avant la mise en place du prélèvement à la source.</p>
+                <p>Ce montant reste important car il sert de référence dans plusieurs situations : calcul de certaines prestations sociales, indemnités de licenciement, comparaison avec vos anciens salaires d'avant 2019, etc. C'est aussi ce montant que vous communiquez généralement lorsqu'on vous demande votre "salaire net".</p>
+                <p><strong>Formule</strong> : Net avant impôt = Salaire brut - Cotisations sociales salariales (environ -22% pour un non-cadre, -25% pour un cadre).</p>
+
+                <h2 class="text-xl font-semibold text-slate-900 mt-8">Le net imposable : base du prélèvement</h2>
+                <p>Le <strong>net imposable</strong> (ou "net fiscal") est le montant qui sert de base au calcul de votre impôt sur le revenu. Il diffère légèrement du net avant impôt car il réintègre certaines cotisations non déductibles fiscalement.</p>
+                <p><strong>Formule</strong> : Net imposable = Net avant impôt + CSG non déductible (2,40%) + CRDS (0,50%).</p>
+                <p>Concrètement, le net imposable est supérieur d'environ 2,9% au net avant impôt. Par exemple, pour un net de 2 000 €, le net imposable sera d'environ 2 058 €.</p>
+                <p>C'est ce montant qui figure dans votre déclaration de revenus pré-remplie et qui détermine votre tranche d'imposition. La CSG déductible (6,80%) est bien déduite du net imposable, contrairement à la CSG non déductible et à la CRDS.</p>
 
                 <h2 class="text-xl font-semibold text-slate-900 mt-8">Le prélèvement à la source (PAS)</h2>
-                <p>Le <strong>prélèvement à la source</strong> est calculé sur votre <strong>net imposable</strong> (légèrement différent du net à payer). Le taux est déterminé par l'administration fiscale en fonction de vos revenus de l'année précédente.</p>
-                <p>Trois options de taux :</p>
-                <ul>
-                    <li><strong>Taux personnalisé</strong> : calculé sur les revenus de votre foyer fiscal</li>
-                    <li><strong>Taux individualisé</strong> : pour les couples avec des revenus différents</li>
-                    <li><strong>Taux neutre</strong> : grille par défaut si vous ne souhaitez pas communiquer votre situation</li>
+                <p>Le <strong>prélèvement à la source</strong> est l'impôt sur le revenu prélevé mensuellement sur votre salaire. Il est calculé en appliquant un taux à votre <strong>net imposable</strong>. Ce taux est déterminé par l'administration fiscale en fonction de vos revenus de l'année N-2 (revenus 2024 pour l'impôt 2026).</p>
+                <p>Le prélèvement à la source ne modifie pas le montant total de votre impôt annuel, il modifie seulement la façon dont vous le payez : mensuellement via votre employeur plutôt qu'en une ou plusieurs fois l'année suivante.</p>
+
+                <h3 class="text-lg font-semibold text-slate-900 mt-6">Trois options de taux</h3>
+                <p>Vous pouvez choisir entre trois types de taux de prélèvement à la source :</p>
+                <ul class="space-y-3">
+                    <li><strong>Taux personnalisé (par défaut)</strong> : calculé sur les revenus globaux de votre foyer fiscal. C'est le taux appliqué automatiquement. Il est identique pour tous les membres du foyer. Par exemple, si votre foyer a un taux de 7,5%, chacun des conjoints se verra appliquer 7,5% sur son net imposable.</li>
+                    <li><strong>Taux individualisé</strong> : option pour les couples avec des revenus très différents. Chaque conjoint a un taux différent, proportionnel à ses revenus. Cela évite qu'un conjoint avec des revenus modestes se voie appliquer un taux élevé lié aux hauts revenus de l'autre. À demander sur votre espace impots.gouv.fr.</li>
+                    <li><strong>Taux neutre</strong> : grille par défaut si vous ne souhaitez pas communiquer votre taux à votre employeur (par exemple pour préserver la confidentialité de votre situation familiale). Ce taux ne tient compte que de votre salaire individuel. À la fin de l'année, une régularisation aura lieu pour ajuster à votre taux réel. Demandable sur impots.gouv.fr.</li>
                 </ul>
 
-                <h2 class="text-xl font-semibold text-slate-900 mt-8">Exemple concret</h2>
-                <p>Pour un salaire brut de 2 500 €/mois (non-cadre, célibataire) :</p>
-                <ul>
-                    <li>Net avant impôt : ~1 950 €</li>
-                    <li>Prélèvement à la source (~5%) : ~98 €</li>
-                    <li><strong>Net après impôt</strong> : ~1 852 €</li>
+                <h3 class="text-lg font-semibold text-slate-900 mt-6">Modulation du taux en cours d'année</h3>
+                <p>Vous pouvez modifier votre taux de prélèvement à tout moment sur votre espace impots.gouv.fr si votre situation change (baisse de revenus, naissance, mariage, divorce, etc.). Cette modulation vous permet d'ajuster immédiatement votre prélèvement sans attendre la déclaration de revenus de l'année suivante.</p>
+                <p>En cas de baisse de revenus d'au moins 10%, vous pouvez demander une baisse de votre taux. En cas de hausse, vous pouvez volontairement augmenter votre taux pour éviter un reste à payer important en septembre de l'année suivante.</p>
+
+                <h2 class="text-xl font-semibold text-slate-900 mt-8">Barème de l'impôt sur le revenu 2026</h2>
+                <p>Le prélèvement à la source est calculé selon le barème progressif de l'impôt sur le revenu. Voici les tranches applicables en 2026 (pour les revenus 2025) :</p>
+                <table class="w-full text-sm border-collapse mt-4">
+                    <thead><tr class="border-b-2 border-slate-300">
+                        <th class="py-2 text-left">Tranche de revenu annuel</th>
+                        <th class="py-2 text-right">Taux d'imposition</th>
+                    </tr></thead>
+                    <tbody>
+                        <tr class="border-b border-slate-100"><td class="py-2">Jusqu'à 11 497 €</td><td class="py-2 text-right">0%</td></tr>
+                        <tr class="border-b border-slate-100"><td class="py-2">De 11 498 € à 29 315 €</td><td class="py-2 text-right">11%</td></tr>
+                        <tr class="border-b border-slate-100"><td class="py-2">De 29 316 € à 83 823 €</td><td class="py-2 text-right">30%</td></tr>
+                        <tr class="border-b border-slate-100"><td class="py-2">De 83 824 € à 180 294 €</td><td class="py-2 text-right">41%</td></tr>
+                        <tr><td class="py-2">Au-delà de 180 294 €</td><td class="py-2 text-right">45%</td></tr>
+                    </tbody>
+                </table>
+                <p class="mt-4">Ces tranches s'appliquent au revenu imposable par part fiscale (quotient familial). Un couple marié ou pacsé sans enfant a 2 parts, chaque enfant ajoute 0,5 part (1 part à partir du 3ème enfant).</p>
+                <p><strong>Exemple</strong> : Pour un célibataire (1 part) avec 30 000 € de revenu imposable annuel, le calcul est : 0% sur 11 497 € + 11% sur (29 315 - 11 497) + 30% sur (30 000 - 29 315) = 0 + 1 960 + 206 = <strong>2 166 € d'impôt annuel</strong>, soit un taux moyen de 7,2%.</p>
+
+                <h2 class="text-xl font-semibold text-slate-900 mt-8">Exemples concrets à différents niveaux de salaire</h2>
+
+                <h3 class="text-lg font-semibold text-slate-900 mt-6">Salaire de 2 000 € brut mensuel (non-cadre, célibataire)</h3>
+                <ul class="space-y-1">
+                    <li>Net avant impôt : ~1 560 €</li>
+                    <li>Net imposable annuel : ~19 331 €</li>
+                    <li>Impôt annuel estimé : ~878 € (tranche 11%)</li>
+                    <li>Prélèvement mensuel (~4,5%) : ~73 €</li>
+                    <li><strong>Net après impôt : ~1 487 €</strong></li>
                 </ul>
+
+                <h3 class="text-lg font-semibold text-slate-900 mt-6">Salaire de 3 000 € brut mensuel (non-cadre, célibataire)</h3>
+                <ul class="space-y-1">
+                    <li>Net avant impôt : ~2 340 €</li>
+                    <li>Net imposable annuel : ~29 006 €</li>
+                    <li>Impôt annuel estimé : ~1 954 € (tranche 11%)</li>
+                    <li>Prélèvement mensuel (~6,7%) : ~163 €</li>
+                    <li><strong>Net après impôt : ~2 177 €</strong></li>
+                </ul>
+
+                <h3 class="text-lg font-semibold text-slate-900 mt-6">Salaire de 4 500 € brut mensuel (cadre, célibataire)</h3>
+                <ul class="space-y-1">
+                    <li>Net avant impôt : ~3 375 €</li>
+                    <li>Net imposable annuel : ~41 832 €</li>
+                    <li>Impôt annuel estimé : ~5 747 € (tranche 30%)</li>
+                    <li>Prélèvement mensuel (~13,7%) : ~479 €</li>
+                    <li><strong>Net après impôt : ~2 896 €</strong></li>
+                </ul>
+
+                <h2 class="text-xl font-semibold text-slate-900 mt-8">Optimiser votre net après impôt</h2>
+                <p>Plusieurs leviers légaux permettent de réduire votre impôt et donc d'augmenter votre net après impôt :</p>
+
+                <h3 class="text-lg font-semibold text-slate-900 mt-6">1. Versements sur un Plan d'Épargne Retraite (PER)</h3>
+                <p>Les versements volontaires sur un PER sont déductibles de votre revenu imposable, dans la limite de 10% de vos revenus professionnels. Pour un salaire net imposable de 40 000 €, vous pouvez déduire jusqu'à 4 000 € de versements PER, ce qui réduit votre impôt de 1 200 € si vous êtes dans la tranche à 30%.</p>
+
+                <h3 class="text-lg font-semibold text-slate-900 mt-6">2. Dons aux associations</h3>
+                <p>Les dons aux œuvres d'intérêt général ouvrent droit à une réduction d'impôt de 66% du montant versé (dans la limite de 20% du revenu imposable). Un don de 300 € réduit votre impôt de 198 €.</p>
+
+                <h3 class="text-lg font-semibold text-slate-900 mt-6">3. Emploi à domicile</h3>
+                <p>Les dépenses pour l'emploi d'un salarié à domicile (ménage, garde d'enfants, soutien scolaire, jardinage, etc.) donnent droit à un crédit d'impôt de 50% dans la limite de 12 000 € de dépenses annuelles (soit 6 000 € de crédit d'impôt maximum).</p>
+
+                <h3 class="text-lg font-semibold text-slate-900 mt-6">4. Investissements défiscalisants</h3>
+                <p>Dispositifs Pinel, Denormandie, FCPI, FIP : ces placements donnent droit à des réductions d'impôt en contrepartie d'un engagement de durée. À étudier avec un conseiller fiscal.</p>
+
+                <h2 class="text-xl font-semibold text-slate-900 mt-8">Taux neutre vs taux personnalisé : que choisir ?</h2>
+                <p>Le choix entre taux neutre et taux personnalisé dépend de votre situation :</p>
+
+                <h3 class="text-lg font-semibold text-slate-900 mt-6">Avantages du taux personnalisé</h3>
+                <ul class="space-y-2">
+                    <li>Prélèvement au plus juste : pas de régularisation importante en fin d'année</li>
+                    <li>Pas de surprise fiscale en septembre</li>
+                    <li>Meilleure visibilité sur votre pouvoir d'achat mensuel réel</li>
+                </ul>
+
+                <h3 class="text-lg font-semibold text-slate-900 mt-6">Avantages du taux neutre</h3>
+                <ul class="space-y-2">
+                    <li>Confidentialité : votre employeur ne connaît pas votre situation familiale globale</li>
+                    <li>Utile en cas de revenus du conjoint très élevés : évite un taux trop élevé visible par l'employeur</li>
+                    <li>Trésorerie : si le taux neutre est inférieur à votre taux réel, vous payez moins chaque mois (mais devrez régulariser en septembre)</li>
+                </ul>
+
+                <p class="mt-4">Dans la majorité des cas, le taux personnalisé est plus avantageux car il évite les mauvaises surprises. Le taux neutre est pertinent surtout pour des raisons de confidentialité.</p>
+
+                <h2 class="text-xl font-semibold text-slate-900 mt-8">Grille du taux neutre 2026</h2>
+                <p>Si vous optez pour le taux neutre, voici la grille applicable en 2026 (taux appliqué selon le net imposable mensuel) :</p>
+                <table class="w-full text-sm border-collapse mt-4">
+                    <thead><tr class="border-b-2 border-slate-300">
+                        <th class="py-2 text-left">Net imposable mensuel</th>
+                        <th class="py-2 text-right">Taux de prélèvement</th>
+                    </tr></thead>
+                    <tbody>
+                        <tr class="border-b border-slate-100"><td class="py-2">Jusqu'à 1 591 €</td><td class="py-2 text-right">0%</td></tr>
+                        <tr class="border-b border-slate-100"><td class="py-2">De 1 591 € à 1 721 €</td><td class="py-2 text-right">0,5%</td></tr>
+                        <tr class="border-b border-slate-100"><td class="py-2">De 1 721 € à 1 888 €</td><td class="py-2 text-right">1,3%</td></tr>
+                        <tr class="border-b border-slate-100"><td class="py-2">De 1 888 € à 2 075 €</td><td class="py-2 text-right">2,1%</td></tr>
+                        <tr class="border-b border-slate-100"><td class="py-2">De 2 075 € à 2 489 €</td><td class="py-2 text-right">2,9%</td></tr>
+                        <tr class="border-b border-slate-100"><td class="py-2">De 2 489 € à 2 829 €</td><td class="py-2 text-right">3,5%</td></tr>
+                        <tr class="border-b border-slate-100"><td class="py-2">De 2 829 € à 3 389 €</td><td class="py-2 text-right">4,1%</td></tr>
+                        <tr class="border-b border-slate-100"><td class="py-2">De 3 389 € à 4 211 €</td><td class="py-2 text-right">5,3%</td></tr>
+                        <tr class="border-b border-slate-100"><td class="py-2">De 4 211 € à 5 553 €</td><td class="py-2 text-right">7,5%</td></tr>
+                        <tr class="border-b border-slate-100"><td class="py-2">De 5 553 € à 8 059 €</td><td class="py-2 text-right">9,9%</td></tr>
+                        <tr class="border-b border-slate-100"><td class="py-2">De 8 059 € à 13 522 €</td><td class="py-2 text-right">11,9%</td></tr>
+                        <tr><td class="py-2">Au-delà de 13 522 €</td><td class="py-2 text-right">20% puis 24% puis 33% puis 38% puis 43%</td></tr>
+                    </tbody>
+                </table>
             
             </div>
         </section>
+        <section class="py-12 px-4">
+            <div class="mx-auto max-w-3xl">
+                <h2 class="text-xl font-bold text-slate-900 mb-6">Questions fréquentes</h2>
+                <div class="space-y-3">
+                    
+            <div class="rounded-xl border border-slate-200 bg-white">
+                <button class="faq-toggle w-full flex items-center justify-between p-5 text-left" onclick="this.nextElementSibling.classList.toggle('hidden');this.querySelector('svg').style.transform=this.nextElementSibling.classList.contains('hidden')?'':'rotate(180deg)'">
+                    <span class="font-medium text-slate-900">Cette information est-elle à jour pour 2026 ?</span>
+                    <svg class="h-5 w-5 text-slate-400 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+                </button>
+                <div class="faq-content hidden px-5 pb-5">
+                    <p class="text-sm text-slate-600">Oui, tous les taux et plafonds sont actualisés pour l'année 2026.</p>
+                </div>
+            </div>
+            <div class="rounded-xl border border-slate-200 bg-white">
+                <button class="faq-toggle w-full flex items-center justify-between p-5 text-left" onclick="this.nextElementSibling.classList.toggle('hidden');this.querySelector('svg').style.transform=this.nextElementSibling.classList.contains('hidden')?'':'rotate(180deg)'">
+                    <span class="font-medium text-slate-900">Puis-je utiliser ces informations pour ma déclaration d'impôts ?</span>
+                    <svg class="h-5 w-5 text-slate-400 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+                </button>
+                <div class="faq-content hidden px-5 pb-5">
+                    <p class="text-sm text-slate-600">Ces informations sont indicatives. Pour votre déclaration, référez-vous aux montants exacts de votre fiche de paie.</p>
+                </div>
+            </div>
+            <div class="rounded-xl border border-slate-200 bg-white">
+                <button class="faq-toggle w-full flex items-center justify-between p-5 text-left" onclick="this.nextElementSibling.classList.toggle('hidden');this.querySelector('svg').style.transform=this.nextElementSibling.classList.contains('hidden')?'':'rotate(180deg)'">
+                    <span class="font-medium text-slate-900">Ces calculs s'appliquent-ils à tous les secteurs ?</span>
+                    <svg class="h-5 w-5 text-slate-400 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+                </button>
+                <div class="faq-content hidden px-5 pb-5">
+                    <p class="text-sm text-slate-600">Les cotisations de base sont identiques. Certaines conventions collectives ajoutent des cotisations spécifiques.</p>
+                </div>
+            </div>
+            <div class="rounded-xl border border-slate-200 bg-white">
+                <button class="faq-toggle w-full flex items-center justify-between p-5 text-left" onclick="this.nextElementSibling.classList.toggle('hidden');this.querySelector('svg').style.transform=this.nextElementSibling.classList.contains('hidden')?'':'rotate(180deg)'">
+                    <span class="font-medium text-slate-900">Comment obtenir un calcul personnalisé ?</span>
+                    <svg class="h-5 w-5 text-slate-400 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+                </button>
+                <div class="faq-content hidden px-5 pb-5">
+                    <p class="text-sm text-slate-600">Utilisez notre calculateur en haut de page avec vos données réelles (brut, statut, temps de travail).</p>
+                </div>
+            </div>
+            <div class="rounded-xl border border-slate-200 bg-white">
+                <button class="faq-toggle w-full flex items-center justify-between p-5 text-left" onclick="this.nextElementSibling.classList.toggle('hidden');this.querySelector('svg').style.transform=this.nextElementSibling.classList.contains('hidden')?'':'rotate(180deg)'">
+                    <span class="font-medium text-slate-900">Ces règles s'appliquent-elles aux indépendants ?</span>
+                    <svg class="h-5 w-5 text-slate-400 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+                </button>
+                <div class="faq-content hidden px-5 pb-5">
+                    <p class="text-sm text-slate-600">Non, les indépendants et auto-entrepreneurs ont des régimes de cotisations différents, avec des taux forfaitaires.</p>
+                </div>
+            </div>
+                </div>
+            </div>
+        </section>
+        <script type="application/ld+json">
+        {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Cette information est-elle à jour pour 2026 ?","acceptedAnswer":{"@type":"Answer","text":"Oui, tous les taux et plafonds sont actualisés pour l'année 2026."}},{"@type":"Question","name":"Puis-je utiliser ces informations pour ma déclaration d'impôts ?","acceptedAnswer":{"@type":"Answer","text":"Ces informations sont indicatives. Pour votre déclaration, référez-vous aux montants exacts de votre fiche de paie."}},{"@type":"Question","name":"Ces calculs s'appliquent-ils à tous les secteurs ?","acceptedAnswer":{"@type":"Answer","text":"Les cotisations de base sont identiques. Certaines conventions collectives ajoutent des cotisations spécifiques."}},{"@type":"Question","name":"Comment obtenir un calcul personnalisé ?","acceptedAnswer":{"@type":"Answer","text":"Utilisez notre calculateur en haut de page avec vos données réelles (brut, statut, temps de travail)."}},{"@type":"Question","name":"Ces règles s'appliquent-elles aux indépendants ?","acceptedAnswer":{"@type":"Answer","text":"Non, les indépendants et auto-entrepreneurs ont des régimes de cotisations différents, avec des taux forfaitaires."}}]}
+        </script>
         <section class="bg-white border-t border-slate-200 py-12 px-4">
             <div class="mx-auto max-w-4xl">
                 <h2 class="text-lg font-bold text-slate-900 mb-4">Pages connexes</h2>
@@ -185,6 +332,30 @@
 <a href="/salaire-brut-net-mensuel/" class="block rounded-xl border border-slate-200 bg-white p-3 text-center hover:border-brand-300 hover:shadow-sm transition-all">
             <span class="block text-sm font-medium text-slate-900">Calcul mensuel</span>
         </a>
+<a href="/salaire-brut-net-annuel/" class="block rounded-xl border border-slate-200 bg-white p-3 text-center hover:border-brand-300 hover:shadow-sm transition-all">
+            <span class="block text-sm font-medium text-slate-900">Calcul annuel</span>
+        </a>
+<a href="/salaire-brut-net-horaire/" class="block rounded-xl border border-slate-200 bg-white p-3 text-center hover:border-brand-300 hover:shadow-sm transition-all">
+            <span class="block text-sm font-medium text-slate-900">Taux horaire</span>
+        </a>
+<a href="/salaire-brut-net-auto-entrepreneur/" class="block rounded-xl border border-slate-200 bg-white p-3 text-center hover:border-brand-300 hover:shadow-sm transition-all">
+            <span class="block text-sm font-medium text-slate-900">Auto-entrepreneur</span>
+        </a>
+<a href="/salaire-brut-net-alternance-apprentissage/" class="block rounded-xl border border-slate-200 bg-white p-3 text-center hover:border-brand-300 hover:shadow-sm transition-all">
+            <span class="block text-sm font-medium text-slate-900">Alternance</span>
+        </a>
+<a href="/lire-fiche-de-paie/" class="block rounded-xl border border-slate-200 bg-white p-3 text-center hover:border-brand-300 hover:shadow-sm transition-all">
+            <span class="block text-sm font-medium text-slate-900">Lire sa fiche de paie</span>
+        </a>
+<a href="/prime-brut-en-net/" class="block rounded-xl border border-slate-200 bg-white p-3 text-center hover:border-brand-300 hover:shadow-sm transition-all">
+            <span class="block text-sm font-medium text-slate-900">Prime brut en net</span>
+        </a>
+<a href="/salaire-moyen-france/" class="block rounded-xl border border-slate-200 bg-white p-3 text-center hover:border-brand-300 hover:shadow-sm transition-all">
+            <span class="block text-sm font-medium text-slate-900">Salaire moyen France</span>
+        </a>
+<a href="/negocier-salaire/" class="block rounded-xl border border-slate-200 bg-white p-3 text-center hover:border-brand-300 hover:shadow-sm transition-all">
+            <span class="block text-sm font-medium text-slate-900">Négocier son salaire</span>
+        </a>
 
                 </div>
             </div>
@@ -199,13 +370,12 @@
             <p class="text-xs text-slate-500">© 2026 SalaireBrutNet · Estimation indicative</p>
             <div class="flex gap-4">
                 <a href="/" class="text-xs text-slate-500 hover:text-slate-900">Calculateur</a>
-                <a href="/mentions-legales.html" class="text-xs text-slate-500 hover:text-slate-900">Mentions légales</a>
-                <a href="/mission.html" class="text-xs text-slate-500 hover:text-slate-900">Notre Mission</a>
+                <a href="/mentions-legales/" class="text-xs text-slate-500 hover:text-slate-900">Mentions légales</a>
+                <a href="/mission/" class="text-xs text-slate-500 hover:text-slate-900">Notre Mission</a>
                 <a href="/simulateur-impot-sur-le-revenu/" class="text-xs text-slate-500 hover:text-slate-900">Simulateur Impôts</a>
             </div>
         </div>
     </footer>
     <script src="/js/brut-net.js"></script>
-    <script>lucide.createIcons();</script>
 
 </body></html>

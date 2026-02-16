@@ -17,28 +17,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://unpkg.com/lucide@latest"></script>
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    fontFamily: { sans: ['Inter', 'sans-serif'] },
-                    colors: {
-                        brand: { 50:'#f0f9ff',100:'#e0f2fe',200:'#bae6fd',400:'#38bdf8',500:'#0ea5e9',600:'#0284c7',700:'#0369a1',900:'#0c4a6e' },
-                        emerald: { 50:'#ecfdf5',100:'#d1fae5',500:'#10b981',600:'#059669',700:'#047857' }
-                    }
-                }
-            }
-        }
-    </script>
-    <style>
-        input[type=range] { -webkit-appearance: none; background: transparent; }
-        input[type=range]::-webkit-slider-thumb { -webkit-appearance: none; height: 20px; width: 20px; border-radius: 50%; background: #fff; border: 2px solid #0ea5e9; cursor: pointer; box-shadow: 0 2px 6px rgba(0,0,0,0.15); margin-top: -8px; }
-        input[type=range]::-webkit-slider-runnable-track { width: 100%; height: 4px; cursor: pointer; background: linear-gradient(to right, #0ea5e9 0%, #0ea5e9 var(--progress, 0%), #e2e8f0 var(--progress, 0%), #e2e8f0 100%); border-radius: 9999px; }
-        input[type=number]::-webkit-inner-spin-button, input[type=number]::-webkit-outer-spin-button { -webkit-appearance: none; margin: 0; }
-        input[type=number] { -moz-appearance: textfield; }
-    </style>
+    <link rel="stylesheet" href="/css/style.css">
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
@@ -60,7 +39,7 @@
             <nav class="hidden md:flex gap-8">
                 <a href="/" class="text-sm font-medium text-slate-500 hover:text-slate-900 transition-colors">Calculateur</a>
                 <a href="/simulateur-impot-sur-le-revenu/" class="text-sm font-medium text-slate-500 hover:text-slate-900 transition-colors">Simulateur Impôts</a>
-                <a href="/mission.html" class="text-sm font-medium text-slate-500 hover:text-slate-900 transition-colors">Notre Mission</a>
+                <a href="/mission/" class="text-sm font-medium text-slate-500 hover:text-slate-900 transition-colors">Notre Mission</a>
             </nav>
         </div>
     </header>
@@ -69,7 +48,7 @@
         <nav class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-4">
             <ol class="flex items-center gap-2 text-sm text-slate-500">
                 <li><a href="/" class="hover:text-brand-600 transition-colors">Accueil</a></li>
-                <li><i data-lucide="chevron-right" class="h-4 w-4"></i></li>
+                <li><svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg></li>
                 <li class="text-slate-900 font-medium">Revenus Auto-Entrepreneur 2026</li>
             </ol>
         </nav>
@@ -158,9 +137,269 @@
                     <li>Revenu net avant impôt : environ <strong>3 945 €</strong></li>
                 </ul>
                 <p class="text-sm text-slate-500 mt-4">Note : le calculateur ci-dessous est conçu pour les salariés du privé. Les auto-entrepreneurs doivent appliquer les taux forfaitaires ci-dessus.</p>
+
+                <h2 class="text-xl font-semibold text-slate-900 mt-8">Plafonds de chiffre d'affaires 2026</h2>
+                <p>Pour bénéficier du régime de la <strong>micro-entreprise</strong>, votre chiffre d'affaires annuel ne doit pas dépasser certains seuils. En 2026, les plafonds sont :</p>
+                <ul>
+                    <li><strong>Activités de vente de marchandises</strong> (BIC) : 188 700 € de CA annuel</li>
+                    <li><strong>Prestations de services commerciales ou artisanales</strong> (BIC) : 77 700 € de CA annuel</li>
+                    <li><strong>Prestations de services libérales</strong> (BNC) : 77 700 € de CA annuel</li>
+                    <li><strong>Activités mixtes</strong> : 188 700 € au total, dont maximum 77 700 € pour les prestations de services</li>
+                </ul>
+                <p>Si vous dépassez ces plafonds <strong>deux années consécutives</strong>, vous basculez automatiquement au régime réel d'imposition (entreprise individuelle classique ou société). En cas de dépassement ponctuel, vous bénéficiez d'une année de tolérance.</p>
+
+                <h3 class="text-lg font-semibold text-slate-900 mt-6">Franchise de TVA</h3>
+                <p>Les auto-entrepreneurs bénéficient d'une <strong>franchise en base de TVA</strong>, ce qui signifie qu'ils ne facturent pas la TVA à leurs clients et ne la récupèrent pas sur leurs achats. Les seuils de franchise sont :</p>
+                <ul>
+                    <li>Vente de marchandises : 91 900 € (seuil majoré : 101 000 €)</li>
+                    <li>Prestations de services : 36 800 € (seuil majoré : 39 100 €)</li>
+                </ul>
+                <p>Au-delà de ces seuils, vous devez facturer la TVA dès le 1er jour du mois de dépassement.</p>
+
+                <h2 class="text-xl font-semibold text-slate-900 mt-8">ACRE : exonération de cotisations en début d'activité</h2>
+                <p>L'<strong>ACRE</strong> (Aide à la Création ou à la Reprise d'Entreprise) permet aux nouveaux auto-entrepreneurs de bénéficier d'une <strong>exonération partielle de cotisations sociales</strong> pendant la première année d'activité.</p>
+
+                <h3 class="text-lg font-semibold text-slate-900 mt-6">Taux réduits avec l'ACRE (première année)</h3>
+                <ul>
+                    <li>Vente de marchandises : <strong>6,2%</strong> au lieu de 12,3%</li>
+                    <li>Prestations de services BIC : <strong>10,6%</strong> au lieu de 21,2%</li>
+                    <li>Prestations de services BNC : <strong>10,6%</strong> au lieu de 21,1%</li>
+                    <li>Professions libérales CIPAV : <strong>10,6%</strong> au lieu de 21,2%</li>
+                </ul>
+                <p>L'ACRE s'applique automatiquement à tous les créateurs d'auto-entreprise depuis 2020. L'exonération est dégressive : taux réduit la 1ère année, puis retour au taux normal dès la 2ème année.</p>
+
+                <h3 class="text-lg font-semibold text-slate-900 mt-6">Exemple chiffré de l'ACRE</h3>
+                <p>Un consultant en micro-BNC réalisant 40 000 € de CA la première année :</p>
+                <ul>
+                    <li><strong>Avec ACRE</strong> : 40 000 × 10,6% = 4 240 € de cotisations → Revenu net : 35 760 €</li>
+                    <li><strong>Sans ACRE</strong> : 40 000 × 21,1% = 8 440 € de cotisations → Revenu net : 31 560 €</li>
+                    <li><strong>Économie</strong> : 4 200 € sur la première année</li>
+                </ul>
+
+                <h2 class="text-xl font-semibold text-slate-900 mt-8">Comparaison micro-entreprise vs SASU vs EURL</h2>
+                <p>Choisir entre auto-entreprise, SASU ou EURL dépend de votre activité, de votre CA prévisionnel et de vos objectifs. Voici un comparatif détaillé :</p>
+
+                <h3 class="text-lg font-semibold text-slate-900 mt-6">Auto-entreprise (micro-entreprise)</h3>
+                <p><strong>Avantages :</strong></p>
+                <ul>
+                    <li>Formalités de création simplissimes (gratuit, en ligne en 10 minutes)</li>
+                    <li>Comptabilité ultra-légère (simple livre de recettes)</li>
+                    <li>Cotisations proportionnelles au CA (si pas de CA, pas de cotisations)</li>
+                    <li>Pas de TVA à gérer (franchise en base)</li>
+                </ul>
+                <p><strong>Inconvénients :</strong></p>
+                <ul>
+                    <li>Plafonds de CA limitants (77 700 € ou 188 700 €)</li>
+                    <li>Impossibilité de déduire les charges réelles (seulement abattement forfaitaire)</li>
+                    <li>Protection sociale moins bonne que les salariés (pas de chômage, retraite calculée sur le CA)</li>
+                    <li>Responsabilité illimitée (patrimoine personnel engagé, sauf résidence principale protégée)</li>
+                </ul>
+
+                <h3 class="text-lg font-semibold text-slate-900 mt-6">SASU (Société par Actions Simplifiée Unipersonnelle)</h3>
+                <p><strong>Avantages :</strong></p>
+                <ul>
+                    <li>Régime général de la Sécurité sociale (assimilé salarié) → meilleure protection sociale</li>
+                    <li>Optimisation possible en arbitrant salaire/dividendes</li>
+                    <li>Responsabilité limitée au capital social</li>
+                    <li>Image plus professionnelle auprès des clients</li>
+                    <li>Possibilité de déduire toutes les charges réelles</li>
+                </ul>
+                <p><strong>Inconvénients :</strong></p>
+                <ul>
+                    <li>Coût de création (500 à 1 500 €) et de gestion annuelle (expert-comptable obligatoire)</li>
+                    <li>Cotisations sociales élevées sur les salaires (environ 80% du salaire net)</li>
+                    <li>Formalisme administratif lourd (AG annuelle, dépôt des comptes, etc.)</li>
+                    <li>Pas d'assurance chômage (sauf si option coûteuse)</li>
+                </ul>
+
+                <h3 class="text-lg font-semibold text-slate-900 mt-6">EURL (Entreprise Unipersonnelle à Responsabilité Limitée)</h3>
+                <p><strong>Avantages :</strong></p>
+                <ul>
+                    <li>Cotisations sociales calculées sur le bénéfice (environ 45% pour les TNS)</li>
+                    <li>Déduction de toutes les charges réelles</li>
+                    <li>Responsabilité limitée au capital social</li>
+                    <li>Régime fiscal avantageux (IR ou IS au choix)</li>
+                </ul>
+                <p><strong>Inconvénients :</strong></p>
+                <ul>
+                    <li>Protection sociale des TNS (Travailleurs Non Salariés) moins bonne que le régime général</li>
+                    <li>Cotisations minimales même en cas de déficit</li>
+                    <li>Formalisme administratif (comptabilité, déclarations)</li>
+                    <li>Coût de création et de gestion</li>
+                </ul>
+
+                <h3 class="text-lg font-semibold text-slate-900 mt-6">Quel statut choisir selon votre CA ?</h3>
+                <table class="w-full border-collapse border border-slate-300 mt-4">
+                    <thead>
+                        <tr class="bg-slate-100">
+                            <th class="border border-slate-300 px-4 py-2">CA annuel prévisionnel</th>
+                            <th class="border border-slate-300 px-4 py-2">Statut recommandé</th>
+                            <th class="border border-slate-300 px-4 py-2">Raison</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td class="border border-slate-300 px-4 py-2">0 - 30 000 €</td><td class="border border-slate-300 px-4 py-2">Auto-entreprise</td><td class="border border-slate-300 px-4 py-2">Simplicité maximale, pas de charges fixes</td></tr>
+                        <tr><td class="border border-slate-300 px-4 py-2">30 000 - 70 000 €</td><td class="border border-slate-300 px-4 py-2">Auto-entreprise ou EURL</td><td class="border border-slate-300 px-4 py-2">Selon le niveau de charges réelles</td></tr>
+                        <tr><td class="border border-slate-300 px-4 py-2">70 000 - 150 000 €</td><td class="border border-slate-300 px-4 py-2">EURL ou SASU</td><td class="border border-slate-300 px-4 py-2">Optimisation fiscale et sociale</td></tr>
+                        <tr><td class="border border-slate-300 px-4 py-2">&gt; 150 000 €</td><td class="border border-slate-300 px-4 py-2">SASU ou SAS</td><td class="border border-slate-300 px-4 py-2">Protection sociale et développement</td></tr>
+                    </tbody>
+                </table>
+
+                <h2 class="text-xl font-semibold text-slate-900 mt-8">CFE et impôts locaux de l'auto-entrepreneur</h2>
+                <p>En tant qu'auto-entrepreneur, vous êtes redevable de la <strong>Cotisation Foncière des Entreprises (CFE)</strong>, un impôt local dû par toutes les entreprises exerçant une activité professionnelle au 1er janvier de l'année.</p>
+
+                <h3 class="text-lg font-semibold text-slate-900 mt-6">Exonération de CFE la première année</h3>
+                <p>Bonne nouvelle : vous êtes automatiquement <strong>exonéré de CFE</strong> l'année de création de votre auto-entreprise. La CFE devient due à partir de la 2ème année d'activité.</p>
+
+                <h3 class="text-lg font-semibold text-slate-900 mt-6">Montant de la CFE</h3>
+                <p>Le montant de la CFE varie selon votre commune et votre CA :</p>
+                <ul>
+                    <li>CA &lt; 10 000 € : entre <strong>220 € et 550 €</strong> selon la commune</li>
+                    <li>CA entre 10 000 € et 32 600 € : entre <strong>220 € et 1 100 €</strong></li>
+                    <li>CA entre 32 600 € et 100 000 € : entre <strong>220 € et 2 400 €</strong></li>
+                </ul>
+                <p>La CFE est payable en novembre (ou en deux fois en juin et novembre si le montant dépasse 3 000 €). Elle est déductible du bénéfice imposable si vous êtes à l'IR.</p>
+
+                <h3 class="text-lg font-semibold text-slate-900 mt-6">Exonérations possibles de CFE</h3>
+                <p>Certains auto-entrepreneurs peuvent bénéficier d'exonérations permanentes ou temporaires :</p>
+                <ul>
+                    <li><strong>Auto-entrepreneurs domiciliés à domicile</strong> sans espace dédié à l'activité professionnelle peuvent être exonérés (selon les communes)</li>
+                    <li><strong>Artisans</strong> sont exonérés si leur CA est inférieur à 5 000 €</li>
+                    <li><strong>Zones prioritaires</strong> (QPV, ZRR, ZFU) : exonération possible pendant 5 ans</li>
+                </ul>
+
+                <h2 class="text-xl font-semibold text-slate-900 mt-8">Cumul salariat + auto-entreprise</h2>
+                <p>Il est tout à fait possible de <strong>cumuler un emploi salarié</strong> et une auto-entreprise. C'est même très courant : environ 30% des auto-entrepreneurs ont également une activité salariée.</p>
+
+                <h3 class="text-lg font-semibold text-slate-900 mt-6">Conditions du cumul</h3>
+                <ul>
+                    <li><strong>Vérifiez votre contrat de travail</strong> : certains contrats comportent une clause d'exclusivité ou de non-concurrence qui peut limiter ou interdire une activité parallèle</li>
+                    <li><strong>Informez votre employeur</strong> si votre contrat l'exige (clause de loyauté)</li>
+                    <li><strong>Ne concurrencez pas votre employeur</strong> : vous ne pouvez pas démarcher ses clients ou exercer une activité concurrente</li>
+                    <li><strong>Respectez la durée maximale du travail</strong> : la somme des deux activités ne doit pas dépasser 48h par semaine en moyenne (ou 60h ponctuellement)</li>
+                </ul>
+
+                <h3 class="text-lg font-semibold text-slate-900 mt-6">Cotisations sociales en cumul</h3>
+                <p>Attention : vous cotisez <strong>deux fois aux régimes sociaux</strong> (salarié + auto-entrepreneur), mais vous ne cumulez pas forcément tous les droits. Par exemple :</p>
+                <ul>
+                    <li><strong>Retraite</strong> : vous cotisez aux deux régimes (général + SSI), vous accumulerez des trimestres dans les deux régimes (maximum 4 par an) et deux pensions à la retraite</li>
+                    <li><strong>Maladie</strong> : une seule couverture, rattachée à votre activité principale (généralement le salariat si CA auto-entrepreneur &lt; revenu salarié)</li>
+                    <li><strong>Chômage</strong> : vos cotisations d'auto-entrepreneur ne donnent pas droit au chômage. Seule votre activité salariée ouvre des droits à Pôle emploi</li>
+                </ul>
+
+                <h3 class="text-lg font-semibold text-slate-900 mt-6">Optimisation fiscale du cumul</h3>
+                <p>Le cumul salariat + auto-entreprise peut être fiscalement intéressant :</p>
+                <ul>
+                    <li>Votre revenu auto-entrepreneur bénéficie d'un <strong>abattement forfaitaire</strong> (34% pour les BNC, 50% pour les BIC services, 71% pour la vente)</li>
+                    <li>Vous pouvez déduire vos <strong>frais professionnels réels</strong> liés à l'auto-entreprise (déplacements, matériel, formations) du revenu imposable si vous optez pour la déclaration contrôlée</li>
+                    <li>Les revenus de l'auto-entreprise s'ajoutent à votre salaire pour calculer votre <strong>taux de prélèvement à la source</strong>, pensez à le mettre à jour pour éviter une régularisation importante</li>
+                </ul>
+
+                <h2 class="text-xl font-semibold text-slate-900 mt-8">Cessation d'activité et radiation</h2>
+                <p>Fermer son auto-entreprise est aussi simple que de la créer. Il suffit de déclarer la <strong>cessation d'activité</strong> en ligne sur le guichet unique (formalites.entreprises.gouv.fr). La radiation est gratuite et immédiate.</p>
+                <p>Attention : en cas de cessation, vous devez effectuer une <strong>déclaration de CA finale</strong> dans les 60 jours et payer les cotisations sociales correspondantes. Vous recevrez également une CFE au prorata du temps d'activité dans l'année.</p>
+                <p>Pour comparer avec le salariat classique, consultez nos guides sur le <a href="/salaire-brut-net-cadre/" class="text-brand-600 hover:text-brand-700">statut cadre</a> et <a href="/salaire-brut-net-non-cadre/" class="text-brand-600 hover:text-brand-700">non-cadre</a>.</p>
             
             </div>
         </section>
+        <section class="py-12 px-4 bg-slate-50">
+            <div class="mx-auto max-w-4xl">
+                <h2 class="text-xl font-bold text-slate-900 mb-6">Tableau de conversion brut → net</h2>
+                
+    <div class="overflow-x-auto">
+        <table class="w-full text-sm">
+            <thead><tr class="border-b-2 border-slate-300">
+                <th class="py-2 text-left font-semibold">Brut mensuel</th>
+                <th class="py-2 text-right font-semibold">Net mensuel</th>
+                <th class="py-2 text-right font-semibold">Net annuel</th>
+                <th class="py-2 text-right font-semibold">Coût employeur</th>
+            </tr></thead>
+            <tbody><tr class="border-b border-slate-100">
+            <td class="py-2 font-medium">1 500 €</td>
+            <td class="py-2 text-right">1 187 €</td>
+            <td class="py-2 text-right">14 249 €</td>
+            <td class="py-2 text-right">1 984 €</td>
+        </tr><tr class="border-b border-slate-100">
+            <td class="py-2 font-medium">2 000 €</td>
+            <td class="py-2 text-right">1 583 €</td>
+            <td class="py-2 text-right">18 998 €</td>
+            <td class="py-2 text-right">2 646 €</td>
+        </tr><tr class="border-b border-slate-100">
+            <td class="py-2 font-medium">2 500 €</td>
+            <td class="py-2 text-right">1 979 €</td>
+            <td class="py-2 text-right">23 748 €</td>
+            <td class="py-2 text-right">3 307 €</td>
+        </tr><tr class="border-b border-slate-100">
+            <td class="py-2 font-medium">3 000 €</td>
+            <td class="py-2 text-right">2 375 €</td>
+            <td class="py-2 text-right">28 497 €</td>
+            <td class="py-2 text-right">3 969 €</td>
+        </tr><tr class="border-b border-slate-100">
+            <td class="py-2 font-medium">3 500 €</td>
+            <td class="py-2 text-right">2 771 €</td>
+            <td class="py-2 text-right">33 247 €</td>
+            <td class="py-2 text-right">4 630 €</td>
+        </tr></tbody>
+        </table>
+    </div>
+            </div>
+        </section>
+        <section class="py-12 px-4">
+            <div class="mx-auto max-w-3xl">
+                <h2 class="text-xl font-bold text-slate-900 mb-6">Questions fréquentes</h2>
+                <div class="space-y-3">
+                    
+            <div class="rounded-xl border border-slate-200 bg-white">
+                <button class="faq-toggle w-full flex items-center justify-between p-5 text-left" onclick="this.nextElementSibling.classList.toggle('hidden');this.querySelector('svg').style.transform=this.nextElementSibling.classList.contains('hidden')?'':'rotate(180deg)'">
+                    <span class="font-medium text-slate-900">Comment calculer mon salaire net ?</span>
+                    <svg class="h-5 w-5 text-slate-400 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+                </button>
+                <div class="faq-content hidden px-5 pb-5">
+                    <p class="text-sm text-slate-600">Utilisez notre calculateur ci-dessus ou appliquez un coefficient de 0,78 à votre brut mensuel pour une estimation rapide.</p>
+                </div>
+            </div>
+            <div class="rounded-xl border border-slate-200 bg-white">
+                <button class="faq-toggle w-full flex items-center justify-between p-5 text-left" onclick="this.nextElementSibling.classList.toggle('hidden');this.querySelector('svg').style.transform=this.nextElementSibling.classList.contains('hidden')?'':'rotate(180deg)'">
+                    <span class="font-medium text-slate-900">Les cotisations sont-elles les mêmes partout en France ?</span>
+                    <svg class="h-5 w-5 text-slate-400 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+                </button>
+                <div class="faq-content hidden px-5 pb-5">
+                    <p class="text-sm text-slate-600">Oui, les cotisations de Sécurité sociale sont nationales. Seules certaines mutuelles d'entreprise peuvent varier.</p>
+                </div>
+            </div>
+            <div class="rounded-xl border border-slate-200 bg-white">
+                <button class="faq-toggle w-full flex items-center justify-between p-5 text-left" onclick="this.nextElementSibling.classList.toggle('hidden');this.querySelector('svg').style.transform=this.nextElementSibling.classList.contains('hidden')?'':'rotate(180deg)'">
+                    <span class="font-medium text-slate-900">Puis-je négocier mon salaire brut ?</span>
+                    <svg class="h-5 w-5 text-slate-400 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+                </button>
+                <div class="faq-content hidden px-5 pb-5">
+                    <p class="text-sm text-slate-600">Oui, le salaire brut est négociable lors de l'embauche ou lors des entretiens annuels. Préparez vos arguments et renseignez-vous sur les salaires du marché.</p>
+                </div>
+            </div>
+            <div class="rounded-xl border border-slate-200 bg-white">
+                <button class="faq-toggle w-full flex items-center justify-between p-5 text-left" onclick="this.nextElementSibling.classList.toggle('hidden');this.querySelector('svg').style.transform=this.nextElementSibling.classList.contains('hidden')?'':'rotate(180deg)'">
+                    <span class="font-medium text-slate-900">Que signifie le plafond de la Sécurité sociale ?</span>
+                    <svg class="h-5 w-5 text-slate-400 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+                </button>
+                <div class="faq-content hidden px-5 pb-5">
+                    <p class="text-sm text-slate-600">C'est un seuil (3 864 € par mois en 2026) au-delà duquel certaines cotisations changent de taux ou ne s'appliquent plus.</p>
+                </div>
+            </div>
+            <div class="rounded-xl border border-slate-200 bg-white">
+                <button class="faq-toggle w-full flex items-center justify-between p-5 text-left" onclick="this.nextElementSibling.classList.toggle('hidden');this.querySelector('svg').style.transform=this.nextElementSibling.classList.contains('hidden')?'':'rotate(180deg)'">
+                    <span class="font-medium text-slate-900">Le salaire net est-il le montant versé sur mon compte ?</span>
+                    <svg class="h-5 w-5 text-slate-400 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+                </button>
+                <div class="faq-content hidden px-5 pb-5">
+                    <p class="text-sm text-slate-600">Le net avant impôt est affiché sur votre fiche de paie. Le montant réel versé est le net après prélèvement à la source.</p>
+                </div>
+            </div>
+                </div>
+            </div>
+        </section>
+        <script type="application/ld+json">
+        {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Comment calculer mon salaire net ?","acceptedAnswer":{"@type":"Answer","text":"Utilisez notre calculateur ci-dessus ou appliquez un coefficient de 0,78 à votre brut mensuel pour une estimation rapide."}},{"@type":"Question","name":"Les cotisations sont-elles les mêmes partout en France ?","acceptedAnswer":{"@type":"Answer","text":"Oui, les cotisations de Sécurité sociale sont nationales. Seules certaines mutuelles d'entreprise peuvent varier."}},{"@type":"Question","name":"Puis-je négocier mon salaire brut ?","acceptedAnswer":{"@type":"Answer","text":"Oui, le salaire brut est négociable lors de l'embauche ou lors des entretiens annuels. Préparez vos arguments et renseignez-vous sur les salaires du marché."}},{"@type":"Question","name":"Que signifie le plafond de la Sécurité sociale ?","acceptedAnswer":{"@type":"Answer","text":"C'est un seuil (3 864 € par mois en 2026) au-delà duquel certaines cotisations changent de taux ou ne s'appliquent plus."}},{"@type":"Question","name":"Le salaire net est-il le montant versé sur mon compte ?","acceptedAnswer":{"@type":"Answer","text":"Le net avant impôt est affiché sur votre fiche de paie. Le montant réel versé est le net après prélèvement à la source."}}]}
+        </script>
         <section class="bg-white border-t border-slate-200 py-12 px-4">
             <div class="mx-auto max-w-4xl">
                 <h2 class="text-lg font-bold text-slate-900 mb-4">Pages connexes</h2>
@@ -189,6 +428,30 @@
 <a href="/salaire-brut-net-mensuel/" class="block rounded-xl border border-slate-200 bg-white p-3 text-center hover:border-brand-300 hover:shadow-sm transition-all">
             <span class="block text-sm font-medium text-slate-900">Calcul mensuel</span>
         </a>
+<a href="/salaire-brut-net-annuel/" class="block rounded-xl border border-slate-200 bg-white p-3 text-center hover:border-brand-300 hover:shadow-sm transition-all">
+            <span class="block text-sm font-medium text-slate-900">Calcul annuel</span>
+        </a>
+<a href="/salaire-brut-net-horaire/" class="block rounded-xl border border-slate-200 bg-white p-3 text-center hover:border-brand-300 hover:shadow-sm transition-all">
+            <span class="block text-sm font-medium text-slate-900">Taux horaire</span>
+        </a>
+<a href="/salaire-brut-net-auto-entrepreneur/" class="block rounded-xl border border-slate-200 bg-white p-3 text-center hover:border-brand-300 hover:shadow-sm transition-all">
+            <span class="block text-sm font-medium text-slate-900">Auto-entrepreneur</span>
+        </a>
+<a href="/salaire-brut-net-alternance-apprentissage/" class="block rounded-xl border border-slate-200 bg-white p-3 text-center hover:border-brand-300 hover:shadow-sm transition-all">
+            <span class="block text-sm font-medium text-slate-900">Alternance</span>
+        </a>
+<a href="/lire-fiche-de-paie/" class="block rounded-xl border border-slate-200 bg-white p-3 text-center hover:border-brand-300 hover:shadow-sm transition-all">
+            <span class="block text-sm font-medium text-slate-900">Lire sa fiche de paie</span>
+        </a>
+<a href="/prime-brut-en-net/" class="block rounded-xl border border-slate-200 bg-white p-3 text-center hover:border-brand-300 hover:shadow-sm transition-all">
+            <span class="block text-sm font-medium text-slate-900">Prime brut en net</span>
+        </a>
+<a href="/salaire-moyen-france/" class="block rounded-xl border border-slate-200 bg-white p-3 text-center hover:border-brand-300 hover:shadow-sm transition-all">
+            <span class="block text-sm font-medium text-slate-900">Salaire moyen France</span>
+        </a>
+<a href="/negocier-salaire/" class="block rounded-xl border border-slate-200 bg-white p-3 text-center hover:border-brand-300 hover:shadow-sm transition-all">
+            <span class="block text-sm font-medium text-slate-900">Négocier son salaire</span>
+        </a>
 
                 </div>
             </div>
@@ -203,13 +466,12 @@
             <p class="text-xs text-slate-500">© 2026 SalaireBrutNet · Estimation indicative</p>
             <div class="flex gap-4">
                 <a href="/" class="text-xs text-slate-500 hover:text-slate-900">Calculateur</a>
-                <a href="/mentions-legales.html" class="text-xs text-slate-500 hover:text-slate-900">Mentions légales</a>
-                <a href="/mission.html" class="text-xs text-slate-500 hover:text-slate-900">Notre Mission</a>
+                <a href="/mentions-legales/" class="text-xs text-slate-500 hover:text-slate-900">Mentions légales</a>
+                <a href="/mission/" class="text-xs text-slate-500 hover:text-slate-900">Notre Mission</a>
                 <a href="/simulateur-impot-sur-le-revenu/" class="text-xs text-slate-500 hover:text-slate-900">Simulateur Impôts</a>
             </div>
         </div>
     </footer>
     <script src="/js/brut-net.js"></script>
-    <script>lucide.createIcons();</script>
 
 </body></html>

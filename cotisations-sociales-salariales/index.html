@@ -17,28 +17,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://unpkg.com/lucide@latest"></script>
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    fontFamily: { sans: ['Inter', 'sans-serif'] },
-                    colors: {
-                        brand: { 50:'#f0f9ff',100:'#e0f2fe',200:'#bae6fd',400:'#38bdf8',500:'#0ea5e9',600:'#0284c7',700:'#0369a1',900:'#0c4a6e' },
-                        emerald: { 50:'#ecfdf5',100:'#d1fae5',500:'#10b981',600:'#059669',700:'#047857' }
-                    }
-                }
-            }
-        }
-    </script>
-    <style>
-        input[type=range] { -webkit-appearance: none; background: transparent; }
-        input[type=range]::-webkit-slider-thumb { -webkit-appearance: none; height: 20px; width: 20px; border-radius: 50%; background: #fff; border: 2px solid #0ea5e9; cursor: pointer; box-shadow: 0 2px 6px rgba(0,0,0,0.15); margin-top: -8px; }
-        input[type=range]::-webkit-slider-runnable-track { width: 100%; height: 4px; cursor: pointer; background: linear-gradient(to right, #0ea5e9 0%, #0ea5e9 var(--progress, 0%), #e2e8f0 var(--progress, 0%), #e2e8f0 100%); border-radius: 9999px; }
-        input[type=number]::-webkit-inner-spin-button, input[type=number]::-webkit-outer-spin-button { -webkit-appearance: none; margin: 0; }
-        input[type=number] { -moz-appearance: textfield; }
-    </style>
+    <link rel="stylesheet" href="/css/style.css">
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
@@ -60,7 +39,7 @@
             <nav class="hidden md:flex gap-8">
                 <a href="/" class="text-sm font-medium text-slate-500 hover:text-slate-900 transition-colors">Calculateur</a>
                 <a href="/simulateur-impot-sur-le-revenu/" class="text-sm font-medium text-slate-500 hover:text-slate-900 transition-colors">Simulateur Impôts</a>
-                <a href="/mission.html" class="text-sm font-medium text-slate-500 hover:text-slate-900 transition-colors">Notre Mission</a>
+                <a href="/mission/" class="text-sm font-medium text-slate-500 hover:text-slate-900 transition-colors">Notre Mission</a>
             </nav>
         </div>
     </header>
@@ -69,7 +48,7 @@
         <nav class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-4">
             <ol class="flex items-center gap-2 text-sm text-slate-500">
                 <li><a href="/" class="hover:text-brand-600 transition-colors">Accueil</a></li>
-                <li><i data-lucide="chevron-right" class="h-4 w-4"></i></li>
+                <li><svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg></li>
                 <li class="text-slate-900 font-medium">Cotisations Sociales Salariales</li>
             </ol>
         </nav>
@@ -133,12 +112,14 @@
             <div class="mx-auto max-w-4xl prose prose-slate">
                 
                 <h2 class="text-xl font-semibold text-slate-900">Les cotisations sociales en France</h2>
-                <p>Les <strong>cotisations sociales salariales</strong> sont des prélèvements obligatoires sur votre salaire brut qui financent la protection sociale : retraite, maladie, chômage, etc. Voici le détail complet pour 2026.</p>
+                <p>Les <strong>cotisations sociales salariales</strong> sont des prélèvements obligatoires sur votre salaire brut qui financent la protection sociale française : retraite, maladie, chômage, allocations familiales, etc. Ces cotisations représentent la différence entre votre salaire brut (inscrit sur votre contrat) et votre salaire net (versé sur votre compte). En 2026, elles s'élèvent à environ 22% du brut pour un non-cadre et 25% pour un cadre.</p>
+                <p>Contrairement aux cotisations patronales (payées par l'employeur), les cotisations salariales sont directement déduites de votre rémunération. Elles apparaissent en détail sur votre fiche de paie et ouvrent des droits sociaux : pensions de retraite, remboursements de soins, indemnités chômage, etc.</p>
 
                 <h2 class="text-xl font-semibold text-slate-900 mt-8">Tableau des cotisations salariales 2026</h2>
+                <p>Voici le détail exhaustif des cotisations prélevées sur votre salaire brut en 2026 :</p>
                 <table class="w-full text-sm border-collapse mt-4">
                     <thead><tr class="border-b-2 border-slate-300">
-                        <th class="py-2 text-left">Cotisation</th><th class="py-2 text-right">Taux</th><th class="py-2 text-right">Assiette</th>
+                        <th class="py-2 text-left">Cotisation</th><th class="py-2 text-right">Taux salarial</th><th class="py-2 text-right">Assiette</th>
                     </tr></thead>
                     <tbody>
                         <tr class="border-b border-slate-100"><td class="py-2">Vieillesse plafonnée</td><td class="py-2 text-right">6,90%</td><td class="py-2 text-right">Tranche 1 (≤ PSS)</td></tr>
@@ -155,19 +136,147 @@
                 </table>
 
                 <h2 class="text-xl font-semibold text-slate-900 mt-8">Le Plafond de la Sécurité Sociale (PSS)</h2>
-                <p>En 2026, le PSS est de <strong>3 864 €/mois</strong> (46 368 €/an). Les cotisations en "Tranche 1" s'appliquent jusqu'à ce plafond. Au-delà, ce sont les cotisations "Tranche 2" qui prennent le relais.</p>
+                <p>En 2026, le PSS est de <strong>3 864 € par mois</strong> (46 368 € par an). Ce plafond est un seuil de référence essentiel dans le calcul des cotisations sociales. Les cotisations dites "plafonnées" s'appliquent uniquement sur la partie du salaire inférieure ou égale au PSS (Tranche 1), tandis que les cotisations "déplafonnées" s'appliquent sur la totalité du salaire.</p>
+                <p>Concrètement, si vous gagnez 5 000 € brut par mois : la Tranche 1 correspond aux premiers 3 864 € et la Tranche 2 aux 1 136 € restants. Les taux de cotisation diffèrent entre ces deux tranches, notamment pour la retraite complémentaire AGIRC-ARRCO (3,15% sur T1, mais 8,64% sur T2).</p>
+                <p>Le PSS est revalorisé chaque année en fonction de l'évolution des salaires. Il sert également de base au calcul de nombreuses prestations sociales (indemnités journalières, pensions de retraite, etc.).</p>
+
+                <h2 class="text-xl font-semibold text-slate-900 mt-8">Cotisations salariales vs cotisations patronales</h2>
+                <p>Il existe deux types de cotisations sociales : les cotisations <strong>salariales</strong> (prélevées sur votre brut et déduites de votre net) et les cotisations <strong>patronales</strong> (payées par l'employeur en plus de votre brut). Voici une comparaison :</p>
+
+                <h3 class="text-lg font-semibold text-slate-900 mt-6">Tableau comparatif salariales vs patronales</h3>
+                <table class="w-full text-sm border-collapse mt-4">
+                    <thead><tr class="border-b-2 border-slate-300">
+                        <th class="py-2 text-left">Type de cotisation</th><th class="py-2 text-right">Part salariale</th><th class="py-2 text-right">Part patronale</th><th class="py-2 text-right">Total</th>
+                    </tr></thead>
+                    <tbody>
+                        <tr class="border-b border-slate-100"><td class="py-2">Maladie-maternité</td><td class="py-2 text-right">0%</td><td class="py-2 text-right">7,00%</td><td class="py-2 text-right">7,00%</td></tr>
+                        <tr class="border-b border-slate-100"><td class="py-2">Vieillesse plafonnée</td><td class="py-2 text-right">6,90%</td><td class="py-2 text-right">8,55%</td><td class="py-2 text-right">15,45%</td></tr>
+                        <tr class="border-b border-slate-100"><td class="py-2">Vieillesse déplafonnée</td><td class="py-2 text-right">0,40%</td><td class="py-2 text-right">2,02%</td><td class="py-2 text-right">2,42%</td></tr>
+                        <tr class="border-b border-slate-100"><td class="py-2">Allocations familiales</td><td class="py-2 text-right">0%</td><td class="py-2 text-right">3,45%-5,25%</td><td class="py-2 text-right">3,45%-5,25%</td></tr>
+                        <tr class="border-b border-slate-100"><td class="py-2">Chômage</td><td class="py-2 text-right">0%</td><td class="py-2 text-right">4,05%</td><td class="py-2 text-right">4,05%</td></tr>
+                        <tr class="border-b border-slate-100"><td class="py-2">AGIRC-ARRCO T1</td><td class="py-2 text-right">3,15%</td><td class="py-2 text-right">4,72%</td><td class="py-2 text-right">7,87%</td></tr>
+                        <tr class="border-b border-slate-100"><td class="py-2">CSG/CRDS</td><td class="py-2 text-right">9,70%</td><td class="py-2 text-right">0%</td><td class="py-2 text-right">9,70%</td></tr>
+                    </tbody>
+                </table>
+                <p class="mt-4">Au total, les cotisations patronales représentent environ 42-45% du salaire brut, contre 22-25% pour les cotisations salariales. C'est pourquoi le coût employeur (super-brut) est nettement supérieur au salaire brut.</p>
 
                 <h2 class="text-xl font-semibold text-slate-900 mt-8">À quoi servent ces cotisations ?</h2>
-                <ul class="space-y-2">
-                    <li><strong>Vieillesse</strong> : finance votre retraite de base (régime général)</li>
-                    <li><strong>AGIRC-ARRCO</strong> : finance votre retraite complémentaire (points)</li>
-                    <li><strong>CSG</strong> : finance la Sécurité sociale (maladie, famille, etc.)</li>
-                    <li><strong>CRDS</strong> : rembourse la dette sociale</li>
-                    <li><strong>CEG</strong> : équilibre le régime de retraite complémentaire</li>
+                <p>Chaque cotisation finance une branche spécifique de la protection sociale. Voici le détail de leur utilisation :</p>
+
+                <h3 class="text-lg font-semibold text-slate-900 mt-6">1. Assurance vieillesse (retraite de base)</h3>
+                <p>Les cotisations de <strong>vieillesse plafonnée (6,90%)</strong> et <strong>déplafonnée (0,40%)</strong> financent votre retraite de base du régime général de la Sécurité sociale. Chaque trimestre travaillé et cotisé vous donne des droits à pension. Pour une retraite à taux plein, il faut valider entre 166 et 172 trimestres selon votre année de naissance.</p>
+
+                <h3 class="text-lg font-semibold text-slate-900 mt-6">2. Retraite complémentaire AGIRC-ARRCO</h3>
+                <p>Les cotisations <strong>AGIRC-ARRCO</strong> (3,15% sur T1 et 8,64% sur T2) vous donnent des points de retraite complémentaire obligatoire. Ces points s'accumulent tout au long de votre carrière. À la retraite, ils sont convertis en pension mensuelle en multipliant le nombre de points acquis par la valeur du point (1,4159 € en 2026).</p>
+
+                <h3 class="text-lg font-semibold text-slate-900 mt-6">3. CSG et CRDS</h3>
+                <p>La <strong>CSG</strong> (Contribution Sociale Généralisée) de 9,20% finance la Sécurité sociale dans son ensemble : assurance maladie, famille, vieillesse et dépendance. Elle se divise en deux parties : 6,80% déductible de votre revenu imposable et 2,40% non déductible.</p>
+                <p>La <strong>CRDS</strong> (0,50%) sert exclusivement à rembourser la dette sociale accumulée par la Sécurité sociale. Créée en 1996, elle devait être temporaire mais a été prolongée jusqu'en 2033.</p>
+
+                <h3 class="text-lg font-semibold text-slate-900 mt-6">4. CEG et CET</h3>
+                <p>La <strong>CEG</strong> (Contribution d'Équilibre Générale) équilibre financièrement les comptes de l'AGIRC-ARRCO. La <strong>CET</strong> (Contribution d'Équilibre Technique), réservée aux cadres, finance les droits spécifiques des cadres (GMP - Garantie Minimale de Points).</p>
+
+                <h2 class="text-xl font-semibold text-slate-900 mt-8">Exonérations et réductions de cotisations</h2>
+                <p>Certaines situations donnent droit à des exonérations totales ou partielles de cotisations salariales :</p>
+
+                <h3 class="text-lg font-semibold text-slate-900 mt-6">Heures supplémentaires et complémentaires</h3>
+                <p>Les heures supplémentaires bénéficient d'une <strong>réduction de cotisations salariales de 11,31%</strong> (exonération de la part salariale de l'assurance vieillesse). De plus, elles sont exonérées d'impôt sur le revenu dans la limite de 7 500 € net par an.</p>
+
+                <h3 class="text-lg font-semibold text-slate-900 mt-6">Apprentis</h3>
+                <p>Les apprentis sont totalement exonérés de cotisations salariales (hors CSG/CRDS) dans la limite de 79% du SMIC. Au-delà, les cotisations s'appliquent normalement sur la part excédentaire.</p>
+
+                <h3 class="text-lg font-semibold text-slate-900 mt-6">Stagiaires</h3>
+                <p>La gratification de stage est exonérée de cotisations sociales tant qu'elle ne dépasse pas le seuil légal de 4,35 € par heure (soit 659,03 € pour un mois complet à 35h/semaine en 2026). Au-delà, des cotisations s'appliquent sur la part excédentaire.</p>
+
+                <h3 class="text-lg font-semibold text-slate-900 mt-6">Zone de revitalisation rurale (ZRR)</h3>
+                <p>Certains employeurs situés en ZRR peuvent bénéficier d'exonérations de cotisations, mais celles-ci concernent principalement les cotisations patronales plutôt que salariales.</p>
+
+                <h2 class="text-xl font-semibold text-slate-900 mt-8">Impact du niveau de salaire sur le taux de cotisations</h2>
+                <p>Le taux global de cotisations salariales varie légèrement selon votre niveau de rémunération, en raison du système de tranches :</p>
+
+                <h3 class="text-lg font-semibold text-slate-900 mt-6">Salaire inférieur au PSS (≤ 3 864 €)</h3>
+                <p>Pour un salaire en Tranche 1 uniquement, le taux global est d'environ <strong>22% pour un non-cadre</strong> et <strong>25% pour un cadre</strong>. C'est le cas de la majorité des salariés français.</p>
+
+                <h3 class="text-lg font-semibold text-slate-900 mt-6">Salaire supérieur au PSS (&gt; 3 864 €)</h3>
+                <p>Au-delà du plafond, les cotisations de retraite complémentaire augmentent fortement (de 3,15% à 8,64% pour l'AGIRC-ARRCO). Le taux global de cotisations sur la Tranche 2 atteint environ <strong>23-24%</strong>, légèrement supérieur à la Tranche 1.</p>
+                <p>Exemple pour 5 000 € brut : T1 (3 864 €) cotisée à ~22% + T2 (1 136 €) cotisée à ~24% → taux moyen de 22,4%.</p>
+
+                <h2 class="text-xl font-semibold text-slate-900 mt-8">Conseils pratiques pour comprendre vos cotisations</h2>
+                <ul class="space-y-3">
+                    <li><strong>Vérifiez votre fiche de paie chaque mois</strong> : les cotisations doivent correspondre aux taux légaux. Des erreurs peuvent survenir, notamment lors d'un changement de salaire ou de statut.</li>
+                    <li><strong>Distinguez CSG déductible et non déductible</strong> : seule la CSG déductible (6,80%) réduit votre revenu imposable. La CSG non déductible (2,40%) augmente votre net imposable.</li>
+                    <li><strong>Consultez vos relevés de points AGIRC-ARRCO</strong> : chaque année, vous recevez un relevé indiquant vos points de retraite complémentaire acquis. Vérifiez qu'ils correspondent bien à vos cotisations.</li>
+                    <li><strong>Anticipez l'impact des augmentations</strong> : une augmentation qui vous fait dépasser le PSS entraînera un taux de cotisations légèrement plus élevé sur la partie au-delà du plafond.</li>
+                    <li><strong>Utilisez notre calculateur</strong> : pour connaître précisément vos cotisations selon votre salaire et votre statut, utilisez notre <a href="/" class="text-brand-600 hover:text-brand-700">calculateur brut/net gratuit</a>.</li>
                 </ul>
+
+                <h2 class="text-xl font-semibold text-slate-900 mt-8">Évolution des taux de cotisations</h2>
+                <p>Les taux de cotisations sociales évoluent chaque année, mais généralement de façon marginale. Les dernières réformes majeures ont eu lieu en 2018 avec la suppression des cotisations chômage et maladie salariales (compensées par la hausse de la CSG de 1,7 point).</p>
+                <p>Cette réforme a été favorable aux salariés actifs (légère hausse du net d'environ 1,3%) mais défavorable aux retraités (pour qui la CSG a aussi augmenté sans compensation). Le taux global de cotisations salariales est passé d'environ 23% avant 2018 à 22% aujourd'hui pour un non-cadre.</p>
+
+                <h2 class="text-xl font-semibold text-slate-900 mt-8">Cotisations et bulletin de paie simplifié</h2>
+                <p>Depuis le 1er janvier 2018, le <strong>bulletin de paie simplifié</strong> est obligatoire dans toutes les entreprises. Les cotisations y sont regroupées en grandes catégories (santé, retraite, famille, chômage, autres contributions) au lieu d'être détaillées ligne par ligne. Cette simplification facilite la lecture pour le salarié, mais peut masquer certains détails.</p>
+                <p>Si vous souhaitez un détail complet de vos cotisations, vous pouvez demander à votre employeur le <strong>bulletin de paie clarifié</strong>, qui conserve le regroupement mais ajoute des sous-totaux plus précis. Les cotisations patronales figurent également sur votre bulletin depuis 2018, ce qui vous permet de connaître le coût total de votre emploi pour l'entreprise.</p>
+                <p>Pour vérifier que vos cotisations sont correctes, comparez le taux global de votre fiche de paie avec notre <a href="/" class="text-brand-600 hover:text-brand-700">calculateur brut/net</a>. Un écart de 1 à 2% est normal (cotisations de prévoyance, mutuelle obligatoire, titres restaurant), mais au-delà, interrogez votre service paie.</p>
             
             </div>
         </section>
+        <section class="py-12 px-4">
+            <div class="mx-auto max-w-3xl">
+                <h2 class="text-xl font-bold text-slate-900 mb-6">Questions fréquentes</h2>
+                <div class="space-y-3">
+                    
+            <div class="rounded-xl border border-slate-200 bg-white">
+                <button class="faq-toggle w-full flex items-center justify-between p-5 text-left" onclick="this.nextElementSibling.classList.toggle('hidden');this.querySelector('svg').style.transform=this.nextElementSibling.classList.contains('hidden')?'':'rotate(180deg)'">
+                    <span class="font-medium text-slate-900">À quoi servent les cotisations sociales ?</span>
+                    <svg class="h-5 w-5 text-slate-400 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+                </button>
+                <div class="faq-content hidden px-5 pb-5">
+                    <p class="text-sm text-slate-600">Elles financent la Sécurité sociale : retraite, maladie, chômage, allocations familiales. C'est le modèle de protection sociale français.</p>
+                </div>
+            </div>
+            <div class="rounded-xl border border-slate-200 bg-white">
+                <button class="faq-toggle w-full flex items-center justify-between p-5 text-left" onclick="this.nextElementSibling.classList.toggle('hidden');this.querySelector('svg').style.transform=this.nextElementSibling.classList.contains('hidden')?'':'rotate(180deg)'">
+                    <span class="font-medium text-slate-900">Peut-on être exonéré de cotisations sociales ?</span>
+                    <svg class="h-5 w-5 text-slate-400 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+                </button>
+                <div class="faq-content hidden px-5 pb-5">
+                    <p class="text-sm text-slate-600">Certains contrats (apprentissage, stage sous seuil) bénéficient d'exonérations partielles ou totales.</p>
+                </div>
+            </div>
+            <div class="rounded-xl border border-slate-200 bg-white">
+                <button class="faq-toggle w-full flex items-center justify-between p-5 text-left" onclick="this.nextElementSibling.classList.toggle('hidden');this.querySelector('svg').style.transform=this.nextElementSibling.classList.contains('hidden')?'':'rotate(180deg)'">
+                    <span class="font-medium text-slate-900">Les cotisations changent-elles chaque année ?</span>
+                    <svg class="h-5 w-5 text-slate-400 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+                </button>
+                <div class="faq-content hidden px-5 pb-5">
+                    <p class="text-sm text-slate-600">Les taux sont révisés annuellement par décret, généralement avec de faibles variations.</p>
+                </div>
+            </div>
+            <div class="rounded-xl border border-slate-200 bg-white">
+                <button class="faq-toggle w-full flex items-center justify-between p-5 text-left" onclick="this.nextElementSibling.classList.toggle('hidden');this.querySelector('svg').style.transform=this.nextElementSibling.classList.contains('hidden')?'':'rotate(180deg)'">
+                    <span class="font-medium text-slate-900">Où voir le détail des cotisations ?</span>
+                    <svg class="h-5 w-5 text-slate-400 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+                </button>
+                <div class="faq-content hidden px-5 pb-5">
+                    <p class="text-sm text-slate-600">Votre fiche de paie détaille toutes les cotisations salariales et patronales, ligne par ligne.</p>
+                </div>
+            </div>
+            <div class="rounded-xl border border-slate-200 bg-white">
+                <button class="faq-toggle w-full flex items-center justify-between p-5 text-left" onclick="this.nextElementSibling.classList.toggle('hidden');this.querySelector('svg').style.transform=this.nextElementSibling.classList.contains('hidden')?'':'rotate(180deg)'">
+                    <span class="font-medium text-slate-900">Les cotisations sont-elles déductibles des impôts ?</span>
+                    <svg class="h-5 w-5 text-slate-400 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+                </button>
+                <div class="faq-content hidden px-5 pb-5">
+                    <p class="text-sm text-slate-600">Une partie de la CSG (6,80%) est déductible du revenu imposable. Le reste ne l'est pas.</p>
+                </div>
+            </div>
+                </div>
+            </div>
+        </section>
+        <script type="application/ld+json">
+        {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"À quoi servent les cotisations sociales ?","acceptedAnswer":{"@type":"Answer","text":"Elles financent la Sécurité sociale : retraite, maladie, chômage, allocations familiales. C'est le modèle de protection sociale français."}},{"@type":"Question","name":"Peut-on être exonéré de cotisations sociales ?","acceptedAnswer":{"@type":"Answer","text":"Certains contrats (apprentissage, stage sous seuil) bénéficient d'exonérations partielles ou totales."}},{"@type":"Question","name":"Les cotisations changent-elles chaque année ?","acceptedAnswer":{"@type":"Answer","text":"Les taux sont révisés annuellement par décret, généralement avec de faibles variations."}},{"@type":"Question","name":"Où voir le détail des cotisations ?","acceptedAnswer":{"@type":"Answer","text":"Votre fiche de paie détaille toutes les cotisations salariales et patronales, ligne par ligne."}},{"@type":"Question","name":"Les cotisations sont-elles déductibles des impôts ?","acceptedAnswer":{"@type":"Answer","text":"Une partie de la CSG (6,80%) est déductible du revenu imposable. Le reste ne l'est pas."}}]}
+        </script>
         <section class="bg-white border-t border-slate-200 py-12 px-4">
             <div class="mx-auto max-w-4xl">
                 <h2 class="text-lg font-bold text-slate-900 mb-4">Pages connexes</h2>
@@ -196,6 +305,30 @@
 <a href="/salaire-brut-net-mensuel/" class="block rounded-xl border border-slate-200 bg-white p-3 text-center hover:border-brand-300 hover:shadow-sm transition-all">
             <span class="block text-sm font-medium text-slate-900">Calcul mensuel</span>
         </a>
+<a href="/salaire-brut-net-annuel/" class="block rounded-xl border border-slate-200 bg-white p-3 text-center hover:border-brand-300 hover:shadow-sm transition-all">
+            <span class="block text-sm font-medium text-slate-900">Calcul annuel</span>
+        </a>
+<a href="/salaire-brut-net-horaire/" class="block rounded-xl border border-slate-200 bg-white p-3 text-center hover:border-brand-300 hover:shadow-sm transition-all">
+            <span class="block text-sm font-medium text-slate-900">Taux horaire</span>
+        </a>
+<a href="/salaire-brut-net-auto-entrepreneur/" class="block rounded-xl border border-slate-200 bg-white p-3 text-center hover:border-brand-300 hover:shadow-sm transition-all">
+            <span class="block text-sm font-medium text-slate-900">Auto-entrepreneur</span>
+        </a>
+<a href="/salaire-brut-net-alternance-apprentissage/" class="block rounded-xl border border-slate-200 bg-white p-3 text-center hover:border-brand-300 hover:shadow-sm transition-all">
+            <span class="block text-sm font-medium text-slate-900">Alternance</span>
+        </a>
+<a href="/lire-fiche-de-paie/" class="block rounded-xl border border-slate-200 bg-white p-3 text-center hover:border-brand-300 hover:shadow-sm transition-all">
+            <span class="block text-sm font-medium text-slate-900">Lire sa fiche de paie</span>
+        </a>
+<a href="/prime-brut-en-net/" class="block rounded-xl border border-slate-200 bg-white p-3 text-center hover:border-brand-300 hover:shadow-sm transition-all">
+            <span class="block text-sm font-medium text-slate-900">Prime brut en net</span>
+        </a>
+<a href="/salaire-moyen-france/" class="block rounded-xl border border-slate-200 bg-white p-3 text-center hover:border-brand-300 hover:shadow-sm transition-all">
+            <span class="block text-sm font-medium text-slate-900">Salaire moyen France</span>
+        </a>
+<a href="/negocier-salaire/" class="block rounded-xl border border-slate-200 bg-white p-3 text-center hover:border-brand-300 hover:shadow-sm transition-all">
+            <span class="block text-sm font-medium text-slate-900">Négocier son salaire</span>
+        </a>
 
                 </div>
             </div>
@@ -210,13 +343,12 @@
             <p class="text-xs text-slate-500">© 2026 SalaireBrutNet · Estimation indicative</p>
             <div class="flex gap-4">
                 <a href="/" class="text-xs text-slate-500 hover:text-slate-900">Calculateur</a>
-                <a href="/mentions-legales.html" class="text-xs text-slate-500 hover:text-slate-900">Mentions légales</a>
-                <a href="/mission.html" class="text-xs text-slate-500 hover:text-slate-900">Notre Mission</a>
+                <a href="/mentions-legales/" class="text-xs text-slate-500 hover:text-slate-900">Mentions légales</a>
+                <a href="/mission/" class="text-xs text-slate-500 hover:text-slate-900">Notre Mission</a>
                 <a href="/simulateur-impot-sur-le-revenu/" class="text-xs text-slate-500 hover:text-slate-900">Simulateur Impôts</a>
             </div>
         </div>
     </footer>
     <script src="/js/brut-net.js"></script>
-    <script>lucide.createIcons();</script>
 
 </body></html>

@@ -18,28 +18,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://unpkg.com/lucide@latest"></script>
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    fontFamily: { sans: ['Inter', 'sans-serif'] },
-                    colors: {
-                        brand: { 50:'#f0f9ff',100:'#e0f2fe',200:'#bae6fd',400:'#38bdf8',500:'#0ea5e9',600:'#0284c7',700:'#0369a1',900:'#0c4a6e' },
-                        emerald: { 50:'#ecfdf5',100:'#d1fae5',500:'#10b981',600:'#059669',700:'#047857' }
-                    }
-                }
-            }
-        }
-    </script>
-    <style>
-        input[type=range] { -webkit-appearance: none; background: transparent; }
-        input[type=range]::-webkit-slider-thumb { -webkit-appearance: none; height: 20px; width: 20px; border-radius: 50%; background: #fff; border: 2px solid #0ea5e9; cursor: pointer; box-shadow: 0 2px 6px rgba(0,0,0,0.15); margin-top: -8px; }
-        input[type=range]::-webkit-slider-runnable-track { width: 100%; height: 4px; cursor: pointer; background: linear-gradient(to right, #0ea5e9 0%, #0ea5e9 var(--progress, 0%), #e2e8f0 var(--progress, 0%), #e2e8f0 100%); border-radius: 9999px; }
-        input[type=number]::-webkit-inner-spin-button, input[type=number]::-webkit-outer-spin-button { -webkit-appearance: none; margin: 0; }
-        input[type=number] { -moz-appearance: textfield; }
-    </style>
+    <link rel="stylesheet" href="/css/style.css">
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
@@ -117,7 +96,7 @@
             <nav class="hidden md:flex gap-8">
                 <a href="/" class="text-sm font-medium text-slate-500 hover:text-slate-900 transition-colors">Calculateur</a>
                 <a href="/simulateur-impot-sur-le-revenu/" class="text-sm font-medium text-slate-500 hover:text-slate-900 transition-colors">Simulateur Impôts</a>
-                <a href="/mission.html" class="text-sm font-medium text-slate-500 hover:text-slate-900 transition-colors">Notre Mission</a>
+                <a href="/mission/" class="text-sm font-medium text-slate-500 hover:text-slate-900 transition-colors">Notre Mission</a>
             </nav>
         </div>
     </header>
@@ -127,7 +106,7 @@
         <nav class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-4">
             <ol class="flex items-center gap-2 text-sm text-slate-500">
                 <li><a href="/" class="hover:text-brand-600 transition-colors">Accueil</a></li>
-                <li><i data-lucide="chevron-right" class="h-4 w-4"></i></li>
+                <li><svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg></li>
                 <li class="text-slate-900 font-medium">Cadre vs Non-Cadre</li>
             </ol>
         </nav>
@@ -163,7 +142,7 @@
                         <div class="rounded-xl border-2 border-emerald-200 bg-emerald-50/50 p-5">
                             <div class="flex items-center gap-2 mb-4">
                                 <div class="flex h-8 w-8 items-center justify-center rounded-lg bg-emerald-600 text-white">
-                                    <i data-lucide="user" class="h-5 w-5"></i>
+                                    <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
                                 </div>
                                 <h3 class="text-lg font-bold text-slate-900">Non-Cadre</h3>
                             </div>
@@ -201,7 +180,7 @@
                         <div class="rounded-xl border-2 border-brand-200 bg-brand-50/50 p-5">
                             <div class="flex items-center gap-2 mb-4">
                                 <div class="flex h-8 w-8 items-center justify-center rounded-lg bg-brand-600 text-white">
-                                    <i data-lucide="briefcase" class="h-5 w-5"></i>
+                                    <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 20V4a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/><rect width="20" height="14" x="2" y="6" rx="2"/></svg>
                                 </div>
                                 <h3 class="text-lg font-bold text-slate-900">Cadre</h3>
                             </div>
@@ -391,13 +370,13 @@
                     <div class="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
                         <div class="flex items-center gap-3 mb-5">
                             <div class="flex h-10 w-10 items-center justify-center rounded-xl bg-emerald-100 text-emerald-700">
-                                <i data-lucide="user" class="h-6 w-6"></i>
+                                <svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
                             </div>
                             <h3 class="text-lg font-bold text-slate-900">Statut Non-Cadre</h3>
                         </div>
                         <div class="mb-5">
                             <h4 class="text-sm font-semibold text-emerald-700 mb-2 flex items-center gap-1">
-                                <i data-lucide="check-circle" class="h-4 w-4"></i> Avantages
+                                <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="m9 11 3 3L22 4"/></svg> Avantages
                             </h4>
                             <ul class="space-y-2 text-sm text-slate-600">
                                 <li class="flex items-start gap-2">
@@ -420,7 +399,7 @@
                         </div>
                         <div>
                             <h4 class="text-sm font-semibold text-red-600 mb-2 flex items-center gap-1">
-                                <i data-lucide="x-circle" class="h-4 w-4"></i> Inconvénients
+                                <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="m15 9-6 6"/><path d="m9 9 6 6"/></svg> Inconvénients
                             </h4>
                             <ul class="space-y-2 text-sm text-slate-600">
                                 <li class="flex items-start gap-2">
@@ -443,13 +422,13 @@
                     <div class="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
                         <div class="flex items-center gap-3 mb-5">
                             <div class="flex h-10 w-10 items-center justify-center rounded-xl bg-brand-100 text-brand-700">
-                                <i data-lucide="briefcase" class="h-6 w-6"></i>
+                                <svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 20V4a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/><rect width="20" height="14" x="2" y="6" rx="2"/></svg>
                             </div>
                             <h3 class="text-lg font-bold text-slate-900">Statut Cadre</h3>
                         </div>
                         <div class="mb-5">
                             <h4 class="text-sm font-semibold text-emerald-700 mb-2 flex items-center gap-1">
-                                <i data-lucide="check-circle" class="h-4 w-4"></i> Avantages
+                                <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="m9 11 3 3L22 4"/></svg> Avantages
                             </h4>
                             <ul class="space-y-2 text-sm text-slate-600">
                                 <li class="flex items-start gap-2">
@@ -476,7 +455,7 @@
                         </div>
                         <div>
                             <h4 class="text-sm font-semibold text-red-600 mb-2 flex items-center gap-1">
-                                <i data-lucide="x-circle" class="h-4 w-4"></i> Inconvénients
+                                <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="m15 9-6 6"/><path d="m9 9 6 6"/></svg> Inconvénients
                             </h4>
                             <ul class="space-y-2 text-sm text-slate-600">
                                 <li class="flex items-start gap-2">
@@ -512,7 +491,7 @@
                     <details class="group rounded-xl border border-slate-200 bg-white">
                         <summary class="flex cursor-pointer items-center justify-between px-5 py-4 text-sm font-semibold text-slate-900 hover:bg-slate-50 transition-colors">
                             Quelle est la différence de salaire net entre cadre et non-cadre ?
-                            <i data-lucide="chevron-down" class="h-4 w-4 text-slate-400 transition-transform group-open:rotate-180"></i>
+                            <svg class="h-4 w-4 text-slate-400 transition-transform group-open:rotate-180" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
                         </summary>
                         <div class="px-5 pb-4 text-sm text-slate-600 leading-relaxed">
                             Pour un même salaire brut, un cadre touche légèrement moins en net qu'un non-cadre, principalement à cause de la CET (Contribution d'Équilibre Technique) de 0,14% appliquée sur la totalité du brut. La différence est faible sous le plafond de la Sécurité sociale (environ 4 à 6 euros pour 3 000 euros brut) mais augmente pour les hauts salaires.
@@ -522,7 +501,7 @@
                     <details class="group rounded-xl border border-slate-200 bg-white">
                         <summary class="flex cursor-pointer items-center justify-between px-5 py-4 text-sm font-semibold text-slate-900 hover:bg-slate-50 transition-colors">
                             Les cotisations AGIRC-ARRCO sont-elles différentes entre cadre et non-cadre ?
-                            <i data-lucide="chevron-down" class="h-4 w-4 text-slate-400 transition-transform group-open:rotate-180"></i>
+                            <svg class="h-4 w-4 text-slate-400 transition-transform group-open:rotate-180" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
                         </summary>
                         <div class="px-5 pb-4 text-sm text-slate-600 leading-relaxed">
                             Non, depuis la fusion AGIRC-ARRCO en 2019, les taux de cotisation retraite complémentaire sont identiques pour les cadres et les non-cadres : 3,15% sur la tranche 1 et 8,64% sur la tranche 2. La seule différence est la CET salariale de 0,14% payée uniquement par les cadres.
@@ -532,7 +511,7 @@
                     <details class="group rounded-xl border border-slate-200 bg-white">
                         <summary class="flex cursor-pointer items-center justify-between px-5 py-4 text-sm font-semibold text-slate-900 hover:bg-slate-50 transition-colors">
                             Qu'est-ce que la CET (Contribution d'Équilibre Technique) ?
-                            <i data-lucide="chevron-down" class="h-4 w-4 text-slate-400 transition-transform group-open:rotate-180"></i>
+                            <svg class="h-4 w-4 text-slate-400 transition-transform group-open:rotate-180" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
                         </summary>
                         <div class="px-5 pb-4 text-sm text-slate-600 leading-relaxed">
                             La CET est une cotisation spécifique aux cadres, prélevée au taux de 0,14% (part salariale) sur la totalité du salaire brut. Elle sert à financer l'équilibre du régime AGIRC-ARRCO. La part patronale est de 0,21%. C'est la principale source de différence de net entre cadre et non-cadre.
@@ -542,7 +521,7 @@
                     <details class="group rounded-xl border border-slate-200 bg-white">
                         <summary class="flex cursor-pointer items-center justify-between px-5 py-4 text-sm font-semibold text-slate-900 hover:bg-slate-50 transition-colors">
                             Vaut-il mieux être cadre ou non-cadre ?
-                            <i data-lucide="chevron-down" class="h-4 w-4 text-slate-400 transition-transform group-open:rotate-180"></i>
+                            <svg class="h-4 w-4 text-slate-400 transition-transform group-open:rotate-180" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
                         </summary>
                         <div class="px-5 pb-4 text-sm text-slate-600 leading-relaxed">
                             Le statut cadre offre des avantages importants malgré un net légèrement inférieur : meilleure retraite complémentaire, prévoyance obligatoire (décès, invalidité), préavis plus long en cas de licenciement, et souvent une meilleure couverture mutuelle. Le choix dépend de votre situation et de vos priorités entre net immédiat et protection sociale.
@@ -552,7 +531,7 @@
                     <details class="group rounded-xl border border-slate-200 bg-white">
                         <summary class="flex cursor-pointer items-center justify-between px-5 py-4 text-sm font-semibold text-slate-900 hover:bg-slate-50 transition-colors">
                             La fusion AGIRC-ARRCO de 2019 a-t-elle réduit l'écart cadre/non-cadre ?
-                            <i data-lucide="chevron-down" class="h-4 w-4 text-slate-400 transition-transform group-open:rotate-180"></i>
+                            <svg class="h-4 w-4 text-slate-400 transition-transform group-open:rotate-180" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
                         </summary>
                         <div class="px-5 pb-4 text-sm text-slate-600 leading-relaxed">
                             Oui, significativement. Avant 2019, les cadres cotisaient à l'AGIRC avec des taux plus élevés, ce qui créait un écart important. Depuis la fusion, les taux AGIRC-ARRCO sont identiques. Seule la CET (0,14% salariale) subsiste comme différence de cotisation, réduisant considérablement l'écart de net entre les deux statuts.
@@ -562,7 +541,7 @@
                     <details class="group rounded-xl border border-slate-200 bg-white">
                         <summary class="flex cursor-pointer items-center justify-between px-5 py-4 text-sm font-semibold text-slate-900 hover:bg-slate-50 transition-colors">
                             Le coût employeur est-il plus élevé pour un cadre ?
-                            <i data-lucide="chevron-down" class="h-4 w-4 text-slate-400 transition-transform group-open:rotate-180"></i>
+                            <svg class="h-4 w-4 text-slate-400 transition-transform group-open:rotate-180" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
                         </summary>
                         <div class="px-5 pb-4 text-sm text-slate-600 leading-relaxed">
                             Le coût employeur est quasiment identique pour un cadre et un non-cadre au même salaire brut. Les cotisations patronales de base sont les mêmes. La seule différence est la CET patronale (0,21%) pour les cadres, et l'obligation de souscrire une prévoyance cadre (généralement 1,5% de la tranche 1 minimum).
@@ -615,11 +594,10 @@
             <p class="text-xs text-slate-500">&copy; 2026 SalaireBrutNet &middot; Estimation indicative</p>
             <div class="flex gap-4">
                 <a href="/" class="text-xs text-slate-500 hover:text-slate-900">Calculateur</a>
-                <a href="/mentions-legales.html" class="text-xs text-slate-500 hover:text-slate-900">Mentions légales</a>
-                <a href="/mission.html" class="text-xs text-slate-500 hover:text-slate-900">Notre Mission</a>
+                <a href="/mentions-legales/" class="text-xs text-slate-500 hover:text-slate-900">Mentions légales</a>
+                <a href="/mission/" class="text-xs text-slate-500 hover:text-slate-900">Notre Mission</a>
                 <a href="/simulateur-impot-sur-le-revenu/" class="text-xs text-slate-500 hover:text-slate-900">Simulateur Impôts</a>
             </div>
         </div>
     </footer>
-    <script>lucide.createIcons();</script>
 </body></html>

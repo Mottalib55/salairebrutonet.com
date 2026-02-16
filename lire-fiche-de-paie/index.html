@@ -17,28 +17,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://unpkg.com/lucide@latest"></script>
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    fontFamily: { sans: ['Inter', 'sans-serif'] },
-                    colors: {
-                        brand: { 50:'#f0f9ff',100:'#e0f2fe',200:'#bae6fd',400:'#38bdf8',500:'#0ea5e9',600:'#0284c7',700:'#0369a1',900:'#0c4a6e' },
-                        emerald: { 50:'#ecfdf5',100:'#d1fae5',500:'#10b981',600:'#059669',700:'#047857' }
-                    }
-                }
-            }
-        }
-    </script>
-    <style>
-        input[type=range] { -webkit-appearance: none; background: transparent; }
-        input[type=range]::-webkit-slider-thumb { -webkit-appearance: none; height: 20px; width: 20px; border-radius: 50%; background: #fff; border: 2px solid #0ea5e9; cursor: pointer; box-shadow: 0 2px 6px rgba(0,0,0,0.15); margin-top: -8px; }
-        input[type=range]::-webkit-slider-runnable-track { width: 100%; height: 4px; cursor: pointer; background: linear-gradient(to right, #0ea5e9 0%, #0ea5e9 var(--progress, 0%), #e2e8f0 var(--progress, 0%), #e2e8f0 100%); border-radius: 9999px; }
-        input[type=number]::-webkit-inner-spin-button, input[type=number]::-webkit-outer-spin-button { -webkit-appearance: none; margin: 0; }
-        input[type=number] { -moz-appearance: textfield; }
-    </style>
+    <link rel="stylesheet" href="/css/style.css">
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
@@ -60,7 +39,7 @@
             <nav class="hidden md:flex gap-8">
                 <a href="/" class="text-sm font-medium text-slate-500 hover:text-slate-900 transition-colors">Calculateur</a>
                 <a href="/simulateur-impot-sur-le-revenu/" class="text-sm font-medium text-slate-500 hover:text-slate-900 transition-colors">Simulateur Impôts</a>
-                <a href="/mission.html" class="text-sm font-medium text-slate-500 hover:text-slate-900 transition-colors">Notre Mission</a>
+                <a href="/mission/" class="text-sm font-medium text-slate-500 hover:text-slate-900 transition-colors">Notre Mission</a>
             </nav>
         </div>
     </header>
@@ -69,7 +48,7 @@
         <nav class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-4">
             <ol class="flex items-center gap-2 text-sm text-slate-500">
                 <li><a href="/" class="hover:text-brand-600 transition-colors">Accueil</a></li>
-                <li><i data-lucide="chevron-right" class="h-4 w-4"></i></li>
+                <li><svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg></li>
                 <li class="text-slate-900 font-medium">Comprendre sa Fiche de Paie</li>
             </ol>
         </nav>
@@ -132,37 +111,259 @@
         <section class="bg-white border-t border-slate-200 py-12 px-4">
             <div class="mx-auto max-w-4xl prose prose-slate">
                 
-                <h2 class="text-xl font-semibold text-slate-900">Les zones de votre fiche de paie</h2>
-                <p>Votre <strong>bulletin de salaire</strong> se divise en plusieurs zones distinctes. Voici un guide pour comprendre chacune d'entre elles.</p>
+                <h2 class="text-xl font-semibold text-slate-900">Pourquoi comprendre sa fiche de paie ?</h2>
+                <p>Votre <strong>bulletin de salaire</strong> est un document essentiel qui récapitule votre rémunération et vos droits sociaux. Savoir le lire vous permet de vérifier que vous êtes payé correctement, de comprendre vos cotisations sociales, de détecter d'éventuelles erreurs et de préparer votre déclaration d'impôts. C'est aussi un document juridique à conserver sans limite de durée.</p>
+                <p>Depuis 2018, les fiches de paie ont été simplifiées pour être plus lisibles. Les cotisations sont regroupées par thématique (santé, retraite, chômage) plutôt que par organisme collecteur. Malgré cette simplification, le bulletin reste complexe. Ce guide vous aide à décrypter chaque section.</p>
 
-                <h3 class="text-lg font-semibold text-slate-900 mt-6">1. Identification (en-tête)</h3>
-                <p>Informations sur l'employeur (SIRET, convention collective, code APE) et le salarié (nom, poste, ancienneté, numéro de sécurité sociale).</p>
+                <h2 class="text-xl font-semibold text-slate-900 mt-8">Les 6 zones de votre fiche de paie</h2>
+                <p>Votre bulletin se divise en plusieurs zones distinctes, chacune ayant un rôle précis. Voici un guide pour comprendre chacune d'entre elles.</p>
+
+                <h3 class="text-lg font-semibold text-slate-900 mt-6">1. En-tête : identification employeur et salarié</h3>
+                <p>Cette zone contient les informations légales obligatoires :</p>
+                <ul class="space-y-2">
+                    <li><strong>Informations employeur</strong> : raison sociale, adresse, numéro SIRET (14 chiffres), code APE/NAF (activité de l'entreprise), numéro d'identification URSSAF</li>
+                    <li><strong>Convention collective applicable</strong> : indique quelle convention régit votre contrat (métallurgie, commerce, syntec, etc.). Important car elle définit vos droits (primes, grilles salariales, classifications)</li>
+                    <li><strong>Informations salarié</strong> : nom, prénom, numéro de Sécurité sociale (NIR), emploi occupé, classification/coefficient (selon la convention collective), date d'entrée, ancienneté</li>
+                    <li><strong>Période et date de paiement</strong> : mois concerné et date de versement du salaire</li>
+                </ul>
+                <p><strong>À vérifier</strong> : que votre classification correspond à votre poste réel. Une mauvaise classification peut vous priver de certaines primes ou d'une rémunération minimale conventionnelle supérieure au SMIC.</p>
 
                 <h3 class="text-lg font-semibold text-slate-900 mt-6">2. Rémunération brute</h3>
-                <p>Salaire de base, heures supplémentaires, primes, avantages en nature. Le total constitue votre <strong>salaire brut</strong>.</p>
-
-                <h3 class="text-lg font-semibold text-slate-900 mt-6">3. Cotisations sociales</h3>
-                <p>Depuis 2018, les cotisations sont regroupées en 5 grandes catégories :</p>
-                <ul>
-                    <li><strong>Santé</strong> : maladie, complémentaire santé</li>
-                    <li><strong>Accidents du travail</strong></li>
-                    <li><strong>Retraite</strong> : vieillesse de base + complémentaire</li>
-                    <li><strong>Famille</strong> : allocations familiales</li>
-                    <li><strong>Chômage</strong> : assurance chômage</li>
+                <p>Cette section détaille tous les éléments qui composent votre salaire brut avant toute déduction :</p>
+                <ul class="space-y-2">
+                    <li><strong>Salaire de base</strong> : rémunération contractuelle, souvent exprimée en "Nombre d'heures × Taux horaire" ou en "Salaire mensuel forfaitaire"</li>
+                    <li><strong>Heures supplémentaires</strong> : heures au-delà de 35h/semaine (ou durée conventionnelle), avec majoration de 25% ou 50%</li>
+                    <li><strong>Heures complémentaires</strong> : pour les temps partiels, avec majoration de 10% à 25%</li>
+                    <li><strong>Primes</strong> : ancienneté, objectifs, 13ème mois, prime exceptionnelle, etc.</li>
+                    <li><strong>Avantages en nature</strong> : valeur forfaitaire de la voiture de fonction, du logement, des repas, etc. (ajouté au brut puis retiré du net)</li>
+                    <li><strong>Indemnités</strong> : transport, télétravail, panier repas (si non exonérées)</li>
                 </ul>
-                <p>Chaque ligne indique la base, le taux salarial et le taux patronal.</p>
+                <p><strong>Total brut</strong> : somme de tous ces éléments. C'est la base de calcul des cotisations sociales.</p>
+                <p><strong>À vérifier</strong> : le nombre d'heures travaillées, le taux horaire (doit correspondre au contrat et à la grille conventionnelle), les primes dues (vérifiez votre convention collective).</p>
 
-                <h3 class="text-lg font-semibold text-slate-900 mt-6">4. Net imposable</h3>
-                <p>Le <strong>net imposable</strong> = brut - cotisations salariales + CSG non déductible + CRDS. C'est la base du prélèvement à la source.</p>
+                <h3 class="text-lg font-semibold text-slate-900 mt-6">3. Cotisations sociales : le cœur de la fiche de paie</h3>
+                <p>Depuis 2018, les cotisations sont présentées de façon simplifiée et regroupées en 5 grandes catégories (ou "risques"). Pour chaque ligne, vous voyez : la base de calcul, le taux salarial, le montant salarial, le taux patronal, le montant patronal.</p>
 
-                <h3 class="text-lg font-semibold text-slate-900 mt-6">5. Net à payer</h3>
-                <p>Le <strong>net à payer avant impôt</strong>, puis le prélèvement à la source, puis le <strong>net à payer</strong> final viré sur votre compte.</p>
+                <h4 class="font-semibold text-slate-900 mt-4">A. Santé</h4>
+                <ul class="space-y-1">
+                    <li><strong>Maladie-maternité-invalidité-décès</strong> : cotisation patronale uniquement (7% du brut). Finance l'assurance maladie (remboursements de soins, indemnités journalières).</li>
+                    <li><strong>Complémentaire santé (mutuelle)</strong> : cotisation patronale (minimum 50% du coût) + part salariale éventuelle. Obligatoire dans toutes les entreprises.</li>
+                </ul>
 
-                <h3 class="text-lg font-semibold text-slate-900 mt-6">6. Cumuls annuels</h3>
-                <p>Totaux depuis janvier : brut cumulé, net imposable cumulé, impôt prélevé cumulé. Utile pour votre déclaration de revenus.</p>
+                <h4 class="font-semibold text-slate-900 mt-4">B. Accidents du travail / Maladies professionnelles</h4>
+                <ul class="space-y-1">
+                    <li><strong>AT/MP</strong> : cotisation patronale uniquement (0,5% à 3% selon le risque du secteur). Finance les indemnisations en cas d'accident du travail.</li>
+                </ul>
+
+                <h4 class="font-semibold text-slate-900 mt-4">C. Retraite</h4>
+                <ul class="space-y-1">
+                    <li><strong>Vieillesse plafonnée</strong> : 6,90% salarial + 8,55% patronal sur la Tranche 1 (jusqu'à 3 864 €). Finance la retraite de base du régime général.</li>
+                    <li><strong>Vieillesse déplafonnée</strong> : 0,40% salarial + 2,02% patronal sur la totalité du salaire.</li>
+                    <li><strong>Retraite complémentaire AGIRC-ARRCO</strong> : 3,15% salarial + 4,72% patronal sur T1 ; 8,64% salarial + 12,95% patronal sur T2. Vous donne des points de retraite complémentaire.</li>
+                    <li><strong>CEG (Contribution d'Équilibre Générale)</strong> : 0,86% à 1,08% salarial + 1,29% à 1,62% patronal. Équilibre les comptes AGIRC-ARRCO.</li>
+                    <li><strong>CET (cadres uniquement)</strong> : 0,14% salarial + 0,21% patronal. Finance la Garantie Minimale de Points des cadres.</li>
+                </ul>
+
+                <h4 class="font-semibold text-slate-900 mt-4">D. Famille</h4>
+                <ul class="space-y-1">
+                    <li><strong>Allocations familiales</strong> : cotisation patronale uniquement (3,45% ou 5,25%). Finance les prestations familiales (allocations, CAF).</li>
+                </ul>
+
+                <h4 class="font-semibold text-slate-900 mt-4">E. Assurance chômage</h4>
+                <ul class="space-y-1">
+                    <li><strong>Chômage</strong> : cotisation patronale uniquement (4,05%). Finance Pôle emploi et les allocations chômage. Depuis 2018, il n'y a plus de part salariale.</li>
+                </ul>
+
+                <h4 class="font-semibold text-slate-900 mt-4">F. Autres contributions (CSG/CRDS)</h4>
+                <ul class="space-y-1">
+                    <li><strong>CSG déductible</strong> : 6,80% sur 98,25% du brut. Déductible du revenu imposable.</li>
+                    <li><strong>CSG non déductible</strong> : 2,40% sur 98,25% du brut. Non déductible fiscalement.</li>
+                    <li><strong>CRDS</strong> : 0,50% sur 98,25% du brut. Rembourse la dette sociale.</li>
+                </ul>
+
+                <p class="mt-4"><strong>Total des cotisations salariales</strong> : environ 22% du brut (non-cadre) ou 25% (cadre). Ce total est retranché du brut pour obtenir le net avant impôt.</p>
+
+                <h3 class="text-lg font-semibold text-slate-900 mt-6">4. Net imposable et prélèvement à la source</h3>
+                <p>Après les cotisations sociales, plusieurs montants "nets" apparaissent :</p>
+                <ul class="space-y-2">
+                    <li><strong>Net à payer avant impôt sur le revenu</strong> : c'est le "salaire net" classique = brut - cotisations salariales.</li>
+                    <li><strong>Net imposable</strong> : net à payer + CSG non déductible + CRDS. Sert de base au calcul de l'impôt. C'est ce montant qui apparaît dans votre déclaration de revenus pré-remplie.</li>
+                    <li><strong>Impôt sur le revenu prélevé à la source</strong> : montant de l'impôt retenu ce mois-ci (= net imposable × taux de prélèvement).</li>
+                    <li><strong>Net à payer (en euros)</strong> : c'est le montant final viré sur votre compte = net avant impôt - prélèvement à la source - éventuelles autres retenues (saisie sur salaire, acompte, etc.).</li>
+                </ul>
+                <p><strong>À vérifier</strong> : que votre taux de prélèvement à la source correspond bien à celui communiqué par les impôts. Un taux erroné peut créer un reste à payer important en septembre.</p>
+
+                <h3 class="text-lg font-semibold text-slate-900 mt-6">5. Net à payer et mode de paiement</h3>
+                <p>Cette zone indique :</p>
+                <ul class="space-y-1">
+                    <li><strong>Net à payer en euros</strong> : montant final versé (gros caractère, mis en évidence)</li>
+                    <li><strong>Mode de paiement</strong> : virement bancaire (RIB utilisé), chèque (rare désormais)</li>
+                    <li><strong>Date de paiement</strong> : jour de mise à disposition des fonds</li>
+                </ul>
+
+                <h3 class="text-lg font-semibold text-slate-900 mt-6">6. Cumuls annuels (depuis le 1er janvier)</h3>
+                <p>En bas de la fiche de paie, vous trouvez les totaux cumulés depuis le début de l'année civile :</p>
+                <ul class="space-y-2">
+                    <li><strong>Brut cumulé</strong> : somme de tous vos salaires bruts depuis janvier</li>
+                    <li><strong>Cotisations salariales cumulées</strong> : total des cotisations prélevées</li>
+                    <li><strong>Net imposable cumulé</strong> : base d'imposition annuelle (utile pour votre déclaration de revenus)</li>
+                    <li><strong>Impôt cumulé prélevé à la source</strong> : total de l'impôt retenu depuis janvier</li>
+                    <li><strong>Congés payés</strong> : jours acquis, jours pris, solde restant</li>
+                    <li><strong>RTT</strong> : jours acquis, jours pris, solde (si applicable)</li>
+                </ul>
+                <p><strong>Utilité</strong> : ces cumuls vous permettent de vérifier votre déclaration de revenus pré-remplie, de suivre votre rémunération annuelle et de connaître votre solde de congés.</p>
+
+                <h2 class="text-xl font-semibold text-slate-900 mt-8">Walkthrough : exemple de fiche de paie décryptée</h2>
+                <p>Prenons l'exemple d'une fiche de paie fictive pour mieux comprendre :</p>
+
+                <h3 class="text-lg font-semibold text-slate-900 mt-6">Profil</h3>
+                <ul class="space-y-1">
+                    <li>Salarié : Marie Dupont, cadre</li>
+                    <li>Salaire brut mensuel : 3 500 €</li>
+                    <li>Prime d'ancienneté : 200 €</li>
+                    <li>Tickets restaurant : 100 € (60% employeur)</li>
+                </ul>
+
+                <h3 class="text-lg font-semibold text-slate-900 mt-6">Section Rémunération brute</h3>
+                <ul class="space-y-1">
+                    <li>Salaire de base : 3 500,00 €</li>
+                    <li>Prime d'ancienneté : 200,00 €</li>
+                    <li><strong>Total brut</strong> : 3 700,00 €</li>
+                </ul>
+
+                <h3 class="text-lg font-semibold text-slate-900 mt-6">Section Cotisations</h3>
+                <ul class="space-y-1">
+                    <li>Santé (mutuelle part salariale) : -30,00 €</li>
+                    <li>Vieillesse plafonnée (6,90%) : -252,34 €</li>
+                    <li>Vieillesse déplafonnée (0,40%) : -14,80 €</li>
+                    <li>AGIRC-ARRCO T1 (3,15%) : -115,29 €</li>
+                    <li>CEG T1 (0,86%) : -31,48 €</li>
+                    <li>CET cadre (0,14%) : -5,18 €</li>
+                    <li>CSG déductible (6,80% × 98,25%) : -246,98 €</li>
+                    <li>CSG non déductible (2,40% × 98,25%) : -87,16 €</li>
+                    <li>CRDS (0,50% × 98,25%) : -18,16 €</li>
+                    <li><strong>Total cotisations salariales</strong> : -801,39 € (21,66%)</li>
+                </ul>
+
+                <h3 class="text-lg font-semibold text-slate-900 mt-6">Montants nets</h3>
+                <ul class="space-y-1">
+                    <li>Net à payer avant impôt : 2 898,61 €</li>
+                    <li>+ CSG/CRDS non déductibles : +105,32 €</li>
+                    <li><strong>Net imposable</strong> : 3 003,93 €</li>
+                    <li>Prélèvement à la source (7,5%) : -225,29 €</li>
+                    <li>Part salariale tickets restaurant : -40,00 €</li>
+                    <li><strong>Net à payer final</strong> : 2 633,32 €</li>
+                </ul>
+
+                <p class="mt-4">Sur son compte bancaire, Marie recevra donc <strong>2 633,32 €</strong>. L'écart avec le brut (3 700 €) s'explique par les cotisations sociales (801 €), l'impôt (225 €) et les tickets restaurant (40 €).</p>
+
+                <h2 class="text-xl font-semibold text-slate-900 mt-8">Erreurs courantes à vérifier sur votre fiche de paie</h2>
+                <p>Les erreurs de paie sont fréquentes. Voici les points de vigilance :</p>
+
+                <h3 class="text-lg font-semibold text-slate-900 mt-6">1. Taux horaire et heures travaillées</h3>
+                <p>Vérifiez que le taux horaire correspond à votre contrat et que le nombre d'heures est exact. Une erreur d'une heure par mois représente 12 heures par an non payées.</p>
+
+                <h3 class="text-lg font-semibold text-slate-900 mt-6">2. Heures supplémentaires</h3>
+                <p>Les heures sup doivent être majorées (au minimum +10%, souvent +25% ou +50%). Vérifiez le calcul : heures × taux horaire × coefficient de majoration.</p>
+
+                <h3 class="text-lg font-semibold text-slate-900 mt-6">3. Primes obligatoires</h3>
+                <p>Consultez votre convention collective : certaines primes sont obligatoires (ancienneté, 13ème mois, panier repas). Leur absence est illégale.</p>
+
+                <h3 class="text-lg font-semibold text-slate-900 mt-6">4. Classification et coefficient</h3>
+                <p>Votre classification doit correspondre à vos fonctions réelles. Une mauvaise classification peut vous priver d'un salaire minimum conventionnel plus élevé.</p>
+
+                <h3 class="text-lg font-semibold text-slate-900 mt-6">5. Congés payés</h3>
+                <p>Vous devez acquérir 2,5 jours ouvrables par mois travaillé (soit 30 jours par an). Vérifiez le compteur.</p>
+
+                <h3 class="text-lg font-semibold text-slate-900 mt-6">6. Avantages en nature</h3>
+                <p>Si vous avez une voiture de fonction ou un logement, l'avantage doit être valorisé et apparaître : +X € en brut, puis -X € en net.</p>
+
+                <h2 class="text-xl font-semibold text-slate-900 mt-8">Fiche de paie papier vs dématérialisée</h2>
+
+                <h3 class="text-lg font-semibold text-slate-900 mt-6">Fiche de paie électronique (dématérialisée)</h3>
+                <p>Depuis 2017, l'employeur peut vous envoyer votre fiche de paie par voie électronique (email, coffre-fort numérique), sauf opposition de votre part. Les avantages : archivage automatique, accessibilité à tout moment, écologie. Le format PDF doit être sécurisé et horodaté.</p>
+
+                <h3 class="text-lg font-semibold text-slate-900 mt-6">Conservation des fiches de paie</h3>
+                <p>Vous devez <strong>conserver vos bulletins de salaire sans limite de durée</strong>. Ils servent de justificatifs pour :</p>
+                <ul class="space-y-1">
+                    <li>Le calcul de votre retraite (reconstitution de carrière)</li>
+                    <li>Un prêt bancaire ou un dossier de location</li>
+                    <li>Une demande d'allocations chômage ou de RSA</li>
+                    <li>Un contentieux avec l'employeur (rappel de salaire, prud'hommes)</li>
+                </ul>
+
+                <h2 class="text-xl font-semibold text-slate-900 mt-8">Obligations légales de l'employeur</h2>
+                <p>L'employeur a l'obligation de vous remettre une fiche de paie <strong>à chaque versement de salaire</strong>, même si le montant est nul (absence non rémunérée). Le bulletin doit comporter toutes les mentions obligatoires sous peine de sanctions (amende de 450 €).</p>
+                <p>Mentions obligatoires : identité employeur/salarié, période de paie, détail des éléments de rémunération, détail des cotisations, net imposable, net à payer, cumuls annuels, mention de conservation sans limite, mention de recours au CSE en cas de difficultés.</p>
+                <p><strong>Mentions interdites</strong> : il est interdit de mentionner l'exercice du droit de grève ou l'activité de représentation du personnel.</p>
+
+                <h2 class="text-xl font-semibold text-slate-900 mt-8">Que faire en cas d'erreur ?</h2>
+                <ol class="space-y-3">
+                    <li><strong>1. Signalez rapidement</strong> : prévenez votre service RH ou paie dès que vous détectez une anomalie. Les corrections sont plus faciles à faire dans le mois en cours.</li>
+                    <li><strong>2. Demandez un bulletin rectificatif</strong> : en cas d'erreur avérée, l'employeur doit émettre un bulletin de paie rectificatif. Conservez les deux versions.</li>
+                    <li><strong>3. Rappel de salaire</strong> : si vous avez été sous-payé, vous pouvez demander un rappel de salaire. Le délai de prescription est de 3 ans.</li>
+                    <li><strong>4. Recours au CSE</strong> : votre représentant du personnel peut vous assister dans vos démarches.</li>
+                    <li><strong>5. Conseil de prud'hommes</strong> : en dernier recours, en cas de litige persistant sur votre rémunération.</li>
+                </ol>
             
             </div>
         </section>
+        <section class="py-12 px-4">
+            <div class="mx-auto max-w-3xl">
+                <h2 class="text-xl font-bold text-slate-900 mb-6">Questions fréquentes</h2>
+                <div class="space-y-3">
+                    
+            <div class="rounded-xl border border-slate-200 bg-white">
+                <button class="faq-toggle w-full flex items-center justify-between p-5 text-left" onclick="this.nextElementSibling.classList.toggle('hidden');this.querySelector('svg').style.transform=this.nextElementSibling.classList.contains('hidden')?'':'rotate(180deg)'">
+                    <span class="font-medium text-slate-900">Cette information est-elle à jour pour 2026 ?</span>
+                    <svg class="h-5 w-5 text-slate-400 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+                </button>
+                <div class="faq-content hidden px-5 pb-5">
+                    <p class="text-sm text-slate-600">Oui, tous les taux et plafonds sont actualisés pour l'année 2026.</p>
+                </div>
+            </div>
+            <div class="rounded-xl border border-slate-200 bg-white">
+                <button class="faq-toggle w-full flex items-center justify-between p-5 text-left" onclick="this.nextElementSibling.classList.toggle('hidden');this.querySelector('svg').style.transform=this.nextElementSibling.classList.contains('hidden')?'':'rotate(180deg)'">
+                    <span class="font-medium text-slate-900">Puis-je utiliser ces informations pour ma déclaration d'impôts ?</span>
+                    <svg class="h-5 w-5 text-slate-400 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+                </button>
+                <div class="faq-content hidden px-5 pb-5">
+                    <p class="text-sm text-slate-600">Ces informations sont indicatives. Pour votre déclaration, référez-vous aux montants exacts de votre fiche de paie.</p>
+                </div>
+            </div>
+            <div class="rounded-xl border border-slate-200 bg-white">
+                <button class="faq-toggle w-full flex items-center justify-between p-5 text-left" onclick="this.nextElementSibling.classList.toggle('hidden');this.querySelector('svg').style.transform=this.nextElementSibling.classList.contains('hidden')?'':'rotate(180deg)'">
+                    <span class="font-medium text-slate-900">Ces calculs s'appliquent-ils à tous les secteurs ?</span>
+                    <svg class="h-5 w-5 text-slate-400 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+                </button>
+                <div class="faq-content hidden px-5 pb-5">
+                    <p class="text-sm text-slate-600">Les cotisations de base sont identiques. Certaines conventions collectives ajoutent des cotisations spécifiques.</p>
+                </div>
+            </div>
+            <div class="rounded-xl border border-slate-200 bg-white">
+                <button class="faq-toggle w-full flex items-center justify-between p-5 text-left" onclick="this.nextElementSibling.classList.toggle('hidden');this.querySelector('svg').style.transform=this.nextElementSibling.classList.contains('hidden')?'':'rotate(180deg)'">
+                    <span class="font-medium text-slate-900">Comment obtenir un calcul personnalisé ?</span>
+                    <svg class="h-5 w-5 text-slate-400 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+                </button>
+                <div class="faq-content hidden px-5 pb-5">
+                    <p class="text-sm text-slate-600">Utilisez notre calculateur en haut de page avec vos données réelles (brut, statut, temps de travail).</p>
+                </div>
+            </div>
+            <div class="rounded-xl border border-slate-200 bg-white">
+                <button class="faq-toggle w-full flex items-center justify-between p-5 text-left" onclick="this.nextElementSibling.classList.toggle('hidden');this.querySelector('svg').style.transform=this.nextElementSibling.classList.contains('hidden')?'':'rotate(180deg)'">
+                    <span class="font-medium text-slate-900">Ces règles s'appliquent-elles aux indépendants ?</span>
+                    <svg class="h-5 w-5 text-slate-400 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+                </button>
+                <div class="faq-content hidden px-5 pb-5">
+                    <p class="text-sm text-slate-600">Non, les indépendants et auto-entrepreneurs ont des régimes de cotisations différents, avec des taux forfaitaires.</p>
+                </div>
+            </div>
+                </div>
+            </div>
+        </section>
+        <script type="application/ld+json">
+        {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Cette information est-elle à jour pour 2026 ?","acceptedAnswer":{"@type":"Answer","text":"Oui, tous les taux et plafonds sont actualisés pour l'année 2026."}},{"@type":"Question","name":"Puis-je utiliser ces informations pour ma déclaration d'impôts ?","acceptedAnswer":{"@type":"Answer","text":"Ces informations sont indicatives. Pour votre déclaration, référez-vous aux montants exacts de votre fiche de paie."}},{"@type":"Question","name":"Ces calculs s'appliquent-ils à tous les secteurs ?","acceptedAnswer":{"@type":"Answer","text":"Les cotisations de base sont identiques. Certaines conventions collectives ajoutent des cotisations spécifiques."}},{"@type":"Question","name":"Comment obtenir un calcul personnalisé ?","acceptedAnswer":{"@type":"Answer","text":"Utilisez notre calculateur en haut de page avec vos données réelles (brut, statut, temps de travail)."}},{"@type":"Question","name":"Ces règles s'appliquent-elles aux indépendants ?","acceptedAnswer":{"@type":"Answer","text":"Non, les indépendants et auto-entrepreneurs ont des régimes de cotisations différents, avec des taux forfaitaires."}}]}
+        </script>
         <section class="bg-white border-t border-slate-200 py-12 px-4">
             <div class="mx-auto max-w-4xl">
                 <h2 class="text-lg font-bold text-slate-900 mb-4">Pages connexes</h2>
@@ -191,6 +392,30 @@
 <a href="/salaire-brut-net-mensuel/" class="block rounded-xl border border-slate-200 bg-white p-3 text-center hover:border-brand-300 hover:shadow-sm transition-all">
             <span class="block text-sm font-medium text-slate-900">Calcul mensuel</span>
         </a>
+<a href="/salaire-brut-net-annuel/" class="block rounded-xl border border-slate-200 bg-white p-3 text-center hover:border-brand-300 hover:shadow-sm transition-all">
+            <span class="block text-sm font-medium text-slate-900">Calcul annuel</span>
+        </a>
+<a href="/salaire-brut-net-horaire/" class="block rounded-xl border border-slate-200 bg-white p-3 text-center hover:border-brand-300 hover:shadow-sm transition-all">
+            <span class="block text-sm font-medium text-slate-900">Taux horaire</span>
+        </a>
+<a href="/salaire-brut-net-auto-entrepreneur/" class="block rounded-xl border border-slate-200 bg-white p-3 text-center hover:border-brand-300 hover:shadow-sm transition-all">
+            <span class="block text-sm font-medium text-slate-900">Auto-entrepreneur</span>
+        </a>
+<a href="/salaire-brut-net-alternance-apprentissage/" class="block rounded-xl border border-slate-200 bg-white p-3 text-center hover:border-brand-300 hover:shadow-sm transition-all">
+            <span class="block text-sm font-medium text-slate-900">Alternance</span>
+        </a>
+<a href="/lire-fiche-de-paie/" class="block rounded-xl border border-slate-200 bg-white p-3 text-center hover:border-brand-300 hover:shadow-sm transition-all">
+            <span class="block text-sm font-medium text-slate-900">Lire sa fiche de paie</span>
+        </a>
+<a href="/prime-brut-en-net/" class="block rounded-xl border border-slate-200 bg-white p-3 text-center hover:border-brand-300 hover:shadow-sm transition-all">
+            <span class="block text-sm font-medium text-slate-900">Prime brut en net</span>
+        </a>
+<a href="/salaire-moyen-france/" class="block rounded-xl border border-slate-200 bg-white p-3 text-center hover:border-brand-300 hover:shadow-sm transition-all">
+            <span class="block text-sm font-medium text-slate-900">Salaire moyen France</span>
+        </a>
+<a href="/negocier-salaire/" class="block rounded-xl border border-slate-200 bg-white p-3 text-center hover:border-brand-300 hover:shadow-sm transition-all">
+            <span class="block text-sm font-medium text-slate-900">Négocier son salaire</span>
+        </a>
 
                 </div>
             </div>
@@ -205,13 +430,12 @@
             <p class="text-xs text-slate-500">© 2026 SalaireBrutNet · Estimation indicative</p>
             <div class="flex gap-4">
                 <a href="/" class="text-xs text-slate-500 hover:text-slate-900">Calculateur</a>
-                <a href="/mentions-legales.html" class="text-xs text-slate-500 hover:text-slate-900">Mentions légales</a>
-                <a href="/mission.html" class="text-xs text-slate-500 hover:text-slate-900">Notre Mission</a>
+                <a href="/mentions-legales/" class="text-xs text-slate-500 hover:text-slate-900">Mentions légales</a>
+                <a href="/mission/" class="text-xs text-slate-500 hover:text-slate-900">Notre Mission</a>
                 <a href="/simulateur-impot-sur-le-revenu/" class="text-xs text-slate-500 hover:text-slate-900">Simulateur Impôts</a>
             </div>
         </div>
     </footer>
     <script src="/js/brut-net.js"></script>
-    <script>lucide.createIcons();</script>
 
 </body></html>

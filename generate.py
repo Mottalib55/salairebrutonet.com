@@ -364,8 +364,8 @@ def generate_sitemap():
     urls = [
         {"loc": f"{BASE_URL}/", "priority": "1.0", "changefreq": "monthly"},
         {"loc": f"{BASE_URL}/simulateur-impot-sur-le-revenu/", "priority": "0.9", "changefreq": "monthly"},
-        {"loc": f"{BASE_URL}/mission.html", "priority": "0.5", "changefreq": "monthly"},
-        {"loc": f"{BASE_URL}/mentions-legales.html", "priority": "0.3", "changefreq": "yearly"},
+        {"loc": f"{BASE_URL}/mission/", "priority": "0.5", "changefreq": "monthly"},
+        {"loc": f"{BASE_URL}/mentions-legales/", "priority": "0.3", "changefreq": "yearly"},
     ]
 
     for m in montants:

@@ -17,28 +17,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://unpkg.com/lucide@latest"></script>
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    fontFamily: { sans: ['Inter', 'sans-serif'] },
-                    colors: {
-                        brand: { 50:'#f0f9ff',100:'#e0f2fe',200:'#bae6fd',400:'#38bdf8',500:'#0ea5e9',600:'#0284c7',700:'#0369a1',900:'#0c4a6e' },
-                        emerald: { 50:'#ecfdf5',100:'#d1fae5',500:'#10b981',600:'#059669',700:'#047857' }
-                    }
-                }
-            }
-        }
-    </script>
-    <style>
-        input[type=range] { -webkit-appearance: none; background: transparent; }
-        input[type=range]::-webkit-slider-thumb { -webkit-appearance: none; height: 20px; width: 20px; border-radius: 50%; background: #fff; border: 2px solid #0ea5e9; cursor: pointer; box-shadow: 0 2px 6px rgba(0,0,0,0.15); margin-top: -8px; }
-        input[type=range]::-webkit-slider-runnable-track { width: 100%; height: 4px; cursor: pointer; background: linear-gradient(to right, #0ea5e9 0%, #0ea5e9 var(--progress, 0%), #e2e8f0 var(--progress, 0%), #e2e8f0 100%); border-radius: 9999px; }
-        input[type=number]::-webkit-inner-spin-button, input[type=number]::-webkit-outer-spin-button { -webkit-appearance: none; margin: 0; }
-        input[type=number] { -moz-appearance: textfield; }
-    </style>
+    <link rel="stylesheet" href="/css/style.css">
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
@@ -60,7 +39,7 @@
             <nav class="hidden md:flex gap-8">
                 <a href="/" class="text-sm font-medium text-slate-500 hover:text-slate-900 transition-colors">Calculateur</a>
                 <a href="/simulateur-impot-sur-le-revenu/" class="text-sm font-medium text-slate-500 hover:text-slate-900 transition-colors">Simulateur Impôts</a>
-                <a href="/mission.html" class="text-sm font-medium text-slate-500 hover:text-slate-900 transition-colors">Notre Mission</a>
+                <a href="/mission/" class="text-sm font-medium text-slate-500 hover:text-slate-900 transition-colors">Notre Mission</a>
             </nav>
         </div>
     </header>
@@ -69,7 +48,7 @@
         <nav class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-4">
             <ol class="flex items-center gap-2 text-sm text-slate-500">
                 <li><a href="/" class="hover:text-brand-600 transition-colors">Accueil</a></li>
-                <li><i data-lucide="chevron-right" class="h-4 w-4"></i></li>
+                <li><svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg></li>
                 <li class="text-slate-900 font-medium">Négocier son Salaire</li>
             </ol>
         </nav>
@@ -132,30 +111,233 @@
         <section class="bg-white border-t border-slate-200 py-12 px-4">
             <div class="mx-auto max-w-4xl prose prose-slate">
                 
-                <h2 class="text-xl font-semibold text-slate-900">Pourquoi négocier son salaire ?</h2>
-                <p>Ne pas négocier peut vous coûter des dizaines de milliers d'euros sur votre carrière. Même une différence de <strong>100 € brut/mois</strong> représente 1 200 € brut/an, soit plus de 40 000 € sur 30 ans (sans compter les augmentations en pourcentage).</p>
+                <h2 class="text-xl font-semibold text-slate-900">Pourquoi il est essentiel de négocier son salaire</h2>
+                <p>Ne pas négocier son salaire peut vous coûter <strong>des dizaines de milliers d'euros</strong> sur l'ensemble de votre carrière. Pourquoi ? Parce que votre salaire de départ sert de base à toutes vos augmentations futures. Une différence de seulement <strong>100 € brut par mois</strong> représente :</p>
+                <ul class="space-y-2">
+                    <li>1 200 € brut par an</li>
+                    <li>36 000 € brut sur 30 ans de carrière (sans compter les augmentations en %)</li>
+                    <li>Environ <strong>60 000 € brut au total</strong> si on intègre les augmentations futures calculées en pourcentage de ce salaire initial</li>
+                </ul>
+                <p>Pourtant, selon une étude de 2025, <strong>58% des salariés français n'osent pas négocier</strong> leur salaire, par peur de paraître trop gourmands ou de perdre l'opportunité. C'est une erreur : la négociation salariale est une étape normale et attendue du processus de recrutement et d'évolution professionnelle.</p>
 
-                <h2 class="text-xl font-semibold text-slate-900 mt-8">Négocier à l'embauche</h2>
-                <ul>
-                    <li><strong>Renseignez-vous</strong> sur les salaires du marché pour votre poste et votre région</li>
-                    <li><strong>Demandez en brut annuel</strong> : c'est la norme en France</li>
-                    <li><strong>Donnez une fourchette</strong> plutôt qu'un chiffre précis (ex: "entre 35 000 et 40 000 € brut annuel")</li>
-                    <li><strong>Ne négociez pas que le salaire</strong> : télétravail, tickets restaurant, mutuelle, RTT sont aussi négociables</li>
+                <h2 class="text-xl font-semibold text-slate-900 mt-8">Négocier à l'embauche : stratégies et scripts</h2>
+
+                <h3 class="text-lg font-semibold text-slate-900 mt-6">1. Faites vos recherches en amont</h3>
+                <p>Avant de négocier, renseignez-vous sur les <strong>salaires du marché</strong> pour votre poste, votre secteur et votre région :</p>
+                <ul class="space-y-2">
+                    <li>Consultez les sites spécialisés : Glassdoor, Indeed, Talent.com, Welcome to the Jungle (grilles salariales par poste et entreprise)</li>
+                    <li>Utilisez les études de rémunération de cabinets de recrutement (Robert Half, PageGroup, Michael Page publient des guides annuels)</li>
+                    <li>Vérifiez les grilles salariales de votre convention collective</li>
+                    <li>Demandez à votre réseau professionnel (LinkedIn, anciens collègues)</li>
                 </ul>
 
-                <h2 class="text-xl font-semibold text-slate-900 mt-8">Négocier une augmentation</h2>
-                <ul>
-                    <li><strong>Préparez vos arguments</strong> : résultats concrets, responsabilités élargies, compétences acquises</li>
-                    <li><strong>Choisissez le bon moment</strong> : entretien annuel, après un succès, lors d'une prise de responsabilité</li>
-                    <li><strong>Quantifiez</strong> : demandez un montant précis, pas "une petite augmentation"</li>
-                    <li><strong>Pensez en net</strong> : vérifiez l'impact réel avec notre <a href="/" class="text-brand-600 hover:text-brand-700">calculateur</a></li>
+                <h3 class="text-lg font-semibold text-slate-900 mt-6">2. Demandez toujours en brut annuel</h3>
+                <p>En France, la norme est de parler en <strong>brut annuel</strong>. Dire "38 000 € brut annuel" sonne plus professionnel que "2 360 € net par mois". Cela évite aussi les erreurs de calcul et les malentendus.</p>
+
+                <h3 class="text-lg font-semibold text-slate-900 mt-6">3. Donnez une fourchette, pas un chiffre fixe</h3>
+                <p>Au lieu de dire "Je veux 40 000 €", dites <strong>"Je vise une rémunération entre 38 000 et 42 000 € brut annuel"</strong>. Cela laisse une marge de négociation et montre que vous êtes flexible. L'employeur proposera souvent un chiffre dans le bas de votre fourchette, d'où l'importance de placer le plancher au niveau de votre objectif réel.</p>
+
+                <h3 class="text-lg font-semibold text-slate-900 mt-6">4. Scripts de négociation à l'embauche</h3>
+                <p><strong>Quand le recruteur demande vos prétentions salariales</strong> :</p>
+                <blockquote class="border-l-4 border-brand-500 pl-4 italic text-slate-700">
+                "D'après mes recherches sur le marché et compte tenu de mon expérience de [X années] dans [domaine], je vise une rémunération entre [Y] et [Z] € brut annuel. Cela correspond aux standards du marché pour ce type de poste. Qu'en pensez-vous ?"
+                </blockquote>
+
+                <p class="mt-4"><strong>Quand l'offre est inférieure à vos attentes</strong> :</p>
+                <blockquote class="border-l-4 border-brand-500 pl-4 italic text-slate-700">
+                "Je vous remercie pour cette proposition. Le poste m'intéresse beaucoup, mais j'espérais une rémunération plus proche de [X] € brut annuel, compte tenu de [arguments : expérience, compétences rares, marché]. Serait-il possible d'ajuster l'offre ?"
+                </blockquote>
+
+                <p class="mt-4"><strong>Si le recruteur ne peut pas monter en salaire</strong> :</p>
+                <blockquote class="border-l-4 border-brand-500 pl-4 italic text-slate-700">
+                "Je comprends la contrainte budgétaire. Serait-il possible de compenser par d'autres avantages : jours de télétravail supplémentaires, tickets restaurant, participation, prime d'intéressement, ou un premier bilan d'augmentation dans 6 mois ?"
+                </blockquote>
+
+                <h2 class="text-xl font-semibold text-slate-900 mt-8">Négocier une augmentation : méthode et timing</h2>
+
+                <h3 class="text-lg font-semibold text-slate-900 mt-6">1. Préparez un dossier solide</h3>
+                <p>Pour obtenir une augmentation, vous devez prouver que vous <strong>créez de la valeur</strong>. Préparez des arguments factuels :</p>
+                <ul class="space-y-2">
+                    <li><strong>Résultats chiffrés</strong> : "J'ai augmenté les ventes de 15% sur mon secteur", "J'ai réduit les délais de livraison de 20%"</li>
+                    <li><strong>Responsabilités élargies</strong> : "Je manage désormais une équipe de 3 personnes", "Je pilote le projet X en autonomie"</li>
+                    <li><strong>Compétences acquises</strong> : "J'ai obtenu la certification Y", "Je maîtrise maintenant l'outil Z essentiel à l'équipe"</li>
+                    <li><strong>Comparaison au marché</strong> : "Le salaire moyen pour mon poste et mon expérience est de X €, je suis actuellement en-dessous"</li>
                 </ul>
 
-                <h2 class="text-xl font-semibold text-slate-900 mt-8">Brut vs net : la vraie différence</h2>
-                <p>Attention : une augmentation de 200 € brut ne représente qu'environ <strong>156 € net de plus par mois</strong> (non-cadre). Pensez toujours à convertir pour connaître l'impact réel sur votre pouvoir d'achat.</p>
+                <h3 class="text-lg font-semibold text-slate-900 mt-6">2. Choisissez le bon moment</h3>
+                <p>Le timing est crucial. Demandez une augmentation :</p>
+                <ul class="space-y-2">
+                    <li><strong>Lors de l'entretien annuel d'évaluation</strong> : c'est le moment prévu pour parler évolution professionnelle et salaire</li>
+                    <li><strong>Après un succès majeur</strong> : projet livré avec succès, objectifs dépassés, client important signé</li>
+                    <li><strong>Lors d'une prise de responsabilités</strong> : nouvelle mission, nouveau périmètre, nouveau management</li>
+                    <li><strong>À la fin des NAO (Négociations Annuelles Obligatoires)</strong> : période où les budgets d'augmentation sont décidés (généralement janvier-mars)</li>
+                </ul>
+
+                <p class="mt-4"><strong>Évitez</strong> : demander une augmentation pendant une période difficile pour l'entreprise (plan social, baisse d'activité), juste après un échec, ou moins de 6 mois après votre dernière augmentation.</p>
+
+                <h3 class="text-lg font-semibold text-slate-900 mt-6">3. Quantifiez votre demande</h3>
+                <p>Ne dites jamais "J'aimerais une petite augmentation". Soyez précis : <strong>"Je souhaite une augmentation de 8%, soit 200 € brut par mois"</strong>. Une demande chiffrée montre que vous avez réfléchi et que vous êtes sérieux.</p>
+                <p>Quelle augmentation demander ? En France, les augmentations annuelles moyennes sont de :</p>
+                <ul class="space-y-1">
+                    <li><strong>Augmentation générale (inflation)</strong> : 1,5 à 3% par an</li>
+                    <li><strong>Augmentation individuelle (mérite)</strong> : 3 à 5% par an</li>
+                    <li><strong>Augmentation exceptionnelle (promotion)</strong> : 8 à 15%</li>
+                </ul>
+
+                <h3 class="text-lg font-semibold text-slate-900 mt-6">4. Script de demande d'augmentation</h3>
+                <blockquote class="border-l-4 border-brand-500 pl-4 italic text-slate-700">
+                "Bonjour [Manager], j'aimerais échanger avec vous sur mon évolution professionnelle et ma rémunération. Cette année, j'ai [résultats concrets]. Mes responsabilités ont évolué avec [nouvelles missions]. Compte tenu de ces éléments et du marché, je souhaiterais discuter d'une revalorisation de ma rémunération à hauteur de [X%] ou [Y €] brut mensuel. Qu'en pensez-vous ?"
+                </blockquote>
+
+                <h2 class="text-xl font-semibold text-slate-900 mt-8">Ne négociez pas que le salaire : package de rémunération global</h2>
+                <p>Si votre employeur ne peut pas augmenter votre salaire brut, vous pouvez négocier d'autres avantages qui ont de la valeur sans coûter autant à l'entreprise :</p>
+
+                <h3 class="text-lg font-semibold text-slate-900 mt-6">Avantages financiers</h3>
+                <ul class="space-y-2">
+                    <li><strong>Prime de Partage de la Valeur (PPV)</strong> : jusqu'à 3 000 ou 6 000 € exonérés de cotisations et d'impôt</li>
+                    <li><strong>Intéressement et participation</strong> : épargne salariale exonérée de cotisations si placée sur PEE/PERCO</li>
+                    <li><strong>Tickets restaurant</strong> : 60% pris en charge par l'employeur, exonérés dans la limite de 7,26 € par titre</li>
+                    <li><strong>Prime d'ancienneté, prime de performance, 13ème mois</strong> : primes récurrentes qui augmentent le brut</li>
+                    <li><strong>Chèques-vacances, chèques-cadeaux</strong> : exonérés dans certaines limites (montant limité, conditions de ressources)</li>
+                </ul>
+
+                <h3 class="text-lg font-semibold text-slate-900 mt-6">Avantages en nature et services</h3>
+                <ul class="space-y-2">
+                    <li><strong>Voiture de fonction</strong> : économie de 300 à 600 € par mois (mais soumise à cotisations)</li>
+                    <li><strong>Téléphone professionnel</strong> : économie de 50 à 80 € par mois</li>
+                    <li><strong>Ordinateur portable</strong> : pour usage mixte pro/perso</li>
+                    <li><strong>Parking ou abonnement transport</strong> : prise en charge à 100% possible (obligatoire à 50% minimum pour les transports en commun)</li>
+                </ul>
+
+                <h3 class="text-lg font-semibold text-slate-900 mt-6">Avantages en temps et qualité de vie</h3>
+                <ul class="space-y-2">
+                    <li><strong>Jours de télétravail</strong> : 2-3 jours par semaine (économie de transport, meilleure QVT)</li>
+                    <li><strong>RTT supplémentaires</strong> : ou horaires aménagés (semaine de 4,5 jours, finish à 16h le vendredi)</li>
+                    <li><strong>Compte Épargne Temps (CET)</strong> : possibilité d'épargner des jours pour des projets futurs</li>
+                    <li><strong>Flexibilité horaire</strong> : arrivée/départ décalés, horaires libres</li>
+                </ul>
+
+                <h3 class="text-lg font-semibold text-slate-900 mt-6">Avantages en développement professionnel</h3>
+                <ul class="space-y-2">
+                    <li><strong>Formation</strong> : certification, MBA, formation longue prise en charge</li>
+                    <li><strong>Conférences et événements</strong> : participation à des salons, congrès professionnels</li>
+                    <li><strong>Coaching professionnel</strong> : accompagnement personnalisé</li>
+                    <li><strong>Clause de revoyure</strong> : engagement de revoir la rémunération dans 6 mois après une période d'essai réussie</li>
+                </ul>
+
+                <h2 class="text-xl font-semibold text-slate-900 mt-8">Quand NE PAS négocier</h2>
+                <p>Parfois, la négociation peut être contre-productive. Évitez de négocier dans ces situations :</p>
+                <ul class="space-y-2">
+                    <li><strong>Offre déjà au-dessus du marché</strong> : si l'offre est généreuse et alignée avec vos recherches, acceptez sans marchandage excessif</li>
+                    <li><strong>Contexte de crise</strong> : si l'entreprise est en difficulté (plan social, licenciements), ce n'est pas le moment</li>
+                    <li><strong>Poste à forte concurrence</strong> : si le recruteur a 50 candidats qualifiés, votre marge de manœuvre est faible</li>
+                    <li><strong>Junior sans expérience</strong> : pour un premier emploi, la marge de négociation est limitée. Privilégiez la montée en compétences et négociez dans 1-2 ans</li>
+                </ul>
+
+                <h2 class="text-xl font-semibold text-slate-900 mt-8">Négocier en télétravail / remote : spécificités</h2>
+                <p>Avec l'essor du télétravail, de nouvelles opportunités et contraintes apparaissent dans la négociation salariale :</p>
+
+                <h3 class="text-lg font-semibold text-slate-900 mt-6">Négocier un poste full remote</h3>
+                <ul class="space-y-2">
+                    <li><strong>Élargissez votre recherche géographique</strong> : un poste parisien en remote depuis la province peut vous offrir un salaire parisien avec un coût de vie provincial</li>
+                    <li><strong>Demandez une indemnité télétravail</strong> : 10 à 50 € par mois pour couvrir électricité, internet, etc. (exonérée jusqu'à 580 € par an en 2026)</li>
+                    <li><strong>Négociez le matériel</strong> : bureau, chaise ergonomique, écran, casque, éclairage pris en charge par l'employeur</li>
+                    <li><strong>Attention à la clause de mobilité</strong> : si vous êtes en remote, assurez-vous que votre contrat ne vous oblige pas à venir au bureau 2-3 fois par semaine</li>
+                </ul>
+
+                <h3 class="text-lg font-semibold text-slate-900 mt-6">Ajustement salarial selon la localisation</h3>
+                <p>Certaines entreprises pratiquent des <strong>salaires ajustés à la localisation</strong> : un développeur à Paris gagnera plus qu'à Nantes pour le même poste, même en remote. D'autres pratiquent un <strong>salaire unique</strong> quel que soit le lieu. Renseignez-vous sur la politique de l'entreprise avant de négocier.</p>
+
+                <h2 class="text-xl font-semibold text-slate-900 mt-8">Brut vs net : toujours penser en pouvoir d'achat réel</h2>
+                <p>Une erreur fréquente est de se focaliser uniquement sur le brut. Or, ce qui compte pour votre budget, c'est le <strong>net après impôt</strong>.</p>
+
+                <h3 class="text-lg font-semibold text-slate-900 mt-6">Exemples de conversion</h3>
+                <ul class="space-y-2">
+                    <li>Augmentation de <strong>100 € brut/mois</strong> = environ 78 € net (non-cadre) ou 75 € net (cadre)</li>
+                    <li>Augmentation de <strong>200 € brut/mois</strong> = environ 156 € net (non-cadre) ou 150 € net (cadre)</li>
+                    <li>Augmentation de <strong>500 € brut/mois</strong> = environ 390 € net (non-cadre) ou 375 € net (cadre)</li>
+                </ul>
+                <p>Avant d'accepter une augmentation, vérifiez son impact réel avec notre <a href="/" class="text-brand-600 hover:text-brand-700">calculateur brut/net</a>. N'oubliez pas que l'augmentation peut aussi vous faire changer de tranche d'imposition et réduire l'impact net final.</p>
+
+                <h2 class="text-xl font-semibold text-slate-900 mt-8">Erreurs à éviter absolument</h2>
+                <ul class="space-y-3">
+                    <li><strong>Mentir sur son salaire actuel</strong> : si le recruteur demande votre bulletin de salaire, il découvrira la supercherie. Soyez honnête.</li>
+                    <li><strong>Accepter la première offre sans négocier</strong> : même si elle vous convient, testez la marge de manœuvre. Souvent, 5 à 10% supplémentaires sont possibles.</li>
+                    <li><strong>Comparer son salaire à celui des collègues</strong> : argument faible et maladroit. Focalisez-vous sur VOTRE valeur et VOS résultats.</li>
+                    <li><strong>Négocier par email</strong> : préférez toujours un échange en face-à-face ou en visio pour la négociation salariale. L'écrit peut être mal interprété.</li>
+                    <li><strong>Menacer de partir</strong> : "Si je n'ai pas X €, je démissionne" est une stratégie à double tranchant. N'utilisez cette carte que si vous êtes réellement prêt à partir.</li>
+                    <li><strong>Accepter des promesses orales</strong> : toute augmentation doit être actée par écrit (avenant au contrat, email de confirmation).</li>
+                </ul>
+
+                <h2 class="text-xl font-semibold text-slate-900 mt-8">Checklist : êtes-vous prêt à négocier ?</h2>
+                <ul class="space-y-2">
+                    <li>✅ J'ai fait des recherches sur les salaires du marché pour mon poste</li>
+                    <li>✅ J'ai préparé une liste de mes réalisations et résultats chiffrés</li>
+                    <li>✅ Je connais ma fourchette salariale cible (min-max)</li>
+                    <li>✅ J'ai converti mon objectif en brut annuel ET en net mensuel</li>
+                    <li>✅ J'ai identifié des avantages alternatifs à négocier si le salaire est bloqué</li>
+                    <li>✅ J'ai répété ma demande à voix haute (ou avec un proche) pour être à l'aise</li>
+                    <li>✅ Je suis prêt à accepter un "non" et à proposer une clause de revoyure</li>
+                </ul>
             
             </div>
         </section>
+        <section class="py-12 px-4">
+            <div class="mx-auto max-w-3xl">
+                <h2 class="text-xl font-bold text-slate-900 mb-6">Questions fréquentes</h2>
+                <div class="space-y-3">
+                    
+            <div class="rounded-xl border border-slate-200 bg-white">
+                <button class="faq-toggle w-full flex items-center justify-between p-5 text-left" onclick="this.nextElementSibling.classList.toggle('hidden');this.querySelector('svg').style.transform=this.nextElementSibling.classList.contains('hidden')?'':'rotate(180deg)'">
+                    <span class="font-medium text-slate-900">Cette information est-elle à jour pour 2026 ?</span>
+                    <svg class="h-5 w-5 text-slate-400 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+                </button>
+                <div class="faq-content hidden px-5 pb-5">
+                    <p class="text-sm text-slate-600">Oui, tous les taux et plafonds sont actualisés pour l'année 2026.</p>
+                </div>
+            </div>
+            <div class="rounded-xl border border-slate-200 bg-white">
+                <button class="faq-toggle w-full flex items-center justify-between p-5 text-left" onclick="this.nextElementSibling.classList.toggle('hidden');this.querySelector('svg').style.transform=this.nextElementSibling.classList.contains('hidden')?'':'rotate(180deg)'">
+                    <span class="font-medium text-slate-900">Puis-je utiliser ces informations pour ma déclaration d'impôts ?</span>
+                    <svg class="h-5 w-5 text-slate-400 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+                </button>
+                <div class="faq-content hidden px-5 pb-5">
+                    <p class="text-sm text-slate-600">Ces informations sont indicatives. Pour votre déclaration, référez-vous aux montants exacts de votre fiche de paie.</p>
+                </div>
+            </div>
+            <div class="rounded-xl border border-slate-200 bg-white">
+                <button class="faq-toggle w-full flex items-center justify-between p-5 text-left" onclick="this.nextElementSibling.classList.toggle('hidden');this.querySelector('svg').style.transform=this.nextElementSibling.classList.contains('hidden')?'':'rotate(180deg)'">
+                    <span class="font-medium text-slate-900">Ces calculs s'appliquent-ils à tous les secteurs ?</span>
+                    <svg class="h-5 w-5 text-slate-400 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+                </button>
+                <div class="faq-content hidden px-5 pb-5">
+                    <p class="text-sm text-slate-600">Les cotisations de base sont identiques. Certaines conventions collectives ajoutent des cotisations spécifiques.</p>
+                </div>
+            </div>
+            <div class="rounded-xl border border-slate-200 bg-white">
+                <button class="faq-toggle w-full flex items-center justify-between p-5 text-left" onclick="this.nextElementSibling.classList.toggle('hidden');this.querySelector('svg').style.transform=this.nextElementSibling.classList.contains('hidden')?'':'rotate(180deg)'">
+                    <span class="font-medium text-slate-900">Comment obtenir un calcul personnalisé ?</span>
+                    <svg class="h-5 w-5 text-slate-400 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+                </button>
+                <div class="faq-content hidden px-5 pb-5">
+                    <p class="text-sm text-slate-600">Utilisez notre calculateur en haut de page avec vos données réelles (brut, statut, temps de travail).</p>
+                </div>
+            </div>
+            <div class="rounded-xl border border-slate-200 bg-white">
+                <button class="faq-toggle w-full flex items-center justify-between p-5 text-left" onclick="this.nextElementSibling.classList.toggle('hidden');this.querySelector('svg').style.transform=this.nextElementSibling.classList.contains('hidden')?'':'rotate(180deg)'">
+                    <span class="font-medium text-slate-900">Ces règles s'appliquent-elles aux indépendants ?</span>
+                    <svg class="h-5 w-5 text-slate-400 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+                </button>
+                <div class="faq-content hidden px-5 pb-5">
+                    <p class="text-sm text-slate-600">Non, les indépendants et auto-entrepreneurs ont des régimes de cotisations différents, avec des taux forfaitaires.</p>
+                </div>
+            </div>
+                </div>
+            </div>
+        </section>
+        <script type="application/ld+json">
+        {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Cette information est-elle à jour pour 2026 ?","acceptedAnswer":{"@type":"Answer","text":"Oui, tous les taux et plafonds sont actualisés pour l'année 2026."}},{"@type":"Question","name":"Puis-je utiliser ces informations pour ma déclaration d'impôts ?","acceptedAnswer":{"@type":"Answer","text":"Ces informations sont indicatives. Pour votre déclaration, référez-vous aux montants exacts de votre fiche de paie."}},{"@type":"Question","name":"Ces calculs s'appliquent-ils à tous les secteurs ?","acceptedAnswer":{"@type":"Answer","text":"Les cotisations de base sont identiques. Certaines conventions collectives ajoutent des cotisations spécifiques."}},{"@type":"Question","name":"Comment obtenir un calcul personnalisé ?","acceptedAnswer":{"@type":"Answer","text":"Utilisez notre calculateur en haut de page avec vos données réelles (brut, statut, temps de travail)."}},{"@type":"Question","name":"Ces règles s'appliquent-elles aux indépendants ?","acceptedAnswer":{"@type":"Answer","text":"Non, les indépendants et auto-entrepreneurs ont des régimes de cotisations différents, avec des taux forfaitaires."}}]}
+        </script>
         <section class="bg-white border-t border-slate-200 py-12 px-4">
             <div class="mx-auto max-w-4xl">
                 <h2 class="text-lg font-bold text-slate-900 mb-4">Pages connexes</h2>
@@ -184,6 +366,30 @@
 <a href="/salaire-brut-net-mensuel/" class="block rounded-xl border border-slate-200 bg-white p-3 text-center hover:border-brand-300 hover:shadow-sm transition-all">
             <span class="block text-sm font-medium text-slate-900">Calcul mensuel</span>
         </a>
+<a href="/salaire-brut-net-annuel/" class="block rounded-xl border border-slate-200 bg-white p-3 text-center hover:border-brand-300 hover:shadow-sm transition-all">
+            <span class="block text-sm font-medium text-slate-900">Calcul annuel</span>
+        </a>
+<a href="/salaire-brut-net-horaire/" class="block rounded-xl border border-slate-200 bg-white p-3 text-center hover:border-brand-300 hover:shadow-sm transition-all">
+            <span class="block text-sm font-medium text-slate-900">Taux horaire</span>
+        </a>
+<a href="/salaire-brut-net-auto-entrepreneur/" class="block rounded-xl border border-slate-200 bg-white p-3 text-center hover:border-brand-300 hover:shadow-sm transition-all">
+            <span class="block text-sm font-medium text-slate-900">Auto-entrepreneur</span>
+        </a>
+<a href="/salaire-brut-net-alternance-apprentissage/" class="block rounded-xl border border-slate-200 bg-white p-3 text-center hover:border-brand-300 hover:shadow-sm transition-all">
+            <span class="block text-sm font-medium text-slate-900">Alternance</span>
+        </a>
+<a href="/lire-fiche-de-paie/" class="block rounded-xl border border-slate-200 bg-white p-3 text-center hover:border-brand-300 hover:shadow-sm transition-all">
+            <span class="block text-sm font-medium text-slate-900">Lire sa fiche de paie</span>
+        </a>
+<a href="/prime-brut-en-net/" class="block rounded-xl border border-slate-200 bg-white p-3 text-center hover:border-brand-300 hover:shadow-sm transition-all">
+            <span class="block text-sm font-medium text-slate-900">Prime brut en net</span>
+        </a>
+<a href="/salaire-moyen-france/" class="block rounded-xl border border-slate-200 bg-white p-3 text-center hover:border-brand-300 hover:shadow-sm transition-all">
+            <span class="block text-sm font-medium text-slate-900">Salaire moyen France</span>
+        </a>
+<a href="/negocier-salaire/" class="block rounded-xl border border-slate-200 bg-white p-3 text-center hover:border-brand-300 hover:shadow-sm transition-all">
+            <span class="block text-sm font-medium text-slate-900">Négocier son salaire</span>
+        </a>
 
                 </div>
             </div>
@@ -198,13 +404,12 @@
             <p class="text-xs text-slate-500">© 2026 SalaireBrutNet · Estimation indicative</p>
             <div class="flex gap-4">
                 <a href="/" class="text-xs text-slate-500 hover:text-slate-900">Calculateur</a>
-                <a href="/mentions-legales.html" class="text-xs text-slate-500 hover:text-slate-900">Mentions légales</a>
-                <a href="/mission.html" class="text-xs text-slate-500 hover:text-slate-900">Notre Mission</a>
+                <a href="/mentions-legales/" class="text-xs text-slate-500 hover:text-slate-900">Mentions légales</a>
+                <a href="/mission/" class="text-xs text-slate-500 hover:text-slate-900">Notre Mission</a>
                 <a href="/simulateur-impot-sur-le-revenu/" class="text-xs text-slate-500 hover:text-slate-900">Simulateur Impôts</a>
             </div>
         </div>
     </footer>
     <script src="/js/brut-net.js"></script>
-    <script>lucide.createIcons();</script>
 
 </body></html>

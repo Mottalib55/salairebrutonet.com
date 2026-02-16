@@ -17,28 +17,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://unpkg.com/lucide@latest"></script>
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    fontFamily: { sans: ['Inter', 'sans-serif'] },
-                    colors: {
-                        brand: { 50:'#f0f9ff',100:'#e0f2fe',200:'#bae6fd',400:'#38bdf8',500:'#0ea5e9',600:'#0284c7',700:'#0369a1',900:'#0c4a6e' },
-                        emerald: { 50:'#ecfdf5',100:'#d1fae5',500:'#10b981',600:'#059669',700:'#047857' }
-                    }
-                }
-            }
-        }
-    </script>
-    <style>
-        input[type=range] { -webkit-appearance: none; background: transparent; }
-        input[type=range]::-webkit-slider-thumb { -webkit-appearance: none; height: 20px; width: 20px; border-radius: 50%; background: #fff; border: 2px solid #0ea5e9; cursor: pointer; box-shadow: 0 2px 6px rgba(0,0,0,0.15); margin-top: -8px; }
-        input[type=range]::-webkit-slider-runnable-track { width: 100%; height: 4px; cursor: pointer; background: linear-gradient(to right, #0ea5e9 0%, #0ea5e9 var(--progress, 0%), #e2e8f0 var(--progress, 0%), #e2e8f0 100%); border-radius: 9999px; }
-        input[type=number]::-webkit-inner-spin-button, input[type=number]::-webkit-outer-spin-button { -webkit-appearance: none; margin: 0; }
-        input[type=number] { -moz-appearance: textfield; }
-    </style>
+    <link rel="stylesheet" href="/css/style.css">
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
@@ -60,7 +39,7 @@
             <nav class="hidden md:flex gap-8">
                 <a href="/" class="text-sm font-medium text-slate-500 hover:text-slate-900 transition-colors">Calculateur</a>
                 <a href="/simulateur-impot-sur-le-revenu/" class="text-sm font-medium text-slate-500 hover:text-slate-900 transition-colors">Simulateur Impôts</a>
-                <a href="/mission.html" class="text-sm font-medium text-slate-500 hover:text-slate-900 transition-colors">Notre Mission</a>
+                <a href="/mission/" class="text-sm font-medium text-slate-500 hover:text-slate-900 transition-colors">Notre Mission</a>
             </nav>
         </div>
     </header>
@@ -69,7 +48,7 @@
         <nav class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-4">
             <ol class="flex items-center gap-2 text-sm text-slate-500">
                 <li><a href="/" class="hover:text-brand-600 transition-colors">Accueil</a></li>
-                <li><i data-lucide="chevron-right" class="h-4 w-4"></i></li>
+                <li><svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg></li>
                 <li class="text-slate-900 font-medium">Prime Brut en Net</li>
             </ol>
         </nav>
@@ -133,27 +112,179 @@
             <div class="mx-auto max-w-4xl prose prose-slate">
                 
                 <h2 class="text-xl font-semibold text-slate-900">Comment convertir une prime brute en net ?</h2>
-                <p>Les primes versées par l'employeur sont soumises aux <strong>mêmes cotisations sociales</strong> que le salaire. Pour convertir une prime brute en net, appliquez le même taux que pour votre salaire : environ <strong>22% pour un non-cadre</strong> et <strong>25% pour un cadre</strong>.</p>
+                <p>Les primes versées par l'employeur sont en principe soumises aux <strong>mêmes cotisations sociales</strong> que le salaire de base : cotisations de Sécurité sociale, retraite complémentaire, CSG/CRDS. Pour convertir une prime brute en net, appliquez le même taux de conversion que pour votre salaire : environ <strong>22% de cotisations pour un non-cadre</strong> et <strong>25% pour un cadre</strong>.</p>
+                <p>Cependant, certaines primes bénéficient d'exonérations totales ou partielles de cotisations et d'impôt, ce qui améliore significativement le taux de conversion brut-net. Il est donc essentiel de connaître la nature exacte de votre prime avant de calculer le net.</p>
 
-                <h2 class="text-xl font-semibold text-slate-900 mt-8">Types de primes</h2>
+                <h2 class="text-xl font-semibold text-slate-900 mt-8">Types de primes et leur traitement fiscal</h2>
+
+                <h3 class="text-lg font-semibold text-slate-900 mt-6">1. Prime classique (prime d'objectifs, performance, etc.)</h3>
+                <p><strong>Traitement</strong> : soumise à cotisations sociales (22-25%) + impôt sur le revenu via le prélèvement à la source.</p>
+                <p><strong>Exemple</strong> : Prime de 1 000 € brut (non-cadre) → 1 000 - 220 (cotisations) = 780 € net avant impôt → 780 - 7,5% PAS = ~722 € net après impôt.</p>
+
+                <h3 class="text-lg font-semibold text-slate-900 mt-6">2. Prime de Partage de la Valeur (PPV)</h3>
+                <p>Créée en 2022 et pérennisée, la <strong>PPV</strong> (anciennement "PEPA") est exonérée de cotisations sociales ET d'impôt sur le revenu dans certaines limites :</p>
                 <ul class="space-y-2">
-                    <li><strong>Prime exceptionnelle</strong> : soumise à cotisations et impôt (sauf PPV sous conditions)</li>
-                    <li><strong>13ème mois</strong> : soumis à cotisations et impôt (un mois de salaire supplémentaire)</li>
-                    <li><strong>Prime d'ancienneté</strong> : intégrée au brut mensuel, cotisations classiques</li>
-                    <li><strong>Intéressement/participation</strong> : exonéré de cotisations si placé sur un PEE/PERCO (CSG/CRDS dues)</li>
-                    <li><strong>Prime de Partage de la Valeur (PPV)</strong> : exonérée de cotisations et d'impôt jusqu'à 3 000 € (ou 6 000 € avec accord d'intéressement)</li>
+                    <li><strong>Plafond standard</strong> : 3 000 € par an et par bénéficiaire</li>
+                    <li><strong>Plafond majoré</strong> : 6 000 € si l'entreprise a un accord d'intéressement ou de participation</li>
+                    <li><strong>Conditions</strong> : entreprise de moins de 50 salariés, ou salariés rémunérés moins de 3× le SMIC annuel (64 865 € brut en 2026)</li>
+                </ul>
+                <p><strong>Avantage</strong> : une PPV de 3 000 € = 3 000 € net versés, sans aucune cotisation ni impôt. C'est le dispositif le plus avantageux actuellement.</p>
+
+                <h3 class="text-lg font-semibold text-slate-900 mt-6">3. Intéressement et Participation</h3>
+                <p>L'<strong>intéressement</strong> et la <strong>participation</strong> sont des primes collectives liées aux résultats de l'entreprise. Leur traitement dépend du choix du salarié :</p>
+                <ul class="space-y-2">
+                    <li><strong>Versement immédiat</strong> : soumis à cotisations sociales (hors assurance chômage) + impôt → taux de cotisations ~10-12% + impôt</li>
+                    <li><strong>Placement sur PEE/PERCO</strong> : exonéré de cotisations sociales (sauf CSG/CRDS à 9,7%) + exonéré d'impôt → gain fiscal important</li>
+                    <li><strong>Forfait social employeur</strong> : 20% de la somme versée (payé par l'employeur, pas par vous)</li>
+                </ul>
+                <p><strong>Exemple</strong> : Participation de 2 000 €. Si placée sur PEE → 2 000 - 194 € (CSG/CRDS) = 1 806 € disponibles en épargne. Si versée cash → 2 000 - 220 (cotisations) - 150 (impôt) = 1 630 € net.</p>
+
+                <h3 class="text-lg font-semibold text-slate-900 mt-6">4. 13ème mois, prime de vacances, prime de fin d'année</h3>
+                <p>Ces primes contractuelles ou conventionnelles sont traitées comme du salaire : cotisations pleines (22-25%) + impôt. Pas d'exonération.</p>
+
+                <h3 class="text-lg font-semibold text-slate-900 mt-6">5. Prime d'ancienneté</h3>
+                <p>Souvent intégrée au salaire mensuel de base. Cotisations et impôt normaux.</p>
+
+                <h2 class="text-xl font-semibold text-slate-900 mt-8">Exemples de conversion brut → net</h2>
+                <p>Voici des exemples concrets pour différents montants de primes classiques (soumises à cotisations pleines) :</p>
+
+                <h3 class="text-lg font-semibold text-slate-900 mt-6">Non-cadre (22% de cotisations, taux PAS 5%)</h3>
+                <table class="w-full text-sm border-collapse mt-4">
+                    <thead><tr class="border-b-2 border-slate-300">
+                        <th class="py-2 text-left">Prime brute</th>
+                        <th class="py-2 text-right">Cotisations (22%)</th>
+                        <th class="py-2 text-right">Net avant impôt</th>
+                        <th class="py-2 text-right">Impôt (5%)</th>
+                        <th class="py-2 text-right">Net après impôt</th>
+                    </tr></thead>
+                    <tbody>
+                        <tr class="border-b border-slate-100"><td class="py-2">500 €</td><td class="py-2 text-right">-110 €</td><td class="py-2 text-right">390 €</td><td class="py-2 text-right">-19,50 €</td><td class="py-2 text-right">370,50 €</td></tr>
+                        <tr class="border-b border-slate-100"><td class="py-2">1 000 €</td><td class="py-2 text-right">-220 €</td><td class="py-2 text-right">780 €</td><td class="py-2 text-right">-39 €</td><td class="py-2 text-right">741 €</td></tr>
+                        <tr class="border-b border-slate-100"><td class="py-2">2 000 €</td><td class="py-2 text-right">-440 €</td><td class="py-2 text-right">1 560 €</td><td class="py-2 text-right">-78 €</td><td class="py-2 text-right">1 482 €</td></tr>
+                        <tr><td class="py-2">5 000 €</td><td class="py-2 text-right">-1 100 €</td><td class="py-2 text-right">3 900 €</td><td class="py-2 text-right">-195 €</td><td class="py-2 text-right">3 705 €</td></tr>
+                    </tbody>
+                </table>
+
+                <h3 class="text-lg font-semibold text-slate-900 mt-6">Cadre (25% de cotisations, taux PAS 7,5%)</h3>
+                <table class="w-full text-sm border-collapse mt-4">
+                    <thead><tr class="border-b-2 border-slate-300">
+                        <th class="py-2 text-left">Prime brute</th>
+                        <th class="py-2 text-right">Cotisations (25%)</th>
+                        <th class="py-2 text-right">Net avant impôt</th>
+                        <th class="py-2 text-right">Impôt (7,5%)</th>
+                        <th class="py-2 text-right">Net après impôt</th>
+                    </tr></thead>
+                    <tbody>
+                        <tr class="border-b border-slate-100"><td class="py-2">500 €</td><td class="py-2 text-right">-125 €</td><td class="py-2 text-right">375 €</td><td class="py-2 text-right">-28,13 €</td><td class="py-2 text-right">346,87 €</td></tr>
+                        <tr class="border-b border-slate-100"><td class="py-2">1 000 €</td><td class="py-2 text-right">-250 €</td><td class="py-2 text-right">750 €</td><td class="py-2 text-right">-56,25 €</td><td class="py-2 text-right">693,75 €</td></tr>
+                        <tr class="border-b border-slate-100"><td class="py-2">2 000 €</td><td class="py-2 text-right">-500 €</td><td class="py-2 text-right">1 500 €</td><td class="py-2 text-right">-112,50 €</td><td class="py-2 text-right">1 387,50 €</td></tr>
+                        <tr><td class="py-2">5 000 €</td><td class="py-2 text-right">-1 250 €</td><td class="py-2 text-right">3 750 €</td><td class="py-2 text-right">-281,25 €</td><td class="py-2 text-right">3 468,75 €</td></tr>
+                    </tbody>
+                </table>
+
+                <h2 class="text-xl font-semibold text-slate-900 mt-8">Impact sur le prélèvement à la source</h2>
+                <p>Attention : une prime importante peut <strong>augmenter temporairement votre taux de prélèvement à la source</strong> le mois où elle est versée. Pourquoi ? Parce que l'administration fiscale calcule votre taux en fonction du revenu du mois précédent.</p>
+                <p><strong>Exemple</strong> : Vous gagnez habituellement 2 500 € net imposable. En décembre, vous touchez une prime de 3 000 € brut (2 340 € net imposable). Votre net imposable total pour décembre sera de 4 840 €. Si le système calcule un taux basé sur ce revenu "annualisé" (4 840 × 12 = 58 080 €), votre taux peut bondir de 7,5% à 12-15% le mois suivant.</p>
+                <p><strong>Régularisation</strong> : Pas de panique, ce trop-prélevé sera régularisé en septembre de l'année suivante lors de votre déclaration de revenus. Mais cela peut créer un coup dur de trésorerie.</p>
+
+                <h2 class="text-xl font-semibold text-slate-900 mt-8">Optimisation fiscale des primes</h2>
+
+                <h3 class="text-lg font-semibold text-slate-900 mt-6">1. Privilégiez la PPV si possible</h3>
+                <p>Si votre employeur peut vous verser une prime exceptionnelle, demandez qu'elle soit versée sous forme de <strong>Prime de Partage de la Valeur</strong> dans la limite de 3 000 ou 6 000 €. Vous économisez 22-25% de cotisations + 5-15% d'impôt = 30-40% de gain net !</p>
+
+                <h3 class="text-lg font-semibold text-slate-900 mt-6">2. Placez l'intéressement/participation sur PEE</h3>
+                <p>Ne demandez pas le versement immédiat. Placez sur un PEE : vous économisez les cotisations sociales (hors CSG/CRDS) et l'impôt, et l'épargne est disponible après 5 ans (ou immédiatement en cas de déblocage anticipé : achat résidence principale, mariage, etc.).</p>
+
+                <h3 class="text-lg font-semibold text-slate-900 mt-6">3. Étalez les primes si possible</h3>
+                <p>Si vous négociez une prime importante (ex : 10 000 €), demandez à votre employeur de l'étaler sur 2-3 mois pour limiter l'impact sur votre taux de prélèvement à la source et éviter de passer dans une tranche d'imposition supérieure ponctuellement.</p>
+
+                <h2 class="text-xl font-semibold text-slate-900 mt-8">Primes et ancienneté / démission</h2>
+                <p>Certaines primes sont conditionnées à une <strong>condition de présence</strong> dans l'entreprise à la date de versement :</p>
+                <ul class="space-y-2">
+                    <li><strong>Prime de fin d'année</strong> : souvent conditionnée à être présent au 31/12. Si vous démissionnez en novembre, vous la perdez (sauf clause contraire dans votre contrat ou convention collective).</li>
+                    <li><strong>13ème mois</strong> : peut être proratisé en cas de départ en cours d'année (ex : 6 mois travaillés = 6/12 du 13ème mois).</li>
+                    <li><strong>Intéressement/participation</strong> : droits généralement acquis même en cas de départ, mais vérifiez l'accord d'entreprise.</li>
                 </ul>
 
-                <h2 class="text-xl font-semibold text-slate-900 mt-8">Exemples de conversion</h2>
-                <ul>
-                    <li><strong>Prime de 500 € brut</strong> → ~390 € net (non-cadre) / ~375 € net (cadre)</li>
-                    <li><strong>Prime de 1 000 € brut</strong> → ~780 € net (non-cadre) / ~750 € net (cadre)</li>
-                    <li><strong>Prime de 2 000 € brut</strong> → ~1 560 € net (non-cadre) / ~1 500 € net (cadre)</li>
+                <h2 class="text-xl font-semibold text-slate-900 mt-8">Timing de versement et stratégie</h2>
+                <p>Le moment où la prime est versée peut avoir un impact fiscal :</p>
+                <ul class="space-y-2">
+                    <li><strong>Prime versée en décembre N</strong> : imposable sur les revenus N, déclarés en N+1, impôt payé en N+1</li>
+                    <li><strong>Prime versée en janvier N+1</strong> : imposable sur les revenus N+1, déclarés en N+2, impôt payé en N+2 → différé d'un an</li>
                 </ul>
-                <p>Attention : la prime peut vous faire changer de tranche d'imposition le mois où elle est versée, augmentant temporairement votre prélèvement à la source.</p>
+                <p>Si vous anticipez une baisse de revenus l'année suivante (congé parental, passage à temps partiel, retraite), il peut être judicieux de demander le versement de la prime en janvier plutôt qu'en décembre pour bénéficier d'un taux d'imposition plus faible.</p>
+
+                <h2 class="text-xl font-semibold text-slate-900 mt-8">Conseils pratiques</h2>
+                <ul class="space-y-3">
+                    <li><strong>Vérifiez votre fiche de paie</strong> : assurez-vous que la prime est bien mentionnée avec le bon montant brut et que les cotisations appliquées sont correctes.</li>
+                    <li><strong>Calculez le net réel</strong> : utilisez notre <a href="/" class="text-brand-600 hover:text-brand-700">calculateur brut/net</a> pour estimer précisément ce que vous toucherez après cotisations et impôt.</li>
+                    <li><strong>Négociez le type de prime</strong> : si votre employeur vous propose une prime, suggérez une PPV ou un intéressement plutôt qu'une prime classique pour optimiser le net.</li>
+                    <li><strong>Anticipez l'impôt</strong> : si la prime est importante, provisionnez pour le trop-prélevé d'impôt le mois suivant ou demandez une modulation de votre taux sur impots.gouv.fr.</li>
+                </ul>
+
+                <h2 class="text-xl font-semibold text-slate-900 mt-8">Primes et cotisations retraite</h2>
+                <p>Un point souvent négligé : les primes soumises à cotisations <strong>augmentent vos droits à la retraite</strong>. Chaque euro de prime cotisé à l'AGIRC-ARRCO vous rapporte des points de retraite complémentaire supplémentaires. À l'inverse, les primes exonérées (PPV, intéressement placé) ne génèrent pas de droits retraite.</p>
+                <p>Sur une carrière de 40 ans, la différence peut être significative : un salarié recevant 3 000 € de primes cotisées chaque année accumule environ 80 points AGIRC-ARRCO de plus qu'un salarié recevant la même somme en PPV. À la retraite, ces 80 points représentent environ <strong>113 € de pension annuelle supplémentaire</strong>, soit 9,40 € par mois à vie.</p>
+                <p>Ce calcul illustre le <strong>dilemme classique entre net immédiat et droits futurs</strong> : les primes exonérées sont plus avantageuses à court terme, mais les primes cotisées construisent des droits de retraite. Selon votre horizon de temps et votre stratégie patrimoniale, le meilleur choix peut varier.</p>
             
             </div>
         </section>
+        <section class="py-12 px-4">
+            <div class="mx-auto max-w-3xl">
+                <h2 class="text-xl font-bold text-slate-900 mb-6">Questions fréquentes</h2>
+                <div class="space-y-3">
+                    
+            <div class="rounded-xl border border-slate-200 bg-white">
+                <button class="faq-toggle w-full flex items-center justify-between p-5 text-left" onclick="this.nextElementSibling.classList.toggle('hidden');this.querySelector('svg').style.transform=this.nextElementSibling.classList.contains('hidden')?'':'rotate(180deg)'">
+                    <span class="font-medium text-slate-900">Cette information est-elle à jour pour 2026 ?</span>
+                    <svg class="h-5 w-5 text-slate-400 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+                </button>
+                <div class="faq-content hidden px-5 pb-5">
+                    <p class="text-sm text-slate-600">Oui, tous les taux et plafonds sont actualisés pour l'année 2026.</p>
+                </div>
+            </div>
+            <div class="rounded-xl border border-slate-200 bg-white">
+                <button class="faq-toggle w-full flex items-center justify-between p-5 text-left" onclick="this.nextElementSibling.classList.toggle('hidden');this.querySelector('svg').style.transform=this.nextElementSibling.classList.contains('hidden')?'':'rotate(180deg)'">
+                    <span class="font-medium text-slate-900">Puis-je utiliser ces informations pour ma déclaration d'impôts ?</span>
+                    <svg class="h-5 w-5 text-slate-400 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+                </button>
+                <div class="faq-content hidden px-5 pb-5">
+                    <p class="text-sm text-slate-600">Ces informations sont indicatives. Pour votre déclaration, référez-vous aux montants exacts de votre fiche de paie.</p>
+                </div>
+            </div>
+            <div class="rounded-xl border border-slate-200 bg-white">
+                <button class="faq-toggle w-full flex items-center justify-between p-5 text-left" onclick="this.nextElementSibling.classList.toggle('hidden');this.querySelector('svg').style.transform=this.nextElementSibling.classList.contains('hidden')?'':'rotate(180deg)'">
+                    <span class="font-medium text-slate-900">Ces calculs s'appliquent-ils à tous les secteurs ?</span>
+                    <svg class="h-5 w-5 text-slate-400 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+                </button>
+                <div class="faq-content hidden px-5 pb-5">
+                    <p class="text-sm text-slate-600">Les cotisations de base sont identiques. Certaines conventions collectives ajoutent des cotisations spécifiques.</p>
+                </div>
+            </div>
+            <div class="rounded-xl border border-slate-200 bg-white">
+                <button class="faq-toggle w-full flex items-center justify-between p-5 text-left" onclick="this.nextElementSibling.classList.toggle('hidden');this.querySelector('svg').style.transform=this.nextElementSibling.classList.contains('hidden')?'':'rotate(180deg)'">
+                    <span class="font-medium text-slate-900">Comment obtenir un calcul personnalisé ?</span>
+                    <svg class="h-5 w-5 text-slate-400 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+                </button>
+                <div class="faq-content hidden px-5 pb-5">
+                    <p class="text-sm text-slate-600">Utilisez notre calculateur en haut de page avec vos données réelles (brut, statut, temps de travail).</p>
+                </div>
+            </div>
+            <div class="rounded-xl border border-slate-200 bg-white">
+                <button class="faq-toggle w-full flex items-center justify-between p-5 text-left" onclick="this.nextElementSibling.classList.toggle('hidden');this.querySelector('svg').style.transform=this.nextElementSibling.classList.contains('hidden')?'':'rotate(180deg)'">
+                    <span class="font-medium text-slate-900">Ces règles s'appliquent-elles aux indépendants ?</span>
+                    <svg class="h-5 w-5 text-slate-400 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+                </button>
+                <div class="faq-content hidden px-5 pb-5">
+                    <p class="text-sm text-slate-600">Non, les indépendants et auto-entrepreneurs ont des régimes de cotisations différents, avec des taux forfaitaires.</p>
+                </div>
+            </div>
+                </div>
+            </div>
+        </section>
+        <script type="application/ld+json">
+        {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Cette information est-elle à jour pour 2026 ?","acceptedAnswer":{"@type":"Answer","text":"Oui, tous les taux et plafonds sont actualisés pour l'année 2026."}},{"@type":"Question","name":"Puis-je utiliser ces informations pour ma déclaration d'impôts ?","acceptedAnswer":{"@type":"Answer","text":"Ces informations sont indicatives. Pour votre déclaration, référez-vous aux montants exacts de votre fiche de paie."}},{"@type":"Question","name":"Ces calculs s'appliquent-ils à tous les secteurs ?","acceptedAnswer":{"@type":"Answer","text":"Les cotisations de base sont identiques. Certaines conventions collectives ajoutent des cotisations spécifiques."}},{"@type":"Question","name":"Comment obtenir un calcul personnalisé ?","acceptedAnswer":{"@type":"Answer","text":"Utilisez notre calculateur en haut de page avec vos données réelles (brut, statut, temps de travail)."}},{"@type":"Question","name":"Ces règles s'appliquent-elles aux indépendants ?","acceptedAnswer":{"@type":"Answer","text":"Non, les indépendants et auto-entrepreneurs ont des régimes de cotisations différents, avec des taux forfaitaires."}}]}
+        </script>
         <section class="bg-white border-t border-slate-200 py-12 px-4">
             <div class="mx-auto max-w-4xl">
                 <h2 class="text-lg font-bold text-slate-900 mb-4">Pages connexes</h2>
@@ -182,6 +313,30 @@
 <a href="/salaire-brut-net-mensuel/" class="block rounded-xl border border-slate-200 bg-white p-3 text-center hover:border-brand-300 hover:shadow-sm transition-all">
             <span class="block text-sm font-medium text-slate-900">Calcul mensuel</span>
         </a>
+<a href="/salaire-brut-net-annuel/" class="block rounded-xl border border-slate-200 bg-white p-3 text-center hover:border-brand-300 hover:shadow-sm transition-all">
+            <span class="block text-sm font-medium text-slate-900">Calcul annuel</span>
+        </a>
+<a href="/salaire-brut-net-horaire/" class="block rounded-xl border border-slate-200 bg-white p-3 text-center hover:border-brand-300 hover:shadow-sm transition-all">
+            <span class="block text-sm font-medium text-slate-900">Taux horaire</span>
+        </a>
+<a href="/salaire-brut-net-auto-entrepreneur/" class="block rounded-xl border border-slate-200 bg-white p-3 text-center hover:border-brand-300 hover:shadow-sm transition-all">
+            <span class="block text-sm font-medium text-slate-900">Auto-entrepreneur</span>
+        </a>
+<a href="/salaire-brut-net-alternance-apprentissage/" class="block rounded-xl border border-slate-200 bg-white p-3 text-center hover:border-brand-300 hover:shadow-sm transition-all">
+            <span class="block text-sm font-medium text-slate-900">Alternance</span>
+        </a>
+<a href="/lire-fiche-de-paie/" class="block rounded-xl border border-slate-200 bg-white p-3 text-center hover:border-brand-300 hover:shadow-sm transition-all">
+            <span class="block text-sm font-medium text-slate-900">Lire sa fiche de paie</span>
+        </a>
+<a href="/prime-brut-en-net/" class="block rounded-xl border border-slate-200 bg-white p-3 text-center hover:border-brand-300 hover:shadow-sm transition-all">
+            <span class="block text-sm font-medium text-slate-900">Prime brut en net</span>
+        </a>
+<a href="/salaire-moyen-france/" class="block rounded-xl border border-slate-200 bg-white p-3 text-center hover:border-brand-300 hover:shadow-sm transition-all">
+            <span class="block text-sm font-medium text-slate-900">Salaire moyen France</span>
+        </a>
+<a href="/negocier-salaire/" class="block rounded-xl border border-slate-200 bg-white p-3 text-center hover:border-brand-300 hover:shadow-sm transition-all">
+            <span class="block text-sm font-medium text-slate-900">Négocier son salaire</span>
+        </a>
 
                 </div>
             </div>
@@ -196,13 +351,12 @@
             <p class="text-xs text-slate-500">© 2026 SalaireBrutNet · Estimation indicative</p>
             <div class="flex gap-4">
                 <a href="/" class="text-xs text-slate-500 hover:text-slate-900">Calculateur</a>
-                <a href="/mentions-legales.html" class="text-xs text-slate-500 hover:text-slate-900">Mentions légales</a>
-                <a href="/mission.html" class="text-xs text-slate-500 hover:text-slate-900">Notre Mission</a>
+                <a href="/mentions-legales/" class="text-xs text-slate-500 hover:text-slate-900">Mentions légales</a>
+                <a href="/mission/" class="text-xs text-slate-500 hover:text-slate-900">Notre Mission</a>
                 <a href="/simulateur-impot-sur-le-revenu/" class="text-xs text-slate-500 hover:text-slate-900">Simulateur Impôts</a>
             </div>
         </div>
     </footer>
     <script src="/js/brut-net.js"></script>
-    <script>lucide.createIcons();</script>
 
 </body></html>

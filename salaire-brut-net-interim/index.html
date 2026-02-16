@@ -17,28 +17,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://unpkg.com/lucide@latest"></script>
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    fontFamily: { sans: ['Inter', 'sans-serif'] },
-                    colors: {
-                        brand: { 50:'#f0f9ff',100:'#e0f2fe',200:'#bae6fd',400:'#38bdf8',500:'#0ea5e9',600:'#0284c7',700:'#0369a1',900:'#0c4a6e' },
-                        emerald: { 50:'#ecfdf5',100:'#d1fae5',500:'#10b981',600:'#059669',700:'#047857' }
-                    }
-                }
-            }
-        }
-    </script>
-    <style>
-        input[type=range] { -webkit-appearance: none; background: transparent; }
-        input[type=range]::-webkit-slider-thumb { -webkit-appearance: none; height: 20px; width: 20px; border-radius: 50%; background: #fff; border: 2px solid #0ea5e9; cursor: pointer; box-shadow: 0 2px 6px rgba(0,0,0,0.15); margin-top: -8px; }
-        input[type=range]::-webkit-slider-runnable-track { width: 100%; height: 4px; cursor: pointer; background: linear-gradient(to right, #0ea5e9 0%, #0ea5e9 var(--progress, 0%), #e2e8f0 var(--progress, 0%), #e2e8f0 100%); border-radius: 9999px; }
-        input[type=number]::-webkit-inner-spin-button, input[type=number]::-webkit-outer-spin-button { -webkit-appearance: none; margin: 0; }
-        input[type=number] { -moz-appearance: textfield; }
-    </style>
+    <link rel="stylesheet" href="/css/style.css">
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
@@ -60,7 +39,7 @@
             <nav class="hidden md:flex gap-8">
                 <a href="/" class="text-sm font-medium text-slate-500 hover:text-slate-900 transition-colors">Calculateur</a>
                 <a href="/simulateur-impot-sur-le-revenu/" class="text-sm font-medium text-slate-500 hover:text-slate-900 transition-colors">Simulateur Impôts</a>
-                <a href="/mission.html" class="text-sm font-medium text-slate-500 hover:text-slate-900 transition-colors">Notre Mission</a>
+                <a href="/mission/" class="text-sm font-medium text-slate-500 hover:text-slate-900 transition-colors">Notre Mission</a>
             </nav>
         </div>
     </header>
@@ -69,7 +48,7 @@
         <nav class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-4">
             <ol class="flex items-center gap-2 text-sm text-slate-500">
                 <li><a href="/" class="hover:text-brand-600 transition-colors">Accueil</a></li>
-                <li><i data-lucide="chevron-right" class="h-4 w-4"></i></li>
+                <li><svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg></li>
                 <li class="text-slate-900 font-medium">Salaire Brut Net Intérim 2026</li>
             </ol>
         </nav>
@@ -151,9 +130,301 @@
                     <li>Net (après ~22% de cotisations) : environ <strong>1 888 €</strong></li>
                 </ul>
                 <p>L'IFM et l'ICCP sont soumises aux cotisations sociales et à l'impôt sur le revenu.</p>
+
+                <h2 class="text-xl font-semibold text-slate-900 mt-8">Le fonctionnement du travail intérimaire</h2>
+                <p>Le <strong>travail intérimaire</strong> (ou travail temporaire) est une relation tripartite impliquant trois acteurs :</p>
+                <ul>
+                    <li><strong>L'entreprise de travail temporaire (ETT)</strong> : l'agence d'intérim qui emploie juridiquement l'intérimaire et le rémunère</li>
+                    <li><strong>L'entreprise utilisatrice</strong> : l'entreprise qui accueille l'intérimaire pour réaliser une mission temporaire</li>
+                    <li><strong>L'intérimaire</strong> : le salarié en mission</li>
+                </ul>
+                <p>L'intérimaire signe un <strong>contrat de mission</strong> avec l'ETT (et non avec l'entreprise utilisatrice). Ce contrat précise la durée, les missions, la rémunération et les conditions de travail.</p>
+
+                <h3 class="text-lg font-semibold text-slate-900 mt-6">Cas de recours autorisés</h3>
+                <p>Le recours à l'intérim n'est autorisé que dans des situations précises :</p>
+                <ul>
+                    <li><strong>Remplacement d'un salarié absent</strong> (congés, maladie, congé maternité)</li>
+                    <li><strong>Accroissement temporaire d'activité</strong> (surcroît ponctuel de travail, commande exceptionnelle)</li>
+                    <li><strong>Emploi saisonnier</strong> (vendanges, activités touristiques)</li>
+                    <li><strong>Emploi d'usage</strong> dans certains secteurs (audiovisuel, spectacle, hôtellerie)</li>
+                    <li><strong>Contrat de mission-formation</strong> (CDI intérimaire avec périodes de formation)</li>
+                </ul>
+                <p>Il est <strong>interdit</strong> de recourir à l'intérim pour :</p>
+                <ul>
+                    <li>Remplacer un salarié gréviste</li>
+                    <li>Pourvoir un poste suite à un licenciement économique (dans les 6 mois)</li>
+                    <li>Effectuer des travaux particulièrement dangereux (sauf dérogation)</li>
+                </ul>
+
+                <h2 class="text-xl font-semibold text-slate-900 mt-8">Durée des contrats de mission</h2>
+                <p>La durée maximale d'un <strong>contrat de mission</strong> (renouvellements inclus) dépend du motif de recours :</p>
+                <ul>
+                    <li><strong>Remplacement d'un salarié absent</strong> : durée de l'absence (+ éventuellement quelques jours pour le délai de préavis)</li>
+                    <li><strong>Accroissement temporaire d'activité</strong> : 18 mois maximum (renouvellements inclus)</li>
+                    <li><strong>Emploi saisonnier</strong> : durée de la saison</li>
+                    <li><strong>Travaux urgents de sécurité</strong> : 9 mois maximum</li>
+                </ul>
+                <p>En cas de dépassement de la durée maximale, le contrat peut être <strong>requalifié en CDI</strong> avec l'entreprise utilisatrice.</p>
+
+                <h3 class="text-lg font-semibold text-slate-900 mt-6">Délai de carence entre deux missions</h3>
+                <p>Pour éviter que l'intérim ne devienne un emploi permanent déguisé, la loi impose un <strong>délai de carence</strong> entre deux missions sur le même poste :</p>
+                <ul>
+                    <li>Délai de carence = <strong>1/3 de la durée de la mission précédente</strong></li>
+                    <li>Exemple : après une mission de 6 mois, l'entreprise doit attendre 2 mois avant de faire appel à un nouvel intérimaire sur ce poste</li>
+                </ul>
+                <p>Le même intérimaire peut être réembauché sans délai de carence si la mission est différente ou si des circonstances exceptionnelles le justifient.</p>
+
+                <h2 class="text-xl font-semibold text-slate-900 mt-8">Rémunération de l'intérimaire : principe d'égalité</h2>
+                <p>Le principe fondamental est celui de <strong>l'égalité de traitement</strong> : l'intérimaire doit percevoir la même rémunération qu'un salarié permanent de l'entreprise utilisatrice occupant le même poste, à qualification et ancienneté équivalentes.</p>
+
+                <h3 class="text-lg font-semibold text-slate-900 mt-6">Calcul du salaire de base</h3>
+                <p>Le salaire de base de l'intérimaire ne peut pas être inférieur :</p>
+                <ul>
+                    <li>Au <a href="/smic-brut-net-2026/" class="text-brand-600 hover:text-brand-700">SMIC</a> (1 801,80 € brut mensuel pour 35h)</li>
+                    <li>Au <strong>minimum conventionnel</strong> applicable dans l'entreprise utilisatrice pour le poste occupé</li>
+                    <li>À la rémunération d'un salarié de l'entreprise utilisatrice de <strong>même qualification</strong></li>
+                </ul>
+                <p>Si l'entreprise utilisatrice verse des primes (13ème mois, prime d'ancienneté, prime de performance), l'intérimaire doit en bénéficier au prorata de son temps de présence.</p>
+
+                <h3 class="text-lg font-semibold text-slate-900 mt-6">Indemnité de Fin de Mission (IFM) : 10%</h3>
+                <p>L'<strong>IFM</strong> est une prime de précarité versée à la fin de chaque mission pour compenser l'instabilité de l'emploi intérimaire. Son montant est de <strong>10% de la rémunération totale brute</strong> (salaire + primes + heures supplémentaires).</p>
+                <p>Exceptions : l'IFM n'est pas due si :</p>
+                <ul>
+                    <li>Le contrat de mission est suivi d'un <strong>CDI dans l'entreprise utilisatrice</strong></li>
+                    <li>L'intérimaire <strong>refuse un CDI</strong> proposé par l'entreprise utilisatrice</li>
+                    <li>La mission est rompue à l'initiative de l'intérimaire (démission)</li>
+                    <li>Il s'agit d'un <strong>contrat saisonnier</strong> ou d'un <strong>CDI intérimaire</strong></li>
+                </ul>
+
+                <h3 class="text-lg font-semibold text-slate-900 mt-6">Indemnité Compensatrice de Congés Payés (ICCP) : 10%</h3>
+                <p>Comme l'intérimaire ne prend généralement pas de congés pendant sa mission, il perçoit une <strong>ICCP de 10%</strong> calculée sur la rémunération brute totale <strong>augmentée de l'IFM</strong>.</p>
+                <p>Formule exacte :<br>
+                ICCP = (Salaire brut + IFM) × 10%</p>
+                <p>Cette indemnité compense les congés payés non pris. Elle est soumise aux <a href="/cotisations-sociales-salariales/" class="text-brand-600 hover:text-brand-700">cotisations sociales</a> et à l'impôt sur le revenu.</p>
+
+                <h2 class="text-xl font-semibold text-slate-900 mt-8">Exemple complet de calcul de rémunération intérim</h2>
+                <p>Prenons l'exemple d'un intérimaire en mission pendant <strong>3 mois</strong> à raison de <strong>35h par semaine</strong>, avec un taux horaire de <strong>13 € brut</strong> :</p>
+
+                <h3 class="text-lg font-semibold text-slate-900 mt-6">Mois 1 : 151,67 heures travaillées</h3>
+                <ul>
+                    <li>Salaire brut : 151,67 h × 13 € = <strong>1 971,71 €</strong></li>
+                    <li>IFM (10%) : 1 971,71 × 10% = <strong>197,17 €</strong></li>
+                    <li>ICCP (10% sur 2 168,88 €) : <strong>216,89 €</strong></li>
+                    <li><strong>Brut total : 2 385,77 €</strong></li>
+                    <li>Cotisations salariales (~22%) : 524,87 €</li>
+                    <li><strong>Net mensuel : 1 860,90 €</strong></li>
+                </ul>
+
+                <h3 class="text-lg font-semibold text-slate-900 mt-6">Fin de mission (après 3 mois)</h3>
+                <p>Si la mission dure 3 mois, l'intérimaire aura perçu :</p>
+                <ul>
+                    <li>3 mois de salaire : 3 × 1 971,71 = 5 915,13 €</li>
+                    <li>IFM totale : 591,51 €</li>
+                    <li>ICCP totale : 650,66 €</li>
+                    <li><strong>Total brut sur 3 mois : 7 157,30 €</strong></li>
+                    <li><strong>Total net sur 3 mois : environ 5 583 €</strong></li>
+                </ul>
+
+                <h2 class="text-xl font-semibold text-slate-900 mt-8">Droits et avantages des intérimaires</h2>
+                <p>Les intérimaires bénéficient des mêmes droits que les salariés permanents de l'entreprise utilisatrice :</p>
+
+                <h3 class="text-lg font-semibold text-slate-900 mt-6">1. Accès aux équipements collectifs</h3>
+                <p>L'intérimaire a accès aux <strong>mêmes installations</strong> que les salariés permanents :</p>
+                <ul>
+                    <li>Restaurant d'entreprise ou tickets restaurant</li>
+                    <li>Vestiaires, douches, sanitaires</li>
+                    <li>Locaux de repos</li>
+                    <li>Activités sociales et culturelles du CSE (si la mission dépasse 3 mois)</li>
+                </ul>
+
+                <h3 class="text-lg font-semibold text-slate-900 mt-6">2. Transport et indemnités kilométriques</h3>
+                <p>L'intérimaire bénéficie du remboursement à <strong>50% des frais de transport</strong> en commun (comme tout salarié). Si la mission nécessite des déplacements, l'entreprise utilisatrice ou l'ETT doit rembourser les frais selon le barème légal.</p>
+
+                <h3 class="text-lg font-semibold text-slate-900 mt-6">3. Formation professionnelle et DIF intérimaire</h3>
+                <p>Les intérimaires cumulent des <strong>droits à la formation</strong> via le <strong>FAFTT</strong> (Fonds d'Assurance Formation du Travail Temporaire). Après 1 607 heures de travail intérimaire (équivalent d'un an à temps plein), l'intérimaire peut demander une formation financée.</p>
+                <p>Le <strong>CPF</strong> (Compte Personnel de Formation) fonctionne normalement pour les intérimaires : ils accumulent 500 € par an (800 € pour les non-qualifiés).</p>
+
+                <h3 class="text-lg font-semibold text-slate-900 mt-6">4. Ancienneté et retraite</h3>
+                <p>Les périodes d'intérim comptent pour :</p>
+                <ul>
+                    <li>Les <strong>trimestres de retraite</strong> (cotisations versées à l'assurance vieillesse)</li>
+                    <li>L'<strong>ancienneté</strong> en cas d'embauche en CDI dans l'entreprise utilisatrice (si la mission a duré plus de 6 mois)</li>
+                </ul>
+
+                <h2 class="text-xl font-semibold text-slate-900 mt-8">CDI intérimaire (CDII)</h2>
+                <p>Depuis 2013, les agences d'intérim peuvent proposer des <strong>CDI intérimaires</strong> (CDII). Ce type de contrat offre plus de stabilité que les missions ponctuelles :</p>
+
+                <h3 class="text-lg font-semibold text-slate-900 mt-6">Fonctionnement du CDII</h3>
+                <ul>
+                    <li>L'intérimaire est embauché en <strong>CDI par l'agence</strong> (et non en contrat de mission)</li>
+                    <li>Il alterne entre <strong>périodes de mission</strong> (chez des entreprises utilisatrices) et <strong>périodes d'intermission</strong> (sans mission)</li>
+                    <li>Pendant les périodes d'intermission, il perçoit une <strong>rémunération minimale</strong> garantie (généralement équivalente au SMIC)</li>
+                    <li>L'agence doit proposer régulièrement des missions adaptées au profil de l'intérimaire</li>
+                </ul>
+
+                <h3 class="text-lg font-semibold text-slate-900 mt-6">Avantages du CDII</h3>
+                <ul>
+                    <li><strong>Sécurité de l'emploi</strong> : revenu garanti même sans mission</li>
+                    <li><strong>Continuité des droits</strong> : couverture sociale, retraite, chômage (en cas de rupture du CDII)</li>
+                    <li><strong>Accès au crédit facilité</strong> : les banques considèrent le CDII comme un CDI classique</li>
+                    <li><strong>Formation continue</strong> : l'agence doit proposer des formations pendant les périodes d'intermission</li>
+                </ul>
+
+                <h3 class="text-lg font-semibold text-slate-900 mt-6">Inconvénients du CDII</h3>
+                <ul>
+                    <li><strong>Pas d'IFM ni d'ICCP</strong> : le salarié en CDII ne perçoit pas les primes de précarité (10% + 10%)</li>
+                    <li><strong>Obligation d'accepter les missions</strong> : refuser systématiquement les missions proposées peut constituer un motif de licenciement</li>
+                    <li><strong>Salaire d'intermission parfois faible</strong> : si l'intérimaire enchaîne peu de missions, son revenu peut stagner au niveau du SMIC</li>
+                </ul>
+
+                <h2 class="text-xl font-semibold text-slate-900 mt-8">Rupture du contrat de mission</h2>
+                <p>Le contrat de mission peut être rompu avant son terme dans plusieurs cas :</p>
+
+                <h3 class="text-lg font-semibold text-slate-900 mt-6">1. Période d'essai</h3>
+                <p>Tout contrat de mission comporte une <strong>période d'essai</strong> calculée en fonction de la durée de la mission :</p>
+                <ul>
+                    <li>Mission ≤ 1 mois : 2 jours ouvrés</li>
+                    <li>Mission de 1 à 2 mois : 3 jours ouvrés</li>
+                    <li>Mission &gt; 2 mois : 5 jours ouvrés</li>
+                </ul>
+                <p>Pendant cette période, l'ETT ou l'intérimaire peuvent rompre le contrat librement, sans motif ni indemnité.</p>
+
+                <h3 class="text-lg font-semibold text-slate-900 mt-6">2. Embauche en CDI</h3>
+                <p>L'intérimaire peut rompre le contrat de mission avant son terme s'il obtient un <strong>CDI</strong> (dans l'entreprise utilisatrice ou ailleurs). Il doit respecter un préavis (généralement 1 jour par semaine restante, plafonné à 2 semaines).</p>
+
+                <h3 class="text-lg font-semibold text-slate-900 mt-6">3. Faute grave ou force majeure</h3>
+                <p>L'ETT peut rompre le contrat en cas de <strong>faute grave</strong> de l'intérimaire (vol, insubordination, non-respect des règles de sécurité). L'intérimaire peut également rompre en cas de manquement grave de l'entreprise utilisatrice (harcèlement, non-paiement du salaire).</p>
+
+                <h2 class="text-xl font-semibold text-slate-900 mt-8">Embauche après une mission d'intérim</h2>
+                <p>Si l'entreprise utilisatrice souhaite <strong>embaucher l'intérimaire</strong> en CDI ou CDD à l'issue de la mission :</p>
+                <ul>
+                    <li><strong>Pas de période d'essai</strong> : la mission d'intérim tient lieu de période d'essai (si elle a duré au moins 2 mois)</li>
+                    <li><strong>Reprise d'ancienneté</strong> : la durée de la mission est prise en compte dans l'ancienneté du salarié</li>
+                    <li><strong>Pas d'IFM</strong> : l'intérimaire ne perçoit pas l'indemnité de fin de mission si l'embauche est immédiate</li>
+                </ul>
+                <p>Environ <strong>30% des intérimaires</strong> sont embauchés en CDI par l'entreprise utilisatrice après une ou plusieurs missions, ce qui fait de l'intérim un excellent tremplin vers l'emploi stable.</p>
+
+                <h2 class="text-xl font-semibold text-slate-900 mt-8">Comparaison intérim vs CDD vs CDI</h2>
+                <table class="w-full border-collapse border border-slate-300 mt-4">
+                    <thead>
+                        <tr class="bg-slate-100">
+                            <th class="border border-slate-300 px-4 py-2">Critère</th>
+                            <th class="border border-slate-300 px-4 py-2">Intérim</th>
+                            <th class="border border-slate-300 px-4 py-2">CDD</th>
+                            <th class="border border-slate-300 px-4 py-2">CDI</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td class="border border-slate-300 px-4 py-2"><strong>Employeur</strong></td><td class="border border-slate-300 px-4 py-2">Agence d'intérim (ETT)</td><td class="border border-slate-300 px-4 py-2">Entreprise utilisatrice</td><td class="border border-slate-300 px-4 py-2">Entreprise utilisatrice</td></tr>
+                        <tr><td class="border border-slate-300 px-4 py-2"><strong>Durée</strong></td><td class="border border-slate-300 px-4 py-2">Variable (généralement courte)</td><td class="border border-slate-300 px-4 py-2">Maximum 18 mois</td><td class="border border-slate-300 px-4 py-2">Indéterminée</td></tr>
+                        <tr><td class="border border-slate-300 px-4 py-2"><strong>Prime de précarité</strong></td><td class="border border-slate-300 px-4 py-2">IFM 10% + ICCP 10%</td><td class="border border-slate-300 px-4 py-2">10% en fin de contrat</td><td class="border border-slate-300 px-4 py-2">Aucune</td></tr>
+                        <tr><td class="border border-slate-300 px-4 py-2"><strong>Congés payés</strong></td><td class="border border-slate-300 px-4 py-2">ICCP (10%)</td><td class="border border-slate-300 px-4 py-2">Oui (2,5 j/mois)</td><td class="border border-slate-300 px-4 py-2">Oui (2,5 j/mois)</td></tr>
+                        <tr><td class="border border-slate-300 px-4 py-2"><strong>Assurance chômage</strong></td><td class="border border-slate-300 px-4 py-2">Oui (fin de mission)</td><td class="border border-slate-300 px-4 py-2">Oui (fin de contrat)</td><td class="border border-slate-300 px-4 py-2">Oui (licenciement)</td></tr>
+                        <tr><td class="border border-slate-300 px-4 py-2"><strong>Flexibilité</strong></td><td class="border border-slate-300 px-4 py-2">Très élevée</td><td class="border border-slate-300 px-4 py-2">Moyenne</td><td class="border border-slate-300 px-4 py-2">Faible</td></tr>
+                    </tbody>
+                </table>
+                <p class="mt-4">Pour en savoir plus sur les <a href="/difference-salaire-brut-net/" class="text-brand-600 hover:text-brand-700">différences entre brut et net</a> ou sur le calcul des <a href="/cout-employeur/" class="text-brand-600 hover:text-brand-700">charges patronales</a>, consultez nos guides dédiés.</p>
             
             </div>
         </section>
+        <section class="py-12 px-4 bg-slate-50">
+            <div class="mx-auto max-w-4xl">
+                <h2 class="text-xl font-bold text-slate-900 mb-6">Tableau de conversion brut → net</h2>
+                
+    <div class="overflow-x-auto">
+        <table class="w-full text-sm">
+            <thead><tr class="border-b-2 border-slate-300">
+                <th class="py-2 text-left font-semibold">Brut mensuel</th>
+                <th class="py-2 text-right font-semibold">Net mensuel</th>
+                <th class="py-2 text-right font-semibold">Net annuel</th>
+                <th class="py-2 text-right font-semibold">Coût employeur</th>
+            </tr></thead>
+            <tbody><tr class="border-b border-slate-100">
+            <td class="py-2 font-medium">1 500 €</td>
+            <td class="py-2 text-right">1 187 €</td>
+            <td class="py-2 text-right">14 249 €</td>
+            <td class="py-2 text-right">1 984 €</td>
+        </tr><tr class="border-b border-slate-100">
+            <td class="py-2 font-medium">2 000 €</td>
+            <td class="py-2 text-right">1 583 €</td>
+            <td class="py-2 text-right">18 998 €</td>
+            <td class="py-2 text-right">2 646 €</td>
+        </tr><tr class="border-b border-slate-100">
+            <td class="py-2 font-medium">2 500 €</td>
+            <td class="py-2 text-right">1 979 €</td>
+            <td class="py-2 text-right">23 748 €</td>
+            <td class="py-2 text-right">3 307 €</td>
+        </tr><tr class="border-b border-slate-100">
+            <td class="py-2 font-medium">3 000 €</td>
+            <td class="py-2 text-right">2 375 €</td>
+            <td class="py-2 text-right">28 497 €</td>
+            <td class="py-2 text-right">3 969 €</td>
+        </tr><tr class="border-b border-slate-100">
+            <td class="py-2 font-medium">3 500 €</td>
+            <td class="py-2 text-right">2 771 €</td>
+            <td class="py-2 text-right">33 247 €</td>
+            <td class="py-2 text-right">4 630 €</td>
+        </tr></tbody>
+        </table>
+    </div>
+            </div>
+        </section>
+        <section class="py-12 px-4">
+            <div class="mx-auto max-w-3xl">
+                <h2 class="text-xl font-bold text-slate-900 mb-6">Questions fréquentes</h2>
+                <div class="space-y-3">
+                    
+            <div class="rounded-xl border border-slate-200 bg-white">
+                <button class="faq-toggle w-full flex items-center justify-between p-5 text-left" onclick="this.nextElementSibling.classList.toggle('hidden');this.querySelector('svg').style.transform=this.nextElementSibling.classList.contains('hidden')?'':'rotate(180deg)'">
+                    <span class="font-medium text-slate-900">Comment calculer mon salaire net ?</span>
+                    <svg class="h-5 w-5 text-slate-400 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+                </button>
+                <div class="faq-content hidden px-5 pb-5">
+                    <p class="text-sm text-slate-600">Utilisez notre calculateur ci-dessus ou appliquez un coefficient de 0,78 à votre brut mensuel pour une estimation rapide.</p>
+                </div>
+            </div>
+            <div class="rounded-xl border border-slate-200 bg-white">
+                <button class="faq-toggle w-full flex items-center justify-between p-5 text-left" onclick="this.nextElementSibling.classList.toggle('hidden');this.querySelector('svg').style.transform=this.nextElementSibling.classList.contains('hidden')?'':'rotate(180deg)'">
+                    <span class="font-medium text-slate-900">Les cotisations sont-elles les mêmes partout en France ?</span>
+                    <svg class="h-5 w-5 text-slate-400 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+                </button>
+                <div class="faq-content hidden px-5 pb-5">
+                    <p class="text-sm text-slate-600">Oui, les cotisations de Sécurité sociale sont nationales. Seules certaines mutuelles d'entreprise peuvent varier.</p>
+                </div>
+            </div>
+            <div class="rounded-xl border border-slate-200 bg-white">
+                <button class="faq-toggle w-full flex items-center justify-between p-5 text-left" onclick="this.nextElementSibling.classList.toggle('hidden');this.querySelector('svg').style.transform=this.nextElementSibling.classList.contains('hidden')?'':'rotate(180deg)'">
+                    <span class="font-medium text-slate-900">Puis-je négocier mon salaire brut ?</span>
+                    <svg class="h-5 w-5 text-slate-400 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+                </button>
+                <div class="faq-content hidden px-5 pb-5">
+                    <p class="text-sm text-slate-600">Oui, le salaire brut est négociable lors de l'embauche ou lors des entretiens annuels. Préparez vos arguments et renseignez-vous sur les salaires du marché.</p>
+                </div>
+            </div>
+            <div class="rounded-xl border border-slate-200 bg-white">
+                <button class="faq-toggle w-full flex items-center justify-between p-5 text-left" onclick="this.nextElementSibling.classList.toggle('hidden');this.querySelector('svg').style.transform=this.nextElementSibling.classList.contains('hidden')?'':'rotate(180deg)'">
+                    <span class="font-medium text-slate-900">Que signifie le plafond de la Sécurité sociale ?</span>
+                    <svg class="h-5 w-5 text-slate-400 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+                </button>
+                <div class="faq-content hidden px-5 pb-5">
+                    <p class="text-sm text-slate-600">C'est un seuil (3 864 € par mois en 2026) au-delà duquel certaines cotisations changent de taux ou ne s'appliquent plus.</p>
+                </div>
+            </div>
+            <div class="rounded-xl border border-slate-200 bg-white">
+                <button class="faq-toggle w-full flex items-center justify-between p-5 text-left" onclick="this.nextElementSibling.classList.toggle('hidden');this.querySelector('svg').style.transform=this.nextElementSibling.classList.contains('hidden')?'':'rotate(180deg)'">
+                    <span class="font-medium text-slate-900">Le salaire net est-il le montant versé sur mon compte ?</span>
+                    <svg class="h-5 w-5 text-slate-400 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+                </button>
+                <div class="faq-content hidden px-5 pb-5">
+                    <p class="text-sm text-slate-600">Le net avant impôt est affiché sur votre fiche de paie. Le montant réel versé est le net après prélèvement à la source.</p>
+                </div>
+            </div>
+                </div>
+            </div>
+        </section>
+        <script type="application/ld+json">
+        {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Comment calculer mon salaire net ?","acceptedAnswer":{"@type":"Answer","text":"Utilisez notre calculateur ci-dessus ou appliquez un coefficient de 0,78 à votre brut mensuel pour une estimation rapide."}},{"@type":"Question","name":"Les cotisations sont-elles les mêmes partout en France ?","acceptedAnswer":{"@type":"Answer","text":"Oui, les cotisations de Sécurité sociale sont nationales. Seules certaines mutuelles d'entreprise peuvent varier."}},{"@type":"Question","name":"Puis-je négocier mon salaire brut ?","acceptedAnswer":{"@type":"Answer","text":"Oui, le salaire brut est négociable lors de l'embauche ou lors des entretiens annuels. Préparez vos arguments et renseignez-vous sur les salaires du marché."}},{"@type":"Question","name":"Que signifie le plafond de la Sécurité sociale ?","acceptedAnswer":{"@type":"Answer","text":"C'est un seuil (3 864 € par mois en 2026) au-delà duquel certaines cotisations changent de taux ou ne s'appliquent plus."}},{"@type":"Question","name":"Le salaire net est-il le montant versé sur mon compte ?","acceptedAnswer":{"@type":"Answer","text":"Le net avant impôt est affiché sur votre fiche de paie. Le montant réel versé est le net après prélèvement à la source."}}]}
+        </script>
         <section class="bg-white border-t border-slate-200 py-12 px-4">
             <div class="mx-auto max-w-4xl">
                 <h2 class="text-lg font-bold text-slate-900 mb-4">Pages connexes</h2>
@@ -182,6 +453,30 @@
 <a href="/salaire-brut-net-mensuel/" class="block rounded-xl border border-slate-200 bg-white p-3 text-center hover:border-brand-300 hover:shadow-sm transition-all">
             <span class="block text-sm font-medium text-slate-900">Calcul mensuel</span>
         </a>
+<a href="/salaire-brut-net-annuel/" class="block rounded-xl border border-slate-200 bg-white p-3 text-center hover:border-brand-300 hover:shadow-sm transition-all">
+            <span class="block text-sm font-medium text-slate-900">Calcul annuel</span>
+        </a>
+<a href="/salaire-brut-net-horaire/" class="block rounded-xl border border-slate-200 bg-white p-3 text-center hover:border-brand-300 hover:shadow-sm transition-all">
+            <span class="block text-sm font-medium text-slate-900">Taux horaire</span>
+        </a>
+<a href="/salaire-brut-net-auto-entrepreneur/" class="block rounded-xl border border-slate-200 bg-white p-3 text-center hover:border-brand-300 hover:shadow-sm transition-all">
+            <span class="block text-sm font-medium text-slate-900">Auto-entrepreneur</span>
+        </a>
+<a href="/salaire-brut-net-alternance-apprentissage/" class="block rounded-xl border border-slate-200 bg-white p-3 text-center hover:border-brand-300 hover:shadow-sm transition-all">
+            <span class="block text-sm font-medium text-slate-900">Alternance</span>
+        </a>
+<a href="/lire-fiche-de-paie/" class="block rounded-xl border border-slate-200 bg-white p-3 text-center hover:border-brand-300 hover:shadow-sm transition-all">
+            <span class="block text-sm font-medium text-slate-900">Lire sa fiche de paie</span>
+        </a>
+<a href="/prime-brut-en-net/" class="block rounded-xl border border-slate-200 bg-white p-3 text-center hover:border-brand-300 hover:shadow-sm transition-all">
+            <span class="block text-sm font-medium text-slate-900">Prime brut en net</span>
+        </a>
+<a href="/salaire-moyen-france/" class="block rounded-xl border border-slate-200 bg-white p-3 text-center hover:border-brand-300 hover:shadow-sm transition-all">
+            <span class="block text-sm font-medium text-slate-900">Salaire moyen France</span>
+        </a>
+<a href="/negocier-salaire/" class="block rounded-xl border border-slate-200 bg-white p-3 text-center hover:border-brand-300 hover:shadow-sm transition-all">
+            <span class="block text-sm font-medium text-slate-900">Négocier son salaire</span>
+        </a>
 
                 </div>
             </div>
@@ -196,13 +491,12 @@
             <p class="text-xs text-slate-500">© 2026 SalaireBrutNet · Estimation indicative</p>
             <div class="flex gap-4">
                 <a href="/" class="text-xs text-slate-500 hover:text-slate-900">Calculateur</a>
-                <a href="/mentions-legales.html" class="text-xs text-slate-500 hover:text-slate-900">Mentions légales</a>
-                <a href="/mission.html" class="text-xs text-slate-500 hover:text-slate-900">Notre Mission</a>
+                <a href="/mentions-legales/" class="text-xs text-slate-500 hover:text-slate-900">Mentions légales</a>
+                <a href="/mission/" class="text-xs text-slate-500 hover:text-slate-900">Notre Mission</a>
                 <a href="/simulateur-impot-sur-le-revenu/" class="text-xs text-slate-500 hover:text-slate-900">Simulateur Impôts</a>
             </div>
         </div>
     </footer>
     <script src="/js/brut-net.js"></script>
-    <script>lucide.createIcons();</script>
 
 </body></html>
