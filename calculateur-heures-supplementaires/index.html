@@ -2,19 +2,19 @@
 <html lang="fr" class="scroll-smooth"><head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Comparateur Salaire Net par Pays 2026 : France vs Europe</title>
-    <meta name="description" content="Comparez le salaire net entre pays européens en 2026. France vs Belgique, Suisse, Luxembourg : cotisations sociales, fiscalité et pouvoir d'achat comparés.">
-    <link rel="canonical" href="https://salairebrutonet.com/comparateur-salaire-net-par-pays/">
+    <title>Calculateur Heures Supplémentaires 2026 : Brut, Net et Coût Employeur</title>
+    <meta name="description" content="Calculez le montant brut, net et coût employeur de vos heures supplémentaires en 2026. CDI, CDD, Intérim. Majoration 25% et 50%, exonération fiscale.">
+    <link rel="canonical" href="https://salairebrutonet.com/calculateur-heures-supplementaires/">
     <link rel="icon" type="image/svg+xml" href="/img/logo.svg">
     <link rel="apple-touch-icon" href="/img/logo.svg">
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://salairebrutonet.com/comparateur-salaire-net-par-pays/">
-    <meta property="og:title" content="Comparateur Salaire Net par Pays 2026 : France vs Europe">
-    <meta property="og:description" content="Comparez le salaire net entre pays européens en 2026. France vs Belgique, Suisse, Luxembourg : cotisations sociales, fiscalité et pouvoir d'achat comparés.">
+    <meta property="og:url" content="https://salairebrutonet.com/calculateur-heures-supplementaires/">
+    <meta property="og:title" content="Calculateur Heures Supplémentaires 2026 : Brut, Net et Coût Employeur">
+    <meta property="og:description" content="Calculez le montant brut, net et coût employeur de vos heures supplémentaires en 2026. CDI, CDD, Intérim. Majoration 25% et 50%, exonération fiscale.">
     <meta property="og:locale" content="fr_FR">
     <meta property="og:site_name" content="SalaireBrutNet">
     <meta name="robots" content="index, follow">
-    <meta name="keywords" content="comparateur salaire pays, salaire net france belgique suisse, salaire europe comparaison">
+    <meta name="keywords" content="calculateur heures supplémentaires, heures sup brut net, majoration heures supplémentaires, coût employeur heures sup">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
     <link rel="stylesheet" href="/css/style.css">
@@ -26,7 +26,7 @@
         "@type": "BreadcrumbList",
         "itemListElement": [
             { "@type": "ListItem", "position": 1, "name": "Calculateur Salaire Brut Net", "item": "https://salairebrutonet.com/" },
-            { "@type": "ListItem", "position": 2, "name": "Comparateur Salaire Net par Pays 2026 : France vs Europe", "item": "https://salairebrutonet.com/comparateur-salaire-net-par-pays/" }
+            { "@type": "ListItem", "position": 2, "name": "Calculateur Heures Supplémentaires 2026 : Brut, Net et Coût Employeur", "item": "https://salairebrutonet.com/calculateur-heures-supplementaires/" }
         ]
     }
     </script>
@@ -73,57 +73,184 @@
             <ol class="flex items-center gap-2 text-sm text-slate-500">
                 <li><a href="/" class="hover:text-brand-600 transition-colors">Accueil</a></li>
                 <li><svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg></li>
-                <li class="text-slate-900 font-medium">Comparateur Salaire Net par Pays</li>
+                <li class="text-slate-900 font-medium">Calculateur Heures Supplémentaires</li>
             </ol>
         </nav>
         <section class="px-4 pb-6">
             <div class="mx-auto max-w-4xl">
-                <h1 class="text-2xl sm:text-3xl font-bold text-slate-900 mb-6">Comparateur <span class="text-brand-600">Salaire Net par Pays</span></h1>
-                <p class="text-slate-500">Comparez le salaire net pour un même brut dans différents pays francophones européens.</p>
+                <h1 class="text-2xl sm:text-3xl font-bold text-slate-900 mb-4">Calculateur <span class="text-brand-600">Heures Supplémentaires</span> 2026</h1>
+                <p class="text-slate-500">Calculez le brut, le net salarié et le coût employeur de vos heures supplémentaires selon votre contrat (CDI, CDD, Intérim).</p>
             </div>
         </section>
+
+        <section class="py-8 px-4">
+            <div class="mx-auto max-w-4xl">
+                <div class="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6">
+                        <div>
+                            <label for="hs-brut" class="block text-sm font-medium text-slate-700 mb-1">Salaire brut mensuel (base 35h)</label>
+                            <input type="number" id="hs-brut" value="2500" min="0" max="20000" step="50"
+                                class="w-full rounded-lg border border-slate-200 px-3 py-2 text-lg font-bold text-slate-900 focus:border-brand-500 focus:outline-none">
+                        </div>
+                        <div>
+                            <label for="hs-heures" class="block text-sm font-medium text-slate-700 mb-1">Heures sup / semaine</label>
+                            <input type="number" id="hs-heures" value="4" min="1" max="20" step="1"
+                                class="w-full rounded-lg border border-slate-200 px-3 py-2 text-lg font-bold text-slate-900 focus:border-brand-500 focus:outline-none">
+                        </div>
+                        <div>
+                            <label for="hs-contrat" class="block text-sm font-medium text-slate-700 mb-1">Type de contrat</label>
+                            <select id="hs-contrat" class="w-full rounded-lg border border-slate-200 px-3 py-2 text-sm text-slate-900 focus:border-brand-500 focus:outline-none">
+                                <option value="cdi" selected>CDI</option>
+                                <option value="cdd">CDD</option>
+                                <option value="interim">Intérim</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label for="hs-statut" class="block text-sm font-medium text-slate-700 mb-1">Statut</label>
+                            <select id="hs-statut" class="w-full rounded-lg border border-slate-200 px-3 py-2 text-sm text-slate-900 focus:border-brand-500 focus:outline-none">
+                                <option value="non-cadre" selected>Non-cadre</option>
+                                <option value="cadre">Cadre</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <h3 class="text-sm font-semibold text-slate-900 mb-3">Vos heures supplémentaires vous rapportent</h3>
+                    <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-6">
+                        <div class="rounded-xl bg-brand-50 border border-brand-100 p-4 text-center">
+                            <p class="text-xs text-brand-600 font-medium">Brut heures sup / mois</p>
+                            <p class="text-2xl font-bold text-slate-900" id="hs-res-brut">—</p>
+                        </div>
+                        <div class="rounded-xl bg-emerald-50 border border-emerald-200 p-4 text-center">
+                            <p class="text-xs text-emerald-700 font-medium">Net heures sup / mois</p>
+                            <p class="text-2xl font-bold text-slate-900" id="hs-res-net">—</p>
+                            <p class="text-xs text-slate-500">exonéré d'impôt</p>
+                        </div>
+                        <div class="rounded-xl bg-slate-50 border border-slate-200 p-4 text-center">
+                            <p class="text-xs text-slate-600 font-medium">Coût employeur heures sup</p>
+                            <p class="text-2xl font-bold text-slate-900" id="hs-res-cout">—</p>
+                        </div>
+                    </div>
+
+                    <h3 class="text-sm font-semibold text-slate-900 mb-3">Total (base + heures sup)</h3>
+                    <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-4">
+                        <div class="rounded-xl bg-slate-50 border border-slate-200 p-4 text-center">
+                            <p class="text-xs text-slate-600 font-medium">Total brut / mois</p>
+                            <p class="text-2xl font-bold text-slate-900" id="hs-tot-brut">—</p>
+                        </div>
+                        <div class="rounded-xl bg-slate-50 border border-slate-200 p-4 text-center">
+                            <p class="text-xs text-slate-600 font-medium">Total net / mois</p>
+                            <p class="text-2xl font-bold text-slate-900" id="hs-tot-net">—</p>
+                        </div>
+                        <div class="rounded-xl bg-slate-50 border border-slate-200 p-4 text-center">
+                            <p class="text-xs text-slate-600 font-medium">Total coût employeur</p>
+                            <p class="text-2xl font-bold text-slate-900" id="hs-tot-cout">—</p>
+                        </div>
+                    </div>
+
+                    <div id="hs-primes" class="hidden mt-6 rounded-xl bg-amber-50 border border-amber-200 p-4">
+                        <h3 class="text-sm font-semibold text-slate-900 mb-3">Primes de fin de contrat</h3>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4" id="hs-primes-grid"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    <script src="/js/brut-net.js"></script>
+    <script>
+    (function() {
+        var brut = document.getElementById('hs-brut');
+        var heures = document.getElementById('hs-heures');
+        var contrat = document.getElementById('hs-contrat');
+        var statut = document.getElementById('hs-statut');
+
+        function calc() {
+            var salaireBrut = parseFloat(brut.value) || 0;
+            var hsSemaine = Math.min(Math.max(parseInt(heures.value) || 0, 0), 20);
+            var st = statut.value;
+            var ct = contrat.value;
+
+            // Taux horaire et volume mensuel
+            var tauxH = salaireBrut / 151.67;
+            var hsMois = hsSemaine * 52 / 12;
+
+            // Majoration : premières 8h à +25%, au-delà à +50%
+            var h25 = Math.min(hsSemaine, 8);
+            var h50 = Math.max(hsSemaine - 8, 0);
+            var brutHS = (h25 * tauxH * 1.25 + h50 * tauxH * 1.50) * 52 / 12;
+
+            // Cotisations salariales réduites sur HS (exonération vieillesse + retraite complémentaire)
+            // Reste CSG/CRDS : 9.7% × 98.25% ≈ 9.53%, + CET 0.14% si cadre
+            var tauxCotisHS = st === 'cadre' ? 0.0967 : 0.0953;
+            var netHS = brutHS * (1 - tauxCotisHS);
+
+            // Coût employeur HS via calculerBrutVersNet (différentiel)
+            var rBase = calculerBrutVersNet(salaireBrut, st, 1);
+            var rTotal = calculerBrutVersNet(salaireBrut + brutHS, st, 1);
+            var coutHS = rTotal.coutEmployeur - rBase.coutEmployeur;
+
+            // Totaux
+            var totBrut = salaireBrut + brutHS;
+            var totNet = rBase.netAvantImpot + netHS;
+            var totCout = rTotal.coutEmployeur;
+
+            document.getElementById('hs-res-brut').textContent = formatMoney(brutHS);
+            document.getElementById('hs-res-net').textContent = formatMoney(netHS);
+            document.getElementById('hs-res-cout').textContent = formatMoney(coutHS);
+            document.getElementById('hs-tot-brut').textContent = formatMoney(totBrut);
+            document.getElementById('hs-tot-net').textContent = formatMoney(totNet);
+            document.getElementById('hs-tot-cout').textContent = formatMoney(totCout);
+
+            // Primes CDD / Intérim
+            var primesDiv = document.getElementById('hs-primes');
+            var primesGrid = document.getElementById('hs-primes-grid');
+            if (ct === 'cdd') {
+                var precarite = totBrut * 0.10;
+                primesGrid.innerHTML = '<div class="text-center"><p class="text-xs text-amber-700 font-medium">Prime de précarité (10%)</p><p class="text-xl font-bold text-slate-900">' + formatMoney(precarite) + '</p><p class="text-xs text-slate-500">par mois</p></div>';
+                primesDiv.classList.remove('hidden');
+            } else if (ct === 'interim') {
+                var ifm = totBrut * 0.10;
+                var iccp = (totBrut + ifm) * 0.10;
+                primesGrid.innerHTML = '<div class="text-center"><p class="text-xs text-amber-700 font-medium">IFM - Indemnité de fin de mission (10%)</p><p class="text-xl font-bold text-slate-900">' + formatMoney(ifm) + '</p><p class="text-xs text-slate-500">par mois</p></div>' +
+                    '<div class="text-center"><p class="text-xs text-amber-700 font-medium">ICCP - Congés payés (10%)</p><p class="text-xl font-bold text-slate-900">' + formatMoney(iccp) + '</p><p class="text-xs text-slate-500">par mois</p></div>';
+                primesDiv.classList.remove('hidden');
+            } else {
+                primesDiv.classList.add('hidden');
+            }
+        }
+
+        brut.addEventListener('input', calc);
+        heures.addEventListener('input', calc);
+        contrat.addEventListener('change', calc);
+        statut.addEventListener('change', calc);
+        calc();
+    })();
+    </script>
 
         <section class="bg-white border-t border-slate-200 py-12 px-4">
-            <div class="mx-auto max-w-4xl">
-                <h2 class="text-xl font-bold text-slate-900 mb-6">Comparaison pour 3 000 € brut mensuel</h2>
-                <div class="overflow-x-auto">
-                    <table class="w-full text-sm">
-                        <thead>
-                            <tr class="border-b-2 border-slate-200">
-                                <th class="py-3 text-left font-semibold text-slate-900">Pays</th>
-                                <th class="py-3 text-right font-semibold text-slate-900">Brut</th>
-                                <th class="py-3 text-right font-semibold text-slate-900">Cotisations (%)</th>
-                                <th class="py-3 text-right font-semibold text-slate-900">Net avant impôt</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr class="border-b border-slate-100"><td class="py-3">🇫🇷 France</td><td class="py-3 text-right">3 000 €</td><td class="py-3 text-right">~22%</td><td class="py-3 text-right font-medium">~2 340 €</td></tr>
-                            <tr class="border-b border-slate-100"><td class="py-3">🇧🇪 Belgique</td><td class="py-3 text-right">3 000 €</td><td class="py-3 text-right">~13,07%</td><td class="py-3 text-right font-medium">~2 608 €</td></tr>
-                            <tr class="border-b border-slate-100"><td class="py-3">🇨🇭 Suisse</td><td class="py-3 text-right">3 000 CHF</td><td class="py-3 text-right">~12-15%</td><td class="py-3 text-right font-medium">~2 550 CHF</td></tr>
-                            <tr class="border-b border-slate-100"><td class="py-3">🇱🇺 Luxembourg</td><td class="py-3 text-right">3 000 €</td><td class="py-3 text-right">~12,5%</td><td class="py-3 text-right font-medium">~2 625 €</td></tr>
-                            <tr><td class="py-3">🇩🇪 Allemagne</td><td class="py-3 text-right">3 000 €</td><td class="py-3 text-right">~20%</td><td class="py-3 text-right font-medium">~2 400 €</td></tr>
-                        </tbody>
-                    </table>
-                </div>
-                <p class="text-xs text-slate-400 mt-4">* Estimations indicatives, les taux varient selon la situation personnelle et le canton/région. L'impôt sur le revenu n'est pas inclus.</p>
-            </div>
-        </section>
-
-        <section class="py-12 px-4">
             <div class="mx-auto max-w-4xl prose prose-slate">
-                <h2 class="text-xl font-semibold text-slate-900">Pourquoi les cotisations varient-elles autant ?</h2>
-                <p>Chaque pays a son propre système de protection sociale. La France a l'un des taux de cotisations les plus élevés d'Europe, mais en contrepartie offre une couverture sociale très complète (santé, retraite, chômage, famille).</p>
+                <h2 class="text-xl font-semibold text-slate-900">Comment fonctionnent les heures supplémentaires ?</h2>
+                <p>Les heures supplémentaires sont les heures travaillées au-delà de la durée légale de <strong>35 heures par semaine</strong>. Elles donnent lieu à une <strong>majoration de salaire obligatoire</strong> :</p>
+                <ul>
+                    <li><strong>+25%</strong> pour les 8 premières heures (de la 36e à la 43e heure)</li>
+                    <li><strong>+50%</strong> au-delà (à partir de la 44e heure)</li>
+                </ul>
+                <p>Le contingent annuel d'heures supplémentaires est fixé à <strong>220 heures</strong> par salarié (sauf accord collectif différent).</p>
 
-                <h3 class="text-lg font-semibold text-slate-900 mt-6">France : cotisations élevées, protection forte</h3>
-                <p>Avec environ 22% de cotisations salariales, la France offre une couverture maladie universelle, des allocations familiales généreuses, un système de retraite par répartition et une assurance chômage.</p>
+                <h2 class="text-xl font-semibold text-slate-900 mt-8">Avantage fiscal et social des heures supplémentaires</h2>
+                <p>Depuis 2019, les heures supplémentaires bénéficient d'un double avantage :</p>
+                <ul>
+                    <li><strong>Exonération de cotisations salariales</strong> : réduction de 11,31% sur les cotisations vieillesse et retraite complémentaire. Seules la CSG/CRDS (~9,53%) restent dues.</li>
+                    <li><strong>Exonération d'impôt sur le revenu</strong> : les heures supplémentaires sont exonérées d'impôt jusqu'à <strong>7 500 &euro; net par an</strong>.</li>
+                </ul>
+                <p>Concrètement, le net perçu pour une heure supplémentaire est environ <strong>90%</strong> du brut majoré, contre ~78% pour une heure normale.</p>
 
-                <h3 class="text-lg font-semibold text-slate-900 mt-6">Suisse : cotisations basses, coût de la vie élevé</h3>
-                <p>Les cotisations sont plus basses, mais l'assurance maladie est obligatoire et entièrement à la charge du salarié (300-500 CHF/mois en moyenne). Le coût de la vie est aussi nettement plus élevé.</p>
-
-                <h3 class="text-lg font-semibold text-slate-900 mt-6">Belgique : cotisations basses, impôts élevés</h3>
-                <p>Les cotisations sociales salariales sont plus basses qu'en France (~13%), mais l'impôt sur le revenu est parmi les plus élevés d'Europe (jusqu'à 50%), ce qui réduit fortement le net après impôt.</p>
-
-                <p class="mt-6">Pour calculer votre salaire net en France précisément, utilisez notre <a href="/" class="text-brand-600 hover:text-brand-700">calculateur brut/net</a>.</p>
+                <h2 class="text-xl font-semibold text-slate-900 mt-8">Différences CDI, CDD et Intérim</h2>
+                <p>Le calcul des heures supplémentaires est identique quel que soit le contrat. La différence vient des <strong>primes de fin de contrat</strong> :</p>
+                <ul>
+                    <li><strong>CDI</strong> : pas de prime spécifique liée au contrat.</li>
+                    <li><strong>CDD</strong> : prime de précarité de <strong>10%</strong> du salaire brut total (base + HS) versée en fin de contrat.</li>
+                    <li><strong>Intérim</strong> : indemnité de fin de mission (IFM) de <strong>10%</strong> + indemnité compensatrice de congés payés (ICCP) de <strong>10%</strong> calculée sur le brut + IFM.</li>
+                </ul>
+                <p>Pour en savoir plus, consultez notre guide complet sur les <a href="/heures-supplementaires-brut-net/" class="text-brand-600 hover:text-brand-700">heures supplémentaires brut/net</a>.</p>
             </div>
         </section>
         <section class="bg-white border-t border-slate-200 py-12 px-4">

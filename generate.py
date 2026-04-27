@@ -403,6 +403,7 @@ def generate_sitemap():
         # Outils
         ("cout-employeur", "0.7"),
         ("calculateur-cout-employeur", "0.7"),
+        ("calculateur-heures-supplementaires", "0.7"),
         ("prime-brut-en-net", "0.7"),
         ("13eme-mois-brut-net", "0.7"),
         ("heures-supplementaires-brut-net", "0.7"),

@@ -58,11 +58,33 @@ HEADER = '''
                 <img src="/img/logo.svg" alt="SalaireBrutNet" class="h-8 w-8">
                 <span class="text-base font-semibold tracking-tight text-slate-900">SalaireBrutNet</span>
             </a>
-            <nav class="hidden md:flex gap-8">
+            <nav class="hidden md:flex gap-8 items-center">
                 <a href="/" class="text-sm font-medium text-slate-500 hover:text-slate-900 transition-colors">Calculateur</a>
+                <div class="relative nav-guides">
+                    <button class="text-sm font-medium text-slate-500 hover:text-slate-900 transition-colors inline-flex items-center gap-1">Guides <svg class="h-3.5 w-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></button>
+                    <div class="mega-menu"><div class="mega-menu-grid">
+                        <div class="mega-menu-col"><h3>Par statut</h3><a href="/salaire-brut-net-cadre/">Cadre</a><a href="/salaire-brut-net-non-cadre/">Non-cadre</a><a href="/salaire-brut-net-fonction-publique/">Fonction publique</a><a href="/salaire-brut-net-auto-entrepreneur/">Auto-entrepreneur</a><a href="/salaire-brut-net-alternance-apprentissage/">Alternance</a><a href="/salaire-brut-net-interim/">Intérim</a><a href="/salaire-brut-net-stage/">Stage</a></div>
+                        <div class="mega-menu-col"><h3>Par période</h3><a href="/salaire-brut-net-mensuel/">Mensuel</a><a href="/salaire-brut-net-annuel/">Annuel</a><a href="/salaire-brut-net-horaire/">Horaire</a><a href="/salaire-brut-net-journalier/">Journalier</a><a href="/taux-horaire-brut-net/">Taux horaire</a></div>
+                        <div class="mega-menu-col"><h3>Comprendre</h3><a href="/difference-salaire-brut-net/">Différence brut/net</a><a href="/cotisations-sociales-salariales/">Cotisations sociales</a><a href="/salaire-net-imposable/">Net imposable</a><a href="/salaire-net-avant-apres-impot/">Net avant/après impôt</a><a href="/lire-fiche-de-paie/">Lire sa fiche de paie</a></div>
+                        <div class="mega-menu-col"><h3>Outils</h3><a href="/cout-employeur/">Coût employeur</a><a href="/calculateur-cout-employeur/">Calculateur coût employeur</a><a href="/calculateur-heures-supplementaires/">Calculateur heures sup</a><a href="/comparateur-salaire-net-par-pays/">Comparateur pays</a><a href="/simulateur-impot-sur-le-revenu/">Simulateur impôts</a></div>
+                        <div class="mega-menu-col"><h3>Composantes</h3><a href="/prime-brut-en-net/">Prime brut en net</a><a href="/13eme-mois-brut-net/">13ème mois</a><a href="/heures-supplementaires-brut-net/">Heures sup</a><a href="/avantages-en-nature/">Avantages en nature</a><a href="/smic-brut-net-2026/">SMIC 2026</a><a href="/salaire-moyen-france/">Salaire moyen France</a><a href="/negocier-salaire/">Négocier son salaire</a></div>
+                    </div></div>
+                </div>
                 <a href="/simulateur-impot-sur-le-revenu/" class="text-sm font-medium text-slate-500 hover:text-slate-900 transition-colors">Simulateur Impôts</a>
                 <a href="/mission/" class="text-sm font-medium text-slate-500 hover:text-slate-900 transition-colors">Notre Mission</a>
             </nav>
+            <button id="btn-hamburger" class="md:hidden inline-flex items-center justify-center w-10 h-10 rounded-lg hover:bg-slate-100 transition-colors" aria-label="Menu">
+                <svg id="hamburger-icon" class="h-6 w-6 text-slate-700" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="18" y2="18"/></svg>
+                <svg id="close-icon" class="h-6 w-6 text-slate-700 hidden" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
+            </button>
+        </div>
+        <div id="mobile-nav" class="mobile-nav">
+            <div class="mobile-nav-main"><a href="/">Calculateur</a><a href="/simulateur-impot-sur-le-revenu/">Simulateur Impôts</a><a href="/mission/">Notre Mission</a></div>
+            <div class="mobile-nav-section"><h3>Par statut</h3><div class="mobile-nav-links"><a href="/salaire-brut-net-cadre/">Cadre</a><a href="/salaire-brut-net-non-cadre/">Non-cadre</a><a href="/salaire-brut-net-fonction-publique/">Fonction publique</a><a href="/salaire-brut-net-auto-entrepreneur/">Auto-entrepreneur</a><a href="/salaire-brut-net-alternance-apprentissage/">Alternance</a><a href="/salaire-brut-net-interim/">Intérim</a><a href="/salaire-brut-net-stage/">Stage</a></div></div>
+            <div class="mobile-nav-section"><h3>Par période</h3><div class="mobile-nav-links"><a href="/salaire-brut-net-mensuel/">Mensuel</a><a href="/salaire-brut-net-annuel/">Annuel</a><a href="/salaire-brut-net-horaire/">Horaire</a><a href="/salaire-brut-net-journalier/">Journalier</a><a href="/taux-horaire-brut-net/">Taux horaire</a></div></div>
+            <div class="mobile-nav-section"><h3>Comprendre</h3><div class="mobile-nav-links"><a href="/difference-salaire-brut-net/">Différence brut/net</a><a href="/cotisations-sociales-salariales/">Cotisations sociales</a><a href="/salaire-net-imposable/">Net imposable</a><a href="/salaire-net-avant-apres-impot/">Net avant/après impôt</a><a href="/lire-fiche-de-paie/">Lire sa fiche de paie</a></div></div>
+            <div class="mobile-nav-section"><h3>Outils</h3><div class="mobile-nav-links"><a href="/cout-employeur/">Coût employeur</a><a href="/calculateur-cout-employeur/">Calculateur coût employeur</a><a href="/calculateur-heures-supplementaires/">Calculateur heures sup</a><a href="/comparateur-salaire-net-par-pays/">Comparateur pays</a><a href="/simulateur-impot-sur-le-revenu/">Simulateur impôts</a></div></div>
+            <div class="mobile-nav-section"><h3>Composantes</h3><div class="mobile-nav-links"><a href="/prime-brut-en-net/">Prime brut en net</a><a href="/13eme-mois-brut-net/">13ème mois</a><a href="/heures-supplementaires-brut-net/">Heures sup</a><a href="/avantages-en-nature/">Avantages en nature</a><a href="/smic-brut-net-2026/">SMIC 2026</a><a href="/salaire-moyen-france/">Salaire moyen France</a><a href="/negocier-salaire/">Négocier son salaire</a></div></div>
         </div>
     </header>
     <main class="flex-grow">
@@ -77,15 +99,22 @@ FOOTER = '''
                 <span class="text-sm font-semibold text-slate-900">SalaireBrutNet</span>
             </a>
             <p class="text-xs text-slate-500">© 2026 SalaireBrutNet · Estimation indicative</p>
-            <div class="flex gap-4">
+            <div class="flex flex-wrap gap-4 justify-center">
                 <a href="/" class="text-xs text-slate-500 hover:text-slate-900">Calculateur</a>
                 <a href="/mentions-legales/" class="text-xs text-slate-500 hover:text-slate-900">Mentions légales</a>
                 <a href="/mission/" class="text-xs text-slate-500 hover:text-slate-900">Notre Mission</a>
                 <a href="/simulateur-impot-sur-le-revenu/" class="text-xs text-slate-500 hover:text-slate-900">Simulateur Impôts</a>
+                <a href="/salaire-brut-net-cadre/" class="text-xs text-slate-500 hover:text-slate-900">Guides</a>
             </div>
         </div>
     </footer>
-    <script src="/js/brut-net.js"></script>
+    <script>
+    (function(){
+        var hb=document.getElementById('btn-hamburger'),mn=document.getElementById('mobile-nav'),hi=document.getElementById('hamburger-icon'),ci=document.getElementById('close-icon');
+        if(hb){hb.addEventListener('click',function(){var o=mn.classList.toggle('open');hi.classList.toggle('hidden',o);ci.classList.toggle('hidden',!o)});}
+        if(mn){mn.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){mn.classList.remove('open');hi.classList.remove('hidden');ci.classList.add('hidden')})});}
+    })();
+    </script>
 '''
 
 
@@ -153,6 +182,7 @@ def calculator_widget(default_val=2500, statut_default="non-cadre", mode="brut")
                 </div>
             </div>
         </section>
+    <script src="/js/brut-net.js"></script>
     <script>
     (function() {{
         const inp = document.getElementById('widget-input');
@@ -191,20 +221,33 @@ def links_grid(title, links):
 
 
 RELATED_LINKS = [
-    ("/salaire-brut-net-cadre/", "Brut net cadre"),
-    ("/salaire-brut-net-non-cadre/", "Brut net non-cadre"),
+    ("/salaire-brut-net-cadre/", "Cadre"),
+    ("/salaire-brut-net-non-cadre/", "Non-cadre"),
     ("/salaire-brut-net-fonction-publique/", "Fonction publique"),
-    ("/difference-salaire-brut-net/", "Différence brut/net"),
-    ("/cotisations-sociales-salariales/", "Cotisations sociales"),
-    ("/cout-employeur/", "Coût employeur"),
-    ("/smic-brut-net-2026/", "SMIC 2026"),
-    ("/salaire-brut-net-mensuel/", "Calcul mensuel"),
-    ("/salaire-brut-net-annuel/", "Calcul annuel"),
-    ("/salaire-brut-net-horaire/", "Taux horaire"),
     ("/salaire-brut-net-auto-entrepreneur/", "Auto-entrepreneur"),
     ("/salaire-brut-net-alternance-apprentissage/", "Alternance"),
+    ("/salaire-brut-net-interim/", "Intérim"),
+    ("/salaire-brut-net-stage/", "Stage"),
+    ("/salaire-brut-net-mensuel/", "Mensuel"),
+    ("/salaire-brut-net-annuel/", "Annuel"),
+    ("/salaire-brut-net-horaire/", "Horaire"),
+    ("/salaire-brut-net-journalier/", "Journalier"),
+    ("/taux-horaire-brut-net/", "Taux horaire"),
+    ("/difference-salaire-brut-net/", "Différence brut/net"),
+    ("/cotisations-sociales-salariales/", "Cotisations sociales"),
+    ("/salaire-net-imposable/", "Net imposable"),
+    ("/salaire-net-avant-apres-impot/", "Net avant/après impôt"),
     ("/lire-fiche-de-paie/", "Lire sa fiche de paie"),
+    ("/cout-employeur/", "Coût employeur"),
+    ("/calculateur-cout-employeur/", "Calculateur coût employeur"),
+    ("/calculateur-heures-supplementaires/", "Calculateur heures sup"),
+    ("/comparateur-salaire-net-par-pays/", "Comparateur pays"),
+    ("/simulateur-impot-sur-le-revenu/", "Simulateur impôts"),
     ("/prime-brut-en-net/", "Prime brut en net"),
+    ("/13eme-mois-brut-net/", "13ème mois"),
+    ("/heures-supplementaires-brut-net/", "Heures sup"),
+    ("/avantages-en-nature/", "Avantages en nature"),
+    ("/smic-brut-net-2026/", "SMIC 2026"),
     ("/salaire-moyen-france/", "Salaire moyen France"),
     ("/negocier-salaire/", "Négocier son salaire"),
 ]
@@ -4540,6 +4583,7 @@ def gen_tool_pages():
                 </div>
             </div>
         </section>
+    <script src="/js/brut-net.js"></script>
     <script>
     (function() {
         const inp = document.getElementById('widget-input');
@@ -4569,6 +4613,198 @@ def gen_tool_pages():
     html += FOOTER
     html += "\n</body></html>"
     write_page("calculateur-cout-employeur", html)
+
+    # Calculateur heures supplémentaires
+    html = page_head(
+        "Calculateur Heures Supplémentaires 2026 : Brut, Net et Coût Employeur",
+        "Calculez le montant brut, net et coût employeur de vos heures supplémentaires en 2026. CDI, CDD, Intérim. Majoration 25% et 50%, exonération fiscale.",
+        f"{BASE_URL}/calculateur-heures-supplementaires/",
+        "calculateur heures supplémentaires, heures sup brut net, majoration heures supplémentaires, coût employeur heures sup"
+    )
+    html += HEADER
+    html += breadcrumb("Calculateur Heures Supplémentaires")
+    html += '''
+        <section class="px-4 pb-6">
+            <div class="mx-auto max-w-4xl">
+                <h1 class="text-2xl sm:text-3xl font-bold text-slate-900 mb-4">Calculateur <span class="text-brand-600">Heures Supplémentaires</span> 2026</h1>
+                <p class="text-slate-500">Calculez le brut, le net salarié et le coût employeur de vos heures supplémentaires selon votre contrat (CDI, CDD, Intérim).</p>
+            </div>
+        </section>
+
+        <section class="py-8 px-4">
+            <div class="mx-auto max-w-4xl">
+                <div class="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6">
+                        <div>
+                            <label for="hs-brut" class="block text-sm font-medium text-slate-700 mb-1">Salaire brut mensuel (base 35h)</label>
+                            <input type="number" id="hs-brut" value="2500" min="0" max="20000" step="50"
+                                class="w-full rounded-lg border border-slate-200 px-3 py-2 text-lg font-bold text-slate-900 focus:border-brand-500 focus:outline-none">
+                        </div>
+                        <div>
+                            <label for="hs-heures" class="block text-sm font-medium text-slate-700 mb-1">Heures sup / semaine</label>
+                            <input type="number" id="hs-heures" value="4" min="1" max="20" step="1"
+                                class="w-full rounded-lg border border-slate-200 px-3 py-2 text-lg font-bold text-slate-900 focus:border-brand-500 focus:outline-none">
+                        </div>
+                        <div>
+                            <label for="hs-contrat" class="block text-sm font-medium text-slate-700 mb-1">Type de contrat</label>
+                            <select id="hs-contrat" class="w-full rounded-lg border border-slate-200 px-3 py-2 text-sm text-slate-900 focus:border-brand-500 focus:outline-none">
+                                <option value="cdi" selected>CDI</option>
+                                <option value="cdd">CDD</option>
+                                <option value="interim">Intérim</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label for="hs-statut" class="block text-sm font-medium text-slate-700 mb-1">Statut</label>
+                            <select id="hs-statut" class="w-full rounded-lg border border-slate-200 px-3 py-2 text-sm text-slate-900 focus:border-brand-500 focus:outline-none">
+                                <option value="non-cadre" selected>Non-cadre</option>
+                                <option value="cadre">Cadre</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <h3 class="text-sm font-semibold text-slate-900 mb-3">Vos heures supplémentaires vous rapportent</h3>
+                    <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-6">
+                        <div class="rounded-xl bg-brand-50 border border-brand-100 p-4 text-center">
+                            <p class="text-xs text-brand-600 font-medium">Brut heures sup / mois</p>
+                            <p class="text-2xl font-bold text-slate-900" id="hs-res-brut">—</p>
+                        </div>
+                        <div class="rounded-xl bg-emerald-50 border border-emerald-200 p-4 text-center">
+                            <p class="text-xs text-emerald-700 font-medium">Net heures sup / mois</p>
+                            <p class="text-2xl font-bold text-slate-900" id="hs-res-net">—</p>
+                            <p class="text-xs text-slate-500">exonéré d'impôt</p>
+                        </div>
+                        <div class="rounded-xl bg-slate-50 border border-slate-200 p-4 text-center">
+                            <p class="text-xs text-slate-600 font-medium">Coût employeur heures sup</p>
+                            <p class="text-2xl font-bold text-slate-900" id="hs-res-cout">—</p>
+                        </div>
+                    </div>
+
+                    <h3 class="text-sm font-semibold text-slate-900 mb-3">Total (base + heures sup)</h3>
+                    <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-4">
+                        <div class="rounded-xl bg-slate-50 border border-slate-200 p-4 text-center">
+                            <p class="text-xs text-slate-600 font-medium">Total brut / mois</p>
+                            <p class="text-2xl font-bold text-slate-900" id="hs-tot-brut">—</p>
+                        </div>
+                        <div class="rounded-xl bg-slate-50 border border-slate-200 p-4 text-center">
+                            <p class="text-xs text-slate-600 font-medium">Total net / mois</p>
+                            <p class="text-2xl font-bold text-slate-900" id="hs-tot-net">—</p>
+                        </div>
+                        <div class="rounded-xl bg-slate-50 border border-slate-200 p-4 text-center">
+                            <p class="text-xs text-slate-600 font-medium">Total coût employeur</p>
+                            <p class="text-2xl font-bold text-slate-900" id="hs-tot-cout">—</p>
+                        </div>
+                    </div>
+
+                    <div id="hs-primes" class="hidden mt-6 rounded-xl bg-amber-50 border border-amber-200 p-4">
+                        <h3 class="text-sm font-semibold text-slate-900 mb-3">Primes de fin de contrat</h3>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4" id="hs-primes-grid"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    <script src="/js/brut-net.js"></script>
+    <script>
+    (function() {
+        var brut = document.getElementById('hs-brut');
+        var heures = document.getElementById('hs-heures');
+        var contrat = document.getElementById('hs-contrat');
+        var statut = document.getElementById('hs-statut');
+
+        function calc() {
+            var salaireBrut = parseFloat(brut.value) || 0;
+            var hsSemaine = Math.min(Math.max(parseInt(heures.value) || 0, 0), 20);
+            var st = statut.value;
+            var ct = contrat.value;
+
+            // Taux horaire et volume mensuel
+            var tauxH = salaireBrut / 151.67;
+            var hsMois = hsSemaine * 52 / 12;
+
+            // Majoration : premières 8h à +25%, au-delà à +50%
+            var h25 = Math.min(hsSemaine, 8);
+            var h50 = Math.max(hsSemaine - 8, 0);
+            var brutHS = (h25 * tauxH * 1.25 + h50 * tauxH * 1.50) * 52 / 12;
+
+            // Cotisations salariales réduites sur HS (exonération vieillesse + retraite complémentaire)
+            // Reste CSG/CRDS : 9.7% × 98.25% ≈ 9.53%, + CET 0.14% si cadre
+            var tauxCotisHS = st === 'cadre' ? 0.0967 : 0.0953;
+            var netHS = brutHS * (1 - tauxCotisHS);
+
+            // Coût employeur HS via calculerBrutVersNet (différentiel)
+            var rBase = calculerBrutVersNet(salaireBrut, st, 1);
+            var rTotal = calculerBrutVersNet(salaireBrut + brutHS, st, 1);
+            var coutHS = rTotal.coutEmployeur - rBase.coutEmployeur;
+
+            // Totaux
+            var totBrut = salaireBrut + brutHS;
+            var totNet = rBase.netAvantImpot + netHS;
+            var totCout = rTotal.coutEmployeur;
+
+            document.getElementById('hs-res-brut').textContent = formatMoney(brutHS);
+            document.getElementById('hs-res-net').textContent = formatMoney(netHS);
+            document.getElementById('hs-res-cout').textContent = formatMoney(coutHS);
+            document.getElementById('hs-tot-brut').textContent = formatMoney(totBrut);
+            document.getElementById('hs-tot-net').textContent = formatMoney(totNet);
+            document.getElementById('hs-tot-cout').textContent = formatMoney(totCout);
+
+            // Primes CDD / Intérim
+            var primesDiv = document.getElementById('hs-primes');
+            var primesGrid = document.getElementById('hs-primes-grid');
+            if (ct === 'cdd') {
+                var precarite = totBrut * 0.10;
+                primesGrid.innerHTML = '<div class="text-center"><p class="text-xs text-amber-700 font-medium">Prime de précarité (10%)</p><p class="text-xl font-bold text-slate-900">' + formatMoney(precarite) + '</p><p class="text-xs text-slate-500">par mois</p></div>';
+                primesDiv.classList.remove('hidden');
+            } else if (ct === 'interim') {
+                var ifm = totBrut * 0.10;
+                var iccp = (totBrut + ifm) * 0.10;
+                primesGrid.innerHTML = '<div class="text-center"><p class="text-xs text-amber-700 font-medium">IFM - Indemnité de fin de mission (10%)</p><p class="text-xl font-bold text-slate-900">' + formatMoney(ifm) + '</p><p class="text-xs text-slate-500">par mois</p></div>' +
+                    '<div class="text-center"><p class="text-xs text-amber-700 font-medium">ICCP - Congés payés (10%)</p><p class="text-xl font-bold text-slate-900">' + formatMoney(iccp) + '</p><p class="text-xs text-slate-500">par mois</p></div>';
+                primesDiv.classList.remove('hidden');
+            } else {
+                primesDiv.classList.add('hidden');
+            }
+        }
+
+        brut.addEventListener('input', calc);
+        heures.addEventListener('input', calc);
+        contrat.addEventListener('change', calc);
+        statut.addEventListener('change', calc);
+        calc();
+    })();
+    </script>
+
+        <section class="bg-white border-t border-slate-200 py-12 px-4">
+            <div class="mx-auto max-w-4xl prose prose-slate">
+                <h2 class="text-xl font-semibold text-slate-900">Comment fonctionnent les heures supplémentaires ?</h2>
+                <p>Les heures supplémentaires sont les heures travaillées au-delà de la durée légale de <strong>35 heures par semaine</strong>. Elles donnent lieu à une <strong>majoration de salaire obligatoire</strong> :</p>
+                <ul>
+                    <li><strong>+25%</strong> pour les 8 premières heures (de la 36e à la 43e heure)</li>
+                    <li><strong>+50%</strong> au-delà (à partir de la 44e heure)</li>
+                </ul>
+                <p>Le contingent annuel d'heures supplémentaires est fixé à <strong>220 heures</strong> par salarié (sauf accord collectif différent).</p>
+
+                <h2 class="text-xl font-semibold text-slate-900 mt-8">Avantage fiscal et social des heures supplémentaires</h2>
+                <p>Depuis 2019, les heures supplémentaires bénéficient d'un double avantage :</p>
+                <ul>
+                    <li><strong>Exonération de cotisations salariales</strong> : réduction de 11,31% sur les cotisations vieillesse et retraite complémentaire. Seules la CSG/CRDS (~9,53%) restent dues.</li>
+                    <li><strong>Exonération d'impôt sur le revenu</strong> : les heures supplémentaires sont exonérées d'impôt jusqu'à <strong>7 500 &euro; net par an</strong>.</li>
+                </ul>
+                <p>Concrètement, le net perçu pour une heure supplémentaire est environ <strong>90%</strong> du brut majoré, contre ~78% pour une heure normale.</p>
+
+                <h2 class="text-xl font-semibold text-slate-900 mt-8">Différences CDI, CDD et Intérim</h2>
+                <p>Le calcul des heures supplémentaires est identique quel que soit le contrat. La différence vient des <strong>primes de fin de contrat</strong> :</p>
+                <ul>
+                    <li><strong>CDI</strong> : pas de prime spécifique liée au contrat.</li>
+                    <li><strong>CDD</strong> : prime de précarité de <strong>10%</strong> du salaire brut total (base + HS) versée en fin de contrat.</li>
+                    <li><strong>Intérim</strong> : indemnité de fin de mission (IFM) de <strong>10%</strong> + indemnité compensatrice de congés payés (ICCP) de <strong>10%</strong> calculée sur le brut + IFM.</li>
+                </ul>
+                <p>Pour en savoir plus, consultez notre guide complet sur les <a href="/heures-supplementaires-brut-net/" class="text-brand-600 hover:text-brand-700">heures supplémentaires brut/net</a>.</p>
+            </div>
+        </section>'''
+    html += links_grid("Pages connexes", RELATED_LINKS)
+    html += FOOTER
+    html += "\n</body></html>"
+    write_page("calculateur-heures-supplementaires", html)
 
     # Comparateur salaire par pays
     html = page_head(
