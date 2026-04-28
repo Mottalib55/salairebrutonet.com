@@ -8,7 +8,8 @@
     <link rel="canonical" href="https://salairebrutonet.com/9400-euros-brut-en-net/">
 
     <link rel="icon" type="image/svg+xml" href="/img/logo.svg">
-    <link rel="apple-touch-icon" href="/img/logo.svg">
+    <link rel="icon" type="image/png" sizes="32x32" href="/img/favicon-32.png">
+    <link rel="apple-touch-icon" sizes="192x192" href="/img/favicon-192.png">
 
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://salairebrutonet.com/9400-euros-brut-en-net/">
@@ -16,6 +17,9 @@
     <meta property="og:description" content="9 400€ brut en net = 7 507€ net (non-cadre) ou 7 494€ net (cadre). Calcul détaillé des cotisations salariales, coût employeur et prélèvement à la source 2026.">
     <meta property="og:locale" content="fr_FR">
     <meta property="og:site_name" content="SalaireBrutNet">
+    <meta property="og:image" content="https://salairebrutonet.com/img/og-image.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
 
     <meta name="robots" content="index, follow">
 
@@ -69,9 +73,9 @@
                 <span class="text-base font-semibold tracking-tight text-slate-900">SalaireBrutNet</span>
             </a>
             <nav class="hidden md:flex gap-8 items-center">
-                <a href="/" class="text-sm font-medium text-slate-500 hover:text-slate-900 transition-colors">Calculateur</a>
+                <a href="/" class="text-sm font-medium text-slate-500 hover:text-slate-900 transition-colors">Calcul Brut Net</a>
                 <div class="relative nav-guides">
-                    <button class="text-sm font-medium text-slate-500 hover:text-slate-900 transition-colors inline-flex items-center gap-1">
+                    <button id="btn-guides-desktop" class="text-sm font-medium text-slate-500 hover:text-slate-900 transition-colors inline-flex items-center gap-1">
                         Guides
                         <svg class="h-3.5 w-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
                     </button>
@@ -88,13 +92,19 @@
                 <a href="/simulateur-impot-sur-le-revenu/" class="text-sm font-medium text-slate-500 hover:text-slate-900 transition-colors">Simulateur Impôts</a>
                 <a href="/mission/" class="text-sm font-medium text-slate-500 hover:text-slate-900 transition-colors">Notre Mission</a>
             </nav>
-            <button id="btn-hamburger" class="md:hidden inline-flex items-center justify-center w-10 h-10 rounded-lg hover:bg-slate-100 transition-colors" aria-label="Menu">
-                <svg id="hamburger-icon" class="h-6 w-6 text-slate-700" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="18" y2="18"/></svg>
-                <svg id="close-icon" class="h-6 w-6 text-slate-700 hidden" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
-            </button>
+            <div class="flex items-center gap-3">
+                <button id="btn-share" class="hidden sm:inline-flex items-center gap-2 rounded-lg bg-slate-900 px-4 py-2 text-sm font-medium text-white shadow-sm hover:bg-slate-800 transition-colors">
+                    <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>
+                    Partager
+                </button>
+                <button id="btn-hamburger" class="md:hidden inline-flex items-center justify-center w-10 h-10 rounded-lg hover:bg-slate-100 transition-colors" aria-label="Menu">
+                    <svg id="hamburger-icon" class="h-6 w-6 text-slate-700" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="18" y2="18"/></svg>
+                    <svg id="close-icon" class="h-6 w-6 text-slate-700 hidden" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
+                </button>
+            </div>
         </div>
         <div id="mobile-nav" class="mobile-nav">
-            <div class="mobile-nav-main"><a href="/">Calculateur</a><a href="/simulateur-impot-sur-le-revenu/">Simulateur Impôts</a><a href="/mission/">Notre Mission</a></div>
+            <div class="mobile-nav-main"><a href="/">Calcul Brut Net</a><a href="/simulateur-impot-sur-le-revenu/">Simulateur Impôts</a><a href="/mission/">Notre Mission</a></div>
             <div class="mobile-nav-section"><h3>Par statut</h3><div class="mobile-nav-links"><a href="/salaire-brut-net-cadre/">Cadre</a><a href="/salaire-brut-net-non-cadre/">Non-cadre</a><a href="/salaire-brut-net-fonction-publique/">Fonction publique</a><a href="/salaire-brut-net-auto-entrepreneur/">Auto-entrepreneur</a><a href="/salaire-brut-net-alternance-apprentissage/">Alternance</a><a href="/salaire-brut-net-interim/">Intérim</a><a href="/salaire-brut-net-stage/">Stage</a></div></div>
             <div class="mobile-nav-section"><h3>Par période</h3><div class="mobile-nav-links"><a href="/salaire-brut-net-mensuel/">Mensuel</a><a href="/salaire-brut-net-annuel/">Annuel</a><a href="/salaire-brut-net-horaire/">Horaire</a><a href="/salaire-brut-net-journalier/">Journalier</a><a href="/taux-horaire-brut-net/">Taux horaire</a></div></div>
             <div class="mobile-nav-section"><h3>Comprendre</h3><div class="mobile-nav-links"><a href="/difference-salaire-brut-net/">Différence brut/net</a><a href="/cotisations-sociales-salariales/">Cotisations sociales</a><a href="/salaire-net-imposable/">Net imposable</a><a href="/salaire-net-avant-apres-impot/">Net avant/après impôt</a><a href="/lire-fiche-de-paie/">Lire sa fiche de paie</a></div></div>
@@ -454,7 +464,7 @@
             </a>
             <p class="text-xs text-slate-500">© 2026 SalaireBrutNet · Estimation indicative</p>
             <div class="flex flex-wrap gap-4 justify-center">
-                <a href="/" class="text-xs text-slate-500 hover:text-slate-900">Calculateur</a>
+                <a href="/" class="text-xs text-slate-500 hover:text-slate-900">Calcul Brut Net</a>
                 <a href="/mentions-legales/" class="text-xs text-slate-500 hover:text-slate-900">Mentions légales</a>
                 <a href="/mission/" class="text-xs text-slate-500 hover:text-slate-900">Notre Mission</a>
                 <a href="/simulateur-impot-sur-le-revenu/" class="text-xs text-slate-500 hover:text-slate-900">Simulateur Impôts</a>
@@ -467,7 +477,9 @@
     (function(){
         var hb=document.getElementById('btn-hamburger'),mn=document.getElementById('mobile-nav'),hi=document.getElementById('hamburger-icon'),ci=document.getElementById('close-icon');
         if(hb){hb.addEventListener('click',function(){var o=mn.classList.toggle('open');hi.classList.toggle('hidden',o);ci.classList.toggle('hidden',!o)});}
-        mn.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){mn.classList.remove('open');hi.classList.remove('hidden');ci.classList.add('hidden')})});
+        if(mn){mn.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){mn.classList.remove('open');hi.classList.remove('hidden');ci.classList.add('hidden')})});}
+        var ng=document.querySelector('.nav-guides'),mm=document.querySelector('.mega-menu'),t;
+        if(ng&&mm){function show(){clearTimeout(t);mm.classList.add('open')}function hide(){t=setTimeout(function(){mm.classList.remove('open')},250)}ng.addEventListener('mouseenter',show);ng.addEventListener('mouseleave',hide);mm.addEventListener('mouseenter',show);mm.addEventListener('mouseleave',hide);}
     })();
     </script>
     <script src="/js/brut-net.js" defer></script>

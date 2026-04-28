@@ -8,9 +8,10 @@
     <!-- Canonical -->
     <link rel="canonical" href="https://salairebrutonet.com/">
 
-    <!-- Favicon SVG -->
+    <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="/img/logo.svg">
-    <link rel="apple-touch-icon" href="/img/logo.svg">
+    <link rel="icon" type="image/png" sizes="32x32" href="/img/favicon-32.png">
+    <link rel="apple-touch-icon" sizes="192x192" href="/img/favicon-192.png">
 
     <!-- Open Graph -->
     <meta property="og:type" content="website">
@@ -19,11 +20,15 @@
     <meta property="og:description" content="Convertissez votre salaire brut en net en 1 clic. Calculateur brut net 2026 gratuit et précis. Cadre et non-cadre, cotisations détaillées, coût employeur.">
     <meta property="og:locale" content="fr_FR">
     <meta property="og:site_name" content="SalaireBrutNet">
+    <meta property="og:image" content="https://salairebrutonet.com/img/og-image.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Salaire Brut Net 2026 : Convertisseur Gratuit et Instantané">
     <meta name="twitter:description" content="Convertissez votre salaire brut en net en 1 clic. Calculateur brut net 2026 gratuit et précis. Cadre et non-cadre, cotisations détaillées, coût employeur.">
+    <meta name="twitter:image" content="https://salairebrutonet.com/img/og-image.png">
 
     <!-- Google Search Console -->
     <meta name="google-site-verification" content="t0-U63C3ouFf4RuammFf2rR-Kxf-pn2A9aSLG2KrDNs" />
@@ -141,7 +146,7 @@
                 <span class="text-base font-semibold tracking-tight text-slate-900">SalaireBrutNet</span>
             </a>
             <nav class="hidden md:flex gap-8 items-center">
-                <a href="#calculateur" class="text-sm font-medium text-slate-900">Calculateur</a>
+                <a href="#calculateur" class="text-sm font-medium text-slate-900">Calcul Brut Net</a>
                 <div class="relative nav-guides">
                     <button id="btn-guides-desktop" class="text-sm font-medium text-slate-500 hover:text-slate-900 transition-colors inline-flex items-center gap-1">
                         Guides
@@ -213,7 +218,7 @@
         <!-- Mobile nav -->
         <div id="mobile-nav" class="mobile-nav">
             <div class="mobile-nav-main">
-                <a href="#calculateur">Calculateur</a>
+                <a href="#calculateur">Calcul Brut Net</a>
                 <a href="/simulateur-impot-sur-le-revenu/">Simulateur Impôts</a>
                 <a href="/mission/">Notre Mission</a>
             </div>
@@ -850,7 +855,9 @@
     (function(){
         var hb=document.getElementById('btn-hamburger'),mn=document.getElementById('mobile-nav'),hi=document.getElementById('hamburger-icon'),ci=document.getElementById('close-icon');
         if(hb){hb.addEventListener('click',function(){var o=mn.classList.toggle('open');hi.classList.toggle('hidden',o);ci.classList.toggle('hidden',!o)});}
-        mn.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){mn.classList.remove('open');hi.classList.remove('hidden');ci.classList.add('hidden')})});
+        if(mn){mn.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){mn.classList.remove('open');hi.classList.remove('hidden');ci.classList.add('hidden')})});}
+        var ng=document.querySelector('.nav-guides'),mm=document.querySelector('.mega-menu'),t;
+        if(ng&&mm){function show(){clearTimeout(t);mm.classList.add('open')}function hide(){t=setTimeout(function(){mm.classList.remove('open')},250)}ng.addEventListener('mouseenter',show);ng.addEventListener('mouseleave',hide);mm.addEventListener('mouseenter',show);mm.addEventListener('mouseleave',hide);}
     })();
     </script>
 
