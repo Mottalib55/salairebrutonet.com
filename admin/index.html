@@ -39,22 +39,47 @@ body { font-family: 'Inter', system-ui, -apple-system, sans-serif; }
 </div>
 
 <!-- ═══ HEADER ═══ -->
-<header class="bg-slate-800 border-b border-slate-700 sticky top-0 z-40">
-  <div class="mx-auto max-w-7xl flex items-center justify-between px-4 sm:px-6 lg:px-8 h-16">
-    <div class="flex items-center gap-3">
-      <div class="w-9 h-9 rounded-xl bg-indigo-600 flex items-center justify-center">
-        <span class="text-white text-sm font-bold">BN</span>
-      </div>
-      <div>
-        <span class="text-white font-semibold">SalaireBrutNet</span>
-        <span class="text-slate-500 text-sm ml-2">Dashboard priv&eacute;</span>
-      </div>
-    </div>
-    <a href="/" target="_blank" class="flex items-center gap-2 text-sm text-slate-400 hover:text-white transition-colors">
-      Voir le site <iconify-icon icon="lucide:external-link" width="16"></iconify-icon>
-    </a>
-  </div>
-</header>
+<header class="sticky top-0 z-50 w-full border-b border-slate-200 bg-white/90 backdrop-blur-md">
+        <div class="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
+            <a href="/" class="flex items-center gap-2">
+                <img src="/img/logo.svg" alt="SalaireBrutNet" class="h-8 w-8">
+                <span class="text-base font-semibold tracking-tight text-slate-900">SalaireBrutNet</span>
+            </a>
+            <nav class="hidden md:flex gap-8 items-center">
+                <a href="/" class="text-sm font-medium text-slate-500 hover:text-slate-900 transition-colors">Calcul Brut Net</a>
+                <div class="relative nav-guides">
+                    <button id="btn-guides-desktop" class="text-sm font-medium text-slate-500 hover:text-slate-900 transition-colors inline-flex items-center gap-1">Guides <svg class="h-3.5 w-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></button>
+                    <div class="mega-menu"><div class="mega-menu-grid">
+                        <div class="mega-menu-col"><h3>Par statut</h3><a href="/salaire-brut-net-cadre/">Cadre</a><a href="/salaire-brut-net-non-cadre/">Non-cadre</a><a href="/salaire-brut-net-fonction-publique/">Fonction publique</a><a href="/salaire-brut-net-auto-entrepreneur/">Auto-entrepreneur</a><a href="/salaire-brut-net-alternance-apprentissage/">Alternance</a><a href="/salaire-brut-net-interim/">Intérim</a><a href="/salaire-brut-net-stage/">Stage</a></div>
+                        <div class="mega-menu-col"><h3>Par période</h3><a href="/salaire-brut-net-mensuel/">Mensuel</a><a href="/salaire-brut-net-annuel/">Annuel</a><a href="/salaire-brut-net-horaire/">Horaire</a><a href="/salaire-brut-net-journalier/">Journalier</a><a href="/taux-horaire-brut-net/">Taux horaire</a></div>
+                        <div class="mega-menu-col"><h3>Comprendre</h3><a href="/difference-salaire-brut-net/">Différence brut/net</a><a href="/cotisations-sociales-salariales/">Cotisations sociales</a><a href="/salaire-net-imposable/">Net imposable</a><a href="/salaire-net-avant-apres-impot/">Net avant/après impôt</a><a href="/lire-fiche-de-paie/">Lire sa fiche de paie</a></div>
+                        <div class="mega-menu-col"><h3>Outils</h3><a href="/cout-employeur/">Coût employeur</a><a href="/calculateur-cout-employeur/">Calculateur coût employeur</a><a href="/calculateur-heures-supplementaires/">Calculateur heures sup</a><a href="/comparateur-salaire-net-par-pays/">Comparateur pays</a><a href="/simulateur-impot-sur-le-revenu/">Simulateur impôts</a></div>
+                        <div class="mega-menu-col"><h3>Composantes</h3><a href="/prime-brut-en-net/">Prime brut en net</a><a href="/13eme-mois-brut-net/">13ème mois</a><a href="/heures-supplementaires-brut-net/">Heures sup</a><a href="/avantages-en-nature/">Avantages en nature</a><a href="/smic-brut-net-2026/">SMIC 2026</a><a href="/salaire-moyen-france/">Salaire moyen France</a><a href="/negocier-salaire/">Négocier son salaire</a></div>
+                    </div></div>
+                </div>
+                <a href="/simulateur-impot-sur-le-revenu/" class="text-sm font-medium text-slate-500 hover:text-slate-900 transition-colors">Simulateur Impôts</a>
+                <a href="/mission/" class="text-sm font-medium text-slate-500 hover:text-slate-900 transition-colors">Notre Mission</a>
+            </nav>
+            <div class="flex items-center gap-3">
+                <button id="btn-share" class="hidden sm:inline-flex items-center gap-2 rounded-lg bg-slate-900 px-4 py-2 text-sm font-medium text-white shadow-sm hover:bg-slate-800 transition-colors">
+                    <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>
+                    Partager
+                </button>
+                <button id="btn-hamburger" class="md:hidden inline-flex items-center justify-center w-10 h-10 rounded-lg hover:bg-slate-100 transition-colors" aria-label="Menu">
+                    <svg id="hamburger-icon" class="h-6 w-6 text-slate-700" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="18" y2="18"/></svg>
+                    <svg id="close-icon" class="h-6 w-6 text-slate-700 hidden" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
+                </button>
+            </div>
+        </div>
+        <div id="mobile-nav" class="mobile-nav">
+            <div class="mobile-nav-main"><a href="/">Calcul Brut Net</a><a href="/simulateur-impot-sur-le-revenu/">Simulateur Impôts</a><a href="/mission/">Notre Mission</a></div>
+            <div class="mobile-nav-section"><h3>Par statut</h3><div class="mobile-nav-links"><a href="/salaire-brut-net-cadre/">Cadre</a><a href="/salaire-brut-net-non-cadre/">Non-cadre</a><a href="/salaire-brut-net-fonction-publique/">Fonction publique</a><a href="/salaire-brut-net-auto-entrepreneur/">Auto-entrepreneur</a><a href="/salaire-brut-net-alternance-apprentissage/">Alternance</a><a href="/salaire-brut-net-interim/">Intérim</a><a href="/salaire-brut-net-stage/">Stage</a></div></div>
+            <div class="mobile-nav-section"><h3>Par période</h3><div class="mobile-nav-links"><a href="/salaire-brut-net-mensuel/">Mensuel</a><a href="/salaire-brut-net-annuel/">Annuel</a><a href="/salaire-brut-net-horaire/">Horaire</a><a href="/salaire-brut-net-journalier/">Journalier</a><a href="/taux-horaire-brut-net/">Taux horaire</a></div></div>
+            <div class="mobile-nav-section"><h3>Comprendre</h3><div class="mobile-nav-links"><a href="/difference-salaire-brut-net/">Différence brut/net</a><a href="/cotisations-sociales-salariales/">Cotisations sociales</a><a href="/salaire-net-imposable/">Net imposable</a><a href="/salaire-net-avant-apres-impot/">Net avant/après impôt</a><a href="/lire-fiche-de-paie/">Lire sa fiche de paie</a></div></div>
+            <div class="mobile-nav-section"><h3>Outils</h3><div class="mobile-nav-links"><a href="/cout-employeur/">Coût employeur</a><a href="/calculateur-cout-employeur/">Calculateur coût employeur</a><a href="/calculateur-heures-supplementaires/">Calculateur heures sup</a><a href="/comparateur-salaire-net-par-pays/">Comparateur pays</a><a href="/simulateur-impot-sur-le-revenu/">Simulateur impôts</a></div></div>
+            <div class="mobile-nav-section"><h3>Composantes</h3><div class="mobile-nav-links"><a href="/prime-brut-en-net/">Prime brut en net</a><a href="/13eme-mois-brut-net/">13ème mois</a><a href="/heures-supplementaires-brut-net/">Heures sup</a><a href="/avantages-en-nature/">Avantages en nature</a><a href="/smic-brut-net-2026/">SMIC 2026</a><a href="/salaire-moyen-france/">Salaire moyen France</a><a href="/negocier-salaire/">Négocier son salaire</a></div></div>
+        </div>
+    </header>
 
 <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-8 space-y-8">
 
@@ -226,597 +251,31 @@ body { font-family: 'Inter', system-ui, -apple-system, sans-serif; }
 </div>
 
 <!-- ═══ FOOTER ═══ -->
-<footer class="border-t border-slate-800 py-6 text-center text-sm text-slate-600">
-  SalaireBrutNet Admin &mdash; Page priv&eacute;e non index&eacute;e
-</footer>
-
-<script>
-// ── DATA ────────────────────────────────────────────────────────────────────
-const seoPages = [
-  {path:'/',title:'Salaire Brut Net 2026 : Convertisseur Gratuit et Instantané',desc:'Convertissez votre salaire brut en net en 1 clic. Calculateur brut net 2026 gratuit et précis. Cadre et non-cadre, cotisations détaillées, coût employeur.',cat:'special'},
-  {path:'/1000-euros-brut-en-net/',title:'1 000€ brut en net 2026 : Calcul gratuit cadre/non-cadre',desc:'1 000€ brut en net = 792€ net (non-cadre) ou 790€ net (cadre). Calcul détaillé des cotisations salariales, coût employeur et prélèvement à la source 2026.',cat:'brut-net'},
-  {path:'/1000-euros-net-en-brut/',title:'1 000€ net en brut 2026 : Calcul gratuit cadre/non-cadre',desc:'1 000€ net en brut = 1 263€ brut (non-cadre) ou 1 266€ brut (cadre). Calcul inversé des cotisations salariales et coût employeur. Résultat instantané 2026.',cat:'net-brut'},
-  {path:'/10000-euros-brut-en-net/',title:'10 000€ brut en net 2026 : Calcul gratuit cadre/non-cadre',desc:'10 000€ brut en net = 7 989€ net (non-cadre) ou 7 975€ net (cadre). Calcul détaillé des cotisations salariales, coût employeur et prélèvement à la source 2026.',cat:'brut-net'},
-  {path:'/10000-euros-net-en-brut/',title:'10 000€ net en brut 2026 : Calcul gratuit cadre/non-cadre',desc:'10 000€ net en brut = 12 503€ brut (non-cadre) ou 12 525€ brut (cadre). Calcul inversé des cotisations salariales et coût employeur. Résultat instantané 2026.',cat:'net-brut'},
-  {path:'/1050-euros-brut-en-net/',title:'1 050€ brut en net 2026 : Calcul gratuit cadre/non-cadre',desc:'1 050€ brut en net = 831€ net (non-cadre) ou 830€ net (cadre). Calcul détaillé des cotisations salariales, coût employeur et prélèvement à la source 2026.',cat:'brut-net'},
-  {path:'/1050-euros-net-en-brut/',title:'1 050€ net en brut 2026 : Calcul gratuit cadre/non-cadre',desc:'1 050€ net en brut = 1 326€ brut (non-cadre) ou 1 329€ brut (cadre). Calcul inversé des cotisations salariales et coût employeur. Résultat instantané 2026.',cat:'net-brut'},
-  {path:'/1100-euros-brut-en-net/',title:'1 100€ brut en net 2026 : Calcul gratuit cadre/non-cadre',desc:'1 100€ brut en net = 871€ net (non-cadre) ou 869€ net (cadre). Calcul détaillé des cotisations salariales, coût employeur et prélèvement à la source 2026.',cat:'brut-net'},
-  {path:'/1100-euros-net-en-brut/',title:'1 100€ net en brut 2026 : Calcul gratuit cadre/non-cadre',desc:'1 100€ net en brut = 1 390€ brut (non-cadre) ou 1 392€ brut (cadre). Calcul inversé des cotisations salariales et coût employeur. Résultat instantané 2026.',cat:'net-brut'},
-  {path:'/1150-euros-brut-en-net/',title:'1 150€ brut en net 2026 : Calcul gratuit cadre/non-cadre',desc:'1 150€ brut en net = 910€ net (non-cadre) ou 909€ net (cadre). Calcul détaillé des cotisations salariales, coût employeur et prélèvement à la source 2026.',cat:'brut-net'},
-  {path:'/1150-euros-net-en-brut/',title:'1 150€ net en brut 2026 : Calcul gratuit cadre/non-cadre',desc:'1 150€ net en brut = 1 453€ brut (non-cadre) ou 1 455€ brut (cadre). Calcul inversé des cotisations salariales et coût employeur. Résultat instantané 2026.',cat:'net-brut'},
-  {path:'/1200-euros-brut-en-net/',title:'1 200€ brut en net 2026 : Calcul gratuit cadre/non-cadre',desc:'1 200€ brut en net = 950€ net (non-cadre) ou 948€ net (cadre). Calcul détaillé des cotisations salariales, coût employeur et prélèvement à la source 2026.',cat:'brut-net'},
-  {path:'/1200-euros-net-en-brut/',title:'1 200€ net en brut 2026 : Calcul gratuit cadre/non-cadre',desc:'1 200€ net en brut = 1 516€ brut (non-cadre) ou 1 519€ brut (cadre). Calcul inversé des cotisations salariales et coût employeur. Résultat instantané 2026.',cat:'net-brut'},
-  {path:'/1250-euros-brut-en-net/',title:'1 250€ brut en net 2026 : Calcul gratuit cadre/non-cadre',desc:'1 250€ brut en net = 990€ net (non-cadre) ou 988€ net (cadre). Calcul détaillé des cotisations salariales, coût employeur et prélèvement à la source 2026.',cat:'brut-net'},
-  {path:'/1250-euros-net-en-brut/',title:'1 250€ net en brut 2026 : Calcul gratuit cadre/non-cadre',desc:'1 250€ net en brut = 1 579€ brut (non-cadre) ou 1 582€ brut (cadre). Calcul inversé des cotisations salariales et coût employeur. Résultat instantané 2026.',cat:'net-brut'},
-  {path:'/1300-euros-brut-en-net/',title:'1 300€ brut en net 2026 : Calcul gratuit cadre/non-cadre',desc:'1 300€ brut en net = 1 029€ net (non-cadre) ou 1 027€ net (cadre). Calcul détaillé des cotisations salariales, coût employeur et prélèvement à la source 2026.',cat:'brut-net'},
-  {path:'/1300-euros-net-en-brut/',title:'1 300€ net en brut 2026 : Calcul gratuit cadre/non-cadre',desc:'1 300€ net en brut = 1 642€ brut (non-cadre) ou 1 645€ brut (cadre). Calcul inversé des cotisations salariales et coût employeur. Résultat instantané 2026.',cat:'net-brut'},
-  {path:'/1350-euros-brut-en-net/',title:'1 350€ brut en net 2026 : Calcul gratuit cadre/non-cadre',desc:'1 350€ brut en net = 1 069€ net (non-cadre) ou 1 067€ net (cadre). Calcul détaillé des cotisations salariales, coût employeur et prélèvement à la source 2026.',cat:'brut-net'},
-  {path:'/1350-euros-net-en-brut/',title:'1 350€ net en brut 2026 : Calcul gratuit cadre/non-cadre',desc:'1 350€ net en brut = 1 705€ brut (non-cadre) ou 1 708€ brut (cadre). Calcul inversé des cotisations salariales et coût employeur. Résultat instantané 2026.',cat:'net-brut'},
-  {path:'/13eme-mois-brut-net/',title:'13ème Mois Brut Net 2026 : Calcul Gratuit et Cotisations',desc:'Calculez votre 13ème mois brut en net en 2026. Cotisations sociales détaillées, impact sur votre impôt sur le revenu et modalités de versement. Calcul gratuit.',cat:'special'},
-  {path:'/1400-euros-brut-en-net/',title:'1 400€ brut en net 2026 : Calcul gratuit cadre/non-cadre',desc:'1 400€ brut en net = 1 108€ net (non-cadre) ou 1 106€ net (cadre). Calcul détaillé des cotisations salariales, coût employeur et prélèvement à la source 2026.',cat:'brut-net'},
-  {path:'/1400-euros-net-en-brut/',title:'1 400€ net en brut 2026 : Calcul gratuit cadre/non-cadre',desc:'1 400€ net en brut = 1 769€ brut (non-cadre) ou 1 772€ brut (cadre). Calcul inversé des cotisations salariales et coût employeur. Résultat instantané 2026.',cat:'net-brut'},
-  {path:'/1450-euros-brut-en-net/',title:'1 450€ brut en net 2026 : Calcul gratuit cadre/non-cadre',desc:'1 450€ brut en net = 1 148€ net (non-cadre) ou 1 146€ net (cadre). Calcul détaillé des cotisations salariales, coût employeur et prélèvement à la source 2026.',cat:'brut-net'},
-  {path:'/1450-euros-net-en-brut/',title:'1 450€ net en brut 2026 : Calcul gratuit cadre/non-cadre',desc:'1 450€ net en brut = 1 832€ brut (non-cadre) ou 1 835€ brut (cadre). Calcul inversé des cotisations salariales et coût employeur. Résultat instantané 2026.',cat:'net-brut'},
-  {path:'/1500-euros-brut-en-net/',title:'1 500€ brut en net 2026 : Calcul gratuit cadre/non-cadre',desc:'1 500€ brut en net = 1 187€ net (non-cadre) ou 1 185€ net (cadre). Calcul détaillé des cotisations salariales, coût employeur et prélèvement à la source 2026.',cat:'brut-net'},
-  {path:'/1500-euros-net-en-brut/',title:'1 500€ net en brut 2026 : Calcul gratuit cadre/non-cadre',desc:'1 500€ net en brut = 1 895€ brut (non-cadre) ou 1 898€ brut (cadre). Calcul inversé des cotisations salariales et coût employeur. Résultat instantané 2026.',cat:'net-brut'},
-  {path:'/1550-euros-brut-en-net/',title:'1 550€ brut en net 2026 : Calcul gratuit cadre/non-cadre',desc:'1 550€ brut en net = 1 227€ net (non-cadre) ou 1 225€ net (cadre). Calcul détaillé des cotisations salariales, coût employeur et prélèvement à la source 2026.',cat:'brut-net'},
-  {path:'/1550-euros-net-en-brut/',title:'1 550€ net en brut 2026 : Calcul gratuit cadre/non-cadre',desc:'1 550€ net en brut = 1 958€ brut (non-cadre) ou 1 962€ brut (cadre). Calcul inversé des cotisations salariales et coût employeur. Résultat instantané 2026.',cat:'net-brut'},
-  {path:'/1600-euros-brut-en-net/',title:'1 600€ brut en net 2026 : Calcul gratuit cadre/non-cadre',desc:'1 600€ brut en net = 1 267€ net (non-cadre) ou 1 264€ net (cadre). Calcul détaillé des cotisations salariales, coût employeur et prélèvement à la source 2026.',cat:'brut-net'},
-  {path:'/1600-euros-net-en-brut/',title:'1 600€ net en brut 2026 : Calcul gratuit cadre/non-cadre',desc:'1 600€ net en brut = 2 021€ brut (non-cadre) ou 2 025€ brut (cadre). Calcul inversé des cotisations salariales et coût employeur. Résultat instantané 2026.',cat:'net-brut'},
-  {path:'/1650-euros-brut-en-net/',title:'1 650€ brut en net 2026 : Calcul gratuit cadre/non-cadre',desc:'1 650€ brut en net = 1 306€ net (non-cadre) ou 1 304€ net (cadre). Calcul détaillé des cotisations salariales, coût employeur et prélèvement à la source 2026.',cat:'brut-net'},
-  {path:'/1650-euros-net-en-brut/',title:'1 650€ net en brut 2026 : Calcul gratuit cadre/non-cadre',desc:'1 650€ net en brut = 2 084€ brut (non-cadre) ou 2 088€ brut (cadre). Calcul inversé des cotisations salariales et coût employeur. Résultat instantané 2026.',cat:'net-brut'},
-  {path:'/1700-euros-brut-en-net/',title:'1 700€ brut en net 2026 : Calcul gratuit cadre/non-cadre',desc:'1 700€ brut en net = 1 346€ net (non-cadre) ou 1 343€ net (cadre). Calcul détaillé des cotisations salariales, coût employeur et prélèvement à la source 2026.',cat:'brut-net'},
-  {path:'/1700-euros-net-en-brut/',title:'1 700€ net en brut 2026 : Calcul gratuit cadre/non-cadre',desc:'1 700€ net en brut = 2 148€ brut (non-cadre) ou 2 151€ brut (cadre). Calcul inversé des cotisations salariales et coût employeur. Résultat instantané 2026.',cat:'net-brut'},
-  {path:'/1750-euros-brut-en-net/',title:'1 750€ brut en net 2026 : Calcul gratuit cadre/non-cadre',desc:'1 750€ brut en net = 1 385€ net (non-cadre) ou 1 383€ net (cadre). Calcul détaillé des cotisations salariales, coût employeur et prélèvement à la source 2026.',cat:'brut-net'},
-  {path:'/1750-euros-net-en-brut/',title:'1 750€ net en brut 2026 : Calcul gratuit cadre/non-cadre',desc:'1 750€ net en brut = 2 211€ brut (non-cadre) ou 2 215€ brut (cadre). Calcul inversé des cotisations salariales et coût employeur. Résultat instantané 2026.',cat:'net-brut'},
-  {path:'/1800-euros-brut-en-net/',title:'1 800€ brut en net 2026 : Calcul gratuit cadre/non-cadre',desc:'1 800€ brut en net = 1 425€ net (non-cadre) ou 1 422€ net (cadre). Calcul détaillé des cotisations salariales, coût employeur et prélèvement à la source 2026.',cat:'brut-net'},
-  {path:'/1800-euros-net-en-brut/',title:'1 800€ net en brut 2026 : Calcul gratuit cadre/non-cadre',desc:'1 800€ net en brut = 2 274€ brut (non-cadre) ou 2 278€ brut (cadre). Calcul inversé des cotisations salariales et coût employeur. Résultat instantané 2026.',cat:'net-brut'},
-  {path:'/1850-euros-brut-en-net/',title:'1 850€ brut en net 2026 : Calcul gratuit cadre/non-cadre',desc:'1 850€ brut en net = 1 464€ net (non-cadre) ou 1 462€ net (cadre). Calcul détaillé des cotisations salariales, coût employeur et prélèvement à la source 2026.',cat:'brut-net'},
-  {path:'/1850-euros-net-en-brut/',title:'1 850€ net en brut 2026 : Calcul gratuit cadre/non-cadre',desc:'1 850€ net en brut = 2 337€ brut (non-cadre) ou 2 341€ brut (cadre). Calcul inversé des cotisations salariales et coût employeur. Résultat instantané 2026.',cat:'net-brut'},
-  {path:'/1900-euros-brut-en-net/',title:'1 900€ brut en net 2026 : Calcul gratuit cadre/non-cadre',desc:'1 900€ brut en net = 1 504€ net (non-cadre) ou 1 501€ net (cadre). Calcul détaillé des cotisations salariales, coût employeur et prélèvement à la source 2026.',cat:'brut-net'},
-  {path:'/1900-euros-net-en-brut/',title:'1 900€ net en brut 2026 : Calcul gratuit cadre/non-cadre',desc:'1 900€ net en brut = 2 400€ brut (non-cadre) ou 2 404€ brut (cadre). Calcul inversé des cotisations salariales et coût employeur. Résultat instantané 2026.',cat:'net-brut'},
-  {path:'/1950-euros-brut-en-net/',title:'1 950€ brut en net 2026 : Calcul gratuit cadre/non-cadre',desc:'1 950€ brut en net = 1 544€ net (non-cadre) ou 1 541€ net (cadre). Calcul détaillé des cotisations salariales, coût employeur et prélèvement à la source 2026.',cat:'brut-net'},
-  {path:'/1950-euros-net-en-brut/',title:'1 950€ net en brut 2026 : Calcul gratuit cadre/non-cadre',desc:'1 950€ net en brut = 2 463€ brut (non-cadre) ou 2 468€ brut (cadre). Calcul inversé des cotisations salariales et coût employeur. Résultat instantané 2026.',cat:'net-brut'},
-  {path:'/2000-euros-brut-en-net/',title:'2 000€ brut en net 2026 : Calcul gratuit cadre/non-cadre',desc:'2 000€ brut en net = 1 583€ net (non-cadre) ou 1 580€ net (cadre). Calcul détaillé des cotisations salariales, coût employeur et prélèvement à la source 2026.',cat:'brut-net'},
-  {path:'/2000-euros-net-en-brut/',title:'2 000€ net en brut 2026 : Calcul gratuit cadre/non-cadre',desc:'2 000€ net en brut = 2 527€ brut (non-cadre) ou 2 531€ brut (cadre). Calcul inversé des cotisations salariales et coût employeur. Résultat instantané 2026.',cat:'net-brut'},
-  {path:'/2050-euros-brut-en-net/',title:'2 050€ brut en net 2026 : Calcul gratuit cadre/non-cadre',desc:'2 050€ brut en net = 1 623€ net (non-cadre) ou 1 620€ net (cadre). Calcul détaillé des cotisations salariales, coût employeur et prélèvement à la source 2026.',cat:'brut-net'},
-  {path:'/2050-euros-net-en-brut/',title:'2 050€ net en brut 2026 : Calcul gratuit cadre/non-cadre',desc:'2 050€ net en brut = 2 590€ brut (non-cadre) ou 2 594€ brut (cadre). Calcul inversé des cotisations salariales et coût employeur. Résultat instantané 2026.',cat:'net-brut'},
-  {path:'/2100-euros-brut-en-net/',title:'2 100€ brut en net 2026 : Calcul gratuit cadre/non-cadre',desc:'2 100€ brut en net = 1 662€ net (non-cadre) ou 1 659€ net (cadre). Calcul détaillé des cotisations salariales, coût employeur et prélèvement à la source 2026.',cat:'brut-net'},
-  {path:'/2100-euros-net-en-brut/',title:'2 100€ net en brut 2026 : Calcul gratuit cadre/non-cadre',desc:'2 100€ net en brut = 2 653€ brut (non-cadre) ou 2 658€ brut (cadre). Calcul inversé des cotisations salariales et coût employeur. Résultat instantané 2026.',cat:'net-brut'},
-  {path:'/2150-euros-brut-en-net/',title:'2 150€ brut en net 2026 : Calcul gratuit cadre/non-cadre',desc:'2 150€ brut en net = 1 702€ net (non-cadre) ou 1 699€ net (cadre). Calcul détaillé des cotisations salariales, coût employeur et prélèvement à la source 2026.',cat:'brut-net'},
-  {path:'/2150-euros-net-en-brut/',title:'2 150€ net en brut 2026 : Calcul gratuit cadre/non-cadre',desc:'2 150€ net en brut = 2 716€ brut (non-cadre) ou 2 721€ brut (cadre). Calcul inversé des cotisations salariales et coût employeur. Résultat instantané 2026.',cat:'net-brut'},
-  {path:'/2200-euros-brut-en-net/',title:'2 200€ brut en net 2026 : Calcul gratuit cadre/non-cadre',desc:'2 200€ brut en net = 1 742€ net (non-cadre) ou 1 738€ net (cadre). Calcul détaillé des cotisations salariales, coût employeur et prélèvement à la source 2026.',cat:'brut-net'},
-  {path:'/2200-euros-net-en-brut/',title:'2 200€ net en brut 2026 : Calcul gratuit cadre/non-cadre',desc:'2 200€ net en brut = 2 779€ brut (non-cadre) ou 2 784€ brut (cadre). Calcul inversé des cotisations salariales et coût employeur. Résultat instantané 2026.',cat:'net-brut'},
-  {path:'/2250-euros-brut-en-net/',title:'2 250€ brut en net 2026 : Calcul gratuit cadre/non-cadre',desc:'2 250€ brut en net = 1 781€ net (non-cadre) ou 1 778€ net (cadre). Calcul détaillé des cotisations salariales, coût employeur et prélèvement à la source 2026.',cat:'brut-net'},
-  {path:'/2250-euros-net-en-brut/',title:'2 250€ net en brut 2026 : Calcul gratuit cadre/non-cadre',desc:'2 250€ net en brut = 2 842€ brut (non-cadre) ou 2 847€ brut (cadre). Calcul inversé des cotisations salariales et coût employeur. Résultat instantané 2026.',cat:'net-brut'},
-  {path:'/2300-euros-brut-en-net/',title:'2 300€ brut en net 2026 : Calcul gratuit cadre/non-cadre',desc:'2 300€ brut en net = 1 821€ net (non-cadre) ou 1 817€ net (cadre). Calcul détaillé des cotisations salariales, coût employeur et prélèvement à la source 2026.',cat:'brut-net'},
-  {path:'/2300-euros-net-en-brut/',title:'2 300€ net en brut 2026 : Calcul gratuit cadre/non-cadre',desc:'2 300€ net en brut = 2 906€ brut (non-cadre) ou 2 911€ brut (cadre). Calcul inversé des cotisations salariales et coût employeur. Résultat instantané 2026.',cat:'net-brut'},
-  {path:'/2350-euros-brut-en-net/',title:'2 350€ brut en net 2026 : Calcul gratuit cadre/non-cadre',desc:'2 350€ brut en net = 1 860€ net (non-cadre) ou 1 857€ net (cadre). Calcul détaillé des cotisations salariales, coût employeur et prélèvement à la source 2026.',cat:'brut-net'},
-  {path:'/2350-euros-net-en-brut/',title:'2 350€ net en brut 2026 : Calcul gratuit cadre/non-cadre',desc:'2 350€ net en brut = 2 969€ brut (non-cadre) ou 2 974€ brut (cadre). Calcul inversé des cotisations salariales et coût employeur. Résultat instantané 2026.',cat:'net-brut'},
-  {path:'/2400-euros-brut-en-net/',title:'2 400€ brut en net 2026 : Calcul gratuit cadre/non-cadre',desc:'2 400€ brut en net = 1 900€ net (non-cadre) ou 1 896€ net (cadre). Calcul détaillé des cotisations salariales, coût employeur et prélèvement à la source 2026.',cat:'brut-net'},
-  {path:'/2400-euros-net-en-brut/',title:'2 400€ net en brut 2026 : Calcul gratuit cadre/non-cadre',desc:'2 400€ net en brut = 3 032€ brut (non-cadre) ou 3 037€ brut (cadre). Calcul inversé des cotisations salariales et coût employeur. Résultat instantané 2026.',cat:'net-brut'},
-  {path:'/2450-euros-brut-en-net/',title:'2 450€ brut en net 2026 : Calcul gratuit cadre/non-cadre',desc:'2 450€ brut en net = 1 939€ net (non-cadre) ou 1 936€ net (cadre). Calcul détaillé des cotisations salariales, coût employeur et prélèvement à la source 2026.',cat:'brut-net'},
-  {path:'/2450-euros-net-en-brut/',title:'2 450€ net en brut 2026 : Calcul gratuit cadre/non-cadre',desc:'2 450€ net en brut = 3 095€ brut (non-cadre) ou 3 100€ brut (cadre). Calcul inversé des cotisations salariales et coût employeur. Résultat instantané 2026.',cat:'net-brut'},
-  {path:'/2500-euros-brut-en-net/',title:'2 500€ brut en net 2026 : Calcul gratuit cadre/non-cadre',desc:'2 500€ brut en net = 1 979€ net (non-cadre) ou 1 975€ net (cadre). Calcul détaillé des cotisations salariales, coût employeur et prélèvement à la source 2026.',cat:'brut-net'},
-  {path:'/2500-euros-net-en-brut/',title:'2 500€ net en brut 2026 : Calcul gratuit cadre/non-cadre',desc:'2 500€ net en brut = 3 158€ brut (non-cadre) ou 3 164€ brut (cadre). Calcul inversé des cotisations salariales et coût employeur. Résultat instantané 2026.',cat:'net-brut'},
-  {path:'/2550-euros-brut-en-net/',title:'2 550€ brut en net 2026 : Calcul gratuit cadre/non-cadre',desc:'2 550€ brut en net = 2 019€ net (non-cadre) ou 2 015€ net (cadre). Calcul détaillé des cotisations salariales, coût employeur et prélèvement à la source 2026.',cat:'brut-net'},
-  {path:'/2550-euros-net-en-brut/',title:'2 550€ net en brut 2026 : Calcul gratuit cadre/non-cadre',desc:'2 550€ net en brut = 3 221€ brut (non-cadre) ou 3 227€ brut (cadre). Calcul inversé des cotisations salariales et coût employeur. Résultat instantané 2026.',cat:'net-brut'},
-  {path:'/2600-euros-brut-en-net/',title:'2 600€ brut en net 2026 : Calcul gratuit cadre/non-cadre',desc:'2 600€ brut en net = 2 058€ net (non-cadre) ou 2 055€ net (cadre). Calcul détaillé des cotisations salariales, coût employeur et prélèvement à la source 2026.',cat:'brut-net'},
-  {path:'/2600-euros-net-en-brut/',title:'2 600€ net en brut 2026 : Calcul gratuit cadre/non-cadre',desc:'2 600€ net en brut = 3 284€ brut (non-cadre) ou 3 290€ brut (cadre). Calcul inversé des cotisations salariales et coût employeur. Résultat instantané 2026.',cat:'net-brut'},
-  {path:'/2650-euros-brut-en-net/',title:'2 650€ brut en net 2026 : Calcul gratuit cadre/non-cadre',desc:'2 650€ brut en net = 2 098€ net (non-cadre) ou 2 094€ net (cadre). Calcul détaillé des cotisations salariales, coût employeur et prélèvement à la source 2026.',cat:'brut-net'},
-  {path:'/2650-euros-net-en-brut/',title:'2 650€ net en brut 2026 : Calcul gratuit cadre/non-cadre',desc:'2 650€ net en brut = 3 348€ brut (non-cadre) ou 3 354€ brut (cadre). Calcul inversé des cotisations salariales et coût employeur. Résultat instantané 2026.',cat:'net-brut'},
-  {path:'/2700-euros-brut-en-net/',title:'2 700€ brut en net 2026 : Calcul gratuit cadre/non-cadre',desc:'2 700€ brut en net = 2 137€ net (non-cadre) ou 2 134€ net (cadre). Calcul détaillé des cotisations salariales, coût employeur et prélèvement à la source 2026.',cat:'brut-net'},
-  {path:'/2700-euros-net-en-brut/',title:'2 700€ net en brut 2026 : Calcul gratuit cadre/non-cadre',desc:'2 700€ net en brut = 3 411€ brut (non-cadre) ou 3 417€ brut (cadre). Calcul inversé des cotisations salariales et coût employeur. Résultat instantané 2026.',cat:'net-brut'},
-  {path:'/2750-euros-brut-en-net/',title:'2 750€ brut en net 2026 : Calcul gratuit cadre/non-cadre',desc:'2 750€ brut en net = 2 177€ net (non-cadre) ou 2 173€ net (cadre). Calcul détaillé des cotisations salariales, coût employeur et prélèvement à la source 2026.',cat:'brut-net'},
-  {path:'/2750-euros-net-en-brut/',title:'2 750€ net en brut 2026 : Calcul gratuit cadre/non-cadre',desc:'2 750€ net en brut = 3 474€ brut (non-cadre) ou 3 480€ brut (cadre). Calcul inversé des cotisations salariales et coût employeur. Résultat instantané 2026.',cat:'net-brut'},
-  {path:'/2800-euros-brut-en-net/',title:'2 800€ brut en net 2026 : Calcul gratuit cadre/non-cadre',desc:'2 800€ brut en net = 2 216€ net (non-cadre) ou 2 213€ net (cadre). Calcul détaillé des cotisations salariales, coût employeur et prélèvement à la source 2026.',cat:'brut-net'},
-  {path:'/2800-euros-net-en-brut/',title:'2 800€ net en brut 2026 : Calcul gratuit cadre/non-cadre',desc:'2 800€ net en brut = 3 537€ brut (non-cadre) ou 3 543€ brut (cadre). Calcul inversé des cotisations salariales et coût employeur. Résultat instantané 2026.',cat:'net-brut'},
-  {path:'/2850-euros-brut-en-net/',title:'2 850€ brut en net 2026 : Calcul gratuit cadre/non-cadre',desc:'2 850€ brut en net = 2 256€ net (non-cadre) ou 2 252€ net (cadre). Calcul détaillé des cotisations salariales, coût employeur et prélèvement à la source 2026.',cat:'brut-net'},
-  {path:'/2850-euros-net-en-brut/',title:'2 850€ net en brut 2026 : Calcul gratuit cadre/non-cadre',desc:'2 850€ net en brut = 3 600€ brut (non-cadre) ou 3 607€ brut (cadre). Calcul inversé des cotisations salariales et coût employeur. Résultat instantané 2026.',cat:'net-brut'},
-  {path:'/2900-euros-brut-en-net/',title:'2 900€ brut en net 2026 : Calcul gratuit cadre/non-cadre',desc:'2 900€ brut en net = 2 296€ net (non-cadre) ou 2 292€ net (cadre). Calcul détaillé des cotisations salariales, coût employeur et prélèvement à la source 2026.',cat:'brut-net'},
-  {path:'/2900-euros-net-en-brut/',title:'2 900€ net en brut 2026 : Calcul gratuit cadre/non-cadre',desc:'2 900€ net en brut = 3 663€ brut (non-cadre) ou 3 670€ brut (cadre). Calcul inversé des cotisations salariales et coût employeur. Résultat instantané 2026.',cat:'net-brut'},
-  {path:'/2950-euros-brut-en-net/',title:'2 950€ brut en net 2026 : Calcul gratuit cadre/non-cadre',desc:'2 950€ brut en net = 2 335€ net (non-cadre) ou 2 331€ net (cadre). Calcul détaillé des cotisations salariales, coût employeur et prélèvement à la source 2026.',cat:'brut-net'},
-  {path:'/2950-euros-net-en-brut/',title:'2 950€ net en brut 2026 : Calcul gratuit cadre/non-cadre',desc:'2 950€ net en brut = 3 727€ brut (non-cadre) ou 3 733€ brut (cadre). Calcul inversé des cotisations salariales et coût employeur. Résultat instantané 2026.',cat:'net-brut'},
-  {path:'/3000-euros-brut-en-net/',title:'3 000€ brut en net 2026 : Calcul gratuit cadre/non-cadre',desc:'3 000€ brut en net = 2 375€ net (non-cadre) ou 2 371€ net (cadre). Calcul détaillé des cotisations salariales, coût employeur et prélèvement à la source 2026.',cat:'brut-net'},
-  {path:'/3000-euros-net-en-brut/',title:'3 000€ net en brut 2026 : Calcul gratuit cadre/non-cadre',desc:'3 000€ net en brut = 3 790€ brut (non-cadre) ou 3 797€ brut (cadre). Calcul inversé des cotisations salariales et coût employeur. Résultat instantané 2026.',cat:'net-brut'},
-  {path:'/3050-euros-brut-en-net/',title:'3 050€ brut en net 2026 : Calcul gratuit cadre/non-cadre',desc:'3 050€ brut en net = 2 414€ net (non-cadre) ou 2 410€ net (cadre). Calcul détaillé des cotisations salariales, coût employeur et prélèvement à la source 2026.',cat:'brut-net'},
-  {path:'/3050-euros-net-en-brut/',title:'3 050€ net en brut 2026 : Calcul gratuit cadre/non-cadre',desc:'3 050€ net en brut = 3 853€ brut (non-cadre) ou 3 860€ brut (cadre). Calcul inversé des cotisations salariales et coût employeur. Résultat instantané 2026.',cat:'net-brut'},
-  {path:'/3100-euros-brut-en-net/',title:'3 100€ brut en net 2026 : Calcul gratuit cadre/non-cadre',desc:'3 100€ brut en net = 2 454€ net (non-cadre) ou 2 450€ net (cadre). Calcul détaillé des cotisations salariales, coût employeur et prélèvement à la source 2026.',cat:'brut-net'},
-  {path:'/3100-euros-net-en-brut/',title:'3 100€ net en brut 2026 : Calcul gratuit cadre/non-cadre',desc:'3 100€ net en brut = 3 915€ brut (non-cadre) ou 3 922€ brut (cadre). Calcul inversé des cotisations salariales et coût employeur. Résultat instantané 2026.',cat:'net-brut'},
-  {path:'/3150-euros-brut-en-net/',title:'3 150€ brut en net 2026 : Calcul gratuit cadre/non-cadre',desc:'3 150€ brut en net = 2 494€ net (non-cadre) ou 2 489€ net (cadre). Calcul détaillé des cotisations salariales, coût employeur et prélèvement à la source 2026.',cat:'brut-net'},
-  {path:'/3150-euros-net-en-brut/',title:'3 150€ net en brut 2026 : Calcul gratuit cadre/non-cadre',desc:'3 150€ net en brut = 3 978€ brut (non-cadre) ou 3 985€ brut (cadre). Calcul inversé des cotisations salariales et coût employeur. Résultat instantané 2026.',cat:'net-brut'},
-  {path:'/3200-euros-brut-en-net/',title:'3 200€ brut en net 2026 : Calcul gratuit cadre/non-cadre',desc:'3 200€ brut en net = 2 533€ net (non-cadre) ou 2 529€ net (cadre). Calcul détaillé des cotisations salariales, coût employeur et prélèvement à la source 2026.',cat:'brut-net'},
-  {path:'/3200-euros-net-en-brut/',title:'3 200€ net en brut 2026 : Calcul gratuit cadre/non-cadre',desc:'3 200€ net en brut = 4 040€ brut (non-cadre) ou 4 047€ brut (cadre). Calcul inversé des cotisations salariales et coût employeur. Résultat instantané 2026.',cat:'net-brut'},
-  {path:'/3250-euros-brut-en-net/',title:'3 250€ brut en net 2026 : Calcul gratuit cadre/non-cadre',desc:'3 250€ brut en net = 2 573€ net (non-cadre) ou 2 568€ net (cadre). Calcul détaillé des cotisations salariales, coût employeur et prélèvement à la source 2026.',cat:'brut-net'},
-  {path:'/3250-euros-net-en-brut/',title:'3 250€ net en brut 2026 : Calcul gratuit cadre/non-cadre',desc:'3 250€ net en brut = 4 102€ brut (non-cadre) ou 4 109€ brut (cadre). Calcul inversé des cotisations salariales et coût employeur. Résultat instantané 2026.',cat:'net-brut'},
-  {path:'/3300-euros-brut-en-net/',title:'3 300€ brut en net 2026 : Calcul gratuit cadre/non-cadre',desc:'3 300€ brut en net = 2 612€ net (non-cadre) ou 2 608€ net (cadre). Calcul détaillé des cotisations salariales, coût employeur et prélèvement à la source 2026.',cat:'brut-net'},
-  {path:'/3300-euros-net-en-brut/',title:'3 300€ net en brut 2026 : Calcul gratuit cadre/non-cadre',desc:'3 300€ net en brut = 4 164€ brut (non-cadre) ou 4 172€ brut (cadre). Calcul inversé des cotisations salariales et coût employeur. Résultat instantané 2026.',cat:'net-brut'},
-  {path:'/3350-euros-brut-en-net/',title:'3 350€ brut en net 2026 : Calcul gratuit cadre/non-cadre',desc:'3 350€ brut en net = 2 652€ net (non-cadre) ou 2 647€ net (cadre). Calcul détaillé des cotisations salariales, coût employeur et prélèvement à la source 2026.',cat:'brut-net'},
-  {path:'/3350-euros-net-en-brut/',title:'3 350€ net en brut 2026 : Calcul gratuit cadre/non-cadre',desc:'3 350€ net en brut = 4 227€ brut (non-cadre) ou 4 234€ brut (cadre). Calcul inversé des cotisations salariales et coût employeur. Résultat instantané 2026.',cat:'net-brut'},
-  {path:'/3400-euros-brut-en-net/',title:'3 400€ brut en net 2026 : Calcul gratuit cadre/non-cadre',desc:'3 400€ brut en net = 2 691€ net (non-cadre) ou 2 687€ net (cadre). Calcul détaillé des cotisations salariales, coût employeur et prélèvement à la source 2026.',cat:'brut-net'},
-  {path:'/3400-euros-net-en-brut/',title:'3 400€ net en brut 2026 : Calcul gratuit cadre/non-cadre',desc:'3 400€ net en brut = 4 289€ brut (non-cadre) ou 4 296€ brut (cadre). Calcul inversé des cotisations salariales et coût employeur. Résultat instantané 2026.',cat:'net-brut'},
-  {path:'/3450-euros-brut-en-net/',title:'3 450€ brut en net 2026 : Calcul gratuit cadre/non-cadre',desc:'3 450€ brut en net = 2 731€ net (non-cadre) ou 2 726€ net (cadre). Calcul détaillé des cotisations salariales, coût employeur et prélèvement à la source 2026.',cat:'brut-net'},
-  {path:'/3450-euros-net-en-brut/',title:'3 450€ net en brut 2026 : Calcul gratuit cadre/non-cadre',desc:'3 450€ net en brut = 4 351€ brut (non-cadre) ou 4 359€ brut (cadre). Calcul inversé des cotisations salariales et coût employeur. Résultat instantané 2026.',cat:'net-brut'},
-  {path:'/3500-euros-brut-en-net/',title:'3 500€ brut en net 2026 : Calcul gratuit cadre/non-cadre',desc:'3 500€ brut en net = 2 771€ net (non-cadre) ou 2 766€ net (cadre). Calcul détaillé des cotisations salariales, coût employeur et prélèvement à la source 2026.',cat:'brut-net'},
-  {path:'/3500-euros-net-en-brut/',title:'3 500€ net en brut 2026 : Calcul gratuit cadre/non-cadre',desc:'3 500€ net en brut = 4 413€ brut (non-cadre) ou 4 421€ brut (cadre). Calcul inversé des cotisations salariales et coût employeur. Résultat instantané 2026.',cat:'net-brut'},
-  {path:'/3550-euros-brut-en-net/',title:'3 550€ brut en net 2026 : Calcul gratuit cadre/non-cadre',desc:'3 550€ brut en net = 2 810€ net (non-cadre) ou 2 805€ net (cadre). Calcul détaillé des cotisations salariales, coût employeur et prélèvement à la source 2026.',cat:'brut-net'},
-  {path:'/3550-euros-net-en-brut/',title:'3 550€ net en brut 2026 : Calcul gratuit cadre/non-cadre',desc:'3 550€ net en brut = 4 475€ brut (non-cadre) ou 4 483€ brut (cadre). Calcul inversé des cotisations salariales et coût employeur. Résultat instantané 2026.',cat:'net-brut'},
-  {path:'/3600-euros-brut-en-net/',title:'3 600€ brut en net 2026 : Calcul gratuit cadre/non-cadre',desc:'3 600€ brut en net = 2 850€ net (non-cadre) ou 2 845€ net (cadre). Calcul détaillé des cotisations salariales, coût employeur et prélèvement à la source 2026.',cat:'brut-net'},
-  {path:'/3600-euros-net-en-brut/',title:'3 600€ net en brut 2026 : Calcul gratuit cadre/non-cadre',desc:'3 600€ net en brut = 4 538€ brut (non-cadre) ou 4 546€ brut (cadre). Calcul inversé des cotisations salariales et coût employeur. Résultat instantané 2026.',cat:'net-brut'},
-  {path:'/3650-euros-brut-en-net/',title:'3 650€ brut en net 2026 : Calcul gratuit cadre/non-cadre',desc:'3 650€ brut en net = 2 889€ net (non-cadre) ou 2 884€ net (cadre). Calcul détaillé des cotisations salariales, coût employeur et prélèvement à la source 2026.',cat:'brut-net'},
-  {path:'/3650-euros-net-en-brut/',title:'3 650€ net en brut 2026 : Calcul gratuit cadre/non-cadre',desc:'3 650€ net en brut = 4 600€ brut (non-cadre) ou 4 608€ brut (cadre). Calcul inversé des cotisations salariales et coût employeur. Résultat instantané 2026.',cat:'net-brut'},
-  {path:'/3700-euros-brut-en-net/',title:'3 700€ brut en net 2026 : Calcul gratuit cadre/non-cadre',desc:'3 700€ brut en net = 2 929€ net (non-cadre) ou 2 924€ net (cadre). Calcul détaillé des cotisations salariales, coût employeur et prélèvement à la source 2026.',cat:'brut-net'},
-  {path:'/3700-euros-net-en-brut/',title:'3 700€ net en brut 2026 : Calcul gratuit cadre/non-cadre',desc:'3 700€ net en brut = 4 662€ brut (non-cadre) ou 4 670€ brut (cadre). Calcul inversé des cotisations salariales et coût employeur. Résultat instantané 2026.',cat:'net-brut'},
-  {path:'/3750-euros-brut-en-net/',title:'3 750€ brut en net 2026 : Calcul gratuit cadre/non-cadre',desc:'3 750€ brut en net = 2 968€ net (non-cadre) ou 2 963€ net (cadre). Calcul détaillé des cotisations salariales, coût employeur et prélèvement à la source 2026.',cat:'brut-net'},
-  {path:'/3750-euros-net-en-brut/',title:'3 750€ net en brut 2026 : Calcul gratuit cadre/non-cadre',desc:'3 750€ net en brut = 4 724€ brut (non-cadre) ou 4 733€ brut (cadre). Calcul inversé des cotisations salariales et coût employeur. Résultat instantané 2026.',cat:'net-brut'},
-  {path:'/3800-euros-brut-en-net/',title:'3 800€ brut en net 2026 : Calcul gratuit cadre/non-cadre',desc:'3 800€ brut en net = 3 008€ net (non-cadre) ou 3 003€ net (cadre). Calcul détaillé des cotisations salariales, coût employeur et prélèvement à la source 2026.',cat:'brut-net'},
-  {path:'/3800-euros-net-en-brut/',title:'3 800€ net en brut 2026 : Calcul gratuit cadre/non-cadre',desc:'3 800€ net en brut = 4 787€ brut (non-cadre) ou 4 795€ brut (cadre). Calcul inversé des cotisations salariales et coût employeur. Résultat instantané 2026.',cat:'net-brut'},
-  {path:'/3850-euros-brut-en-net/',title:'3 850€ brut en net 2026 : Calcul gratuit cadre/non-cadre',desc:'3 850€ brut en net = 3 048€ net (non-cadre) ou 3 042€ net (cadre). Calcul détaillé des cotisations salariales, coût employeur et prélèvement à la source 2026.',cat:'brut-net'},
-  {path:'/3850-euros-net-en-brut/',title:'3 850€ net en brut 2026 : Calcul gratuit cadre/non-cadre',desc:'3 850€ net en brut = 4 849€ brut (non-cadre) ou 4 857€ brut (cadre). Calcul inversé des cotisations salariales et coût employeur. Résultat instantané 2026.',cat:'net-brut'},
-  {path:'/3900-euros-brut-en-net/',title:'3 900€ brut en net 2026 : Calcul gratuit cadre/non-cadre',desc:'3 900€ brut en net = 3 088€ net (non-cadre) ou 3 082€ net (cadre). Calcul détaillé des cotisations salariales, coût employeur et prélèvement à la source 2026.',cat:'brut-net'},
-  {path:'/3900-euros-net-en-brut/',title:'3 900€ net en brut 2026 : Calcul gratuit cadre/non-cadre',desc:'3 900€ net en brut = 4 911€ brut (non-cadre) ou 4 920€ brut (cadre). Calcul inversé des cotisations salariales et coût employeur. Résultat instantané 2026.',cat:'net-brut'},
-  {path:'/3950-euros-brut-en-net/',title:'3 950€ brut en net 2026 : Calcul gratuit cadre/non-cadre',desc:'3 950€ brut en net = 3 128€ net (non-cadre) ou 3 122€ net (cadre). Calcul détaillé des cotisations salariales, coût employeur et prélèvement à la source 2026.',cat:'brut-net'},
-  {path:'/3950-euros-net-en-brut/',title:'3 950€ net en brut 2026 : Calcul gratuit cadre/non-cadre',desc:'3 950€ net en brut = 4 973€ brut (non-cadre) ou 4 982€ brut (cadre). Calcul inversé des cotisations salariales et coût employeur. Résultat instantané 2026.',cat:'net-brut'},
-  {path:'/4000-euros-brut-en-net/',title:'4 000€ brut en net 2026 : Calcul gratuit cadre/non-cadre',desc:'4 000€ brut en net = 3 168€ net (non-cadre) ou 3 162€ net (cadre). Calcul détaillé des cotisations salariales, coût employeur et prélèvement à la source 2026.',cat:'brut-net'},
-  {path:'/4000-euros-net-en-brut/',title:'4 000€ net en brut 2026 : Calcul gratuit cadre/non-cadre',desc:'4 000€ net en brut = 5 035€ brut (non-cadre) ou 5 044€ brut (cadre). Calcul inversé des cotisations salariales et coût employeur. Résultat instantané 2026.',cat:'net-brut'},
-  {path:'/4050-euros-brut-en-net/',title:'4 050€ brut en net 2026 : Calcul gratuit cadre/non-cadre',desc:'4 050€ brut en net = 3 208€ net (non-cadre) ou 3 203€ net (cadre). Calcul détaillé des cotisations salariales, coût employeur et prélèvement à la source 2026.',cat:'brut-net'},
-  {path:'/4050-euros-net-en-brut/',title:'4 050€ net en brut 2026 : Calcul gratuit cadre/non-cadre',desc:'4 050€ net en brut = 5 098€ brut (non-cadre) ou 5 107€ brut (cadre). Calcul inversé des cotisations salariales et coût employeur. Résultat instantané 2026.',cat:'net-brut'},
-  {path:'/4100-euros-brut-en-net/',title:'4 100€ brut en net 2026 : Calcul gratuit cadre/non-cadre',desc:'4 100€ brut en net = 3 248€ net (non-cadre) ou 3 243€ net (cadre). Calcul détaillé des cotisations salariales, coût employeur et prélèvement à la source 2026.',cat:'brut-net'},
-  {path:'/4100-euros-net-en-brut/',title:'4 100€ net en brut 2026 : Calcul gratuit cadre/non-cadre',desc:'4 100€ net en brut = 5 160€ brut (non-cadre) ou 5 169€ brut (cadre). Calcul inversé des cotisations salariales et coût employeur. Résultat instantané 2026.',cat:'net-brut'},
-  {path:'/4150-euros-brut-en-net/',title:'4 150€ brut en net 2026 : Calcul gratuit cadre/non-cadre',desc:'4 150€ brut en net = 3 289€ net (non-cadre) ou 3 283€ net (cadre). Calcul détaillé des cotisations salariales, coût employeur et prélèvement à la source 2026.',cat:'brut-net'},
-  {path:'/4150-euros-net-en-brut/',title:'4 150€ net en brut 2026 : Calcul gratuit cadre/non-cadre',desc:'4 150€ net en brut = 5 222€ brut (non-cadre) ou 5 231€ brut (cadre). Calcul inversé des cotisations salariales et coût employeur. Résultat instantané 2026.',cat:'net-brut'},
-  {path:'/4200-euros-brut-en-net/',title:'4 200€ brut en net 2026 : Calcul gratuit cadre/non-cadre',desc:'4 200€ brut en net = 3 329€ net (non-cadre) ou 3 323€ net (cadre). Calcul détaillé des cotisations salariales, coût employeur et prélèvement à la source 2026.',cat:'brut-net'},
-  {path:'/4200-euros-net-en-brut/',title:'4 200€ net en brut 2026 : Calcul gratuit cadre/non-cadre',desc:'4 200€ net en brut = 5 284€ brut (non-cadre) ou 5 294€ brut (cadre). Calcul inversé des cotisations salariales et coût employeur. Résultat instantané 2026.',cat:'net-brut'},
-  {path:'/4250-euros-brut-en-net/',title:'4 250€ brut en net 2026 : Calcul gratuit cadre/non-cadre',desc:'4 250€ brut en net = 3 369€ net (non-cadre) ou 3 363€ net (cadre). Calcul détaillé des cotisations salariales, coût employeur et prélèvement à la source 2026.',cat:'brut-net'},
-  {path:'/4250-euros-net-en-brut/',title:'4 250€ net en brut 2026 : Calcul gratuit cadre/non-cadre',desc:'4 250€ net en brut = 5 347€ brut (non-cadre) ou 5 356€ brut (cadre). Calcul inversé des cotisations salariales et coût employeur. Résultat instantané 2026.',cat:'net-brut'},
-  {path:'/4300-euros-brut-en-net/',title:'4 300€ brut en net 2026 : Calcul gratuit cadre/non-cadre',desc:'4 300€ brut en net = 3 409€ net (non-cadre) ou 3 403€ net (cadre). Calcul détaillé des cotisations salariales, coût employeur et prélèvement à la source 2026.',cat:'brut-net'},
-  {path:'/4300-euros-net-en-brut/',title:'4 300€ net en brut 2026 : Calcul gratuit cadre/non-cadre',desc:'4 300€ net en brut = 5 409€ brut (non-cadre) ou 5 418€ brut (cadre). Calcul inversé des cotisations salariales et coût employeur. Résultat instantané 2026.',cat:'net-brut'},
-  {path:'/4350-euros-brut-en-net/',title:'4 350€ brut en net 2026 : Calcul gratuit cadre/non-cadre',desc:'4 350€ brut en net = 3 449€ net (non-cadre) ou 3 443€ net (cadre). Calcul détaillé des cotisations salariales, coût employeur et prélèvement à la source 2026.',cat:'brut-net'},
-  {path:'/4350-euros-net-en-brut/',title:'4 350€ net en brut 2026 : Calcul gratuit cadre/non-cadre',desc:'4 350€ net en brut = 5 471€ brut (non-cadre) ou 5 481€ brut (cadre). Calcul inversé des cotisations salariales et coût employeur. Résultat instantané 2026.',cat:'net-brut'},
-  {path:'/4400-euros-brut-en-net/',title:'4 400€ brut en net 2026 : Calcul gratuit cadre/non-cadre',desc:'4 400€ brut en net = 3 489€ net (non-cadre) ou 3 483€ net (cadre). Calcul détaillé des cotisations salariales, coût employeur et prélèvement à la source 2026.',cat:'brut-net'},
-  {path:'/4400-euros-net-en-brut/',title:'4 400€ net en brut 2026 : Calcul gratuit cadre/non-cadre',desc:'4 400€ net en brut = 5 533€ brut (non-cadre) ou 5 543€ brut (cadre). Calcul inversé des cotisations salariales et coût employeur. Résultat instantané 2026.',cat:'net-brut'},
-  {path:'/4450-euros-brut-en-net/',title:'4 450€ brut en net 2026 : Calcul gratuit cadre/non-cadre',desc:'4 450€ brut en net = 3 530€ net (non-cadre) ou 3 523€ net (cadre). Calcul détaillé des cotisations salariales, coût employeur et prélèvement à la source 2026.',cat:'brut-net'},
-  {path:'/4450-euros-net-en-brut/',title:'4 450€ net en brut 2026 : Calcul gratuit cadre/non-cadre',desc:'4 450€ net en brut = 5 596€ brut (non-cadre) ou 5 605€ brut (cadre). Calcul inversé des cotisations salariales et coût employeur. Résultat instantané 2026.',cat:'net-brut'},
-  {path:'/4500-euros-brut-en-net/',title:'4 500€ brut en net 2026 : Calcul gratuit cadre/non-cadre',desc:'4 500€ brut en net = 3 570€ net (non-cadre) ou 3 563€ net (cadre). Calcul détaillé des cotisations salariales, coût employeur et prélèvement à la source 2026.',cat:'brut-net'},
-  {path:'/4500-euros-net-en-brut/',title:'4 500€ net en brut 2026 : Calcul gratuit cadre/non-cadre',desc:'4 500€ net en brut = 5 658€ brut (non-cadre) ou 5 668€ brut (cadre). Calcul inversé des cotisations salariales et coût employeur. Résultat instantané 2026.',cat:'net-brut'},
-  {path:'/4550-euros-brut-en-net/',title:'4 550€ brut en net 2026 : Calcul gratuit cadre/non-cadre',desc:'4 550€ brut en net = 3 610€ net (non-cadre) ou 3 604€ net (cadre). Calcul détaillé des cotisations salariales, coût employeur et prélèvement à la source 2026.',cat:'brut-net'},
-  {path:'/4550-euros-net-en-brut/',title:'4 550€ net en brut 2026 : Calcul gratuit cadre/non-cadre',desc:'4 550€ net en brut = 5 720€ brut (non-cadre) ou 5 730€ brut (cadre). Calcul inversé des cotisations salariales et coût employeur. Résultat instantané 2026.',cat:'net-brut'},
-  {path:'/4600-euros-brut-en-net/',title:'4 600€ brut en net 2026 : Calcul gratuit cadre/non-cadre',desc:'4 600€ brut en net = 3 650€ net (non-cadre) ou 3 644€ net (cadre). Calcul détaillé des cotisations salariales, coût employeur et prélèvement à la source 2026.',cat:'brut-net'},
-  {path:'/4600-euros-net-en-brut/',title:'4 600€ net en brut 2026 : Calcul gratuit cadre/non-cadre',desc:'4 600€ net en brut = 5 782€ brut (non-cadre) ou 5 792€ brut (cadre). Calcul inversé des cotisations salariales et coût employeur. Résultat instantané 2026.',cat:'net-brut'},
-  {path:'/4650-euros-brut-en-net/',title:'4 650€ brut en net 2026 : Calcul gratuit cadre/non-cadre',desc:'4 650€ brut en net = 3 690€ net (non-cadre) ou 3 684€ net (cadre). Calcul détaillé des cotisations salariales, coût employeur et prélèvement à la source 2026.',cat:'brut-net'},
-  {path:'/4650-euros-net-en-brut/',title:'4 650€ net en brut 2026 : Calcul gratuit cadre/non-cadre',desc:'4 650€ net en brut = 5 844€ brut (non-cadre) ou 5 855€ brut (cadre). Calcul inversé des cotisations salariales et coût employeur. Résultat instantané 2026.',cat:'net-brut'},
-  {path:'/4700-euros-brut-en-net/',title:'4 700€ brut en net 2026 : Calcul gratuit cadre/non-cadre',desc:'4 700€ brut en net = 3 730€ net (non-cadre) ou 3 724€ net (cadre). Calcul détaillé des cotisations salariales, coût employeur et prélèvement à la source 2026.',cat:'brut-net'},
-  {path:'/4700-euros-net-en-brut/',title:'4 700€ net en brut 2026 : Calcul gratuit cadre/non-cadre',desc:'4 700€ net en brut = 5 907€ brut (non-cadre) ou 5 917€ brut (cadre). Calcul inversé des cotisations salariales et coût employeur. Résultat instantané 2026.',cat:'net-brut'},
-  {path:'/4750-euros-brut-en-net/',title:'4 750€ brut en net 2026 : Calcul gratuit cadre/non-cadre',desc:'4 750€ brut en net = 3 771€ net (non-cadre) ou 3 764€ net (cadre). Calcul détaillé des cotisations salariales, coût employeur et prélèvement à la source 2026.',cat:'brut-net'},
-  {path:'/4750-euros-net-en-brut/',title:'4 750€ net en brut 2026 : Calcul gratuit cadre/non-cadre',desc:'4 750€ net en brut = 5 969€ brut (non-cadre) ou 5 979€ brut (cadre). Calcul inversé des cotisations salariales et coût employeur. Résultat instantané 2026.',cat:'net-brut'},
-  {path:'/4800-euros-brut-en-net/',title:'4 800€ brut en net 2026 : Calcul gratuit cadre/non-cadre',desc:'4 800€ brut en net = 3 811€ net (non-cadre) ou 3 804€ net (cadre). Calcul détaillé des cotisations salariales, coût employeur et prélèvement à la source 2026.',cat:'brut-net'},
-  {path:'/4800-euros-net-en-brut/',title:'4 800€ net en brut 2026 : Calcul gratuit cadre/non-cadre',desc:'4 800€ net en brut = 6 031€ brut (non-cadre) ou 6 042€ brut (cadre). Calcul inversé des cotisations salariales et coût employeur. Résultat instantané 2026.',cat:'net-brut'},
-  {path:'/4850-euros-brut-en-net/',title:'4 850€ brut en net 2026 : Calcul gratuit cadre/non-cadre',desc:'4 850€ brut en net = 3 851€ net (non-cadre) ou 3 844€ net (cadre). Calcul détaillé des cotisations salariales, coût employeur et prélèvement à la source 2026.',cat:'brut-net'},
-  {path:'/4850-euros-net-en-brut/',title:'4 850€ net en brut 2026 : Calcul gratuit cadre/non-cadre',desc:'4 850€ net en brut = 6 093€ brut (non-cadre) ou 6 104€ brut (cadre). Calcul inversé des cotisations salariales et coût employeur. Résultat instantané 2026.',cat:'net-brut'},
-  {path:'/4900-euros-brut-en-net/',title:'4 900€ brut en net 2026 : Calcul gratuit cadre/non-cadre',desc:'4 900€ brut en net = 3 891€ net (non-cadre) ou 3 884€ net (cadre). Calcul détaillé des cotisations salariales, coût employeur et prélèvement à la source 2026.',cat:'brut-net'},
-  {path:'/4900-euros-net-en-brut/',title:'4 900€ net en brut 2026 : Calcul gratuit cadre/non-cadre',desc:'4 900€ net en brut = 6 156€ brut (non-cadre) ou 6 166€ brut (cadre). Calcul inversé des cotisations salariales et coût employeur. Résultat instantané 2026.',cat:'net-brut'},
-  {path:'/4950-euros-brut-en-net/',title:'4 950€ brut en net 2026 : Calcul gratuit cadre/non-cadre',desc:'4 950€ brut en net = 3 931€ net (non-cadre) ou 3 924€ net (cadre). Calcul détaillé des cotisations salariales, coût employeur et prélèvement à la source 2026.',cat:'brut-net'},
-  {path:'/4950-euros-net-en-brut/',title:'4 950€ net en brut 2026 : Calcul gratuit cadre/non-cadre',desc:'4 950€ net en brut = 6 218€ brut (non-cadre) ou 6 229€ brut (cadre). Calcul inversé des cotisations salariales et coût employeur. Résultat instantané 2026.',cat:'net-brut'},
-  {path:'/5000-euros-brut-en-net/',title:'5 000€ brut en net 2026 : Calcul gratuit cadre/non-cadre',desc:'5 000€ brut en net = 3 972€ net (non-cadre) ou 3 965€ net (cadre). Calcul détaillé des cotisations salariales, coût employeur et prélèvement à la source 2026.',cat:'brut-net'},
-  {path:'/5000-euros-net-en-brut/',title:'5 000€ net en brut 2026 : Calcul gratuit cadre/non-cadre',desc:'5 000€ net en brut = 6 280€ brut (non-cadre) ou 6 291€ brut (cadre). Calcul inversé des cotisations salariales et coût employeur. Résultat instantané 2026.',cat:'net-brut'},
-  {path:'/5100-euros-brut-en-net/',title:'5 100€ brut en net 2026 : Calcul gratuit cadre/non-cadre',desc:'5 100€ brut en net = 4 052€ net (non-cadre) ou 4 045€ net (cadre). Calcul détaillé des cotisations salariales, coût employeur et prélèvement à la source 2026.',cat:'brut-net'},
-  {path:'/5100-euros-net-en-brut/',title:'5 100€ net en brut 2026 : Calcul gratuit cadre/non-cadre',desc:'5 100€ net en brut = 6 404€ brut (non-cadre) ou 6 416€ brut (cadre). Calcul inversé des cotisations salariales et coût employeur. Résultat instantané 2026.',cat:'net-brut'},
-  {path:'/5200-euros-brut-en-net/',title:'5 200€ brut en net 2026 : Calcul gratuit cadre/non-cadre',desc:'5 200€ brut en net = 4 132€ net (non-cadre) ou 4 125€ net (cadre). Calcul détaillé des cotisations salariales, coût employeur et prélèvement à la source 2026.',cat:'brut-net'},
-  {path:'/5200-euros-net-en-brut/',title:'5 200€ net en brut 2026 : Calcul gratuit cadre/non-cadre',desc:'5 200€ net en brut = 6 529€ brut (non-cadre) ou 6 540€ brut (cadre). Calcul inversé des cotisations salariales et coût employeur. Résultat instantané 2026.',cat:'net-brut'},
-  {path:'/5300-euros-brut-en-net/',title:'5 300€ brut en net 2026 : Calcul gratuit cadre/non-cadre',desc:'5 300€ brut en net = 4 213€ net (non-cadre) ou 4 205€ net (cadre). Calcul détaillé des cotisations salariales, coût employeur et prélèvement à la source 2026.',cat:'brut-net'},
-  {path:'/5300-euros-net-en-brut/',title:'5 300€ net en brut 2026 : Calcul gratuit cadre/non-cadre',desc:'5 300€ net en brut = 6 653€ brut (non-cadre) ou 6 665€ brut (cadre). Calcul inversé des cotisations salariales et coût employeur. Résultat instantané 2026.',cat:'net-brut'},
-  {path:'/5400-euros-brut-en-net/',title:'5 400€ brut en net 2026 : Calcul gratuit cadre/non-cadre',desc:'5 400€ brut en net = 4 293€ net (non-cadre) ou 4 285€ net (cadre). Calcul détaillé des cotisations salariales, coût employeur et prélèvement à la source 2026.',cat:'brut-net'},
-  {path:'/5400-euros-net-en-brut/',title:'5 400€ net en brut 2026 : Calcul gratuit cadre/non-cadre',desc:'5 400€ net en brut = 6 778€ brut (non-cadre) ou 6 790€ brut (cadre). Calcul inversé des cotisations salariales et coût employeur. Résultat instantané 2026.',cat:'net-brut'},
-  {path:'/5500-euros-brut-en-net/',title:'5 500€ brut en net 2026 : Calcul gratuit cadre/non-cadre',desc:'5 500€ brut en net = 4 373€ net (non-cadre) ou 4 366€ net (cadre). Calcul détaillé des cotisations salariales, coût employeur et prélèvement à la source 2026.',cat:'brut-net'},
-  {path:'/5500-euros-net-en-brut/',title:'5 500€ net en brut 2026 : Calcul gratuit cadre/non-cadre',desc:'5 500€ net en brut = 6 902€ brut (non-cadre) ou 6 914€ brut (cadre). Calcul inversé des cotisations salariales et coût employeur. Résultat instantané 2026.',cat:'net-brut'},
-  {path:'/5600-euros-brut-en-net/',title:'5 600€ brut en net 2026 : Calcul gratuit cadre/non-cadre',desc:'5 600€ brut en net = 4 454€ net (non-cadre) ou 4 446€ net (cadre). Calcul détaillé des cotisations salariales, coût employeur et prélèvement à la source 2026.',cat:'brut-net'},
-  {path:'/5600-euros-net-en-brut/',title:'5 600€ net en brut 2026 : Calcul gratuit cadre/non-cadre',desc:'5 600€ net en brut = 7 027€ brut (non-cadre) ou 7 039€ brut (cadre). Calcul inversé des cotisations salariales et coût employeur. Résultat instantané 2026.',cat:'net-brut'},
-  {path:'/5700-euros-brut-en-net/',title:'5 700€ brut en net 2026 : Calcul gratuit cadre/non-cadre',desc:'5 700€ brut en net = 4 534€ net (non-cadre) ou 4 526€ net (cadre). Calcul détaillé des cotisations salariales, coût employeur et prélèvement à la source 2026.',cat:'brut-net'},
-  {path:'/5700-euros-net-en-brut/',title:'5 700€ net en brut 2026 : Calcul gratuit cadre/non-cadre',desc:'5 700€ net en brut = 7 151€ brut (non-cadre) ou 7 164€ brut (cadre). Calcul inversé des cotisations salariales et coût employeur. Résultat instantané 2026.',cat:'net-brut'},
-  {path:'/5800-euros-brut-en-net/',title:'5 800€ brut en net 2026 : Calcul gratuit cadre/non-cadre',desc:'5 800€ brut en net = 4 614€ net (non-cadre) ou 4 606€ net (cadre). Calcul détaillé des cotisations salariales, coût employeur et prélèvement à la source 2026.',cat:'brut-net'},
-  {path:'/5800-euros-net-en-brut/',title:'5 800€ net en brut 2026 : Calcul gratuit cadre/non-cadre',desc:'5 800€ net en brut = 7 276€ brut (non-cadre) ou 7 288€ brut (cadre). Calcul inversé des cotisations salariales et coût employeur. Résultat instantané 2026.',cat:'net-brut'},
-  {path:'/5900-euros-brut-en-net/',title:'5 900€ brut en net 2026 : Calcul gratuit cadre/non-cadre',desc:'5 900€ brut en net = 4 695€ net (non-cadre) ou 4 686€ net (cadre). Calcul détaillé des cotisations salariales, coût employeur et prélèvement à la source 2026.',cat:'brut-net'},
-  {path:'/5900-euros-net-en-brut/',title:'5 900€ net en brut 2026 : Calcul gratuit cadre/non-cadre',desc:'5 900€ net en brut = 7 400€ brut (non-cadre) ou 7 413€ brut (cadre). Calcul inversé des cotisations salariales et coût employeur. Résultat instantané 2026.',cat:'net-brut'},
-  {path:'/6000-euros-brut-en-net/',title:'6 000€ brut en net 2026 : Calcul gratuit cadre/non-cadre',desc:'6 000€ brut en net = 4 775€ net (non-cadre) ou 4 767€ net (cadre). Calcul détaillé des cotisations salariales, coût employeur et prélèvement à la source 2026.',cat:'brut-net'},
-  {path:'/6000-euros-net-en-brut/',title:'6 000€ net en brut 2026 : Calcul gratuit cadre/non-cadre',desc:'6 000€ net en brut = 7 525€ brut (non-cadre) ou 7 538€ brut (cadre). Calcul inversé des cotisations salariales et coût employeur. Résultat instantané 2026.',cat:'net-brut'},
-  {path:'/6100-euros-brut-en-net/',title:'6 100€ brut en net 2026 : Calcul gratuit cadre/non-cadre',desc:'6 100€ brut en net = 4 855€ net (non-cadre) ou 4 847€ net (cadre). Calcul détaillé des cotisations salariales, coût employeur et prélèvement à la source 2026.',cat:'brut-net'},
-  {path:'/6100-euros-net-en-brut/',title:'6 100€ net en brut 2026 : Calcul gratuit cadre/non-cadre',desc:'6 100€ net en brut = 7 649€ brut (non-cadre) ou 7 662€ brut (cadre). Calcul inversé des cotisations salariales et coût employeur. Résultat instantané 2026.',cat:'net-brut'},
-  {path:'/6200-euros-brut-en-net/',title:'6 200€ brut en net 2026 : Calcul gratuit cadre/non-cadre',desc:'6 200€ brut en net = 4 936€ net (non-cadre) ou 4 927€ net (cadre). Calcul détaillé des cotisations salariales, coût employeur et prélèvement à la source 2026.',cat:'brut-net'},
-  {path:'/6200-euros-net-en-brut/',title:'6 200€ net en brut 2026 : Calcul gratuit cadre/non-cadre',desc:'6 200€ net en brut = 7 773€ brut (non-cadre) ou 7 787€ brut (cadre). Calcul inversé des cotisations salariales et coût employeur. Résultat instantané 2026.',cat:'net-brut'},
-  {path:'/6300-euros-brut-en-net/',title:'6 300€ brut en net 2026 : Calcul gratuit cadre/non-cadre',desc:'6 300€ brut en net = 5 016€ net (non-cadre) ou 5 007€ net (cadre). Calcul détaillé des cotisations salariales, coût employeur et prélèvement à la source 2026.',cat:'brut-net'},
-  {path:'/6300-euros-net-en-brut/',title:'6 300€ net en brut 2026 : Calcul gratuit cadre/non-cadre',desc:'6 300€ net en brut = 7 898€ brut (non-cadre) ou 7 912€ brut (cadre). Calcul inversé des cotisations salariales et coût employeur. Résultat instantané 2026.',cat:'net-brut'},
-  {path:'/6400-euros-brut-en-net/',title:'6 400€ brut en net 2026 : Calcul gratuit cadre/non-cadre',desc:'6 400€ brut en net = 5 096€ net (non-cadre) ou 5 087€ net (cadre). Calcul détaillé des cotisations salariales, coût employeur et prélèvement à la source 2026.',cat:'brut-net'},
-  {path:'/6400-euros-net-en-brut/',title:'6 400€ net en brut 2026 : Calcul gratuit cadre/non-cadre',desc:'6 400€ net en brut = 8 022€ brut (non-cadre) ou 8 036€ brut (cadre). Calcul inversé des cotisations salariales et coût employeur. Résultat instantané 2026.',cat:'net-brut'},
-  {path:'/6500-euros-brut-en-net/',title:'6 500€ brut en net 2026 : Calcul gratuit cadre/non-cadre',desc:'6 500€ brut en net = 5 177€ net (non-cadre) ou 5 168€ net (cadre). Calcul détaillé des cotisations salariales, coût employeur et prélèvement à la source 2026.',cat:'brut-net'},
-  {path:'/6500-euros-net-en-brut/',title:'6 500€ net en brut 2026 : Calcul gratuit cadre/non-cadre',desc:'6 500€ net en brut = 8 147€ brut (non-cadre) ou 8 161€ brut (cadre). Calcul inversé des cotisations salariales et coût employeur. Résultat instantané 2026.',cat:'net-brut'},
-  {path:'/6600-euros-brut-en-net/',title:'6 600€ brut en net 2026 : Calcul gratuit cadre/non-cadre',desc:'6 600€ brut en net = 5 257€ net (non-cadre) ou 5 248€ net (cadre). Calcul détaillé des cotisations salariales, coût employeur et prélèvement à la source 2026.',cat:'brut-net'},
-  {path:'/6600-euros-net-en-brut/',title:'6 600€ net en brut 2026 : Calcul gratuit cadre/non-cadre',desc:'6 600€ net en brut = 8 271€ brut (non-cadre) ou 8 286€ brut (cadre). Calcul inversé des cotisations salariales et coût employeur. Résultat instantané 2026.',cat:'net-brut'},
-  {path:'/6700-euros-brut-en-net/',title:'6 700€ brut en net 2026 : Calcul gratuit cadre/non-cadre',desc:'6 700€ brut en net = 5 337€ net (non-cadre) ou 5 328€ net (cadre). Calcul détaillé des cotisations salariales, coût employeur et prélèvement à la source 2026.',cat:'brut-net'},
-  {path:'/6700-euros-net-en-brut/',title:'6 700€ net en brut 2026 : Calcul gratuit cadre/non-cadre',desc:'6 700€ net en brut = 8 396€ brut (non-cadre) ou 8 410€ brut (cadre). Calcul inversé des cotisations salariales et coût employeur. Résultat instantané 2026.',cat:'net-brut'},
-  {path:'/6800-euros-brut-en-net/',title:'6 800€ brut en net 2026 : Calcul gratuit cadre/non-cadre',desc:'6 800€ brut en net = 5 418€ net (non-cadre) ou 5 408€ net (cadre). Calcul détaillé des cotisations salariales, coût employeur et prélèvement à la source 2026.',cat:'brut-net'},
-  {path:'/6800-euros-net-en-brut/',title:'6 800€ net en brut 2026 : Calcul gratuit cadre/non-cadre',desc:'6 800€ net en brut = 8 520€ brut (non-cadre) ou 8 535€ brut (cadre). Calcul inversé des cotisations salariales et coût employeur. Résultat instantané 2026.',cat:'net-brut'},
-  {path:'/6900-euros-brut-en-net/',title:'6 900€ brut en net 2026 : Calcul gratuit cadre/non-cadre',desc:'6 900€ brut en net = 5 498€ net (non-cadre) ou 5 488€ net (cadre). Calcul détaillé des cotisations salariales, coût employeur et prélèvement à la source 2026.',cat:'brut-net'},
-  {path:'/6900-euros-net-en-brut/',title:'6 900€ net en brut 2026 : Calcul gratuit cadre/non-cadre',desc:'6 900€ net en brut = 8 645€ brut (non-cadre) ou 8 660€ brut (cadre). Calcul inversé des cotisations salariales et coût employeur. Résultat instantané 2026.',cat:'net-brut'},
-  {path:'/7000-euros-brut-en-net/',title:'7 000€ brut en net 2026 : Calcul gratuit cadre/non-cadre',desc:'7 000€ brut en net = 5 578€ net (non-cadre) ou 5 569€ net (cadre). Calcul détaillé des cotisations salariales, coût employeur et prélèvement à la source 2026.',cat:'brut-net'},
-  {path:'/7000-euros-net-en-brut/',title:'7 000€ net en brut 2026 : Calcul gratuit cadre/non-cadre',desc:'7 000€ net en brut = 8 769€ brut (non-cadre) ou 8 784€ brut (cadre). Calcul inversé des cotisations salariales et coût employeur. Résultat instantané 2026.',cat:'net-brut'},
-  {path:'/7100-euros-brut-en-net/',title:'7 100€ brut en net 2026 : Calcul gratuit cadre/non-cadre',desc:'7 100€ brut en net = 5 659€ net (non-cadre) ou 5 649€ net (cadre). Calcul détaillé des cotisations salariales, coût employeur et prélèvement à la source 2026.',cat:'brut-net'},
-  {path:'/7100-euros-net-en-brut/',title:'7 100€ net en brut 2026 : Calcul gratuit cadre/non-cadre',desc:'7 100€ net en brut = 8 894€ brut (non-cadre) ou 8 909€ brut (cadre). Calcul inversé des cotisations salariales et coût employeur. Résultat instantané 2026.',cat:'net-brut'},
-  {path:'/7200-euros-brut-en-net/',title:'7 200€ brut en net 2026 : Calcul gratuit cadre/non-cadre',desc:'7 200€ brut en net = 5 739€ net (non-cadre) ou 5 729€ net (cadre). Calcul détaillé des cotisations salariales, coût employeur et prélèvement à la source 2026.',cat:'brut-net'},
-  {path:'/7200-euros-net-en-brut/',title:'7 200€ net en brut 2026 : Calcul gratuit cadre/non-cadre',desc:'7 200€ net en brut = 9 018€ brut (non-cadre) ou 9 034€ brut (cadre). Calcul inversé des cotisations salariales et coût employeur. Résultat instantané 2026.',cat:'net-brut'},
-  {path:'/7300-euros-brut-en-net/',title:'7 300€ brut en net 2026 : Calcul gratuit cadre/non-cadre',desc:'7 300€ brut en net = 5 820€ net (non-cadre) ou 5 809€ net (cadre). Calcul détaillé des cotisations salariales, coût employeur et prélèvement à la source 2026.',cat:'brut-net'},
-  {path:'/7300-euros-net-en-brut/',title:'7 300€ net en brut 2026 : Calcul gratuit cadre/non-cadre',desc:'7 300€ net en brut = 9 143€ brut (non-cadre) ou 9 158€ brut (cadre). Calcul inversé des cotisations salariales et coût employeur. Résultat instantané 2026.',cat:'net-brut'},
-  {path:'/7400-euros-brut-en-net/',title:'7 400€ brut en net 2026 : Calcul gratuit cadre/non-cadre',desc:'7 400€ brut en net = 5 900€ net (non-cadre) ou 5 890€ net (cadre). Calcul détaillé des cotisations salariales, coût employeur et prélèvement à la source 2026.',cat:'brut-net'},
-  {path:'/7400-euros-net-en-brut/',title:'7 400€ net en brut 2026 : Calcul gratuit cadre/non-cadre',desc:'7 400€ net en brut = 9 267€ brut (non-cadre) ou 9 283€ brut (cadre). Calcul inversé des cotisations salariales et coût employeur. Résultat instantané 2026.',cat:'net-brut'},
-  {path:'/7500-euros-brut-en-net/',title:'7 500€ brut en net 2026 : Calcul gratuit cadre/non-cadre',desc:'7 500€ brut en net = 5 980€ net (non-cadre) ou 5 970€ net (cadre). Calcul détaillé des cotisations salariales, coût employeur et prélèvement à la source 2026.',cat:'brut-net'},
-  {path:'/7500-euros-net-en-brut/',title:'7 500€ net en brut 2026 : Calcul gratuit cadre/non-cadre',desc:'7 500€ net en brut = 9 391€ brut (non-cadre) ou 9 408€ brut (cadre). Calcul inversé des cotisations salariales et coût employeur. Résultat instantané 2026.',cat:'net-brut'},
-  {path:'/7600-euros-brut-en-net/',title:'7 600€ brut en net 2026 : Calcul gratuit cadre/non-cadre',desc:'7 600€ brut en net = 6 061€ net (non-cadre) ou 6 050€ net (cadre). Calcul détaillé des cotisations salariales, coût employeur et prélèvement à la source 2026.',cat:'brut-net'},
-  {path:'/7600-euros-net-en-brut/',title:'7 600€ net en brut 2026 : Calcul gratuit cadre/non-cadre',desc:'7 600€ net en brut = 9 516€ brut (non-cadre) ou 9 532€ brut (cadre). Calcul inversé des cotisations salariales et coût employeur. Résultat instantané 2026.',cat:'net-brut'},
-  {path:'/7700-euros-brut-en-net/',title:'7 700€ brut en net 2026 : Calcul gratuit cadre/non-cadre',desc:'7 700€ brut en net = 6 141€ net (non-cadre) ou 6 130€ net (cadre). Calcul détaillé des cotisations salariales, coût employeur et prélèvement à la source 2026.',cat:'brut-net'},
-  {path:'/7700-euros-net-en-brut/',title:'7 700€ net en brut 2026 : Calcul gratuit cadre/non-cadre',desc:'7 700€ net en brut = 9 640€ brut (non-cadre) ou 9 657€ brut (cadre). Calcul inversé des cotisations salariales et coût employeur. Résultat instantané 2026.',cat:'net-brut'},
-  {path:'/7800-euros-brut-en-net/',title:'7 800€ brut en net 2026 : Calcul gratuit cadre/non-cadre',desc:'7 800€ brut en net = 6 221€ net (non-cadre) ou 6 210€ net (cadre). Calcul détaillé des cotisations salariales, coût employeur et prélèvement à la source 2026.',cat:'brut-net'},
-  {path:'/7800-euros-net-en-brut/',title:'7 800€ net en brut 2026 : Calcul gratuit cadre/non-cadre',desc:'7 800€ net en brut = 9 765€ brut (non-cadre) ou 9 782€ brut (cadre). Calcul inversé des cotisations salariales et coût employeur. Résultat instantané 2026.',cat:'net-brut'},
-  {path:'/7900-euros-brut-en-net/',title:'7 900€ brut en net 2026 : Calcul gratuit cadre/non-cadre',desc:'7 900€ brut en net = 6 302€ net (non-cadre) ou 6 291€ net (cadre). Calcul détaillé des cotisations salariales, coût employeur et prélèvement à la source 2026.',cat:'brut-net'},
-  {path:'/7900-euros-net-en-brut/',title:'7 900€ net en brut 2026 : Calcul gratuit cadre/non-cadre',desc:'7 900€ net en brut = 9 889€ brut (non-cadre) ou 9 907€ brut (cadre). Calcul inversé des cotisations salariales et coût employeur. Résultat instantané 2026.',cat:'net-brut'},
-  {path:'/8000-euros-brut-en-net/',title:'8 000€ brut en net 2026 : Calcul gratuit cadre/non-cadre',desc:'8 000€ brut en net = 6 382€ net (non-cadre) ou 6 371€ net (cadre). Calcul détaillé des cotisations salariales, coût employeur et prélèvement à la source 2026.',cat:'brut-net'},
-  {path:'/8000-euros-net-en-brut/',title:'8 000€ net en brut 2026 : Calcul gratuit cadre/non-cadre',desc:'8 000€ net en brut = 10 014€ brut (non-cadre) ou 10 031€ brut (cadre). Calcul inversé des cotisations salariales et coût employeur. Résultat instantané 2026.',cat:'net-brut'},
-  {path:'/8100-euros-brut-en-net/',title:'8 100€ brut en net 2026 : Calcul gratuit cadre/non-cadre',desc:'8 100€ brut en net = 6 462€ net (non-cadre) ou 6 451€ net (cadre). Calcul détaillé des cotisations salariales, coût employeur et prélèvement à la source 2026.',cat:'brut-net'},
-  {path:'/8100-euros-net-en-brut/',title:'8 100€ net en brut 2026 : Calcul gratuit cadre/non-cadre',desc:'8 100€ net en brut = 10 138€ brut (non-cadre) ou 10 156€ brut (cadre). Calcul inversé des cotisations salariales et coût employeur. Résultat instantané 2026.',cat:'net-brut'},
-  {path:'/8200-euros-brut-en-net/',title:'8 200€ brut en net 2026 : Calcul gratuit cadre/non-cadre',desc:'8 200€ brut en net = 6 543€ net (non-cadre) ou 6 531€ net (cadre). Calcul détaillé des cotisations salariales, coût employeur et prélèvement à la source 2026.',cat:'brut-net'},
-  {path:'/8200-euros-net-en-brut/',title:'8 200€ net en brut 2026 : Calcul gratuit cadre/non-cadre',desc:'8 200€ net en brut = 10 263€ brut (non-cadre) ou 10 281€ brut (cadre). Calcul inversé des cotisations salariales et coût employeur. Résultat instantané 2026.',cat:'net-brut'},
-  {path:'/8300-euros-brut-en-net/',title:'8 300€ brut en net 2026 : Calcul gratuit cadre/non-cadre',desc:'8 300€ brut en net = 6 623€ net (non-cadre) ou 6 611€ net (cadre). Calcul détaillé des cotisations salariales, coût employeur et prélèvement à la source 2026.',cat:'brut-net'},
-  {path:'/8300-euros-net-en-brut/',title:'8 300€ net en brut 2026 : Calcul gratuit cadre/non-cadre',desc:'8 300€ net en brut = 10 387€ brut (non-cadre) ou 10 405€ brut (cadre). Calcul inversé des cotisations salariales et coût employeur. Résultat instantané 2026.',cat:'net-brut'},
-  {path:'/8400-euros-brut-en-net/',title:'8 400€ brut en net 2026 : Calcul gratuit cadre/non-cadre',desc:'8 400€ brut en net = 6 703€ net (non-cadre) ou 6 692€ net (cadre). Calcul détaillé des cotisations salariales, coût employeur et prélèvement à la source 2026.',cat:'brut-net'},
-  {path:'/8400-euros-net-en-brut/',title:'8 400€ net en brut 2026 : Calcul gratuit cadre/non-cadre',desc:'8 400€ net en brut = 10 512€ brut (non-cadre) ou 10 530€ brut (cadre). Calcul inversé des cotisations salariales et coût employeur. Résultat instantané 2026.',cat:'net-brut'},
-  {path:'/8500-euros-brut-en-net/',title:'8 500€ brut en net 2026 : Calcul gratuit cadre/non-cadre',desc:'8 500€ brut en net = 6 784€ net (non-cadre) ou 6 772€ net (cadre). Calcul détaillé des cotisations salariales, coût employeur et prélèvement à la source 2026.',cat:'brut-net'},
-  {path:'/8500-euros-net-en-brut/',title:'8 500€ net en brut 2026 : Calcul gratuit cadre/non-cadre',desc:'8 500€ net en brut = 10 636€ brut (non-cadre) ou 10 655€ brut (cadre). Calcul inversé des cotisations salariales et coût employeur. Résultat instantané 2026.',cat:'net-brut'},
-  {path:'/8600-euros-brut-en-net/',title:'8 600€ brut en net 2026 : Calcul gratuit cadre/non-cadre',desc:'8 600€ brut en net = 6 864€ net (non-cadre) ou 6 852€ net (cadre). Calcul détaillé des cotisations salariales, coût employeur et prélèvement à la source 2026.',cat:'brut-net'},
-  {path:'/8600-euros-net-en-brut/',title:'8 600€ net en brut 2026 : Calcul gratuit cadre/non-cadre',desc:'8 600€ net en brut = 10 760€ brut (non-cadre) ou 10 779€ brut (cadre). Calcul inversé des cotisations salariales et coût employeur. Résultat instantané 2026.',cat:'net-brut'},
-  {path:'/8700-euros-brut-en-net/',title:'8 700€ brut en net 2026 : Calcul gratuit cadre/non-cadre',desc:'8 700€ brut en net = 6 944€ net (non-cadre) ou 6 932€ net (cadre). Calcul détaillé des cotisations salariales, coût employeur et prélèvement à la source 2026.',cat:'brut-net'},
-  {path:'/8700-euros-net-en-brut/',title:'8 700€ net en brut 2026 : Calcul gratuit cadre/non-cadre',desc:'8 700€ net en brut = 10 885€ brut (non-cadre) ou 10 904€ brut (cadre). Calcul inversé des cotisations salariales et coût employeur. Résultat instantané 2026.',cat:'net-brut'},
-  {path:'/8800-euros-brut-en-net/',title:'8 800€ brut en net 2026 : Calcul gratuit cadre/non-cadre',desc:'8 800€ brut en net = 7 025€ net (non-cadre) ou 7 012€ net (cadre). Calcul détaillé des cotisations salariales, coût employeur et prélèvement à la source 2026.',cat:'brut-net'},
-  {path:'/8800-euros-net-en-brut/',title:'8 800€ net en brut 2026 : Calcul gratuit cadre/non-cadre',desc:'8 800€ net en brut = 11 009€ brut (non-cadre) ou 11 029€ brut (cadre). Calcul inversé des cotisations salariales et coût employeur. Résultat instantané 2026.',cat:'net-brut'},
-  {path:'/8900-euros-brut-en-net/',title:'8 900€ brut en net 2026 : Calcul gratuit cadre/non-cadre',desc:'8 900€ brut en net = 7 105€ net (non-cadre) ou 7 093€ net (cadre). Calcul détaillé des cotisations salariales, coût employeur et prélèvement à la source 2026.',cat:'brut-net'},
-  {path:'/8900-euros-net-en-brut/',title:'8 900€ net en brut 2026 : Calcul gratuit cadre/non-cadre',desc:'8 900€ net en brut = 11 134€ brut (non-cadre) ou 11 153€ brut (cadre). Calcul inversé des cotisations salariales et coût employeur. Résultat instantané 2026.',cat:'net-brut'},
-  {path:'/9000-euros-brut-en-net/',title:'9 000€ brut en net 2026 : Calcul gratuit cadre/non-cadre',desc:'9 000€ brut en net = 7 186€ net (non-cadre) ou 7 173€ net (cadre). Calcul détaillé des cotisations salariales, coût employeur et prélèvement à la source 2026.',cat:'brut-net'},
-  {path:'/9000-euros-net-en-brut/',title:'9 000€ net en brut 2026 : Calcul gratuit cadre/non-cadre',desc:'9 000€ net en brut = 11 258€ brut (non-cadre) ou 11 278€ brut (cadre). Calcul inversé des cotisations salariales et coût employeur. Résultat instantané 2026.',cat:'net-brut'},
-  {path:'/9100-euros-brut-en-net/',title:'9 100€ brut en net 2026 : Calcul gratuit cadre/non-cadre',desc:'9 100€ brut en net = 7 266€ net (non-cadre) ou 7 253€ net (cadre). Calcul détaillé des cotisations salariales, coût employeur et prélèvement à la source 2026.',cat:'brut-net'},
-  {path:'/9100-euros-net-en-brut/',title:'9 100€ net en brut 2026 : Calcul gratuit cadre/non-cadre',desc:'9 100€ net en brut = 11 383€ brut (non-cadre) ou 11 403€ brut (cadre). Calcul inversé des cotisations salariales et coût employeur. Résultat instantané 2026.',cat:'net-brut'},
-  {path:'/9200-euros-brut-en-net/',title:'9 200€ brut en net 2026 : Calcul gratuit cadre/non-cadre',desc:'9 200€ brut en net = 7 346€ net (non-cadre) ou 7 333€ net (cadre). Calcul détaillé des cotisations salariales, coût employeur et prélèvement à la source 2026.',cat:'brut-net'},
-  {path:'/9200-euros-net-en-brut/',title:'9 200€ net en brut 2026 : Calcul gratuit cadre/non-cadre',desc:'9 200€ net en brut = 11 507€ brut (non-cadre) ou 11 527€ brut (cadre). Calcul inversé des cotisations salariales et coût employeur. Résultat instantané 2026.',cat:'net-brut'},
-  {path:'/9300-euros-brut-en-net/',title:'9 300€ brut en net 2026 : Calcul gratuit cadre/non-cadre',desc:'9 300€ brut en net = 7 427€ net (non-cadre) ou 7 414€ net (cadre). Calcul détaillé des cotisations salariales, coût employeur et prélèvement à la source 2026.',cat:'brut-net'},
-  {path:'/9300-euros-net-en-brut/',title:'9 300€ net en brut 2026 : Calcul gratuit cadre/non-cadre',desc:'9 300€ net en brut = 11 632€ brut (non-cadre) ou 11 652€ brut (cadre). Calcul inversé des cotisations salariales et coût employeur. Résultat instantané 2026.',cat:'net-brut'},
-  {path:'/9400-euros-brut-en-net/',title:'9 400€ brut en net 2026 : Calcul gratuit cadre/non-cadre',desc:'9 400€ brut en net = 7 507€ net (non-cadre) ou 7 494€ net (cadre). Calcul détaillé des cotisations salariales, coût employeur et prélèvement à la source 2026.',cat:'brut-net'},
-  {path:'/9400-euros-net-en-brut/',title:'9 400€ net en brut 2026 : Calcul gratuit cadre/non-cadre',desc:'9 400€ net en brut = 11 756€ brut (non-cadre) ou 11 777€ brut (cadre). Calcul inversé des cotisations salariales et coût employeur. Résultat instantané 2026.',cat:'net-brut'},
-  {path:'/9500-euros-brut-en-net/',title:'9 500€ brut en net 2026 : Calcul gratuit cadre/non-cadre',desc:'9 500€ brut en net = 7 587€ net (non-cadre) ou 7 574€ net (cadre). Calcul détaillé des cotisations salariales, coût employeur et prélèvement à la source 2026.',cat:'brut-net'},
-  {path:'/9500-euros-net-en-brut/',title:'9 500€ net en brut 2026 : Calcul gratuit cadre/non-cadre',desc:'9 500€ net en brut = 11 881€ brut (non-cadre) ou 11 901€ brut (cadre). Calcul inversé des cotisations salariales et coût employeur. Résultat instantané 2026.',cat:'net-brut'},
-  {path:'/9600-euros-brut-en-net/',title:'9 600€ brut en net 2026 : Calcul gratuit cadre/non-cadre',desc:'9 600€ brut en net = 7 668€ net (non-cadre) ou 7 654€ net (cadre). Calcul détaillé des cotisations salariales, coût employeur et prélèvement à la source 2026.',cat:'brut-net'},
-  {path:'/9600-euros-net-en-brut/',title:'9 600€ net en brut 2026 : Calcul gratuit cadre/non-cadre',desc:'9 600€ net en brut = 12 005€ brut (non-cadre) ou 12 026€ brut (cadre). Calcul inversé des cotisations salariales et coût employeur. Résultat instantané 2026.',cat:'net-brut'},
-  {path:'/9700-euros-brut-en-net/',title:'9 700€ brut en net 2026 : Calcul gratuit cadre/non-cadre',desc:'9 700€ brut en net = 7 748€ net (non-cadre) ou 7 734€ net (cadre). Calcul détaillé des cotisations salariales, coût employeur et prélèvement à la source 2026.',cat:'brut-net'},
-  {path:'/9700-euros-net-en-brut/',title:'9 700€ net en brut 2026 : Calcul gratuit cadre/non-cadre',desc:'9 700€ net en brut = 12 129€ brut (non-cadre) ou 12 151€ brut (cadre). Calcul inversé des cotisations salariales et coût employeur. Résultat instantané 2026.',cat:'net-brut'},
-  {path:'/9800-euros-brut-en-net/',title:'9 800€ brut en net 2026 : Calcul gratuit cadre/non-cadre',desc:'9 800€ brut en net = 7 828€ net (non-cadre) ou 7 815€ net (cadre). Calcul détaillé des cotisations salariales, coût employeur et prélèvement à la source 2026.',cat:'brut-net'},
-  {path:'/9800-euros-net-en-brut/',title:'9 800€ net en brut 2026 : Calcul gratuit cadre/non-cadre',desc:'9 800€ net en brut = 12 254€ brut (non-cadre) ou 12 275€ brut (cadre). Calcul inversé des cotisations salariales et coût employeur. Résultat instantané 2026.',cat:'net-brut'},
-  {path:'/9900-euros-brut-en-net/',title:'9 900€ brut en net 2026 : Calcul gratuit cadre/non-cadre',desc:'9 900€ brut en net = 7 909€ net (non-cadre) ou 7 895€ net (cadre). Calcul détaillé des cotisations salariales, coût employeur et prélèvement à la source 2026.',cat:'brut-net'},
-  {path:'/9900-euros-net-en-brut/',title:'9 900€ net en brut 2026 : Calcul gratuit cadre/non-cadre',desc:'9 900€ net en brut = 12 378€ brut (non-cadre) ou 12 400€ brut (cadre). Calcul inversé des cotisations salariales et coût employeur. Résultat instantané 2026.',cat:'net-brut'},
-  {path:'/avantages-en-nature/',title:'Avantages en Nature 2026 : Impact sur le Salaire Brut Net',desc:'Comment les avantages en nature (voiture, logement, repas) impactent votre salaire brut et net en 2026. Barèmes d\'évaluation forfaitaire et fiscalité détaillée.',cat:'special'},
-  {path:'/cadre-vs-non-cadre/',title:'Cadre vs Non-Cadre : Comparateur Salaire Brut Net 2026',desc:'Comparez votre salaire brut en net entre statut cadre et non-cadre en 2026. Tableau comparatif des cotisations, différences de charges et calculateur double.',cat:'special'},
-  {path:'/calculateur-cout-employeur/',title:'Calculateur Coût Employeur 2026 : Simulez le Super-Brut',desc:'Calculez le coût total employeur (super-brut) pour un salarié en 2026. Cotisations patronales détaillées, charges sociales et simulateur gratuit instantané.',cat:'special'},
-  {path:'/calculateur-temps-partiel/',title:'Temps Partiel Brut Net 2026 : Calcul 80%, 50%, sur mesure',desc:'Calculez votre salaire brut en net à temps partiel en 2026. Mi-temps, 80%, 4/5e ou quotité sur mesure. Résultat instantané avec cotisations détaillées.',cat:'special'},
-  {path:'/comparateur-salaire-net-par-pays/',title:'Comparateur Salaire Net par Pays 2026 : France vs Europe',desc:'Comparez le salaire net entre pays européens en 2026. France vs Belgique, Suisse, Luxembourg : cotisations sociales, fiscalité et pouvoir d\'achat comparés.',cat:'special'},
-  {path:'/cotisations-sociales-salariales/',title:'Cotisations Sociales Salariales 2026 : Taux Complets',desc:'Détail complet des cotisations sociales salariales 2026. Taux, assiettes, plafonds et explication de chaque cotisation prélevée sur votre salaire brut.',cat:'special'},
-  {path:'/cout-employeur/',title:'Coût Employeur 2026 : Super-Brut et Charges Patronales',desc:'Calculez le coût total employeur (super-brut) en 2026. Détail de chaque cotisation patronale, charges sociales complètes et simulateur gratuit instantané.',cat:'special'},
-  {path:'/difference-salaire-brut-net/',title:'Différence Salaire Brut et Net 2026 : Explications',desc:'Comprendre la différence entre salaire brut et net en 2026. Cotisations sociales détaillées, calcul étape par étape et exemples concrets pour chaque statut.',cat:'special'},
-  {path:'/heures-supplementaires-brut-net/',title:'Heures Sup Brut en Net 2026 : Calcul et Exonérations',desc:'Calculez vos heures supplémentaires brut en net en 2026. Majoration de 25% à 50%, exonération fiscale jusqu\'à 7 500€/an et simulateur gratuit instantané.',cat:'special'},
-  {path:'/lire-fiche-de-paie/',title:'Comprendre sa Fiche de Paie 2026 : Guide Ligne par Ligne',desc:'Guide complet pour lire et comprendre votre fiche de paie en 2026. Chaque ligne expliquée : salaire brut, cotisations salariales, net imposable et net à payer.',cat:'special'},
-  {path:'/mentions-legales/',title:'Mentions Légales | SalaireBrutNet - Simulateur Brut Net',desc:'Mentions légales du site SalaireBrutNet.com. Éditeur, hébergement, propriété intellectuelle et conditions d\'utilisation du simulateur de salaire brut net 2026.',cat:'special'},
-  {path:'/mission/',title:'Notre Mission | SalaireBrutNet - Comprendre vos impôts',desc:'Notre mission : rendre le salaire brut net et l\'impôt compréhensibles pour tous les Français. Découvrez pourquoi nous avons créé ce simulateur gratuit.',cat:'special'},
-  {path:'/negocier-salaire/',title:'Négocier son Salaire 2026 : Guide et Conseils Pratiques',desc:'Comment négocier son salaire brut à l\'embauche ou lors d\'un entretien annuel en 2026. Conseils pratiques, arguments chiffrés et erreurs courantes à éviter.',cat:'special'},
-  {path:'/prime-brut-en-net/',title:'Prime Brut en Net 2026 : Calcul des Primes et Cotisations',desc:'Convertissez une prime brute en net en 2026. Primes exceptionnelles, 13ème mois, intéressement et participation : cotisations sociales et fiscalité détaillées.',cat:'brut-net'},
-  {path:'/salaire-brut-net-2026/',title:'Salaire Brut Net 2026 : Calculateur avec Barème à Jour',desc:'Calculateur brut net 2026 avec taux de cotisations au 1er janvier 2026. SMIC : 1 823€ brut = 1 443€ net. Simulation gratuite, instantanée et détaillée.',cat:'special'},
-  {path:'/salaire-brut-net-alsace-moselle/',title:'Brut Net Alsace-Moselle 2026 : Cotisation Locale 1,30%',desc:'Calculez votre salaire brut en net en Alsace-Moselle avec la cotisation maladie complémentaire locale de 1,30%. Départements 57, 67, 68. Simulateur 2026.',cat:'special'},
-  {path:'/salaire-brut-net-alternance-apprentissage/',title:'Brut Net Alternance et Apprentissage 2026 : Simulateur',desc:'Calculez votre salaire brut en net en alternance ou apprentissage en 2026. Exonérations spécifiques, grille de rémunération par âge et simulateur gratuit.',cat:'special'},
-  {path:'/salaire-brut-net-annuel/',title:'Salaire Brut Net Annuel 2026 : Conversion Année Complète',desc:'Convertissez votre salaire brut annuel en net annuel en 2026. Calculateur gratuit avec détail des cotisations salariales sur 12 mois, cadre et non-cadre.',cat:'special'},
-  {path:'/salaire-brut-net-auto-entrepreneur/',title:'Salaire Brut Net Auto-Entrepreneur 2026 : Calcul Revenus',desc:'Calculez vos revenus nets en auto-entrepreneur et micro-entreprise en 2026. Cotisations sociales, abattement fiscal et simulateur gratuit. Résultat instantané.',cat:'special'},
-  {path:'/salaire-brut-net-cadre/',title:'Salaire Brut Net Cadre 2026 : Calcul et Cotisations',desc:'Calculez votre salaire brut en net cadre. Cotisations spécifiques CET et AGIRC-ARRCO, taux détaillés avec simulateur gratuit. Résultat instantané 2026.',cat:'special'},
-  {path:'/salaire-brut-net-fonction-publique/',title:'Brut Net Fonction Publique 2026 : Calcul Fonctionnaire',desc:'Calculez votre salaire brut en net fonction publique en 2026. Cotisations spécifiques fonctionnaire, taux réduits et simulateur gratuit. Résultat instantané.',cat:'special'},
-  {path:'/salaire-brut-net-horaire/',title:'Salaire Brut Net Horaire 2026 : Taux Horaire Brut en Net',desc:'Convertissez votre taux horaire brut en net en 2026. Calcul sur base 35h/semaine, SMIC horaire à 11,88€ et simulateur gratuit avec résultat instantané.',cat:'special'},
-  {path:'/salaire-brut-net-interim/',title:'Salaire Brut Net Intérim 2026 : Calcul Intérimaire',desc:'Calculez votre salaire brut en net en intérim en 2026. IFM (10%), ICCP (10%), cotisations spécifiques intérimaire et simulateur gratuit. Résultat instantané.',cat:'special'},
-  {path:'/salaire-brut-net-journalier/',title:'Salaire Brut Net Journalier 2026 : Calcul par Jour',desc:'Convertissez votre salaire brut journalier en net en 2026. Calcul sur base 7h/jour ou 151,67h/mois, TJM freelance et simulateur gratuit. Résultat instantané.',cat:'special'},
-  {path:'/salaire-brut-net-mensuel/',title:'Salaire Brut Net Mensuel 2026 : Calcul Mois par Mois',desc:'Convertissez votre salaire brut mensuel en net en 2026. Cotisations salariales détaillées mois par mois, cadre et non-cadre. Calculateur gratuit instantané.',cat:'special'},
-  {path:'/salaire-brut-net-non-cadre/',title:'Salaire Brut Net Non-Cadre 2026 : Calcul et Cotisations',desc:'Calculez votre salaire brut en net non-cadre en 2026. Taux de cotisations salariales détaillés, charges sociales et simulateur gratuit avec résultat instantané.',cat:'special'},
-  {path:'/salaire-brut-net-stage/',title:'Salaire Brut Net Stage 2026 : Gratification Stagiaire',desc:'Calculez la gratification de stage brut en net 2026. Seuil d\'exonération à 4,35€/h, cotisations détaillées et montant minimum légal. Simulateur gratuit.',cat:'special'},
-  {path:'/salaire-moyen-france/',title:'Salaire Moyen en France 2026 : Statistiques Brut et Net',desc:'Salaire moyen et médian en France en 2026 : statistiques détaillées par âge, secteur d\'activité et région. Brut et net comparés avec écarts cadre et non-cadre.',cat:'special'},
-  {path:'/salaire-net-avant-apres-impot/',title:'Net Avant et Après Impôt 2026 : Comprendre l\'Écart',desc:'Différence entre net avant impôt et net après impôt en 2026. Prélèvement à la source, net imposable et calcul détaillé. Ce que vous touchez chaque mois.',cat:'special'},
-  {path:'/salaire-net-imposable/',title:'Salaire Net Imposable 2026 : Définition et Calcul Détaillé',desc:'Qu\'est-ce que le salaire net imposable en 2026 ? Différence avec le net à payer, calcul détaillé et impact direct sur votre prélèvement à la source chaque mois.',cat:'special'},
-  {path:'/simulateur-augmentation/',title:'Simulateur Augmentation de Salaire 2026 : Impact Brut Net',desc:'Simulez l\'impact d\'une augmentation de salaire sur votre net en 2026. Calculez combien vous gagnerez réellement après cotisations et prélèvement à la source.',cat:'special'},
-  {path:'/simulateur-impot-sur-le-revenu/',title:'Simulateur Impôts 2026 Gratuit : Calcul Impôt + PER',desc:'Simulateur impôts 2026 gratuit et instantané. Calculez votre impôt sur le revenu et simulez l\'économie avec le PER. Barème officiel, résultat immédiat.',cat:'special'},
-  {path:'/smic-brut-net-2026/',title:'SMIC 2026 Brut et Net : Montant Mensuel, Horaire et Annuel',desc:'SMIC 2026 : 1 801,80€ brut soit 1 426€ net par mois, 11,88€ brut de l\'heure. Montant annuel, calcul détaillé des cotisations et évolution depuis 2020.',cat:'special'},
-  {path:'/taux-horaire-brut-net/',title:'Taux Horaire Brut Net 2026 : Convertisseur Horaire',desc:'Convertissez votre taux horaire brut en net et inversement en 2026. Base 35h/semaine, SMIC horaire à 11,88€ et calculateur gratuit avec résultat instantané.',cat:'special'}
-];
-
-let googleIndex = {};
-const googleIndexCheckedAt = "";
-
-let currentCat = 'all';
-let seoChanges = JSON.parse(localStorage.getItem('sbn_seoChanges') || '{}');
-let editingPath = null;
-const DOMAIN = 'salairebrutonet.com';
-
-// ── AUTH ─────────────────────────────────────────────────────────────────────
-function isAuthenticated() {
-  try {
-    const a = JSON.parse(localStorage.getItem('sbn_admin_auth'));
-    return a && a.granted && a.expiry > Date.now();
-  } catch { return false; }
-}
-function checkAccess() {
-  const v = document.getElementById('passInput').value;
-  if (v === 'sofia') {
-    localStorage.setItem('sbn_admin_auth', JSON.stringify({ granted: true, expiry: Date.now() + 86400000 }));
-    document.getElementById('lockscreen').classList.add('hidden');
-  } else {
-    document.getElementById('passError').classList.remove('hidden');
-    document.getElementById('passInput').value = '';
-    document.getElementById('passInput').focus();
-  }
-}
-if (isAuthenticated()) document.getElementById('lockscreen').classList.add('hidden');
-
-// ── HELPERS ──────────────────────────────────────────────────────────────────
-function esc(s) { const d = document.createElement('div'); d.textContent = s; return d.innerHTML; }
-function getTitle(p) { return seoChanges[p.path]?.title ?? p.title; }
-function getDesc(p) { return seoChanges[p.path]?.desc ?? p.desc; }
-
-function lenColor(len, min, max) {
-  if (len >= min && len <= max) return 'text-emerald-400';
-  if (len < min - 10 || len > max + 10) return 'text-red-400';
-  return 'text-amber-400';
-}
-
-function statusBadge(tLen, dLen) {
-  const ok = tLen >= 50 && tLen <= 60 && dLen >= 150 && dLen <= 160;
-  return ok
-    ? '<span class="inline-flex items-center px-2 py-0.5 rounded-full text-xs font-medium bg-emerald-500/10 text-emerald-400">OK</span>'
-    : '<span class="inline-flex items-center px-2 py-0.5 rounded-full text-xs font-medium bg-amber-500/10 text-amber-400">!</span>';
-}
-
-function catLabel(cat) {
-  if (cat === 'brut-net') return 'Brut\u2192Net';
-  if (cat === 'net-brut') return 'Net\u2192Brut';
-  return 'Sp\u00e9ciale';
-}
-
-function catColor(cat) {
-  if (cat === 'brut-net') return 'text-emerald-400';
-  if (cat === 'net-brut') return 'text-purple-400';
-  return 'text-amber-400';
-}
-
-function pageName(p) {
-  if (p.path === '/') return 'Accueil';
-  return p.path.replace(/^\//,'').replace(/\/$/,'').replace(/-/g,' ').replace(/\b\w/g, c => c.toUpperCase());
-}
-
-function googleIcon(path) {
-  const st = googleIndex[path];
-  if (st === true) return '<div class="w-6 h-6 rounded-full bg-emerald-500/10 flex items-center justify-center"><iconify-icon icon="lucide:check-circle" width="14" class="text-emerald-400"></iconify-icon></div>';
-  if (st === false) return '<div class="w-6 h-6 rounded-full bg-red-500/10 flex items-center justify-center"><iconify-icon icon="lucide:x-circle" width="14" class="text-red-400"></iconify-icon></div>';
-  return '<div class="w-6 h-6 rounded-full bg-slate-500/10 flex items-center justify-center"><iconify-icon icon="lucide:help-circle" width="14" class="text-slate-500"></iconify-icon></div>';
-}
-
-// ── CATEGORY SWITCHER ────────────────────────────────────────────────────────
-function switchCat(cat) {
-  currentCat = cat;
-  ['all','brut-net','net-brut','special'].forEach(c => {
-    const el = document.getElementById('pill-' + c);
-    if (c === cat) {
-      el.className = 'px-4 py-2 rounded-lg text-sm font-medium transition-colors bg-indigo-600 text-white';
-    } else {
-      el.className = 'px-4 py-2 rounded-lg text-sm font-medium transition-colors text-slate-400 hover:text-white';
-    }
-  });
-  renderCards();
-}
-
-// ── SUMMARY TABLE ────────────────────────────────────────────────────────────
-function renderSummaryTable() {
-  const tbody = document.getElementById('summaryTableBody');
-  let html = '';
-  seoPages.forEach((p, i) => {
-    const t = getTitle(p), d = getDesc(p);
-    const tl = t.length, dl = d.length;
-    const hasChange = seoChanges[p.path];
-    html += `<tr class="border-b border-slate-700/50 hover:bg-slate-700/30 ${hasChange ? 'bg-amber-500/5' : ''}">
-      <td class="px-4 py-2 text-white font-medium text-xs">${esc(pageName(p))}</td>
-      <td class="px-3 py-2"><span class="text-xs ${catColor(p.cat)}">${catLabel(p.cat)}</span></td>
-      <td class="px-3 py-2 hidden lg:table-cell"><code class="text-xs text-slate-500 truncate max-w-[200px] block">${esc(p.path)}</code></td>
-      <td class="px-3 py-2 hidden md:table-cell"><span class="text-xs text-slate-400 truncate max-w-[200px] block">${esc(t)}</span></td>
-      <td class="px-2 py-2 text-center"><span class="text-xs font-mono ${lenColor(tl,50,60)}">${tl}</span></td>
-      <td class="px-2 py-2 text-center"><span class="text-xs font-mono ${lenColor(dl,150,160)}">${dl}</span></td>
-      <td class="px-2 py-2 text-center">${statusBadge(tl, dl)}</td>
-      <td class="px-2 py-2 text-center">${googleIcon(p.path)}</td>
-      <td class="px-3 py-2 text-center">
-        <div class="flex items-center justify-center gap-1">
-          <button onclick="scrollToSnippet('${p.path}','${p.cat}')" class="w-7 h-7 rounded-lg bg-indigo-500/10 hover:bg-indigo-500/20 flex items-center justify-center" title="Voir snippet">
-            <iconify-icon icon="lucide:hash" width="14" class="text-indigo-400"></iconify-icon>
-          </button>
-          <a href="https://${DOMAIN}${p.path}" target="_blank" class="w-7 h-7 rounded-lg bg-emerald-500/10 hover:bg-emerald-500/20 flex items-center justify-center" title="Ouvrir la page">
-            <iconify-icon icon="lucide:external-link" width="14" class="text-emerald-400"></iconify-icon>
-          </a>
-          <a href="https://www.google.com/search?q=site:${DOMAIN}${p.path}" target="_blank" class="w-7 h-7 rounded-lg bg-amber-500/10 hover:bg-amber-500/20 flex items-center justify-center" title="V\u00e9rifier Google">
-            <iconify-icon icon="lucide:search" width="14" class="text-amber-400"></iconify-icon>
-          </a>
-        </div>
-      </td>
-    </tr>`;
-  });
-  tbody.innerHTML = html;
-}
-
-// ── SNIPPET CARDS ────────────────────────────────────────────────────────────
-function renderCards() {
-  const container = document.getElementById('snippetCards');
-  const filtered = currentCat === 'all' ? seoPages : seoPages.filter(p => p.cat === currentCat);
-  let html = '';
-  filtered.forEach(p => {
-    const t = getTitle(p), d = getDesc(p);
-    const tl = t.length, dl = d.length;
-    const hasChange = seoChanges[p.path];
-    const isEditing = editingPath === p.path;
-    const borderClass = hasChange ? 'border-amber-500/50' : 'border-slate-700';
-    const cardId = 'card-' + p.path.replace(/[^a-z0-9]/g, '-');
-
-    if (isEditing) {
-      html += `<div id="${cardId}" class="bg-slate-800 rounded-xl border ${borderClass} p-5">
-        <div class="flex items-center justify-between mb-4">
-          <div class="flex items-center gap-2">
-            <iconify-icon icon="lucide:globe" width="18" class="text-slate-500"></iconify-icon>
-            <span class="text-white font-semibold">${esc(pageName(p))}</span>
-            <code class="text-xs text-slate-500">${esc(p.path)}</code>
-          </div>
-        </div>
-        <div class="space-y-4">
-          <div>
-            <div class="flex items-center justify-between mb-1">
-              <label class="text-sm text-slate-400">Title</label>
-              <span id="editTitleCount" class="text-xs font-mono"></span>
+<footer class="bg-white border-t border-slate-200 py-10">
+        <div class="mx-auto max-w-7xl px-4 flex flex-col md:flex-row justify-between items-center gap-6">
+            <a href="/" class="flex items-center gap-2">
+                <img src="/img/logo.svg" alt="SalaireBrutNet" class="h-6 w-6">
+                <span class="text-sm font-semibold text-slate-900">SalaireBrutNet</span>
+            </a>
+            <p class="text-xs text-slate-500">© 2026 SalaireBrutNet · Estimation indicative</p>
+            <div class="flex flex-wrap gap-4 justify-center">
+                <a href="/" class="text-xs text-slate-500 hover:text-slate-900">Calcul Brut Net</a>
+                <a href="/mentions-legales/" class="text-xs text-slate-500 hover:text-slate-900">Mentions légales</a>
+                <a href="/mission/" class="text-xs text-slate-500 hover:text-slate-900">Notre Mission</a>
+                <a href="/simulateur-impot-sur-le-revenu/" class="text-xs text-slate-500 hover:text-slate-900">Simulateur Impôts</a>
+                <a href="/salaire-brut-net-cadre/" class="text-xs text-slate-500 hover:text-slate-900">Guides</a>
             </div>
-            <input id="editTitleInput" type="text" value="${esc(t)}" oninput="updateEditCounts()"
-              class="w-full px-3 py-2 bg-slate-900 border border-slate-600 rounded-lg text-white text-sm focus:border-indigo-500 focus:outline-none">
-          </div>
-          <div>
-            <div class="flex items-center justify-between mb-1">
-              <label class="text-sm text-slate-400">Description</label>
-              <span id="editDescCount" class="text-xs font-mono"></span>
-            </div>
-            <textarea id="editDescInput" rows="3" oninput="updateEditCounts()"
-              class="w-full px-3 py-2 bg-slate-900 border border-slate-600 rounded-lg text-white text-sm focus:border-indigo-500 focus:outline-none resize-none">${esc(d)}</textarea>
-          </div>
-          <div class="bg-white rounded-xl p-4">
-            <p class="text-xs text-[#202124] mb-1">https://${DOMAIN}${esc(p.path)}</p>
-            <p id="editPreviewTitle" class="text-lg text-[#1a0dab] font-medium truncate">${esc(t)}</p>
-            <p id="editPreviewDesc" class="text-sm text-[#4d5156] line-clamp-2">${esc(d)}</p>
-          </div>
-          <div class="flex gap-3">
-            <button onclick="cancelEdit()" class="px-4 py-2 bg-slate-700 hover:bg-slate-600 text-white rounded-lg text-sm transition-colors">Annuler</button>
-            <button onclick="saveEdit('${p.path}','${esc(p.title).replace(/'/g,"\\'")}',' ${esc(p.desc).replace(/'/g,"\\'")}')" class="px-4 py-2 bg-indigo-600 hover:bg-indigo-500 text-white rounded-lg text-sm font-medium transition-colors">Enregistrer</button>
-          </div>
         </div>
-      </div>`;
-    } else {
-      html += `<div id="${cardId}" class="bg-slate-800 rounded-xl border ${borderClass} p-5">
-        <div class="flex items-center justify-between mb-4">
-          <div class="flex items-center gap-2">
-            <iconify-icon icon="lucide:globe" width="18" class="text-slate-500"></iconify-icon>
-            <span class="text-white font-semibold">${esc(pageName(p))}</span>
-            <code class="text-xs text-slate-500">${esc(p.path)}</code>
-          </div>
-          <button onclick="startEdit('${p.path}')" class="px-3 py-1.5 bg-indigo-600 hover:bg-indigo-500 text-white rounded-lg text-xs font-medium transition-colors">Modifier</button>
-        </div>
-        <div class="bg-white rounded-xl p-4 mb-4">
-          <p class="text-xs text-[#202124] mb-1">https://${DOMAIN}${esc(p.path)}</p>
-          <p class="text-lg text-[#1a0dab] font-medium truncate">${esc(t)}</p>
-          <p class="text-sm text-[#4d5156] line-clamp-2">${esc(d)}</p>
-        </div>
-        <div class="flex items-center gap-4 text-xs">
-          <span>Title: <span class="font-mono ${lenColor(tl,50,60)}">${tl}/60</span></span>
-          <span>Desc: <span class="font-mono ${lenColor(dl,150,160)}">${dl}/160</span></span>
-          ${hasChange ? '<span class="text-amber-400">[modifi\u00e9]</span>' : ''}
-        </div>
-      </div>`;
-    }
-  });
-  container.innerHTML = html;
-  updateSummary();
-  renderSummaryTable();
-  if (editingPath) setTimeout(updateEditCounts, 50);
-}
+    </footer>
+    <script>
+    (function(){
+        var hb=document.getElementById('btn-hamburger'),mn=document.getElementById('mobile-nav'),hi=document.getElementById('hamburger-icon'),ci=document.getElementById('close-icon');
+        if(hb){hb.addEventListener('click',function(){var o=mn.classList.toggle('open');hi.classList.toggle('hidden',o);ci.classList.toggle('hidden',!o)});}
+        if(mn){mn.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){mn.classList.remove('open');hi.classList.remove('hidden');ci.classList.add('hidden')})});}
+        var ng=document.querySelector('.nav-guides'),mm=document.querySelector('.mega-menu'),t;
+        if(ng&&mm){function show(){clearTimeout(t);mm.classList.add('open')}function hide(){t=setTimeout(function(){mm.classList.remove('open')},250)}ng.addEventListener('mouseenter',show);ng.addEventListener('mouseleave',hide);mm.addEventListener('mouseenter',show);mm.addEventListener('mouseleave',hide);}
+    })();
+    </script>
 
-// ── EDIT ─────────────────────────────────────────────────────────────────────
-function startEdit(path) {
-  editingPath = path;
-  renderCards();
-}
-function cancelEdit() {
-  editingPath = null;
-  renderCards();
-}
-function saveEdit(path, origTitle, origDesc) {
-  const newT = document.getElementById('editTitleInput').value;
-  const newD = document.getElementById('editDescInput').value;
-  const page = seoPages.find(p => p.path === path);
-  if (newT !== page.title || newD !== page.desc) {
-    seoChanges[path] = { title: newT, desc: newD };
-  } else {
-    delete seoChanges[path];
-  }
-  localStorage.setItem('sbn_seoChanges', JSON.stringify(seoChanges));
-  editingPath = null;
-  renderCards();
-}
-function updateEditCounts() {
-  const ti = document.getElementById('editTitleInput');
-  const di = document.getElementById('editDescInput');
-  if (!ti || !di) return;
-  const tl = ti.value.length, dl = di.value.length;
-  document.getElementById('editTitleCount').innerHTML = `<span class="${lenColor(tl,50,60)}">${tl} / 60</span>`;
-  document.getElementById('editDescCount').innerHTML = `<span class="${lenColor(dl,150,160)}">${dl} / 160</span>`;
-  document.getElementById('editPreviewTitle').textContent = ti.value;
-  document.getElementById('editPreviewDesc').textContent = di.value;
-}
 
-// ── SCROLL TO SNIPPET ────────────────────────────────────────────────────────
-function scrollToSnippet(path, cat) {
-  if (currentCat !== 'all' && currentCat !== cat) switchCat(cat);
-  const cardId = 'card-' + path.replace(/[^a-z0-9]/g, '-');
-  setTimeout(() => {
-    const el = document.getElementById(cardId);
-    if (el) {
-      el.scrollIntoView({ behavior: 'smooth', block: 'center' });
-      el.classList.add('ring-highlight', 'ring-2', 'ring-indigo-500');
-      setTimeout(() => el.classList.remove('ring-highlight', 'ring-2', 'ring-indigo-500'), 2000);
-    }
-  }, 100);
-}
-
-// ── SUMMARY ──────────────────────────────────────────────────────────────────
-function updateSummary() {
-  let ok = 0;
-  seoPages.forEach(p => {
-    const tl = getTitle(p).length, dl = getDesc(p).length;
-    if (tl >= 50 && tl <= 60 && dl >= 150 && dl <= 160) ok++;
-  });
-  const total = seoPages.length;
-  const color = ok === total ? 'text-emerald-400' : 'text-amber-400';
-  document.getElementById('seoSummaryText').innerHTML = `<span class="${color}">${ok} / ${total} OK</span> &mdash; ${Object.keys(seoChanges).length} modification(s) en cours`;
-  document.getElementById('statOk').textContent = ok + '/' + total;
-  document.getElementById('statOk').className = 'text-2xl font-bold ' + (ok === total ? 'text-emerald-400' : 'text-amber-400');
-  document.getElementById('exportCount').textContent = Object.keys(seoChanges).length + ' modification(s) non export\u00e9e(s)';
-}
-
-// ── EXPORT ───────────────────────────────────────────────────────────────────
-function exportChanges() {
-  const area = document.getElementById('exportArea');
-  area.classList.toggle('hidden');
-  document.getElementById('exportJson').value = JSON.stringify(seoChanges, null, 2);
-}
-
-// ── GOOGLE INDEX BADGE ───────────────────────────────────────────────────────
-function updateGoogleBadge() {
-  const keys = Object.keys(googleIndex);
-  const indexed = Object.values(googleIndex).filter(v => v === true).length;
-  const missing = Object.values(googleIndex).filter(v => v === false).length;
-  const unknown = seoPages.length - keys.length;
-  const badge = document.getElementById('googleIndexBadge');
-  if (googleIndexCheckedAt) {
-    badge.textContent = `${indexed} index\u00e9es / ${missing} absentes / ${unknown} non v\u00e9rifi\u00e9es (${googleIndexCheckedAt})`;
-  } else {
-    badge.textContent = 'Indexation Google non v\u00e9rifi\u00e9e';
-  }
-}
-
-// ── INIT ─────────────────────────────────────────────────────────────────────
-document.getElementById('notesArea').value = localStorage.getItem('sbn_admin_notes') || '';
-updateGoogleBadge();
-renderCards();
-</script>
 </body></html>

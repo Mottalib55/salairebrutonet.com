@@ -91,36 +91,35 @@
                 <h1 class="text-2xl sm:text-3xl lg:text-4xl font-bold text-slate-900 mb-6">Salaire Brut Net <span class="text-brand-600">Fonction Publique</span> 2026</h1>
             </div>
         </section>
+
         <section class="py-12 px-4">
             <div class="mx-auto max-w-3xl">
-                <h2 class="text-xl font-bold text-slate-900 mb-6 text-center">Calculateur rapide</h2>
+                <h2 class="text-xl font-bold text-slate-900 mb-6 text-center">Simulateur Fonction Publique</h2>
                 <div class="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
-                    <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-4">
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-4">
                         <div>
-                            <label class="block text-sm font-medium text-slate-700 mb-1">Salaire brut mensuel</label>
-                            <input type="number" id="widget-input" value="2500" min="0" max="20000" step="50"
+                            <label class="block text-sm font-medium text-slate-700 mb-1">Traitement brut mensuel</label>
+                            <input type="number" id="widget-input" value="2200" min="0" max="20000" step="50"
                                 class="w-full rounded-lg border border-slate-200 px-3 py-2 text-lg font-bold text-slate-900 focus:border-brand-500 focus:outline-none">
                         </div>
                         <div>
-                            <label class="block text-sm font-medium text-slate-700 mb-1">Statut</label>
-                            <select id="widget-statut" class="w-full rounded-lg border border-slate-200 px-3 py-2 text-sm text-slate-900 focus:border-brand-500 focus:outline-none">
-                                <option value="non-cadre" selected>Non-cadre</option>
-                                <option value="cadre" >Cadre</option>
-                            </select>
-                        </div>
-                        <div>
-                            <label class="block text-sm font-medium text-slate-700 mb-1">Temps de travail</label>
-                            <select id="widget-temps" class="w-full rounded-lg border border-slate-200 px-3 py-2 text-sm text-slate-900 focus:border-brand-500 focus:outline-none">
-                                <option value="100" selected>100%</option>
-                                <option value="80">80%</option>
-                                <option value="60">60%</option>
-                                <option value="50">50%</option>
+                            <label class="block text-sm font-medium text-slate-700 mb-1">Catégorie</label>
+                            <select id="widget-cat" class="w-full rounded-lg border border-slate-200 px-3 py-2 text-sm text-slate-900 focus:border-brand-500 focus:outline-none">
+                                <option value="A">Catégorie A</option>
+                                <option value="B" selected>Catégorie B</option>
+                                <option value="C">Catégorie C</option>
                             </select>
                         </div>
                     </div>
-                    <div class="rounded-xl bg-brand-50 border border-brand-100 p-4 text-center">
-                        <p class="text-sm text-brand-600 font-medium">Salaire net mensuel</p>
-                        <p class="text-3xl font-bold text-slate-900" id="result-net-widget">—</p>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                        <div class="rounded-xl bg-brand-50 border border-brand-100 p-4 text-center">
+                            <p class="text-sm text-brand-600 font-medium">Traitement net</p>
+                            <p class="text-2xl font-bold text-slate-900" id="res-net">—</p>
+                        </div>
+                        <div class="rounded-xl bg-slate-50 border border-slate-200 p-4 text-center">
+                            <p class="text-sm text-slate-500 font-medium">Cotisation pension civile</p>
+                            <p class="text-2xl font-bold text-slate-900" id="res-pension">—</p>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -129,17 +128,22 @@
     <script>
     (function() {
         const inp = document.getElementById('widget-input');
-        const sel = document.getElementById('widget-statut');
-        const tmp = document.getElementById('widget-temps');
-        const res = document.getElementById('result-net-widget');
+        const cat = document.getElementById('widget-cat');
         function calc() {
-            const v = parseFloat(inp.value) || 0;
-            const r = calculerBrutVersNet(v, sel.value, parseInt(tmp.value)/100);
-            res.textContent = formatMoney(r.netAvantImpot);
+            const brut = parseFloat(inp.value) || 0;
+            const pensionCivile = brut * 0.1110;
+            const rafpAssiette = Math.min(brut * 0.20, brut);
+            const rafp = Math.min(rafpAssiette, PSS_MENSUEL * 0.20) * 0.05;
+            const csg = brut * 0.9825 * 0.068;
+            const csgNd = brut * 0.9825 * 0.024;
+            const crds = brut * 0.9825 * 0.005;
+            const totalCot = pensionCivile + rafp + csg + csgNd + crds;
+            const net = brut - totalCot;
+            document.getElementById('res-net').textContent = formatMoney(net);
+            document.getElementById('res-pension').textContent = formatMoneyPrecis(pensionCivile);
         }
         inp.addEventListener('input', calc);
-        sel.addEventListener('change', calc);
-        tmp.addEventListener('change', calc);
+        cat.addEventListener('change', calc);
         calc();
     })();
     </script>

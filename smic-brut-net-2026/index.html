@@ -91,36 +91,38 @@
                 <h1 class="text-2xl sm:text-3xl font-bold text-slate-900 mb-6">SMIC 2026 Brut et Net</h1>
             </div>
         </section>
+
         <section class="py-12 px-4">
             <div class="mx-auto max-w-3xl">
-                <h2 class="text-xl font-bold text-slate-900 mb-6 text-center">Calculateur rapide</h2>
+                <h2 class="text-xl font-bold text-slate-900 mb-6 text-center">SMIC 2026 Net</h2>
                 <div class="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
-                    <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-4">
-                        <div>
-                            <label class="block text-sm font-medium text-slate-700 mb-1">Salaire brut mensuel</label>
-                            <input type="number" id="widget-input" value="2500" min="0" max="20000" step="50"
-                                class="w-full rounded-lg border border-slate-200 px-3 py-2 text-lg font-bold text-slate-900 focus:border-brand-500 focus:outline-none">
+                    <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 mb-3">
+                        <div class="rounded-xl bg-brand-50 border border-brand-100 p-4 text-center">
+                            <p class="text-sm text-brand-600 font-medium">SMIC mensuel brut</p>
+                            <p class="text-2xl font-bold text-slate-900" id="res-mb">—</p>
                         </div>
-                        <div>
-                            <label class="block text-sm font-medium text-slate-700 mb-1">Statut</label>
-                            <select id="widget-statut" class="w-full rounded-lg border border-slate-200 px-3 py-2 text-sm text-slate-900 focus:border-brand-500 focus:outline-none">
-                                <option value="non-cadre" selected>Non-cadre</option>
-                                <option value="cadre" >Cadre</option>
-                            </select>
+                        <div class="rounded-xl bg-brand-50 border border-brand-100 p-4 text-center">
+                            <p class="text-sm text-brand-600 font-medium">SMIC mensuel net</p>
+                            <p class="text-2xl font-bold text-slate-900" id="res-mn">—</p>
                         </div>
-                        <div>
-                            <label class="block text-sm font-medium text-slate-700 mb-1">Temps de travail</label>
-                            <select id="widget-temps" class="w-full rounded-lg border border-slate-200 px-3 py-2 text-sm text-slate-900 focus:border-brand-500 focus:outline-none">
-                                <option value="100" selected>100%</option>
-                                <option value="80">80%</option>
-                                <option value="60">60%</option>
-                                <option value="50">50%</option>
-                            </select>
+                        <div class="rounded-xl bg-slate-50 border border-slate-200 p-4 text-center">
+                            <p class="text-sm text-slate-500 font-medium">SMIC horaire brut</p>
+                            <p class="text-2xl font-bold text-slate-900" id="res-hb">—</p>
                         </div>
                     </div>
-                    <div class="rounded-xl bg-brand-50 border border-brand-100 p-4 text-center">
-                        <p class="text-sm text-brand-600 font-medium">Salaire net mensuel</p>
-                        <p class="text-3xl font-bold text-slate-900" id="result-net-widget">—</p>
+                    <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
+                        <div class="rounded-xl bg-slate-50 border border-slate-200 p-4 text-center">
+                            <p class="text-sm text-slate-500 font-medium">SMIC horaire net</p>
+                            <p class="text-2xl font-bold text-slate-900" id="res-hn">—</p>
+                        </div>
+                        <div class="rounded-xl bg-slate-50 border border-slate-200 p-4 text-center">
+                            <p class="text-sm text-slate-500 font-medium">SMIC annuel brut</p>
+                            <p class="text-2xl font-bold text-slate-900" id="res-ab">—</p>
+                        </div>
+                        <div class="rounded-xl bg-slate-50 border border-slate-200 p-4 text-center">
+                            <p class="text-sm text-slate-500 font-medium">SMIC annuel net</p>
+                            <p class="text-2xl font-bold text-slate-900" id="res-an">—</p>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -128,19 +130,15 @@
     <script src="/js/brut-net.js"></script>
     <script>
     (function() {
-        const inp = document.getElementById('widget-input');
-        const sel = document.getElementById('widget-statut');
-        const tmp = document.getElementById('widget-temps');
-        const res = document.getElementById('result-net-widget');
-        function calc() {
-            const v = parseFloat(inp.value) || 0;
-            const r = calculerBrutVersNet(v, sel.value, parseInt(tmp.value)/100);
-            res.textContent = formatMoney(r.netAvantImpot);
-        }
-        inp.addEventListener('input', calc);
-        sel.addEventListener('change', calc);
-        tmp.addEventListener('change', calc);
-        calc();
+        const r = calculerBrutVersNet(SMIC_MENSUEL_BRUT, 'non-cadre', 1);
+        document.getElementById('res-mb').textContent = formatMoneyPrecis(SMIC_MENSUEL_BRUT);
+        document.getElementById('res-mn').textContent = formatMoney(r.netAvantImpot);
+        var hb = SMIC_MENSUEL_BRUT / 151.67;
+        var hn = r.netAvantImpot / 151.67;
+        document.getElementById('res-hb').textContent = hb.toFixed(2) + ' \u20ac';
+        document.getElementById('res-hn').textContent = hn.toFixed(2) + ' \u20ac';
+        document.getElementById('res-ab').textContent = formatMoney(SMIC_MENSUEL_BRUT * 12);
+        document.getElementById('res-an').textContent = formatMoney(r.netAvantImpot * 12);
     })();
     </script>
         <section class="bg-white border-t border-slate-200 py-12 px-4">

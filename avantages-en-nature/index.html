@@ -91,36 +91,43 @@
                 <h1 class="text-2xl sm:text-3xl font-bold text-slate-900 mb-6">Avantages en Nature 2026</h1>
             </div>
         </section>
+
         <section class="py-12 px-4">
             <div class="mx-auto max-w-3xl">
-                <h2 class="text-xl font-bold text-slate-900 mb-6 text-center">Calculateur rapide</h2>
+                <h2 class="text-xl font-bold text-slate-900 mb-6 text-center">Impact Avantage en Nature</h2>
                 <div class="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
                     <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-4">
                         <div>
-                            <label class="block text-sm font-medium text-slate-700 mb-1">Salaire brut mensuel</label>
-                            <input type="number" id="widget-input" value="2500" min="0" max="20000" step="50"
+                            <label class="block text-sm font-medium text-slate-700 mb-1">Salaire brut de base</label>
+                            <input type="number" id="widget-base" value="2500" min="0" max="20000" step="50"
                                 class="w-full rounded-lg border border-slate-200 px-3 py-2 text-lg font-bold text-slate-900 focus:border-brand-500 focus:outline-none">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-slate-700 mb-1">Avantage en nature</label>
+                            <input type="number" id="widget-avantage" value="200" min="0" max="5000" step="10"
+                                class="w-full rounded-lg border border-slate-200 px-3 py-2 text-sm text-slate-900 focus:border-brand-500 focus:outline-none">
                         </div>
                         <div>
                             <label class="block text-sm font-medium text-slate-700 mb-1">Statut</label>
                             <select id="widget-statut" class="w-full rounded-lg border border-slate-200 px-3 py-2 text-sm text-slate-900 focus:border-brand-500 focus:outline-none">
                                 <option value="non-cadre" selected>Non-cadre</option>
-                                <option value="cadre" >Cadre</option>
-                            </select>
-                        </div>
-                        <div>
-                            <label class="block text-sm font-medium text-slate-700 mb-1">Temps de travail</label>
-                            <select id="widget-temps" class="w-full rounded-lg border border-slate-200 px-3 py-2 text-sm text-slate-900 focus:border-brand-500 focus:outline-none">
-                                <option value="100" selected>100%</option>
-                                <option value="80">80%</option>
-                                <option value="60">60%</option>
-                                <option value="50">50%</option>
+                                <option value="cadre">Cadre</option>
                             </select>
                         </div>
                     </div>
-                    <div class="rounded-xl bg-brand-50 border border-brand-100 p-4 text-center">
-                        <p class="text-sm text-brand-600 font-medium">Salaire net mensuel</p>
-                        <p class="text-3xl font-bold text-slate-900" id="result-net-widget">—</p>
+                    <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
+                        <div class="rounded-xl bg-brand-50 border border-brand-100 p-4 text-center">
+                            <p class="text-sm text-brand-600 font-medium">Net avec avantage</p>
+                            <p class="text-2xl font-bold text-slate-900" id="res-avec">—</p>
+                        </div>
+                        <div class="rounded-xl bg-slate-50 border border-slate-200 p-4 text-center">
+                            <p class="text-sm text-slate-500 font-medium">Net sans avantage</p>
+                            <p class="text-2xl font-bold text-slate-900" id="res-sans">—</p>
+                        </div>
+                        <div class="rounded-xl bg-slate-50 border border-slate-200 p-4 text-center">
+                            <p class="text-sm text-slate-500 font-medium">Surcoût cotisations</p>
+                            <p class="text-2xl font-bold text-slate-900" id="res-surcout">—</p>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -128,18 +135,21 @@
     <script src="/js/brut-net.js"></script>
     <script>
     (function() {
-        const inp = document.getElementById('widget-input');
+        const base = document.getElementById('widget-base');
+        const avantage = document.getElementById('widget-avantage');
         const sel = document.getElementById('widget-statut');
-        const tmp = document.getElementById('widget-temps');
-        const res = document.getElementById('result-net-widget');
         function calc() {
-            const v = parseFloat(inp.value) || 0;
-            const r = calculerBrutVersNet(v, sel.value, parseInt(tmp.value)/100);
-            res.textContent = formatMoney(r.netAvantImpot);
+            const b = parseFloat(base.value) || 0;
+            const a = parseFloat(avantage.value) || 0;
+            const rAvec = calculerBrutVersNet(b + a, sel.value, 1);
+            const rSans = calculerBrutVersNet(b, sel.value, 1);
+            document.getElementById('res-avec').textContent = formatMoney(rAvec.netAvantImpot);
+            document.getElementById('res-sans').textContent = formatMoney(rSans.netAvantImpot);
+            document.getElementById('res-surcout').textContent = '+' + formatMoney(rAvec.totalSalarial - rSans.totalSalarial);
         }
-        inp.addEventListener('input', calc);
+        base.addEventListener('input', calc);
+        avantage.addEventListener('input', calc);
         sel.addEventListener('change', calc);
-        tmp.addEventListener('change', calc);
         calc();
     })();
     </script>
