@@ -1,0 +1,25 @@
+{
+  "name": "SalaireBrutNet - Calculateur Salaire Brut en Net 2026",
+  "short_name": "SalaireBrutNet",
+  "description": "Convertissez votre salaire brut en net en 1 clic. Calculateur gratuit, instantane et precis. Taux 2026, cadre et non-cadre.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#f8fafc",
+  "theme_color": "#0f172a",
+  "lang": "fr",
+  "orientation": "any",
+  "categories": ["finance", "utilities"],
+  "icons": [
+    {
+      "src": "/img/favicon-32.png",
+      "sizes": "32x32",
+      "type": "image/png"
+    },
+    {
+      "src": "/img/favicon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}

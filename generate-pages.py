@@ -35,7 +35,9 @@ def page_head(title, description, canonical, keywords=""):
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
     <meta name="robots" content="index, follow">
+    <meta name="author" content="Mottalib Radif">
     <meta name="keywords" content="{keywords}">
+    <link rel="manifest" href="/manifest.webmanifest">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
     <link rel="stylesheet" href="/css/style.css">
@@ -49,6 +51,39 @@ def page_head(title, description, canonical, keywords=""):
             {{ "@type": "ListItem", "position": 1, "name": "Calculateur Salaire Brut Net", "item": "{BASE_URL}/" }},
             {{ "@type": "ListItem", "position": 2, "name": "{title.split(' | ')[0].split(' - ')[0]}", "item": "{canonical}" }}
         ]
+    }}
+    </script>
+    <script type="application/ld+json">
+    {{
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "SalaireBrutNet",
+        "url": "https://salairebrutonet.com",
+        "logo": "https://salairebrutonet.com/img/logo.svg",
+        "description": "Simulateur gratuit de conversion salaire brut en net pour la France. Taux 2026 a jour, cadre et non-cadre.",
+        "founder": {{
+            "@type": "Person",
+            "name": "Mottalib Radif",
+            "url": "https://salairebrutonet.com/a-propos/",
+            "image": "https://salairebrutonet.com/team/mottalib-radif.jpg",
+            "jobTitle": "Fondateur"
+        }}
+    }}
+    </script>
+    <script type="application/ld+json">
+    {{
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Mottalib Radif",
+        "url": "https://salairebrutonet.com/a-propos/",
+        "image": "https://salairebrutonet.com/team/mottalib-radif.jpg",
+        "jobTitle": "Fondateur de SalaireBrutNet",
+        "worksFor": {{
+            "@type": "Organization",
+            "name": "SalaireBrutNet",
+            "url": "https://salairebrutonet.com"
+        }},
+        "knowsAbout": ["salaire brut net", "cotisations sociales", "fiscalite francaise", "droit du travail"]
     }}
     </script>
 </head>'''
