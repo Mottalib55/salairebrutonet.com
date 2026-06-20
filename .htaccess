@@ -26,8 +26,8 @@ RewriteRule ^(.*)$ https://salairebrutonet.com/$1 [R=301,L]
     Header set Permissions-Policy "camera=(), microphone=(), geolocation=(), interest-cohort=()"
     # Strict Transport Security (1 year)
     Header set Strict-Transport-Security "max-age=31536000; includeSubDomains; preload"
-    # Content Security Policy
-    Header set Content-Security-Policy "default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; font-src 'self'; img-src 'self' data: https:; connect-src 'self';"
+    # Content Security Policy (allows Clarity analytics)
+    Header set Content-Security-Policy "default-src 'self'; script-src 'self' 'unsafe-inline' https://www.clarity.ms; style-src 'self' 'unsafe-inline'; font-src 'self'; img-src 'self' data: https:; connect-src 'self' https://www.clarity.ms https://*.clarity.ms;"
 </IfModule>
 
 # --- Gzip Compression ---

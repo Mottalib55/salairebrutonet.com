@@ -414,6 +414,10 @@ def generate_sitemap():
         ("calculateur-temps-partiel", "0.7"),
         ("simulateur-augmentation", "0.7"),
         ("salaire-brut-net-alsace-moselle", "0.7"),
+        # Info pages
+        ("a-propos", "0.5"),
+        ("glossaire", "0.6"),
+        ("widget", "0.4"),
     ]
     for slug, prio in extra_pages:
         urls.append({"loc": f"{BASE_URL}/{slug}/", "priority": prio, "changefreq": "monthly"})

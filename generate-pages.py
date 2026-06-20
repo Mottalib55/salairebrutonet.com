@@ -17,6 +17,7 @@ TODAY = date.today().isoformat()
 def page_head(title, description, canonical, keywords=""):
     return f'''<!DOCTYPE html>
 <html lang="fr" class="scroll-smooth"><head>
+    <meta name="msvalidate.01" content="15b1d26333aa4cd7a1cdba8e813bfc7f" />
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{title}</title>
@@ -40,6 +41,7 @@ def page_head(title, description, canonical, keywords=""):
     <link rel="manifest" href="/manifest.webmanifest">
     <link rel="stylesheet" href="/css/fonts.css">
     <link rel="stylesheet" href="/css/style.css">
+    <script type="text/javascript">(function(c,l,a,r,i,t,y){{c[a]=c[a]||function(){{(c[a].q=c[a].q||[]).push(arguments)}};t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y)}})(window,document,"clarity","script","CLARITY_PROJECT_ID");</script>
     <script type="application/ld+json">
     {{
         "@context": "https://schema.org",
@@ -88,6 +90,7 @@ def page_head(title, description, canonical, keywords=""):
 
 HEADER = '''
 <body class="bg-slate-50 text-slate-600 antialiased selection:bg-brand-100 selection:text-brand-900 flex flex-col min-h-screen">
+    <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-2 focus:left-2 focus:z-[100] focus:px-4 focus:py-2 focus:bg-brand-600 focus:text-white focus:rounded-lg focus:text-sm focus:font-semibold">Aller au contenu</a>
     <header class="sticky top-0 z-50 w-full border-b border-slate-200 bg-white/90 backdrop-blur-md">
         <div class="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
             <a href="/" class="flex items-center gap-2">
@@ -129,7 +132,7 @@ HEADER = '''
             <div class="mobile-nav-section"><h3>Composantes</h3><div class="mobile-nav-links"><a href="/prime-brut-en-net/">Prime brut en net</a><a href="/13eme-mois-brut-net/">13ème mois</a><a href="/heures-supplementaires-brut-net/">Heures sup</a><a href="/avantages-en-nature/">Avantages en nature</a><a href="/smic-brut-net-2026/">SMIC 2026</a><a href="/salaire-moyen-france/">Salaire moyen France</a><a href="/negocier-salaire/">Négocier son salaire</a></div></div>
         </div>
     </header>
-    <main class="flex-grow">
+    <main id="main-content" class="flex-grow" role="main">
 '''
 
 FOOTER = '''
@@ -144,7 +147,9 @@ FOOTER = '''
             <div class="flex flex-wrap gap-4 justify-center">
                 <a href="/" class="text-xs text-slate-500 hover:text-slate-900">Calcul Brut Net</a>
                 <a href="/mentions-legales/" class="text-xs text-slate-500 hover:text-slate-900">Mentions légales</a>
+                <a href="/a-propos/" class="text-xs text-slate-500 hover:text-slate-900">À propos</a>
                 <a href="/mission/" class="text-xs text-slate-500 hover:text-slate-900">Notre Mission</a>
+                <a href="/glossaire/" class="text-xs text-slate-500 hover:text-slate-900">Glossaire</a>
                 <a href="/simulateur-impot-sur-le-revenu/" class="text-xs text-slate-500 hover:text-slate-900">Simulateur Impôts</a>
                 <a href="/salaire-brut-net-cadre/" class="text-xs text-slate-500 hover:text-slate-900">Guides</a>
             </div>
@@ -199,7 +204,7 @@ def calculator_widget(default_val=2500, statut_default="non-cadre", mode="brut")
                     <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-4">
                         <div>
                             <label class="block text-sm font-medium text-slate-700 mb-1">{label_input}</label>
-                            <input type="number" id="widget-input" value="{default_val}" min="0" max="20000" step="50"
+                            <input type="text" inputmode="decimal" id="widget-input" value="{default_val}"
                                 class="w-full rounded-lg border border-slate-200 px-3 py-2 text-lg font-bold text-slate-900 focus:border-brand-500 focus:outline-none">
                         </div>
                         <div>

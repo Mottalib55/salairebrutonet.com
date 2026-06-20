@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="fr" class="scroll-smooth"><head>
+    <meta name="msvalidate.01" content="15b1d26333aa4cd7a1cdba8e813bfc7f" />
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calcul Salaire Brut en Net 2026 - Résultat Instantané</title>
@@ -44,6 +45,9 @@
     <!-- Fonts & Styles -->
     <link rel="stylesheet" href="/css/fonts.css">
     <link rel="stylesheet" href="/css/style.css">
+
+    <!-- Microsoft Clarity -->
+    <script type="text/javascript">(function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y)})(window,document,"clarity","script","CLARITY_PROJECT_ID");</script>
 
     <!-- JSON-LD Structured Data -->
     <script type="application/ld+json">
@@ -172,8 +176,25 @@
         "knowsAbout": ["salaire brut net", "cotisations sociales", "fiscalite francaise", "droit du travail", "finance personnelle"]
     }
     </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "SalaireBrutNet",
+        "url": "https://salairebrutonet.com",
+        "description": "Calculateur gratuit de salaire brut en net pour la France. Taux 2026.",
+        "potentialAction": {
+            "@type": "SearchAction",
+            "target": "https://salairebrutonet.com/?brut={search_term_string}",
+            "query-input": "required name=search_term_string"
+        }
+    }
+    </script>
 </head>
 <body class="bg-slate-50 text-slate-600 antialiased selection:bg-brand-100 selection:text-brand-900 flex flex-col min-h-screen">
+
+    <!-- Skip to content -->
+    <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-2 focus:left-2 focus:z-[100] focus:px-4 focus:py-2 focus:bg-brand-600 focus:text-white focus:rounded-lg focus:text-sm focus:font-semibold">Aller au contenu</a>
 
     <!-- Header -->
     <header class="sticky top-0 z-50 w-full border-b border-slate-200 bg-white/90 backdrop-blur-md">
@@ -316,7 +337,7 @@
         </div>
     </header>
 
-    <main class="flex-grow">
+    <main id="main-content" class="flex-grow" role="main">
         <!-- Hero Section -->
         <section class="pt-6 pb-4 md:pt-8 md:pb-4 text-center px-4">
             <div class="inline-flex items-center gap-2 rounded-full bg-emerald-50 border border-emerald-200 px-3 py-1 mb-3">
@@ -352,7 +373,7 @@
                             <div>
                                 <label for="input-salaire" class="block text-sm font-medium text-slate-500 mb-1">Mensuel</label>
                                 <div class="relative">
-                                    <input type="number" id="input-salaire" value="2500" min="0" max="20000" step="50"
+                                    <input type="text" inputmode="decimal" id="input-salaire" value="2500"
                                         class="w-full rounded-xl border-2 border-slate-200 bg-slate-50 px-4 py-3 text-xl font-bold text-slate-900 focus:border-brand-500 focus:bg-white focus:outline-none focus:ring-2 focus:ring-brand-100 transition-all">
                                     <span class="absolute right-3 top-1/2 -translate-y-1/2 text-sm font-medium text-slate-500">€</span>
                                 </div>
@@ -360,7 +381,7 @@
                             <div>
                                 <label for="input-salaire-annuel" class="block text-sm font-medium text-slate-500 mb-1">Annuel</label>
                                 <div class="relative">
-                                    <input type="number" id="input-salaire-annuel" value="30000" min="0" max="240000" step="600"
+                                    <input type="text" inputmode="decimal" id="input-salaire-annuel" value="30000"
                                         class="w-full rounded-xl border-2 border-slate-200 bg-slate-50 px-4 py-3 text-xl font-bold text-slate-900 focus:border-brand-500 focus:bg-white focus:outline-none focus:ring-2 focus:ring-brand-100 transition-all">
                                     <span class="absolute right-3 top-1/2 -translate-y-1/2 text-sm font-medium text-slate-500">€</span>
                                 </div>
@@ -827,7 +848,9 @@
             <p class="text-xs text-slate-500">© 2026 SalaireBrutNet · Estimation indicative · Ne remplace pas un bulletin de paie officiel</p>
             <div class="flex flex-wrap gap-4 justify-center">
                 <a href="/mentions-legales/" class="text-xs text-slate-500 hover:text-slate-900">Mentions légales</a>
+                <a href="/a-propos/" class="text-xs text-slate-500 hover:text-slate-900">À propos</a>
                 <a href="/mission/" class="text-xs text-slate-500 hover:text-slate-900">Notre Mission</a>
+                <a href="/glossaire/" class="text-xs text-slate-500 hover:text-slate-900">Glossaire</a>
                 <a href="/simulateur-impot-sur-le-revenu/" class="text-xs text-slate-500 hover:text-slate-900">Simulateur Impôts</a>
                 <a href="/salaire-brut-net-cadre/" class="text-xs text-slate-500 hover:text-slate-900">Guides</a>
             </div>
