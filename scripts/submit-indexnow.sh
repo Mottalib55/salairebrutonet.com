@@ -12,9 +12,9 @@ if [ -f "$SCRIPT_DIR/.env" ]; then
     source "$SCRIPT_DIR/.env"
 fi
 
-API_KEY="${BING_API_KEY:-a7ebea6dfbd14ad6a3efe3c5fab40e46}"
+API_KEY="${BING_API_KEY:-dc6156f9d98f4267ab490ed4b6606c7a}"
 HOST="salairebrutonet.com"
-KEY_LOCATION="https://${HOST}/a7ebea6dfbd14ad6a3efe3c5fab40e46.txt"
+KEY_LOCATION="https://${HOST}/dc6156f9d98f4267ab490ed4b6606c7a.txt"
 ENDPOINT="https://api.indexnow.org/indexnow"
 SITEMAP_URL="https://${HOST}/sitemap.xml"
 
