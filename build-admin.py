@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Génère admin/index.html — Dashboard SEO privé."""
+"""Génère admin/index.html – Dashboard SEO privé."""
 import os, re, json
 
 BASE = os.path.dirname(os.path.abspath(__file__))
@@ -53,7 +53,7 @@ html_out = f'''<!DOCTYPE html>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="robots" content="noindex, nofollow">
 <meta name="googlebot" content="noindex, nofollow">
-<title>Admin Dashboard — {SITE_NAME}</title>
+<title>Admin Dashboard – {SITE_NAME}</title>
 <link rel="icon" type="image/svg+xml" href="/img/logo.svg">
 <script src="https://cdn.tailwindcss.com"></script>
 <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
@@ -127,7 +127,7 @@ body {{ font-family: 'Inter', system-ui, -apple-system, sans-serif; }}
     </div>
     <div class="bg-slate-800 rounded-xl p-4 border border-slate-700">
       <p class="text-slate-400 text-sm">SEO OK</p>
-      <p class="text-2xl font-bold text-emerald-400" id="statOk">—</p>
+      <p class="text-2xl font-bold text-emerald-400" id="statOk">–</p>
     </div>
   </div>
 

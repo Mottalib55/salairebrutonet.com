@@ -16,8 +16,6 @@ RewriteRule ^(.*)$ https://salairebrutonet.com/$1 [R=301,L]
 <IfModule mod_headers.c>
     # Prevent MIME type sniffing
     Header set X-Content-Type-Options "nosniff"
-    # XSS Protection
-    Header set X-XSS-Protection "1; mode=block"
     # Clickjacking protection
     Header set X-Frame-Options "SAMEORIGIN"
     # Referrer policy
@@ -25,7 +23,7 @@ RewriteRule ^(.*)$ https://salairebrutonet.com/$1 [R=301,L]
     # Permissions policy
     Header set Permissions-Policy "camera=(), microphone=(), geolocation=(), interest-cohort=()"
     # Strict Transport Security (1 year)
-    Header set Strict-Transport-Security "max-age=31536000; includeSubDomains; preload"
+    Header always set Strict-Transport-Security "max-age=63072000; includeSubDomains; preload"
     # Content Security Policy (allows Clarity analytics)
     Header set Content-Security-Policy "default-src 'self'; script-src 'self' 'unsafe-inline' https://www.clarity.ms; style-src 'self' 'unsafe-inline'; font-src 'self'; img-src 'self' data: https:; connect-src 'self' https://www.clarity.ms https://*.clarity.ms;"
 </IfModule>

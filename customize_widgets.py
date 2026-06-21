@@ -31,7 +31,7 @@ def replace_widget(page_dir, new_html):
     return True
 
 # ============================================================
-# 1. salaire-brut-net-cadre — "Simulateur Cadre"
+# 1. salaire-brut-net-cadre – "Simulateur Cadre"
 # ============================================================
 W01 = '''\
 <section class="py-12 px-4">
@@ -51,15 +51,15 @@ W01 = '''\
                     <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
                         <div class="rounded-xl bg-brand-50 border border-brand-100 p-4 text-center">
                             <p class="text-sm text-brand-600 font-medium">Net mensuel</p>
-                            <p class="text-2xl font-bold text-slate-900" id="res-net">—</p>
+                            <p class="text-2xl font-bold text-slate-900" id="res-net">–</p>
                         </div>
                         <div class="rounded-xl bg-slate-50 border border-slate-200 p-4 text-center">
                             <p class="text-sm text-slate-500 font-medium">CET (0,14%)</p>
-                            <p class="text-2xl font-bold text-slate-900" id="res-cet">—</p>
+                            <p class="text-2xl font-bold text-slate-900" id="res-cet">–</p>
                         </div>
                         <div class="rounded-xl bg-slate-50 border border-slate-200 p-4 text-center">
                             <p class="text-sm text-slate-500 font-medium">Taux cotisations</p>
-                            <p class="text-2xl font-bold text-slate-900" id="res-taux">—</p>
+                            <p class="text-2xl font-bold text-slate-900" id="res-taux">–</p>
                         </div>
                     </div>
                 </div>
@@ -83,7 +83,7 @@ W01 = '''\
     </script>'''
 
 # ============================================================
-# 2. salaire-brut-net-non-cadre — "Simulateur Non-Cadre"
+# 2. salaire-brut-net-non-cadre – "Simulateur Non-Cadre"
 # ============================================================
 W02 = '''\
 <section class="py-12 px-4">
@@ -103,15 +103,15 @@ W02 = '''\
                     <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
                         <div class="rounded-xl bg-brand-50 border border-brand-100 p-4 text-center">
                             <p class="text-sm text-brand-600 font-medium">Net mensuel</p>
-                            <p class="text-2xl font-bold text-slate-900" id="res-net">—</p>
+                            <p class="text-2xl font-bold text-slate-900" id="res-net">–</p>
                         </div>
                         <div class="rounded-xl bg-slate-50 border border-slate-200 p-4 text-center">
                             <p class="text-sm text-slate-500 font-medium">Taux cotisations</p>
-                            <p class="text-2xl font-bold text-slate-900" id="res-taux">—</p>
+                            <p class="text-2xl font-bold text-slate-900" id="res-taux">–</p>
                         </div>
                         <div class="rounded-xl bg-slate-50 border border-slate-200 p-4 text-center">
                             <p class="text-sm text-slate-500 font-medium">Écart avec cadre</p>
-                            <p class="text-2xl font-bold text-emerald-600" id="res-ecart">—</p>
+                            <p class="text-2xl font-bold text-emerald-600" id="res-ecart">–</p>
                         </div>
                     </div>
                 </div>
@@ -136,7 +136,7 @@ W02 = '''\
     </script>'''
 
 # ============================================================
-# 3. salaire-brut-net-fonction-publique — "Simulateur Fonction Publique"
+# 3. salaire-brut-net-fonction-publique – "Simulateur Fonction Publique"
 # ============================================================
 W03 = '''\
 <section class="py-12 px-4">
@@ -161,11 +161,11 @@ W03 = '''\
                     <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
                         <div class="rounded-xl bg-brand-50 border border-brand-100 p-4 text-center">
                             <p class="text-sm text-brand-600 font-medium">Traitement net</p>
-                            <p class="text-2xl font-bold text-slate-900" id="res-net">—</p>
+                            <p class="text-2xl font-bold text-slate-900" id="res-net">–</p>
                         </div>
                         <div class="rounded-xl bg-slate-50 border border-slate-200 p-4 text-center">
                             <p class="text-sm text-slate-500 font-medium">Cotisation pension civile</p>
-                            <p class="text-2xl font-bold text-slate-900" id="res-pension">—</p>
+                            <p class="text-2xl font-bold text-slate-900" id="res-pension">–</p>
                         </div>
                     </div>
                 </div>
@@ -196,7 +196,7 @@ W03 = '''\
     </script>'''
 
 # ============================================================
-# 4. salaire-brut-net-auto-entrepreneur — "Simulateur Auto-Entrepreneur"
+# 4. salaire-brut-net-auto-entrepreneur – "Simulateur Auto-Entrepreneur"
 # ============================================================
 W04 = '''\
 <section class="py-12 px-4">
@@ -212,24 +212,24 @@ W04 = '''\
                         <div>
                             <label class="block text-sm font-medium text-slate-700 mb-1">Type d\'activité</label>
                             <select id="widget-type" class="w-full rounded-lg border border-slate-200 px-3 py-2 text-sm text-slate-900 focus:border-brand-500 focus:outline-none">
-                                <option value="0.212">Prestations de services (BIC) — 21,2%</option>
-                                <option value="0.211">Libéral (BNC) — 21,1%</option>
-                                <option value="0.123">Vente de marchandises — 12,3%</option>
+                                <option value="0.212">Prestations de services (BIC) – 21,2%</option>
+                                <option value="0.211">Libéral (BNC) – 21,1%</option>
+                                <option value="0.123">Vente de marchandises – 12,3%</option>
                             </select>
                         </div>
                     </div>
                     <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
                         <div class="rounded-xl bg-brand-50 border border-brand-100 p-4 text-center">
                             <p class="text-sm text-brand-600 font-medium">Revenu net</p>
-                            <p class="text-2xl font-bold text-slate-900" id="res-net">—</p>
+                            <p class="text-2xl font-bold text-slate-900" id="res-net">–</p>
                         </div>
                         <div class="rounded-xl bg-slate-50 border border-slate-200 p-4 text-center">
                             <p class="text-sm text-slate-500 font-medium">Cotisations</p>
-                            <p class="text-2xl font-bold text-slate-900" id="res-cot">—</p>
+                            <p class="text-2xl font-bold text-slate-900" id="res-cot">–</p>
                         </div>
                         <div class="rounded-xl bg-slate-50 border border-slate-200 p-4 text-center">
                             <p class="text-sm text-slate-500 font-medium">Net imposable</p>
-                            <p class="text-2xl font-bold text-slate-900" id="res-imposable">—</p>
+                            <p class="text-2xl font-bold text-slate-900" id="res-imposable">–</p>
                         </div>
                     </div>
                 </div>
@@ -259,7 +259,7 @@ W04 = '''\
     </script>'''
 
 # ============================================================
-# 5. salaire-brut-net-alternance-apprentissage — "Simulateur Alternance"
+# 5. salaire-brut-net-alternance-apprentissage – "Simulateur Alternance"
 # ============================================================
 W05 = '''\
 <section class="py-12 px-4">
@@ -284,11 +284,11 @@ W05 = '''\
                     <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
                         <div class="rounded-xl bg-brand-50 border border-brand-100 p-4 text-center">
                             <p class="text-sm text-brand-600 font-medium">Salaire brut</p>
-                            <p class="text-2xl font-bold text-slate-900" id="res-brut">—</p>
+                            <p class="text-2xl font-bold text-slate-900" id="res-brut">–</p>
                         </div>
                         <div class="rounded-xl bg-brand-50 border border-brand-100 p-4 text-center">
                             <p class="text-sm text-brand-600 font-medium">Salaire net</p>
-                            <p class="text-2xl font-bold text-slate-900" id="res-net">—</p>
+                            <p class="text-2xl font-bold text-slate-900" id="res-net">–</p>
                         </div>
                         <div class="rounded-xl bg-emerald-50 border border-emerald-200 p-4 text-center">
                             <p class="text-sm text-emerald-600 font-medium">Impôt</p>
@@ -334,7 +334,7 @@ W05 = '''\
     </script>'''
 
 # ============================================================
-# 6. salaire-brut-net-interim — "Simulateur Intérim"
+# 6. salaire-brut-net-interim – "Simulateur Intérim"
 # ============================================================
 W06 = '''\
 <section class="py-12 px-4">
@@ -358,19 +358,19 @@ W06 = '''\
                     <div class="grid grid-cols-2 sm:grid-cols-4 gap-3">
                         <div class="rounded-xl bg-brand-50 border border-brand-100 p-4 text-center">
                             <p class="text-sm text-brand-600 font-medium">Net mission</p>
-                            <p class="text-xl font-bold text-slate-900" id="res-net">—</p>
+                            <p class="text-xl font-bold text-slate-900" id="res-net">–</p>
                         </div>
                         <div class="rounded-xl bg-slate-50 border border-slate-200 p-4 text-center">
                             <p class="text-sm text-slate-500 font-medium">IFM net (10%)</p>
-                            <p class="text-xl font-bold text-slate-900" id="res-ifm">—</p>
+                            <p class="text-xl font-bold text-slate-900" id="res-ifm">–</p>
                         </div>
                         <div class="rounded-xl bg-slate-50 border border-slate-200 p-4 text-center">
                             <p class="text-sm text-slate-500 font-medium">ICCP net (10%)</p>
-                            <p class="text-xl font-bold text-slate-900" id="res-iccp">—</p>
+                            <p class="text-xl font-bold text-slate-900" id="res-iccp">–</p>
                         </div>
                         <div class="rounded-xl bg-emerald-50 border border-emerald-200 p-4 text-center">
                             <p class="text-sm text-emerald-600 font-medium">Total fin mission</p>
-                            <p class="text-xl font-bold text-emerald-700" id="res-total">—</p>
+                            <p class="text-xl font-bold text-emerald-700" id="res-total">–</p>
                         </div>
                     </div>
                 </div>
@@ -401,7 +401,7 @@ W06 = '''\
     </script>'''
 
 # ============================================================
-# 7. salaire-brut-net-stage — "Simulateur Stage"
+# 7. salaire-brut-net-stage – "Simulateur Stage"
 # ============================================================
 W07 = '''\
 <section class="py-12 px-4">
@@ -423,11 +423,11 @@ W07 = '''\
                     <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
                         <div class="rounded-xl bg-brand-50 border border-brand-100 p-4 text-center">
                             <p class="text-sm text-brand-600 font-medium">Gratification nette</p>
-                            <p class="text-2xl font-bold text-slate-900" id="res-net">—</p>
+                            <p class="text-2xl font-bold text-slate-900" id="res-net">–</p>
                         </div>
                         <div class="rounded-xl bg-slate-50 border border-slate-200 p-4 text-center">
                             <p class="text-sm text-slate-500 font-medium">Statut</p>
-                            <p class="text-lg font-bold text-slate-900" id="res-statut">—</p>
+                            <p class="text-lg font-bold text-slate-900" id="res-statut">–</p>
                         </div>
                     </div>
                 </div>
@@ -462,7 +462,7 @@ W07 = '''\
     </script>'''
 
 # ============================================================
-# 8. salaire-brut-net-mensuel — "Calculateur Mensuel"
+# 8. salaire-brut-net-mensuel – "Calculateur Mensuel"
 # ============================================================
 W08 = '''\
 <section class="py-12 px-4">
@@ -495,15 +495,15 @@ W08 = '''\
                     <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
                         <div class="rounded-xl bg-brand-50 border border-brand-100 p-4 text-center">
                             <p class="text-sm text-brand-600 font-medium">Net mensuel</p>
-                            <p class="text-2xl font-bold text-slate-900" id="res-net">—</p>
+                            <p class="text-2xl font-bold text-slate-900" id="res-net">–</p>
                         </div>
                         <div class="rounded-xl bg-slate-50 border border-slate-200 p-4 text-center">
                             <p class="text-sm text-slate-500 font-medium">Cotisations</p>
-                            <p class="text-2xl font-bold text-slate-900" id="res-cot">—</p>
+                            <p class="text-2xl font-bold text-slate-900" id="res-cot">–</p>
                         </div>
                         <div class="rounded-xl bg-slate-50 border border-slate-200 p-4 text-center">
                             <p class="text-sm text-slate-500 font-medium">Taux cotisations</p>
-                            <p class="text-2xl font-bold text-slate-900" id="res-taux">—</p>
+                            <p class="text-2xl font-bold text-slate-900" id="res-taux">–</p>
                         </div>
                     </div>
                 </div>
@@ -530,7 +530,7 @@ W08 = '''\
     </script>'''
 
 # ============================================================
-# 9. salaire-brut-net-annuel — "Calculateur Annuel"
+# 9. salaire-brut-net-annuel – "Calculateur Annuel"
 # ============================================================
 W09 = '''\
 <section class="py-12 px-4">
@@ -554,15 +554,15 @@ W09 = '''\
                     <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
                         <div class="rounded-xl bg-brand-50 border border-brand-100 p-4 text-center">
                             <p class="text-sm text-brand-600 font-medium">Net annuel</p>
-                            <p class="text-2xl font-bold text-slate-900" id="res-annuel">—</p>
+                            <p class="text-2xl font-bold text-slate-900" id="res-annuel">–</p>
                         </div>
                         <div class="rounded-xl bg-slate-50 border border-slate-200 p-4 text-center">
                             <p class="text-sm text-slate-500 font-medium">Net mensuel</p>
-                            <p class="text-2xl font-bold text-slate-900" id="res-mensuel">—</p>
+                            <p class="text-2xl font-bold text-slate-900" id="res-mensuel">–</p>
                         </div>
                         <div class="rounded-xl bg-slate-50 border border-slate-200 p-4 text-center">
                             <p class="text-sm text-slate-500 font-medium">Impôt annuel estimé</p>
-                            <p class="text-2xl font-bold text-slate-900" id="res-impot">—</p>
+                            <p class="text-2xl font-bold text-slate-900" id="res-impot">–</p>
                         </div>
                     </div>
                 </div>
@@ -588,7 +588,7 @@ W09 = '''\
     </script>'''
 
 # ============================================================
-# 10. salaire-brut-net-horaire — "Calculateur Horaire"
+# 10. salaire-brut-net-horaire – "Calculateur Horaire"
 # ============================================================
 W10 = '''\
 <section class="py-12 px-4">
@@ -610,11 +610,11 @@ W10 = '''\
                     <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
                         <div class="rounded-xl bg-brand-50 border border-brand-100 p-4 text-center">
                             <p class="text-sm text-brand-600 font-medium">Taux horaire net</p>
-                            <p class="text-2xl font-bold text-slate-900" id="res-horaire">—</p>
+                            <p class="text-2xl font-bold text-slate-900" id="res-horaire">–</p>
                         </div>
                         <div class="rounded-xl bg-slate-50 border border-slate-200 p-4 text-center">
                             <p class="text-sm text-slate-500 font-medium">Salaire mensuel net</p>
-                            <p class="text-2xl font-bold text-slate-900" id="res-mensuel">—</p>
+                            <p class="text-2xl font-bold text-slate-900" id="res-mensuel">–</p>
                         </div>
                     </div>
                 </div>
@@ -641,7 +641,7 @@ W10 = '''\
     </script>'''
 
 # ============================================================
-# 11. salaire-brut-net-journalier — "Calculateur Journalier"
+# 11. salaire-brut-net-journalier – "Calculateur Journalier"
 # ============================================================
 W11 = '''\
 <section class="py-12 px-4">
@@ -663,11 +663,11 @@ W11 = '''\
                     <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
                         <div class="rounded-xl bg-brand-50 border border-brand-100 p-4 text-center">
                             <p class="text-sm text-brand-600 font-medium">Net journalier</p>
-                            <p class="text-2xl font-bold text-slate-900" id="res-jour">—</p>
+                            <p class="text-2xl font-bold text-slate-900" id="res-jour">–</p>
                         </div>
                         <div class="rounded-xl bg-slate-50 border border-slate-200 p-4 text-center">
                             <p class="text-sm text-slate-500 font-medium">Salaire mensuel net</p>
-                            <p class="text-2xl font-bold text-slate-900" id="res-mensuel">—</p>
+                            <p class="text-2xl font-bold text-slate-900" id="res-mensuel">–</p>
                         </div>
                     </div>
                 </div>
@@ -694,7 +694,7 @@ W11 = '''\
     </script>'''
 
 # ============================================================
-# 12. taux-horaire-brut-net — "Convertisseur Taux Horaire"
+# 12. taux-horaire-brut-net – "Convertisseur Taux Horaire"
 # ============================================================
 W12 = '''\
 <section class="py-12 px-4">
@@ -718,15 +718,15 @@ W12 = '''\
                     <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
                         <div class="rounded-xl bg-brand-50 border border-brand-100 p-4 text-center">
                             <p class="text-sm text-brand-600 font-medium">Taux horaire net</p>
-                            <p class="text-2xl font-bold text-slate-900" id="res-horaire">—</p>
+                            <p class="text-2xl font-bold text-slate-900" id="res-horaire">–</p>
                         </div>
                         <div class="rounded-xl bg-slate-50 border border-slate-200 p-4 text-center">
                             <p class="text-sm text-slate-500 font-medium">Mensuel brut</p>
-                            <p class="text-2xl font-bold text-slate-900" id="res-brut">—</p>
+                            <p class="text-2xl font-bold text-slate-900" id="res-brut">–</p>
                         </div>
                         <div class="rounded-xl bg-slate-50 border border-slate-200 p-4 text-center">
                             <p class="text-sm text-slate-500 font-medium">Mensuel net</p>
-                            <p class="text-2xl font-bold text-slate-900" id="res-net">—</p>
+                            <p class="text-2xl font-bold text-slate-900" id="res-net">–</p>
                         </div>
                     </div>
                 </div>
@@ -753,7 +753,7 @@ W12 = '''\
     </script>'''
 
 # ============================================================
-# 13. difference-salaire-brut-net — "Visualiser la Différence"
+# 13. difference-salaire-brut-net – "Visualiser la Différence"
 # ============================================================
 W13 = '''\
 <section class="py-12 px-4">
@@ -777,20 +777,20 @@ W13 = '''\
                     <div class="mb-4">
                         <div class="flex items-center gap-2 mb-2">
                             <span class="text-sm font-medium text-slate-700">Brut</span>
-                            <span class="text-sm font-bold text-slate-900" id="res-brut">—</span>
+                            <span class="text-sm font-bold text-slate-900" id="res-brut">–</span>
                         </div>
                         <div class="w-full bg-slate-100 rounded-full h-8 relative overflow-hidden">
                             <div class="h-full rounded-full bg-brand-500 transition-all" id="bar-net" style="width:78%"></div>
-                            <div class="absolute inset-0 flex items-center justify-center text-sm font-bold text-white" id="bar-label">—</div>
+                            <div class="absolute inset-0 flex items-center justify-center text-sm font-bold text-white" id="bar-label">–</div>
                         </div>
                         <div class="flex justify-between mt-1">
-                            <span class="text-xs text-slate-500">Net : <span id="res-net2">—</span></span>
-                            <span class="text-xs text-slate-500">Cotisations : <span id="res-cot2">—</span></span>
+                            <span class="text-xs text-slate-500">Net : <span id="res-net2">–</span></span>
+                            <span class="text-xs text-slate-500">Cotisations : <span id="res-cot2">–</span></span>
                         </div>
                     </div>
                     <div class="rounded-xl bg-brand-50 border border-brand-100 p-4 text-center">
                         <p class="text-sm text-brand-600 font-medium">Pourcentage retenu</p>
-                        <p class="text-3xl font-bold text-slate-900" id="res-pct">—</p>
+                        <p class="text-3xl font-bold text-slate-900" id="res-pct">–</p>
                     </div>
                 </div>
             </div>
@@ -818,7 +818,7 @@ W13 = '''\
     </script>'''
 
 # ============================================================
-# 14. cotisations-sociales-salariales — "Détail des Cotisations"
+# 14. cotisations-sociales-salariales – "Détail des Cotisations"
 # ============================================================
 W14 = '''\
 <section class="py-12 px-4">
@@ -849,8 +849,8 @@ W14 = '''\
                             <tbody></tbody>
                             <tfoot><tr class="border-t-2 border-slate-300 font-bold">
                                 <td class="py-2">Total</td>
-                                <td class="py-2 text-right" id="res-taux-total">—</td>
-                                <td class="py-2 text-right" id="res-total">—</td>
+                                <td class="py-2 text-right" id="res-taux-total">–</td>
+                                <td class="py-2 text-right" id="res-total">–</td>
                             </tr></tfoot>
                         </table>
                     </div>
@@ -885,7 +885,7 @@ W14 = '''\
     </script>'''
 
 # ============================================================
-# 15. salaire-net-imposable — "Comparateur Net / Net Imposable"
+# 15. salaire-net-imposable – "Comparateur Net / Net Imposable"
 # ============================================================
 W15 = '''\
 <section class="py-12 px-4">
@@ -909,16 +909,16 @@ W15 = '''\
                     <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-3">
                         <div class="rounded-xl bg-brand-50 border border-brand-100 p-4 text-center">
                             <p class="text-sm text-brand-600 font-medium">Net à payer</p>
-                            <p class="text-2xl font-bold text-slate-900" id="res-net">—</p>
+                            <p class="text-2xl font-bold text-slate-900" id="res-net">–</p>
                         </div>
                         <div class="rounded-xl bg-amber-50 border border-amber-200 p-4 text-center">
                             <p class="text-sm text-amber-600 font-medium">Net imposable</p>
-                            <p class="text-2xl font-bold text-slate-900" id="res-imposable">—</p>
+                            <p class="text-2xl font-bold text-slate-900" id="res-imposable">–</p>
                         </div>
                     </div>
                     <div class="rounded-xl bg-slate-50 border border-slate-200 p-4 text-center">
                         <p class="text-sm text-slate-500 font-medium">Écart (CSG non déductible + CRDS)</p>
-                        <p class="text-xl font-bold text-slate-900" id="res-ecart">—</p>
+                        <p class="text-xl font-bold text-slate-900" id="res-ecart">–</p>
                     </div>
                 </div>
             </div>
@@ -943,7 +943,7 @@ W15 = '''\
     </script>'''
 
 # ============================================================
-# 16. salaire-net-avant-apres-impot — "Avant et Après Impôt"
+# 16. salaire-net-avant-apres-impot – "Avant et Après Impôt"
 # ============================================================
 W16 = '''\
 <section class="py-12 px-4">
@@ -967,15 +967,15 @@ W16 = '''\
                     <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
                         <div class="rounded-xl bg-brand-50 border border-brand-100 p-4 text-center">
                             <p class="text-sm text-brand-600 font-medium">Net avant impôt</p>
-                            <p class="text-2xl font-bold text-slate-900" id="res-avant">—</p>
+                            <p class="text-2xl font-bold text-slate-900" id="res-avant">–</p>
                         </div>
                         <div class="rounded-xl bg-red-50 border border-red-200 p-4 text-center">
                             <p class="text-sm text-red-500 font-medium">Impôt estimé (PAS)</p>
-                            <p class="text-2xl font-bold text-red-600" id="res-impot">—</p>
+                            <p class="text-2xl font-bold text-red-600" id="res-impot">–</p>
                         </div>
                         <div class="rounded-xl bg-emerald-50 border border-emerald-200 p-4 text-center">
                             <p class="text-sm text-emerald-600 font-medium">Net après impôt</p>
-                            <p class="text-2xl font-bold text-emerald-700" id="res-apres">—</p>
+                            <p class="text-2xl font-bold text-emerald-700" id="res-apres">–</p>
                         </div>
                     </div>
                 </div>
@@ -1000,7 +1000,7 @@ W16 = '''\
     </script>'''
 
 # ============================================================
-# 17. lire-fiche-de-paie — "Simulateur Fiche de Paie"
+# 17. lire-fiche-de-paie – "Simulateur Fiche de Paie"
 # ============================================================
 W17 = '''\
 <section class="py-12 px-4">
@@ -1022,11 +1022,11 @@ W17 = '''\
                         </div>
                     </div>
                     <div class="space-y-2" id="fiche-paie">
-                        <div class="flex justify-between py-2 border-b border-slate-200"><span class="font-semibold text-slate-900">Salaire brut</span><span class="font-bold text-slate-900" id="fp-brut">—</span></div>
-                        <div class="flex justify-between py-2 border-b border-slate-100 text-red-600"><span>− Cotisations salariales</span><span id="fp-cotis">—</span></div>
-                        <div class="flex justify-between py-2 border-b border-slate-200 bg-brand-50 px-2 rounded"><span class="font-semibold text-brand-700">Net à payer</span><span class="font-bold text-brand-700" id="fp-net">—</span></div>
-                        <div class="flex justify-between py-2 border-b border-slate-100"><span class="text-slate-500">Net imposable</span><span id="fp-imposable">—</span></div>
-                        <div class="flex justify-between py-2"><span class="text-slate-500">Coût employeur</span><span id="fp-cout">—</span></div>
+                        <div class="flex justify-between py-2 border-b border-slate-200"><span class="font-semibold text-slate-900">Salaire brut</span><span class="font-bold text-slate-900" id="fp-brut">–</span></div>
+                        <div class="flex justify-between py-2 border-b border-slate-100 text-red-600"><span>− Cotisations salariales</span><span id="fp-cotis">–</span></div>
+                        <div class="flex justify-between py-2 border-b border-slate-200 bg-brand-50 px-2 rounded"><span class="font-semibold text-brand-700">Net à payer</span><span class="font-bold text-brand-700" id="fp-net">–</span></div>
+                        <div class="flex justify-between py-2 border-b border-slate-100"><span class="text-slate-500">Net imposable</span><span id="fp-imposable">–</span></div>
+                        <div class="flex justify-between py-2"><span class="text-slate-500">Coût employeur</span><span id="fp-cout">–</span></div>
                     </div>
                 </div>
             </div>
@@ -1052,7 +1052,7 @@ W17 = '''\
     </script>'''
 
 # ============================================================
-# 18. 13eme-mois-brut-net — "Simulateur 13ème Mois"
+# 18. 13eme-mois-brut-net – "Simulateur 13ème Mois"
 # ============================================================
 W18 = '''\
 <section class="py-12 px-4">
@@ -1076,11 +1076,11 @@ W18 = '''\
                     <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
                         <div class="rounded-xl bg-brand-50 border border-brand-100 p-4 text-center">
                             <p class="text-sm text-brand-600 font-medium">13ème mois net</p>
-                            <p class="text-2xl font-bold text-slate-900" id="res-net">—</p>
+                            <p class="text-2xl font-bold text-slate-900" id="res-net">–</p>
                         </div>
                         <div class="rounded-xl bg-slate-50 border border-slate-200 p-4 text-center">
                             <p class="text-sm text-slate-500 font-medium">Impôt estimé sur le 13ème mois</p>
-                            <p class="text-2xl font-bold text-slate-900" id="res-impot">—</p>
+                            <p class="text-2xl font-bold text-slate-900" id="res-impot">–</p>
                         </div>
                     </div>
                 </div>
@@ -1112,7 +1112,7 @@ W18 = '''\
     </script>'''
 
 # ============================================================
-# 19. heures-supplementaires-brut-net — "Calculateur Heures Sup"
+# 19. heures-supplementaires-brut-net – "Calculateur Heures Sup"
 # ============================================================
 W19 = '''\
 <section class="py-12 px-4">
@@ -1141,15 +1141,15 @@ W19 = '''\
                     <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
                         <div class="rounded-xl bg-slate-50 border border-slate-200 p-4 text-center">
                             <p class="text-sm text-slate-500 font-medium">Brut heures sup</p>
-                            <p class="text-2xl font-bold text-slate-900" id="res-brut">—</p>
+                            <p class="text-2xl font-bold text-slate-900" id="res-brut">–</p>
                         </div>
                         <div class="rounded-xl bg-brand-50 border border-brand-100 p-4 text-center">
                             <p class="text-sm text-brand-600 font-medium">Net heures sup</p>
-                            <p class="text-2xl font-bold text-slate-900" id="res-net">—</p>
+                            <p class="text-2xl font-bold text-slate-900" id="res-net">–</p>
                         </div>
                         <div class="rounded-xl bg-emerald-50 border border-emerald-200 p-4 text-center">
                             <p class="text-sm text-emerald-600 font-medium">Économie vs heures normales</p>
-                            <p class="text-2xl font-bold text-emerald-700" id="res-eco">—</p>
+                            <p class="text-2xl font-bold text-emerald-700" id="res-eco">–</p>
                         </div>
                     </div>
                 </div>
@@ -1185,7 +1185,7 @@ W19 = '''\
     </script>'''
 
 # ============================================================
-# 20. avantages-en-nature — "Impact Avantage en Nature"
+# 20. avantages-en-nature – "Impact Avantage en Nature"
 # ============================================================
 W20 = '''\
 <section class="py-12 px-4">
@@ -1214,15 +1214,15 @@ W20 = '''\
                     <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
                         <div class="rounded-xl bg-brand-50 border border-brand-100 p-4 text-center">
                             <p class="text-sm text-brand-600 font-medium">Net avec avantage</p>
-                            <p class="text-2xl font-bold text-slate-900" id="res-avec">—</p>
+                            <p class="text-2xl font-bold text-slate-900" id="res-avec">–</p>
                         </div>
                         <div class="rounded-xl bg-slate-50 border border-slate-200 p-4 text-center">
                             <p class="text-sm text-slate-500 font-medium">Net sans avantage</p>
-                            <p class="text-2xl font-bold text-slate-900" id="res-sans">—</p>
+                            <p class="text-2xl font-bold text-slate-900" id="res-sans">–</p>
                         </div>
                         <div class="rounded-xl bg-slate-50 border border-slate-200 p-4 text-center">
                             <p class="text-sm text-slate-500 font-medium">Surcoût cotisations</p>
-                            <p class="text-2xl font-bold text-slate-900" id="res-surcout">—</p>
+                            <p class="text-2xl font-bold text-slate-900" id="res-surcout">–</p>
                         </div>
                     </div>
                 </div>
@@ -1251,7 +1251,7 @@ W20 = '''\
     </script>'''
 
 # ============================================================
-# 21. smic-brut-net-2026 — "SMIC 2026 Net"
+# 21. smic-brut-net-2026 – "SMIC 2026 Net"
 # ============================================================
 W21 = '''\
 <section class="py-12 px-4">
@@ -1261,29 +1261,29 @@ W21 = '''\
                     <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 mb-3">
                         <div class="rounded-xl bg-brand-50 border border-brand-100 p-4 text-center">
                             <p class="text-sm text-brand-600 font-medium">SMIC mensuel brut</p>
-                            <p class="text-2xl font-bold text-slate-900" id="res-mb">—</p>
+                            <p class="text-2xl font-bold text-slate-900" id="res-mb">–</p>
                         </div>
                         <div class="rounded-xl bg-brand-50 border border-brand-100 p-4 text-center">
                             <p class="text-sm text-brand-600 font-medium">SMIC mensuel net</p>
-                            <p class="text-2xl font-bold text-slate-900" id="res-mn">—</p>
+                            <p class="text-2xl font-bold text-slate-900" id="res-mn">–</p>
                         </div>
                         <div class="rounded-xl bg-slate-50 border border-slate-200 p-4 text-center">
                             <p class="text-sm text-slate-500 font-medium">SMIC horaire brut</p>
-                            <p class="text-2xl font-bold text-slate-900" id="res-hb">—</p>
+                            <p class="text-2xl font-bold text-slate-900" id="res-hb">–</p>
                         </div>
                     </div>
                     <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
                         <div class="rounded-xl bg-slate-50 border border-slate-200 p-4 text-center">
                             <p class="text-sm text-slate-500 font-medium">SMIC horaire net</p>
-                            <p class="text-2xl font-bold text-slate-900" id="res-hn">—</p>
+                            <p class="text-2xl font-bold text-slate-900" id="res-hn">–</p>
                         </div>
                         <div class="rounded-xl bg-slate-50 border border-slate-200 p-4 text-center">
                             <p class="text-sm text-slate-500 font-medium">SMIC annuel brut</p>
-                            <p class="text-2xl font-bold text-slate-900" id="res-ab">—</p>
+                            <p class="text-2xl font-bold text-slate-900" id="res-ab">–</p>
                         </div>
                         <div class="rounded-xl bg-slate-50 border border-slate-200 p-4 text-center">
                             <p class="text-sm text-slate-500 font-medium">SMIC annuel net</p>
-                            <p class="text-2xl font-bold text-slate-900" id="res-an">—</p>
+                            <p class="text-2xl font-bold text-slate-900" id="res-an">–</p>
                         </div>
                     </div>
                 </div>
@@ -1305,7 +1305,7 @@ W21 = '''\
     </script>'''
 
 # ============================================================
-# 22. salaire-moyen-france — "Comparez votre Salaire"
+# 22. salaire-moyen-france – "Comparez votre Salaire"
 # ============================================================
 W22 = '''\
 <section class="py-12 px-4">
@@ -1319,13 +1319,13 @@ W22 = '''\
                     </div>
                     <div class="rounded-xl bg-brand-50 border border-brand-100 p-4 text-center mb-4">
                         <p class="text-sm text-brand-600 font-medium">Votre net mensuel</p>
-                        <p class="text-2xl font-bold text-slate-900" id="res-net">—</p>
+                        <p class="text-2xl font-bold text-slate-900" id="res-net">–</p>
                     </div>
                     <div class="space-y-3">
                         <div>
                             <div class="flex justify-between text-sm mb-1">
                                 <span class="font-medium text-slate-700">Salaire médian : 2 100 € net</span>
-                                <span id="lbl-median" class="text-slate-500">—</span>
+                                <span id="lbl-median" class="text-slate-500">–</span>
                             </div>
                             <div class="w-full bg-slate-100 rounded-full h-4 relative">
                                 <div class="h-full rounded-full bg-amber-400" style="width:50%"></div>
@@ -1335,7 +1335,7 @@ W22 = '''\
                         <div>
                             <div class="flex justify-between text-sm mb-1">
                                 <span class="font-medium text-slate-700">Salaire moyen : 2 700 € net</span>
-                                <span id="lbl-moyen" class="text-slate-500">—</span>
+                                <span id="lbl-moyen" class="text-slate-500">–</span>
                             </div>
                             <div class="w-full bg-slate-100 rounded-full h-4 relative">
                                 <div class="h-full rounded-full bg-brand-400" style="width:50%"></div>
@@ -1374,7 +1374,7 @@ W22 = '''\
     </script>'''
 
 # ============================================================
-# 23. negocier-salaire — "Simulateur Augmentation"
+# 23. negocier-salaire – "Simulateur Augmentation"
 # ============================================================
 W23 = '''\
 <section class="py-12 px-4">
@@ -1403,15 +1403,15 @@ W23 = '''\
                     <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
                         <div class="rounded-xl bg-brand-50 border border-brand-100 p-4 text-center">
                             <p class="text-sm text-brand-600 font-medium">Nouveau brut</p>
-                            <p class="text-2xl font-bold text-slate-900" id="res-brut">—</p>
+                            <p class="text-2xl font-bold text-slate-900" id="res-brut">–</p>
                         </div>
                         <div class="rounded-xl bg-emerald-50 border border-emerald-200 p-4 text-center">
                             <p class="text-sm text-emerald-600 font-medium">Gain net mensuel</p>
-                            <p class="text-2xl font-bold text-emerald-700" id="res-gain">—</p>
+                            <p class="text-2xl font-bold text-emerald-700" id="res-gain">–</p>
                         </div>
                         <div class="rounded-xl bg-emerald-50 border border-emerald-200 p-4 text-center">
                             <p class="text-sm text-emerald-600 font-medium">Gain net annuel</p>
-                            <p class="text-2xl font-bold text-emerald-700" id="res-annuel">—</p>
+                            <p class="text-2xl font-bold text-emerald-700" id="res-annuel">–</p>
                         </div>
                     </div>
                 </div>
@@ -1445,7 +1445,7 @@ W23 = '''\
 # Additional pages from the plan
 # ============================================================
 
-# salaire-brut-net-2026 — same as mensuel
+# salaire-brut-net-2026 – same as mensuel
 W_BRUT_NET_2026 = W08
 
 # salaire-brut-net-alsace-moselle
@@ -1471,15 +1471,15 @@ W_ALSACE = '''\
                     <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
                         <div class="rounded-xl bg-brand-50 border border-brand-100 p-4 text-center">
                             <p class="text-sm text-brand-600 font-medium">Net Alsace-Moselle</p>
-                            <p class="text-2xl font-bold text-slate-900" id="res-net">—</p>
+                            <p class="text-2xl font-bold text-slate-900" id="res-net">–</p>
                         </div>
                         <div class="rounded-xl bg-slate-50 border border-slate-200 p-4 text-center">
                             <p class="text-sm text-slate-500 font-medium">Net régime général</p>
-                            <p class="text-2xl font-bold text-slate-900" id="res-general">—</p>
+                            <p class="text-2xl font-bold text-slate-900" id="res-general">–</p>
                         </div>
                         <div class="rounded-xl bg-slate-50 border border-slate-200 p-4 text-center">
                             <p class="text-sm text-slate-500 font-medium">Surcoût Alsace-Moselle</p>
-                            <p class="text-2xl font-bold text-slate-900" id="res-ecart">—</p>
+                            <p class="text-2xl font-bold text-slate-900" id="res-ecart">–</p>
                         </div>
                     </div>
                 </div>
@@ -1504,7 +1504,7 @@ W_ALSACE = '''\
     })();
     </script>'''
 
-# simulateur-augmentation — same as negocier-salaire
+# simulateur-augmentation – same as negocier-salaire
 W_AUGMENTATION = W23
 
 # simulateur-impot-sur-le-revenu
@@ -1530,15 +1530,15 @@ W_IMPOT = '''\
                     <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
                         <div class="rounded-xl bg-brand-50 border border-brand-100 p-4 text-center">
                             <p class="text-sm text-brand-600 font-medium">Impôt annuel estimé</p>
-                            <p class="text-2xl font-bold text-slate-900" id="res-impot">—</p>
+                            <p class="text-2xl font-bold text-slate-900" id="res-impot">–</p>
                         </div>
                         <div class="rounded-xl bg-slate-50 border border-slate-200 p-4 text-center">
                             <p class="text-sm text-slate-500 font-medium">Prélèvement mensuel</p>
-                            <p class="text-2xl font-bold text-slate-900" id="res-mensuel">—</p>
+                            <p class="text-2xl font-bold text-slate-900" id="res-mensuel">–</p>
                         </div>
                         <div class="rounded-xl bg-emerald-50 border border-emerald-200 p-4 text-center">
                             <p class="text-sm text-emerald-600 font-medium">Net après impôt</p>
-                            <p class="text-2xl font-bold text-emerald-700" id="res-net">—</p>
+                            <p class="text-2xl font-bold text-emerald-700" id="res-net">–</p>
                         </div>
                     </div>
                 </div>
@@ -1585,15 +1585,15 @@ W_COUT = '''\
                     <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
                         <div class="rounded-xl bg-brand-50 border border-brand-100 p-4 text-center">
                             <p class="text-sm text-brand-600 font-medium">Coût employeur</p>
-                            <p class="text-2xl font-bold text-slate-900" id="res-cout">—</p>
+                            <p class="text-2xl font-bold text-slate-900" id="res-cout">–</p>
                         </div>
                         <div class="rounded-xl bg-slate-50 border border-slate-200 p-4 text-center">
                             <p class="text-sm text-slate-500 font-medium">Cotisations patronales</p>
-                            <p class="text-2xl font-bold text-slate-900" id="res-pat">—</p>
+                            <p class="text-2xl font-bold text-slate-900" id="res-pat">–</p>
                         </div>
                         <div class="rounded-xl bg-slate-50 border border-slate-200 p-4 text-center">
                             <p class="text-sm text-slate-500 font-medium">Net salarié</p>
-                            <p class="text-2xl font-bold text-slate-900" id="res-net">—</p>
+                            <p class="text-2xl font-bold text-slate-900" id="res-net">–</p>
                         </div>
                     </div>
                 </div>
@@ -1648,15 +1648,15 @@ W_TEMPS_PARTIEL = '''\
                     <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
                         <div class="rounded-xl bg-brand-50 border border-brand-100 p-4 text-center">
                             <p class="text-sm text-brand-600 font-medium">Net temps partiel</p>
-                            <p class="text-2xl font-bold text-slate-900" id="res-net">—</p>
+                            <p class="text-2xl font-bold text-slate-900" id="res-net">–</p>
                         </div>
                         <div class="rounded-xl bg-slate-50 border border-slate-200 p-4 text-center">
                             <p class="text-sm text-slate-500 font-medium">Net temps plein</p>
-                            <p class="text-2xl font-bold text-slate-900" id="res-plein">—</p>
+                            <p class="text-2xl font-bold text-slate-900" id="res-plein">–</p>
                         </div>
                         <div class="rounded-xl bg-slate-50 border border-slate-200 p-4 text-center">
                             <p class="text-sm text-slate-500 font-medium">Différence</p>
-                            <p class="text-2xl font-bold text-slate-900" id="res-diff">—</p>
+                            <p class="text-2xl font-bold text-slate-900" id="res-diff">–</p>
                         </div>
                     </div>
                 </div>
@@ -1698,16 +1698,16 @@ W_CADRE_VS = '''\
                     <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-3">
                         <div class="rounded-xl bg-brand-50 border border-brand-100 p-4 text-center">
                             <p class="text-sm text-brand-600 font-medium">Net Cadre</p>
-                            <p class="text-2xl font-bold text-slate-900" id="res-cadre">—</p>
+                            <p class="text-2xl font-bold text-slate-900" id="res-cadre">–</p>
                         </div>
                         <div class="rounded-xl bg-slate-50 border border-slate-200 p-4 text-center">
                             <p class="text-sm text-slate-500 font-medium">Net Non-Cadre</p>
-                            <p class="text-2xl font-bold text-slate-900" id="res-nc">—</p>
+                            <p class="text-2xl font-bold text-slate-900" id="res-nc">–</p>
                         </div>
                     </div>
                     <div class="rounded-xl bg-slate-50 border border-slate-200 p-4 text-center">
                         <p class="text-sm text-slate-500 font-medium">Différence (non-cadre − cadre)</p>
-                        <p class="text-2xl font-bold text-emerald-600" id="res-diff">—</p>
+                        <p class="text-2xl font-bold text-emerald-600" id="res-diff">–</p>
                     </div>
                 </div>
             </div>

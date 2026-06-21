@@ -42,9 +42,9 @@ new_period_render = '''    # Add enrichments
                 {"q": "Le brut mensuel change-t-il selon les mois ?", "a": "Le salaire de base reste fixe, mais le brut peut varier avec les heures supplémentaires, primes ponctuelles ou absences non rémunérées."},
             ])
             p["examples"] = generate_examples([
-                {"name": "Camille, 30 ans", "situation": "Commercial — 2 500 € brut/mois", "brut": "2 500 €", "net": "1 950 €", "net_apres_impot": "1 852 €"},
-                {"name": "Lucas, 27 ans", "situation": "Développeur — 3 200 € brut/mois", "brut": "3 200 €", "net": "2 496 €", "net_apres_impot": "2 296 €"},
-                {"name": "Nadia, 38 ans", "situation": "Infirmière — 2 800 € brut/mois", "brut": "2 800 €", "net": "2 184 €", "net_apres_impot": "2 023 €"},
+                {"name": "Camille, 30 ans", "situation": "Commercial – 2 500 € brut/mois", "brut": "2 500 €", "net": "1 950 €", "net_apres_impot": "1 852 €"},
+                {"name": "Lucas, 27 ans", "situation": "Développeur – 3 200 € brut/mois", "brut": "3 200 €", "net": "2 496 €", "net_apres_impot": "2 296 €"},
+                {"name": "Nadia, 38 ans", "situation": "Infirmière – 2 800 € brut/mois", "brut": "2 800 €", "net": "2 184 €", "net_apres_impot": "2 023 €"},
             ])
         elif "annuel" in p["slug"]:
             p["table"] = generate_conversion_table([2000, 2500, 3000, 3500, 4000, 5000], "non-cadre")
@@ -56,9 +56,9 @@ new_period_render = '''    # Add enrichments
                 {"q": "Le salaire annuel change-t-il selon les années ?", "a": "Oui, grâce aux augmentations individuelles, promotions, primes variables ou indexations conventionnelles."},
             ])
             p["examples"] = generate_examples([
-                {"name": "Antoine, 26 ans", "situation": "Comptable — 28 000 € brut/an", "brut": "2 333 €", "net": "1 820 €", "net_apres_impot": "1 717 €"},
-                {"name": "Sarah, 33 ans", "situation": "Chef de projet — 42 000 € brut/an", "brut": "3 500 €", "net": "2 730 €", "net_apres_impot": "2 485 €"},
-                {"name": "Pierre, 29 ans", "situation": "Designer — 32 000 € brut/an", "brut": "2 667 €", "net": "2 080 €", "net_apres_impot": "1 934 €"},
+                {"name": "Antoine, 26 ans", "situation": "Comptable – 28 000 € brut/an", "brut": "2 333 €", "net": "1 820 €", "net_apres_impot": "1 717 €"},
+                {"name": "Sarah, 33 ans", "situation": "Chef de projet – 42 000 € brut/an", "brut": "3 500 €", "net": "2 730 €", "net_apres_impot": "2 485 €"},
+                {"name": "Pierre, 29 ans", "situation": "Designer – 32 000 € brut/an", "brut": "2 667 €", "net": "2 080 €", "net_apres_impot": "1 934 €"},
             ])
         elif "horaire" in p["slug"]:
             p["table"] = generate_conversion_table([1800, 2200, 2600, 3000, 3500, 4000], "non-cadre")
@@ -70,9 +70,9 @@ new_period_render = '''    # Add enrichments
                 {"q": "Comment comparer un taux horaire brut et net ?", "a": "Multipliez le taux horaire brut par 0,78 (non-cadre) pour obtenir le taux horaire net approximatif."},
             ])
             p["examples"] = generate_examples([
-                {"name": "Lucie, 24 ans", "situation": "Vendeuse — 12,50 €/h brut", "brut": "1 896 €", "net": "1 479 €", "net_apres_impot": "1 419 €"},
-                {"name": "Maxime, 31 ans", "situation": "Électricien — 18 €/h brut", "brut": "2 730 €", "net": "2 129 €", "net_apres_impot": "1 973 €"},
-                {"name": "Clara, 28 ans", "situation": "Aide-soignante — 15 €/h brut", "brut": "2 275 €", "net": "1 775 €", "net_apres_impot": "1 673 €"},
+                {"name": "Lucie, 24 ans", "situation": "Vendeuse – 12,50 €/h brut", "brut": "1 896 €", "net": "1 479 €", "net_apres_impot": "1 419 €"},
+                {"name": "Maxime, 31 ans", "situation": "Électricien – 18 €/h brut", "brut": "2 730 €", "net": "2 129 €", "net_apres_impot": "1 973 €"},
+                {"name": "Clara, 28 ans", "situation": "Aide-soignante – 15 €/h brut", "brut": "2 275 €", "net": "1 775 €", "net_apres_impot": "1 673 €"},
             ])
         else:
             p["table"] = generate_conversion_table([1500, 2000, 2500, 3000, 3500], "non-cadre")

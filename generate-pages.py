@@ -226,7 +226,7 @@ def calculator_widget(default_val=2500, statut_default="non-cadre", mode="brut")
                     </div>
                     <div class="rounded-xl bg-brand-50 border border-brand-100 p-4 text-center">
                         <p class="text-sm text-brand-600 font-medium">{label_result}</p>
-                        <p class="text-3xl font-bold text-slate-900" id="{result_id}">—</p>
+                        <p class="text-3xl font-bold text-slate-900" id="{result_id}">–</p>
                     </div>
                 </div>
             </div>
@@ -1603,9 +1603,9 @@ def gen_status_pages():
                 {"q": "Les cadres paient-ils plus d'impôt ?", "a": "Pas directement. L'impôt dépend du net imposable, pas du statut. Mais les cadres ont généralement des salaires plus élevés, donc un impôt plus important."},
             ])
             p["examples"] = generate_examples([
-                {"name": "Sophie, 32 ans", "situation": "Ingénieure logiciel — cadre", "brut": "3 500 €", "net": "2 693 €", "net_apres_impot": "2 438 €"},
-                {"name": "Marc, 45 ans", "situation": "Directeur commercial — cadre", "brut": "5 000 €", "net": "3 828 €", "net_apres_impot": "3 344 €"},
-                {"name": "Léa, 28 ans", "situation": "Chef de projet marketing — cadre", "brut": "2 800 €", "net": "2 157 €", "net_apres_impot": "1 995 €"},
+                {"name": "Sophie, 32 ans", "situation": "Ingénieure logiciel – cadre", "brut": "3 500 €", "net": "2 693 €", "net_apres_impot": "2 438 €"},
+                {"name": "Marc, 45 ans", "situation": "Directeur commercial – cadre", "brut": "5 000 €", "net": "3 828 €", "net_apres_impot": "3 344 €"},
+                {"name": "Léa, 28 ans", "situation": "Chef de projet marketing – cadre", "brut": "2 800 €", "net": "2 157 €", "net_apres_impot": "1 995 €"},
             ])
         elif slug == "salaire-brut-net-non-cadre":
             p["table"] = generate_conversion_table([1500, 2000, 2500, 3000, 3500, 4000, 5000], "non-cadre")
@@ -2441,9 +2441,9 @@ def gen_period_pages():
                 {"q": "Le brut mensuel change-t-il selon les mois ?", "a": "Le salaire de base reste fixe, mais le brut peut varier avec les heures supplémentaires, primes ponctuelles ou absences non rémunérées."},
             ])
             p["examples"] = generate_examples([
-                {"name": "Camille, 30 ans", "situation": "Commercial — 2 500 € brut/mois", "brut": "2 500 €", "net": "1 950 €", "net_apres_impot": "1 852 €"},
-                {"name": "Lucas, 27 ans", "situation": "Développeur — 3 200 € brut/mois", "brut": "3 200 €", "net": "2 496 €", "net_apres_impot": "2 296 €"},
-                {"name": "Nadia, 38 ans", "situation": "Infirmière — 2 800 € brut/mois", "brut": "2 800 €", "net": "2 184 €", "net_apres_impot": "2 023 €"},
+                {"name": "Camille, 30 ans", "situation": "Commercial – 2 500 € brut/mois", "brut": "2 500 €", "net": "1 950 €", "net_apres_impot": "1 852 €"},
+                {"name": "Lucas, 27 ans", "situation": "Développeur – 3 200 € brut/mois", "brut": "3 200 €", "net": "2 496 €", "net_apres_impot": "2 296 €"},
+                {"name": "Nadia, 38 ans", "situation": "Infirmière – 2 800 € brut/mois", "brut": "2 800 €", "net": "2 184 €", "net_apres_impot": "2 023 €"},
             ])
         elif "annuel" in p["slug"]:
             p["table"] = generate_conversion_table([2000, 2500, 3000, 3500, 4000, 5000], "non-cadre")
@@ -2455,9 +2455,9 @@ def gen_period_pages():
                 {"q": "Le salaire annuel change-t-il selon les années ?", "a": "Oui, grâce aux augmentations individuelles, promotions, primes variables ou indexations conventionnelles."},
             ])
             p["examples"] = generate_examples([
-                {"name": "Antoine, 26 ans", "situation": "Comptable — 28 000 € brut/an", "brut": "2 333 €", "net": "1 820 €", "net_apres_impot": "1 717 €"},
-                {"name": "Sarah, 33 ans", "situation": "Chef de projet — 42 000 € brut/an", "brut": "3 500 €", "net": "2 730 €", "net_apres_impot": "2 485 €"},
-                {"name": "Pierre, 29 ans", "situation": "Designer — 32 000 € brut/an", "brut": "2 667 €", "net": "2 080 €", "net_apres_impot": "1 934 €"},
+                {"name": "Antoine, 26 ans", "situation": "Comptable – 28 000 € brut/an", "brut": "2 333 €", "net": "1 820 €", "net_apres_impot": "1 717 €"},
+                {"name": "Sarah, 33 ans", "situation": "Chef de projet – 42 000 € brut/an", "brut": "3 500 €", "net": "2 730 €", "net_apres_impot": "2 485 €"},
+                {"name": "Pierre, 29 ans", "situation": "Designer – 32 000 € brut/an", "brut": "2 667 €", "net": "2 080 €", "net_apres_impot": "1 934 €"},
             ])
         elif "horaire" in p["slug"]:
             p["table"] = generate_conversion_table([1800, 2200, 2600, 3000, 3500, 4000], "non-cadre")
@@ -2469,9 +2469,9 @@ def gen_period_pages():
                 {"q": "Comment comparer un taux horaire brut et net ?", "a": "Multipliez le taux horaire brut par 0,78 (non-cadre) pour obtenir le taux horaire net approximatif."},
             ])
             p["examples"] = generate_examples([
-                {"name": "Lucie, 24 ans", "situation": "Vendeuse — 12,50 €/h brut", "brut": "1 896 €", "net": "1 479 €", "net_apres_impot": "1 419 €"},
-                {"name": "Maxime, 31 ans", "situation": "Électricien — 18 €/h brut", "brut": "2 730 €", "net": "2 129 €", "net_apres_impot": "1 973 €"},
-                {"name": "Clara, 28 ans", "situation": "Aide-soignante — 15 €/h brut", "brut": "2 275 €", "net": "1 775 €", "net_apres_impot": "1 673 €"},
+                {"name": "Lucie, 24 ans", "situation": "Vendeuse – 12,50 €/h brut", "brut": "1 896 €", "net": "1 479 €", "net_apres_impot": "1 419 €"},
+                {"name": "Maxime, 31 ans", "situation": "Électricien – 18 €/h brut", "brut": "2 730 €", "net": "2 129 €", "net_apres_impot": "1 973 €"},
+                {"name": "Clara, 28 ans", "situation": "Aide-soignante – 15 €/h brut", "brut": "2 275 €", "net": "1 775 €", "net_apres_impot": "1 673 €"},
             ])
         else:
             p["table"] = generate_conversion_table([1500, 2000, 2500, 3000, 3500], "non-cadre")
@@ -4617,16 +4617,16 @@ def gen_tool_pages():
                     <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 mt-4">
                         <div class="rounded-xl bg-brand-50 border border-brand-100 p-4 text-center">
                             <p class="text-xs text-brand-600 font-medium">Coût employeur</p>
-                            <p class="text-2xl font-bold text-slate-900" id="res-cout">—</p>
+                            <p class="text-2xl font-bold text-slate-900" id="res-cout">–</p>
                             <p class="text-xs text-slate-500">par mois</p>
                         </div>
                         <div class="rounded-xl bg-slate-50 border border-slate-200 p-4 text-center">
                             <p class="text-xs text-slate-600 font-medium">Cotisations patronales</p>
-                            <p class="text-2xl font-bold text-slate-900" id="res-patron">—</p>
+                            <p class="text-2xl font-bold text-slate-900" id="res-patron">–</p>
                         </div>
                         <div class="rounded-xl bg-slate-50 border border-slate-200 p-4 text-center">
                             <p class="text-xs text-slate-600 font-medium">Net salarié</p>
-                            <p class="text-2xl font-bold text-slate-900" id="res-net">—</p>
+                            <p class="text-2xl font-bold text-slate-900" id="res-net">–</p>
                         </div>
                     </div>
                 </div>
@@ -4715,16 +4715,16 @@ def gen_tool_pages():
                     <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-6">
                         <div class="rounded-xl bg-brand-50 border border-brand-100 p-4 text-center">
                             <p class="text-xs text-brand-600 font-medium">Brut heures sup / mois</p>
-                            <p class="text-2xl font-bold text-slate-900" id="hs-res-brut">—</p>
+                            <p class="text-2xl font-bold text-slate-900" id="hs-res-brut">–</p>
                         </div>
                         <div class="rounded-xl bg-emerald-50 border border-emerald-200 p-4 text-center">
                             <p class="text-xs text-emerald-700 font-medium">Net heures sup / mois</p>
-                            <p class="text-2xl font-bold text-slate-900" id="hs-res-net">—</p>
+                            <p class="text-2xl font-bold text-slate-900" id="hs-res-net">–</p>
                             <p class="text-xs text-slate-500">exonéré d'impôt</p>
                         </div>
                         <div class="rounded-xl bg-slate-50 border border-slate-200 p-4 text-center">
                             <p class="text-xs text-slate-600 font-medium">Coût employeur heures sup</p>
-                            <p class="text-2xl font-bold text-slate-900" id="hs-res-cout">—</p>
+                            <p class="text-2xl font-bold text-slate-900" id="hs-res-cout">–</p>
                         </div>
                     </div>
 
@@ -4732,15 +4732,15 @@ def gen_tool_pages():
                     <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-4">
                         <div class="rounded-xl bg-slate-50 border border-slate-200 p-4 text-center">
                             <p class="text-xs text-slate-600 font-medium">Total brut / mois</p>
-                            <p class="text-2xl font-bold text-slate-900" id="hs-tot-brut">—</p>
+                            <p class="text-2xl font-bold text-slate-900" id="hs-tot-brut">–</p>
                         </div>
                         <div class="rounded-xl bg-slate-50 border border-slate-200 p-4 text-center">
                             <p class="text-xs text-slate-600 font-medium">Total net / mois</p>
-                            <p class="text-2xl font-bold text-slate-900" id="hs-tot-net">—</p>
+                            <p class="text-2xl font-bold text-slate-900" id="hs-tot-net">–</p>
                         </div>
                         <div class="rounded-xl bg-slate-50 border border-slate-200 p-4 text-center">
                             <p class="text-xs text-slate-600 font-medium">Total coût employeur</p>
-                            <p class="text-2xl font-bold text-slate-900" id="hs-tot-cout">—</p>
+                            <p class="text-2xl font-bold text-slate-900" id="hs-tot-cout">–</p>
                         </div>
                     </div>
 

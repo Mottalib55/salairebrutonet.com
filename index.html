@@ -42,9 +42,15 @@
     <!-- Manifest -->
     <link rel="manifest" href="/manifest.webmanifest">
 
+    <!-- Font preloading -->
+    <link rel="preload" href="/fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
+
     <!-- Fonts & Styles -->
     <link rel="stylesheet" href="/css/fonts.css">
     <link rel="stylesheet" href="/css/style.css">
+
+    <!-- Plausible Analytics (uncomment to enable) -->
+    <!-- <script defer data-domain="salairebrutonet.com" src="https://plausible.io/js/script.js"></script> -->
 
     <!-- Microsoft Clarity -->
     <script type="text/javascript">(function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y)})(window,document,"clarity","script","CLARITY_PROJECT_ID");</script>
@@ -1245,7 +1251,7 @@
                     '<tbody>' + cotPatRows + '</tbody>' +
                 '</table>' +
 
-                '<div class="print-footer">Généré sur salairebrutonet.com — Estimation indicative, ne remplace pas un bulletin de paie officiel</div>';
+                '<div class="print-footer">Généré sur salairebrutonet.com – Estimation indicative, ne remplace pas un bulletin de paie officiel</div>';
 
             window.print();
         }

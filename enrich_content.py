@@ -98,9 +98,9 @@ new_status_render = '''    # Add enrichment data
             p["table"] = generate_conversion_table([1500, 2000, 2500, 3000, 3500, 4000, 5000], "cadre")
             p["faqs"] = generate_faq_section(STATUS_FAQS["cadre"])
             p["examples"] = generate_examples([
-                {"name": "Sophie, 32 ans", "situation": "Ingénieure logiciel — cadre", "brut": "3 500 €", "net": "2 693 €", "net_apres_impot": "2 438 €"},
-                {"name": "Marc, 45 ans", "situation": "Directeur commercial — cadre", "brut": "5 000 €", "net": "3 828 €", "net_apres_impot": "3 344 €"},
-                {"name": "Léa, 28 ans", "situation": "Chef de projet marketing — cadre", "brut": "2 800 €", "net": "2 157 €", "net_apres_impot": "1 995 €"},
+                {"name": "Sophie, 32 ans", "situation": "Ingénieure logiciel – cadre", "brut": "3 500 €", "net": "2 693 €", "net_apres_impot": "2 438 €"},
+                {"name": "Marc, 45 ans", "situation": "Directeur commercial – cadre", "brut": "5 000 €", "net": "3 828 €", "net_apres_impot": "3 344 €"},
+                {"name": "Léa, 28 ans", "situation": "Chef de projet marketing – cadre", "brut": "2 800 €", "net": "2 157 €", "net_apres_impot": "1 995 €"},
             ])
         elif "non-cadre" in p["slug"]:
             p["table"] = generate_conversion_table([1500, 2000, 2500, 3000, 3500, 4000, 5000], "non-cadre")
