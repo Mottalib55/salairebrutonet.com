@@ -1,69 +1,44 @@
-#!/usr/bin/env bash
-# submit-indexnow.sh - Submit all sitemap URLs to IndexNow API
+#!/bin/bash
+# submit-indexnow.sh — Submit all sitemap URLs to IndexNow API
 # Usage: ./scripts/submit-indexnow.sh
 
 set -euo pipefail
 
-SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
-PROJECT_ROOT="$(cd "$SCRIPT_DIR/.." && pwd)"
-
-# Load API key from .env
-if [ -f "$SCRIPT_DIR/.env" ]; then
-    source "$SCRIPT_DIR/.env"
-fi
-
-API_KEY="${BING_API_KEY:-dc6156f9d98f4267ab490ed4b6606c7a}"
+DOMAIN="https://salairebrutonet.com"
 HOST="salairebrutonet.com"
-KEY_LOCATION="https://${HOST}/dc6156f9d98f4267ab490ed4b6606c7a.txt"
-ENDPOINT="https://api.indexnow.org/indexnow"
-SITEMAP_URL="https://${HOST}/sitemap.xml"
+KEY="dc6156f9d98f4267ab490ed4b6606c7a"
+API="https://www.bing.com/indexnow"
 
-# Fetch sitemap and extract URLs
-echo "Fetching sitemap from ${SITEMAP_URL}..."
-SITEMAP_CONTENT=$(curl -s "$SITEMAP_URL")
+echo "Fetching sitemap..."
+ALL_URLS=$(curl -s "$DOMAIN/sitemap.xml" | grep -o '<loc>[^<]*</loc>' | sed 's/<loc>//g;s/<\/loc>//g')
+TOTAL=$(echo "$ALL_URLS" | wc -l | tr -d ' ')
+echo "Found $TOTAL URLs in sitemap."
 
-if [ -z "$SITEMAP_CONTENT" ]; then
-    echo "Error: Could not fetch sitemap from ${SITEMAP_URL}"
-    echo "Falling back to local sitemap.xml..."
-    SITEMAP_CONTENT=$(cat "$PROJECT_ROOT/sitemap.xml" 2>/dev/null || true)
-fi
+# Build JSON payload
+URL_LIST=$(echo "$ALL_URLS" | jq -R -s -c 'split("\n") | map(select(length > 0))')
 
-if [ -z "$SITEMAP_CONTENT" ]; then
-    echo "Error: No sitemap content available."
-    exit 1
-fi
+JSON=$(jq -n \
+  --arg host "$HOST" \
+  --arg key "$KEY" \
+  --argjson urlList "$URL_LIST" \
+  '{host: $host, key: $key, keyLocation: ("https://" + $host + "/" + $key + ".txt"), urlList: $urlList}')
 
-# Extract URLs from sitemap (compatible with both Linux and macOS)
-URLS=$(echo "$SITEMAP_CONTENT" | grep -o '<loc>[^<]*</loc>' | sed 's/<loc>//g;s/<\/loc>//g')
+echo "Submitting $TOTAL URLs to IndexNow..."
 
-if [ -z "$URLS" ]; then
-    echo "No URLs found in sitemap."
-    exit 1
-fi
+RESPONSE=$(curl -s -X POST "$API" \
+  -H "Content-Type: application/json; charset=utf-8" \
+  -d "$JSON" \
+  -w "\nHTTP_STATUS:%{http_code}")
 
-URL_COUNT=$(echo "$URLS" | wc -l | tr -d ' ')
-echo "Found ${URL_COUNT} URLs to submit."
+HTTP_CODE=$(echo "$RESPONSE" | grep -o 'HTTP_STATUS:[0-9]*' | cut -d: -f2)
+BODY=$(echo "$RESPONSE" | sed '/HTTP_STATUS/d')
 
-# Build JSON array of URLs
-URL_JSON=$(echo "$URLS" | while IFS= read -r url; do echo "\"$url\""; done | paste -sd, -)
-
-# Submit to IndexNow
-echo "Submitting ${URL_COUNT} URLs to IndexNow..."
-
-HTTP_CODE=$(curl -s -o /dev/stderr -w "%{http_code}" -X POST "$ENDPOINT" \
-    -H "Content-Type: application/json; charset=utf-8" \
-    -d "{
-        \"host\": \"${HOST}\",
-        \"key\": \"${API_KEY}\",
-        \"keyLocation\": \"${KEY_LOCATION}\",
-        \"urlList\": [${URL_JSON}]
-    }" 2>&1)
-
-echo ""
-echo "IndexNow API response code: ${HTTP_CODE}"
-
-if [ "$HTTP_CODE" = "200" ] || [ "$HTTP_CODE" = "202" ]; then
-    echo "Success! ${URL_COUNT} URLs submitted to IndexNow."
-else
-    echo "Warning: Unexpected response code ${HTTP_CODE}."
-fi
+case "$HTTP_CODE" in
+  200) echo "Success! $TOTAL URLs submitted and accepted." ;;
+  202) echo "Success! $TOTAL URLs submitted and accepted for processing." ;;
+  400) echo "Error 400 (Bad Request): $BODY" ;;
+  403) echo "Error 403 (Forbidden): Key not valid. $BODY" ;;
+  422) echo "Error 422 (Unprocessable): URLs don't belong to the host. $BODY" ;;
+  429) echo "Error 429 (Too Many Requests): Try again later. $BODY" ;;
+  *)   echo "Unexpected response (HTTP $HTTP_CODE): $BODY" ;;
+esac
