@@ -7,8 +7,13 @@ Usage : python generate.py
 """
 
 import os
+import sys
 import math
 from datetime import date
+
+# Add scripts/ to path for content module import
+sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), "scripts"))
+from content_salary_pages import generate_contextual_content
 
 # ── Configuration ──────────────────────────────────────────────────────────────
 
@@ -231,20 +236,24 @@ def build_description_brut_net(montant, nc, c):
     else:
         context = f"Ce salaire est nettement supérieur au salaire médian français et correspond à un profil senior ou cadre supérieur."
 
-    return f"""<h2 class="text-xl font-semibold text-slate-900">{fmt(montant)} € brut en net : tout savoir</h2>
+    base = f"""<h2 class="text-xl font-semibold text-slate-900">{fmt(montant)} € brut en net : tout savoir</h2>
 <p>Avec un salaire de <strong>{fmt(montant)} € brut mensuel</strong>, vous toucherez environ <strong>{fmt(nc['net_avant_impot'])} € net par mois</strong> si vous êtes non-cadre, ou <strong>{fmt(c['net_avant_impot'])} € net</strong> si vous êtes cadre. {context}</p>
 <p>Sur une base annuelle, cela représente <strong>{fmt(brut_annuel)} € brut</strong> soit environ <strong>{fmt(net_annuel_nc)} € net annuel</strong> avant prélèvement à la source pour un non-cadre.</p>
 <p>Le coût total pour votre employeur est d'environ <strong>{fmt(nc['cout_employeur'])} € par mois</strong>, soit {fmt(round(nc['cout_employeur'] * 12))} € par an, en incluant les cotisations patronales.</p>
 <p>Après prélèvement à la source (estimation pour un célibataire sans enfant), votre salaire net mensuel serait d'environ <strong>{fmt(nc['net_apres_impot'])} €</strong> (non-cadre) ou <strong>{fmt(c['net_apres_impot'])} €</strong> (cadre).</p>"""
+    contextual = generate_contextual_content(montant, "brut-en-net")
+    return base + "\n" + contextual
 
 
 def build_description_net_brut(montant, nc, c):
     """Build contextual description for net→brut pages."""
-    return f"""<h2 class="text-xl font-semibold text-slate-900">{fmt(montant)} € net en brut : tout savoir</h2>
+    base = f"""<h2 class="text-xl font-semibold text-slate-900">{fmt(montant)} € net en brut : tout savoir</h2>
 <p>Si vous souhaitez toucher <strong>{fmt(montant)} € net par mois</strong>, vous devez négocier un salaire brut d'environ <strong>{fmt(nc['brut_mensuel'])} € brut mensuel</strong> en tant que non-cadre, ou <strong>{fmt(c['brut_mensuel'])} € brut</strong> en tant que cadre.</p>
 <p>La différence entre les deux statuts s'explique par la cotisation CET (Contribution d'Équilibre Technique) supplémentaire de 0,14% pour les cadres, qui nécessite un brut légèrement plus élevé pour atteindre le même net.</p>
 <p>Sur une base annuelle, cela correspond à un salaire brut de <strong>{fmt(nc['brut_annuel'])} €</strong> (non-cadre) ou <strong>{fmt(c['brut_annuel'])} €</strong> (cadre).</p>
 <p>Le coût total pour l'employeur serait d'environ <strong>{fmt(nc['cout_employeur'])} € par mois</strong> (non-cadre), soit le brut majoré d'environ 45% de cotisations patronales.</p>"""
+    contextual = generate_contextual_content(montant, "net-en-brut")
+    return base + "\n" + contextual
 
 
 # ── Génération des pages ───────────────────────────────────────────────────────
