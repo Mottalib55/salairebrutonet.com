@@ -160,11 +160,10 @@ def add_article_schema(html, title, description, canonical_url):
         "dateModified": "2026-06-20",
         "inLanguage": "fr",
         "author": {
-            "@type": "Person",
-            "name": "Mottalib Radif",
+            "@type": "Organization",
+            "name": "Radif Partners",
             "url": "https://salairebrutonet.com/a-propos/",
-            "image": "https://salairebrutonet.com/team/mottalib-radif.jpg"
-        },
+            },
         "publisher": {
             "@type": "Organization",
             "name": "SalaireBrutNet",

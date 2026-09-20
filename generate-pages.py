@@ -36,7 +36,7 @@ def page_head(title, description, canonical, keywords=""):
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
     <meta name="robots" content="index, follow">
-    <meta name="author" content="Mottalib Radif">
+    <meta name="author" content="Radif Partners">
     <meta name="keywords" content="{keywords}">
     <link rel="manifest" href="/manifest.webmanifest">
     <link rel="stylesheet" href="/css/fonts.css">
@@ -61,10 +61,10 @@ def page_head(title, description, canonical, keywords=""):
         "logo": "https://salairebrutonet.com/img/logo.svg",
         "description": "Simulateur gratuit de conversion salaire brut en net pour la France. Taux 2026 à jour, cadre et non-cadre.",
         "founder": {{
-            "@type": "Person",
-            "name": "Mottalib Radif",
+            "@type": "Organization",
+            "name": "Radif Partners",
             "url": "https://salairebrutonet.com/a-propos/",
-            "image": "https://salairebrutonet.com/team/mottalib-radif.jpg",
+            
             "jobTitle": "Fondateur"
         }}
     }}
@@ -72,10 +72,10 @@ def page_head(title, description, canonical, keywords=""):
     <script type="application/ld+json">
     {{
         "@context": "https://schema.org",
-        "@type": "Person",
-        "name": "Mottalib Radif",
+        "@type": "Organization",
+        "name": "Radif Partners",
         "url": "https://salairebrutonet.com/a-propos/",
-        "image": "https://salairebrutonet.com/team/mottalib-radif.jpg",
+        
         "jobTitle": "Fondateur de SalaireBrutNet",
         "worksFor": {{
             "@type": "Organization",

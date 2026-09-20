@@ -16,8 +16,7 @@ SKIP_DIRS = ['prime-brut-en-net']
 BYLINE_HTML = '''
                 <div class="flex flex-wrap items-center gap-3 text-sm text-slate-500 mt-3">
                     <div class="flex items-center gap-2">
-                        <img src="/team/mottalib-radif.jpg" alt="Mottalib Radif" class="h-6 w-6 rounded-full object-cover" width="24" height="24" loading="lazy">
-                        <span>Par <a href="/a-propos/" class="font-medium text-slate-700 hover:text-brand-600">Mottalib Radif</a></span>
+                        <span>Par <a href="/a-propos/" class="font-medium text-slate-700 hover:text-brand-600">Radif Partners</a></span>
                     </div>
                     <span class="text-slate-300">&middot;</span>
                     <time datetime="2026-01-15">Publi\u00e9 le 15 janv. 2026</time>
