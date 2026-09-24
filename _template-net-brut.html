@@ -69,6 +69,9 @@
             "@type": "Organization",
             "name": "Radif Partners",
             "url": "https://salairebrutonet.com/a-propos/",
+            "foundingDate": "2025-01-01",
+            "publishingPrinciples": "https://salairebrutonet.com/a-propos/",
+            "knowsAbout": ["salaire brut et net", "cotisations sociales", "impôt sur le revenu", "droit du travail français"],
             }
     }
     </script>
@@ -78,6 +81,9 @@
         "@type": "Organization",
         "name": "Radif Partners",
         "url": "https://salairebrutonet.com/a-propos/",
+            "foundingDate": "2025-01-01",
+            "publishingPrinciples": "https://salairebrutonet.com/a-propos/",
+            "knowsAbout": ["salaire brut et net", "cotisations sociales", "impôt sur le revenu", "droit du travail français"],
         
         "jobTitle": "Expert en finance personnelle et fiscalité",
         "description": "Expert en finance personnelle et fiscalité française. Spécialisé dans l'analyse des mécanismes de rémunération et des cotisations sociales en France.",
@@ -92,12 +98,32 @@
             {
                 "@type": "Question",
                 "name": "{{MONTANT_FORMATE}} euros net, c'est combien en brut ?",
-                "acceptedAnswer": { "@type": "Answer", "text": "Un salaire de {{MONTANT_FORMATE}}€ net mensuel correspond à environ {{BRUT_NON_CADRE_FORMATE}}€ brut pour un non-cadre et {{BRUT_CADRE_FORMATE}}€ brut pour un cadre." }
+                "acceptedAnswer": { "@type": "Answer", "text": "Un salaire de {{MONTANT_FORMATE}}€ net mensuel correspond à environ {{BRUT_NON_CADRE_FORMATE}}€ brut pour un non-cadre et {{BRUT_CADRE_FORMATE}}€ brut pour un cadre. La différence s'explique par les cotisations salariales plus élevées des cadres, en particulier la retraite complémentaire. Ces montants valent pour un temps plein, hors primes et hors mutuelle d'entreprise." }
             },
             {
                 "@type": "Question",
                 "name": "Comment calculer le brut à partir de {{MONTANT_FORMATE}}€ net ?",
                 "acceptedAnswer": { "@type": "Answer", "text": "Pour passer de {{MONTANT_FORMATE}}€ net au brut, il faut ajouter les cotisations salariales (environ 22% pour un non-cadre, 25% pour un cadre). Le calcul exact nécessite de prendre en compte le plafond de la Sécurité sociale et les différents taux de cotisations." }
+            },
+            {
+                "@type": "Question",
+                "name": "Combien coûte un salarié à {{MONTANT_FORMATE}} € net pour l'employeur ?",
+                "acceptedAnswer": { "@type": "Answer", "text": "Au-delà du brut, l'employeur verse les cotisations patronales, de l'ordre de 40 % du brut pour un non-cadre. Pour {{MONTANT_FORMATE}} € net, le coût total s'établit autour de {{COUT_EMPLOYEUR_NC_FORMATE}} € par mois pour un non-cadre et {{COUT_EMPLOYEUR_C_FORMATE}} € pour un cadre. C'est ce montant, et non le brut, qui figure dans le budget de l'entreprise." }
+            },
+            {
+                "@type": "Question",
+                "name": "Quel salaire annuel brut pour {{MONTANT_FORMATE}} € net par mois ?",
+                "acceptedAnswer": { "@type": "Answer", "text": "Sur douze mois, {{MONTANT_FORMATE}} € net correspondent à environ {{BRUT_ANNUEL_NC_FORMATE}} € brut annuels pour un non-cadre et {{BRUT_ANNUEL_C_FORMATE}} € pour un cadre. Un treizième mois, une prime ou des heures supplémentaires s'ajoutent à ce total et modifient le net mensuel du mois où ils sont versés, car ils sont soumis aux mêmes cotisations." }
+            },
+            {
+                "@type": "Question",
+                "name": "Les {{MONTANT_FORMATE}} € net sont-ils bien ce qui arrive sur le compte ?",
+                "acceptedAnswer": { "@type": "Answer", "text": "Presque : il s'agit du net avant impôt. Depuis le prélèvement à la source, l'employeur retient l'impôt sur le revenu directement sur la paie, si bien que le montant viré est inférieur au net social affiché ici. Le taux appliqué dépend de votre foyer fiscal et figure sur votre avis d'imposition." }
+            },
+            {
+                "@type": "Question",
+                "name": "Pourquoi un cadre a-t-il besoin d'un brut plus élevé pour {{MONTANT_FORMATE}} € net ?",
+                "acceptedAnswer": { "@type": "Answer", "text": "Parce que ses cotisations salariales sont plus lourdes, principalement la retraite complémentaire Agirc-Arrco, dont le taux augmente au-delà du plafond de la Sécurité sociale, et la contribution d'équilibre technique. À {{MONTANT_FORMATE}} € net, l'écart de brut entre les deux statuts atteint quelques dizaines d'euros par mois, en contrepartie de droits à retraite supérieurs." }
             }
         ]
     }
@@ -196,6 +222,7 @@
                 <h1 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-slate-900 mb-6">
                     <span class="text-brand-600">{{MONTANT_FORMATE}} €</span> net en brut
                 </h1>
+<p class="maj-haut text-xs text-slate-500 mb-4">Mise à jour le <time datetime="{{DATE_MAJ}}">{{DATE_MAJ_LISIBLE}}</time> · Radif Partners</p>
                 <div class="flex flex-wrap items-center justify-center gap-3 text-sm text-slate-500 mb-6">
                     <div class="flex items-center gap-2">
                         <span>Par <a href="/a-propos/" class="font-medium text-slate-700 hover:text-brand-600">Radif Partners</a></span>
@@ -350,16 +377,52 @@
                             <svg class="h-5 w-5 text-slate-400 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
                         </button>
                         <div class="faq-content hidden px-5 pb-5">
-                            <p class="text-sm text-slate-600">Un salaire de {{MONTANT_FORMATE}} € net mensuel correspond à environ <strong>{{BRUT_NON_CADRE_FORMATE}} € brut pour un non-cadre</strong> et <strong>{{BRUT_CADRE_FORMATE}} € brut pour un cadre</strong>. La différence s'explique par les cotisations salariales plus élevées des cadres.</p>
+                            <p class="text-sm text-slate-600">Un salaire de {{MONTANT_FORMATE}} € net mensuel correspond à environ <strong>{{BRUT_NON_CADRE_FORMATE}} € brut pour un non-cadre</strong> et <strong>{{BRUT_CADRE_FORMATE}} € brut pour un cadre</strong>. La différence s'explique par les cotisations salariales plus élevées des cadres, en particulier la retraite complémentaire. Ces montants valent pour un temps plein, hors primes et hors mutuelle d'entreprise.</p>
                         </div>
                     </div>
                     <div class="rounded-xl border border-slate-200 bg-white">
                         <button class="faq-toggle w-full flex items-center justify-between p-5 text-left">
-                            <span class="font-medium text-slate-900">Comment calculer le brut à partir du net ?</span>
+                            <span class="font-medium text-slate-900">Comment calculer le brut à partir de {{MONTANT_FORMATE}}€ net ?</span>
                             <svg class="h-5 w-5 text-slate-400 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
                         </button>
                         <div class="faq-content hidden px-5 pb-5">
-                            <p class="text-sm text-slate-600">Pour passer du net au brut, il faut diviser par (1 - taux de cotisations). En pratique, le calcul est plus complexe car certaines cotisations sont plafonnées. Pour un non-cadre, multipliez le net par environ 1.28. Pour un cadre, multipliez par environ 1.33. Notre calculateur effectue le calcul exact.</p>
+                            <p class="text-sm text-slate-600">Pour passer de {{MONTANT_FORMATE}}€ net au brut, il faut ajouter les cotisations salariales (environ 22% pour un non-cadre, 25% pour un cadre). Le calcul exact nécessite de prendre en compte le plafond de la Sécurité sociale et les différents taux de cotisations.</p>
+                        </div>
+                    </div>
+                    <div class="rounded-xl border border-slate-200 bg-white">
+                        <button class="faq-toggle w-full flex items-center justify-between p-5 text-left">
+                            <span class="font-medium text-slate-900">Combien coûte un salarié à {{MONTANT_FORMATE}} € net pour l'employeur ?</span>
+                            <svg class="h-5 w-5 text-slate-400 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+                        </button>
+                        <div class="faq-content hidden px-5 pb-5">
+                            <p class="text-sm text-slate-600">Au-delà du brut, l'employeur verse les cotisations patronales, de l'ordre de 40 % du brut pour un non-cadre. Pour {{MONTANT_FORMATE}} € net, le coût total s'établit autour de {{COUT_EMPLOYEUR_NC_FORMATE}} € par mois pour un non-cadre et {{COUT_EMPLOYEUR_C_FORMATE}} € pour un cadre. C'est ce montant, et non le brut, qui figure dans le budget de l'entreprise.</p>
+                        </div>
+                    </div>
+                    <div class="rounded-xl border border-slate-200 bg-white">
+                        <button class="faq-toggle w-full flex items-center justify-between p-5 text-left">
+                            <span class="font-medium text-slate-900">Quel salaire annuel brut pour {{MONTANT_FORMATE}} € net par mois ?</span>
+                            <svg class="h-5 w-5 text-slate-400 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+                        </button>
+                        <div class="faq-content hidden px-5 pb-5">
+                            <p class="text-sm text-slate-600">Sur douze mois, {{MONTANT_FORMATE}} € net correspondent à environ {{BRUT_ANNUEL_NC_FORMATE}} € brut annuels pour un non-cadre et {{BRUT_ANNUEL_C_FORMATE}} € pour un cadre. Un treizième mois, une prime ou des heures supplémentaires s'ajoutent à ce total et modifient le net mensuel du mois où ils sont versés, car ils sont soumis aux mêmes cotisations.</p>
+                        </div>
+                    </div>
+                    <div class="rounded-xl border border-slate-200 bg-white">
+                        <button class="faq-toggle w-full flex items-center justify-between p-5 text-left">
+                            <span class="font-medium text-slate-900">Les {{MONTANT_FORMATE}} € net sont-ils bien ce qui arrive sur le compte ?</span>
+                            <svg class="h-5 w-5 text-slate-400 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+                        </button>
+                        <div class="faq-content hidden px-5 pb-5">
+                            <p class="text-sm text-slate-600">Presque : il s'agit du net avant impôt. Depuis le prélèvement à la source, l'employeur retient l'impôt sur le revenu directement sur la paie, si bien que le montant viré est inférieur au net social affiché ici. Le taux appliqué dépend de votre foyer fiscal et figure sur votre avis d'imposition.</p>
+                        </div>
+                    </div>
+                    <div class="rounded-xl border border-slate-200 bg-white">
+                        <button class="faq-toggle w-full flex items-center justify-between p-5 text-left">
+                            <span class="font-medium text-slate-900">Pourquoi un cadre a-t-il besoin d'un brut plus élevé pour {{MONTANT_FORMATE}} € net ?</span>
+                            <svg class="h-5 w-5 text-slate-400 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+                        </button>
+                        <div class="faq-content hidden px-5 pb-5">
+                            <p class="text-sm text-slate-600">Parce que ses cotisations salariales sont plus lourdes, principalement la retraite complémentaire Agirc-Arrco, dont le taux augmente au-delà du plafond de la Sécurité sociale, et la contribution d'équilibre technique. À {{MONTANT_FORMATE}} € net, l'écart de brut entre les deux statuts atteint quelques dizaines d'euros par mois, en contrepartie de droits à retraite supérieurs.</p>
                         </div>
                     </div>
                 </div>
@@ -430,10 +493,15 @@
                 <a href="/" class="text-xs text-slate-500 hover:text-slate-900">Calculateur</a>
                 <a href="/simulateur-impot-sur-le-revenu/" class="text-xs text-slate-500 hover:text-slate-900">Simulateur Impôts</a>
                 <a href="/cadre-vs-non-cadre/" class="text-xs text-slate-500 hover:text-slate-900">Cadre vs Non-cadre</a>
+                <a href="/confidentialite/" class="text-xs text-slate-500 hover:text-slate-900">Confidentialité</a>
+                <a href="/methodologie/" class="text-xs text-slate-500 hover:text-slate-900">Méthodologie</a>
                 <a href="/mentions-legales/" class="text-xs text-slate-500 hover:text-slate-900">Mentions légales</a>
                 <a href="/a-propos/" class="text-xs text-slate-500 hover:text-slate-900">À propos</a>
                 <a href="/mission/" class="text-xs text-slate-500 hover:text-slate-900">Notre Mission</a>
             </div>
+            <p class="text-xs text-slate-500 w-full text-center" data-author="Radif Partners">
+                Édité par Radif Partners · Mise à jour le <time datetime="{{DATE_MAJ}}">{{DATE_MAJ_LISIBLE}}</time>
+            </p>
         </div>
     </footer>
 

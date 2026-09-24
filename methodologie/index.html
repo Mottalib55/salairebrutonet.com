@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="fr" class="scroll-smooth"><head>
+    <meta name="msvalidate.01" content="15b1d26333aa4cd7a1cdba8e813bfc7f" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Méthodologie : comment nous calculons le salaire net</title>
+    <meta name="description" content="Les taux de cotisations retenus, l'ordre des calculs, ce que l'estimation ne couvre pas, la fréquence des mises à jour et les sources officielles utilisées.">
+    <link rel="canonical" href="https://salairebrutonet.com/methodologie/">
+    <link rel="icon" type="image/svg+xml" href="/img/logo.svg">
+    <link rel="icon" type="image/png" sizes="32x32" href="/img/favicon-32.png">
+    <link rel="apple-touch-icon" sizes="192x192" href="/img/favicon-192.png">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://salairebrutonet.com/a-propos/">
+    <meta property="og:title" content="À propos de SalaireBrutNet.com - Qui sommes-nous ?">
+    <meta property="og:description" content="Decouvrez l'équipe derriere SalaireBrutNet.com. Notre mission : rendre le calcul du salaire brut en net simple, transparent et accessible a tous.">
+    <meta property="og:locale" content="fr_FR">
+    <meta property="og:site_name" content="SalaireBrutNet">
+    <meta property="og:image" content="https://salairebrutonet.com/img/og-image.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="Decouvrez l'équipe derriere SalaireBrutNet.com. Notre mission : rendre le calcul du salaire brut en net simple, transparent et accessible à tous en France.">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="À propos de SalaireBrutNet.com - Qui sommes-nous ?">
+    <meta name="twitter:description" content="Decouvrez l'équipe derriere SalaireBrutNet.com. Notre mission : rendre le calcul du salaire brut en net simple, transparent et accessible à tous en France.">
+    <meta name="twitter:image" content="https://salairebrutonet.com/img/og-image.png">
+    <meta name="robots" content="index, follow">
+    <meta name="author" content="Radif Partners">
+    <link rel="manifest" href="/manifest.webmanifest">
+
+    <link rel="preload" href="/fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="stylesheet" href="/css/fonts.css">
+    <link rel="stylesheet" href="/css/style.css">
+
+    <!-- Google Analytics 4 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-PZCT3WCT9D"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-PZCT3WCT9D');
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Radif Partners",
+  "url": "https://salairebrutonet.com/a-propos/",
+  "foundingDate": "2025-01-01",
+  "publishingPrinciples": "https://salairebrutonet.com/a-propos/",
+  "knowsAbout": ["salaire brut et net", "cotisations sociales", "impôt sur le revenu", "droit du travail français"],
+  "description": "Radif Partners édite SalaireBrutNet.com, calculateur de salaire fondé sur les taux publiés par l'URSSAF et l'administration fiscale."
+}
+</script>
+</head>
+<body class="bg-slate-50 text-slate-600 antialiased selection:bg-brand-100 selection:text-brand-900 flex flex-col min-h-screen">
+
+    <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-2 focus:left-2 focus:z-[100] focus:px-4 focus:py-2 focus:bg-brand-600 focus:text-white focus:rounded-lg focus:text-sm focus:font-semibold">Aller au contenu</a>
+
+    <header class="sticky top-0 z-50 w-full border-b border-slate-200 bg-white/90 backdrop-blur-md">
+        <div class="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
+            <a href="/" class="flex items-center gap-2">
+                <img src="/img/logo.svg" alt="SalaireBrutNet" class="h-8 w-8">
+                <span class="text-base font-semibold tracking-tight text-slate-900">SalaireBrutNet</span>
+            </a>
+                        <nav class="hidden md:flex gap-8 items-center">
+                <a href="/" class="text-sm font-medium text-slate-500 hover:text-slate-900 transition-colors">Calcul Brut Net</a>
+                <div class="relative nav-guides">
+                    <button id="btn-guides-desktop" class="text-sm font-medium text-slate-500 hover:text-slate-900 transition-colors inline-flex items-center gap-1">
+                        Guides
+                        <svg class="h-3.5 w-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+                    </button>
+                    <div class="mega-menu">
+                        <div class="mega-menu-grid" style="grid-template-columns: repeat(2, 1fr);">
+                            <div class="mega-menu-col">
+                                <h3>Guides</h3>
+                                <a href="/cadre-vs-non-cadre/">Cadre vs Non-cadre</a>
+                                <a href="/prime-brut-en-net/">Prime brut en net</a>
+                                <a href="/salaire-brut-net-interim/">Salaire intérim</a>
+                                <a href="/comparateur-salaire-net-par-pays/">Comparateur par pays</a>
+                            </div>
+                            <div class="mega-menu-col">
+                                <h3>Conversions populaires</h3>
+                                <a href="/1500-euros-net-en-brut/">1 500 € net en brut</a>
+                                <a href="/1900-euros-net-en-brut/">1 900 € net en brut</a>
+                                <a href="/3300-euros-net-en-brut/">3 300 € net en brut</a>
+                                <a href="/4400-euros-net-en-brut/">4 400 € net en brut</a>
+                                <a href="/5000-euros-net-en-brut/">5 000 € net en brut</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <a href="/simulateur-impot-sur-le-revenu/" class="text-sm font-medium text-slate-500 hover:text-slate-900 transition-colors">Simulateur Impôts</a>
+                <a href="/mission/" class="text-sm font-medium text-slate-500 hover:text-slate-900 transition-colors">Notre Mission</a>
+            </nav>
+            <div class="flex items-center gap-3">
+                <button id="btn-share" class="hidden sm:inline-flex items-center gap-2 rounded-lg bg-slate-900 px-4 py-2 text-sm font-medium text-white shadow-sm hover:bg-slate-800 transition-colors">
+                    <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>
+                    Partager
+                </button>
+                <button id="btn-hamburger" class="md:hidden inline-flex items-center justify-center w-10 h-10 rounded-lg hover:bg-slate-100 transition-colors" aria-label="Menu">
+                    <svg id="hamburger-icon" class="h-6 w-6 text-slate-700" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="18" y2="18"/></svg>
+                    <svg id="close-icon" class="h-6 w-6 text-slate-700 hidden" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
+                </button>
+            </div>
+        </div>
+                <div id="mobile-nav" class="mobile-nav">
+            <div class="mobile-nav-main"><a href="/">Calcul Brut Net</a><a href="/simulateur-impot-sur-le-revenu/">Simulateur Impôts</a><a href="/mission/">Notre Mission</a></div>
+            <div class="mobile-nav-section">
+                <h3>Guides</h3>
+                <div class="mobile-nav-links">
+                    <a href="/cadre-vs-non-cadre/">Cadre vs Non-cadre</a>
+                    <a href="/prime-brut-en-net/">Prime brut en net</a>
+                    <a href="/salaire-brut-net-interim/">Salaire intérim</a>
+                    <a href="/comparateur-salaire-net-par-pays/">Comparateur par pays</a>
+                </div>
+            </div>
+            <div class="mobile-nav-section">
+                <h3>Conversions populaires</h3>
+                <div class="mobile-nav-links">
+                    <a href="/1500-euros-net-en-brut/">1 500 € net en brut</a>
+                    <a href="/1900-euros-net-en-brut/">1 900 € net en brut</a>
+                    <a href="/3300-euros-net-en-brut/">3 300 € net en brut</a>
+                    <a href="/4400-euros-net-en-brut/">4 400 € net en brut</a>
+                    <a href="/5000-euros-net-en-brut/">5 000 € net en brut</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="mx-auto max-w-3xl px-4 py-12">
+<h1 class="text-3xl md:text-4xl font-bold text-slate-900 mb-2">Méthodologie</h1>
+<p class="maj-haut text-xs text-slate-500 mb-8">Mise à jour le <time datetime="2026-09-24">24 septembre 2026</time> · Radif Partners</p>
+<section class="mb-8">
+<h2 class="text-xl font-semibold text-slate-900 mb-3">1. L'ordre des calculs</h2>
+<p class="text-sm text-slate-600 leading-relaxed mb-3">Le net ne s'obtient pas en appliquant un pourcentage au brut. On retranche d'abord les cotisations salariales — maladie, vieillesse plafonnée et déplafonnée, retraite complémentaire, chômage, CSG et CRDS — chacune avec sa propre assiette et son propre plafond. Le résultat est le net avant impôt ; le prélèvement à la source s'applique ensuite au net imposable, qui diffère du net versé.</p>
+</section>
+<section class="mb-8">
+<h2 class="text-xl font-semibold text-slate-900 mb-3">2. D'où viennent les taux</h2>
+<p class="text-sm text-slate-600 leading-relaxed mb-3">Les taux proviennent des textes en vigueur : code de la sécurité sociale pour les cotisations, accords Agirc-Arrco pour la retraite complémentaire, barème de l'impôt sur le revenu publié chaque année. Le plafond annuel de la sécurité sociale, qui commande plusieurs tranches, est revalorisé au 1er janvier et repris à cette date.</p>
+</section>
+<section class="mb-8">
+<h2 class="text-xl font-semibold text-slate-900 mb-3">3. Ce que l'estimation ne couvre pas</h2>
+<p class="text-sm text-slate-600 leading-relaxed mb-3">Le calcul suppose un salarié du secteur privé, à temps plein, sans particularité conventionnelle. Il ne tient pas compte des mutuelles d'entreprise, des cotisations de prévoyance propres à une branche, des heures supplémentaires exonérées, des avantages en nature, ni des situations particulières comme l'apprentissage ou l'expatriation. Un bulletin de paie réel peut donc différer de quelques dizaines d'euros.</p>
+</section>
+<section class="mb-8">
+<h2 class="text-xl font-semibold text-slate-900 mb-3">4. Fréquence de mise à jour</h2>
+<p class="text-sm text-slate-600 leading-relaxed mb-3">Les taux sont revus au 1er janvier, date d'entrée en vigueur de la plupart des changements, puis à chaque modification en cours d'année. Chaque page porte la date de sa dernière modification réelle et non la date du jour : une page non modifiée ne doit pas paraître fraîche.</p>
+</section>
+<section class="mb-8">
+<h2 class="text-xl font-semibold text-slate-900 mb-3">5. Signaler une erreur</h2>
+<p class="text-sm text-slate-600 leading-relaxed mb-3">Si un montant vous paraît faux, écrivez-nous en indiquant la page et, si possible, la ligne de votre bulletin de paie qui diffère. Nous vérifions contre le texte applicable, corrigeons si l'erreur est confirmée, et reportons la correction sur toutes les pages qui reprenaient la même donnée.</p>
+</section>
+<section class="mb-8"><h2 class="text-xl font-semibold text-slate-900 mb-3">Sources officielles</h2><ul class="text-sm text-slate-600 leading-relaxed list-disc pl-5 space-y-2">
+<li><a class="underline" href="https://www.urssaf.fr/" rel="noopener" target="_blank">URSSAF</a> — taux et assiettes des cotisations sociales</li>
+<li><a class="underline" href="https://www.service-public.fr/particuliers/vosdroits/F2340" rel="noopener" target="_blank">Service-Public.fr</a> — règles du bulletin de paie et du salaire net</li>
+<li><a class="underline" href="https://www.impots.gouv.fr/" rel="noopener" target="_blank">impots.gouv.fr</a> — barème de l'impôt sur le revenu et prélèvement à la source</li>
+<li><a class="underline" href="https://www.agirc-arrco.fr/" rel="noopener" target="_blank">Agirc-Arrco</a> — taux de la retraite complémentaire</li>
+</ul></section>
+</main>
+
+    <footer class="bg-white border-t border-slate-200 py-12">
+        <div class="mx-auto max-w-7xl px-4 flex flex-col md:flex-row justify-between items-center gap-6">
+            <a href="/" class="flex items-center gap-2">
+                <img src="/img/logo.svg" alt="SalaireBrutNet" class="h-6 w-6">
+                <span class="text-sm font-semibold text-slate-900">SalaireBrutNet</span>
+            </a>
+            <p class="text-xs text-slate-500">&#169; 2026 SalaireBrutNet. Données à titre indicatif.</p>
+            <div class="flex flex-wrap gap-4 justify-center">
+                <a href="/" class="text-xs text-slate-500 hover:text-slate-900">Calculateur</a>
+                <a href="/simulateur-impot-sur-le-revenu/" class="text-xs text-slate-500 hover:text-slate-900">Simulateur Impôts</a>
+                <a href="/cadre-vs-non-cadre/" class="text-xs text-slate-500 hover:text-slate-900">Cadre vs Non-cadre</a>
+                <a href="/confidentialite/" class="text-xs text-slate-500 hover:text-slate-900">Confidentialité</a>
+                <a href="/methodologie/" class="text-xs text-slate-500 hover:text-slate-900">Méthodologie</a>
+                <a href="/mentions-legales/" class="text-xs text-slate-500 hover:text-slate-900">Mentions légales</a>
+                <a href="/a-propos/" class="text-xs text-slate-500 hover:text-slate-900">À propos</a>
+                <a href="/mission/" class="text-xs text-slate-500 hover:text-slate-900">Notre Mission</a>
+            </div>
+            <p class="text-xs text-slate-500 w-full text-center" data-author="Radif Partners">
+                Édité par Radif Partners · Mise à jour le <time datetime="2026-09-21">21 septembre 2026</time>
+            </p>
+        </div>
+    </footer>
+
+<script>
+    (function(){
+        var hb=document.getElementById('btn-hamburger'),mn=document.getElementById('mobile-nav'),hi=document.getElementById('hamburger-icon'),ci=document.getElementById('close-icon');
+        if(hb){hb.addEventListener('click',function(){var o=mn.classList.toggle('open');hi.classList.toggle('hidden',o);ci.classList.toggle('hidden',!o)});}
+        if(mn){mn.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){mn.classList.remove('open');hi.classList.remove('hidden');ci.classList.add('hidden')})});}
+        var ng=document.querySelector('.nav-guides'),mm=document.querySelector('.mega-menu'),t;
+        if(ng&&mm){function show(){clearTimeout(t);mm.classList.add('open')}function hide(){t=setTimeout(function(){mm.classList.remove('open')},250)}ng.addEventListener('mouseenter',show);ng.addEventListener('mouseleave',hide);mm.addEventListener('mouseenter',show);mm.addEventListener('mouseleave',hide);}
+    })();
+</script>
+
+</body></html>

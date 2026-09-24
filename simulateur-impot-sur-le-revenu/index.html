@@ -113,62 +113,102 @@
 
     <!-- JSON-LD Structured Data -->
     <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "WebApplication",
-        "name": "Simulateur Impôts 2026 Gratuit",
-        "alternateName": ["Simulation Impôts", "Calculateur Impôt sur le Revenu", "Simulateur Impôts PER"],
-        "url": "https://salairebrutonet.com/simulateur-impot-sur-le-revenu/",
-        "description": "Simulateur impôts 2026 gratuit. Calculez votre impôt sur le revenu et simulez l'économie fiscale avec le PER (Plan Épargne Retraite). Barème officiel, résultat instantané.",
-        "applicationCategory": "FinanceApplication",
-        "operatingSystem": "Web",
-        "browserRequirements": "Requires JavaScript",
-        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "EUR" },
-        "author": { "@type": "Organization", "name": "Simulateur Impôts", "url": "https://salairebrutonet.com" },
-        "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.8", "ratingCount": "1250" },
-        "inLanguage": "fr-FR"
-    }
-    </script>
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Simulateur Impôts 2026 Gratuit",
+  "alternateName": [
+    "Simulation Impôts",
+    "Calculateur Impôt sur le Revenu",
+    "Simulateur Impôts PER"
+  ],
+  "url": "https://salairebrutonet.com/simulateur-impot-sur-le-revenu/",
+  "description": "Simulateur impôts 2026 gratuit. Calculez votre impôt sur le revenu et simulez l'économie fiscale avec le PER (Plan Épargne Retraite). Barème officiel, résultat instantané.",
+  "applicationCategory": "FinanceApplication",
+  "operatingSystem": "Web",
+  "browserRequirements": "Requires JavaScript",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "EUR"
+  },
+  "author": {
+    "@type": "Organization",
+    "name": "Simulateur Impôts",
+    "url": "https://salairebrutonet.com",
+    "foundingDate": "2025-01-01",
+    "publishingPrinciples": "https://salairebrutonet.com/a-propos/",
+    "knowsAbout": [
+      "salaire brut et net",
+      "cotisations sociales",
+      "impôt sur le revenu",
+      "droit du travail français"
+    ]
+  },
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "4.8",
+    "ratingCount": "1250"
+  },
+  "inLanguage": "fr-FR"
+}
+</script>
     <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
     {
-        "@context": "https://schema.org",
-        "@type": "FAQPage",
-        "mainEntity": [
-            {
-                "@type": "Question",
-                "name": "Comment fonctionne le simulateur impôts ?",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "Notre simulateur impôts utilise le barème officiel 2026 pour calculer votre impôt sur le revenu. Renseignez votre situation familiale et vos revenus, le calcul est instantané et gratuit."
-                }
-            },
-            {
-                "@type": "Question",
-                "name": "Comment réduire ses impôts avec le PER ?",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "Les versements sur un PER (Plan d'Épargne Retraite) sont déductibles de votre revenu imposable. Plus votre taux marginal est élevé, plus l'économie d'impôt est importante. Notre simulateur calcule cette économie automatiquement."
-                }
-            },
-            {
-                "@type": "Question",
-                "name": "Le simulateur impôts est-il gratuit ?",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "Oui, notre simulateur impôts est 100% gratuit, sans inscription et sans publicité. Vos données restent sur votre navigateur et ne sont jamais transmises à nos serveurs."
-                }
-            },
-            {
-                "@type": "Question",
-                "name": "Quel est le barème de l'impôt sur le revenu 2026 ?",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "Le barème 2026 comporte 5 tranches : 0% jusqu'à 11 497€, 11% de 11 498€ à 29 315€, 30% de 29 316€ à 83 823€, 41% de 83 824€ à 180 294€, et 45% au-delà."
-                }
-            }
-        ]
+      "@type": "Question",
+      "name": "Comment fonctionne ce simulateur impôts ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Notre simulateur impôts utilise le barème officiel 2026 de l'impôt sur le revenu. Renseignez votre situation familiale et vos revenus, et obtenez instantanément le montant de votre impôt, votre taux marginal et les économies possibles avec le PER ou les dons."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Le simulateur impôts est-il gratuit ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Oui, notre simulateur impôts est 100% gratuit, sans inscription et sans publicité. Vos données restent sur votre navigateur et ne sont jamais transmises à nos serveurs. Vous pouvez faire autant de simulations que vous le souhaitez, y compris avec vos revenus réels, sans qu'aucune information ne soit conservée après la fermeture de la page."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Comment réduire ses impôts avec le PER ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Les versements sur un PER (Plan d'Épargne Retraite) sont déductibles de votre revenu imposable. Plus votre taux marginal est élevé, plus l'économie d'impôt est importante. Le simulateur montre l'économie obtenue pour un versement donné. Le plafond de déduction dépend de vos revenus professionnels de l'année précédente et des plafonds non utilisés des trois années passées, indiqués sur votre avis d'imposition."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Quel est le barème de l'impôt sur le revenu 2026 ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Le barème 2026 comporte 5 tranches : 0% jusqu'à 11 497€, 11% de 11 498€ à 29 315€, 30% de 29 316€ à 83 823€, 41% de 83 824€ à 180 294€, et 45% au-delà. Le simulateur impôts appliqué automatiquement ce barème à votre quotient familial."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Comment sont calculées les parts fiscales ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Célibataire = 1 part, Couple marié/PACS = 2 parts. Les 2 premiers enfants ajoutent 0,5 part chacun, les suivants 1 part. Le statut de parent isolé ajoute 0,5 part supplémentaire. Le simulateur calcule automatiquement vos parts à partir de ces règles. L'avantage procuré par chaque demi-part est toutefois plafonné, si bien qu'au-delà d'un certain revenu le gain cesse d'augmenter avec le nombre de parts."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Le résultat de la simulation impôts est-il fiable ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Notre simulation impôts est basée sur le barème officiel et donne une estimation précise. Certains crédits d'impôts ou situations complexes ne sont pas pris en compte. Certains crédits d'impôt, revenus exceptionnels ou situations particulières ne sont pas pris en compte. Pour une déclaration officielle, seul le simulateur de l'administration fiscale sur impots.gouv.fr fait foi, et c'est lui qui doit trancher en cas d'écart."
+      }
     }
-    </script>
+  ]
+}
+</script>
 <!-- Google Analytics 4 -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-PZCT3WCT9D"></script>
 <script>
@@ -264,6 +304,7 @@
             <h1 class="mx-auto max-w-4xl text-2xl font-bold tracking-tight text-slate-900 sm:text-3xl lg:text-4xl">
                 <span class="text-brand-600">Simulateur Impôts</span> 2026
             </h1>
+<p class="maj-haut text-xs text-slate-500 mb-4">Mise à jour le <time datetime="2026-08-17">17 août 2026</time> · Radif Partners</p>
             <p class="mx-auto mt-2 max-w-2xl text-sm text-slate-500">
                 Simulation impôts gratuite et instantanée. Calculez votre impôt sur le revenu et découvrez combien vous pouvez économiser grâce au <strong class="text-slate-700">PER</strong> et aux <strong class="text-slate-700">dons</strong>.
             </p>
@@ -508,10 +549,10 @@
                     </div>
 
                     <!-- Card: Dons et Réductions (Order 5 mobile) -->
-                    <div class="order-5 lg:col-span-7 rounded-2xl border-2 border-violet-200 bg-gradient-to-br from-violet-50 to-white p-6 shadow-sm">
+                    <div class="order-5 lg:col-span-7 rounded-2xl border-2 border-brand-200 bg-gradient-to-br from-brand-50 to-white p-6 shadow-sm">
                         <div class="flex items-center justify-between mb-6">
                             <div class="flex items-center gap-3">
-                                <div class="p-2 bg-violet-100 rounded-lg text-violet-600">
+                                <div class="p-2 bg-brand-100 rounded-lg text-brand-600">
                                     <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/><path d="M12 5 9.04 7.96a2.17 2.17 0 0 0 0 3.08c.82.82 2.13.85 3 .07l2.07-1.9a2.82 2.82 0 0 1 3.79 0l2.96 2.66"/><path d="m18 15-2-2"/><path d="m15 18-2-2"/></svg>
                                 </div>
                                 <div>
@@ -519,7 +560,7 @@
                                     <p class="text-xs text-slate-500">Réduisez directement votre impôt (66% à 75%)</p>
                                 </div>
                             </div>
-                            <span class="inline-flex items-center rounded-full bg-violet-100 px-2.5 py-1 text-xs font-medium text-violet-700">
+                            <span class="inline-flex items-center rounded-full bg-brand-100 px-2.5 py-1 text-xs font-medium text-brand-700">
                                 Réduction
                             </span>
                         </div>
@@ -529,7 +570,7 @@
                             <label class="text-sm font-medium text-slate-700">As-tu fait des dons cette année ?</label>
                             <label class="relative inline-flex items-center cursor-pointer">
                                 <input type="checkbox" id="has-dons" class="sr-only peer">
-                                <div class="w-11 h-6 bg-slate-200 rounded-full peer peer-checked:bg-violet-500 peer-checked:after:translate-x-full after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:rounded-full after:h-5 after:w-5 after:transition-all after:shadow-sm"></div>
+                                <div class="w-11 h-6 bg-slate-200 rounded-full peer peer-checked:bg-brand-500 peer-checked:after:translate-x-full after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:rounded-full after:h-5 after:w-5 after:transition-all after:shadow-sm"></div>
                             </label>
                         </div>
 
@@ -545,7 +586,7 @@
                                         </span>
                                     </div>
                                     <div class="relative">
-                                        <input type="number" id="dons-66" value="0" min="0" class="block w-28 text-right rounded-lg border-0 py-2 pl-3 pr-7 text-slate-900 ring-1 ring-slate-200 focus:ring-2 focus:ring-violet-500 text-sm font-semibold transition-all">
+                                        <input type="number" id="dons-66" value="0" min="0" class="block w-28 text-right rounded-lg border-0 py-2 pl-3 pr-7 text-slate-900 ring-1 ring-slate-200 focus:ring-2 focus:ring-brand-500 text-sm font-semibold transition-all">
                                         <span class="absolute right-3 top-1/2 -translate-y-1/2 text-slate-400 text-sm">€</span>
                                     </div>
                                 </div>
@@ -562,7 +603,7 @@
                                         </span>
                                     </div>
                                     <div class="relative">
-                                        <input type="number" id="dons-75" value="0" min="0" class="block w-28 text-right rounded-lg border-0 py-2 pl-3 pr-7 text-slate-900 ring-1 ring-slate-200 focus:ring-2 focus:ring-violet-500 text-sm font-semibold transition-all">
+                                        <input type="number" id="dons-75" value="0" min="0" class="block w-28 text-right rounded-lg border-0 py-2 pl-3 pr-7 text-slate-900 ring-1 ring-slate-200 focus:ring-2 focus:ring-brand-500 text-sm font-semibold transition-all">
                                         <span class="absolute right-3 top-1/2 -translate-y-1/2 text-slate-400 text-sm">€</span>
                                     </div>
                                 </div>
@@ -571,14 +612,14 @@
                             </div>
 
                             <!-- Dons Summary -->
-                            <div class="rounded-xl bg-white border border-violet-200 p-4">
+                            <div class="rounded-xl bg-white border border-brand-200 p-4">
                                 <div class="flex justify-between items-center">
                                     <span class="text-sm text-slate-600">Total des dons</span>
                                     <span class="text-sm font-bold text-slate-900" id="dons-total-display">0 €</span>
                                 </div>
                                 <div class="flex justify-between items-center mt-2 pt-2 border-t border-slate-100">
                                     <span class="text-sm text-slate-600">Réduction d'impôt</span>
-                                    <span class="text-sm font-bold text-violet-600" id="dons-réduction-display">0 €</span>
+                                    <span class="text-sm font-bold text-brand-600" id="dons-réduction-display">0 €</span>
                                 </div>
                             </div>
                         </div>
@@ -648,17 +689,17 @@
                             </div>
 
                             <!-- Dons Savings Card -->
-                            <div id="dons-savings-card" class="hidden rounded-2xl bg-gradient-to-br from-violet-500 to-violet-600 text-white p-5 shadow-lg animate-in">
+                            <div id="dons-savings-card" class="hidden rounded-2xl bg-gradient-to-br from-brand-500 to-brand-600 text-white p-5 shadow-lg animate-in">
                                 <div class="flex items-center justify-between">
                                     <div>
-                                        <p class="text-sm text-violet-100 mb-1">Réduction grâce aux dons</p>
+                                        <p class="text-sm text-brand-100 mb-1">Réduction grâce aux dons</p>
                                         <p class="text-3xl font-bold" id="result-dons-savings">0 €</p>
                                     </div>
                                     <div class="h-14 w-14 rounded-full bg-white/20 flex items-center justify-center">
                                         <svg class="h-7 w-7" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg>
                                     </div>
                                 </div>
-                                <p class="text-sm text-violet-100 mt-3">
+                                <p class="text-sm text-brand-100 mt-3">
                                     Vos dons de <span id="dons-total-result">0 €</span> réduisent directement votre impôt.
                                 </p>
                             </div>
@@ -730,7 +771,7 @@
                                     </div>
                                     <div id="detail-dons-row" class="hidden flex justify-between py-1.5 border-b border-slate-100">
                                         <span>Réduction dons</span>
-                                        <span class="font-medium text-violet-600" id="detail-dons">- 0 €</span>
+                                        <span class="font-medium text-brand-600" id="detail-dons">- 0 €</span>
                                     </div>
                                     <div class="flex justify-between py-1.5 border-b border-slate-100">
                                         <span>Nombre de parts</span>
@@ -791,12 +832,12 @@
                         </div>
 
                         <!-- Tips Card -->
-                        <div class="rounded-xl bg-gradient-to-br from-indigo-50 to-white border border-indigo-100 p-4">
+                        <div class="rounded-xl bg-gradient-to-br from-brand-50 to-white border border-brand-100 p-4">
                             <div class="flex gap-3">
-                                <div class="text-indigo-600 mt-0.5"><svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 14c.2-1 .7-1.7 1.5-2.5 1-.9 1.5-2.2 1.5-3.5A6 6 0 0 0 6 8c0 1 .2 2.2 1.5 3.5.7.7 1.3 1.5 1.5 2.5"/><path d="M9 18h6"/><path d="M10 22h4"/></svg></div>
+                                <div class="text-brand-600 mt-0.5"><svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 14c.2-1 .7-1.7 1.5-2.5 1-.9 1.5-2.2 1.5-3.5A6 6 0 0 0 6 8c0 1 .2 2.2 1.5 3.5.7.7 1.3 1.5 1.5 2.5"/><path d="M9 18h6"/><path d="M10 22h4"/></svg></div>
                                 <div>
-                                    <h4 class="text-sm font-semibold text-indigo-900">Conseil personnalisé</h4>
-                                    <p class="text-sm text-indigo-700 mt-1 leading-relaxed" id="dynamic-tip">
+                                    <h4 class="text-sm font-semibold text-brand-900">Conseil personnalisé</h4>
+                                    <p class="text-sm text-brand-700 mt-1 leading-relaxed" id="dynamic-tip">
                                         Analysez votre situation pour obtenir un conseil adapté.
                                     </p>
                                 </div>
@@ -832,7 +873,7 @@
                         <p class="text-slate-500 text-sm">Barème officiel 2026, quotient familial, déductions PER et réductions dons appliqués automatiquement.</p>
                     </div>
                     <div class="flex flex-col items-center text-center">
-                        <div class="flex h-14 w-14 items-center justify-center rounded-2xl bg-indigo-100 text-indigo-700 mb-4 font-bold text-xl">3</div>
+                        <div class="flex h-14 w-14 items-center justify-center rounded-2xl bg-brand-100 text-brand-700 mb-4 font-bold text-xl">3</div>
                         <h3 class="text-lg font-semibold text-slate-900 mb-2">Optimisez vos impôts</h3>
                         <p class="text-slate-500 text-sm">Visualisez l'économie fiscale possible avec le PER et les dons. Partagez votre simulation.</p>
                     </div>
@@ -860,7 +901,7 @@
                             <svg class="h-4 w-4 transition-transform group-open:rotate-180" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
                         </summary>
                         <p class="mt-3 text-sm text-slate-600 leading-relaxed">
-                            Oui, notre simulateur impôts est 100% gratuit, sans inscription et sans publicité. Vos données restent sur votre navigateur et ne sont jamais transmises à nos serveurs. Vous pouvez faire autant de simulations impôts que vous le souhaitez.
+                            Oui, notre simulateur impôts est 100% gratuit, sans inscription et sans publicité. Vos données restent sur votre navigateur et ne sont jamais transmises à nos serveurs. Vous pouvez faire autant de simulations que vous le souhaitez, y compris avec vos revenus réels, sans qu'aucune information ne soit conservée après la fermeture de la page.
                         </p>
                     </details>
                     <details class="group rounded-xl bg-white border border-slate-200 p-4">
@@ -869,7 +910,7 @@
                             <svg class="h-4 w-4 transition-transform group-open:rotate-180" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
                         </summary>
                         <p class="mt-3 text-sm text-slate-600 leading-relaxed">
-                            Les versements sur un PER (Plan d'Épargne Retraite) sont déductibles de votre revenu imposable. Plus votre taux marginal est élevé, plus l'économie d'impôt est importante. Notre simulateur impôts PER vous montre exactement combien vous pouvez économiser.
+                            Les versements sur un PER (Plan d'Épargne Retraite) sont déductibles de votre revenu imposable. Plus votre taux marginal est élevé, plus l'économie d'impôt est importante. Le simulateur montre l'économie obtenue pour un versement donné. Le plafond de déduction dépend de vos revenus professionnels de l'année précédente et des plafonds non utilisés des trois années passées, indiqués sur votre avis d'imposition.
                         </p>
                     </details>
                     <details class="group rounded-xl bg-white border border-slate-200 p-4">
@@ -887,7 +928,7 @@
                             <svg class="h-4 w-4 transition-transform group-open:rotate-180" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
                         </summary>
                         <p class="mt-3 text-sm text-slate-600 leading-relaxed">
-                            Célibataire = 1 part, Couple marié/PACS = 2 parts. Les 2 premiers enfants ajoutent 0,5 part chacun, les suivants 1 part. Le statut de parent isolé ajoute 0,5 part supplémentaire. Le simulateur calcule automatiquement vos parts.
+                            Célibataire = 1 part, Couple marié/PACS = 2 parts. Les 2 premiers enfants ajoutent 0,5 part chacun, les suivants 1 part. Le statut de parent isolé ajoute 0,5 part supplémentaire. Le simulateur calcule automatiquement vos parts à partir de ces règles. L'avantage procuré par chaque demi-part est toutefois plafonné, si bien qu'au-delà d'un certain revenu le gain cesse d'augmenter avec le nombre de parts.
                         </p>
                     </details>
                     <details class="group rounded-xl bg-white border border-slate-200 p-4">
@@ -896,7 +937,7 @@
                             <svg class="h-4 w-4 transition-transform group-open:rotate-180" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
                         </summary>
                         <p class="mt-3 text-sm text-slate-600 leading-relaxed">
-                            Notre simulation impôts est basée sur le barème officiel et donne une estimation précise. Certains crédits d'impôts ou situations complexes ne sont pas pris en compte. Pour une déclaration officielle, consultez impots.gouv.fr.
+                            Notre simulation impôts est basée sur le barème officiel et donne une estimation précise. Certains crédits d'impôts ou situations complexes ne sont pas pris en compte. Certains crédits d'impôt, revenus exceptionnels ou situations particulières ne sont pas pris en compte. Pour une déclaration officielle, seul le simulateur de l'administration fiscale sur impots.gouv.fr fait foi, et c'est lui qui doit trancher en cas d'écart.
                         </p>
                     </details>
                 </div>
@@ -978,10 +1019,15 @@
                 <a href="/" class="text-xs text-slate-500 hover:text-slate-900">Calculateur</a>
                 <a href="/simulateur-impot-sur-le-revenu/" class="text-xs text-slate-500 hover:text-slate-900">Simulateur Impôts</a>
                 <a href="/cadre-vs-non-cadre/" class="text-xs text-slate-500 hover:text-slate-900">Cadre vs Non-cadre</a>
+                <a href="/confidentialite/" class="text-xs text-slate-500 hover:text-slate-900">Confidentialité</a>
+                <a href="/methodologie/" class="text-xs text-slate-500 hover:text-slate-900">Méthodologie</a>
                 <a href="/mentions-legales/" class="text-xs text-slate-500 hover:text-slate-900">Mentions légales</a>
                 <a href="/a-propos/" class="text-xs text-slate-500 hover:text-slate-900">À propos</a>
                 <a href="/mission/" class="text-xs text-slate-500 hover:text-slate-900">Notre Mission</a>
             </div>
+            <p class="text-xs text-slate-500 w-full text-center" data-author="Radif Partners">
+                Édité par Radif Partners · Mise à jour le <time datetime="2026-08-17">17 août 2026</time>
+            </p>
         </div>
     </footer>
 

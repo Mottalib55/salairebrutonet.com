@@ -50,38 +50,122 @@
     }
     </script>
     <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "Organization",
-        "name": "SalaireBrutNet",
-        "url": "https://salairebrutonet.com",
-        "logo": "https://salairebrutonet.com/img/logo.svg",
-        "description": "Simulateur gratuit de conversion salaire brut en net pour la France. Taux 2026 à jour, cadre et non-cadre.",
-        "founder": {
-            "@type": "Organization",
-            "name": "Radif Partners",
-            "url": "https://salairebrutonet.com/a-propos/",
-            
-            "jobTitle": "Fondateur"
-        }
-    }
-    </script>
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "SalaireBrutNet",
+  "url": "https://salairebrutonet.com",
+  "logo": "https://salairebrutonet.com/img/logo.svg",
+  "description": "Simulateur gratuit de conversion salaire brut en net pour la France. Taux 2026 à jour, cadre et non-cadre.",
+  "foundingDate": "2025-01-01",
+  "publishingPrinciples": "https://salairebrutonet.com/a-propos/",
+  "knowsAbout": [
+    "salaire brut et net",
+    "cotisations sociales",
+    "impôt sur le revenu",
+    "droit du travail français"
+  ],
+  "publisher": {
+    "@type": "Organization",
+    "name": "Radif Partners",
+    "url": "https://salairebrutonet.com/a-propos/",
+    "jobTitle": "Fondateur",
+    "foundingDate": "2025-01-01",
+    "publishingPrinciples": "https://salairebrutonet.com/a-propos/",
+    "knowsAbout": [
+      "salaire brut et net",
+      "cotisations sociales",
+      "impôt sur le revenu",
+      "droit du travail français"
+    ]
+  }
+}
+</script>
     <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Radif Partners",
+  "url": "https://salairebrutonet.com/a-propos/",
+  "foundingDate": "2025-01-01",
+  "publishingPrinciples": "https://salairebrutonet.com/a-propos/",
+  "knowsAbout": [
+    "salaire brut net",
+    "cotisations sociales",
+    "fiscalité française",
+    "droit du travail"
+  ],
+  "worksFor": {
+    "@type": "Organization",
+    "name": "SalaireBrutNet",
+    "url": "https://salairebrutonet.com",
+    "foundingDate": "2025-01-01",
+    "publishingPrinciples": "https://salairebrutonet.com/a-propos/",
+    "knowsAbout": [
+      "salaire brut et net",
+      "cotisations sociales",
+      "impôt sur le revenu",
+      "droit du travail français"
+    ]
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
     {
-        "@context": "https://schema.org",
-        "@type": "Organization",
-        "name": "Radif Partners",
-        "url": "https://salairebrutonet.com/a-propos/",
-        
-        "jobTitle": "Fondateur de SalaireBrutNet",
-        "worksFor": {
-            "@type": "Organization",
-            "name": "SalaireBrutNet",
-            "url": "https://salairebrutonet.com"
-        },
-        "knowsAbout": ["salaire brut net", "cotisations sociales", "fiscalité française", "droit du travail"]
+      "@type": "Question",
+      "name": "Peut-on comparer directement un salaire net d'un pays à l'autre ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Pas tel quel. Le net dépend de ce que chaque pays finance par les cotisations plutôt que par l'impôt ou par la dépense privée. Un net plus élevé aux États-Unis s'accompagne d'une assurance maladie à payer séparément, quand la France l'inclut dans les cotisations. Comparez plutôt le coût total employeur et le reste à vivre après logement, santé et garde d'enfants."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Pourquoi les cotisations sont-elles si différentes selon les pays ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Parce qu'elles financent des périmètres différents. En France, elles couvrent la maladie, la retraite, le chômage, la famille et la dépendance. Au Danemark, l'essentiel passe par l'impôt sur le revenu, d'où des cotisations faibles mais un taux d'imposition élevé. Une comparaison n'a de sens qu'à périmètre équivalent, en additionnant impôts et cotisations."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Le coût du logement doit-il entrer dans la comparaison ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Il change souvent le classement. Un salaire net supérieur de vingt pour cent à Munich ou à Dublin peut laisser moins de reste à vivre qu'un salaire plus modeste dans une ville moyenne française, une fois le loyer payé. Le rapport entre le net et le loyer médian local est plus parlant que le net brut de comparaison."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Comment sont convertis les montants en devises étrangères ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Les montants sont convertis au taux de change du moment, ce qui suffit pour un ordre de grandeur mais pas pour un arbitrage. Le taux varie de plusieurs pour cent d'un trimestre à l'autre, et il ne dit rien du pouvoir d'achat local : un euro n'achète pas la même chose à Lisbonne et à Zurich."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Un expatrié paie-t-il ses impôts en France ou dans le pays d'accueil ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "En principe dans le pays où il exerce son activité, en application des conventions fiscales bilatérales. Le lieu de résidence fiscale dépend du foyer, du séjour principal et du centre des intérêts économiques. Les revenus exonérés en France peuvent rester pris en compte pour déterminer le taux applicable aux autres revenus, au titre du taux effectif."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Les cotisations versées à l'étranger comptent-elles pour la retraite française ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Dans l'Union européenne, en Suisse et dans les pays liés par une convention de sécurité sociale, les périodes travaillées sont prises en compte pour le calcul de la durée d'assurance. Chaque pays verse ensuite la part correspondant aux périodes accomplies chez lui. Hors de ces accords, les trimestres cotisés à l'étranger ne comptent pas."
+      }
     }
-    </script>
+  ]
+}
+</script>
 </head>
 <body class="bg-slate-50 text-slate-600 antialiased selection:bg-brand-100 selection:text-brand-900 flex flex-col min-h-screen">
     <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-2 focus:left-2 focus:z-[100] focus:px-4 focus:py-2 focus:bg-brand-600 focus:text-white focus:rounded-lg focus:text-sm focus:font-semibold">Aller au contenu</a>
@@ -167,6 +251,7 @@
         <section class="px-4 pb-6">
             <div class="mx-auto max-w-4xl">
                 <h1 class="text-2xl sm:text-3xl font-bold text-slate-900 mb-6">Comparateur <span class="text-brand-600">Salaire Net par Pays</span></h1>
+<p class="maj-haut text-xs text-slate-500 mb-4">Mise à jour le <time datetime="2026-09-20">20 septembre 2026</time> · Radif Partners</p>
                 <p class="text-slate-500">Comparez le salaire net pour un même brut dans différents pays francophones européens.</p>
             </div>
         </section>
@@ -245,6 +330,67 @@
         </a></div>
             </div>
         </section>
+            <section class="py-12 px-4">
+            <div class="mx-auto max-w-3xl">
+                <h2 class="text-xl font-bold text-slate-900 mb-6">Questions fréquentes</h2>
+                <div class="space-y-3">
+                    <div class="rounded-xl border border-slate-200 bg-white">
+                        <button class="faq-toggle w-full flex items-center justify-between p-5 text-left">
+                            <span class="font-medium text-slate-900">Peut-on comparer directement un salaire net d'un pays à l'autre ?</span>
+                            <svg class="h-5 w-5 text-slate-400 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+                        </button>
+                        <div class="faq-content hidden px-5 pb-5">
+                            <p class="text-sm text-slate-600">Pas tel quel. Le net dépend de ce que chaque pays finance par les cotisations plutôt que par l'impôt ou par la dépense privée. Un net plus élevé aux États-Unis s'accompagne d'une assurance maladie à payer séparément, quand la France l'inclut dans les cotisations. Comparez plutôt le coût total employeur et le reste à vivre après logement, santé et garde d'enfants.</p>
+                        </div>
+                    </div>
+                    <div class="rounded-xl border border-slate-200 bg-white">
+                        <button class="faq-toggle w-full flex items-center justify-between p-5 text-left">
+                            <span class="font-medium text-slate-900">Pourquoi les cotisations sont-elles si différentes selon les pays ?</span>
+                            <svg class="h-5 w-5 text-slate-400 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+                        </button>
+                        <div class="faq-content hidden px-5 pb-5">
+                            <p class="text-sm text-slate-600">Parce qu'elles financent des périmètres différents. En France, elles couvrent la maladie, la retraite, le chômage, la famille et la dépendance. Au Danemark, l'essentiel passe par l'impôt sur le revenu, d'où des cotisations faibles mais un taux d'imposition élevé. Une comparaison n'a de sens qu'à périmètre équivalent, en additionnant impôts et cotisations.</p>
+                        </div>
+                    </div>
+                    <div class="rounded-xl border border-slate-200 bg-white">
+                        <button class="faq-toggle w-full flex items-center justify-between p-5 text-left">
+                            <span class="font-medium text-slate-900">Le coût du logement doit-il entrer dans la comparaison ?</span>
+                            <svg class="h-5 w-5 text-slate-400 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+                        </button>
+                        <div class="faq-content hidden px-5 pb-5">
+                            <p class="text-sm text-slate-600">Il change souvent le classement. Un salaire net supérieur de vingt pour cent à Munich ou à Dublin peut laisser moins de reste à vivre qu'un salaire plus modeste dans une ville moyenne française, une fois le loyer payé. Le rapport entre le net et le loyer médian local est plus parlant que le net brut de comparaison.</p>
+                        </div>
+                    </div>
+                    <div class="rounded-xl border border-slate-200 bg-white">
+                        <button class="faq-toggle w-full flex items-center justify-between p-5 text-left">
+                            <span class="font-medium text-slate-900">Comment sont convertis les montants en devises étrangères ?</span>
+                            <svg class="h-5 w-5 text-slate-400 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+                        </button>
+                        <div class="faq-content hidden px-5 pb-5">
+                            <p class="text-sm text-slate-600">Les montants sont convertis au taux de change du moment, ce qui suffit pour un ordre de grandeur mais pas pour un arbitrage. Le taux varie de plusieurs pour cent d'un trimestre à l'autre, et il ne dit rien du pouvoir d'achat local : un euro n'achète pas la même chose à Lisbonne et à Zurich.</p>
+                        </div>
+                    </div>
+                    <div class="rounded-xl border border-slate-200 bg-white">
+                        <button class="faq-toggle w-full flex items-center justify-between p-5 text-left">
+                            <span class="font-medium text-slate-900">Un expatrié paie-t-il ses impôts en France ou dans le pays d'accueil ?</span>
+                            <svg class="h-5 w-5 text-slate-400 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+                        </button>
+                        <div class="faq-content hidden px-5 pb-5">
+                            <p class="text-sm text-slate-600">En principe dans le pays où il exerce son activité, en application des conventions fiscales bilatérales. Le lieu de résidence fiscale dépend du foyer, du séjour principal et du centre des intérêts économiques. Les revenus exonérés en France peuvent rester pris en compte pour déterminer le taux applicable aux autres revenus, au titre du taux effectif.</p>
+                        </div>
+                    </div>
+                    <div class="rounded-xl border border-slate-200 bg-white">
+                        <button class="faq-toggle w-full flex items-center justify-between p-5 text-left">
+                            <span class="font-medium text-slate-900">Les cotisations versées à l'étranger comptent-elles pour la retraite française ?</span>
+                            <svg class="h-5 w-5 text-slate-400 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+                        </button>
+                        <div class="faq-content hidden px-5 pb-5">
+                            <p class="text-sm text-slate-600">Dans l'Union européenne, en Suisse et dans les pays liés par une convention de sécurité sociale, les périodes travaillées sont prises en compte pour le calcul de la durée d'assurance. Chaque pays verse ensuite la part correspondant aux périodes accomplies chez lui. Hors de ces accords, les trimestres cotisés à l'étranger ne comptent pas.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
     </main>
     <footer class="bg-white border-t border-slate-200 py-10">
         <div class="mx-auto max-w-7xl px-4 flex flex-col md:flex-row justify-between items-center gap-6">
@@ -257,10 +403,15 @@
                 <a href="/" class="text-xs text-slate-500 hover:text-slate-900">Calculateur</a>
                 <a href="/simulateur-impot-sur-le-revenu/" class="text-xs text-slate-500 hover:text-slate-900">Simulateur Impôts</a>
                 <a href="/cadre-vs-non-cadre/" class="text-xs text-slate-500 hover:text-slate-900">Cadre vs Non-cadre</a>
+                <a href="/confidentialite/" class="text-xs text-slate-500 hover:text-slate-900">Confidentialité</a>
+                <a href="/methodologie/" class="text-xs text-slate-500 hover:text-slate-900">Méthodologie</a>
                 <a href="/mentions-legales/" class="text-xs text-slate-500 hover:text-slate-900">Mentions légales</a>
                 <a href="/a-propos/" class="text-xs text-slate-500 hover:text-slate-900">À propos</a>
                 <a href="/mission/" class="text-xs text-slate-500 hover:text-slate-900">Notre Mission</a>
             </div>
+            <p class="text-xs text-slate-500 w-full text-center" data-author="Radif Partners">
+                Édité par Radif Partners · Mise à jour le <time datetime="2026-09-20">20 septembre 2026</time>
+            </p>
         </div>
     </footer>
     <script>
@@ -273,4 +424,14 @@
     })();
     </script>
 
+<script>
+document.querySelectorAll('.faq-toggle').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+        var contenu = btn.nextElementSibling;
+        contenu.classList.toggle('hidden');
+        var fleche = btn.querySelector('svg');
+        if (fleche) fleche.classList.toggle('rotate-180');
+    });
+});
+</script>
 </body></html>

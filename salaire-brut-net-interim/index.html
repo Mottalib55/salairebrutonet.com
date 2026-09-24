@@ -50,38 +50,66 @@
     }
     </script>
     <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "Organization",
-        "name": "SalaireBrutNet",
-        "url": "https://salairebrutonet.com",
-        "logo": "https://salairebrutonet.com/img/logo.svg",
-        "description": "Simulateur gratuit de conversion salaire brut en net pour la France. Taux 2026 à jour, cadre et non-cadre.",
-        "founder": {
-            "@type": "Organization",
-            "name": "Radif Partners",
-            "url": "https://salairebrutonet.com/a-propos/",
-            
-            "jobTitle": "Fondateur"
-        }
-    }
-    </script>
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "SalaireBrutNet",
+  "url": "https://salairebrutonet.com",
+  "logo": "https://salairebrutonet.com/img/logo.svg",
+  "description": "Simulateur gratuit de conversion salaire brut en net pour la France. Taux 2026 à jour, cadre et non-cadre.",
+  "foundingDate": "2025-01-01",
+  "publishingPrinciples": "https://salairebrutonet.com/a-propos/",
+  "knowsAbout": [
+    "salaire brut et net",
+    "cotisations sociales",
+    "impôt sur le revenu",
+    "droit du travail français"
+  ],
+  "publisher": {
+    "@type": "Organization",
+    "name": "Radif Partners",
+    "url": "https://salairebrutonet.com/a-propos/",
+    "jobTitle": "Fondateur",
+    "foundingDate": "2025-01-01",
+    "publishingPrinciples": "https://salairebrutonet.com/a-propos/",
+    "knowsAbout": [
+      "salaire brut et net",
+      "cotisations sociales",
+      "impôt sur le revenu",
+      "droit du travail français"
+    ]
+  }
+}
+</script>
     <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "Organization",
-        "name": "Radif Partners",
-        "url": "https://salairebrutonet.com/a-propos/",
-        
-        "jobTitle": "Fondateur de SalaireBrutNet",
-        "worksFor": {
-            "@type": "Organization",
-            "name": "SalaireBrutNet",
-            "url": "https://salairebrutonet.com"
-        },
-        "knowsAbout": ["salaire brut net", "cotisations sociales", "fiscalité française", "droit du travail"]
-    }
-    </script>
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Radif Partners",
+  "url": "https://salairebrutonet.com/a-propos/",
+  "foundingDate": "2025-01-01",
+  "publishingPrinciples": "https://salairebrutonet.com/a-propos/",
+  "knowsAbout": [
+    "salaire brut net",
+    "cotisations sociales",
+    "fiscalité française",
+    "droit du travail"
+  ],
+  "worksFor": {
+    "@type": "Organization",
+    "name": "SalaireBrutNet",
+    "url": "https://salairebrutonet.com",
+    "foundingDate": "2025-01-01",
+    "publishingPrinciples": "https://salairebrutonet.com/a-propos/",
+    "knowsAbout": [
+      "salaire brut et net",
+      "cotisations sociales",
+      "impôt sur le revenu",
+      "droit du travail français"
+    ]
+  }
+}
+</script>
 </head>
 <body class="bg-slate-50 text-slate-600 antialiased selection:bg-brand-100 selection:text-brand-900 flex flex-col min-h-screen">
     <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-2 focus:left-2 focus:z-[100] focus:px-4 focus:py-2 focus:bg-brand-600 focus:text-white focus:rounded-lg focus:text-sm focus:font-semibold">Aller au contenu</a>
@@ -167,6 +195,7 @@
         <section class="px-4 pb-6">
             <div class="mx-auto max-w-4xl">
                 <h1 class="text-2xl sm:text-3xl lg:text-4xl font-bold text-slate-900 mb-6">Salaire Brut Net <span class="text-brand-600">Intérim</span> 2026</h1>
+<p class="maj-haut text-xs text-slate-500 mb-4">Mise à jour le <time datetime="2026-09-20">20 septembre 2026</time> · Radif Partners</p>
                 <div class="flex flex-wrap items-center gap-3 text-sm text-slate-500 mt-3">
                     <div class="flex items-center gap-2">
                         <span>Par <a href="/a-propos/" class="font-medium text-slate-700 hover:text-brand-600">Radif Partners</a></span>
@@ -509,7 +538,7 @@
                     <svg class="h-5 w-5 text-slate-400 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
                 </button>
                 <div class="faq-content hidden px-5 pb-5">
-                    <p class="text-sm text-slate-600">Utilisez notre calculateur ci-dessus ou appliquez un coefficient de 0,78 à votre brut mensuel pour une estimation rapide.</p>
+                    <p class="text-sm text-slate-600">Utilisez le calculateur ci-dessus, ou appliquez un coefficient d'environ 0,78 au brut pour un non-cadre et 0,75 pour un cadre si vous cherchez un ordre de grandeur. Ces coefficients ne valent que pour les salaires situés sous le plafond de la Sécurité sociale : au-delà, la part des cotisations plafonnées diminue et le taux réel baisse.</p>
                 </div>
             </div>
             <div class="rounded-xl border border-slate-200 bg-white">
@@ -518,7 +547,7 @@
                     <svg class="h-5 w-5 text-slate-400 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
                 </button>
                 <div class="faq-content hidden px-5 pb-5">
-                    <p class="text-sm text-slate-600">Oui, les cotisations de Sécurité sociale sont nationales. Seules certaines mutuelles d'entreprise peuvent varier.</p>
+                    <p class="text-sm text-slate-600">Oui, les taux de la Sécurité sociale sont nationaux. Deux exceptions méritent d'être connues : le régime local d'Alsace-Moselle ajoute une cotisation maladie supplémentaire dans le Bas-Rhin, le Haut-Rhin et la Moselle, et les départements d'outre-mer bénéficient de dispositifs d'exonération propres. Les mutuelles d'entreprise varient par ailleurs d'un employeur à l'autre.</p>
                 </div>
             </div>
             <div class="rounded-xl border border-slate-200 bg-white">
@@ -527,7 +556,7 @@
                     <svg class="h-5 w-5 text-slate-400 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
                 </button>
                 <div class="faq-content hidden px-5 pb-5">
-                    <p class="text-sm text-slate-600">Oui, le salaire brut est négociable lors de l'embauche ou lors des entretiens annuels. Préparez vos arguments et renseignez-vous sur les salaires du marché.</p>
+                    <p class="text-sm text-slate-600">Oui, le salaire brut est négociable à l'embauche comme lors des entretiens annuels : c'est le montant inscrit au contrat. Préparez des éléments vérifiables, niveau de rémunération du poste sur le marché et résultats obtenus, et raisonnez en brut annuel : c'est la seule base comparable d'une offre à l'autre, le net dépendant ensuite de votre situation fiscale.</p>
                 </div>
             </div>
             <div class="rounded-xl border border-slate-200 bg-white">
@@ -536,7 +565,7 @@
                     <svg class="h-5 w-5 text-slate-400 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
                 </button>
                 <div class="faq-content hidden px-5 pb-5">
-                    <p class="text-sm text-slate-600">C'est un seuil (3 864 € par mois en 2026) au-delà duquel certaines cotisations changent de taux ou ne s'appliquent plus.</p>
+                    <p class="text-sm text-slate-600">C'est un montant de référence, révisé chaque 1er janvier, qui sert d'assiette aux cotisations dites plafonnées, notamment l'assurance vieillesse et la première tranche de la retraite complémentaire. Au-delà de ce seuil, ces cotisations cessent d'augmenter, ce qui explique que le taux global de prélèvement diminue à mesure que le salaire s'élève.</p>
                 </div>
             </div>
             <div class="rounded-xl border border-slate-200 bg-white">
@@ -545,40 +574,118 @@
                     <svg class="h-5 w-5 text-slate-400 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
                 </button>
                 <div class="faq-content hidden px-5 pb-5">
-                    <p class="text-sm text-slate-600">Le net avant impôt est affiché sur votre fiche de paie. Le montant réel versé est le net après prélèvement à la source.</p>
+                    <p class="text-sm text-slate-600">Non, pas tout à fait. Le net affiché ici est le net avant impôt, celui qui figure en bas de la fiche de paie. Depuis le prélèvement à la source, l'employeur retient l'impôt sur le revenu directement sur la paie : le montant viré est donc inférieur. Le taux dépend de votre foyer fiscal et figure sur votre avis d'imposition.</p>
+                </div>
+            </div>
+                    <div class="rounded-xl border border-slate-200 bg-white">
+                <button class="faq-toggle w-full flex items-center justify-between p-5 text-left" onclick="this.nextElementSibling.classList.toggle('hidden');this.querySelector('svg').style.transform=this.nextElementSibling.classList.contains('hidden')?'':'rotate(180deg)'">
+                    <span class="font-medium text-slate-900">L'intérimaire touche-t-il plus qu'un salarié en contrat classique ?</span>
+                    <svg class="h-5 w-5 text-slate-400 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+                </button>
+                <div class="faq-content hidden px-5 pb-5">
+                    <p class="text-sm text-slate-600">À poste équivalent, le salaire de base est le même : c'est le principe d'égalité de traitement. S'y ajoutent en revanche deux indemnités propres à l'intérim, l'indemnité de fin de mission, égale à dix pour cent de la rémunération brute totale, et l'indemnité compensatrice de congés payés, du même ordre. Le brut perçu est donc supérieur d'environ vingt pour cent.</p>
                 </div>
             </div>
                 </div>
             </div>
         </section>
         <script type="application/ld+json">
-        {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Comment calculer mon salaire net ?","acceptedAnswer":{"@type":"Answer","text":"Utilisez notre calculateur ci-dessus ou appliquez un coefficient de 0,78 à votre brut mensuel pour une estimation rapide."}},{"@type":"Question","name":"Les cotisations sont-elles les mêmes partout en France ?","acceptedAnswer":{"@type":"Answer","text":"Oui, les cotisations de Sécurité sociale sont nationales. Seules certaines mutuelles d'entreprise peuvent varier."}},{"@type":"Question","name":"Puis-je négocier mon salaire brut ?","acceptedAnswer":{"@type":"Answer","text":"Oui, le salaire brut est négociable lors de l'embauche ou lors des entretiens annuels. Préparez vos arguments et renseignez-vous sur les salaires du marché."}},{"@type":"Question","name":"Que signifie le plafond de la Sécurité sociale ?","acceptedAnswer":{"@type":"Answer","text":"C'est un seuil (3 864 € par mois en 2026) au-delà duquel certaines cotisations changent de taux ou ne s'appliquent plus."}},{"@type":"Question","name":"Le salaire net est-il le montant versé sur mon compte ?","acceptedAnswer":{"@type":"Answer","text":"Le net avant impôt est affiché sur votre fiche de paie. Le montant réel versé est le net après prélèvement à la source."}}]}
-        </script>
-    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
     {
-    "@context": "https://schema.org",
-    "@type": "Article",
-    "headline": "Salaire Brut Net Intérim 2026 : Calcul Intérimaire",
-    "description": "Calculez votre salaire brut en net en intérim en 2026. IFM (10%), ICCP (10%), cotisations spécifiques intérimaire et simulateur gratuit. Résultat instantané.",
-    "url": "https://salairebrutonet.com/salaire-brut-net-interim/",
-    "datePublished": "2026-01-15",
-    "dateModified": "2026-06-20",
-    "inLanguage": "fr",
-    "author": {
-        "@type": "Organization",
-        "name": "Radif Partners",
-        "url": "https://salairebrutonet.com/a-propos/",
-        },
-    "publisher": {
-        "@type": "Organization",
-        "name": "SalaireBrutNet",
-        "logo": {
-            "@type": "ImageObject",
-            "url": "https://salairebrutonet.com/img/logo.svg"
-        }
+      "@type": "Question",
+      "name": "Comment calculer mon salaire net ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Utilisez le calculateur ci-dessus, ou appliquez un coefficient d'environ 0,78 au brut pour un non-cadre et 0,75 pour un cadre si vous cherchez un ordre de grandeur. Ces coefficients ne valent que pour les salaires situés sous le plafond de la Sécurité sociale : au-delà, la part des cotisations plafonnées diminue et le taux réel baisse."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Les cotisations sont-elles les mêmes partout en France ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Oui, les taux de la Sécurité sociale sont nationaux. Deux exceptions méritent d'être connues : le régime local d'Alsace-Moselle ajoute une cotisation maladie supplémentaire dans le Bas-Rhin, le Haut-Rhin et la Moselle, et les départements d'outre-mer bénéficient de dispositifs d'exonération propres. Les mutuelles d'entreprise varient par ailleurs d'un employeur à l'autre."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Puis-je négocier mon salaire brut ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Oui, le salaire brut est négociable à l'embauche comme lors des entretiens annuels : c'est le montant inscrit au contrat. Préparez des éléments vérifiables, niveau de rémunération du poste sur le marché et résultats obtenus, et raisonnez en brut annuel : c'est la seule base comparable d'une offre à l'autre, le net dépendant ensuite de votre situation fiscale."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Que signifie le plafond de la Sécurité sociale ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "C'est un montant de référence, révisé chaque 1er janvier, qui sert d'assiette aux cotisations dites plafonnées, notamment l'assurance vieillesse et la première tranche de la retraite complémentaire. Au-delà de ce seuil, ces cotisations cessent d'augmenter, ce qui explique que le taux global de prélèvement diminue à mesure que le salaire s'élève."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Le salaire net est-il le montant versé sur mon compte ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Non, pas tout à fait. Le net affiché ici est le net avant impôt, celui qui figure en bas de la fiche de paie. Depuis le prélèvement à la source, l'employeur retient l'impôt sur le revenu directement sur la paie : le montant viré est donc inférieur. Le taux dépend de votre foyer fiscal et figure sur votre avis d'imposition."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "L'intérimaire touche-t-il plus qu'un salarié en contrat classique ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "À poste équivalent, le salaire de base est le même : c'est le principe d'égalité de traitement. S'y ajoutent en revanche deux indemnités propres à l'intérim, l'indemnité de fin de mission, égale à dix pour cent de la rémunération brute totale, et l'indemnité compensatrice de congés payés, du même ordre. Le brut perçu est donc supérieur d'environ vingt pour cent."
+      }
     }
+  ]
 }
-    </script>
+</script>
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Salaire Brut Net Intérim 2026 : Calcul Intérimaire",
+  "description": "Calculez votre salaire brut en net en intérim en 2026. IFM (10%), ICCP (10%), cotisations spécifiques intérimaire et simulateur gratuit. Résultat instantané.",
+  "url": "https://salairebrutonet.com/salaire-brut-net-interim/",
+  "datePublished": "2026-01-15",
+  "dateModified": "2026-06-20",
+  "inLanguage": "fr",
+  "author": {
+    "@type": "Organization",
+    "name": "Radif Partners",
+    "url": "https://salairebrutonet.com/a-propos/",
+    "foundingDate": "2025-01-01",
+    "publishingPrinciples": "https://salairebrutonet.com/a-propos/",
+    "knowsAbout": [
+      "salaire brut et net",
+      "cotisations sociales",
+      "impôt sur le revenu",
+      "droit du travail français"
+    ]
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "SalaireBrutNet",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://salairebrutonet.com/img/logo.svg"
+    },
+    "foundingDate": "2025-01-01",
+    "publishingPrinciples": "https://salairebrutonet.com/a-propos/",
+    "knowsAbout": [
+      "salaire brut et net",
+      "cotisations sociales",
+      "impôt sur le revenu",
+      "droit du travail français"
+    ]
+  }
+}
+</script>
         <section class="bg-white border-t border-slate-200 py-12 px-4">
             <div class="mx-auto max-w-4xl">
                 <h2 class="text-lg font-bold text-slate-900 mb-4">Pages connexes</h2>
@@ -607,10 +714,15 @@
                 <a href="/" class="text-xs text-slate-500 hover:text-slate-900">Calculateur</a>
                 <a href="/simulateur-impot-sur-le-revenu/" class="text-xs text-slate-500 hover:text-slate-900">Simulateur Impôts</a>
                 <a href="/cadre-vs-non-cadre/" class="text-xs text-slate-500 hover:text-slate-900">Cadre vs Non-cadre</a>
+                <a href="/confidentialite/" class="text-xs text-slate-500 hover:text-slate-900">Confidentialité</a>
+                <a href="/methodologie/" class="text-xs text-slate-500 hover:text-slate-900">Méthodologie</a>
                 <a href="/mentions-legales/" class="text-xs text-slate-500 hover:text-slate-900">Mentions légales</a>
                 <a href="/a-propos/" class="text-xs text-slate-500 hover:text-slate-900">À propos</a>
                 <a href="/mission/" class="text-xs text-slate-500 hover:text-slate-900">Notre Mission</a>
             </div>
+            <p class="text-xs text-slate-500 w-full text-center" data-author="Radif Partners">
+                Édité par Radif Partners · Mise à jour le <time datetime="2026-09-20">20 septembre 2026</time>
+            </p>
         </div>
     </footer>
     <script>

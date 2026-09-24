@@ -6,6 +6,7 @@ ainsi que le sitemap.xml mis à jour.
 Usage : python generate.py
 """
 
+import json
 import os
 import sys
 import re
@@ -35,6 +36,32 @@ SMIC_MENSUEL_BRUT = 1801.80
 MONTANTS_POPULAIRES = [1000, 1200, 1500, 1800, 2000, 2500, 3000, 3500, 4000, 5000]
 
 # ── Fonctions de calcul (miroir de js/brut-net.js) ─────────────────────────────
+
+MOIS_FR = ["janvier", "février", "mars", "avril", "mai", "juin", "juillet",
+           "août", "septembre", "octobre", "novembre", "décembre"]
+
+
+def date_maj(*fichiers):
+    """Date du dernier commit touchant l'un des fichiers donnés (§8.4).
+
+    Le contenu d'une page engendrée dépend du gabarit et du module de calcul :
+    c'est leur dernière modification qui fait foi, et non la date du jour, qui
+    ferait passer pour fraîche une page inchangée. Sans historique git, on
+    n'affiche rien plutôt qu'une date fausse.
+    """
+    import subprocess
+    dates = []
+    for f in fichiers:
+        out = subprocess.run(["git", "log", "-1", "--format=%cs", "--", f],
+                             cwd=BASE_DIR, capture_output=True, text=True).stdout.strip()
+        if out:
+            dates.append(out)
+    if not dates:
+        return "", ""
+    iso = max(dates)
+    a, m, j = iso.split("-")
+    return iso, f"{int(j)} {MOIS_FR[int(m) - 1]} {a}"
+
 
 def calculer_cotisations_salariales(brut_mensuel, statut):
     is_cadre = statut == "cadre"
@@ -347,6 +374,7 @@ def get_all_montants():
 
 def generate_brut_net_pages(template):
     """Generate all brut→net pages (X00 steps only)."""
+    maj_iso, maj_lisible = date_maj("_template-brut-net.html", "calcul.py", "generate.py")
     montants = get_main_montants()
     for montant in montants:
         nc = calculer_brut_vers_net(montant, "non-cadre")
@@ -377,6 +405,8 @@ def generate_brut_net_pages(template):
             "{{TABLE_COTISATIONS_C}}": build_cotisations_table_html(
                 c["detail_salariales"], c["total_salarial"]
             ),
+            "{{DATE_MAJ}}": maj_iso,
+            "{{DATE_MAJ_LISIBLE}}": maj_lisible,
             "{{CANONICAL_URL}}": f"{BASE_URL}/{montant}-euros-brut-en-net/",
             "{{DESCRIPTION_CONTEXTUELLE}}": build_description_brut_net(montant, nc, c),
             "{{LIENS_PROCHES}}": build_liens_proches(montant, "brut-en-net"),
@@ -404,6 +434,7 @@ def generate_brut_net_pages(template):
 
 def generate_net_brut_pages(template):
     """Generate all net→brut pages (X00 steps only)."""
+    maj_iso, maj_lisible = date_maj("_template-net-brut.html", "calcul.py", "generate.py")
     montants = get_main_montants()
     for montant in montants:
         nc = calculer_net_vers_brut(montant, "non-cadre")
@@ -420,6 +451,8 @@ def generate_net_brut_pages(template):
             "{{BRUT_ANNUEL_C_FORMATE}}": fmt(c["brut_annuel"]),
             "{{COUT_EMPLOYEUR_NC_FORMATE}}": fmt(nc["cout_employeur"]),
             "{{COUT_EMPLOYEUR_C_FORMATE}}": fmt(c["cout_employeur"]),
+            "{{DATE_MAJ}}": maj_iso,
+            "{{DATE_MAJ_LISIBLE}}": maj_lisible,
             "{{CANONICAL_URL}}": f"{BASE_URL}/{montant}-euros-net-en-brut/",
             "{{DESCRIPTION_CONTEXTUELLE}}": build_description_net_brut(montant, nc, c),
             "{{LIENS_PROCHES}}": build_liens_proches(montant, "net-en-brut"),
@@ -545,10 +578,39 @@ REDIRECT_TEMPLATE = """<!DOCTYPE html>
 </html>"""
 
 
+TOUS_SALAIRES_FAQ = [
+    [
+        "Comment utiliser cette liste de salaires ?",
+        "Chaque ligne mène à une page dédiée à un montant, qui détaille les cotisations retenues, le net avant impôt et le coût total pour l'employeur, pour un cadre comme pour un non-cadre. Si votre salaire ne figure pas exactement dans la liste, prenez le montant le plus proche : l'écart de taux entre deux paliers voisins est négligeable."
+    ],
+    [
+        "Pourquoi les pages s'arrêtent-elles à certains montants ?",
+        "La liste couvre les montants les plus recherchés, par paliers réguliers. Au-delà du plafond de la Sécurité sociale, la part des cotisations plafonnées diminue et le taux global baisse : deux salaires éloignés ne se déduisent donc pas l'un de l'autre par une simple règle de trois. Le calculateur de la page d'accueil accepte n'importe quel montant."
+    ],
+    [
+        "Le net indiqué est-il avant ou après impôt ?",
+        "Avant impôt. Le montant affiché est le net social, celui qui figure en bas du bulletin de paie. Depuis le prélèvement à la source, l'employeur retient ensuite l'impôt sur le revenu, à un taux propre à votre foyer fiscal, si bien que la somme virée sur votre compte est inférieure au net indiqué ici."
+    ],
+    [
+        "Quelle différence entre un cadre et un non-cadre à salaire égal ?",
+        "Le cadre cotise davantage, principalement au titre de la retraite complémentaire Agirc-Arrco et de la contribution d'équilibre technique, dont les taux augmentent au-delà du plafond de la Sécurité sociale. À brut identique, son net est donc légèrement inférieur, en contrepartie de droits à retraite et d'une prévoyance plus étendus."
+    ],
+    [
+        "Ces montants tiennent-ils compte des primes ?",
+        "Non, ils portent sur le salaire de base mensuel. Une prime, un treizième mois ou des heures supplémentaires s'ajoutent au brut du mois où ils sont versés et supportent les mêmes cotisations, à quelques exceptions près. Le net de ce mois-là est donc plus élevé, sans que le calcul mensuel de référence en soit modifié."
+    ],
+    [
+        "À quelle date ces calculs se réfèrent-ils ?",
+        "Aux taux de cotisations et au plafond de la Sécurité sociale en vigueur pour l'année indiquée en tête de page. Ces valeurs changent au 1er janvier : un montant calculé pour une année ne vaut donc pas pour la suivante. La date de dernière mise à jour figure en haut et en bas de chaque page."
+    ]
+]
+
+
 def generate_tous_les_salaires_page():
     """Generate a comprehensive hub page listing all salary amounts."""
     montants = get_main_montants()
     today = date.today().isoformat()
+    maj_iso, maj_lisible = date_maj("generate.py", "calcul.py")
 
     # Build the links grid for brut-en-net
     brut_net_links = []
@@ -569,6 +631,31 @@ def generate_tous_les_salaires_page():
             f'<span class="block text-lg font-bold text-slate-900">{fmt(m)} &euro;</span>'
             f'<span class="block text-xs text-slate-500">net &rarr; {fmt(nc["brut_mensuel"])} &euro; brut</span></a>'
         )
+    faq_html = "".join(
+        '<div class="rounded-xl border border-slate-200 bg-white">'
+        '<button class="faq-toggle w-full flex items-center justify-between p-5 text-left">'
+        f'<span class="font-medium text-slate-900">{q}</span>'
+        '<svg class="h-5 w-5 text-slate-400 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>'
+        '</button>'
+        '<div class="faq-content hidden px-5 pb-5">'
+        f'<p class="text-sm text-slate-600">{a}</p>'
+        '</div></div>'
+        for q, a in TOUS_SALAIRES_FAQ
+    )
+    faq_section = (
+        '<section class="py-12 px-4"><div class="mx-auto max-w-3xl">'
+        '<h2 class="text-xl font-bold text-slate-900 mb-6">Questions frequentes</h2>'
+        f'<div class="space-y-3">{faq_html}</div></div></section>'
+    )
+    faq_jsonld = json.dumps({
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {"@type": "Question", "name": q,
+             "acceptedAnswer": {"@type": "Answer", "text": a}}
+            for q, a in TOUS_SALAIRES_FAQ
+        ],
+    }, ensure_ascii=False, indent=2)
 
     html = f"""<!DOCTYPE html>
 <html lang="fr" class="scroll-smooth"><head>
@@ -577,6 +664,18 @@ def generate_tous_les_salaires_page():
     <title>Tous les salaires brut en net 2026 : 1 000 &euro; a 10 000 &euro;</title>
     <meta name="description" content="Table complete de conversion salaire brut en net de 1 000 a 10 000 euros. Trouvez instantanement votre salaire net pour chaque montant brut, cadre et non-cadre, mis a jour 2026.">
     <link rel="canonical" href="{BASE_URL}/tous-les-salaires/">
+    <script type="application/ld+json">{faq_jsonld}</script>
+    <script type="application/ld+json">
+    {{
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "Radif Partners",
+      "url": "{BASE_URL}/a-propos/",
+      "foundingDate": "2025-01-01",
+      "publishingPrinciples": "{BASE_URL}/a-propos/",
+      "knowsAbout": ["salaire brut et net", "cotisations sociales", "impot sur le revenu", "droit du travail francais"]
+    }}
+    </script>
     <link rel="icon" type="image/svg+xml" href="/img/logo.svg">
     <link rel="icon" type="image/png" sizes="32x32" href="/img/favicon-32.png">
     <meta name="robots" content="index, follow">
@@ -624,7 +723,8 @@ def generate_tous_les_salaires_page():
 
         <section class="px-4 pb-10">
             <div class="mx-auto max-w-5xl text-center">
-                <h1 class="text-3xl sm:text-4xl font-bold text-slate-900 mb-4">Tous les salaires brut en net 2026</h1>
+                <h1 class="text-3xl sm:text-4xl font-bold text-slate-900 mb-2">Tous les salaires brut en net 2026</h1>
+                <p class="maj-haut text-xs text-slate-500 mb-4">Mise a jour le <time datetime="{maj_iso}">{maj_lisible}</time> &middot; Radif Partners</p>
                 <p class="text-lg text-slate-600 mb-8">Retrouvez la conversion brut-net pour tous les montants de 1 000 a 10 000 euros. Cliquez sur un montant pour voir le detail complet des cotisations.</p>
             </div>
         </section>
@@ -658,6 +758,7 @@ def generate_tous_les_salaires_page():
                 </div>
             </div>
         </section>
+    {faq_section}
     </main>
 
     <footer class="bg-white border-t border-slate-200 py-10">
@@ -670,9 +771,14 @@ def generate_tous_les_salaires_page():
             <div class="flex flex-wrap gap-4 justify-center">
                 <a href="/" class="text-xs text-slate-500 hover:text-slate-900">Calcul Brut Net</a>
                 <a href="/tous-les-salaires/" class="text-xs text-slate-500 hover:text-slate-900">Tous les salaires</a>
+                <a href="/confidentialite/" class="text-xs text-slate-500 hover:text-slate-900">Confidentialite</a>
+                <a href="/methodologie/" class="text-xs text-slate-500 hover:text-slate-900">Methodologie</a>
                 <a href="/mentions-legales/" class="text-xs text-slate-500 hover:text-slate-900">Mentions legales</a>
                 <a href="/a-propos/" class="text-xs text-slate-500 hover:text-slate-900">A propos</a>
             </div>
+            <p class="text-xs text-slate-500 w-full text-center" data-author="Radif Partners">
+                Edite par Radif Partners &middot; Mise a jour le <time datetime="{maj_iso}">{maj_lisible}</time>
+            </p>
         </div>
     </footer>
 </body>
@@ -715,9 +821,9 @@ def main():
     print("=== Génération des pages programmatiques ===\n")
 
     # Read templates
-    with open(os.path.join(BASE_DIR, "template-brut-net.html"), "r", encoding="utf-8") as f:
+    with open(os.path.join(BASE_DIR, "_template-brut-net.html"), "r", encoding="utf-8") as f:
         template_brut_net = f.read()
-    with open(os.path.join(BASE_DIR, "template-net-brut.html"), "r", encoding="utf-8") as f:
+    with open(os.path.join(BASE_DIR, "_template-net-brut.html"), "r", encoding="utf-8") as f:
         template_net_brut = f.read()
 
     print("Génération pages brut→net (X00)...")
