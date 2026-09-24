@@ -779,6 +779,9 @@ def generate_tous_les_salaires_page():
             <p class="text-xs text-slate-500 w-full text-center" data-author="Radif Partners">
                 Edite par Radif Partners &middot; Mise a jour le <time datetime="{maj_iso}">{maj_lisible}</time>
             </p>
+            <p class="text-xs text-slate-500 w-full text-center">
+                Sources : <a class="underline" href="https://www.urssaf.fr/" rel="noopener" target="_blank">URSSAF</a> &middot; <a class="underline" href="https://www.service-public.fr/particuliers/vosdroits/F2340" rel="noopener" target="_blank">Service-Public.fr</a> &middot; <a class="underline" href="https://www.impots.gouv.fr/" rel="noopener" target="_blank">impots.gouv.fr</a> &middot; <a class="underline" href="https://www.agirc-arrco.fr/" rel="noopener" target="_blank">Agirc-Arrco</a>
+            </p>
         </div>
     </footer>
 </body>
