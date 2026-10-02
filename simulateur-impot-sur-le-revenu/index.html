@@ -1663,7 +1663,7 @@
             }
 
             const newUrl = window.location.pathname + '?' + params.toString();
-            history.replaceState(null, '', newUrl);
+            History.prototype.replaceState.call(window.history, null, '', newUrl);
         }
 
         function loadFromURL() {
