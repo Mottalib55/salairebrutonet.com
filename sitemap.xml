@@ -96,4 +96,7 @@
     <changefreq>yearly</changefreq>
     <priority>0.5</priority>
   </url>
+  <url>
+    <loc>https://salairebrutonet.com/widget/</loc>
+  </url>
 </urlset>
