@@ -1,6 +1,7 @@
-const PSS_MENSUEL = 3864;
-const PSS_ANNUEL = 46368;
-const SMIC_MENSUEL_BRUT = 1801.80;
+const PSS_MENSUEL = 4005;
+const PSS_ANNUEL = 48060;
+const SMIC_MENSUEL_BRUT = 1867.02; // 12,31 EUR/h depuis le 1er juin 2026
+const SMIC_MENSUEL_JANVIER = 1823.03; // SMIC du 1er janvier, reference de la reduction generale
 function calculerCotisationsSalariales(brutMensuel, statut, options) {
 options = options || {};
 const isCadre = statut === 'cadre';
@@ -19,8 +20,11 @@ csgDeductible: { taux: 0.068, montant: assietteCsgCrds * 0.068, label: 'CSG déd
 csgNonDeductible: { taux: 0.024, montant: assietteCsgCrds * 0.024, label: 'CSG non déductible', assiette: '98,25% du brut' },
 crds: { taux: 0.005, montant: assietteCsgCrds * 0.005, label: 'CRDS', assiette: '98,25% du brut' },
 };
+if (brutMensuel > PSS_MENSUEL) {
+cotisations.cet = { taux: 0.0014, montant: brutMensuel * 0.0014, label: 'CET', assiette: 'Totalité' };
+}
 if (isCadre) {
-cotisations.cet = { taux: 0.0014, montant: brutMensuel * 0.0014, label: 'CET (cadre)', assiette: 'Totalité' };
+cotisations.apec = { taux: 0.00024, montant: Math.min(brutMensuel, PSS_MENSUEL * 4) * 0.00024, label: 'APEC (cadre)', assiette: 'Jusqu\'à 4 PSS' };
 }
 if (isAlsaceMoselle) {
 cotisations.alsaceMoselle = { taux: 0.013, montant: brutMensuel * 0.013, label: 'Maladie Alsace-Moselle', assiette: 'Totalité' };
@@ -34,21 +38,24 @@ return { detail: cotisations, total };
 function calculerCotisationsPatronales(brutMensuel) {
 const t1 = Math.min(brutMensuel, PSS_MENSUEL);
 const t2 = Math.max(0, brutMensuel - PSS_MENSUEL);
-const seuilAllocFam = SMIC_MENSUEL_BRUT * 3.5;
-const tauxAllocFam = brutMensuel <= seuilAllocFam ? 0.0345 : 0.0525;
 const cotisations = {
-maladie: { taux: 0.07, montant: brutMensuel * 0.07, label: 'Maladie', assiette: 'Totalité' },
+maladie: { taux: 0.13, montant: brutMensuel * 0.13, label: 'Maladie', assiette: 'Totalité' },
 vieillessePlafonnee: { taux: 0.0855, montant: t1 * 0.0855, label: 'Vieillesse plafonnée', assiette: 'Tranche 1' },
-vieillesseDeplafonee: { taux: 0.0202, montant: brutMensuel * 0.0202, label: 'Vieillesse déplafonnée', assiette: 'Totalité' },
-allocFamiliales: { taux: tauxAllocFam, montant: brutMensuel * tauxAllocFam, label: 'Allocations familiales', assiette: 'Totalité' },
-chômage: { taux: 0.0405, montant: t1 * 0.0405, label: 'Chômage', assiette: 'Tranche A' },
+vieillesseDeplafonee: { taux: 0.0211, montant: brutMensuel * 0.0211, label: 'Vieillesse déplafonnée', assiette: 'Totalité' },
+allocFamiliales: { taux: 0.0525, montant: brutMensuel * 0.0525, label: 'Allocations familiales', assiette: 'Totalité' },
+chômage: { taux: 0.0425, montant: Math.min(brutMensuel, PSS_MENSUEL * 4) * 0.0425, label: 'Chômage et AGS', assiette: 'Jusqu\'à 4 PSS' },
 agircArrcoT1: { taux: 0.0472, montant: t1 * 0.0472, label: 'AGIRC-ARRCO T1', assiette: 'Tranche 1' },
 agircArrcoT2: { taux: 0.1295, montant: t2 * 0.1295, label: 'AGIRC-ARRCO T2', assiette: 'Tranche 2' },
 atmp: { taux: 0.01, montant: brutMensuel * 0.01, label: 'AT/MP (taux moyen)', assiette: 'Totalité' },
 cegT1: { taux: 0.0129, montant: t1 * 0.0129, label: 'CEG T1', assiette: 'Tranche 1' },
 cegT2: { taux: 0.0162, montant: t2 * 0.0162, label: 'CEG T2', assiette: 'Tranche 2' },
-cet: { taux: 0.0021, montant: brutMensuel * 0.0021, label: 'CET', assiette: 'Totalité' },
+cet: { taux: 0.0021, montant: brutMensuel > PSS_MENSUEL ? brutMensuel * 0.0021 : 0, label: 'CET', assiette: 'Totalité' },
 };
+// Reduction generale degressive unique (2026) : en dessous de 3 SMIC
+if (brutMensuel > 0 && brutMensuel < SMIC_MENSUEL_JANVIER * 3) {
+const coef = Math.min(0.3981, 0.02 + 0.3781 * Math.pow(0.5 * (3 * SMIC_MENSUEL_JANVIER / brutMensuel - 1), 1.75));
+cotisations.reductionGenerale = { taux: -coef, montant: -brutMensuel * coef, label: 'Réduction générale dégressive', assiette: 'Totalité' };
+}
 let total = 0;
 for (const key in cotisations) {
 total += cotisations[key].montant;
@@ -59,11 +66,11 @@ function estimerImpotRevenu(netImposableAnnuel, nbParts, partsBase) {
 nbParts = nbParts || 1;
 partsBase = partsBase || 1;
 const tranches = [
-{ min: 0, max: 11497, taux: 0 },
-{ min: 11497, max: 29315, taux: 0.11 },
-{ min: 29315, max: 83823, taux: 0.30 },
-{ min: 83823, max: 180294, taux: 0.41 },
-{ min: 180294, max: Infinity, taux: 0.45 },
+{ min: 0, max: 11600, taux: 0 },
+{ min: 11600, max: 29579, taux: 0.11 },
+{ min: 29579, max: 84577, taux: 0.30 },
+{ min: 84577, max: 181917, taux: 0.41 },
+{ min: 181917, max: Infinity, taux: 0.45 },
 ];
 var revenuParPart = netImposableAnnuel / nbParts;
 var impotParPart = 0;
@@ -86,13 +93,16 @@ var b = Math.min(revenuParPartBase, tr.max) - tr.min;
 impotSansQF += b * tr.taux;
 }
 impotSansQF = impotSansQF * partsBase;
-// Plafond : 1 759 EUR par demi-part supplémentaire
-var plafondReduction = 1759 * (demiPartsSupp / 0.5);
+// Plafond : 1 807 EUR par demi-part supplémentaire
+var plafondReduction = 1807 * (demiPartsSupp / 0.5);
 var reductionQF = impotSansQF - impotQF;
 if (reductionQF > plafondReduction) {
 impotQF = impotSansQF - plafondReduction;
 }
 }
+// Decote : 897 EUR (personne seule) ou 1 483 EUR (couple) moins 45,25 % de l'impot
+var decote = (partsBase >= 2 ? 1483 : 897) - 0.4525 * impotQF;
+if (decote > 0) impotQF = Math.max(0, impotQF - decote);
 return Math.max(0, Math.round(impotQF));
 }
 function calculerNbParts(situation, nbEnfants) {
@@ -121,7 +131,7 @@ const csgNonDed = salariales.detail.csgNonDeductible.montant;
 const crds = salariales.detail.crds.montant;
 const netImposableMensuel = brutEffectif - salariales.total + csgNonDed + crds;
 const netImposableAnnuel = netImposableMensuel * 12;
-const abattement = Math.min(Math.max(netImposableAnnuel * 0.1, 495), 14171);
+const abattement = Math.min(Math.max(netImposableAnnuel * 0.1, 509), 14555);
 const netImposableApresAbattement = netImposableAnnuel - abattement;
 const impotAnnuel = estimerImpotRevenu(netImposableApresAbattement, nbParts, partsBase);
 const impotMensuel = Math.round(impotAnnuel / 12);
