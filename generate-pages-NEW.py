@@ -51,7 +51,7 @@ HEADER = '''
     <header class="sticky top-0 z-50 w-full border-b border-slate-200 bg-white/90 backdrop-blur-md">
         <div class="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
             <a href="/" class="flex items-center gap-2">
-                <img src="/img/logo.svg" alt="SalaireBrutNet" class="h-8 w-8">
+                <img src="/logo.svg" width="32" height="32" alt="" class="h-8 w-8">
                 <span class="text-base font-semibold tracking-tight text-slate-900">SalaireBrutNet</span>
             </a>
             <nav class="hidden md:flex gap-8">
