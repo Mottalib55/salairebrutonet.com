@@ -682,8 +682,7 @@ def generate_tous_les_salaires_page():
     <link rel="preload" href="/fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="stylesheet" href="/css/fonts.css">
     <link rel="stylesheet" href="/css/style.css">
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-PZCT3WCT9D"></script>
-    <script>window.dataLayer=window.dataLayer||[];function gtag(){{dataLayer.push(arguments)}};gtag('js',new Date());gtag('config','G-PZCT3WCT9D');</script>
+    <script>(function(){{window.clarity=window.clarity||function(){{(window.clarity.q=window.clarity.q||[]).push(arguments);}};window.clarity('consentv2',{{ad_Storage:'denied',analytics_Storage:'denied'}});var s=document.createElement('script');s.async=true;s.src='https://www.clarity.ms/tag/xanyylalio';document.head.appendChild(s);}})();</script>
     <script type="application/ld+json">
     {{
         "@context": "https://schema.org",
@@ -695,7 +694,7 @@ def generate_tous_les_salaires_page():
     }}
     </script>
 </head>
-<body class="bg-slate-50 text-slate-600 antialiased flex flex-col min-h-screen">
+<body data-clarity-mask="true" class="bg-slate-50 text-slate-600 antialiased flex flex-col min-h-screen">
     <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-2 focus:left-2 focus:z-[100] focus:px-4 focus:py-2 focus:bg-brand-600 focus:text-white focus:rounded-lg focus:text-sm focus:font-semibold">Aller au contenu</a>
     <header class="sticky top-0 z-50 w-full border-b border-slate-200 bg-white/90 backdrop-blur-md">
         <div class="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
