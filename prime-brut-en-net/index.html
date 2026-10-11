@@ -188,12 +188,6 @@
 <p class="maj-haut text-xs text-slate-500 mb-4">Mise à jour le <time datetime="2026-09-20">20 septembre 2026</time> · Radif Partners</p>
             </div>
         </section>
-        <!-- §21 : le paragraphe qui tient seul une fois extrait de la page. -->
-        <section class="bg-white py-8 px-4">
-            <div class="mx-auto max-w-5xl">
-                <p class="bloc-citable text-slate-700 leading-relaxed">Une prime suit exactement le régime social du salaire : elle supporte les mêmes cotisations, environ 22 % pour un non-cadre et 25 % pour un cadre, sans abattement ni taux réduit. Sa particularité tient au prélèvement à la source, appliqué au taux du mois de versement, c'est-à-dire au taux marginal et non au taux moyen de l'année. Une prime de 2 000 € brut laisse donc environ 1 560 € de net avant impôt et près de 1 250 € après un prélèvement à 20 %. Trois dispositifs échappent partiellement à cette règle : l'intéressement et la participation, exonérés d'impôt s'ils sont placés cinq ans sur un plan d'épargne salariale, et la prime de partage de la valeur, qui relève d'un régime propre révisé chaque année.</p>
-            </div>
-        </section>
 
         <section class="py-12 px-4">
             <div class="mx-auto max-w-3xl">
@@ -222,11 +216,17 @@
                             </select>
                         </div>
                     </div>
-                    <div class="rounded-xl bg-brand-50 border border-brand-100 p-4 text-center">
+                    <div class="rounded-xl bg-brand-50 border border-brand-100 p-4 text-center" data-resultat aria-live="polite">
                         <p class="text-sm text-brand-600 font-medium">Salaire net mensuel</p>
                         <p class="text-3xl font-bold text-slate-900" id="result-net-widget">–</p>
                     </div>
                 </div>
+            </div>
+        </section>
+        <!-- §21 : le paragraphe qui tient seul une fois extrait de la page. -->
+        <section class="bg-white py-8 px-4">
+            <div class="mx-auto max-w-5xl">
+                <p class="bloc-citable text-slate-700 leading-relaxed">Une prime suit exactement le régime social du salaire : elle supporte les mêmes cotisations, environ 22 % pour un non-cadre et 25 % pour un cadre, sans abattement ni taux réduit. Sa particularité tient au prélèvement à la source, appliqué au taux du mois de versement, c'est-à-dire au taux marginal et non au taux moyen de l'année. Une prime de 2 000 € brut laisse donc environ 1 560 € de net avant impôt et près de 1 250 € après un prélèvement à 20 %. Trois dispositifs échappent partiellement à cette règle : l'intéressement et la participation, exonérés d'impôt s'ils sont placés cinq ans sur un plan d'épargne salariale, et la prime de partage de la valeur, qui relève d'un régime propre révisé chaque année.</p>
             </div>
         </section>
     <script src="/js/brut-net.js"></script>

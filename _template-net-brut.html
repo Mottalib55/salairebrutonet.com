@@ -208,12 +208,54 @@
         </nav>
 
         <!-- Résultat immédiat -->
-        <section class="px-4 pb-10">
+        <section class="px-4 pb-2">
             <div class="mx-auto max-w-4xl text-center">
-                <h1 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-slate-900 mb-6">
+                <h1 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-slate-900 mb-3">
                     <span class="text-brand-600">{{MONTANT_FORMATE}} €</span> net en brut
                 </h1>
 <p class="maj-haut text-xs text-slate-500 mb-4">Mise à jour le <time datetime="{{DATE_MAJ}}">{{DATE_MAJ_LISIBLE}}</time> · Radif Partners</p>
+            </div>
+        </section>
+
+        <!-- Calculateur pré-rempli -->
+        <section class="pb-8 px-4">
+            <div class="mx-auto max-w-3xl">
+                <h2 class="text-xl font-bold text-slate-900 mb-4 text-center">Ajustez votre calcul</h2>
+                <div class="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
+                    <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-4">
+                        <div>
+                            <label for="input-salaire" class="block text-sm font-medium text-slate-700 mb-1">Salaire net mensuel</label>
+                            <input type="text" inputmode="decimal" id="input-salaire" value="{{MONTANT}}"
+                                class="w-full rounded-lg border border-slate-200 px-3 py-2 text-lg font-bold text-slate-900 focus:border-brand-500 focus:outline-none">
+                        </div>
+                        <div>
+                            <label for="select-statut" class="block text-sm font-medium text-slate-700 mb-1">Statut</label>
+                            <select id="select-statut" class="w-full rounded-lg border border-slate-200 px-3 py-2 text-sm text-slate-900 focus:border-brand-500 focus:outline-none">
+                                <option value="non-cadre" selected>Non-cadre</option>
+                                <option value="cadre">Cadre</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label for="select-temps" class="block text-sm font-medium text-slate-700 mb-1">Temps de travail</label>
+                            <select id="select-temps" class="w-full rounded-lg border border-slate-200 px-3 py-2 text-sm text-slate-900 focus:border-brand-500 focus:outline-none">
+                                <option value="100" selected>100%</option>
+                                <option value="80">80%</option>
+                                <option value="60">60%</option>
+                                <option value="50">50%</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="rounded-xl bg-brand-50 border border-brand-100 p-4 text-center" data-resultat aria-live="polite">
+                        <p class="text-sm text-brand-600 font-medium">Salaire brut mensuel correspondant</p>
+                        <p class="text-3xl font-bold text-slate-900" id="result-brut-interactif">{{BRUT_NON_CADRE_FORMATE}} €</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Résultat immédiat (suite) -->
+        <section class="px-4 pb-10">
+            <div class="mx-auto max-w-4xl text-center">
                 <div class="flex flex-wrap items-center justify-center gap-3 text-sm text-slate-500 mb-6">
                     <div class="flex items-center gap-2">
                         <span>Par <a href="/a-propos/" class="font-medium text-slate-700 hover:text-brand-600">Radif Partners</a></span>
@@ -307,41 +349,6 @@
             </div>
         </section>
 
-        <!-- Calculateur pré-rempli -->
-        <section class="py-12 px-4">
-            <div class="mx-auto max-w-3xl">
-                <h2 class="text-xl font-bold text-slate-900 mb-6 text-center">Ajustez votre calcul</h2>
-                <div class="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
-                    <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-4">
-                        <div>
-                            <label for="input-salaire" class="block text-sm font-medium text-slate-700 mb-1">Salaire net mensuel</label>
-                            <input type="text" inputmode="decimal" id="input-salaire" value="{{MONTANT}}"
-                                class="w-full rounded-lg border border-slate-200 px-3 py-2 text-lg font-bold text-slate-900 focus:border-brand-500 focus:outline-none">
-                        </div>
-                        <div>
-                            <label for="select-statut" class="block text-sm font-medium text-slate-700 mb-1">Statut</label>
-                            <select id="select-statut" class="w-full rounded-lg border border-slate-200 px-3 py-2 text-sm text-slate-900 focus:border-brand-500 focus:outline-none">
-                                <option value="non-cadre" selected>Non-cadre</option>
-                                <option value="cadre">Cadre</option>
-                            </select>
-                        </div>
-                        <div>
-                            <label for="select-temps" class="block text-sm font-medium text-slate-700 mb-1">Temps de travail</label>
-                            <select id="select-temps" class="w-full rounded-lg border border-slate-200 px-3 py-2 text-sm text-slate-900 focus:border-brand-500 focus:outline-none">
-                                <option value="100" selected>100%</option>
-                                <option value="80">80%</option>
-                                <option value="60">60%</option>
-                                <option value="50">50%</option>
-                            </select>
-                        </div>
-                    </div>
-                    <div class="rounded-xl bg-brand-50 border border-brand-100 p-4 text-center">
-                        <p class="text-sm text-brand-600 font-medium">Salaire brut mensuel correspondant</p>
-                        <p class="text-3xl font-bold text-slate-900" id="result-brut-interactif">{{BRUT_NON_CADRE_FORMATE}} €</p>
-                    </div>
-                </div>
-            </div>
-        </section>
 
         <!-- Description contextuelle -->
         <section class="bg-white border-t border-slate-200 py-12 px-4">

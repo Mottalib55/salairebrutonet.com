@@ -199,12 +199,6 @@
                 </div>
             </div>
         </section>
-        <!-- §21 : le paragraphe qui tient seul une fois extrait de la page. -->
-        <section class="bg-white py-8 px-4">
-            <div class="mx-auto max-w-5xl">
-                <p class="bloc-citable text-slate-700 leading-relaxed">Un intérimaire perçoit, en plus de son salaire, deux indemnités qui n'existent pas dans un contrat classique : l'indemnité de fin de mission, égale à 10 % de la rémunération brute totale, et l'indemnité compensatrice de congés payés, également de 10 %, calculée sur le total salaire et indemnité de fin de mission compris. Sa rémunération brute est donc supérieure d'environ 21 % à celle d'un salarié permanent occupant le même poste, ce que le principe d'égalité de traitement impose de comparer à salaire de référence identique. Les deux indemnités supportent les cotisations sociales au même titre que le salaire, et l'indemnité de fin de mission est imposable ; le net final reste donc nettement supérieur, de l'ordre de 16 % à 17 %.</p>
-            </div>
-        </section>
 
         <section class="py-12 px-4">
             <div class="mx-auto max-w-3xl">
@@ -233,11 +227,17 @@
                             </select>
                         </div>
                     </div>
-                    <div class="rounded-xl bg-brand-50 border border-brand-100 p-4 text-center">
+                    <div class="rounded-xl bg-brand-50 border border-brand-100 p-4 text-center" data-resultat aria-live="polite">
                         <p class="text-sm text-brand-600 font-medium">Salaire net mensuel</p>
                         <p class="text-3xl font-bold text-slate-900" id="result-net-widget">–</p>
                     </div>
                 </div>
+            </div>
+        </section>
+        <!-- §21 : le paragraphe qui tient seul une fois extrait de la page. -->
+        <section class="bg-white py-8 px-4">
+            <div class="mx-auto max-w-5xl">
+                <p class="bloc-citable text-slate-700 leading-relaxed">Un intérimaire perçoit, en plus de son salaire, deux indemnités qui n'existent pas dans un contrat classique : l'indemnité de fin de mission, égale à 10 % de la rémunération brute totale, et l'indemnité compensatrice de congés payés, également de 10 %, calculée sur le total salaire et indemnité de fin de mission compris. Sa rémunération brute est donc supérieure d'environ 21 % à celle d'un salarié permanent occupant le même poste, ce que le principe d'égalité de traitement impose de comparer à salaire de référence identique. Les deux indemnités supportent les cotisations sociales au même titre que le salaire, et l'indemnité de fin de mission est imposable ; le net final reste donc nettement supérieur, de l'ordre de 16 % à 17 %.</p>
             </div>
         </section>
     <script src="/js/brut-net.js"></script>
