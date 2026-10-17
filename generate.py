@@ -682,6 +682,12 @@ def generate_tous_les_salaires_page():
     <link rel="preload" href="/fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="stylesheet" href="/css/fonts.css">
     <link rel="stylesheet" href="/css/style.css">
+    <!-- GA4, régime sans bandeau (décision de l'éditeur du 2026-10-17, RECETTE §15.6) : mesure d'audience
+         accordée, publicité refusée ; cookies _ga et _ga_<ID> limités à 390 jours, non prolongés ;
+         signaux Google coupés ; adresse envoyée sans paramètres. Contrôle : scripts/check-cookies.py. -->
+    <script>window.dataLayer=window.dataLayer||[];function gtag(){{dataLayer.push(arguments);}}window.gtag=gtag;gtag('consent','default',{{analytics_storage:'granted',ad_storage:'denied',ad_user_data:'denied',ad_personalization:'denied',functionality_storage:'granted',security_storage:'granted'}});</script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-SJMWMPX1TG"></script>
+    <script>gtag('js',new Date());gtag('config','G-SJMWMPX1TG',{{anonymize_ip:true,page_location:location.origin+location.pathname,cookie_expires:33696000,cookie_update:false,allow_google_signals:false,allow_ad_personalization_signals:false}});</script>
     <script>(function(){{window.clarity=window.clarity||function(){{(window.clarity.q=window.clarity.q||[]).push(arguments);}};window.clarity('consentv2',{{ad_Storage:'denied',analytics_Storage:'denied'}});var s=document.createElement('script');s.async=true;s.src='https://www.clarity.ms/tag/xanyylalio';document.head.appendChild(s);}})();</script>
     <script type="application/ld+json">
     {{
