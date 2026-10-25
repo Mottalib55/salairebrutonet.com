@@ -166,7 +166,7 @@ def add_article_schema(html, title, description, canonical_url):
             },
         "publisher": {
             "@type": "Organization",
-            "name": "SalaireBrutNet",
+            "name": "Salaire Bruto Net",
             "logo": {
                 "@type": "ImageObject",
                 "url": "https://salairebrutonet.com/img/logo.svg"
@@ -267,10 +267,10 @@ def main():
             # Add OG tags after the description meta
             og_block = '''
     <meta property="og:type" content="website">
-    <meta property="og:title" content="Page introuvable (404) | SalaireBrutNet">
+    <meta property="og:title" content="Page introuvable (404) | Salaire Bruto Net">
     <meta property="og:description" content="''' + description + '''">
     <meta property="og:locale" content="fr_FR">
-    <meta property="og:site_name" content="SalaireBrutNet">
+    <meta property="og:site_name" content="Salaire Bruto Net">
     <meta property="og:image" content="https://salairebrutonet.com/img/og-image.png">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">

@@ -706,7 +706,7 @@ def generate_tous_les_salaires_page():
         <div class="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
             <a href="/" class="flex items-center gap-2">
                 <img src="/logo.svg" width="32" height="32" alt="" class="h-8 w-8">
-                <span class="text-base font-semibold tracking-tight text-slate-900">SalaireBrutNet</span>
+                <span class="whitespace-nowrap text-base font-semibold tracking-tight text-slate-900">Salaire <span class="text-emerald-600">Bruto Net</span></span>
             </a>
             <nav class="hidden md:flex gap-8 items-center">
                 <a href="/" class="text-sm font-medium text-slate-500 hover:text-slate-900 transition-colors">Calcul Brut Net</a>
@@ -769,10 +769,10 @@ def generate_tous_les_salaires_page():
     <footer class="bg-white border-t border-slate-200 py-10">
         <div class="mx-auto max-w-7xl px-4 flex flex-col md:flex-row justify-between items-center gap-6">
             <a href="/" class="flex items-center gap-2">
-                <img src="/img/logo.svg" alt="SalaireBrutNet" class="h-6 w-6">
-                <span class="text-sm font-semibold text-slate-900">SalaireBrutNet</span>
+                <img src="/img/logo.svg" alt="Salaire Bruto Net" class="h-6 w-6">
+                <span class="text-sm font-semibold text-slate-900">Salaire Bruto Net</span>
             </a>
-            <p class="text-xs text-slate-500">&copy; 2026 SalaireBrutNet &middot; Estimation indicative</p>
+            <p class="text-xs text-slate-500">&copy; 2026 Salaire Bruto Net &middot; Estimation indicative</p>
             <div class="flex flex-wrap gap-4 justify-center">
                 <a href="/" class="text-xs text-slate-500 hover:text-slate-900">Calcul Brut Net</a>
                 <a href="/tous-les-salaires/" class="text-xs text-slate-500 hover:text-slate-900">Tous les salaires</a>

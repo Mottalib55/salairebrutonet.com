@@ -4,7 +4,7 @@ import os, re, json
 
 BASE = os.path.dirname(os.path.abspath(__file__))
 DOMAIN = "salairebrutonet.com"
-SITE_NAME = "SalaireBrutNet"
+SITE_NAME = "Salaire Bruto Net"
 PASSWORD = "sofia"
 
 # ── Collecter les données SEO ───────────────────────────────────────────────

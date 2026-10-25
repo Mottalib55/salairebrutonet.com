@@ -37,7 +37,7 @@ def page_head(title, description, canonical, keywords=""):
     <meta property="og:title" content="{title}">
     <meta property="og:description" content="{description}">
     <meta property="og:locale" content="fr_FR">
-    <meta property="og:site_name" content="SalaireBrutNet">
+    <meta property="og:site_name" content="Salaire Bruto Net">
     <meta name="robots" content="index, follow">
     <meta name="keywords" content="{keywords}">
     <link rel="stylesheet" href="/css/fonts.css">
@@ -61,7 +61,7 @@ HEADER = \'\'\'
         <div class="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
             <a href="/" class="flex items-center gap-2">
                 <img src="/logo.svg" width="32" height="32" alt="" class="h-8 w-8">
-                <span class="text-base font-semibold tracking-tight text-slate-900">SalaireBrutNet</span>
+                <span class="whitespace-nowrap text-base font-semibold tracking-tight text-slate-900">Salaire <span class="text-emerald-600">Bruto Net</span></span>
             </a>
             <nav class="hidden md:flex gap-8">
                 <a href="/" class="text-sm font-medium text-slate-500 hover:text-slate-900 transition-colors">Calculateur</a>
@@ -78,10 +78,10 @@ FOOTER = \'\'\'
     <footer class="bg-white border-t border-slate-200 py-10">
         <div class="mx-auto max-w-7xl px-4 flex flex-col md:flex-row justify-between items-center gap-6">
             <a href="/" class="flex items-center gap-2">
-                <img src="/img/logo.svg" alt="SalaireBrutNet" class="h-6 w-6">
-                <span class="text-sm font-semibold text-slate-900">SalaireBrutNet</span>
+                <img src="/img/logo.svg" alt="Salaire Bruto Net" class="h-6 w-6">
+                <span class="text-sm font-semibold text-slate-900">Salaire Bruto Net</span>
             </a>
-            <p class="text-xs text-slate-500">© 2026 SalaireBrutNet · Estimation indicative</p>
+            <p class="text-xs text-slate-500">© 2026 Salaire Bruto Net · Estimation indicative</p>
             <div class="flex gap-4">
                 <a href="/" class="text-xs text-slate-500 hover:text-slate-900">Calculateur</a>
                 <a href="/mentions-legales/" class="text-xs text-slate-500 hover:text-slate-900">Mentions légales</a>

@@ -1,6 +1,6 @@
 {
-  "name": "SalaireBrutNet - Calculateur Salaire Brut en Net 2026",
-  "short_name": "SalaireBrutNet",
+  "name": "Salaire Bruto Net - Calculateur Salaire Brut en Net 2026",
+  "short_name": "Salaire Bruto Net",
   "description": "Convertissez votre salaire brut en net en 1 clic. Calculateur gratuit, instantane et precis. Taux 2026, cadre et non-cadre.",
   "start_url": "/",
   "display": "standalone",
