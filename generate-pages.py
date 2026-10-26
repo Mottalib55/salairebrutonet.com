@@ -313,6 +313,14 @@ def write_page(slug, html_content):
     folder = os.path.join(BASE_DIR, slug)
     os.makedirs(folder, exist_ok=True)
     path = os.path.join(folder, "index.html")
+    # Garde-fou : ce générateur ancien ne pose pas le kit de confiance. Une page servie
+    # qui le porte déjà (pages thématiques de generate-thematiques.py, pages refaites à
+    # la main) n'est jamais écrasée.
+    if os.path.exists(path):
+        with open(path, encoding="utf-8") as f:
+            if 'class="maj-haut' in f.read():
+                print(f"  = {slug}/index.html conservée (page servie avec kit de confiance)")
+                return
     with open(path, "w", encoding="utf-8") as f:
         f.write(html_content)
     print(f"  ✓ {slug}/index.html")
