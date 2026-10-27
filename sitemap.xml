@@ -101,85 +101,253 @@
   </url>
     <url>
         <loc>https://salairebrutonet.com/smic-brut-net-2026/</loc>
-        <lastmod>2026-10-26</lastmod>
+        <lastmod>2026-10-27</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
         <loc>https://salairebrutonet.com/salaire-brut-net-alternance-apprentissage/</loc>
-        <lastmod>2026-10-26</lastmod>
+        <lastmod>2026-10-27</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
         <loc>https://salairebrutonet.com/salaire-moyen-france/</loc>
-        <lastmod>2026-10-26</lastmod>
+        <lastmod>2026-10-27</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
         <loc>https://salairebrutonet.com/salaire-brut-net-stage/</loc>
-        <lastmod>2026-10-26</lastmod>
+        <lastmod>2026-10-27</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
         <loc>https://salairebrutonet.com/salaire-brut-net-cadre/</loc>
-        <lastmod>2026-10-26</lastmod>
+        <lastmod>2026-10-27</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
         <loc>https://salairebrutonet.com/salaire-brut-net-horaire/</loc>
-        <lastmod>2026-10-26</lastmod>
+        <lastmod>2026-10-27</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
         <loc>https://salairebrutonet.com/heures-supplementaires-brut-net/</loc>
-        <lastmod>2026-10-26</lastmod>
+        <lastmod>2026-10-27</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
         <loc>https://salairebrutonet.com/salaire-brut-net-annuel/</loc>
-        <lastmod>2026-10-26</lastmod>
+        <lastmod>2026-10-27</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
         <loc>https://salairebrutonet.com/salaire-net-imposable/</loc>
-        <lastmod>2026-10-26</lastmod>
+        <lastmod>2026-10-27</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
         <loc>https://salairebrutonet.com/salaire-brut-net-fonction-publique/</loc>
-        <lastmod>2026-10-26</lastmod>
+        <lastmod>2026-10-27</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
         <loc>https://salairebrutonet.com/cout-employeur/</loc>
-        <lastmod>2026-10-26</lastmod>
+        <lastmod>2026-10-27</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
         <loc>https://salairebrutonet.com/salaire-brut-net-non-cadre/</loc>
-        <lastmod>2026-10-26</lastmod>
+        <lastmod>2026-10-27</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
         <loc>https://salairebrutonet.com/salaire-brut-net-alsace-moselle/</loc>
-        <lastmod>2026-10-26</lastmod>
+        <lastmod>2026-10-27</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
         <loc>https://salairebrutonet.com/salaire-brut-net-journalier/</loc>
-        <lastmod>2026-10-26</lastmod>
+        <lastmod>2026-10-27</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://salairebrutonet.com/indemnite-rupture-conventionnelle/</loc>
+        <lastmod>2026-10-27</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://salairebrutonet.com/indemnite-licenciement/</loc>
+        <lastmod>2026-10-27</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://salairebrutonet.com/allocation-chomage-are/</loc>
+        <lastmod>2026-10-27</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://salairebrutonet.com/indemnite-preavis/</loc>
+        <lastmod>2026-10-27</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://salairebrutonet.com/indemnite-conges-payes/</loc>
+        <lastmod>2026-10-27</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://salairebrutonet.com/cumul-emploi-retraite/</loc>
+        <lastmod>2026-10-27</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://salairebrutonet.com/retraite-progressive/</loc>
+        <lastmod>2026-10-27</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://salairebrutonet.com/calcul-retraite/</loc>
+        <lastmod>2026-10-27</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://salairebrutonet.com/prime-activite/</loc>
+        <lastmod>2026-10-27</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://salairebrutonet.com/portage-salarial/</loc>
+        <lastmod>2026-10-27</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://salairebrutonet.com/arret-maladie-salaire/</loc>
+        <lastmod>2026-10-27</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://salairebrutonet.com/conge-paternite/</loc>
+        <lastmod>2026-10-27</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://salairebrutonet.com/jours-feries-2026/</loc>
+        <lastmod>2026-10-27</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://salairebrutonet.com/majoration-nuit-dimanche/</loc>
+        <lastmod>2026-10-27</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://salairebrutonet.com/jours-rtt/</loc>
+        <lastmod>2026-10-27</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://salairebrutonet.com/prime-anciennete/</loc>
+        <lastmod>2026-10-27</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://salairebrutonet.com/bareme-kilometrique-2026/</loc>
+        <lastmod>2026-10-27</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://salairebrutonet.com/plafond-securite-sociale-2026/</loc>
+        <lastmod>2026-10-27</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://salairebrutonet.com/taux-prelevement-a-la-source/</loc>
+        <lastmod>2026-10-27</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://salairebrutonet.com/reduction-fillon-2026/</loc>
+        <lastmod>2026-10-27</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://salairebrutonet.com/simulateur-fiche-de-paie/</loc>
+        <lastmod>2026-10-27</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://salairebrutonet.com/cesu-brut-net/</loc>
+        <lastmod>2026-10-27</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://salairebrutonet.com/salaire-assistante-maternelle/</loc>
+        <lastmod>2026-10-27</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://salairebrutonet.com/salaire-ingenieur-informatique/</loc>
+        <lastmod>2026-10-27</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://salairebrutonet.com/salaire-enseignant/</loc>
+        <lastmod>2026-10-27</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://salairebrutonet.com/salaire-interne-medecine/</loc>
+        <lastmod>2026-10-27</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://salairebrutonet.com/salaire-aide-soignant/</loc>
+        <lastmod>2026-10-27</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://salairebrutonet.com/salaire-infirmier/</loc>
+        <lastmod>2026-10-27</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
