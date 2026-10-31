@@ -4,7 +4,7 @@
   "description": "",
   "main": "tailwind.config.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "python3 scripts/test_calcul.py",
     "check:cookies": "python3 scripts/check-cookies.py ."
   },
   "repository": {

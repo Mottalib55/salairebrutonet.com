@@ -107,7 +107,7 @@
                 "name": "Quelle est la différence entre salaire brut et net ?",
                 "acceptedAnswer": {
                     "@type": "Answer",
-                    "text": "Le salaire brut est le montant avant déduction des cotisations sociales salariales. Le salaire net est ce que vous recevez sur votre compte bancaire, après déduction des cotisations (environ 22% pour un non-cadre et 25% pour un cadre)."
+                    "text": "Le salaire brut est le montant avant déduction des cotisations sociales salariales. Le salaire net est ce que vous recevez sur votre compte bancaire, après déduction des cotisations (environ 21 % du brut, pour un cadre comme pour un non-cadre, sous le plafond de la Sécurité sociale)."
                 }
             },
             {
@@ -115,7 +115,7 @@
                 "name": "Quel pourcentage du brut pour obtenir le net ?",
                 "acceptedAnswer": {
                     "@type": "Answer",
-                    "text": "En moyenne, le salaire net représente environ 78% du salaire brut pour un non-cadre et 75% pour un cadre. Ce taux varie selon le niveau de salaire en raison du plafond de la Sécurité sociale."
+                    "text": "Le salaire net représente environ 79 % du salaire brut, pour un non-cadre comme pour un cadre (l'écart se limite à la cotisation APEC de 0,024 %). Ce taux varie selon le niveau de salaire en raison du plafond de la Sécurité sociale."
                 }
             },
             {
@@ -402,12 +402,12 @@
                             <div class="salary-row flex items-center gap-3 mb-2">
                                 <div class="salary-label w-36 text-sm font-medium text-slate-500" style="flex-shrink:0">Salaire brut</div>
                                 <div class="flex-1 relative">
-                                    <input type="text" inputmode="decimal" id="input-brut-m" value="2 500"
+                                    <input type="text" inputmode="decimal" id="input-brut-m" aria-label="Salaire brut mensuel" value="2 500"
                                         class="salary-input w-full rounded-xl border border-slate-200 bg-slate-50 px-4 text-lg font-bold text-slate-700 focus:outline-none transition-all" style="height:44px">
                                     <span class="salary-euro absolute right-3 top-1/2 -translate-y-1/2 text-sm font-medium text-slate-400">€</span>
                                 </div>
                                 <div class="flex-1 relative">
-                                    <input type="text" inputmode="decimal" id="input-brut-a" value="30 000"
+                                    <input type="text" inputmode="decimal" id="input-brut-a" aria-label="Salaire brut annuel" value="30 000"
                                         class="salary-input w-full rounded-xl border border-slate-200 bg-slate-50 px-4 text-lg font-bold text-slate-700 focus:outline-none transition-all" style="height:44px">
                                     <span class="salary-euro absolute right-3 top-1/2 -translate-y-1/2 text-sm font-medium text-slate-400">€</span>
                                 </div>
@@ -416,12 +416,12 @@
                             <div class="salary-row flex items-center gap-3 mb-2">
                                 <div class="salary-label w-36 text-sm font-medium text-slate-500" style="flex-shrink:0">Net avant impôt</div>
                                 <div class="flex-1 relative">
-                                    <input type="text" inputmode="decimal" id="input-net-m" value="1950"
+                                    <input type="text" inputmode="decimal" id="input-net-m" aria-label="Salaire net mensuel avant impôt" value="1 979"
                                         class="salary-input w-full rounded-xl border border-slate-200 bg-slate-50 px-4 text-lg font-bold text-slate-700 focus:outline-none transition-all" style="height:44px">
                                     <span class="salary-euro absolute right-3 top-1/2 -translate-y-1/2 text-sm font-medium text-slate-400">€</span>
                                 </div>
                                 <div class="flex-1 relative">
-                                    <input type="text" inputmode="decimal" id="input-net-a" value="23400"
+                                    <input type="text" inputmode="decimal" id="input-net-a" aria-label="Salaire net annuel avant impôt" value="23 748"
                                         class="salary-input w-full rounded-xl border border-slate-200 bg-slate-50 px-4 text-lg font-bold text-slate-700 focus:outline-none transition-all" style="height:44px">
                                     <span class="salary-euro absolute right-3 top-1/2 -translate-y-1/2 text-sm font-medium text-slate-400">€</span>
                                 </div>
@@ -436,12 +436,12 @@
                             <div class="salary-row flex items-center gap-3">
                                 <div class="salary-label w-36 text-sm font-medium text-emerald-600" style="flex-shrink:0">Net après impôt</div>
                                 <div class="flex-1 relative">
-                                    <input type="text" inputmode="decimal" id="input-netai-m" value="1850"
+                                    <input type="text" inputmode="decimal" id="input-netai-m" aria-label="Salaire net mensuel après impôt" value="1 913"
                                         class="salary-input w-full rounded-xl border border-slate-200 bg-emerald-50 px-4 text-lg font-bold text-emerald-700 focus:outline-none transition-all" style="height:44px">
                                     <span class="salary-euro absolute right-3 top-1/2 -translate-y-1/2 text-sm font-medium text-emerald-400">€</span>
                                 </div>
                                 <div class="flex-1 relative">
-                                    <input type="text" inputmode="decimal" id="input-netai-a" value="22200"
+                                    <input type="text" inputmode="decimal" id="input-netai-a" aria-label="Salaire net annuel après impôt" value="22 956"
                                         class="salary-input w-full rounded-xl border border-slate-200 bg-emerald-50 px-4 text-lg font-bold text-emerald-700 focus:outline-none transition-all" style="height:44px">
                                     <span class="salary-euro absolute right-3 top-1/2 -translate-y-1/2 text-sm font-medium text-emerald-400">€</span>
                                 </div>
@@ -567,11 +567,11 @@
                                 </div>
                                 <span class="text-xs font-medium text-slate-400">Votre position en France</span>
                             </div>
-                            <span class="text-xs text-slate-500">INSEE</span>
+                            <span class="text-xs text-slate-500">INSEE 2025</span>
                         </div>
                         <div class="text-center mb-5">
                             <div id="hp-pct-number" class="text-4xl font-extrabold tracking-tight" style="background: linear-gradient(135deg, #818cf8, #c084fc); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">Top 50%</div>
-                            <p class="text-sm text-slate-400 mt-1" id="hp-pct-phrase">des foyers fiscaux en France</p>
+                            <p class="text-sm text-slate-400 mt-1" id="hp-pct-phrase">des salariés du privé (net, temps plein)</p>
                         </div>
                         <div class="flex items-end gap-1 justify-center mb-4" id="hp-distrib-bars" style="height: 48px;"></div>
                         <div class="flex justify-between text-slate-500 mb-4" style="font-size:10px">
@@ -582,7 +582,7 @@
                             <div class="flex items-center gap-3">
                                 <div class="flex gap-0.5 flex-shrink-0" id="hp-people-dots"></div>
                                 <p class="text-xs text-slate-400 leading-relaxed">
-                                    Sur 100 Français, <strong class="text-white" id="hp-people-count">50</strong> gagnent moins que vous.
+                                    Sur 100 salariés du privé à temps plein, <strong class="text-white" id="hp-people-count">50</strong> gagnent moins que vous.
                                 </p>
                             </div>
                         </div>
@@ -602,17 +602,17 @@
                                     stroke-dasharray="22 78" stroke-dashoffset="47" stroke-linecap="round" style="transition: all 0.4s ease"/>
                             </svg>
                             <div class="absolute inset-0 flex items-center justify-center">
-                                <span class="text-xs font-bold text-slate-700" id="donut-pct">78%</span>
+                                <span class="text-xs font-bold text-slate-700" id="donut-pct">79%</span>
                             </div>
                         </div>
                         <div class="space-y-2">
                             <div class="flex items-center gap-2">
                                 <div class="w-3 h-3 rounded-full bg-brand-500"></div>
-                                <span class="text-sm text-slate-600">Salaire net (<span id="donut-net-pct">78%</span>)</span>
+                                <span class="text-sm text-slate-600">Salaire net (<span id="donut-net-pct">79%</span>)</span>
                             </div>
                             <div class="flex items-center gap-2">
                                 <div class="w-3 h-3 rounded-full bg-orange-500"></div>
-                                <span class="text-sm text-slate-600">Cotisations (<span id="donut-cotis-pct">22%</span>)</span>
+                                <span class="text-sm text-slate-600">Cotisations (<span id="donut-cotis-pct">21%</span>)</span>
                             </div>
                         </div>
                     </div>
@@ -770,11 +770,11 @@
                     <li><strong>CEG</strong> : contribution d'équilibre général (0,86% en tranche 1)</li>
                 </ul>
 
-                <p>Au total, les cotisations salariales représentent environ <strong>22% du salaire brut pour un non-cadre</strong> et <strong>25% pour un cadre</strong>.</p>
+                <p>Au total, les cotisations salariales représentent environ <strong>21 % du salaire brut</strong>, pour un non-cadre comme pour un cadre, tant que le salaire reste sous le plafond de la Sécurité sociale.</p>
 
                 <h3 id="différence-cadre-non-cadre" class="text-xl font-semibold text-slate-900 mt-8">Différence cadre / non-cadre</h3>
 
-                <p>La principale différence entre un <strong>cadre</strong> et un <strong>non-cadre</strong> réside dans la cotisation APEC de 0,024% propre aux cadres ; la CET (Contribution d'Équilibre Technique) de 0,14% s'applique, elle, à tous les salaires supérieurs au plafond de la Sécurité sociale. Historiquement, les cadres cotisaient davantage à l'AGIRC, mais depuis la fusion AGIRC-ARRCO en 2019, les taux sont harmonisés. La différence reste visible sur le net final.</p>
+                <p>La principale différence entre un <strong>cadre</strong> et un <strong>non-cadre</strong> réside dans la cotisation APEC de 0,024% propre aux cadres ; la CET (Contribution d'Équilibre Technique) de 0,14% s'applique, elle, à tous les salaires supérieurs au plafond de la Sécurité sociale. Historiquement, les cadres cotisaient davantage à l'AGIRC, mais depuis la fusion AGIRC-ARRCO en 2019, les taux sont harmonisés. Sous le plafond, l'écart de net entre cadre et non-cadre reste donc inférieur à un euro par mois.</p>
 
                 <h3 id="prélèvement-a-la-source" class="text-xl font-semibold text-slate-900 mt-8">Le prélèvement à la source</h3>
 
@@ -785,21 +785,21 @@
                 <p>Voici quelques exemples de conversion pour un salarié non-cadre à temps plein :</p>
 
                 <ul class="space-y-2">
-                    <li><strong>1 500 € brut</strong> : environ 1 170 € net</li>
-                    <li><strong>2 000 € brut</strong> : environ 1 560 € net</li>
-                    <li><strong>2 500 € brut</strong> : environ 1 950 € net</li>
-                    <li><strong>3 000 € brut</strong> : environ 2 340 € net</li>
-                    <li><strong>3 500 € brut</strong> : environ 2 730 € net</li>
+                    <li><strong>1 500 € brut</strong> : environ 1 187 € net</li>
+                    <li><strong>2 000 € brut</strong> : environ 1 583 € net</li>
+                    <li><strong>2 500 € brut</strong> : environ 1 979 € net</li>
+                    <li><strong>3 000 € brut</strong> : environ 2 375 € net</li>
+                    <li><strong>3 500 € brut</strong> : environ 2 771 € net</li>
                 </ul>
 
                 <p>Pour un calcul précis adapté à votre situation, utilisez notre <a href="#calculateur" class="text-brand-700 hover:text-brand-800 font-medium">calculateur brut net</a> en haut de page ou consultez notre <a href="/simulateur-impot-sur-le-revenu/" class="text-brand-700 hover:text-brand-800 font-medium">simulateur d'impôt sur le revenu</a> pour une estimation complète de vos impôts.</p>
             </div>
         </section>
 
-        <!-- Comment ça marché -->
+        <!-- Comment ça marche -->
         <section class="bg-white border-t border-slate-200 py-16 px-4" id="how-it-works">
             <div class="mx-auto max-w-5xl">
-                <h2 class="text-2xl font-bold text-slate-900 text-center mb-12">Comment ça marché ?</h2>
+                <h2 class="text-2xl font-bold text-slate-900 text-center mb-12">Comment ça marche ?</h2>
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                     <div class="text-center">
                         <div class="w-14 h-14 mx-auto mb-4 rounded-2xl bg-brand-50 flex items-center justify-center">
@@ -837,7 +837,7 @@
                             <svg class="h-5 w-5 text-slate-400 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
                         </button>
                         <div class="faq-content hidden px-5 pb-5">
-                            <p class="text-sm text-slate-600">Le <strong>salaire brut</strong> est le montant total de votre rémunération avant toute déduction. Le <strong>salaire net</strong> est ce que vous percevez réellement sur votre compte bancaire, après déduction des cotisations sociales salariales (assurance vieillesse, retraite complémentaire, CSG, CRDS). La différence représente environ 22% pour un non-cadre et 25% pour un cadre.</p>
+                            <p class="text-sm text-slate-600">Le <strong>salaire brut</strong> est le montant total de votre rémunération avant toute déduction. Le <strong>salaire net</strong> est ce que vous percevez réellement sur votre compte bancaire, après déduction des cotisations sociales salariales (assurance vieillesse, retraite complémentaire, CSG, CRDS). La différence représente environ 21 % du brut, pour un non-cadre comme pour un cadre, sous le plafond de la Sécurité sociale.</p>
                         </div>
                     </div>
                     <div class="rounded-xl border border-slate-200 bg-white">
@@ -846,7 +846,7 @@
                             <svg class="h-5 w-5 text-slate-400 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
                         </button>
                         <div class="faq-content hidden px-5 pb-5">
-                            <p class="text-sm text-slate-600">En règle générale, le salaire net représente environ <strong>78% du salaire brut pour un non-cadre</strong> et <strong>75% pour un cadre</strong>. Cependant, ce pourcentage varie légèrement selon le niveau de salaire, car certaines cotisations sont plafonnées au Plafond de la Sécurité Sociale (4 005 €/mois en 2026).</p>
+                            <p class="text-sm text-slate-600">En règle générale, le salaire net représente environ <strong>79 % du salaire brut</strong>, pour un non-cadre comme pour un cadre. Cependant, ce pourcentage varie légèrement selon le niveau de salaire, car certaines cotisations sont plafonnées au Plafond de la Sécurité Sociale (4 005 €/mois en 2026).</p>
                         </div>
                     </div>
                     <div class="rounded-xl border border-slate-200 bg-white">
@@ -855,7 +855,7 @@
                             <svg class="h-5 w-5 text-slate-400 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
                         </button>
                         <div class="faq-content hidden px-5 pb-5">
-                            <p class="text-sm text-slate-600">Pour un cadre, les cotisations sont légèrement plus élevées en raison de la cotisation APEC de 0,024%, la CET de 0,14% étant due par tous les salariés dont le brut dépasse le plafond de la Sécurité sociale. Pour obtenir une estimation précise, utilisez notre calculateur en sélectionnant le statut "Cadre". En moyenne, multipliez votre brut par 0,75 pour obtenir une approximation de votre net cadre.</p>
+                            <p class="text-sm text-slate-600">Pour un cadre, les cotisations sont légèrement plus élevées en raison de la cotisation APEC de 0,024%, la CET de 0,14% étant due par tous les salariés dont le brut dépasse le plafond de la Sécurité sociale. Pour obtenir une estimation précise, utilisez notre calculateur en sélectionnant le statut "Cadre". Sous le plafond de la Sécurité sociale, multipliez votre brut par 0,79 pour obtenir une approximation de votre net cadre.</p>
                         </div>
                     </div>
                     <div class="rounded-xl border border-slate-200 bg-white">
@@ -1198,7 +1198,7 @@
             </div>
             <!-- Copy link -->
             <div class="flex gap-2">
-                <input type="text" id="share-url" readonly class="flex-1 rounded-lg border border-slate-200 px-3 py-2 text-sm text-slate-600 bg-slate-50">
+                <input type="text" id="share-url" aria-label="Lien de la simulation à copier" readonly class="flex-1 rounded-lg border border-slate-200 px-3 py-2 text-sm text-slate-600 bg-slate-50">
                 <button id="copy-url" class="rounded-lg bg-brand-600 px-4 py-2 text-sm font-medium text-white hover:bg-brand-700 transition-colors">
                     Copier
                 </button>
@@ -1548,27 +1548,33 @@
             slider.style.setProperty('--progress', pct + '%');
         }
 
-        // INSEE revenus fiscaux par foyer (2022)
+        // Salaires mensuels nets en équivalent temps plein (EQTP), secteur privé, France, 2025 :
+        // déciles D1 à D9, centiles C95 et C99 (euros). Source : Insee Première n° 2132,
+        // « Les salaires dans le secteur privé en 2025 », figure 4, colonne Ensemble, paru le
+        // 22/10/2026 (https://www.insee.fr/fr/statistiques/9087193), relevé le 2026-10-31.
+        // Champ : salariés du privé y compris alternants, stagiaires et contrats aidés,
+        // hors agriculture et particuliers employeurs. Vérifié par scripts/test_calcul.py.
         var INSEE_PCT = [
-            [10,10580],[20,15270],[25,17200],[30,19350],[40,23280],
-            [50,27580],[60,32720],[70,39540],[75,43690],[80,49040],
-            [90,66780],[95,88800],[99,163850]
+            [10,1519],[20,1702],[30,1861],[40,2034],[50,2238],
+            [60,2497],[70,2850],[80,3386],[90,4441],[95,5730],[99,10552]
         ];
-        function getPercentile(annualGross) {
-            if (annualGross <= 0) return 0;
-            if (annualGross <= INSEE_PCT[0][1]) return (annualGross / INSEE_PCT[0][1]) * INSEE_PCT[0][0];
+        var INSEE_MEDIANE = INSEE_PCT[4][1];
+        // Position d'un salaire net mensuel EQTP dans la distribution (interpolation linéaire entre quantiles)
+        function getPercentile(netMensuelEqtp) {
+            if (netMensuelEqtp <= 0) return 0;
+            if (netMensuelEqtp <= INSEE_PCT[0][1]) return (netMensuelEqtp / INSEE_PCT[0][1]) * INSEE_PCT[0][0];
             for (var i = 1; i < INSEE_PCT.length; i++) {
-                if (annualGross <= INSEE_PCT[i][1]) {
+                if (netMensuelEqtp <= INSEE_PCT[i][1]) {
                     var p = INSEE_PCT[i-1], c = INSEE_PCT[i];
-                    return p[0] + ((annualGross - p[1]) / (c[1] - p[1])) * (c[0] - p[0]);
+                    return p[0] + ((netMensuelEqtp - p[1]) / (c[1] - p[1])) * (c[0] - p[0]);
                 }
             }
             var last = INSEE_PCT[INSEE_PCT.length-1];
-            return Math.min(99.9, last[0] + Math.min((annualGross - last[1]) / last[1] * 5, 0.9));
+            return Math.min(99.9, last[0] + Math.min((netMensuelEqtp - last[1]) / last[1] * 5, 0.9));
         }
         var DISTRIB_H = [18,30,42,54,64,72,78,82,84,85,84,80,74,66,56,44,34,24,16,10];
-        function updatePercentileHP(brutAnnuel) {
-            var pct = Math.max(0, Math.min(99.9, getPercentile(brutAnnuel)));
+        function updatePercentileHP(netMensuelEqtp) {
+            var pct = Math.max(0, Math.min(99.9, getPercentile(netMensuelEqtp)));
             var top = Math.max(0.1, 100 - pct);
             var topRound = Math.round(top);
             if (topRound < 1) topRound = 1;
@@ -1578,9 +1584,9 @@
             if (topRound <= 1) phrase = 'Vous faites partie des 1% les mieux rémunérés';
             else if (topRound <= 5) phrase = 'Vous faites partie des 5% les mieux rémunérés';
             else if (topRound <= 10) phrase = 'Vous êtes dans le top 10% des revenus';
-            else if (topRound <= 25) phrase = 'Vous depassez 75% des foyers fiscaux';
-            else if (topRound <= 50) phrase = 'Vous êtes au-dessus de la médiane';
-            else phrase = 'des foyers fiscaux en France';
+            else if (topRound <= 25) phrase = 'Vous dépassez 75\u00a0% des salariés du privé';
+            else if (netMensuelEqtp >= INSEE_MEDIANE) phrase = 'Vous êtes au-dessus de la médiane (' + formatMoney(INSEE_MEDIANE) + ' net)';
+            else phrase = 'Sous la médiane des salariés du privé (' + formatMoney(INSEE_MEDIANE) + ' net)';
             document.getElementById('hp-pct-phrase').textContent = phrase;
             var gF, gT;
             if (topRound <= 5) { gF = '#a78bfa'; gT = '#f472b6'; }
@@ -1651,8 +1657,8 @@
             updateCotisationsTable(result.detailCotisationsSalariales, 'table-cotisations', result.totalSalarial);
             updateCotisationsTable(result.detailCotisationsPatronales, 'table-cotisations-patronales', result.totalPatronal);
 
-            // Percentile INSEE
-            updatePercentileHP(result.brutAnnuel);
+            // Position INSEE : net mensuel ramené à un temps plein (EQTP)
+            updatePercentileHP(tempsTravail > 0 ? result.netAvantImpot / tempsTravail : result.netAvantImpot);
         }
 
         function updateCotisationsTable(details, tableId, total) {

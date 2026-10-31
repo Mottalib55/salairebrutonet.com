@@ -25,12 +25,13 @@
   document.body.appendChild(bar);
   var mq = window.matchMedia('(max-width: 1023px)');
   var below = false;
-  // Le bouton « Voir mes résultats » existant remonte au-dessus de la barre quand elle s'affiche.
+  // Le bouton « Voir mes résultats » fait double emploi avec la barre (même action) : il est
+  // masqué tant qu'elle s'affiche, pour ne pas recouvrir le formulaire (retour du 2026-10-28).
   var pill = document.getElementById('mobile-results-btn');
   function show() {
     var on = below && mq.matches;
     bar.style.display = on ? 'flex' : 'none';
-    if (pill) pill.style.bottom = on ? (bar.offsetHeight + 12) + 'px' : '';
+    if (pill) pill.style.display = on ? 'none' : '';
   }
   new IntersectionObserver(function (e) { below = !e[0].isIntersecting && e[0].boundingClientRect.top > 0; show(); }).observe(card);
   if (mq.addEventListener) mq.addEventListener('change', show);
