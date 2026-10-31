@@ -4,7 +4,7 @@
   "description": "",
   "main": "tailwind.config.js",
   "scripts": {
-    "test": "python3 scripts/test_calcul.py",
+    "test": "python3 scripts/test_calcul.py && python3 scripts/gen-prime-tableaux.py --check",
     "check:cookies": "python3 scripts/check-cookies.py ."
   },
   "repository": {

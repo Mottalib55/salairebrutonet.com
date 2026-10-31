@@ -232,7 +232,7 @@
         <!-- §21 : le paragraphe qui tient seul une fois extrait de la page. -->
         <section class="bg-white py-8 px-4">
             <div class="mx-auto max-w-5xl">
-                <p class="bloc-citable text-slate-700 leading-relaxed">Une prime suit exactement le régime social du salaire : elle supporte les mêmes cotisations, environ 22 % pour un non-cadre et 25 % pour un cadre, sans abattement ni taux réduit. Sa particularité tient au prélèvement à la source, appliqué au taux du mois de versement, c'est-à-dire au taux marginal et non au taux moyen de l'année. Une prime de 2 000 € brut laisse donc environ 1 560 € de net avant impôt et près de 1 250 € après un prélèvement à 20 %. Trois dispositifs échappent partiellement à cette règle : l'intéressement et la participation, exonérés d'impôt s'ils sont placés cinq ans sur un plan d'épargne salariale, et la prime de partage de la valeur, qui relève d'un régime propre révisé chaque année.</p>
+                <p class="bloc-citable text-slate-700 leading-relaxed">Une prime suit exactement le régime social du salaire : elle supporte les mêmes cotisations, environ 21 % du brut pour un non-cadre comme pour un cadre, sans abattement ni taux réduit. Sa particularité tient au prélèvement à la source, appliqué au taux du mois de versement, c'est-à-dire au taux marginal et non au taux moyen de l'année. Une prime de 2 000 € brut laisse donc environ 1 583 € de net avant impôt et près de 1 255 € après un prélèvement à 20 %. Trois dispositifs échappent partiellement à cette règle : l'intéressement et la participation, exonérés d'impôt s'ils sont placés cinq ans sur un plan d'épargne salariale, et la prime de partage de la valeur, qui relève d'un régime propre révisé chaque année.</p>
             </div>
         </section>
     <script src="/js/brut-net.js"></script>
@@ -398,14 +398,14 @@
             <div class="mx-auto max-w-5xl prose prose-slate">
                 
                 <h2 class="text-xl font-semibold text-slate-900">Comment convertir une prime brute en net ?</h2>
-                <p>Les primes versées par l'employeur sont en principe soumises aux <strong>mêmes cotisations sociales</strong> que le salaire de base : cotisations de Sécurité sociale, retraite complémentaire, CSG/CRDS. Pour convertir une prime brute en net, appliquez le même taux de conversion que pour votre salaire : environ <strong>22% de cotisations pour un non-cadre</strong> et <strong>25% pour un cadre</strong>.</p>
+                <p>Les primes versées par l'employeur sont en principe soumises aux <strong>mêmes cotisations sociales</strong> que le salaire de base : cotisations de Sécurité sociale, retraite complémentaire, CSG/CRDS. Pour convertir une prime brute en net, appliquez le même taux de conversion que pour votre salaire : environ <strong>21 % de cotisations</strong>, pour un non-cadre comme pour un cadre (20,84 % et 20,86 % sous le plafond de la Sécurité sociale).</p>
                 <p>Cependant, certaines primes bénéficient d'exonérations totales ou partielles de cotisations et d'impôt, ce qui améliore significativement le taux de conversion brut-net. Il est donc essentiel de connaître la nature exacte de votre prime avant de calculer le net.</p>
 
                 <h2 class="text-xl font-semibold text-slate-900 mt-8">Types de primes et leur traitement fiscal</h2>
 
                 <h3 class="text-lg font-semibold text-slate-900 mt-6">1. Prime classique (prime d'objectifs, performance, etc.)</h3>
-                <p><strong>Traitement</strong> : soumise à cotisations sociales (22-25%) + impôt sur le revenu via le prélèvement à la source.</p>
-                <p><strong>Exemple</strong> : Prime de 1 000 € brut (non-cadre) → 1 000 - 220 (cotisations) = 780 € net avant impôt → 780 - 7,5% PAS = ~722 € net après impôt.</p>
+                <p><strong>Traitement</strong> : soumise à cotisations sociales (environ 21 %) + impôt sur le revenu via le prélèvement à la source.</p>
+                <p><strong>Exemple</strong> : Prime de 1 000 € brut (non-cadre) → 1 000 - 208 (cotisations) = 792 € net avant impôt → 792 - 62 (7,5% PAS sur 820 € net imposable) = ~730 € net après impôt.</p>
 
                 <h3 class="text-lg font-semibold text-slate-900 mt-6">2. Prime de Partage de la Valeur (PPV)</h3>
                 <p>Créée en 2022 et pérennisée, la <strong>PPV</strong> (anciennement "PEPA") est exonérée de cotisations sociales ET d'impôt sur le revenu dans certaines limites :</p>
@@ -423,60 +423,62 @@
                     <li><strong>Placement sur PEE/PERCO</strong> : exonéré de cotisations sociales (sauf CSG/CRDS à 9,7%) + exonéré d'impôt → gain fiscal important</li>
                     <li><strong>Forfait social employeur</strong> : 20% de la somme versée (payé par l'employeur, pas par vous)</li>
                 </ul>
-                <p><strong>Exemple</strong> : Participation de 2 000 €. Si placée sur PEE → 2 000 - 194 € (CSG/CRDS) = 1 806 € disponibles en épargne. Si versée cash → 2 000 - 220 (cotisations) - 150 (impôt) = 1 630 € net.</p>
+                <p><strong>Exemple</strong> : Participation de 2 000 €. Si placée sur PEE → 2 000 - 194 € (CSG/CRDS) = 1 806 € disponibles en épargne. Si versée cash → pas de cotisations sociales mais la CSG/CRDS et l'impôt : 2 000 - 194 (CSG/CRDS) - 140 (impôt à 7,5% sur 1 864 € imposables) = 1 666 € net.</p>
 
                 <h3 class="text-lg font-semibold text-slate-900 mt-6">4. 13ème mois, prime de vacances, prime de fin d'année</h3>
-                <p>Ces primes contractuelles ou conventionnelles sont traitées comme du salaire : cotisations pleines (22-25%) + impôt. Pas d'exonération.</p>
+                <p>Ces primes contractuelles ou conventionnelles sont traitées comme du salaire : cotisations pleines (environ 21 %) + impôt. Pas d'exonération.</p>
 
                 <h3 class="text-lg font-semibold text-slate-900 mt-6">5. Prime d'ancienneté</h3>
                 <p>Souvent intégrée au salaire mensuel de base. Cotisations et impôt normaux.</p>
 
                 <h2 class="text-xl font-semibold text-slate-900 mt-8">Exemples de conversion brut → net</h2>
-                <p>Voici des exemples concrets pour différents montants de primes classiques (soumises à cotisations pleines) :</p>
+                <!-- prime-tableaux:debut -->
+                <p>Voici des exemples concrets pour différents montants de primes classiques (soumises à cotisations pleines), calculés avec les taux 2026 de notre simulateur pour une rémunération annuelle restant sous le plafond de la Sécurité sociale (48 060 €). L'impôt est appliqué au net imposable de la prime, à un taux de prélèvement illustratif :</p>
 
-                <h3 class="text-lg font-semibold text-slate-900 mt-6">Non-cadre (22% de cotisations, taux PAS 5%)</h3>
+                <h3 class="text-lg font-semibold text-slate-900 mt-6">Non-cadre (20,84 % de cotisations, taux PAS 5 %)</h3>
                 <table class="w-full text-sm border-collapse mt-4">
                     <thead><tr class="border-b-2 border-slate-300">
                         <th class="py-2 text-left">Prime brute</th>
-                        <th class="py-2 text-right">Cotisations (22%)</th>
+                        <th class="py-2 text-right">Cotisations (20,84 %)</th>
                         <th class="py-2 text-right">Net avant impôt</th>
-                        <th class="py-2 text-right">Impôt (5%)</th>
+                        <th class="py-2 text-right">Impôt (5 %)</th>
                         <th class="py-2 text-right">Net après impôt</th>
                     </tr></thead>
                     <tbody>
-                        <tr class="border-b border-slate-100"><td class="py-2">500 €</td><td class="py-2 text-right">-110 €</td><td class="py-2 text-right">390 €</td><td class="py-2 text-right">-19,50 €</td><td class="py-2 text-right">370,50 €</td></tr>
-                        <tr class="border-b border-slate-100"><td class="py-2">1 000 €</td><td class="py-2 text-right">-220 €</td><td class="py-2 text-right">780 €</td><td class="py-2 text-right">-39 €</td><td class="py-2 text-right">741 €</td></tr>
-                        <tr class="border-b border-slate-100"><td class="py-2">2 000 €</td><td class="py-2 text-right">-440 €</td><td class="py-2 text-right">1 560 €</td><td class="py-2 text-right">-78 €</td><td class="py-2 text-right">1 482 €</td></tr>
-                        <tr><td class="py-2">5 000 €</td><td class="py-2 text-right">-1 100 €</td><td class="py-2 text-right">3 900 €</td><td class="py-2 text-right">-195 €</td><td class="py-2 text-right">3 705 €</td></tr>
+                        <tr class="border-b border-slate-100"><td class="py-2">500 €</td><td class="py-2 text-right">-104,20 €</td><td class="py-2 text-right">395,80 €</td><td class="py-2 text-right">-20,50 €</td><td class="py-2 text-right">375,30 €</td></tr>
+                        <tr class="border-b border-slate-100"><td class="py-2">1 000 €</td><td class="py-2 text-right">-208,40 €</td><td class="py-2 text-right">791,60 €</td><td class="py-2 text-right">-41,00 €</td><td class="py-2 text-right">750,60 €</td></tr>
+                        <tr class="border-b border-slate-100"><td class="py-2">2 000 €</td><td class="py-2 text-right">-416,81 €</td><td class="py-2 text-right">1 583,19 €</td><td class="py-2 text-right">-82,01 €</td><td class="py-2 text-right">1 501,18 €</td></tr>
+                        <tr><td class="py-2">5 000 €</td><td class="py-2 text-right">-1 042,01 €</td><td class="py-2 text-right">3 957,99 €</td><td class="py-2 text-right">-205,02 €</td><td class="py-2 text-right">3 752,97 €</td></tr>
                     </tbody>
                 </table>
 
-                <h3 class="text-lg font-semibold text-slate-900 mt-6">Cadre (25% de cotisations, taux PAS 7,5%)</h3>
+                <h3 class="text-lg font-semibold text-slate-900 mt-6">Cadre (20,86 % de cotisations, taux PAS 7,5 %)</h3>
                 <table class="w-full text-sm border-collapse mt-4">
                     <thead><tr class="border-b-2 border-slate-300">
                         <th class="py-2 text-left">Prime brute</th>
-                        <th class="py-2 text-right">Cotisations (25%)</th>
+                        <th class="py-2 text-right">Cotisations (20,86 %)</th>
                         <th class="py-2 text-right">Net avant impôt</th>
-                        <th class="py-2 text-right">Impôt (7,5%)</th>
+                        <th class="py-2 text-right">Impôt (7,5 %)</th>
                         <th class="py-2 text-right">Net après impôt</th>
                     </tr></thead>
                     <tbody>
-                        <tr class="border-b border-slate-100"><td class="py-2">500 €</td><td class="py-2 text-right">-125 €</td><td class="py-2 text-right">375 €</td><td class="py-2 text-right">-28,13 €</td><td class="py-2 text-right">346,87 €</td></tr>
-                        <tr class="border-b border-slate-100"><td class="py-2">1 000 €</td><td class="py-2 text-right">-250 €</td><td class="py-2 text-right">750 €</td><td class="py-2 text-right">-56,25 €</td><td class="py-2 text-right">693,75 €</td></tr>
-                        <tr class="border-b border-slate-100"><td class="py-2">2 000 €</td><td class="py-2 text-right">-500 €</td><td class="py-2 text-right">1 500 €</td><td class="py-2 text-right">-112,50 €</td><td class="py-2 text-right">1 387,50 €</td></tr>
-                        <tr><td class="py-2">5 000 €</td><td class="py-2 text-right">-1 250 €</td><td class="py-2 text-right">3 750 €</td><td class="py-2 text-right">-281,25 €</td><td class="py-2 text-right">3 468,75 €</td></tr>
+                        <tr class="border-b border-slate-100"><td class="py-2">500 €</td><td class="py-2 text-right">-104,32 €</td><td class="py-2 text-right">395,68 €</td><td class="py-2 text-right">-30,74 €</td><td class="py-2 text-right">364,94 €</td></tr>
+                        <tr class="border-b border-slate-100"><td class="py-2">1 000 €</td><td class="py-2 text-right">-208,64 €</td><td class="py-2 text-right">791,36 €</td><td class="py-2 text-right">-61,49 €</td><td class="py-2 text-right">729,87 €</td></tr>
+                        <tr class="border-b border-slate-100"><td class="py-2">2 000 €</td><td class="py-2 text-right">-417,29 €</td><td class="py-2 text-right">1 582,71 €</td><td class="py-2 text-right">-122,98 €</td><td class="py-2 text-right">1 459,73 €</td></tr>
+                        <tr><td class="py-2">5 000 €</td><td class="py-2 text-right">-1 043,21 €</td><td class="py-2 text-right">3 956,79 €</td><td class="py-2 text-right">-307,44 €</td><td class="py-2 text-right">3 649,35 €</td></tr>
                     </tbody>
                 </table>
+                <!-- prime-tableaux:fin -->
 
                 <h2 class="text-xl font-semibold text-slate-900 mt-8">Impact sur le prélèvement à la source</h2>
                 <p>Attention : une prime importante peut <strong>augmenter temporairement votre taux de prélèvement à la source</strong> le mois où elle est versée. Pourquoi ? Parce que l'administration fiscale calcule votre taux en fonction du revenu du mois précédent.</p>
-                <p><strong>Exemple</strong> : Vous gagnez habituellement 2 500 € net imposable. En décembre, vous touchez une prime de 3 000 € brut (2 340 € net imposable). Votre net imposable total pour décembre sera de 4 840 €. Si le système calcule un taux basé sur ce revenu "annualisé" (4 840 × 12 = 58 080 €), votre taux peut bondir de 7,5% à 12-15% le mois suivant.</p>
+                <p><strong>Exemple</strong> : Vous gagnez habituellement 2 500 € net imposable. En décembre, vous touchez une prime de 3 000 € brut (2 460 € net imposable). Votre net imposable total pour décembre sera de 4 960 €. Si le système calcule un taux basé sur ce revenu "annualisé" (4 960 × 12 = 59 520 €), votre taux peut bondir de 7,5% à 12-15% le mois suivant.</p>
                 <p><strong>Régularisation</strong> : Pas de panique, ce trop-prélevé sera régularisé en septembre de l'année suivante lors de votre déclaration de revenus. Mais cela peut créer un coup dur de trésorerie.</p>
 
                 <h2 class="text-xl font-semibold text-slate-900 mt-8">Optimisation fiscale des primes</h2>
 
                 <h3 class="text-lg font-semibold text-slate-900 mt-6">1. Privilégiez la PPV si possible</h3>
-                <p>Si votre employeur peut vous verser une prime exceptionnelle, demandez qu'elle soit versée sous forme de <strong>Prime de Partage de la Valeur</strong> dans la limite de 3 000 ou 6 000 €. Vous économisez 22-25% de cotisations + 5-15% d'impôt = 30-40% de gain net !</p>
+                <p>Si votre employeur peut vous verser une prime exceptionnelle, demandez qu'elle soit versée sous forme de <strong>Prime de Partage de la Valeur</strong> dans la limite de 3 000 ou 6 000 €. Vous économisez environ 21 % de cotisations + 5-15% d'impôt = 26-36% de gain net !</p>
 
                 <h3 class="text-lg font-semibold text-slate-900 mt-6">2. Placez l'intéressement/participation sur PEE</h3>
                 <p>Ne demandez pas le versement immédiat. Placez sur un PEE : vous économisez les cotisations sociales (hors CSG/CRDS) et l'impôt, et l'épargne est disponible après 5 ans (ou immédiatement en cas de déblocage anticipé : achat résidence principale, mariage, etc.).</p>
@@ -518,7 +520,7 @@
         <section class="bg-white border-t border-slate-200 py-12 px-4">
             <div class="mx-auto max-w-5xl prose prose-slate">
                 <h2>Pourquoi une prime rapporte moins qu'attendu</h2>
-                <p>Une prime versée en une fois supporte les mêmes cotisations qu'un salaire, environ 22 % pour un non-cadre et 25 % pour un cadre, mais elle est prélevée à la source au taux applicable au mois de versement, c'est-à-dire au taux marginal et non au taux moyen de l'année. Une prime de 2 000 € brut laisse ainsi environ 1 560 € de net avant impôt, et près de 1 250 € après un prélèvement à 20 %. L'écart avec l'attente tient presque toujours à cette double ponction, la seconde étant provisoire : le décompte annuel régularise l'impôt, pas les cotisations.</p>
+                <p>Une prime versée en une fois supporte les mêmes cotisations qu'un salaire, environ 21 % du brut pour un non-cadre comme pour un cadre, mais elle est prélevée à la source au taux applicable au mois de versement, c'est-à-dire au taux marginal et non au taux moyen de l'année. Une prime de 2 000 € brut laisse ainsi environ 1 583 € de net avant impôt, et près de 1 255 € après un prélèvement à 20 %. L'écart avec l'attente tient presque toujours à cette double ponction, la seconde étant provisoire : le décompte annuel régularise l'impôt, pas les cotisations.</p>
                 <p>Trois primes échappent partiellement à cette règle. L'intéressement et la participation sont exonérés d'impôt sur le revenu s'ils sont placés cinq ans sur un plan d'épargne salariale, ne supportant alors que 9,7 % de prélèvements sociaux. La prime de partage de la valeur suit un régime propre, révisé régulièrement par la loi de finances. Les primes de transport et les titres-restaurant sont exonérés dans la limite de plafonds annuels fixés par décret. Pour toutes les autres, treizième mois, prime d'objectif, prime exceptionnelle, le traitement est celui du salaire.</p>
                             <p>Une dernière précision sur le calendrier : une prime versée en décembre est imposée sur l'année en cours, une prime versée en janvier sur l'année suivante. Lorsque les revenus varient fortement d'une année à l'autre, décaler le versement de quelques semaines peut changer la tranche marginale applicable, et donc le net conservé. C'est une discussion à avoir avec l'employeur avant l'établissement du bulletin, pas après.</p>
 </div>

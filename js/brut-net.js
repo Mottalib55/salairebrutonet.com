@@ -7,8 +7,9 @@ options = options || {};
 const isCadre = statut === 'cadre';
 const isAlsaceMoselle = options.alsaceMoselle || false;
 const t1 = Math.min(brutMensuel, PSS_MENSUEL);
-const t2 = Math.max(0, brutMensuel - PSS_MENSUEL);
-const assietteCsgCrds = brutMensuel * 0.9825;
+// Tranche 2 : de 1 à 8 plafonds ; CSG-CRDS : abattement de 1,75 % dans la limite de 4 plafonds (service-public F2302)
+const t2 = Math.min(Math.max(0, brutMensuel - PSS_MENSUEL), 7 * PSS_MENSUEL);
+const assietteCsgCrds = Math.min(brutMensuel, 4 * PSS_MENSUEL) * 0.9825 + Math.max(0, brutMensuel - 4 * PSS_MENSUEL);
 const cotisations = {
 vieillessePlafonnee: { taux: 0.069, montant: t1 * 0.069, label: 'Vieillesse plafonnée', assiette: 'Tranche 1' },
 vieillesseDeplafonee: { taux: 0.004, montant: brutMensuel * 0.004, label: 'Vieillesse déplafonnée', assiette: 'Totalité' },
@@ -16,12 +17,12 @@ agircArrcoT1: { taux: 0.0315, montant: t1 * 0.0315, label: 'AGIRC-ARRCO T1', ass
 agircArrcoT2: { taux: 0.0864, montant: t2 * 0.0864, label: 'AGIRC-ARRCO T2', assiette: 'Tranche 2' },
 cegT1: { taux: 0.0086, montant: t1 * 0.0086, label: 'CEG T1', assiette: 'Tranche 1' },
 cegT2: { taux: 0.0108, montant: t2 * 0.0108, label: 'CEG T2', assiette: 'Tranche 2' },
-csgDeductible: { taux: 0.068, montant: assietteCsgCrds * 0.068, label: 'CSG déductible', assiette: '98,25% du brut' },
-csgNonDeductible: { taux: 0.024, montant: assietteCsgCrds * 0.024, label: 'CSG non déductible', assiette: '98,25% du brut' },
-crds: { taux: 0.005, montant: assietteCsgCrds * 0.005, label: 'CRDS', assiette: '98,25% du brut' },
+csgDeductible: { taux: 0.068, montant: assietteCsgCrds * 0.068, label: 'CSG déductible', assiette: '98,25% du brut (jusqu\'à 4 PASS)' },
+csgNonDeductible: { taux: 0.024, montant: assietteCsgCrds * 0.024, label: 'CSG non déductible', assiette: '98,25% du brut (jusqu\'à 4 PASS)' },
+crds: { taux: 0.005, montant: assietteCsgCrds * 0.005, label: 'CRDS', assiette: '98,25% du brut (jusqu\'à 4 PASS)' },
 };
 if (brutMensuel > PSS_MENSUEL) {
-cotisations.cet = { taux: 0.0014, montant: brutMensuel * 0.0014, label: 'CET', assiette: 'Totalité' };
+cotisations.cet = { taux: 0.0014, montant: (t1 + t2) * 0.0014, label: 'CET', assiette: 'Tranches 1 et 2' };
 }
 if (isCadre) {
 cotisations.apec = { taux: 0.00024, montant: Math.min(brutMensuel, PSS_MENSUEL * 4) * 0.00024, label: 'APEC (cadre)', assiette: 'Jusqu\'à 4 PSS' };
@@ -37,7 +38,7 @@ return { detail: cotisations, total };
 }
 function calculerCotisationsPatronales(brutMensuel) {
 const t1 = Math.min(brutMensuel, PSS_MENSUEL);
-const t2 = Math.max(0, brutMensuel - PSS_MENSUEL);
+const t2 = Math.min(Math.max(0, brutMensuel - PSS_MENSUEL), 7 * PSS_MENSUEL);
 const cotisations = {
 maladie: { taux: 0.13, montant: brutMensuel * 0.13, label: 'Maladie', assiette: 'Totalité' },
 vieillessePlafonnee: { taux: 0.0855, montant: t1 * 0.0855, label: 'Vieillesse plafonnée', assiette: 'Tranche 1' },
@@ -49,7 +50,7 @@ agircArrcoT2: { taux: 0.1295, montant: t2 * 0.1295, label: 'AGIRC-ARRCO T2', ass
 atmp: { taux: 0.01, montant: brutMensuel * 0.01, label: 'AT/MP (taux moyen)', assiette: 'Totalité' },
 cegT1: { taux: 0.0129, montant: t1 * 0.0129, label: 'CEG T1', assiette: 'Tranche 1' },
 cegT2: { taux: 0.0162, montant: t2 * 0.0162, label: 'CEG T2', assiette: 'Tranche 2' },
-cet: { taux: 0.0021, montant: brutMensuel > PSS_MENSUEL ? brutMensuel * 0.0021 : 0, label: 'CET', assiette: 'Totalité' },
+cet: { taux: 0.0021, montant: brutMensuel > PSS_MENSUEL ? (t1 + t2) * 0.0021 : 0, label: 'CET', assiette: 'Tranches 1 et 2' },
 };
 // Reduction generale degressive unique (2026) : en dessous de 3 SMIC
 if (brutMensuel > 0 && brutMensuel < SMIC_MENSUEL_JANVIER * 3) {

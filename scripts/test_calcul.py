@@ -44,6 +44,12 @@ CAS = [
     (2500, "cadre", 1978.39),          # + APEC 0,024 %
     (3000, "non-cadre", 2374.79),
     (5000, "non-cadre", 3962.83),      # tranche 2 et CET au-delà de 4 005 €
+    # Bornes de F2302 : CSG-CRDS sur 98,25 % jusqu'à 4 PASS (16 020 €) puis 100 % ;
+    # tranche 2 (Agirc-Arrco 8,64 %, CEG 1,08 %, CET 0,14 %) jusqu'à 8 PASS (32 040 €)
+    (16000, "non-cadre", 12785.90),    # sous 4 PASS : abattement de 1,75 % sur tout le brut
+    (16100, "non-cadre", 12865.97),    # 80 € au-delà de 4 PASS soumis à 9,70 % sans abattement
+    (32000, "non-cadre", 25592.33),    # sous 8 PASS : tranche 2 sur 27 995 €
+    (32100, "non-cadre", 25678.29),    # tranche 2 plafonnée à 28 035 € (7 PASS)
 ]
 for brut, statut, attendu in CAS:
     net = calcul.calculer_brut_vers_net(brut, statut)["net_avant_impot"]

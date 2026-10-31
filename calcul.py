@@ -36,8 +36,9 @@ def arrondi(val, decimales=0):
 def calculer_cotisations_salariales(brut_mensuel, statut, alsace_moselle=False):
     is_cadre = statut == "cadre"
     t1 = min(brut_mensuel, PSS_MENSUEL)
-    t2 = max(0, brut_mensuel - PSS_MENSUEL)
-    assiette_csg = brut_mensuel * 0.9825
+    # Tranche 2 : de 1 à 8 plafonds ; CSG-CRDS : abattement de 1,75 % dans la limite de 4 plafonds (F2302)
+    t2 = min(max(0, brut_mensuel - PSS_MENSUEL), 7 * PSS_MENSUEL)
+    assiette_csg = min(brut_mensuel, 4 * PSS_MENSUEL) * 0.9825 + max(0, brut_mensuel - 4 * PSS_MENSUEL)
 
     cotisations = {
         "Vieillesse plafonnée": t1 * 0.069,
@@ -51,7 +52,7 @@ def calculer_cotisations_salariales(brut_mensuel, statut, alsace_moselle=False):
         "CRDS": assiette_csg * 0.005,
     }
     if brut_mensuel > PSS_MENSUEL:
-        cotisations["CET"] = brut_mensuel * 0.0014
+        cotisations["CET"] = (t1 + t2) * 0.0014
     if is_cadre:
         cotisations["APEC (cadre)"] = min(brut_mensuel, PSS_MENSUEL * 4) * 0.00024
     if alsace_moselle:
@@ -63,7 +64,7 @@ def calculer_cotisations_salariales(brut_mensuel, statut, alsace_moselle=False):
 
 def calculer_cotisations_patronales(brut_mensuel):
     t1 = min(brut_mensuel, PSS_MENSUEL)
-    t2 = max(0, brut_mensuel - PSS_MENSUEL)
+    t2 = min(max(0, brut_mensuel - PSS_MENSUEL), 7 * PSS_MENSUEL)
 
     cotisations = {
         "Maladie": brut_mensuel * 0.13,
@@ -76,7 +77,7 @@ def calculer_cotisations_patronales(brut_mensuel):
         "AT/MP (taux moyen)": brut_mensuel * 0.01,
         "CEG T1": t1 * 0.0129,
         "CEG T2": t2 * 0.0162,
-        "CET": brut_mensuel * 0.0021 if brut_mensuel > PSS_MENSUEL else 0,
+        "CET": (t1 + t2) * 0.0021 if brut_mensuel > PSS_MENSUEL else 0,
     }
     if 0 < brut_mensuel < SMIC_MENSUEL_JANVIER * 3:
         coef = min(0.3981, 0.02 + 0.3781 * (0.5 * (3 * SMIC_MENSUEL_JANVIER / brut_mensuel - 1)) ** 1.75)
