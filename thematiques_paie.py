@@ -129,7 +129,7 @@ def page_km():
                           choix("w-elec", "Véhicule 100 % électrique", [("non", "Non"), ("oui", "Oui, +20 %")], "non"),
                           champ("w-sal", "Salaire net imposable annuel (€)", "30000")],
                          [("r-frais", "Frais déductibles"), ("r-km", "Par kilomètre"), ("r-abatt", "Abattement de 10 %"), ("r-gain", "Frais réels")],
-                         "Comparaison avec l'abattement de 10 % sur les seuls frais de véhicule ; ajoutez vos autres frais justifiés (repas, péages, parking)."),
+                         "Comparaison du barème kilométrique avec l'abattement de 10 % sur les seuls frais de véhicule ; ajoutez vos autres frais justifiés (repas, péages, parking)."),
         "js": js,
         "citable": f"Le barème kilométrique 2026 est celui qui sert à déclarer les revenus de 2025, au printemps 2026. Publié par service-public.gouv.fr le 9 avril 2026, il n'a pas été revalorisé et reprend les montants de l'arrêté du 27 mars 2023. Pour une voiture de 5 CV, les frais se calculent ainsi : d × 0,636 jusqu'à 5 000 km, (d × 0,357) + 1 395 de 5 001 à 20 000 km, d × 0,427 au-delà. Une 5 CV qui parcourt {fmt(10000)} km professionnels dans l'année ouvre donc droit à {e(ex)} de frais déductibles, et {e(ex_elec)} si elle est 100 % électrique, grâce à la majoration de 20 %. Ces frais ne remplacent l'abattement forfaitaire de 10 %, compris entre 509 € et 14 555 €, que si vous optez pour les frais réels et que leur total le dépasse.",
         "corps": corps,
@@ -173,7 +173,7 @@ def page_pss():
         exemples.append([e(b), e(t1), e(t2), pct(b * 12 / PSS_ANNUEL * 100, 0).replace(" %", " %")])
     t1, t2, _ = tranches(5000)
     corps = f"""
-<h2>Le plafond 2026 selon la périodicité de paie</h2>
+<h2>Le plafond de la Sécurité sociale 2026 selon la périodicité de paie</h2>
 {table(["Périodicité", "Plafond 2026"], [[lib, e(v)] for lib, v in PASS_2026])}
 {note("Arrêté du 22 décembre 2025, publié au Journal officiel le 23 décembre 2025 : valeur mensuelle 4 005 €, valeur journalière 220 €, pour les périodes d'emploi courant à compter du 1er janvier 2026. Les autres valeurs sont celles publiées par l'Urssaf. Mayotte a un plafond propre, plus bas.")}
 <h2>Une hausse de 2 % en 2026, de 1,74 % annoncée pour 2027</h2>
@@ -317,7 +317,7 @@ def page_pas():
                           choix("w-zone", "Lieu de résidence", [("metro", "Métropole"), ("grm", "Guadeloupe, Martinique, La Réunion"), ("gm", "Guyane, Mayotte")], "metro"),
                           choix("w-parts", "Parts fiscales", [("1", "1 part"), ("1.5", "1,5 part"), ("2", "2 parts"), ("2.5", "2,5 parts"), ("3", "3 parts")], "1")],
                          [("r-tn", "Taux neutre"), ("r-pn", "Prélevé au taux neutre"), ("r-tp", "Taux personnalisé estimé"), ("r-pp", "Prélevé au taux personnalisé")],
-                         "Taux personnalisé estimé pour un foyer dont le salaire est le seul revenu, barème 2026 de métropole ; l'administration calcule le vôtre à partir de votre déclaration."),
+                         "Taux de prélèvement à la source personnalisé estimé pour un foyer dont le salaire est le seul revenu, barème 2026 de métropole ; l'administration calcule le vôtre à partir de votre déclaration."),
         "js": js,
         "citable": f"Le taux de prélèvement à la source appliqué par l'employeur est, en principe, le taux personnalisé calculé par l'administration fiscale à partir de la dernière déclaration de revenus. À défaut, l'employeur applique un taux non personnalisé, lu dans une grille officielle selon le salaire net imposable du mois. Depuis le 1er mai 2026, la grille de métropole commence à 0 % pour une base inférieure à 1 635 € et monte jusqu'à 43 % au-delà de 55 558 € par mois ; un salarié payé {e(2500)} net imposable se voit appliquer {pct(t2500, 1)}, soit {e2(2500 * t2500 / 100)} par mois. Les départements d'outre-mer ont des grilles propres aux seuils plus élevés. Le taux neutre ne change pas l'impôt final : l'écart avec le taux personnalisé se régularise par des versements mensuels complémentaires ou par un remboursement l'année suivante.",
         "corps": corps,
@@ -404,7 +404,7 @@ def page_rgdu():
         "widget": widget([champ("w-brut", "Salaire brut mensuel (€)", "2000"),
                           choix("w-effectif", "Effectif de l'entreprise", [("49", "Moins de 50 salariés"), ("50", "50 salariés et plus")], "49")],
                          [("r-coef", "Coefficient"), ("r-mois", "Réduction du mois"), ("r-an", "Sur 12 mois"), ("r-urssaf", "Dont part Urssaf")],
-                         "Temps plein, sans heures supplémentaires, Smic de référence du 1er janvier 2026 (1 823,03 €)."),
+                         "Réduction Fillon (RGDU) pour un temps plein, sans heures supplémentaires, Smic de référence du 1er janvier 2026 (1 823,03 €)."),
         "js": js,
         "citable": f"Depuis le 1er janvier 2026, la réduction Fillon n'existe plus sous son ancien nom : elle est remplacée par la réduction générale dégressive unique (RGDU), qui absorbe aussi les taux réduits de cotisation maladie et d'allocations familiales. Son coefficient vaut 0,0200 + 0,3781 × [½ × (3 × Smic annuel ÷ rémunération annuelle − 1)] puissance 1,75 dans une entreprise de moins de 50 salariés, avec 0,3821 à la place de 0,3781 à partir de 50 salariés. Il est plafonné à 0,3981 ou 0,4021 et s'annule à 3 Smic, calculés sur le Smic du 1er janvier 2026, soit {e2(3 * SMIC_REF_RGDU)} brut par mois. Pour un salarié payé {e(2000)} brut dans une petite entreprise, le coefficient est de {f'{c2000:.4f}'.replace('.', ',')} : l'employeur économise environ {e(2000 * c2000)} de cotisations chaque mois, {e(2000 * c2000 * 12)} sur l'année.",
         "corps": corps,
@@ -538,7 +538,7 @@ def page_fiche():
                           choix("w-eff", "Effectif de l'entreprise", [("10", "Moins de 11 salariés"), ("20", "11 à 49 salariés"), ("50", "50 salariés et plus")], "10"),
                           champ("w-pas", "Taux de prélèvement à la source (%, vide = taux neutre)", "")],
                          [("r-net", "Net avant impôt"), ("r-imp", "Net imposable"), ("r-verse", "Net versé"), ("r-cout", "Coût employeur")],
-                         "Taux accidents du travail de 1 %, hors mutuelle, prévoyance et versement mobilité.") + '<div id="w-bulletin" class="mt-4"></div>',
+                         "Fiche de paie simulée avec un taux accidents du travail de 1 %, hors mutuelle, prévoyance et versement mobilité.") + '<div id="w-bulletin" class="mt-4"></div>',
         "js": js,
         "citable": f"Une fiche de paie 2026 part du salaire brut, retire les cotisations salariales de retraite (6,90 % et 0,40 % de vieillesse, 3,15 % d'Agirc-Arrco et 0,86 % de CEG sous le plafond) puis la CSG et la CRDS, à 9,70 % de 98,25 % du brut. Pour un non-cadre payé {e(2500)} brut, il reste {e2(ex['net'])} de net à payer avant impôt ; le net imposable, qui réintègre la CSG non déductible et la CRDS, s'élève à {e2(imp)}. Au taux neutre de {pct(tn, 1)}, applicable en l'absence de taux personnalisé, l'impôt prélevé à la source est de {e2(imp * tn / 100)} et le net versé de {e2(ex['net'] - imp * tn / 100)}. Côté employeur, les cotisations patronales, diminuées de la réduction générale dégressive unique, portent le coût total à environ {e(2500 + ex['pat'])} dans une entreprise de moins de onze salariés.",
         "corps": corps,
@@ -636,7 +636,7 @@ def page_cesu():
                           champ("w-heures", "Heures dans le mois", "20"),
                           choix("w-zone", "Lieu de travail", [("metro", "Métropole"), ("am", "Alsace-Moselle")], "metro")],
                          [("r-brut", "Salaire brut du mois"), ("r-pat", "Charges patronales nettes"), ("r-cout", "Coût total"), ("r-ci", "Après crédit d'impôt")],
-                         "Estimation pour un employeur non exonéré ; le service Cesu calcule le montant exact à chaque déclaration."),
+                         "Estimation du Cesu brut et net pour un employeur non exonéré ; le service Cesu calcule le montant exact à chaque déclaration."),
         "js": js,
         "citable": f"Avec le Cesu, le particulier employeur déclare un salaire net ; l'Urssaf en déduit le brut, sachant que les cotisations salariales d'un salarié à domicile pèsent environ {pct(CESU_SAL * 100, 1)} du brut. Un net de 13 € de l'heure correspond ainsi à environ {e2(ex['brut_h'])} brut. L'employeur paie en plus des cotisations patronales d'environ {pct(CESU_PAT * 100, 1)} du brut, diminuées d'une déduction forfaitaire de 2 € par heure. Pour 20 heures par mois à 13 € net, le coût total est d'environ {e2(ex['cout'])}, dont {e2(ex['sal'] + ex['pat'])} de cotisations. Le crédit d'impôt de 50 %, accordé sur le salaire et les cotisations dans la limite de 12 000 € de dépenses par an, ramène la charge réelle à {e2(ex['apres_ci'])} par mois. Deux taux patronaux ont changé au 1er janvier 2026 : accidents du travail à 2,06 % et vieillesse déplafonnée à 2,11 %.",
         "corps": corps,

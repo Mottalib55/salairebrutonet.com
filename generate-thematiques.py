@@ -235,7 +235,7 @@ def page_moyen():
         "widget": widget([champ("w-net", "Votre salaire net mensuel (temps plein)", "2000")],
                          [("r-pos", "Votre position (privé, 2024)"), ("r-median", "Par rapport à la médiane"), ("r-brut", "Brut correspondant 2026")]),
         "js": js,
-        "citable": f"En 2024, un salarié du secteur privé gagne en moyenne {e(i['moyen_net'])} net par mois en équivalent temps plein, soit {e(i['moyen_brut'])} brut, selon l'Insee. Le salaire médian est nettement plus bas, {e(i['median_net'])} net : la moitié des salariés gagne moins. Les 10 % les moins payés touchent moins de {e(i['d1'])} net, les 10 % les mieux payés plus de {e(i['d9'])}. Un cadre gagne en moyenne {e(i['cadres'])} net, un employé {e(i['employes'])}, et les femmes {i['ecart_fh']} % de moins que les hommes. Ces montants portent sur 2024, dernière année publiée, et sont exprimés avant impôt sur le revenu : ils se comparent au net avant impôt d'un bulletin de paie à temps complet.",
+        "citable": f"En 2024, le salaire moyen en France d'un salarié du secteur privé est de {e(i['moyen_net'])} net par mois en équivalent temps plein, soit {e(i['moyen_brut'])} brut, selon l'Insee. Le salaire médian est nettement plus bas, {e(i['median_net'])} net : la moitié des salariés gagne moins. Les 10 % les moins payés touchent moins de {e(i['d1'])} net, les 10 % les mieux payés plus de {e(i['d9'])}. Un cadre gagne en moyenne {e(i['cadres'])} net, un employé {e(i['employes'])}, et les femmes {i['ecart_fh']} % de moins que les hommes. Ces montants portent sur 2024, dernière année publiée, et sont exprimés avant impôt sur le revenu : ils se comparent au net avant impôt d'un bulletin de paie à temps complet.",
         "corps": corps,
         "sources": [SRC_INSEE, SRC_SMIC, SRC_TAUX],
         "faq": [
@@ -478,7 +478,7 @@ def page_hs():
                           champ("w-h25", "Heures sup. à 25 % dans le mois", "17,33"),
                           champ("w-h50", "Heures sup. à 50 % dans le mois", "0")],
                          [("r-hs", "Heures sup. brutes"), ("r-gain", "Gain net"), ("r-total", "Net total du mois")],
-                         "Non-cadre, taux légaux. 17,33 heures par mois correspondent à 39 heures par semaine."),
+                         "Heures supplémentaires du brut au net pour un non-cadre, taux légaux. 17,33 heures par mois correspondent à 39 heures par semaine."),
         "js": js,
         "citable": f"En 2026, une heure supplémentaire est payée au moins 25 % de plus de la 36e à la 43e heure de la semaine, puis 50 % au-delà. Sa rémunération bénéficie d'une réduction de cotisations salariales de 11,31 % et d'une exonération d'impôt sur le revenu jusqu'à {e(PLAFOND_IR_HS)} nets par an : seules la CSG et la CRDS sont prélevées. Pour un salarié à 2 000 € brut qui passe de 35 à 39 heures par semaine, les 17,33 heures supplémentaires du mois rapportent environ {e2(gain_hs(2000, 4 * 52 / 12)[2])} net. L'employeur bénéficie de son côté d'une déduction forfaitaire de 1,50 € par heure supplémentaire dans les entreprises de moins de 20 salariés, et de 0,50 € au-delà. Le contingent annuel est de 220 heures en l'absence d'accord collectif.",
         "corps": corps,
@@ -625,7 +625,7 @@ def page_fp():
     ex = calcul_fp(500, 400)
     seuil = SMIC_MENSUEL_BRUT / (POINT_ANNUEL_IM100 / 1200)
     corps = f"""
-<h2>Traitement brut et net selon l'indice majoré</h2>
+<h2>Traitement brut et net dans la fonction publique selon l'indice majoré</h2>
 <p>Le traitement indiciaire brut d'un fonctionnaire est égal à son indice majoré multiplié par la valeur du point. Celle-ci est fixée à {e2(POINT_ANNUEL_IM100)} par an pour l'indice majoré 100 depuis le 1er juillet 2023. Concrètement : <strong>traitement mensuel = indice majoré × {fmt2(POINT_ANNUEL_IM100)} ÷ 1 200</strong>.</p>
 {table(["Indice majoré", "Traitement brut", "Indemnité différentielle", "Retenue pension 11,10 %", "CSG et CRDS", "Net sans primes"], lignes)}
 {note("Fonctionnaire à temps complet, sans primes, ni indemnité de résidence, ni supplément familial, ni cotisation de complémentaire santé. Valeur du point et minimum de traitement : service-public.gouv.fr, page vérifiée le 1er juin 2026.")}
@@ -661,7 +661,7 @@ def page_fp():
         "widget": widget([champ("w-im", "Indice majoré", "450", "numeric"),
                           champ("w-primes", "Primes mensuelles brutes (€)", "0")],
                          [("r-traitement", "Traitement indiciaire"), ("r-brut", "Brut total"), ("r-net", "Net estimé")],
-                         "Fonctionnaire titulaire à temps complet, hors indemnité de résidence, supplément familial et complémentaire santé."),
+                         "Salaire brut et net d'un fonctionnaire titulaire à temps complet, hors indemnité de résidence, supplément familial et complémentaire santé."),
         "js": js,
         "citable": f"Le traitement brut d'un fonctionnaire est égal à son indice majoré multiplié par {fmt2(POINT_ANNUEL_IM100)} € puis divisé par 1 200, la valeur du point étant inchangée depuis le 1er juillet 2023. En 2026, l'indice 450 donne ainsi {e2(calcul_fp(450)['traitement'])} brut par mois. Le fonctionnaire supporte une retenue pour pension de 11,10 % du traitement, 5 % de RAFP sur ses primes dans la limite de 20 % du traitement, et 9,70 % de CSG-CRDS sur 98,25 % de sa rémunération : sans primes, l'indice 450 laisse environ {e2(calcul_fp(450)['net'])} net. Les indices inférieurs à {int(seuil) + 1} reçoivent en plus une indemnité différentielle qui porte leur rémunération au SMIC de {e2(SMIC_MENSUEL_BRUT)} brut ; elle n'est pas soumise à la retenue pour pension.",
         "corps": corps,
@@ -736,7 +736,7 @@ def page_cout():
         "widget": widget([champ("w-brut", "Salaire brut mensuel (€)", "2000"),
                           champ("w-at", "Taux accidents du travail (%)", "1")],
                          [("r-charges", "Charges patronales nettes"), ("r-pct", "En % du brut"), ("r-cout", "Coût total (super brut)"), ("r-net", "Net versé au salarié")],
-                         "Entreprise de moins de 11 salariés, non-cadre, taux Urssaf 2026."),
+                         "Charges patronales d'une entreprise de moins de 11 salariés, non-cadre, taux Urssaf 2026."),
         "js": js,
         "citable": f"En 2026, le coût d'un salarié pour son employeur va d'environ {pct((cout_detail(SMIC_MENSUEL_BRUT)['cout'] / SMIC_MENSUEL_BRUT - 1) * 100, 0)} au-dessus du brut au niveau du SMIC à plus de {pct((cout_detail(6000)['cout'] / 6000 - 1) * 100, 0)} pour un salaire de {e(6000)}, dans une entreprise de moins de 11 salariés. L'écart vient de la réduction générale dégressive unique, qui efface jusqu'à 39,81 % du brut en cotisations patronales au SMIC et s'éteint à 3 SMIC. Un salarié payé {e(2000)} brut coûte ainsi environ {e(c2000['cout'])} par mois, pour {e(net(2000))} net versé. Le calcul retient les taux Urssaf 2026 et un taux accidents du travail de 1 % : maladie 13 %, vieillesse 10,66 %, allocations familiales 5,25 %, chômage 4,00 %, retraite complémentaire 6,01 % sur la tranche 1.",
         "corps": corps,
@@ -797,7 +797,7 @@ def page_non_cadre():
         "widget": widget([champ("w-brut", "Salaire brut mensuel (€)", "2500"),
                           choix("w-temps", "Temps de travail", [("100", "Temps plein"), ("80", "80 %"), ("60", "60 %"), ("50", "50 %")], "100")],
                          [("r-net", "Net avant impôt"), ("r-cotis", "Cotisations salariales"), ("r-annuel", "Net annuel")],
-                         "Pour un temps partiel, indiquez le brut d'un temps plein : il est proratisé."),
+                         "Pour un temps partiel, indiquez le salaire brut d'un non-cadre à temps plein : il est proratisé."),
         "js": js,
         "citable": f"En 2026, un salarié non-cadre paie environ 20,8 % de cotisations salariales tant que son brut reste sous le plafond de la Sécurité sociale de {e(PSS_MENSUEL)} par mois : 11,31 % pour la retraite de base et complémentaire et 9,53 % de CSG-CRDS. Un brut de {e(2500)} donne ainsi {e2(r['net_avant_impot'])} net avant impôt, et le SMIC de {e2(SMIC_MENSUEL_BRUT)} environ {e2(SMIC_NET_MENSUEL_SP)}. La mutuelle d'entreprise s'y ajoute selon le contrat, ce qui explique les repères de 22 % souvent cités. Au-delà du plafond, un non-cadre cotise exactement comme un cadre, à la cotisation Apec près : retraite complémentaire à 8,64 % sur la part qui dépasse, contribution d'équilibre technique de 0,14 % sur la totalité.",
         "corps": corps,

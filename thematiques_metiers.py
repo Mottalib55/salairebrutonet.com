@@ -170,7 +170,7 @@ def page_assmat():
                           champ("w-duree", "Heures d'accueil par jour", "9")],
                          [("r-brut", "Salaire brut mensuel"), ("r-net", "Salaire net mensuel"),
                           ("r-ent", "Entretien par mois"), ("r-cp", "Congés payés par an")],
-                         "47 semaines ou plus : année complète (52 ÷ 12). 46 semaines ou moins : année incomplète, congés payés estimés à 10 % du salaire annuel et versés en plus."),
+                         "Salaire d'une assistante maternelle accueillant l'enfant 47 semaines ou plus : année complète (52 ÷ 12). 46 semaines ou moins : année incomplète, congés payés estimés à 10 % du salaire annuel et versés en plus."),
         "js": js,
         "citable": f"Depuis le 1er juin 2026, une assistante maternelle agréée gagne au minimum {e2(AM_BRUT)} brut, soit {e2(AM_NET)} net, par heure et par enfant accueilli, selon la convention collective du particulier employeur. Ce minimum passe à {e2(AM_BRUT_TITRE)} brut ({e2(AM_NET_TITRE)} net) pour une professionnelle titulaire du titre « assistant maternel, garde d'enfants ». Le salaire est mensualisé : en année complète, on multiplie le taux horaire par les heures hebdomadaires puis par 52, avant de diviser par 12. Un enfant gardé 45 heures par semaine rapporte ainsi {e2(ex)} brut et {e2(ex * AM_RATIO)} net par mois. S'y ajoute une indemnité d'entretien non soumise à cotisations, d'au moins {e2(AM_ENTRETIEN_9H)} pour une journée de 9 heures. Le plancher légal, 0,281 fois le SMIC horaire, s'élève à {e2(AM_PLANCHER)} et reste inférieur au minimum conventionnel.",
         "corps": corps,
@@ -221,7 +221,7 @@ def page_ingenieur():
 {note("Grille des ingénieurs et cadres de l'annexe III. La position 2.1 compte deux coefficients : 105 avant 26 ans, 115 à partir de 26 ans. Net avant impôt calculé avec les cotisations salariales 2026 d'un cadre, hors mutuelle et prévoyance.")}
 <h2>Ce que disent les statistiques publiques</h2>
 <p>Aucune source publique ne publie de salaire 2026 propre aux ingénieurs informatiques : l'Insee diffuse les salaires par grande catégorie avec deux ans de décalage. Dans le secteur privé, un cadre percevait en moyenne <strong>{e(INSEE['cadres'])} net par mois en 2024</strong> (Insee Première n° 2079), tous métiers confondus. Les montants que l'on voit circuler pour un « ingénieur informatique débutant » ou « confirmé » proviennent d'enquêtes privées et d'offres d'emploi : nous ne les reprenons pas, faute de pouvoir les vérifier.</p>
-<h2>Du brut annuel au net mensuel</h2>
+<h2>Salaire d'un ingénieur informatique : du brut annuel au net mensuel</h2>
 <p>Les offres d'emploi en informatique sont presque toujours exprimées en brut annuel. Pour un cadre en 2026, le passage au net retire environ 21 à 22 % jusqu'au plafond de la Sécurité sociale, un peu moins au-delà, avant le prélèvement à la source.</p>
 {table(["Brut annuel", "Brut mensuel (sur 12 mois)", "Net mensuel avant impôt", "Net annuel"], l2)}
 {note("Statut cadre, temps plein, cotisations salariales 2026 du régime général, hors mutuelle et prévoyance d'entreprise.")}
@@ -310,7 +310,7 @@ def page_enseignant():
                + [(f"ce{i}", f"Classe exceptionnelle, {ech(i)} échelon (IM {im})") for i, im in enumerate(CERT_CE, 1)])
     grille = json.dumps({"cn": CERT_CN, "hc": CERT_HC, "ce": CERT_CE})
     corps = f"""
-<h2>Grille des professeurs certifiés en 2026</h2>
+<h2>Grille de salaire des enseignants certifiés en 2026</h2>
 <p>Le traitement d'un enseignant titulaire dépend de son échelon : chaque échelon correspond à un indice majoré, multiplié par la valeur du point d'indice. Celle-ci reste fixée à {e2(POINT_ANNUEL_IM100)} par an pour l'indice 100 depuis le 1er juillet 2023, sans revalorisation en 2026 selon service-public.gouv.fr. Un point d'indice vaut donc {fmt2(POINT_MENSUEL)} € brut par mois.</p>
 {table(["Classe normale", "Indice majoré", "Traitement brut", "Prime d'attractivité par an", "Net mensuel estimé"], lignes)}
 {note("Indices bruts du décret n° 2017-789 (version en vigueur depuis le 6 août 2023), convertis en indices majorés selon le barème du décret n° 82-1105 au 1er janvier 2024. Net estimé avec la part fixe de l'ISOE (212,50 € par mois) et la prime d'attractivité de l'échelon, sans indemnité de résidence.")}
@@ -349,7 +349,7 @@ def page_enseignant():
                           choix("w-ir", "Indemnité de résidence", [("0", "0 %"), ("0.01", "1 %"), ("0.03", "3 %")], "0"),
                           champ("w-autres", "Autres primes mensuelles brutes (€)", "0")],
                          [("r-t", "Traitement indiciaire"), ("r-brut", "Brut avec primes"), ("r-net", "Net mensuel")],
-                         "ISOE part fixe et prime d'attractivité de l'échelon comprises. Hors supplément familial, heures supplémentaires et abattement transfert primes-points."),
+                         "Salaire net d'un enseignant certifié, ISOE part fixe et prime d'attractivité de l'échelon comprises. Hors supplément familial, heures supplémentaires et abattement transfert primes-points."),
         "js": js,
         "citable": f"En 2026, un professeur certifié débutant, au 1er échelon de la classe normale, est rémunéré sur l'indice majoré 395, soit un traitement de {e2(d['traitement'])} brut par mois, la valeur du point d'indice n'ayant pas bougé depuis juillet 2023. S'y ajoutent la part fixe de l'ISOE, {e(ISOE)} brut par an, et une prime d'attractivité de {e(ATTRACTIVITE[0])} par an au 1er échelon, qui culmine à {e(3370)} au 3e échelon. Après retenue pour pension de 11,10 %, RAFP et CSG-CRDS, le net atteint environ {e2(d['net'])} par mois. Au 11e et dernier échelon de la classe normale, indice 678, le traitement est de {e2(f11['traitement'])} brut et le net d'environ {e2(f11['net'])}. La hors classe culmine à l'indice 826 et la classe exceptionnelle à l'indice 835, avant la hors-échelle A.",
         "corps": corps,
@@ -395,7 +395,7 @@ def page_interne():
     b1, n1 = interne(1)
     b3, n3 = interne(3)
     corps = f"""
-<h2>Rémunération des internes par année</h2>
+<h2>Salaire des internes en médecine par année</h2>
 {table(["Année d'internat", "Rémunération annuelle brute", "Brut mensuel avec primes", "Net mensuel estimé"], lignes)}
 {note("Montants de l'annexe X de l'arrêté du 8 juillet 2022, en vigueur au 1er juillet 2023 et toujours applicables au 27 octobre 2026 : aucune revalorisation n'a été publiée depuis. Le brut mensuel comprend l'indemnité de sujétions particulières (1re et 2e années) et la prime de responsabilité (4e et 5e années de médecine). Hors gardes, avantages en nature et indemnités de logement.")}
 <h2>Les éléments qui s'ajoutent</h2>
@@ -501,7 +501,7 @@ def page_aide_soignant():
         "widget": widget([choix("w-ech", "Grade et échelon", options, "cn1"),
                           champ("w-primes", "Autres primes mensuelles brutes (€)", "0")],
                          [("r-t", "Traitement indiciaire"), ("r-brut", "Brut avec CTI et primes"), ("r-net", "Net mensuel")],
-                         "Fonctionnaire hospitalier à temps complet. CTI de 49 points compris ; nuits, dimanches et primes de service à saisir dans « autres primes »."),
+                         "Salaire d'un aide-soignant fonctionnaire hospitalier à temps complet. CTI de 49 points compris ; nuits, dimanches et primes de service à saisir dans « autres primes »."),
         "js": js,
         "citable": f"En 2026, un aide-soignant titulaire de la fonction publique hospitalière débute au 1er échelon de la classe normale, à l'indice majoré 373, soit un traitement de {e2(d['traitement'])} brut par mois avec la valeur du point inchangée depuis juillet 2023. Le complément de traitement indiciaire de 49 points, {e2(CTI)} brut, porte sa rémunération à {e2(d['brut'])} brut, soit environ {e2(d['net'])} net avant primes de nuit, de dimanche ou de service. Le corps est classé en catégorie B depuis la réforme du Ségur de la santé et compte deux grades. Au 11e échelon de la classe supérieure, indice 560, le net atteint environ {e2(f['net'])} par mois avec le CTI. Les retenues d'un fonctionnaire hospitalier sont la pension CNRACL de 11,10 %, la RAFP sur les primes et la CSG-CRDS.",
         "corps": corps,
@@ -578,7 +578,7 @@ def page_infirmier():
         "widget": widget([choix("w-ech", "Grade et échelon", options, "g11"),
                           champ("w-primes", "Autres primes mensuelles brutes (€)", "0")],
                          [("r-t", "Traitement indiciaire"), ("r-brut", "Brut avec CTI et primes"), ("r-net", "Net mensuel")],
-                         "Fonctionnaire hospitalier à temps complet. CTI de 49 points compris ; nuits, dimanches, ISS et prime de service à saisir dans « autres primes »."),
+                         "Salaire d'un infirmier fonctionnaire hospitalier à temps complet. CTI de 49 points compris ; nuits, dimanches, ISS et prime de service à saisir dans « autres primes »."),
         "js": js,
         "citable": f"En 2026, une infirmière en soins généraux titulaire de la fonction publique hospitalière débute au 1er échelon du premier grade, à l'indice majoré 395. Son traitement indiciaire est de {e2(d['traitement'])} brut par mois, la valeur du point étant inchangée depuis juillet 2023. Le complément de traitement indiciaire de 49 points, {e2(CTI)}, porte la rémunération à {e2(d['brut'])} brut, soit environ {e2(d['net'])} net avant primes. Les indemnités de nuit, de dimanche, de jours fériés et la prime de service s'ajoutent selon le planning et l'établissement. Au 11e échelon du premier grade, indice 678, le net atteint environ {e2(f['net'])} par mois avec le CTI. La grille est fixée par le décret n° 2021-1262, en vigueur depuis octobre 2021.",
         "corps": corps,

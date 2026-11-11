@@ -117,7 +117,7 @@ def page_rc():
         d = differe_specifique(montant)
         l_dif.append([e(montant), f"{d} jours", f"{d + DELAI_ATTENTE} jours"])
     corps = f"""
-<h2>Indemnité minimale selon le salaire et l'ancienneté</h2>
+<h2>Indemnité minimale de rupture conventionnelle selon le salaire et l'ancienneté</h2>
 <p>L'indemnité spécifique de rupture conventionnelle ne peut pas être inférieure à l'indemnité légale de licenciement, ou à l'indemnité conventionnelle si votre convention collective prévoit mieux. Contrairement au licenciement, elle est due quelle que soit l'ancienneté : un salarié présent depuis cinq mois a droit au prorata. Le calcul retient un quart de mois de salaire par année jusqu'à dix ans, puis un tiers de mois par année au-delà.</p>
 {table(["Ancienneté", "Au SMIC", "2 500 € brut", "3 500 € brut", "5 000 € brut"], lignes)}
 {note("Salaire de référence brut mensuel : moyenne des 12 derniers mois ou des 3 derniers mois, primes annuelles proratisées, selon la formule la plus favorable. SMIC à " + e2(SMIC_MENSUEL_BRUT) + " depuis le 1er juin 2026. Minimum légal : une convention collective peut prévoir davantage.")}
@@ -169,7 +169,7 @@ def page_rc():
                           champ("w-iccp", "Indemnité de congés payés (€)", "1200")],
                          [("r-min", "Indemnité minimale"), ("r-supra", "Part supra-légale"),
                           ("r-differe", "Différés + attente"), ("r-total", "Avant la 1re allocation")],
-                         "Différé spécifique, différé congés payés et délai d'attente, barème France Travail 2026. Minimum légal ; votre convention collective peut prévoir plus."),
+                         "Rupture conventionnelle : différé spécifique, différé congés payés et délai d'attente, barème France Travail 2026. Minimum légal ; votre convention collective peut prévoir plus."),
         "js": js,
         "citable": citable,
         "corps": corps,
@@ -359,7 +359,7 @@ def page_are():
                           choix("w-motif", "Fin de contrat", [("licenciement", "Licenciement, fin de CDD, rupture avant le 1er sept. 2026"), ("rc2026", "Rupture conventionnelle depuis le 1er sept. 2026")], "licenciement")],
                          [("r-jour", "ARE brute par jour"), ("r-mois", "ARE nette par mois"),
                           ("r-duree", "Durée des droits"), ("r-degr", "Après le 6e mois")],
-                         "Estimation pour un emploi continu, hors cas particuliers (temps partiel, intermittents, Mayotte). Seul France Travail notifie le montant et la durée."),
+                         "Estimation de l'allocation chômage pour un emploi continu, hors cas particuliers (temps partiel, intermittents, Mayotte). Seul France Travail notifie le montant et la durée."),
         "js": js,
         "citable": citable,
         "corps": corps,
@@ -531,7 +531,7 @@ def page_cp():
                           champ("w-maladie", "Mois d'arrêt maladie dans l'année", "0", "numeric")],
                          [("r-maintien", "Maintien de salaire"), ("r-dixieme", "Règle du dixième"),
                           ("r-du", "Montant dû"), ("r-acquis", "Congés acquis sur l'année")],
-                         "Montants bruts. Pour une indemnité compensatrice de fin de contrat, saisissez les jours restants."),
+                         "Indemnité de congés payés en montants bruts. Pour une indemnité compensatrice de fin de contrat, saisissez les jours restants."),
         "js": js,
         "citable": citable,
         "corps": corps,
