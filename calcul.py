@@ -20,6 +20,8 @@ import math
 PSS_MENSUEL = 4005
 PSS_ANNUEL = 48060
 PSS_HORAIRE = 30
+PSS_MENSUEL_2027 = 4075         # annoncé par le BOSS (service-public A15386, 19 octobre 2026), arrêté à paraître
+PSS_ANNUEL_2027 = 48900
 SMIC_HORAIRE = 12.31            # depuis le 1er juin 2026
 SMIC_MENSUEL_BRUT = 1867.02     # 12,31 € × 151,67 h
 SMIC_HORAIRE_JANVIER = 12.02    # du 1er janvier au 31 mai 2026
@@ -33,7 +35,9 @@ def arrondi(val, decimales=0):
     return math.floor(val * f + 0.5) / f
 
 
-def calculer_cotisations_salariales(brut_mensuel, statut, alsace_moselle=False):
+def calculer_cotisations_salariales(brut_mensuel, statut, alsace_moselle=False, pss=PSS_MENSUEL):
+    """pss : plafond mensuel de l'année (4 005 € en 2026, 4 075 € annoncés pour 2027)."""
+    PSS_MENSUEL = pss
     is_cadre = statut == "cadre"
     t1 = min(brut_mensuel, PSS_MENSUEL)
     # Tranche 2 : de 1 à 8 plafonds ; CSG-CRDS : abattement de 1,75 % dans la limite de 4 plafonds (F2302)
@@ -116,9 +120,9 @@ def estimer_impot_revenu(net_imposable_annuel, nb_parts=1, parts_base=1):
     return max(0, arrondi(impot_qf))
 
 
-def calculer_brut_vers_net(brut_mensuel, statut, temps=1, alsace_moselle=False, nb_parts=1, parts_base=1):
+def calculer_brut_vers_net(brut_mensuel, statut, temps=1, alsace_moselle=False, nb_parts=1, parts_base=1, pss=PSS_MENSUEL):
     brut = brut_mensuel * temps
-    cotis_sal, total_sal = calculer_cotisations_salariales(brut, statut, alsace_moselle)
+    cotis_sal, total_sal = calculer_cotisations_salariales(brut, statut, alsace_moselle, pss)
     cotis_pat, total_pat = calculer_cotisations_patronales(brut)
 
     net_avant_impot = brut - total_sal

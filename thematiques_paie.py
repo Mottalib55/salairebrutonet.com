@@ -661,4 +661,83 @@ def page_cesu():
     }
 
 
-PAGES = [page_km, page_pss, page_pas, page_rgdu, page_fiche, page_cesu]
+
+# ── Salaire brut net 2027 (ajout du 2026-11-21, campagne 2027) ─────────────────
+# Officiel au 21/11/2026 : PASS 2027 annoncé par le BOSS (service-public A15386, 19/10/2026, arrêté à paraître) ;
+# Smic +1,6 % au 1er décembre 2026 annoncé (code.travail.gouv.fr, 17/11/2026), décret non publié ;
+# PLFSS 2027 transmis au Sénat le 2/11/2026 (senat.fr pjl26-138) sans changement des taux salariaux.
+# ESTIMATION à remplacer dès le décret Smic (attendu fin novembre ou décembre 2026) : 12,31 € × 1,016.
+SMIC_HORAIRE_DEC_2026_EST = arrondi(SMIC_HORAIRE * 1.016, 2)
+SMIC_MENSUEL_DEC_2026_EST = arrondi(SMIC_HORAIRE_DEC_2026_EST * HEURES_MENSUELLES, 2)
+SRC_SMIC_DEC_2026 = ("Code du travail numérique, Smic : une augmentation au 1er décembre 2026 (17 novembre 2026)", "https://code.travail.gouv.fr/actualite/smic-une-augmentation-au-1er-decembre-2026-quelles-consequences-sur-les-salaires")
+SRC_PLFSS_2027 = ("Sénat, projet de loi de financement de la Sécurité sociale pour 2027 (texte n° 138)", "https://www.senat.fr/leg/pjl26-138.html")
+
+
+def page_2027():
+    from calcul import PSS_MENSUEL_2027, PSS_ANNUEL_2027
+    n26 = lambda b: calculer_brut_vers_net(b, "non-cadre")["net_avant_impot"]
+    n27 = lambda b: calculer_brut_vers_net(b, "non-cadre", pss=PSS_MENSUEL_2027)["net_avant_impot"]
+    lignes = [[e(b), e2(n26(b)), e2(n27(b)), e2(n27(b) - n26(b))] for b in (1900, 2500, 3500, 4000, 4050, 4500, 6000, 10000)]
+    ecart_max = n26(6000) - n27(6000)  # constant au-dessus de 4 075 €
+    gain_4050 = n27(4050) - n26(4050)
+    smic_net_est = n26(SMIC_MENSUEL_DEC_2026_EST)
+    corps = f"""
+<h2>Ce qui change entre 2026 et 2027</h2>
+{table(["Paramètre", "2026", "2027", "Statut au 21 novembre 2026"], [
+    ["Plafond mensuel de la Sécurité sociale", e(PSS_MENSUEL), e(PSS_MENSUEL_2027), "Annoncé (BOSS), arrêté à paraître"],
+    ["Plafond annuel", e(PSS_ANNUEL), e(PSS_ANNUEL_2027), "Annoncé, hausse de 1,74 %"],
+    ["Smic horaire brut", e2(SMIC_HORAIRE) + " (depuis juin)", "Estimation : " + e2(SMIC_HORAIRE_DEC_2026_EST), "Hausse de 1,6 % annoncée au 1er décembre 2026, décret non publié"],
+    ["Taux des cotisations salariales", "20,8 % environ sous le plafond", "Inchangés à ce jour", "Budget de la Sécurité sociale 2027 en discussion"],
+    ["Cumul emploi-retraite", "Intégral ou plafonné", "Nouvelles règles", "Retraites prenant effet à partir du 1er janvier 2027"],
+])}
+{note("Le Smic de 2027 est une estimation : 12,31 € multipliés par 1,016, la hausse annoncée. Elle sera remplacée par le montant du décret dès sa parution au Journal officiel.")}
+<h2>Le salaire net 2027 à brut égal</h2>
+<p>Avec des taux salariaux identiques, seul le plafond de la Sécurité sociale déplace le calcul. Il fixe la frontière entre la tranche 1, cotisée à 10,91 % pour la retraite (vieillesse plafonnée et Agirc-Arrco), et la tranche 2, cotisée à 9,72 %. Jusqu'à {e(PSS_MENSUEL)} brut, rien ne bouge. Entre {e(PSS_MENSUEL)} et {e(PSS_MENSUEL_2027)}, le net augmente même un peu ({e2(gain_4050)} à {e(4050)} brut) : la contribution d'équilibre technique de 0,14 %, due sur tout le salaire dès qu'il dépasse le plafond, ne s'applique plus. Au-delà de {e(PSS_MENSUEL_2027)}, les 70 € qui passent de la tranche 2 à la tranche 1 coûtent {e2(ecart_max)} de net par mois.</p>
+{table(["Brut mensuel", "Net 2026", "Net 2027", "Écart"], lignes)}
+{note("Net avant impôt d'un non-cadre, régime général, hors mutuelle et prévoyance. Le net 2027 applique le plafond annoncé de " + e(PSS_MENSUEL_2027) + " et les taux de 2026, faute de texte qui les modifie.")}
+<h2>Le Smic au 1er décembre 2026, puis en 2027</h2>
+<p>Après la conférence sociale du 9 novembre 2026, le gouvernement a annoncé une hausse du Smic de 1,6 % au 1er décembre 2026, dont un coup de pouce de 0,6 %. Le décret qui fixe le nouveau taux n'était pas paru au 21 novembre 2026. En appliquant 1,6 % au taux de juin, on obtient environ {e2(SMIC_HORAIRE_DEC_2026_EST)} de l'heure, soit {e2(SMIC_MENSUEL_DEC_2026_EST)} brut et près de {e2(smic_net_est)} net par mois à 35 heures. Ce montant reste une estimation. La revalorisation légale du 1er janvier 2027 dépendra de l'inflation mesurée d'ici là ; le gouvernement n'a pas dit si la hausse de décembre en tiendra lieu.</p>
+<h2>Ce que le budget de la Sécurité sociale 2027 peut encore changer</h2>
+<p>Le projet de loi de financement pour 2027, transmis au Sénat le 2 novembre 2026, ne modifie pas les taux de cotisations retenus sur la fiche de paie des salariés du privé. Il touche surtout l'employeur : calcul de la réduction générale, prime de partage de la valeur, régime social des indemnités de rupture. Le texte définitif sera voté en décembre ; cette page sera mise à jour à sa publication. Pour une retraite qui commence en 2027, les nouvelles règles du <a href="/cumul-emploi-retraite/">cumul emploi-retraite</a> s'appliquent déjà : elles viennent de la loi de financement pour 2026.</p>
+<p>Pour le détail du plafond et de ses usages, voyez la page <a href="/plafond-securite-sociale-2026/">plafond de la Sécurité sociale</a> ; pour votre bulletin complet, le <a href="/simulateur-fiche-de-paie/">simulateur de fiche de paie</a>.</p>
+"""
+    js = """
+            var b = v('w-brut'), t = v('w-temps') / 100;
+            if (!(t > 0)) t = 1;
+            var a = calculerBrutVersNet(b, 'non-cadre', t, {}), c = calculerBrutVersNet(b, 'non-cadre', t, { pss: 4075 * t });
+            out('r-net27', centimes(c.netAvantImpot));
+            out('r-net26', centimes(a.netAvantImpot));
+            out('r-ecart', centimes(c.netAvantImpot - a.netAvantImpot));
+            out('r-annuel', euros(c.netAvantImpot * 12));"""
+    return {
+        "slug": "salaire-brut-net-2027",
+        "title": "Salaire brut net 2027 : PASS 4 075 €, Smic et cotisations",
+        "desc": "Salaire brut net 2027 : plafond de la Sécurité sociale à 4 075 € par mois, Smic relevé de 1,6 %, taux salariaux de 2026 inchangés. Simulateur et tableau.",
+        "h1": "Salaire brut net 2027",
+        "crumb": "Salaire brut net 2027",
+        "widget_titre": "Votre salaire net en 2027",
+        "widget": widget([champ("w-brut", "Salaire brut mensuel (€)", "2500"),
+                          champ("w-temps", "Temps de travail (% d'un temps plein)", "100")],
+                         [("r-net27", "Net mensuel 2027"), ("r-net26", "Net mensuel 2026"), ("r-ecart", "Écart"), ("r-annuel", "Net annuel 2027")]),
+        "js": js,
+        "citable": f"En 2027, le salaire brut net d'un non-cadre se calcule avec les taux de 2026, qu'aucun texte ne modifie à ce jour, et un plafond de la Sécurité sociale relevé à {e(PSS_MENSUEL_2027)} par mois ({e(PSS_ANNUEL_2027)} par an), annoncé le 19 octobre 2026 par le Bulletin officiel de la Sécurité sociale. Un salaire de {e(2500)} brut donne donc le même net qu'en 2026, {e2(n27(2500))}. Au-dessus de {e(PSS_MENSUEL_2027)}, le net baisse de {e2(ecart_max)} par mois, car 70 € de salaire passent dans la tranche 1, plus cotisée. Le Smic doit augmenter de 1,6 % au 1er décembre 2026 : environ {e2(SMIC_HORAIRE_DEC_2026_EST)} brut de l'heure, estimation en attendant le décret.",
+        "corps": corps,
+        "sources": [SRC_PSS_2027, SRC_SMIC_DEC_2026, SRC_PLFSS_2027, SRC_TAUX, SRC_SMIC],
+        "releve": "21 novembre 2026",
+        "faq": [
+            ("Mon salaire net va-t-il changer en janvier 2027 ?",
+             f"À brut égal, non, si vous gagnez moins de {e(PSS_MENSUEL)} par mois : les taux salariaux de 2026 restent en vigueur tant que le budget de la Sécurité sociale 2027 ne les modifie pas, et le projet transmis au Sénat n'y touche pas. Entre {e(PSS_MENSUEL)} et {e(PSS_MENSUEL_2027)}, le net gagne quelques euros ; au-delà, le relèvement du plafond le réduit de {e2(ecart_max)} par mois."),
+            ("Quel sera le Smic en 2027 ?",
+             f"Le gouvernement a annoncé une hausse de 1,6 % au 1er décembre 2026, dont 0,6 % de coup de pouce. Appliquée au taux de juin 2026, elle donne environ {e2(SMIC_HORAIRE_DEC_2026_EST)} brut de l'heure et {e2(SMIC_MENSUEL_DEC_2026_EST)} brut par mois. C'est une estimation : seul le décret publié au Journal officiel fixera le montant. Une revalorisation au 1er janvier 2027 reste possible selon l'inflation."),
+            ("Pourquoi un plafond plus élevé baisse-t-il le net ?",
+             "Sous le plafond, le salarié paie 6,90 % de vieillesse plafonnée, 3,15 % d'Agirc-Arrco et 0,86 % de CEG, soit 10,91 %. Au-dessus, il paie 8,64 % d'Agirc-Arrco et 1,08 % de CEG, soit 9,72 %. Quand le plafond monte de 70 €, ces 70 € passent au taux le plus élevé : le net recule d'environ 84 centimes, et la retraite de base gagne un peu de salaire pris en compte."),
+            ("Les taux de cotisations 2027 sont-ils définitifs ?",
+             "Pas encore. Le projet de loi de financement de la Sécurité sociale pour 2027 est en discussion au Parlement et doit être voté en décembre 2026. Dans sa version transmise au Sénat le 2 novembre, il ne change pas les taux salariaux. Les taux Agirc-Arrco, fixés par les partenaires sociaux, restent ceux de 2026. Cette page sera revue dès la publication de la loi."),
+            ("Les retraités qui travaillent sont-ils concernés en 2027 ?",
+             "Oui, pour les retraites qui prennent effet à partir du 1er janvier 2027. La loi de financement pour 2026 supprime la distinction entre cumul intégral et plafonné : avant l'âge légal, le salaire réduit la pension dès le premier euro ; entre l'âge légal et 67 ans, il la réduit au-delà d'un seuil annoncé de 7 000 € par an. Le cumul reste libre après 67 ans."),
+        ],
+        "related": ["plafond-securite-sociale-2026", "smic-brut-net-2026", "cumul-emploi-retraite", "simulateur-fiche-de-paie", "salaire-brut-net-cadre", "salaire-brut-net-annuel"],
+    }
+
+
+PAGES = [page_km, page_pss, page_pas, page_rgdu, page_fiche, page_cesu, page_2027]

@@ -76,6 +76,19 @@ if node:
 else:
     print("node absent : moteur JavaScript non testé")
 
+# 2 bis. Plafond 2027 (4 075 € annoncés, service-public A15386 du 19/10/2026) : mêmes taux, seul le plafond change.
+# 5 000 € : 70 € passent de la tranche 2 (9,72 % + CET) à la tranche 1 (10,91 % + CET), soit 0,83 € de net en moins.
+CAS_2027 = [(3000, "non-cadre", 2374.79), (5000, "non-cadre", 3962.00)]
+for brut, statut, attendu in CAS_2027:
+    net = calcul.calculer_brut_vers_net(brut, statut, pss=calcul.PSS_MENSUEL_2027)["net_avant_impot"]
+    verifier(abs(net - attendu) < 0.005, f"calcul.py 2027 : {brut} € {statut} → {net} (attendu {attendu})")
+if node:
+    script27 = script.replace("{}).netAvantImpot", "{pss:4075}).netAvantImpot")
+    sortie = subprocess.run([node, "-e", script27, os.path.join(RACINE, "js", "brut-net.js"), json.dumps(CAS_2027)],
+                            capture_output=True, text=True, check=True).stdout
+    for (brut, statut, attendu), net in zip(CAS_2027, json.loads(sortie)):
+        verifier(abs(net - attendu) < 0.005, f"js/brut-net.js 2027 : {brut} € {statut} → {net} (attendu {attendu})")
+
 # 3. Accueil : exemples cités = résultats du calculateur
 accueil = open(os.path.join(RACINE, "index.html"), encoding="utf-8").read()
 exemples = re.findall(r"<li><strong>(\d)[\u00a0\u202f ](\d{3})[\u00a0\u202f ]€ brut</strong>[\u00a0\u202f ]: environ (\d)[\u00a0\u202f ](\d{3})[\u00a0\u202f ]€ net</li>", accueil)

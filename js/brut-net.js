@@ -6,10 +6,11 @@ function calculerCotisationsSalariales(brutMensuel, statut, options) {
 options = options || {};
 const isCadre = statut === 'cadre';
 const isAlsaceMoselle = options.alsaceMoselle || false;
-const t1 = Math.min(brutMensuel, PSS_MENSUEL);
+const PSS = options.pss || PSS_MENSUEL; // plafond de l'annee : 4075 annonce pour 2027
+const t1 = Math.min(brutMensuel, PSS);
 // Tranche 2 : de 1 à 8 plafonds ; CSG-CRDS : abattement de 1,75 % dans la limite de 4 plafonds (service-public F2302)
-const t2 = Math.min(Math.max(0, brutMensuel - PSS_MENSUEL), 7 * PSS_MENSUEL);
-const assietteCsgCrds = Math.min(brutMensuel, 4 * PSS_MENSUEL) * 0.9825 + Math.max(0, brutMensuel - 4 * PSS_MENSUEL);
+const t2 = Math.min(Math.max(0, brutMensuel - PSS), 7 * PSS);
+const assietteCsgCrds = Math.min(brutMensuel, 4 * PSS) * 0.9825 + Math.max(0, brutMensuel - 4 * PSS);
 const cotisations = {
 vieillessePlafonnee: { taux: 0.069, montant: t1 * 0.069, label: 'Vieillesse plafonnée', assiette: 'Tranche 1' },
 vieillesseDeplafonee: { taux: 0.004, montant: brutMensuel * 0.004, label: 'Vieillesse déplafonnée', assiette: 'Totalité' },
@@ -21,11 +22,11 @@ csgDeductible: { taux: 0.068, montant: assietteCsgCrds * 0.068, label: 'CSG déd
 csgNonDeductible: { taux: 0.024, montant: assietteCsgCrds * 0.024, label: 'CSG non déductible', assiette: '98,25% du brut (jusqu\'à 4 PASS)' },
 crds: { taux: 0.005, montant: assietteCsgCrds * 0.005, label: 'CRDS', assiette: '98,25% du brut (jusqu\'à 4 PASS)' },
 };
-if (brutMensuel > PSS_MENSUEL) {
+if (brutMensuel > PSS) {
 cotisations.cet = { taux: 0.0014, montant: (t1 + t2) * 0.0014, label: 'CET', assiette: 'Tranches 1 et 2' };
 }
 if (isCadre) {
-cotisations.apec = { taux: 0.00024, montant: Math.min(brutMensuel, PSS_MENSUEL * 4) * 0.00024, label: 'APEC (cadre)', assiette: 'Jusqu\'à 4 PSS' };
+cotisations.apec = { taux: 0.00024, montant: Math.min(brutMensuel, PSS * 4) * 0.00024, label: 'APEC (cadre)', assiette: 'Jusqu\'à 4 PSS' };
 }
 if (isAlsaceMoselle) {
 cotisations.alsaceMoselle = { taux: 0.013, montant: brutMensuel * 0.013, label: 'Maladie Alsace-Moselle', assiette: 'Totalité' };
